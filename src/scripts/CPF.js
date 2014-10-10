@@ -47,11 +47,18 @@ document.getElementById('btn-gerar-CPF').onclick = function geraCPF(){
 
 document.getElementById('valida-CPF').onsubmit = function validaCPF(event){
 
-	var cpf = document.getElementById('primeiros-digitos').value,
-		verificadores = document.getElementById('digitos-verificadores').value,
+	var cpf = document.getElementById('cpf').value.substring(0,11).split('.').join(''),
+		verificadores = document.getElementById('cpf').value.substring(12,14),
 		soma1 = null,
-		soma2 = null;
-		var CPFverificador1 = null;
+		soma2 = null,
+		CPFverificador1 = null;
+
+	for (var i = 0; i < 10; i++) {
+		if('' + cpf + verificadores === '' + i + i + i + i + i + i + i + i + i + i +i ){
+			document.getElementById('resultadoValidacao').innerHTML = 'CEP inválido';
+			return false;
+		}
+	}
 
 	//Calculando o primeiro dígito verificador
 	for (var i = 0; i < 9; ++i) {
@@ -82,10 +89,11 @@ document.getElementById('valida-CPF').onsubmit = function validaCPF(event){
 	}
 
 	if (verificadores.toString() === verificador1.toString() + verificador2.toString()) {
-		window.alert('bateu');
+		document.getElementById('resultadoValidacao').innerHTML = 'CEP válido';
 	}else{
-		window.alert('não');
+		document.getElementById('resultadoValidacao').innerHTML = 'CEP inválido';
 	}
 
 	return false;
+
 };

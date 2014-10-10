@@ -3,3 +3,7 @@
 
 @function em($pixels, $context: $browser-font-size)
 	@return #{$pixels/$context}em
+
+
+@function image-url($image-name)
+	@return url("#{$image-path}#{$image-name}")

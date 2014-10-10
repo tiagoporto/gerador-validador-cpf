@@ -81,13 +81,18 @@
 		border-right: $width/2 solid transparent
 		border-top: $height solid $color
 
-=box-sizing($type: "border")
-	// Acceptable values
-	// content-box|border-box|initial|inherit
-	//content is the default W3C model */
-	-webkit-box-sizing: #{$type}-box
-	-moz-box-sizing: #{$type}-box
-	box-sizing: #{$type}-box
+=border-radius($radius...)
+	-webkit-border-radius: $radius
+	-moz-border-radius: $radius
+	border-radius: $radius
+
+// Acceptable values
+// content-box|border-box|initial|inherit
+// Content is the default W3C model
+=box-sizing($type: "border-box")
+	-webkit-box-sizing: $type
+	-moz-box-sizing: $type
+	box-sizing: $type
 
 @mixin font-face($name, $filename, $eot-id: $name, $weight: false, $style: false)
 	$iefont: unquote("#{$filename}.eot?#iefix")
@@ -402,9 +407,6 @@
 		&:before
 			+icons-sprite($icon-name)
 
-=img($image-name, $repeat:null, $positionX:null, $positionY:null, $attachment:null, $background-color:null)
-	background: $background-color url("#{$image-path}#{$image-name}") $repeat $attachment $positionX $positionY
-
 =keyframes($animationName)
 	@-webkit-keyframes #{$animationName}
 		@content
@@ -414,3 +416,11 @@
 		@content
 	@keyframes #{$animationName}
 		@content
+
+=linear-gradient($direction, $fromColor, $toColor...)
+	background-color: $fromColor // Old browsers
+	background-image: -webkit-linear-gradient($direction, $fromColor, $toColor) // Chrome 10+, Saf5.1+, iOS 5+
+	background-image:    -moz-linear-gradient($direction, $fromColor, $toColor) // FF3.6+
+	background-image:     -ms-linear-gradient($direction, $fromColor, $toColor) // IE10+
+	background-image:      -o-linear-gradient($direction, $fromColor, $toColor) // Opera 11.10+
+	background-image:         linear-gradient(to $direction, $fromColor, $toColor) // W3C

@@ -227,3 +227,12 @@ node_modules/**/*
 #################
 
 .sass-cache/**/*
+
+#################
+## Gulp.js Template
+#################
+
+build/**/*
+public/css/**
+public/images/**
+public/js/**

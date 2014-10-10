@@ -1,0 +1,99 @@
+//Settings
+
+//Define style of grid: Value default 'fixed'
+
+//STATIC LAYOUT
+//Value "fixed" define width 960px
+
+//RESPONSIVE LAYOUT
+//Value "fluid" define width 100%
+
+//ELASTIC LAYOUT
+//Value "elastic" define max width 960px and less than 960px for 100%
+
+$style-grid: fluid
+
+//Defines number of columns in grid
+//Better grid fixed with 12 columns
+$grid-columns: 12
+
+//Define gutter fixed, value "true" or "false"
+//Value true don't suported by old browsers because uses box-sizing
+$fixed-gutter: true
+
+//If $style-grid is fluid use value less than 10
+$gutter: 20
+
+
+$full-width: ''
+$padding: ''
+
+@if $style-grid == fluid
+	$full-width: 100%
+@else
+	$full-width: 960px
+
+
+@if $fixed-gutter == true
+	$padding: ($gutter/2) + 0px
+	$gutter: $gutter + 0px
+@else
+	$padding: ($gutter/2) + 0%
+	$gutter: $gutter + 0%
+
+/* Reset */
+body
+	margin: 0
+	padding: 0
+
+*,
+*:before,
+*:after
+	+box-sizing(border-box)
+
+// Placeholder
+%clear-box
+	display: inline
+	float: left
+	overflow: hidden
+	padding: 0 $padding
+
+
+/* Main Box */
+
+.container
+	width: $full-width
+	margin: auto
+
+/* Colummns */
+
+@if $fixed-gutter == true
+	@for $i from 1 through $grid-columns
+		.column-#{$i}
+			width: (($full-width/$grid-columns)* $i)
+			@extend %clear-box
+
+@else
+	@for $i from 1 through $grid-columns
+		.column-#{$i}
+			width: (($full-width/$grid-columns)* $i) - $gutter
+			@extend %clear-box
+
+.initial
+	margin-left: -$padding
+
+.final
+	margin-right: -$padding
+
+/* Space Before */
+@for $i from 1 through $grid-columns
+	.before-span-#{$i}
+		margin-left: (($full-width/$grid-columns)* $i)
+
+/* Space After */
+@for $i from 1 through $grid-columns
+	.after-span-#{$i}
+		margin-right: (($full-width/$grid-columns)* $i)
+
+
+//Semantic

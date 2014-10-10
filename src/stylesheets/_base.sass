@@ -30,11 +30,27 @@
 
 //=======================================//
 
-*,
-*:before,
-*:after
-	+box-sizing(border)
-
-
 body
-	background: $bg-color
+	+linear-gradient(bottom, $bg-color, darken($bg-color, 12%))
+	@extend .container
+
+button
+	background: darken($bg-color, 30%)
+	border: none
+	padding: 10px
+	+border-radius(5px)
+
+input
+	padding: 5px
+	+border-radius(5px)
+	border: none
+	font-weight: bold
+	color: lighten(#000, 60%)
+
+label
+	display: block
+
+.main
+	@extend .before-span-1
+	@extend .column-10
+	@extend .after-span-1
