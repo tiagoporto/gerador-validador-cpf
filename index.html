@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <!--
 	Author: Tiago Porto - http://www.tiagoporto.com
-	https://github.com/tiagoporto
+	http://tiagoporto.github.io/gerador-cpf/
 	Contact: me@tiagoporto.com
  -->
 <html lang="pt-br">
 	<head>
 		<meta charset="UTF-8">
-		<title>Gerador de CPF Válido</title>
+		<title>Gerador e validador de CPF</title>
 
 	</head>
 	<body>
@@ -15,6 +15,12 @@
 
 		<button id="btn-gerar-CPF">Gerar CPF</button>
 		<p id="CPF"></p>
+
+		<form action="" id="valida-CPF">
+			<input id="primeiros-digitos" type="text" pattern="([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])" maxlength="9">
+			<input id="digitos-verificadores" type="text" pattern="([0-9][0-9])" maxlength="2">
+			<button  type="submit">Validar CPF</button>
+		</form>
 		<script>
 			document.getElementById('btn-gerar-CPF').onclick = function geraCPF(){
 				var cpf = "";
@@ -58,7 +64,52 @@
 				cpf = cpf + "-" + verificador1 + verificador2;
 
 				document.getElementById('CPF').innerHTML = cpf;
-			};
+			}
+
+			document.getElementById('valida-CPF').onsubmit = function validaCPF(){
+				event.preventDefault() ;
+
+				var cpf = document.getElementById('primeiros-digitos').value,
+					verificadores = document.getElementById('digitos-verificadores').value,
+					soma1 = null,
+					soma2 = null;
+
+				//Calculando o primeiro dígito verificador
+				for (var i = 0; i < 9; ++i) {
+					soma1 += cpf.toString().charAt(i)*(10-i);
+				};
+
+				var verificador1 = soma1 % 11;
+
+				if (verificador1 < 2) {
+					verificador1 = 0;
+				}else {
+					verificador1 = 11 - verificador1;
+				}
+
+				cpf_verificador1 = cpf + "" + verificador1;
+
+				//Calculando o segundo dígito verificador
+				for (var i = 0; i < 10; ++i){
+					soma2 +=  cpf_verificador1.toString().charAt(i)*(11-i);
+				};
+
+				var verificador2 = soma2 % 11;
+
+				if (verificador2 < 2) {
+					verificador2 = 0;
+				}else {
+					verificador2 = 11 - verificador2;
+				}
+
+				if (verificadores.toString() == verificador1.toString() + verificador2.toString()) {
+					alert('bateu');
+				}else{
+					alert('não');
+				}
+
+			}
+
 		</script>
 	</body>
 </html>
