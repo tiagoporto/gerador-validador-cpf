@@ -213,3 +213,17 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+
+#################
+## NPM Dependencies
+#################
+
+node_modules/**/*
+
+
+#################
+## SASS Cache
+#################
+
+.sass-cache/**/*

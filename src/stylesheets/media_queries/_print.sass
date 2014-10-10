@@ -1,0 +1,103 @@
+/* Reset by Dani Guerrato - www.popupdesign.com.br and H5bp.com */
+*
+	background: transparent !important
+	color: #000 !important /* Black prints faster: h5bp.com/s */
+	text-shadow: none !important
+	filter: none !important
+	-ms-filter: none !important
+
+body
+	margin: 0
+	padding: 0
+	line-height: 1.4em
+	font: 12pt Georgia, "Times New Roman", Times, serif
+	color: #000
+
+@page
+	margin: 1.5cm
+
+.wrap
+	width: 100%
+	margin: 0
+	float: none !important
+
+.no-print, nav, footer, video, audio, object, embed
+	display: none
+
+.print
+	display: block
+
+.page-break
+	page-break-before: always
+
+a,
+a:visited
+	text-decoration: underline
+
+a:link:after,
+a:visited:after
+	content: " (" attr(href) ") "
+
+p
+	a
+		word-wrap: break-word
+
+q:after
+	content: " (" attr(cite) ")"
+
+
+/*
+ * Don't show links that are fragment identifiers,
+ * or use the `javascript:` pseudo protocol
+ */
+
+a:after,
+a[href^="javascript:"]:after,
+a[href^="#"]:after
+	content: ""
+
+a[href]:after
+	content: " (" attr(href) ")"
+
+
+abbr[title]:after
+	content: " (" attr(title) ")"
+
+aside
+	display: block
+	page-break-before: always
+
+h1
+	font-size: 24pt
+
+h2
+	font-size: 18pt
+	orphans: 3
+	widows: 3
+	page-break-after: avoid
+
+h3
+	font-size: 14pt
+	orphans: 3
+	widows: 3
+	page-break-after: avoid
+
+img
+	max-width: 100% !important
+
+p
+	font-size: 12pt
+	widows: 3
+	orphans: 3
+
+pre,
+blockquote
+	border: 1px solid #999
+	page-break-inside: avoid
+
+thead
+	display: table-header-group /* h5bp.com/t */
+
+tr,
+img
+	page-break-inside: avoid

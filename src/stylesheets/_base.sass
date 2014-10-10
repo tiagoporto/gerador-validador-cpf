@@ -1,0 +1,40 @@
+// ********** This is a mixin ***********
+=inline
+	display: inline
+	float: left
+
+// ******* This is a placeholder ********
+%inline
+	+inline //Include a mixin
+
+// ***** Using mixin & placeholder ******
+
+// .using-mixin
+// 		+inline
+// 		@extend %inline
+
+// Output
+// .using-mixin {
+// 		display: inline;
+// 		float: left;
+// }
+
+// .extend-placeholder
+// 		@extend %inline
+
+// Output
+// .extend-placeholder, .using-mixin {
+// 		display: inline;
+// 		float: left;
+// }
+
+//=======================================//
+
+*,
+*:before,
+*:after
+	+box-sizing(border)
+
+
+body
+	background: $bg-color

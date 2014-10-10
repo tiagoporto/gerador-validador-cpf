@@ -1,0 +1,15 @@
+@mixin font-face($name, $filename, $eot-id: $name, $weight: false, $style: false)
+	$iefont: unquote("#{$filename}.eot?#iefix")
+
+	@font-face
+		font-family: quote($name)
+
+		src: url('#{$font-path}#{$filename}.eot')
+
+		src: url('#{$font-path}#{$iefont}') format('embedded-opentype'), /*IE6-IE8*/ url('#{$font-path}#{$filename}.woff') format('woff'), /*Modern Browsers*/ url('#{$font-path}#{$filename}.ttf')  format('truetype'), /*Safari, Android, iOS*/ url('#{$font-path}#{$filename}.svg##{$eot-id}') format('svg') /*Legacy iOS*/
+
+		@if $weight
+			font-weight: $weight
+
+		@if $style
+			font-style: $style

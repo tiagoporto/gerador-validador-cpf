@@ -1,0 +1,22 @@
+{
+  "bitwise": true,
+  "browser": true,
+  "camelcase": true,
+  "curly": true,
+  "eqeqeq": true,
+  "esnext": true,
+  "globals": {
+	  "$": false,
+	  "jQuery": false,
+	  "outdatedBrowser": false,
+	  "ga": false
+   },
+  "immed": true,
+  "indent": 4,
+  "newcap": true,
+  "noarg": true,
+  "quotmark": "single",
+  "strict": false,
+  "undef": true,
+  "unused": "vars"
+}

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Gerador e validador de CPF</title>
+		<meta name="description" content="A front-end template that helps you build fast web apps.">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="shortcut icon" href="favicon.ico" />
+
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Gerador e validador de CPF">
+		<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+		<!-- Tile icon for Win8 -->
+		<!-- Please read: http://msdn.microsoft.com/en-us/library/ie/dn455106.aspx -->
+		<meta name="application-name" content="Gerador e validador de CPF"/>
+		<meta name="msapplication-TileColor" content="#EB4A4B"/>
+		<meta name="msapplication-square70x70logo" content="images/touch/tile.png"/>
+		<meta name="msapplication-square150x150logo" content="images/touch/tile.png"/>
+		<meta name="msapplication-wide310x150logo" content="images/touch/tile-wide.png"/>
+		<meta name="msapplication-square310x310logo" content="images/touch/tile.png"/>
+
+		<link rel="stylesheet" href="css/styles.css">
+
+	</head>
+	<body>
+		<!--
+			Author: Tiago Porto - http://www.tiagoporto.com
+			http://tiagoporto.github.io/gerador-cpf/
+			Contact: me@tiagoporto.com
+		 -->
+		<h1>Gerador e validador de CPF</h1>
+
+		<a href="https://github.com/tiagoporto/gerador-cpf"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+
+
+		<button id="btn-gerar-CPF">Gerar CPF</button>
+		<p id="CPF"></p>
+
+		<form action="#" id="valida-CPF">
+			<input id="primeiros-digitos" type="text" pattern="([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])" maxlength="9">
+			<input id="digitos-verificadores" type="text" pattern="([0-9][0-9])" maxlength="2">
+			<button  type="submit">Validar CPF</button>
+		</form>
+
+
+
+
+
+
+		<script src="js/styles.js"></script>
+	</body>
+</html>

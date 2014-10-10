@@ -1,0 +1,276 @@
+//=font-feature-setings($feature)
+	// $max: length($feature)
+	// $features: ''
+
+	// @each
+
+	// @for $i from 1 through $max
+	// 	$features: #{$features + nth($feature, $i)}
+
+	// 	@if $i < $max
+	// 		$features: #{"\"" + $features + "\"" + ", "}
+	// 	@if $i == $max
+	// 		//$features: #{"\"" + $features + "\""}
+
+	// -moz-font-feature-settings: $features
+	// -moz-font-feature-settings: "onum=1, frac=1, zero=1, nalt=1, liga=1, dlig=1, hlig=1, clig=1"
+	// -ms-font-feature-settings: $features
+	// -o-font-feature-settings: $features
+	// -webkit-font-feature-settings: $features
+	// font-feature-settings: $features
+
+
+// font-feature-settings mixin
+// Created by Ray Brown
+// https://github.com/bitmanic/font-feature-settings
+
+=font-feature-settings($feature-list: false)
+	// Only proceed if a list of arguments was passed
+	@if $feature-list
+
+		// Create an empty list for the standard syntax
+		$standard: ()
+
+		// Create an empty list for the old Mozilla syntax
+		$old-moz: ()
+
+		// Add each listed feature to the standard and old Mozilla values
+		@each $feature in $feature-list
+			$standard: append( $standard, "#{$feature}", comma )
+			$old-moz: append( $old-moz, #{$feature}=1, comma )
+
+		// Finally, print out the prefixed and non-prefixed
+		// code for all of the listed features
+		-moz-font-feature-settings: $standard
+		-moz-font-feature-settings: "#{$old-moz}"
+		-ms-font-feature-settings: $standard
+		-o-font-feature-settings: $standard
+		-webkit-font-feature-settings: $standard
+		font-feature-settings: $standard
+
+// http://clagnut.com/sandbox/css3/
+// List of all OpenType Features
+
+// aalt ->	Access All Alternates
+// abvf ->	Above-base Forms
+// abvm ->	Above-base Mark Positioning
+// abvs ->	Above-base Substitutions
+// afrc ->	Alternative Fractions
+// akhn ->	Akhands
+// blwf ->	Below-base Forms
+// blwm ->	Below-base Mark Positioning
+// blws ->	Below-base Substitutions
+// calt ->	Contextual Alternates
+// case ->	Case-Sensitive Forms
+// ccmp ->	Glyph Composition / Decomposition
+// cfar ->	Conjunct Form After Ro
+// cjct ->	Conjunct Forms
+// clig ->	Contextual Ligatures
+// cpct ->	Centered CJK Punctuation
+// cpsp ->	Capital Spacing
+// cswh ->	Contextual Swash
+// curs ->	Cursive Positioning
+// cv01-cv99 ->	Character Variants
+// c2pc ->	Petite Capitals From Capitals
+// c2sc ->	Small Capitals From Capitals
+// dist ->	Distances
+// dlig ->	Discretionary Ligatures
+// dnom ->	Denominators
+// expt ->	Expert Forms
+// falt ->	Final Glyph on Line Alternates
+// fin2 ->	Terminal Forms #2
+// fin3 ->	Terminal Forms #3
+// fina ->	Terminal Forms
+// frac ->	Fractions
+// fwid ->	Full Widths
+// half ->	Half Forms
+// haln ->	Halant Forms
+// halt ->	Alternate Half Widths
+// hist ->	Historical Forms
+// hkna ->	Horizontal Kana Alternates
+// hlig ->	Historical Ligatures
+// hngl ->	Hangul
+// hojo ->	Hojo Kanji Forms (JIS X 0212-1990 Kanji Forms)
+// hwid ->	Half Widths
+// init ->	Initial Forms
+// isol ->	Isolated Forms
+// ital ->	Italics
+// jalt ->	Justification Alternates
+// jp78 ->	JIS78 Forms
+// jp83 ->	JIS83 Forms
+// jp90 ->	JIS90 Forms
+// jp04 ->	JIS2004 Forms
+// kern ->	Kerning
+// lfbd ->	Left Bounds
+// liga ->	Standard Ligatures
+// ljmo ->	Leading Jamo Forms
+// lnum ->	Lining Figures
+// locl ->	Localized Forms
+// ltra ->	Left-to-right alternates
+// ltrm ->	Left-to-right mirrored forms
+// mark ->	Mark Positioning
+// med2 ->	Medial Forms #2
+// medi ->	Medial Forms
+// mgrk ->	Mathematical Greek
+// mkmk ->	Mark to Mark Positioning
+// mset ->	Mark Positioning via Substitution
+// nalt ->	Alternate Annotation Forms
+// nlck ->	NLC Kanji Forms
+// nukt ->	Nukta Forms
+// numr ->	Numerators
+// onum ->	Oldstyle Figures
+// opbd ->	Optical Bounds
+// ordn ->	Ordinals
+// ornm ->	Ornaments
+// palt ->	Proportional Alternate Widths
+// pcap ->	Petite Capitals
+// pkna ->	Proportional Kana
+// pnum ->	Proportional Figures
+// pref ->	Pre-Base Forms
+// pres ->	Pre-base Substitutions
+// pstf ->	Post-base Forms
+// psts ->	Post-base Substitutions
+// pwid ->	Proportional Widths
+// qwid ->	Quarter Widths
+// rand ->	Randomize
+// rkrf ->	Rakar Forms
+// rlig ->	Required Ligatures
+// rphf ->	Reph Forms
+// rtbd ->	Right Bounds
+// rtla ->	Right-to-left alternates
+// rtlm ->	Right-to-left mirrored forms
+// ruby ->	Ruby Notation Forms
+// salt ->	Stylistic Alternates
+// sinf ->	Scientific Inferiors
+// size ->	Optical size
+// smcp ->	Small Capitals
+// smpl ->	Simplified Forms
+// ss01 ->	Stylistic Set 1
+// ss02 ->	Stylistic Set 2
+// ss03 ->	Stylistic Set 3
+// ss04 ->	Stylistic Set 4
+// ss05 ->	Stylistic Set 5
+// ss06 ->	Stylistic Set 6
+// ss07 ->	Stylistic Set 7
+// ss08 ->	Stylistic Set 8
+// ss09 ->	Stylistic Set 9
+// ss10 ->	Stylistic Set 10
+// ss11 ->	Stylistic Set 11
+// ss12 ->	Stylistic Set 12
+// ss13 ->	Stylistic Set 13
+// ss14 ->	Stylistic Set 14
+// ss15 ->	Stylistic Set 15
+// ss16 ->	Stylistic Set 16
+// ss17 ->	Stylistic Set 17
+// ss18 ->	Stylistic Set 18
+// ss19 ->	Stylistic Set 19
+// ss20 ->	Stylistic Set 20
+// subs ->	Subscript
+// sups ->	Superscript
+// swsh ->	Swash
+// titl ->	Titling
+// tjmo ->	Trailing Jamo Forms
+// tnam ->	Traditional Name Forms
+// tnum ->	Tabular Figures
+// trad ->	Traditional Forms
+// twid ->	Third Widths
+// unic ->	Unicase
+// valt ->	Alternate Vertical Metrics
+// vatu ->	Vattu Variants
+// vert ->	Vertical Writing
+// vhal ->	Alternate Vertical Half Metrics
+// vjmo ->	Vowel Jamo Forms
+// vkna ->	Vertical Kana Alternates
+// vkrn ->	Vertical Kerning
+// vpal ->	Proportional Alternate Vertical Metrics
+// vrt2 ->	Vertical Alternates and Rotation
+// zero ->	Slashed Zero
+
+
+// liga - standard ligatures.
+// On by default.
+// Avoid awkward collisions and improve spacing of some combinations by drawing glyphs so as to combine, particularly combinations such as “fi” but can be almost anything. A few basic ligatures are present in many fonts (typically fi and fl, often also ff, ffi, ffl, occasionally more).
+
+// kern - kerning.
+// On by default.
+// Improve letter spacing of awkward combinations. Present in many fonts.
+
+// clig - contextual ligatures.
+// On by default.
+// Ligatures that only occur in the context of specific other letters nearby; mostly used for script fonts.
+
+// calt - contextual alternates.
+// On by default.
+// Alternate shape for a letter only used in relation to specific other adjacent or nearby letters.
+
+// locl - localized forms.
+// On by default.
+// Adjusts letter shapes or spacing based on language selection. For example, a font might use steeper acute accents for Polish, or more spacing around the apostrophe for French.
+
+// dlig - discretionary ligatures.
+// Unusual ligatures that the type designer did not want to have on by default. Use for special effect only.
+
+// hlig - historical ligatures.
+// Historical ligatures such as ct and st, that are not on by default. Again, only for special cases.
+
+// pnum - proportional numbers.
+// Recommend on unless you need numbers to line up from one line to the next (like in a table, or perhaps a menu). Opposite of tnum. Common in featureful fonts.
+
+// tnum - tabular numbers.
+// Numbers that are all the same width, like in a typewriter font. Opposite of pnum. Most fonts have numbers like this by default. Common in featureful fonts.
+
+// onum - oldstyle numbers.
+// Numbers of varying heights, like lowercase letters. Recommend using these in body text.. Opposite of lnum. Common in featureful fonts.
+
+// lnum - lining numbers.
+// Numbers that are all the same height and size. Most fonts have these as their default numbers (notable exception: Georgia). Opposite of onum. Common in featureful fonts.
+
+// sups - superscript.
+// Real designed superscript numbers, instead of shrunken & repositioned regular numbers. Common in featureful fonts.
+
+// subs - subscript.
+// Real designed subscript numbers, instead of shrunken and repositioned regular numbers. Not the same as, and interacts badly with, HTML superscript. A few early OpenType fonts positioned these at the baseline instead of below, oops. Common in featureful fonts.
+
+// sinf - scientific inferiors.
+// Another kind of subscript, invented because some folks thought that subscript should be on the baseline, but something below the baseline was needed. New fonts: use subs.
+
+// ordn - ordinals.
+// Specially sized and positioned letters to go with numbers, as in 1st, 2nd, 3rd, 4th.
+
+// zero - slashed zero.
+// Useful in code listings or other places where disambiguation is key.
+
+// frac - fractions.
+// Either pre-built, or sometimes even arbitrary fractions composed on the fly (such as 31/47). Common in featureful fonts.
+
+// c2sc - caps to small caps. Real designed small caps, rather than shrunken caps. Use this for acronyms and the like (e.g. NATO). Common in featureful fonts. Generally applied in addition to smcp
+
+// smcp - lowercase to small caps. Like c2sc, but use this for cases where the underlying text is mixed-case, such as the intro to an article. Common in featureful fonts.
+
+// c2pc - caps to petite caps. Like small caps, only smaller (typically x-height, while regular small caps are slightly larger).
+
+// pcap - petite caps from lowercase. Like small caps, only smaller (typically x-height, while regular small caps are slightly larger). A rarely-seen feature.
+
+// case - uppercase variants.
+// Use with ‘cpsp’ whenever you have all-caps text, to make punctuation and other characters adjust accordingly.
+
+// cpsp - cap spacing.
+// Use with ‘case’ whenever you have all-caps text, to increase letter spacing slightly (amount decided by type designer).
+
+// swsh - swashes.
+// Turn on to get swash letters, usually along with ‘cswh’ below.
+
+// cswh - contextual swashes.
+// Contextual swash letters; turn this on at the same time as swash.
+
+// hist - historical forms.
+// Replaces some letters with more archaic forms. Sometimes used to get the “long s” that looks like an f.
+
+// titl - titling alternates.
+// Sometimes a decorative form intended only for the first letter of a text; sometimes specially-designed all-caps letters intended only for big headlines and titles. Rarely seen.
+
+// ss01 - Stylistic Set 1.
+// Enables a stylistically compatible group of alternate glyphs; what exactly this does is specific to the font family in question. For example, in Hypatia Sans it lops off vestigial serifs, but in Poetica it enables the first of numerous levels of swashiness.
+
+// ss02 - Stylistic Set 2.
+// Same idea as ss01 above, but some different effect. NOTE: There are further stylistic set features ss03–ss20.

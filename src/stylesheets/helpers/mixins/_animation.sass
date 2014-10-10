@@ -1,0 +1,47 @@
+=animation($name, $duration, $timing-function, $delay, $iteration-count, $direction, $fill-mode, $play-state )
+	-webkit-animation-name: $name
+	-o-animation-name: $name
+	animation-name: $name
+
+	-webkit-animation-duration: $duration
+	-o-animation-duration: $duration
+	animation-duration: $duration
+
+	-webkit-animation-timing-function: $timing-function
+	-o-animation-timing-function: $timing-function
+	animation-timing-function: $timing-function
+
+	-webkit-animation-delay: $delay
+	-o-animation-delay: $delay
+	animation-delay: $delay
+
+	-webkit-animation-iteration-count: $iteration-count
+	-o-animation-iteration-count: $iteration-count
+	animation-iteration-count: $iteration-count
+
+	-webkit-animation-direction: $direction
+	-o-animation-direction: $direction
+	animation-direction: $direction
+
+	-webkit-animation-fill-mode: $fill-mode
+	-o-animation-fill-mode: $fill-mode
+	animation-fill-mode: $fill-mode
+
+	-webkit-animation-play-state: $play-state
+	-o-animation-play-state: $play-state
+	animation-play-state: $play-state
+
+// @mixin animation($animate)
+// 	$max: length($animate)
+// 	$animations: ''
+
+// 	@for $i from 1 through $max
+// 		$animations: #{$animations + nth($animate, $i)}
+
+// 		@if $i < $max
+// 			$animations: #{$animations + " "}
+
+// 	-webkit-animation: $animations
+// 	-moz-animation: $animations
+// 	-o-animation: $animations
+// 	animation: $animations

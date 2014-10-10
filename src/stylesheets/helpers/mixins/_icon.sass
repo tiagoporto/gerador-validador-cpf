@@ -1,0 +1,19 @@
+=icon($icon-name, $class-name:icon)
+	.#{$class-name}
+		position: relative
+		text-indent: -9999px
+		height: image-height("icons/#{$icon-name}.png")
+		width: image-width("icons/#{$icon-name}.png")
+
+		&:before
+			content: ""
+			height: image-height("icons/#{$icon-name}.png")
+			width: image-width("icons/#{$icon-name}.png")
+			position: absolute
+			left: 0
+			top: 0
+
+=icon-before($icon-name, $class-name:icon)
+	.#{$class-name}-#{$icon-name}
+		&:before
+			+icons-sprite($icon-name)
