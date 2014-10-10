@@ -1,5 +1,7 @@
-# Simples Gerador de CPF válido
+# Ferramenta para gerador e validar de CPFs
 
 Gerador de CPFs válidos
 
-Veja o [demo](http://tiagoporto.github.io/gerador-cpf/).
+Validador de CPFs
+
+Veja o [demo](http://tiagoporto.github.io/gerador-validador-cpf/).
