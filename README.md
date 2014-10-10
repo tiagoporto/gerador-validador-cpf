@@ -1,4 +1,4 @@
-# Ferramenta para gerador e validar de CPFs
+# Ferramenta para gerar e validar CPFs
 
 Gerador de CPFs válidos
 
