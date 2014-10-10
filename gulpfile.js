@@ -239,9 +239,9 @@ gulp.task('copy', function () {
 						.pipe(minifyHTML({spare:true, empty: true}))
 						.pipe(gulp.dest(basePaths.build));
 
-	// Copy script And reaame
-	   var script =	gulp.src(paths.scripts.dest + 'main.min.js')
-						.pipe(rename('main.js'))
+	// Copy script And rename
+	   var script =	gulp.src(paths.scripts.dest + 'styles.min.js')
+						.pipe(rename('styles.js'))
 						.pipe(gulp.dest(paths.scripts.build));
 
 	 var AllFiles =	gulp.src([
