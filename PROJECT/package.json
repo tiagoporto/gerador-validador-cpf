@@ -8,7 +8,7 @@
     "sass mixins",
     "html5boilerplate"
   ],
-  "version": "2.0.0beta",
+  "version": "2.0.3beta",
   "homepage": "http://tiagoporto.github.io/my-gulp-template/",
   "author": {
     "name": "Tiago Porto",
@@ -26,7 +26,7 @@
     "gulp-clean": "^0.3.1",
     "gulp-concat": "^2.4.1",
     "gulp-csso": "^0.2.9",
-    "gulp-imagemin": "^1.0.1",
+    "gulp-imagemin": "^1.2.1",
     "gulp-jshint": "^1.8.5",
     "gulp-minify-html": "^0.1.5",
     "gulp-notify": "^1.8.0",

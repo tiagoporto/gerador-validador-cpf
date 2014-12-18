@@ -1,6 +1,6 @@
 /*
 	My Gulp.js Template
-	Version: 2.0.0beta
+	Version: 2.0.3beta
 	Author: Tiago Porto - http://www.tiagoporto.com
 	https://github.com/tiagoporto
 	Contact: me@tiagoporto.com
@@ -32,7 +32,7 @@ var		   gulp = require('gulp'),
 	basePaths = {
 		 src: 'src/',
 		dest: 'public/',
-		build: 'build/'
+		build: './../'
 	},
 
 	assetsFolder = {
@@ -94,7 +94,8 @@ gulp.task('images', function() {
 				paths.images.src + '**/*.{png,jpg,gif,svg}',
 				'!' + paths.sprite.src + '**/*'
 			])
-			.pipe(cache(imagemin({optimizationLevel: 5, progressive: true})))
+			.pipe(cache('imagemin'))
+			.pipe(imagemin({optimizationLevel: 5, progressive: true}))
 			.pipe(gulp.dest(paths.images.dest))
 			.pipe(notify({message: 'Images task complete', onLast: true}));
 });
@@ -116,6 +117,23 @@ gulp.task('sprite', function () {
 		.pipe(gulp.dest(paths.styles.src));
 
 	return spriteData;
+});
+
+// Concatenate Sass Mixins
+gulp.task('sass-mixins', function() {
+	return	gulp.src(paths.styles.src + 'helpers/mixins/*.sass')
+				.pipe(concat('_mixins.sass'))
+				.pipe(gulp.dest(paths.styles.src + 'helpers'))
+				.pipe(notify({message: 'Sass-mixins task complete', onLast: true}));
+});
+
+// Compile Sass Styles
+gulp.task('styles', function() {
+	return	gulp.src(paths.styles.src + '*.{sass,scss}', { base: paths.styles.src})
+				.pipe(sass({style: 'compressed', sourcemap: true, sourcemapPath: '../stylesheets'}))
+				.on('error', function (err) { console.log(err.message); })
+				.pipe(gulp.dest(paths.styles.dest))
+				.pipe(notify({message: 'Styles task complete <%= options.message %>'}));
 });
 
 // Execute concat-scripts, min-angular-scripts, concat-all-min-scripts and clean-scripts tasks
@@ -180,7 +198,7 @@ gulp.task('unify-scripts',  function() {
 			paths.scripts.dest + 'angular.js',
 			paths.scripts.dest + 'main-scripts.js'
 		])
-		.pipe(concat('styles.js'))
+		.pipe(concat('scripts.js'))
 		.pipe(gulp.dest(paths.scripts.dest));
 
 	var minify = gulp.src([
@@ -188,7 +206,7 @@ gulp.task('unify-scripts',  function() {
 			paths.scripts.dest + 'angular.min.js',
 			paths.scripts.dest + 'main-scripts.min.js'
 		])
-		.pipe(concat('styles.min.js'))
+		.pipe(concat('scripts.min.js'))
 		.pipe(gulp.dest(paths.scripts.dest));
 
 	return merge(unminify, minify);
@@ -197,7 +215,6 @@ gulp.task('unify-scripts',  function() {
 //Clean unused Scripts
 gulp.task('clean-scripts', function(){
 	return	gulp.src([
-				paths.scripts.dest + 'main-scripts.js',
 				paths.scripts.dest + 'main-scripts.min.js',
 				paths.scripts.dest + 'angular.js',
 				paths.scripts.dest + 'angular.min.js'
@@ -206,50 +223,38 @@ gulp.task('clean-scripts', function(){
 			.pipe(notify({message: 'Scripts task complete', onLast: true}));
 });
 
-// Concatenate Sass Mixins
-gulp.task('sass-mixins', function() {
-	return	gulp.src(paths.styles.src + 'helpers/mixins/*.sass')
-				.pipe(concat('_mixins.sass'))
-				.pipe(gulp.dest(paths.styles.src + 'helpers'))
-				.pipe(notify({message: 'Sass-mixins task complete', onLast: true}));
-});
-
-// Compile My Sass Styles
-gulp.task('styles', function() {
-	return	gulp.src(paths.styles.src + '*.{sass,scss}', { base: paths.styles.src})
-				.pipe(sass({style: 'expanded', sourcemap: true, sourcemapPath: '../stylesheets'}))
-				.on('error', function (err) { console.log(err.message); })
-				.pipe(gulp.dest(paths.styles.dest))
-				.pipe(notify({message: 'Styles task complete <%= options.message %>'}));
-});
-
-// Copy All Files to Build
+// Copy Files to Build
 gulp.task('copy', function () {
-	// Minify and copy css
+
+	// Minify and Copy css
 		 var css  =	gulp.src(paths.styles.dest + '*.css')
 						.pipe(csso())
 						.pipe(gulp.dest(paths.styles.build));
 
-	// Copy Web Fonts To Dist
+	// Copy Web Fonts
 		var fonts =	gulp.src(paths.fonts.src + '**/*')
 						.pipe(gulp.dest(paths.fonts.build));
 
-	// Minify and Copy HTML and PHP
+	// Minify and Copy HTML
 		 var html =	gulp.src(basePaths.dest + '**/*.{html,php}')
 						.pipe(minifyHTML({spare:true, empty: true}))
 						.pipe(gulp.dest(basePaths.build));
 
-	// Copy script And rename
-	   var script =	gulp.src(paths.scripts.dest + 'styles.min.js')
-						.pipe(rename('styles.js'))
+	// Copy Scripts
+	   var script =	gulp.src([
+	   						paths.scripts.dest + 'scripts.js',
+	   						paths.scripts.dest + 'scripts.min.js'
+	   					])
 						.pipe(gulp.dest(paths.scripts.build));
 
+	// Copy All Other files except HTML and PHP Files
 	 var AllFiles =	gulp.src([
 							basePaths.dest + '*',
-							'!' + basePaths.dest + '**/*.html'
+							'!' + basePaths.dest + '**/*.{html,php}'
 						], {dot: true})
 						.pipe(gulp.dest(basePaths.build));
 
+	// Copy Images
 	   var images =	gulp.src(paths.images.dest + '**/*')
 						.pipe(gulp.dest(paths.images.build));
 });
@@ -259,7 +264,6 @@ gulp.task('copy', function () {
 // Clean Directories
 gulp.task('clean', function() {
 	return	gulp.src([
-					basePaths.build,
 					paths.styles.dest,
 					paths.scripts.dest,
 					paths.images.dest

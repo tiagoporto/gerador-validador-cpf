@@ -1,4 +1,10 @@
 {
+  // My Gulp.js Template
+  // Version: 2.0.3beta
+  // Author: Tiago Porto - http://www.tiagoporto.com
+  // https://github.com/tiagoporto
+  // Contact: me@tiagoporto.com
+
   "bitwise": true,
   "browser": true,
   "camelcase": true,
