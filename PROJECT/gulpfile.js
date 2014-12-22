@@ -1,6 +1,4 @@
 /*
-	My Gulp.js Template
-	Version: 2.0.3beta
 	Author: Tiago Porto - http://www.tiagoporto.com
 	https://github.com/tiagoporto
 	Contact: me@tiagoporto.com
@@ -168,7 +166,7 @@ gulp.task('main-scripts', function() {
 						paths.scripts.src + 'jquery/onread/open_onread.js',
 						paths.scripts.src + 'jquery/*',
 						paths.scripts.src + 'jquery/onread/close_onread.js',
-						paths.scripts.src + '*',
+						paths.scripts.src + 'demo.js',
 						paths.scripts.src + 'settings/google_analytics.js'
 					])
 					.pipe(concat('main-scripts.js'))
@@ -209,7 +207,18 @@ gulp.task('unify-scripts',  function() {
 		.pipe(concat('scripts.min.js'))
 		.pipe(gulp.dest(paths.scripts.dest));
 
-	return merge(unminify, minify);
+	var cpf = gulp.src(paths.scripts.src + 'CPF.js')
+					.pipe(jshint())
+					.pipe(jshint.reporter('jshint-stylish'))
+					.pipe(rename('CPF-1.0.0.js'))
+					.pipe(gulp.dest(paths.scripts.dest));
+
+	var cpfMinified = gulp.src(paths.scripts.src + 'CPF.js')
+						.pipe(uglify({preserveComments: 'some'}))
+						.pipe(rename('CPF-1.0.0.min.js'))
+						.pipe(gulp.dest(paths.scripts.dest));
+
+	return merge(unminify, minify, cpf, cpfMinified);
 });
 
 //Clean unused Scripts
@@ -242,7 +251,8 @@ gulp.task('copy', function () {
 
 	// Copy Scripts
 	   var script =	gulp.src([
-	   						paths.scripts.dest + 'scripts.js',
+	   						paths.scripts.dest + 'CPF-1.0.0.js',
+	   						paths.scripts.dest + 'CPF-1.0.0.min.js',
 	   						paths.scripts.dest + 'scripts.min.js'
 	   					])
 						.pipe(gulp.dest(paths.scripts.build));

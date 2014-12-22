@@ -13,6 +13,7 @@
   "esnext": true,
   "globals": {
 	  "$": false,
+	  "console": false,
 	  "jQuery": false,
 	  "outdatedBrowser": false,
 	  "ga": false
