@@ -6,6 +6,10 @@
 	Contact: me@tiagoporto.com
 */
 
+
+/**
+ * [CPF description]
+ */
 function CPF(){
 	'user_strict';
 
