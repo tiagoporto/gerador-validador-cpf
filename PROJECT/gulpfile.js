@@ -128,7 +128,7 @@ gulp.task('sass-mixins', function() {
 // Compile Sass Styles
 gulp.task('styles', function() {
 	return	gulp.src(paths.styles.src + '*.{sass,scss}', { base: paths.styles.src})
-				.pipe(sass({style: 'compressed', sourcemap: true, sourcemapPath: '../stylesheets'}))
+				.pipe(sass({style: 'expanded', sourcemap: true, sourcemapPath: '../stylesheets'}))
 				.on('error', function (err) { console.log(err.message); })
 				.pipe(gulp.dest(paths.styles.dest))
 				.pipe(notify({message: 'Styles task complete <%= options.message %>'}));
