@@ -2,15 +2,24 @@
 	Gerador e Validador de CPF
 	Version: 1.0.0
 	Author: Tiago Porto - http://www.tiagoporto.com
-	https://github.com/tiagoporto/accessibility-buttons
+	https://github.com/tiagoporto/gerador-validador-cpf
 	Contact: me@tiagoporto.com
 */
 
+/**
+ * [CPF Class]
+ *
+ * [gera function]
+ * @return {[type]} [description]
+ *
+ * [valida function]
+ * @param  {[type]} cpf [description]
+ * @return {[type]}     [description]
+ */
 function CPF(){
 	'user_strict';
-
-	var mensagemInvalido = 'CEP Inválido',
-		mensagemValido = 'CEP Válido';
+	var mensagemInvalido = 'CPF Inválido',
+		mensagemValido = 'CPF Válido';
 
 	function calculoVerificador1(noveDigitos){
 		var soma = null;
@@ -47,7 +56,6 @@ function CPF(){
 
 		return verificador2;
 	}
-
 	this.gera = function (){
 		var noveDigitos = '';
 
@@ -62,7 +70,6 @@ function CPF(){
 
 		return cpf;
 	};
-
 	this.valida = function (cpf){
 		var clearCPF = cpf.replace(/\D/g,''),
 			noveDigitos = clearCPF.substring(0,9),
