@@ -1,22 +1,21 @@
 {
   // My Gulp.js Template
-  // Version: 2.0.3beta
+  // Version: 3.0.0beta
   // Author: Tiago Porto - http://www.tiagoporto.com
-  // https://github.com/tiagoporto
+  // https://github.com/tiagoporto/my-gulp-template
   // Contact: me@tiagoporto.com
 
   "bitwise": true,
   "browser": true,
-  "camelcase": true,
   "curly": true,
   "eqeqeq": true,
   "esnext": true,
   "globals": {
 	  "$": false,
 	  "console": false,
+	  "ga": false,
 	  "jQuery": false,
-	  "outdatedBrowser": false,
-	  "ga": false
+	  "outdatedBrowser": false
    },
   "immed": true,
   "indent": 4,

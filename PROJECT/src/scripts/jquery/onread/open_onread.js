@@ -1,2 +1,2 @@
-//Main jQuery Scripts
+//jQuery Scripts
 $(document).ready(function(){

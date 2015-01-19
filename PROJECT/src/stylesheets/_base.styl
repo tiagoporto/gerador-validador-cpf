@@ -1,0 +1,109 @@
+//=============== Helpers ===============//
+// *********** ESCAPE VAR ***************
+// {$icon}
+
+// ********** COLOR FUNCTIONS ***********
+// darken(#D62828, 50%) Darken the given color by amount.
+// lighten(#2c2c2c, 10%) Lighten the given color by amount.
+// saturate(#00c, 20%) Saturate the given color by amount.
+// desaturate(#f00, 20%) Desaturate the given color by amount.
+// tint(#fd0cc7, 10%) Mix the given color with white.
+// shade(#fd0cc7, 10%) Mix the given color with black.
+// rgba(#ffcc00, .7) Return RGBA from the r,g,b,a channels
+
+// ********** This is a mixin ***********
+//	inline()
+//		display: inline
+//		float: left
+
+// ******* This is a placeholder ********
+//	$inline
+//		inline() //Include a mixin
+
+// ***** Using mixin & placeholder ******
+//
+//	.using-mixin-1
+//		inline()
+//
+//	.using-mixin-2
+//		inline()
+//
+// 	Output
+//	.using-mixin-1 {
+//		display: inline;
+//		float: left;
+//	}
+
+//	.using-mixin-2 {
+//		display: inline;
+//		float: left;
+//	}
+//
+//	.extend-placeholder-1
+//		@extend $inline
+//
+//	.extend-placeholder-2
+//		@extend $inline
+//
+
+// Output
+//	.extend-placeholder-1,
+//	.extend-placeholder-2 {
+//		display: inline;
+//		float: left;
+//	}
+//=========== End of Helpers ===========//
+
+// Box model reset
+*,
+*:before,
+*:after
+	box-sizing: border-box
+
+html
+	height: 100%
+
+body
+	body-typography()
+	background: linear-gradient(to bottom, $bg-color, darken($bg-color, 12%))
+	background-attachment: fixed
+
+h1
+	h1-typography()
+
+h2
+	h2-typography()
+
+h3
+	h3-typography()
+
+h4
+	h4-typography()
+
+h5
+	h5-typography()
+
+h6
+	h6-typography()
+p
+	p-typography()
+
+button
+	background: darken($bg-color, 60%)
+	border: none
+	padding: 10px
+	border-radius: 5px
+
+input
+	padding: 5px
+	border-radius: 5px
+	border: none
+	font-weight: bold
+	color: lighten(#000, 60%)
+
+label
+	display: block
+
+.main
+	width: (100% / 12) * 10
+	margin 80px (100% / 12) 0
