@@ -593,12 +593,12 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -moz-font-feature-settings: "frac", "liga";
-  -moz-font-feature-settings: "frac=1, liga=1";
-  -ms-font-feature-settings: "frac", "liga";
-  -o-font-feature-settings: "frac", "liga";
-  -webkit-font-feature-settings: "frac", "liga";
-  font-feature-settings: "frac", "liga";
+  -moz-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -ms-font-feature-settings: "liga";
+  -o-font-feature-settings: "liga";
+  -webkit-font-feature-settings: "liga";
+  font-feature-settings: "liga";
 }
 
 .glyphicons {
