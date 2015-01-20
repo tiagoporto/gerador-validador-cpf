@@ -239,7 +239,9 @@ gulp.task('copy', function () {
 					.pipe(gulpif('*.css', csso()))
 					.pipe(assets.restore())
 					.pipe(useref())
-					.pipe(minifyHTML({spare:true, empty: true}))
+					.pipe(gulpif('*.html', minifyHTML({spare:true, empty: true})))
+					.pipe(gulpif('*.php', minifyHTML({spare:true, empty: true})))
+					// .pipe(minifyHTML({spare:true, empty: true}))
 					.pipe(gulp.dest(basePaths.build));
 
 	// Copy All Other files except HTML, PHP, CSS e JS Files
