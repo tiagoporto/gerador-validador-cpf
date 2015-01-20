@@ -7,14 +7,15 @@
 */
 
 /**
- * [CPF Class]
+ * CPF Class
  *
- * [gera function]
- * @return {[type]} [description]
+ * gera function
+ * @return {string} CPF válido no formato xxxxxxxxx-xx
  *
- * [valida function]
- * @param  {[type]} cpf [description]
- * @return {[type]}     [description]
+ * valida function
+ * @param  {string} cpf Recebe String com dígitos de CPF, se a string
+ *                      tiver caracteres não numéricos eles serão removido
+ * @return {string}     Mensagem de válido ou inválido.
  */
 function CPF(){
 	'user_strict';

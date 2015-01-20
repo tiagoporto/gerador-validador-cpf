@@ -215,14 +215,15 @@ gulp.task('scripts', function () {
 						paths.scripts.src + 'jquery/_*.js',
 						paths.scripts.src + '/_*.js'
 					])
+					.pipe(plumber())
 					.pipe(jshint())
 					.pipe(jshint.reporter('jshint-stylish'))
 					.pipe(rename(function(path){
 						path.basename = path.basename.substring(1)
 					}))
 					.pipe(gulp.dest(paths.scripts.dest))
-					.pipe(uglify())
-					.pipe(rename({suffix: ".min"}))
+					.pipe(rename({suffix: '.min'}))
+					.pipe(uglify({preserveComments: 'some'}))
 					.pipe(gulp.dest(paths.scripts.dest));
 
 	return merge(concatenate, copy);
@@ -241,7 +242,6 @@ gulp.task('copy', function () {
 					.pipe(useref())
 					.pipe(gulpif('*.html', minifyHTML({spare:true, empty: true})))
 					.pipe(gulpif('*.php', minifyHTML({spare:true, empty: true})))
-					// .pipe(minifyHTML({spare:true, empty: true}))
 					.pipe(gulp.dest(basePaths.build));
 
 	// Copy All Other files except HTML, PHP, CSS e JS Files
