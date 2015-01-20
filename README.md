@@ -1,12 +1,12 @@
-# Gerador e validador de CPFs
+# Gerador e Validador de CPFs
 
-Veja o [demo](http://tiagoporto.github.io/gerador-validador-cpf/).
+A ferramenta pode ser acessada pelo link: [http://tiagoporto.github.io/gerador-validador-cpf/](http://tiagoporto.github.io/gerador-validador-cpf/).
 
-Esta ferramenta foi desenvolvida para auxiliar desenvolvedores em testes de software, e não tem qualquer vínculo com a Receita Federal do Brasil.
+Este foi um dos meus primeiros exercícios aprendendo a programar, depois de um bom tempo resolvi converter o código para JS e melhora-lo. Disponibilizo está ferramenta para auxiliar outros desenvolvedores em testes de software, e não tem qualquer vínculo com a Receita Federal do Brasil.
 
 A ferramenta utiliza o seguinte [algoritmo](http://www.geradorcpf.com/algoritmo_do_cpf.htm) para verificação e geração do CPF.
 
-Um CPF declarado como válido por essa ferramenta não significa que ele exista no Cadastro Nacional de Pessoas Físicas nem que seja um número ativo ou com situação cadastral regular. Para conferir tais dados, consulte o site oficial da [Secretaria da Receita Federal do Brasil](http://www.receita.fazenda.gov.br/aplicacoes/atcta/cpf/consultapublica.asp).
+Um CPF declarado como válido por essa ferramenta não significa que ele exista no Cadastro Nacional de Pessoas Físicas, nem que seja um número ativo ou com situação cadastral regular. Para conferir tais dados, consulte o site oficial da [Secretaria da Receita Federal do Brasil](http://www.receita.fazenda.gov.br/aplicacoes/atcta/cpf/consultapublica.asp).
 
 O número CPF guarda o estado de onde foi emitido, esse número corresponde ao último algarismo anterior aos dois dígitos verificadores.
 
@@ -51,7 +51,7 @@ Veja abaixo os códigos correspondentes aos estados brasileiros:
 * Inclua o arquivo no rodapé da sua página, como no exemplo.
 
     ```html
-        <script src="js/CPF-1.0.0.js"></script>
+    <script src="js/CPF-1.0.0.js"></script>
     ```
 
 * No seu arquivo de JS, instancie o objeto CPF;
