@@ -91,6 +91,6 @@ Veja abaixo os códigos correspondentes aos estados brasileiros:
     ```
 
 
-## License
+## Licença
 
-Gerador e validador de CPFs is released under the terms of the [MIT license](http://opensource.org/licenses/MIT).
+Gerador e validador de CPFs está sobre os termos da [licença MIT](http://opensource.org/licenses/MIT).
