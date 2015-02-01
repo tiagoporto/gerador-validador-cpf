@@ -2,7 +2,7 @@
   "name": "gerador-validador-cpf",
   "version": "1.0.0",
   "homepage": "http://tiagoporto.github.io/gerador-validador-cpf/",
-  "author": { "name": "Tiago Porto", "email": "tiago@tiagoporto.com", " homepage": "http://tiagoporto.com" }
+  "author": { "name": "Tiago Porto", "email": "tiago@tiagoporto.com", " homepage": "http://tiagoporto.com" },
   "repository": {
     "type": "git",
     "url": "git://github.com/tiagoporto/gerador-validador-cpf.git"
@@ -21,5 +21,5 @@
     "validador",
     "cpf",
     "brasil"
-  ],
+  ]
 }
