@@ -44,14 +44,14 @@ Veja abaixo os códigos correspondentes aos estados brasileiros:
 
 * Faça o download de uma das versões:
 
-    * [Não Compactada](https://raw.githubusercontent.com/tiagoporto/gerador-validador-cpf/gh-pages/PROJECT/public/js/CPF-1.0.0.js)
+    * [Não Compactada](https://raw.githubusercontent.com/tiagoporto/gerador-validador-cpf/gh-pages/PROJECT/public/js/CPF.js)
 
-    * [Compactada](https://raw.githubusercontent.com/tiagoporto/gerador-validador-cpf/gh-pages/PROJECT/public/js/CPF-1.0.0.min.js)
+    * [Compactada](https://raw.githubusercontent.com/tiagoporto/gerador-validador-cpf/gh-pages/PROJECT/public/js/CPF.min.js)
 
 * Inclua o arquivo no rodapé da sua página, como no exemplo.
 
     ```html
-    <script src="js/CPF-1.0.0.js"></script>
+    <script src="js/CPF.js"></script>
     ```
 
 * No seu arquivo de JS, instancie o objeto CPF;
