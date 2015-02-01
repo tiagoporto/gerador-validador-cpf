@@ -11,8 +11,13 @@
   "license": "MIT",
   "ignore": [
     "**/.*",
-    "src",
+    "css",
+    "images",
+    "js",
+    "apple-touch-icon.png",
     "bower.json",
+    "favicon.ico",
+    "index.html",
     "gulpfile.js",
     "package.json"
   ],
