@@ -10,16 +10,10 @@
   "main": "PROJECT/public/js/CPF.js",
   "license": "MIT",
   "ignore": [
-    "**/.*",
-    "css",
-    "images",
-    "js",
-    "apple-touch-icon.png",
-    "bower.json",
-    "favicon.ico",
-    "index.html",
-    "gulpfile.js",
-    "package.json"
+    "**/*",
+    "!PROJECT/public/js/CPF.js",
+    "!PROJECT/public/js/CPF.min.js",
+    "!README.md"
   ],
   "keywords": [
     "gerador",
