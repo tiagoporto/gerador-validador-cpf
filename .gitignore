@@ -221,6 +221,12 @@ pip-log.txt
 
 PROJECT/node_modules/**/*
 
+#################
+## Bower Components
+#################
+
+bower_components/**/*
+
 
 #################
 ## SASS Cache
