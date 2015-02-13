@@ -2,7 +2,7 @@
 
 A ferramenta pode ser acessada pelo link: [http://tiagoporto.github.io/gerador-validador-cpf/](http://tiagoporto.github.io/gerador-validador-cpf/).
 
-Este foi um dos meus primeiros exercícios aprendendo a programar, depois de um bom tempo resolvi converter o código para JS e melhora-lo. Disponibilizo está ferramenta para auxiliar outros desenvolvedores em testes de software, e não tem qualquer vínculo com a Receita Federal do Brasil.
+Este foi um dos meus primeiros exercícios aprendendo PHP, depois de um bom tempo resolvi converter o código para JS e melhora-lo. Disponibilizo está ferramenta para auxiliar outros desenvolvedores em testes de software, e não tem qualquer vínculo com a Receita Federal do Brasil.
 
 A ferramenta utiliza o seguinte [algoritmo](http://www.geradorcpf.com/algoritmo_do_cpf.htm) para verificação e geração do CPF.
 

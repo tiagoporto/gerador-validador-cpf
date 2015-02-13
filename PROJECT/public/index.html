@@ -53,11 +53,11 @@
 			<p id="resultadoValidacao"></p>
 
 
-			<p>Esta ferramenta foi desenvolvida para auxiliar desenvolvedores em testes de software, e não tem qualquer vínculo com a Receita Federal do Brasil.</p>
+			<p>Este foi um dos meus primeiros exercícios aprendendo PHP, depois de um bom tempo resolvi converter o código para JS e melhora-lo. Disponibilizo está ferramenta para auxiliar outros desenvolvedores em testes de software, e não tem qualquer vínculo com a Receita Federal do Brasil.</p>
 
 			<p>A ferramenta utiliza o seguinte <a href="http://www.geradorcpf.com/algoritmo_do_cpf.htm">algoritmo</a> para verificação e geração do CPF.</p>
 
-			<p>Um CPF declarado como válido por essa ferramenta não significa que ele exista no Cadastro Nacional de Pessoas Físicas nem que seja um número ativo ou com situação cadastral regular. Para conferir tais dados, consulte o site oficial da <a href="http://www.receita.fazenda.gov.br/aplicacoes/atcta/cpf/consultapublica.asp">Secretaria da Receita Federal do Brasil</a>.</p>
+			<p>Um CPF declarado como válido por essa ferramenta não significa que ele exista no Cadastro Nacional de Pessoas Físicas, nem que seja um número ativo ou com situação cadastral regular. Para conferir tais dados, consulte o site oficial da <a href="http://www.receita.fazenda.gov.br/aplicacoes/atcta/cpf/consultapublica.asp">Secretaria da Receita Federal do Brasil</a>.</p>
 
 			<p>O número CPF guarda o estado de onde foi emitido, esse número corresponde ao último algarismo anterior aos dois dígitos verificadores.</p>
 
@@ -77,7 +77,55 @@
 				<li>9. Paraná e Santa Catarina;</li>
 				<li>0. Rio Grande do Sul.</li>
 			</ul>
+
+			<h2>Como usar</h2>
+
+			<p>Faça o download de uma das versões:</p>
+
+			<ul>
+				<li>
+					<a href="https://raw.githubusercontent.com/tiagoporto/gerador-validador-cpf/gh-pages/PROJECT/public/js/CPF.js">Não Compactada</a>
+				</li>
+
+				<li>
+					<a href="https://raw.githubusercontent.com/tiagoporto/gerador-validador-cpf/gh-pages/PROJECT/public/js/CPF.min.js">Compactada</a>
+				</li>
+			</ul>
+
+			<p>Inclua o arquivo no rodapé da sua página, como no exemplo.</p>
+
+			<pre><code>&lt;script src=&quot;js/CPF.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+			<p>No seu arquivo de JS, instancie o objeto CPF;</p>
+
+			<pre><code>var CPF = new CPF();</code></pre>
+
+			<p>Para <strong>gerar CPF</strong> basta chamar a função `gera()`, veja um exemplo:</p>
+
+			<pre><code>CPF.gera();</code></pre>
+
+			<p>Exemplo completo de uma possível utilização com javascript puro.</p>
+
+			<pre><code>document.getElementById('btn-gerar-CPF').onclick = function(){
+					    document.getElementById('CPF').innerHTML = CPF.gera();
+					};</code></pre>
+
+			<p>Para <strong>validar um CPF</strong> basta chamar a função `valida(cpf)`, passando como string o número a ser validado, não importa se tiver pontuação, a função fica encarregada de eliminar caracteres não numéricos para verificação posterior, veja um exemplo:</p>
+
+			<pre><code>CPF.valida("123.456.789-00");</code></pre>
+
+			<p>Exemplo completo de uma possível utilização com javascript puro.</p>
+
+			<pre><code>document.getElementById('valida-CPF').onsubmit = function (event){
+					    document.getElementById('resultadoValidacao').innerHTML = CPF.valida(document.getElementById('cpf').value);
+
+					    return false;
+					};</code></pre>
 		</div>
+
+		<footer>
+			<p>Copyright © 2014 - <span id="year"></span> Tiago Porto</p>
+		</footer>
 
 		<!-- build:js js/scripts.min.js -->
 		<script src="js/dependencies.js"></script>

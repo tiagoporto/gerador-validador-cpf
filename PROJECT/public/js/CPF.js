@@ -1,9 +1,8 @@
 /*!
-	Gerador e Validador de CPF
-	Version: 1.0.0
-	Author: Tiago Porto - http://www.tiagoporto.com
-	https://github.com/tiagoporto/gerador-validador-cpf
-	Contact: me@tiagoporto.com
+*	Gerador e Validador de CPF v1.0.0
+*	https://github.com/tiagoporto/gerador-validador-cpf
+*	Copyright (c) 2014-2015 Tiago Porto (http://www.tiagoporto.com)
+*	Released under the MIT license
 */
 
 /**

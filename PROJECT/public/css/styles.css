@@ -242,6 +242,12 @@ p {
       -ms-hyphens: auto;
           hyphens: auto;
 }
+a {
+  color: #fff;
+}
+a:hover {
+  color: #ffff32;
+}
 button {
   background: #103e5c;
   border: none;
@@ -261,5 +267,17 @@ label {
 .main {
   width: 83.33333333333334%;
   margin: 80px 8.333333333333334% 0;
+}
+pre {
+  color: #595959;
+  background: rgba(255,255,255,0.7);
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 0.75em;
+}
+footer {
+  background: #1d6ca1;
+  padding: 5px;
+  text-align: center;
 }
 /* Media Queries */

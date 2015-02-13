@@ -1,59 +1,3 @@
-//=============== Helpers ===============//
-// *********** ESCAPE VAR ***************
-// {$icon}
-
-// ********** COLOR FUNCTIONS ***********
-// darken(#D62828, 50%) Darken the given color by amount.
-// lighten(#2c2c2c, 10%) Lighten the given color by amount.
-// saturate(#00c, 20%) Saturate the given color by amount.
-// desaturate(#f00, 20%) Desaturate the given color by amount.
-// tint(#fd0cc7, 10%) Mix the given color with white.
-// shade(#fd0cc7, 10%) Mix the given color with black.
-// rgba(#ffcc00, .7) Return RGBA from the r,g,b,a channels
-
-// ********** This is a mixin ***********
-//	inline()
-//		display: inline
-//		float: left
-
-// ******* This is a placeholder ********
-//	$inline
-//		inline() //Include a mixin
-
-// ***** Using mixin & placeholder ******
-//
-//	.using-mixin-1
-//		inline()
-//
-//	.using-mixin-2
-//		inline()
-//
-// 	Output
-//	.using-mixin-1 {
-//		display: inline;
-//		float: left;
-//	}
-
-//	.using-mixin-2 {
-//		display: inline;
-//		float: left;
-//	}
-//
-//	.extend-placeholder-1
-//		@extend $inline
-//
-//	.extend-placeholder-2
-//		@extend $inline
-//
-
-// Output
-//	.extend-placeholder-1,
-//	.extend-placeholder-2 {
-//		display: inline;
-//		float: left;
-//	}
-//=========== End of Helpers ===========//
-
 // Box model reset
 *,
 *:before,
@@ -88,6 +32,11 @@ h6
 p
 	p-typography()
 
+a
+	color #FFF
+
+	&:hover
+		color #FFFF32
 button
 	background: darken($bg-color, 60%)
 	border: none
@@ -107,3 +56,16 @@ label
 .main
 	width: (100% / 12) * 10
 	margin 80px (100% / 12) 0
+
+pre
+	color lighten(#000, 35%)
+	background rgba(255, 255, 255, .7)
+	border-radius 5px
+	padding 10px
+	font-size em(12px)
+
+footer
+	background darken($bg-color, 30%)
+	padding 5px
+	text-align center
+
