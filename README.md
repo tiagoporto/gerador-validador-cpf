@@ -48,6 +48,12 @@ Veja abaixo os códigos correspondentes aos estados brasileiros:
 
     * [Compactada](https://raw.githubusercontent.com/tiagoporto/gerador-validador-cpf/gh-pages/PROJECT/public/js/CPF.min.js)
 
+Se preferir baixe com [Bower](http://bower.io/).
+
+```sh
+    $ bower install gerador-validador-cpf --save
+```
+
 * Inclua o arquivo no rodapé da sua página, como no exemplo.
 
     ```html
