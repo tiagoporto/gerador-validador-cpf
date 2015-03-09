@@ -21,7 +21,7 @@ document.getElementById('valida-CPF').onsubmit = function (event){
 
 	document.getElementById('resultadoValidacao').innerHTML = CPF.valida(document.getElementById('cpf').value);
 
-	ga('send', 'event', 'button', 'click', 'Valide CPF');
+	ga('send', 'event', 'button', 'click', 'Validate CPF');
 
 	return false;
 
