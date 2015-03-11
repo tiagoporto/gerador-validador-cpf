@@ -44,13 +44,32 @@
 			<p id="CPF"></p>
 
 			<form action="#" id="valida-CPF">
-				<label for="cpf">Insira o CPF para validação</label>
-				<input id="cpf" type="text" autofocus required>
+				<label for="cpf-validacao">Insira o CPF para validação</label>
+				<input id="cpf-validacao" type="text" required>
+
+				<p id="resultado-validacao"></p>
+
 				<p>*Permitido somente algarismos</p>
 				<button  type="submit">Validar CPF</button>
 			</form>
 
-			<p id="resultadoValidacao"></p>
+
+			<form action="#" id="formata-CPF">
+				<label for="cpf-formatacao">Insira o CPF para validação</label>
+				<input id="cpf-formatacao" type="text" required>
+
+				<p>Formatação</p>
+				<select id="formatacao">
+					<option value="defaul">Defaul</option>
+					<option value="none">None</option>
+					<option value="verificador">Verificador</option>
+				</select>
+
+				<p id="resultado-formatacao"></p>
+
+				<button  type="submit">Formatar CPF</button>
+			</form>
+
 
 
 			<p>Este foi um dos meus primeiros exercícios aprendendo PHP, depois de um bom tempo resolvi converter o código para JS e melhora-lo. Disponibilizo está ferramenta para auxiliar outros desenvolvedores em testes de software, e não tem qualquer vínculo com a Receita Federal do Brasil.</p>

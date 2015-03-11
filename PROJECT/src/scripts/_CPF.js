@@ -1,5 +1,5 @@
 /*!
-*	Gerador e Validador de CPF v1.0.0
+*	Gerador e Validador de CPF v1.1.0
 *	https://github.com/tiagoporto/gerador-validador-cpf
 *	Copyright (c) 2014-2015 Tiago Porto (http://www.tiagoporto.com)
 *	Released under the MIT license
@@ -9,12 +9,18 @@
  * CPF Class
  *
  * gera function
- * @return {string} CPF válido no formato xxxxxxxxx-xx
+ * @param  {string} formatacao Opção para fazer a formatação
+ * @return {string}            CPF válido e formatado
  *
  * valida function
- * @param  {string} cpf Recebe String com dígitos de CPF, se a string
- *                      tiver caracteres não numéricos eles serão removido
- * @return {string}     Mensagem de válido ou inválido.
+ * @param  {string} valor      O valor para validação
+ * @return {string}            Mensagem de cpf válido ou inválido. Apontando o erro.
+ *
+ * formata function
+ * @param  {string} valor      O valor para formatação
+ * @param  {string} formatacao Opção para fazer a formatação
+ *
+ * @return {string}            O CPF formatado ou mensagem com o provável erro.
  */
 function CPF(){
 	'user_strict';
@@ -56,7 +62,42 @@ function CPF(){
 
 		return verificador2;
 	}
-	this.gera = function (){
+
+	function limpaCPF(valor){
+		var digitos = valor.replace(/\.|\-|\s/g,'');
+
+		return digitos;
+	}
+
+	function formataCPF(value, formatacao){
+		var sepDigitos = '.';
+		var sepVerificador = '-';
+
+		if (formatacao === 'none') {
+			sepDigitos = '';
+			sepVerificador = '';
+		}else if (formatacao === 'verificador') {
+			sepDigitos = '';
+			sepVerificador = '-';
+		}
+
+		if (! /^[0-9]+$/.test(value)) {
+			return 'O valor informado contem caracteres especiais';
+		}
+
+		if (value.length > 11 ) {
+			return 'O valor informado contem erro. Está passando dígitos.';
+		}else if(value.length < 11){
+			return 'O valor informado contem erro. Está faltando dígitos.';
+
+		}
+
+		else{
+			return value.slice(0, 3) + sepDigitos + value.slice(3, 6) + sepDigitos +  value.slice(6, 9) + sepVerificador +  value.slice(9, 11);
+		}
+	}
+
+	this.gera = function (formatacao){
 		var noveDigitos = '';
 
 		//Gerando os 9 primeiros digitos do CPF
@@ -66,12 +107,13 @@ function CPF(){
 
 		var verificador1 = calculoVerificador1(noveDigitos);
 
-		var cpf = noveDigitos + '-' + verificador1 + calculoVerificador2(noveDigitos + '' + verificador1);
+		var cpf = noveDigitos + verificador1 + calculoVerificador2(noveDigitos + verificador1);
 
-		return cpf;
+		return formataCPF(cpf, formatacao);
 	};
-	this.valida = function (cpf){
-		var clearCPF = cpf.replace(/\D/g,''),
+
+	this.valida = function (valor){
+		var clearCPF = limpaCPF(valor),
 			noveDigitos = clearCPF.substring(0,9),
 			verificadores = clearCPF.substring(9,11);
 
@@ -91,6 +133,12 @@ function CPF(){
 		}else{
 			return mensagemInvalido;
 		}
+	};
+
+	this.formata = function (valor, formatacao){
+		var CPF = limpaCPF(valor);
+
+		return formataCPF(CPF, formatacao);
 	};
 
 }

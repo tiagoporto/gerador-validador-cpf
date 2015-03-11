@@ -13,6 +13,7 @@
   "globals": {
 	  "$": false,
 	  "console": false,
+	  "CPF": false,
 	  "ga": false,
 	  "jQuery": false,
 	  "outdatedBrowser": false
