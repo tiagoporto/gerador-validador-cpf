@@ -14,13 +14,13 @@
  *
  * valida function
  * @param  {string} valor      O valor para validação
- * @return {string}            Mensagem de cpf válido ou inválido. Apontando o erro.
+ * @return {string}            Mensagem de cpf válido/inválido ou erro da validação.
  *
  * formata function
  * @param  {string} valor      O valor para formatação
  * @param  {string} formatacao Opção para fazer a formatação
  *
- * @return {string}            O CPF formatado ou mensagem com o provável erro.
+ * @return {string}            O CPF formatado ou mensagem com erro da formatação.
  */
 function CPF(){
 	'user_strict';
@@ -63,7 +63,7 @@ function CPF(){
 		return verificador2;
 	}
 
-	function limpaCPF(valor){
+	function limpa(valor){
 		var digitos = valor.replace(/\.|\-|\s/g,'');
 
 		return digitos;
@@ -73,7 +73,7 @@ function CPF(){
 		var sepDigitos = '.';
 		var sepVerificador = '-';
 
-		if (formatacao === 'none') {
+		if (formatacao === 'digitos') {
 			sepDigitos = '';
 			sepVerificador = '';
 		}else if (formatacao === 'verificador') {
@@ -113,7 +113,7 @@ function CPF(){
 	};
 
 	this.valida = function (valor){
-		var clearCPF = limpaCPF(valor),
+		var clearCPF = limpa(valor),
 			noveDigitos = clearCPF.substring(0,9),
 			verificadores = clearCPF.substring(9,11);
 
@@ -136,7 +136,7 @@ function CPF(){
 	};
 
 	this.formata = function (valor, formatacao){
-		var CPF = limpaCPF(valor);
+		var CPF = limpa(valor);
 
 		return formataCPF(CPF, formatacao);
 	};

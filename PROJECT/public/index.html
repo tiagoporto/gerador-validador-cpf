@@ -40,6 +40,7 @@
 
 			<a href="https://github.com/tiagoporto/gerador-validador-cpf"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
 
+
 			<button id="btn-gerar-CPF">Gerar CPF</button>
 			<p id="CPF"></p>
 
@@ -60,16 +61,15 @@
 
 				<p>Formatação</p>
 				<select id="formatacao">
-					<option value="defaul">Defaul</option>
-					<option value="none">None</option>
-					<option value="verificador">Verificador</option>
+					<option value="padrao">Padrão</option>
+					<option value="digitos">Somente Digitos</option>
+					<option value="verificador">Separa o Verificador</option>
 				</select>
 
 				<p id="resultado-formatacao"></p>
 
 				<button  type="submit">Formatar CPF</button>
 			</form>
-
 
 
 			<p>Este foi um dos meus primeiros exercícios aprendendo PHP, depois de um bom tempo resolvi converter o código para JS e melhora-lo. Disponibilizo está ferramenta para auxiliar outros desenvolvedores em testes de software, e não tem qualquer vínculo com a Receita Federal do Brasil.</p>
@@ -123,23 +123,68 @@
 
 			<pre><code>CPF.gera();</code></pre>
 
-			<p>Exemplo completo de uma possível utilização com javascript puro.</p>
+			<p>Exemplo completo de uma possível utilização com javascript.</p>
 
 			<pre><code>document.getElementById('btn-gerar-CPF').onclick = function(){
 					    document.getElementById('CPF').innerHTML = CPF.gera();
 					};</code></pre>
 
-			<p>Para <strong>validar um CPF</strong> basta chamar a função `valida(cpf)`, passando como string o número a ser validado, não importa se tiver pontuação, a função fica encarregada de eliminar caracteres não numéricos para verificação posterior, veja um exemplo:</p>
+			<p>A função recebe como parâmetro opcional a formatação que o CPF será gerado.</p>
+
+			<dl>
+				<dt>Padrão</dt>
+				<dd><pre><code>CPF.gera();</code></pre>
+				</dd>
+				<dd>Gera um CPF no formato xxx.xxx.xxx-xx</dd>
+
+				<dt>Dígitos</dt>
+				<dd><pre><code>CPF.gera('digitos');</code></pre></dd>
+				<dd>Gera um CPF no formato xxxxxxxxxxx</dd>
+
+				<dt>Verificador</dt>
+				<dd><pre><code>CPF.gera('verificador');</code></pre></dd>
+				<dd>Gera um CPF no formato xxxxxxxxx-xx</dd>
+			</dl>
+
+			<p>Para <strong>validar um CPF</strong> basta chamar a função `valida(cpf)`, passando como string o número a ser validado, não se preocupe com os caracteres '.', '-' e espaço, a função fica encarregada de eliminar essescaracterespara verificação posterior, veja um exemplo:</p>
 
 			<pre><code>CPF.valida("123.456.789-00");</code></pre>
 
-			<p>Exemplo completo de uma possível utilização com javascript puro.</p>
+			<p>Exemplo completo de uma possível utilização com javascript.</p>
 
 			<pre><code>document.getElementById('valida-CPF').onsubmit = function (event){
 					    document.getElementById('resultadoValidacao').innerHTML = CPF.valida(document.getElementById('cpf').value);
 
 					    return false;
-					};</code></pre>
+			};</code></pre>
+
+			<p>Para <strong>formatar um CPF</strong> basta chamar a função `formata(cpf)`, passando como string o CPF a ser formatado, não se preocupe com os caracteres '.', '-' e espaço, a função fica encarregada de eliminar essescaracterespara verificação posterior, veja um exemplo:</p>
+
+			<pre><code>CPF.formata("123.456.789-00");</code></pre>
+
+			<p>Exemplo completo de uma possível utilização com javascript.</p>
+
+			<pre><code>document.getElementById('CPF').onblur = function (){
+				    document.getElementById('CPF').value = CPF.formata(document.getElementById('CPF').value);
+			};</code></pre>
+
+
+			<p>A função recebe como parâmetro opcional a formatação do CPF.</p>
+
+			<dl>
+				<dt>Padrão</dt>
+				<dd><pre><code>CPF.formata('12345678901');</code></pre>
+				</dd>
+				<dd>Gera um CPF no formato xxx.xxx.xxx-xx</dd>
+
+				<dt>Dígitos</dt>
+				<dd><pre><code>CPF.formata('123.456.789-01', 'digitos');</code></pre></dd>
+				<dd>Gera um CPF no formato xxxxxxxxxxx</dd>
+
+				<dt>Verificador</dt>
+				<dd><pre><code>CPF.formata('12345678901', 'verificador');</code></pre></dd>
+				<dd>Gera um CPF no formato xxxxxxxxx-xx</dd>
+			</dl>
 		</div>
 
 		<footer>
