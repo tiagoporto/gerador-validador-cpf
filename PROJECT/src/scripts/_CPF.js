@@ -82,13 +82,13 @@ function CPF(){
 		}
 
 		if (! /^[0-9]+$/.test(value)) {
-			return 'O valor informado contem caracteres especiais';
+			return 'O valor informado contém caracteres inválidos.';
 		}
 
 		if (value.length > 11 ) {
-			return 'O valor informado contem erro. Está passando dígitos.';
+			return 'O valor informado contém erro. Está passando dígitos.';
 		}else if(value.length < 11){
-			return 'O valor informado contem erro. Está faltando dígitos.';
+			return 'O valor informado contém erro. Está faltando dígitos.';
 
 		}
 
