@@ -37,6 +37,15 @@ document.getElementById('formata-CPF').onsubmit = function (event){
 
 };
 
+document.getElementById('download-nao-compactada').onclick = function(){
+
+	ga('send', 'event', 'download', 'click', 'Download versão Não Compactada');
+};
+
+document.getElementById('download-compactada').onclick = function(){
+
+	ga('send', 'event', 'download', 'click', 'Download versão Compactada');
+};
 
 var d = new Date();
 
