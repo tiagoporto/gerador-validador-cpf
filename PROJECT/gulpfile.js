@@ -6,12 +6,6 @@
 	Contact: me@tiagoporto.com
 */
 
-/**
-	TODO:
-	- Sprite de svg
-	- Icons
-	- Verificar Font features
-**/
 'use strict';
 
 //************************* Load dependencies ****************************//

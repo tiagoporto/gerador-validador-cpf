@@ -7,6 +7,7 @@
 	Contact: email
 */
 /* Web Fonts */
+@import url("http://fonts.googleapis.com/css?family=PT+Sans");
 /* normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif; /* 1 */
@@ -215,6 +216,13 @@ body {
 h1 {
   font-size: 2.25em;
   line-height: 1.083333333333333em;
+  font-family: 'PT Sans', sans-serif;
+  margin-top: 0;
+}
+h1 svg {
+  max-width: 100px;
+  display: block;
+  margin: 0 auto 20px;
 }
 h2 {
   font-size: 2em;
@@ -262,6 +270,9 @@ select {
   font-weight: bold;
   color: #999;
 }
+form {
+  margin-bottom: 20px;
+}
 select {
   color: #666;
 }
@@ -270,7 +281,14 @@ label {
 }
 .main {
   width: 83.33333333333334%;
-  margin: 80px 8.333333333333334% 0;
+  margin: 0 8.333333333333334% 0;
+}
+.panel {
+  margin: 0 -10% 40px;
+  background: #1b6496;
+  padding: 20px;
+  width: 100;
+  text-align: center;
 }
 pre {
   color: #595959;
@@ -285,3 +303,13 @@ footer {
   text-align: center;
 }
 /* Media Queries */
+@media (max-width: 48em) {
+  button,
+  input,
+  select {
+    width: 100%;
+  }
+  dd {
+    margin: 0;
+  }
+}
