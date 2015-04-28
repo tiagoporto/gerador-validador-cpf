@@ -290,12 +290,9 @@ label {
   width: 100;
   text-align: center;
 }
-pre {
-  color: #595959;
-  background: rgba(255,255,255,0.7);
+.hljs {
+  background: rgba(248,248,248,0.7) !important;
   border-radius: 5px;
-  padding: 10px;
-  font-size: 0.75em;
 }
 footer {
   background: #1d6ca1;
