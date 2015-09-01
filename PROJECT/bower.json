@@ -26,6 +26,7 @@
   ],
   "devDependencies": {
     "highlightjs": "~8.5.0",
-    "jquery": "^2.0.0"
+    "jquery": "~2.1.4",
+    "jquery.maskedinput": "jquery-maskedinput#~1.4.1"
   }
 }

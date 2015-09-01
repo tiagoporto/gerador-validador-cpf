@@ -41,14 +41,14 @@
 				<h1>
 
 					<svg version="1.1" id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191 192" enable-background="new 0 0 191 192" xml:space="preserve">
-						<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="133.7,107.2 143.6,47.4 98.8,0 57.2,43.6 118.7,52.4 "></polygon>
+						<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="133.7,107.2 143.6,47.4 98.8,0 57.2,43.6 118.7,52.4 "/>
 
 						<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="83.8,134.6 143.6,144.6 191,99.3 147.4,57.3 138.7,119.4
-						"></polygon>
+						"/>
 
-						<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="58,84.8 45.9,144.6 89.4,192 132.7,148.4 71.1,139.6 "></polygon>
+						<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="58,84.8 45.9,144.6 89.4,192 132.7,148.4 71.1,139.6 "/>
 
-						<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="109.1,57.5 49.2,47.4 0,92.7 42.5,134.6 53.4,72.6 "></polygon>
+						<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="109.1,57.5 49.2,47.4 0,92.7 42.5,134.6 53.4,72.6 "/>
 					</svg>
 
 				Gerador e validador de CPF</h1>
@@ -152,8 +152,8 @@
 			<p>Exemplo completo de uma possível utilização com javascript.</p>
 
 			<pre><code class="javascript">document.getElementById('btn-gerar-CPF').onclick = function(){
-					    document.getElementById('CPF').innerHTML = CPF.gera();
-					};</code></pre>
+    document.getElementById('CPF').innerHTML = CPF.gera();
+};</code></pre>
 
 			<p>A função recebe como parâmetro opcional a formatação que o CPF será gerado.</p>
 
@@ -179,10 +179,10 @@
 			<p>Exemplo completo de uma possível utilização com javascript.</p>
 
 			<pre><code class="javascript">document.getElementById('valida-CPF').onsubmit = function (event){
-					    document.getElementById('resultadoValidacao').innerHTML = CPF.valida(document.getElementById('cpf').value);
+    document.getElementById('resultadoValidacao').innerHTML = CPF.valida(document.getElementById('cpf').value);
 
-					    return false;
-			};</code></pre>
+    return false;
+};</code></pre>
 
 			<p>Para <strong>formatar um CPF</strong> basta chamar a função `formata(cpf)`, passando como string o CPF a ser formatado, não se preocupe com os caracteres '.', '-' e espaço, a função fica encarregada de eliminar essescaracterespara verificação posterior, veja um exemplo:</p>
 
@@ -191,8 +191,8 @@
 			<p>Exemplo completo de uma possível utilização com javascript.</p>
 
 			<pre><code class="javascript">document.getElementById('CPF').onblur = function (){
-				    document.getElementById('CPF').value = CPF.formata(document.getElementById('CPF').value);
-			};</code></pre>
+    document.getElementById('CPF').value = CPF.formata(document.getElementById('CPF').value);
+};</code></pre>
 
 
 			<p>A função recebe como parâmetro opcional a formatação do CPF.</p>
@@ -219,7 +219,8 @@
 
 		<!-- build:js js/scripts.min.js -->
 		<script src="jquery/dist/jquery.js"></script>
-		<script src="js/dependencies.js"></script>
+		<script src="jquery.maskedinput/dist/jquery.maskedinput.min.js"></script>
+		<!--<script src="js/dependencies.js"></script>-->
 		<script src="highlightjs/highlight.pack.js"></script>
 		<script src="js/CPF.js"></script>
 		<script src="js/main.js"></script>
