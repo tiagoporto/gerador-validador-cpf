@@ -19,12 +19,17 @@ document.getElementById('btn-gerar-CPF').onclick = function(){
 
 document.getElementById('valida-CPF').onsubmit = function (event){
 
-	document.getElementById('resultado-validacao').innerHTML = CPF.valida(document.getElementById('cpf-validacao').value);
+	if ( CPF.valida(document.getElementById('cpf-validacao').value) === true ) {
+		var mensagem = 'CPF Válido';
+	}else{
+		var mensagem = 'CPF Inválido';
+	}
+
+	document.getElementById('resultado-validacao').innerHTML = mensagem;
 
 	ga('send', 'event', 'button', 'click', 'Validate CPF');
 
 	return false;
-
 };
 
 document.getElementById('formata-CPF').onsubmit = function (event){

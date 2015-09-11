@@ -1,5 +1,5 @@
 /*!
-*	Gerador e Validador de CPF v1.1.0
+*	Gerador e Validador de CPF v2.0.0
 *	https://github.com/tiagoporto/gerador-validador-cpf
 *	Copyright (c) 2014-2015 Tiago Porto (http://www.tiagoporto.com)
 *	Released under the MIT license
@@ -14,7 +14,7 @@
  *
  * valida function
  * @param  {string} valor      O valor para validação
- * @return {string}            Mensagem de cpf válido/inválido ou erro da validação.
+ * @return {boolean}           True para cpf válido - False para cpf inválido.
  *
  * formata function
  * @param  {string} valor      O valor para formatação
@@ -24,8 +24,6 @@
  */
 function CPF(){
 	'user_strict';
-	var mensagemInvalido = 'CPF Inválido',
-		mensagemValido = 'CPF Válido';
 
 	function calculoVerificador1(noveDigitos){
 		var soma = null;
@@ -129,9 +127,9 @@ function CPF(){
 		var verificador2 = calculoVerificador2(noveDigitos + '' + verificador1);
 
 		if (verificadores.toString() === verificador1.toString() + verificador2.toString()){
-			return mensagemValido;
+			return true;
 		}else{
-			return mensagemInvalido;
+			return false;
 		}
 	};
 
