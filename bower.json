@@ -1,23 +1,27 @@
 {
   "name": "gerador-validador-cpf",
   "homepage": "http://tiagoporto.github.io/gerador-validador-cpf/",
-  "author": { "name": "Tiago Porto", "email": "tiago@tiagoporto.com", " homepage": "http://tiagoporto.com" },
   "repository": {
     "type": "git",
     "url": "git://github.com/tiagoporto/gerador-validador-cpf.git"
   },
+  "keywords": [
+    "gerador",
+    "validador",
+    "cpf",
+    "brasil"
+  ],
+  "author": {
+    "name": "Tiago Porto",
+    "email": "tiago@tiagoporto.com",
+    "homepage": "http://tiagoporto.com"
+  },
   "main": "PROJECT/public/js/CPF.js",
-  "license": "MIT",
   "ignore": [
     "**/*",
     "!PROJECT/public/js/CPF.js",
     "!PROJECT/public/js/CPF.min.js",
     "!README.md"
   ],
-  "keywords": [
-    "gerador",
-    "validador",
-    "cpf",
-    "brasil"
-  ]
+  "license": "MIT"
 }
