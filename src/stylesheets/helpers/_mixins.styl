@@ -1,0 +1,124 @@
+/**
+*
+* Arrow Stylus Mixin
+* Author: Tiago Porto - tiagoporto.com
+* Adapted from Stephen Burgess
+* http://minimalmonkey.com/sass-triangle-mixin/
+*
+**/
+
+/**
+ * [arrow description]
+ * @param width     : px, em
+ * @param height    : px, em
+ * @param direction : up, down, left, right
+ * @param color     : hex, rgb
+ */
+
+arrow($width = 20px, $height = 20px, $direction = up, $color = red)
+
+	width: 0
+	height: 0
+
+	if($direction == right)
+		border-top: ($height/2) solid transparent
+		border-bottom: ($height/2) solid transparent
+		border-left: $width solid $color
+
+	if($direction == left)
+		border-top: ($height/2) solid transparent
+		border-bottom: ($height/2) solid transparent
+		border-right: $width solid $color
+
+	if($direction == up)
+		border-left: ($width/2) solid transparent
+		border-right: ($width/2) solid transparent
+		border-bottom: $height solid $color
+
+	if($direction == down)
+		border-left: ($width/2) solid transparent
+		border-right: ($width/2) solid transparent
+		border-top: $height solid $color
+
+/**
+*
+* Circle Stylus Mixin
+* Author: Tiago Porto - tiagoporto.com
+*
+**/
+
+/**
+ * [Circle description]
+ * @param width : px, em
+ */
+
+
+circle($width = 20px)
+
+	border-radius floor($width/2)
+	width $width
+	height $width
+/**
+*
+* Clearfix Stylus Mixin
+* Author: Tiago Porto - tiagoporto.com
+*
+**/
+
+$clearfix
+	zoom 1
+
+$clearfix-after-before
+	content ""
+	display table
+
+$clearfix-after
+	clear both
+
+clearfix()
+	@extend $clearfix
+
+	&:after
+	&:before
+		@extend $clearfix-after-before
+	&:after
+		@extend $clearfix-after
+
+/**
+*
+* Opacity Stylus Mixin
+* Author: Tiago Porto - tiagoporto.com
+*
+**/
+
+opacity($value)
+
+	opacity: $value
+	filter: unquote('alpha(opacity=' + round($value * 100) + ')') //IE8 and earlier
+
+/**
+*
+* Retina Stylus Mixin
+* Author: Tiago Porto - tiagoporto.com
+* A helper mixin for applying high-resolution background images
+*
+**/
+
+/**
+ * [at2x description]
+ * @param  path   : Image path with extension file
+ * @param  width  : Image width
+ * @param  height : Image height
+ */
+
+at2x($path, $width = auto, $height = auto)
+	background-image url($image-path + $path)
+
+	@media (-webkit-min-device-pixel-ratio: 1.5),\
+	       (-o-min-device-pixel-ratio: 3 / 2),\
+	       (min--moz-device-pixel-ratio: 1.5),\
+	       (min-device-pixel-ratio: 1.5),
+	       (min-resolution: 1.5dppx)
+
+		background-image url($image-path + replace('\.', '@2x.', $path))
+		background-size $width $height

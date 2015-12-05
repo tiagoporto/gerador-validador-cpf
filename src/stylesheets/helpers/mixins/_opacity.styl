@@ -1,0 +1,11 @@
+/**
+*
+* Opacity Stylus Mixin
+* Author: Tiago Porto - tiagoporto.com
+*
+**/
+
+opacity($value)
+
+	opacity: $value
+	filter: unquote('alpha(opacity=' + round($value * 100) + ')') //IE8 and earlier

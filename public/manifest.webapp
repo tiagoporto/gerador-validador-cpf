@@ -1,0 +1,25 @@
+{
+  "version": "0.0.1",
+  "name": "{Title}",
+  "launch_path": "/index.html",
+  "description": "{-}",
+  "icons": {
+    "128": "img/touch/icon-128x128.png"
+  },
+  "developer": {
+    "name": "{-}",
+    "url": "http://{-}"
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "en",
+  "permissions": {
+  },
+  "locales": {
+    "en": {
+      "name": "{Title}",
+      "description": "{-} in English."
+    }
+  }
+}

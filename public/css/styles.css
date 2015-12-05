@@ -1,0 +1,391 @@
+/*!	{Title} v0.0.1
+*	Project Home page
+*	Copyright (c) initialyear-atualyear Author Name (Site)
+*	Released under the MIT license
+*/
+
+/* ==================================================================
+   Web Fonts
+   ================================================================== */
+@import url("http://fonts.googleapis.com/css?family=PT+Sans");
+/* ==================================================================
+   Main Styles
+   ================================================================== */
+.button,
+.disabled-button {
+  font-size: 0.875em;
+  line-height: 1.714285714285714em;
+  border: none;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 0 1.25em;
+  overflow: hidden;
+  margin: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  vertical-align: bottom;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.1);
+  color: #fff;
+  background-color: #3faa96;
+  -webkit-transition: 0.15s ease-out;
+  transition: 0.15s ease-out;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #2bbbad;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15), 0 1px 4px rgba(0,0,0,0.15);
+}
+.disabled-button {
+  background-color: #dfdfdf;
+  color: #9f9f9f;
+  cursor: default;
+}
+.code {
+  color: #0f0;
+  background: #242424;
+  padding: 0 0.75em;
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+  width: 100%;
+  display: inline-block;
+  border-radius: 6px;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+.input,
+.textarea {
+  font-size: 1em;
+  line-height: 1.5em;
+  border-color: #999;
+  border-style: solid;
+  border-width: 0.0625em;
+  padding: 0.3125em;
+  border-radius: 5px;
+  color: #595959;
+  width: 100%;
+  margin-bottom: 0.75em;
+}
+.input:focus,
+.textarea:focus {
+  border-color: #66afe9;
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(102,175,233,0.6);
+}
+.fieldset {
+  margin: 0;
+  border-color: #999;
+  border-style: solid;
+  border-width: 0.0625em;
+  padding: 1.4375em;
+}
+.input {
+  height: 2.25em;
+}
+.input-disabled {
+  background: #f2f2f2;
+}
+::-webkit-input-placeholder {
+  color: #8c8c8c;
+  font-size: 0.875em;
+}
+::-moz-placeholder {
+  color: #8c8c8c;
+  font-size: 0.875em;
+}
+:-ms-input-placeholder {
+  color: #8c8c8c;
+  font-size: 0.875em;
+}
+::placeholder {
+  color: #8c8c8c;
+  font-size: 0.875em;
+}
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1 {
+  font-weight: bold;
+}
+.h1,
+h1 {
+  font-size: 2.25em;
+  line-height: 1.333333333333333em;
+  margin-top: 0.666666666666667em;
+  margin-bottom: 0.666666666666667em;
+}
+.h2 {
+  font-size: 2em;
+  line-height: 1.5em;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+.h3 {
+  font-size: 1.875em;
+  line-height: 1.6em;
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+.h4 {
+  font-size: 1.75em;
+  line-height: 1.714285714285714em;
+  margin-top: 0.857142857142857em;
+  margin-bottom: 0.857142857142857em;
+}
+.h5 {
+  font-size: 1.5em;
+  line-height: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.h6 {
+  font-size: 1.25em;
+  line-height: 1.2em;
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+}
+p {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+.blockquote {
+  font-style: italic;
+  padding-left: 0.625em;
+  border-left: 0.3125em solid #999;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+/*
+*
+* Box model reset
+* http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+*
+*/
+html {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: inherit;
+       box-sizing: inherit;
+}
+body {
+  background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,0.2) 1px, rgba(0,0,0,0) 1px);
+  background-image: linear-gradient(to top, rgba(0,0,0,0.2) 1px, rgba(0,0,0,0) 1px);
+  background-size: 100% 1.5em;
+  background-position: left top;
+  font: normal normal 16px/24px Helvetica, Arial, sans-serif;
+  background-color: #3498db;
+  color: #fff;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: auto;
+  -webkit-font-feature-settings: "liga", "kern";
+     -moz-font-feature-settings: "liga", "kern";
+          font-feature-settings: "liga", "kern";
+  background: -webkit-linear-gradient(top, #3498db, #2488cb);
+  background: linear-gradient(to bottom, #3498db, #2488cb);
+  background-attachment: fixed;
+}
+.panel {
+  margin: 0 -10% 40px;
+  background: #1b6496;
+  padding: 24px;
+  text-align: center;
+}
+h1 {
+  font-family: 'PT Sans', sans-serif;
+  margin-top: 0;
+}
+h1 svg {
+  max-height: 96px;
+  display: block;
+  margin: 0 auto 24px;
+}
+a {
+  color: #fff;
+}
+a:hover {
+  color: #ffff32;
+}
+button {
+  background: #103e5c;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+input,
+select {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  color: #999;
+}
+form {
+  margin-bottom: 20px;
+}
+select {
+  color: #666;
+}
+label {
+  display: block;
+}
+.main {
+  width: 83.33333333333334%;
+  margin: 0 8.333333333333334% 0;
+}
+.hljs {
+  background: rgba(248,248,248,0.7) !important;
+  border-radius: 5px;
+}
+footer {
+  background: #1d6ca1;
+  padding: 5px;
+  text-align: center;
+}
+@media only screen and (max-width: 47.9375em) {
+  button,
+  input,
+  select {
+    width: 100%;
+  }
+  dd {
+    margin: 0;
+  }
+}
+/* ==================================================================
+   Media Queries
+   ================================================================== */
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important /* Black prints faster: h5bp.com/s */;
+    text-shadow: none !important;
+    -webkit-filter: none !important;
+            filter: none !important;
+    -ms-filter: none !important;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.4em;
+    font: 12pt Georgia, "Times New Roman", Times, serif;
+    color: #000;
+  }
+  @page {
+    margin: 1.5cm;
+  }
+  .wrap {
+    width: 100%;
+    margin: 0;
+    float: none !important;
+  }
+  .no-print,
+  nav,
+  footer,
+  video,
+  audio,
+  object,
+  embed {
+    display: none;
+  }
+  .print {
+    display: block;
+  }
+  .page-break {
+    page-break-before: always;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a:link:after,
+  a:visited:after {
+    content: " (" attr(href) ") ";
+  }
+  p a {
+    word-wrap: break-word;
+  }
+  q:after {
+    content: " (" attr(cite) ")";
+  }
+  a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  aside {
+    display: block;
+    page-break-before: always;
+  }
+  h1 {
+    font-size: 24pt;
+  }
+  h2 {
+    font-size: 18pt;
+    orphans: 3;
+    widows: 3;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 14pt;
+    orphans: 3;
+    widows: 3;
+    page-break-after: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  p {
+    font-size: 12pt;
+    widows: 3;
+    orphans: 3;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group /* h5bp.com/t */;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+}
+/*
+*
+* Better Font Smoothing in Chrome & Safari
+* http://www.intridea.com/blog/2014/5/8/better-font-smoothing-in-chrome-on-mac-os-x
+*
+*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min-device-pixel-ratio: 1.25), only screen and (-webkit-min-device-pixel-ratio: 2.0833333333333335), only screen and (min-resolution: 200dpi), only screen and (min-resolution: 1.25dppx) {
+  body {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}

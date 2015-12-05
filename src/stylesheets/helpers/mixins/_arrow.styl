@@ -1,0 +1,41 @@
+/**
+*
+* Arrow Stylus Mixin
+* Author: Tiago Porto - tiagoporto.com
+* Adapted from Stephen Burgess
+* http://minimalmonkey.com/sass-triangle-mixin/
+*
+**/
+
+/**
+ * [arrow description]
+ * @param width     : px, em
+ * @param height    : px, em
+ * @param direction : up, down, left, right
+ * @param color     : hex, rgb
+ */
+
+arrow($width = 20px, $height = 20px, $direction = up, $color = red)
+
+	width: 0
+	height: 0
+
+	if($direction == right)
+		border-top: ($height/2) solid transparent
+		border-bottom: ($height/2) solid transparent
+		border-left: $width solid $color
+
+	if($direction == left)
+		border-top: ($height/2) solid transparent
+		border-bottom: ($height/2) solid transparent
+		border-right: $width solid $color
+
+	if($direction == up)
+		border-left: ($width/2) solid transparent
+		border-right: ($width/2) solid transparent
+		border-bottom: $height solid $color
+
+	if($direction == down)
+		border-left: ($width/2) solid transparent
+		border-right: ($width/2) solid transparent
+		border-top: $height solid $color

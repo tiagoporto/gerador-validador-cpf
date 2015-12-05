@@ -1,0 +1,65 @@
+{
+	"basePaths": {
+		   "src": "src/",
+		  "dest": "public/",
+		 "build": "build/",
+		 "bower": "public/bower_components",
+
+		"images": {
+			 "src": "images/",
+			"dest": "img/"
+		},
+
+		"sprite": {
+			"src": "sprite/"
+		},
+
+		"scripts": {
+			 "src": "scripts/",
+			"dest": "js/"
+		},
+
+		"styles": {
+			 "src": "stylesheets/",
+			"dest": "css/"
+		}
+	},
+
+	"components": false,
+
+	"jquery": false,
+
+	"lintCSS": false,
+
+	"lintJS": true,
+
+	"autoprefixerBrowsers": [
+		"ie >= 8",
+		"ie_mob >= 10",
+		"Firefox > 24",
+		"last 10 Chrome versions",
+		"safari >= 6",
+		"opera >= 24",
+		"ios >= 6",
+		"android >= 4",
+		"bb >= 10"
+	],
+
+	"browserSync": {
+		"notify": false,
+		"port": 80,
+		"logPrefix": "BrowserSync",
+		"server": {
+			"baseDir": ["public/"]
+		}
+	},
+
+	"browserSyncBuild": {
+		"notify": false,
+		"port": 80,
+		"logPrefix": "BrowserSync",
+		"server": {
+			"baseDir": ["build/"]
+		}
+	}
+}

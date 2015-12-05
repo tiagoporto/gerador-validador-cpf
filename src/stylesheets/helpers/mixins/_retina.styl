@@ -1,0 +1,26 @@
+/**
+*
+* Retina Stylus Mixin
+* Author: Tiago Porto - tiagoporto.com
+* A helper mixin for applying high-resolution background images
+*
+**/
+
+/**
+ * [at2x description]
+ * @param  path   : Image path with extension file
+ * @param  width  : Image width
+ * @param  height : Image height
+ */
+
+at2x($path, $width = auto, $height = auto)
+	background-image url($image-path + $path)
+
+	@media (-webkit-min-device-pixel-ratio: 1.5),\
+	       (-o-min-device-pixel-ratio: 3 / 2),\
+	       (min--moz-device-pixel-ratio: 1.5),\
+	       (min-device-pixel-ratio: 1.5),
+	       (min-resolution: 1.5dppx)
+
+		background-image url($image-path + replace('\.', '@2x.', $path))
+		background-size $width $height

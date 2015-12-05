@@ -1,0 +1,25 @@
+/**
+*
+* Clearfix Stylus Mixin
+* Author: Tiago Porto - tiagoporto.com
+*
+**/
+
+$clearfix
+	zoom 1
+
+$clearfix-after-before
+	content ""
+	display table
+
+$clearfix-after
+	clear both
+
+clearfix()
+	@extend $clearfix
+
+	&:after
+	&:before
+		@extend $clearfix-after-before
+	&:after
+		@extend $clearfix-after
