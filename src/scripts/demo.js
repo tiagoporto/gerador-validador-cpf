@@ -1,6 +1,8 @@
+
 var CPF = new CPF();
 
 document.getElementById('btn-gerar-CPF').onclick = function(){
+	'use strict';
 
 	document.getElementById('CPF').innerHTML = CPF.gera();
 
@@ -8,12 +10,15 @@ document.getElementById('btn-gerar-CPF').onclick = function(){
 
 };
 
-document.getElementById('valida-CPF').onsubmit = function (event){
+
+document.getElementById('valida-CPF').onsubmit = function(){
+	'use strict';
+	var mensagem = '';
 
 	if ( CPF.valida(document.getElementById('cpf-validacao').value) === true ) {
-		var mensagem = 'CPF Válido';
+		mensagem = 'CPF Válido';
 	}else{
-		var mensagem = 'CPF Inválido';
+		mensagem = 'CPF Inválido';
 	}
 
 	document.getElementById('resultado-validacao').innerHTML = mensagem;
@@ -21,9 +26,11 @@ document.getElementById('valida-CPF').onsubmit = function (event){
 	ga('send', 'event', 'button', 'click', 'Validate CPF');
 
 	return false;
+
 };
 
-document.getElementById('formata-CPF').onsubmit = function (event){
+document.getElementById('formata-CPF').onsubmit = function(){
+	'use strict';
 
 	document.getElementById('resultado-formatacao').innerHTML = CPF.formata(document.getElementById('cpf-formatacao').value, document.getElementById('formatacao').value);
 
@@ -34,14 +41,20 @@ document.getElementById('formata-CPF').onsubmit = function (event){
 };
 
 document.getElementById('download-nao-compactada').onclick = function(){
+	'use strict';
 
 	ga('send', 'event', 'download', 'click', 'Download versão Não Compactada');
+
 };
+
 
 document.getElementById('download-compactada').onclick = function(){
+	'use strict';
 
 	ga('send', 'event', 'download', 'click', 'Download versão Compactada');
+
 };
+
 
 var d = new Date();
 

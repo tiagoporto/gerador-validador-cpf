@@ -24,6 +24,8 @@ var		 gulp = require('gulp'),
    	   buffer = require('vinyl-buffer'),
    vinylPaths = require('vinyl-paths'),
 	  ghPages = require('gulp-gh-pages'),
+	  Karma = require('karma').Server,
+	  jasmine = require('gulp-jasmine'),
 	   config = require('./config.json'),
 
 //***************************** Path configs *****************************//
@@ -70,6 +72,13 @@ paths = {
 
 
 //******************************** Tasks *********************************//
+
+gulp.task('test', function (done) {
+  new Karma({
+    configFile: __dirname + '/karma.conf.js',
+  }, done).start();
+});
+
 
 gulp.task('styles-helpers', require('./tasks/' + preprocessor + '-helpers')(gulp, plugins, paths, merge));
 

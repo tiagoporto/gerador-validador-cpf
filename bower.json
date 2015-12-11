@@ -16,11 +16,11 @@
     "email": "tiago@tiagoporto.com",
     "homepage": "http://tiagoporto.com"
   },
-  "main": "PROJECT/public/js/CPF.js",
+  "main": "public/js/CPF.js",
   "ignore": [
     "**/*",
-    "!PROJECT/public/js/CPF.js",
-    "!PROJECT/public/js/CPF.min.js",
+    "!public/js/CPF.js",
+    "!public/js/CPF.min.js",
     "!README.md"
   ],
   "license": "MIT"

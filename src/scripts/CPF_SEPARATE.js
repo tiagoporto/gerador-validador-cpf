@@ -1,5 +1,5 @@
 /*!
-*	Gerador e Validador de CPF v2.0.0
+*	Gerador e Validador de CPF v2.0.1
 *	https://github.com/tiagoporto/gerador-validador-cpf
 *	Copyright (c) 2014-2015 Tiago Porto (http://www.tiagoporto.com)
 *	Released under the MIT license
@@ -23,7 +23,7 @@
  * @return {string}            O CPF formatado ou mensagem com erro da formatação.
  */
 function CPF(){
-	'user_strict';
+	'use strict';
 
 	function calculoVerificador1(noveDigitos){
 		var soma = null;
@@ -117,8 +117,8 @@ function CPF(){
 
 		//Verificando se todos os digitos são iguais
 		for (var i = 0; i < 10; i++){
-			if('' + noveDigitos + verificadores === '' + i + i + i + i + i + i + i + i + i + i +i){
-				return mensagemInvalido;
+			if('' + noveDigitos + verificadores === Array(12).join( i ) ){
+				return false;
 			}
 		}
 
