@@ -1,10 +1,10 @@
 language: node_js
 
 node_js:
-  - "4.1"
   - "stable"
 
 before_install:
+  - export CHROME_CANARY_BIN=chromium-browser
   - npm install -g gulp
 
 script:
