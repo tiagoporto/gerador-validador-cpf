@@ -1,6 +1,8 @@
 # Gerador e Validador de CPFs
 
-[![Build Status](https://travis-ci.org/tiagoporto/gerador-validador-cpf.png?branch=master)](https://travis-ci.org/tiagoporto/gerador-validador-cpf)
+[![Build Status](https://travis-ci.org/tiagoporto/gerador-validador-cpf.svg?branch=master)](https://travis-ci.org/tiagoporto/gerador-validador-cpf)
+
+[![Github Release](https://img.shields.io/github/release/tiagoporto/gerador-validador-cpf.svg)](https://github.com/tiagoporto/gerador-validador-cpf)
 
 A ferramenta pode ser acessada pelo link: [http://tiagoporto.github.io/gerador-validador-cpf/](http://tiagoporto.github.io/gerador-validador-cpf/).
 
