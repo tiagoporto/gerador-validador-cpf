@@ -22,6 +22,8 @@
  *
  * @return {string}            O CPF formatado ou mensagem com erro da formatação.
  */
+
+/* exported CPF */
 function CPF(){
 	'use strict';
 
