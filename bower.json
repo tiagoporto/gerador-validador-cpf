@@ -19,6 +19,7 @@
   "main": "public/js/CPF.js",
   "ignore": [
     "**/*",
+    "!LICENSE.md",
     "!public/js/CPF.js",
     "!public/js/CPF.min.js",
     "!README.md"
