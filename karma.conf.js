@@ -33,7 +33,7 @@ module.exports = function(config) {
 		// configure the reporter
 		coverageReporter: {
 			type : 'html',
-			dir : '.coverage/'
+			dir : 'coverage/'
 		},
 
 
@@ -82,8 +82,9 @@ module.exports = function(config) {
 		configuration.browsers = ['Chrome_travis_ci'],
 		configuration.coverageReporter = {
 			type : 'lcov',
-			dir : '.coverage/'
-		};
+			dir : 'coverage/'
+		},
+		configuration.singleRun = true;
 	}
 
 
