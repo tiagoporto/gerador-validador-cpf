@@ -74,13 +74,23 @@ paths = {
 
 //******************************** Tasks *********************************//
 
-gulp.task('test', function (done) {
-  new Karma({
-    configFile: __dirname + '/karma.conf.js',
-    singleRun: isTravis
-  }, done).start();
+
+gulp.task('coverall', function(){
+	gulp.src('.coverage/**/lcov.info')
+		.pipe(plugins.coveralls());
+
 });
 
+gulp.task('karma', function (done) {
+	new Karma({
+		configFile: __dirname + '/karma.conf.js',
+		singleRun: isTravis
+	}, done).start();
+});
+
+gulp.task('test', function(){
+	sequence('karma', 'coverall');
+});
 
 gulp.task('styles-helpers', require('./tasks/' + preprocessor + '-helpers')(gulp, plugins, paths, merge));
 
