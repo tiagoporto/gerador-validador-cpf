@@ -34,6 +34,26 @@ describe("Gerando CPF", function () {
 	})
 });
 
+describe("Verificando os verificador", function () {
+	var cpf = new CPF();
+
+	it("Verificador 1 = 0", function () {
+		expect(cpf.valida('76381842202')).toBeTruthy();
+	})
+
+	it("Verificador 1 > 1", function () {
+		expect(cpf.valida('125.828.106-65')).toBeTruthy();
+	})
+
+	it("Verificador 2 = 0", function () {
+		expect(cpf.valida('433.787.588-30')).toBeTruthy();
+	})
+
+	it("Verificador 2 > 1", function () {
+		expect(cpf.valida('855.178.021-25')).toBeTruthy();
+	})
+});
+
 describe("Formatando CPF", function () {
 	var cpf = new CPF();
 
