@@ -7,6 +7,7 @@
 
 html
 	box-sizing border-box
+	background-color $bg-color
 
 *, *:before, *:after
 	box-sizing inherit
@@ -18,7 +19,6 @@ body
 		background-position: left top
 
 	font normal normal  $base-font-size\/$base-line-height $font-family-base
-	background-color $bg-color
 	color $base-text-color
 	text-rendering optimizeLegibility
 	-webkit-font-smoothing antialiased
@@ -26,14 +26,18 @@ body
 	font-smoothing auto
 	font-feature-settings "liga", "kern"
 
-	background: linear-gradient(to bottom, $bg-color, darken($bg-color, 12%))
+	background: linear-gradient(to bottom, $bg-color, darken($bg-color, 18%))
 	background-attachment: fixed
 
 .panel
-	margin: 0 (-100% / 10) 40px
 	background: darken($bg-color, 35%)
-	padding: $base-line-height
+	line-height: 0
+	padding: $base-line-height 0
 	text-align: center
+	trailer(1)
+
+	iframe
+		height: $base-line-height !important
 
 h1
 	@extend .h1
@@ -76,8 +80,8 @@ label
 	display: block
 
 .main
-	width: (100% / 12) * 10
-	margin: 0 (100% / 12) 0
+	width: 95%
+	margin: auto
 
 .hljs
 // 	color lighten(#000, 35%)
@@ -91,6 +95,12 @@ footer
 	background darken($bg-color, 30%)
 	padding 5px
 	text-align center
+
++below(em(500px))
+	h1
+		span
+			display: block
+
 
 +below(em(767px))
 	button,

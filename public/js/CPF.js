@@ -107,9 +107,9 @@ function CPF(){
 
 		var verificador1 = calculoVerificador1(noveDigitos);
 
-		var cpf = noveDigitos + verificador1 + calculoVerificador2(noveDigitos + verificador1);
+		var getCPF = noveDigitos + verificador1 + calculoVerificador2(noveDigitos + verificador1);
 
-		return formataCPF(cpf, formatacao);
+		return formataCPF(getCPF, formatacao);
 	};
 
 	this.valida = function (valor){
@@ -136,9 +136,8 @@ function CPF(){
 	};
 
 	this.formata = function (valor, formatacao){
-		var CPF = limpa(valor);
+		var getCPF = limpa(valor);
 
-		return formataCPF(CPF, formatacao);
+		return formataCPF(getCPF, formatacao);
 	};
-
 }

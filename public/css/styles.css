@@ -178,6 +178,7 @@ p {
 html {
   -moz-box-sizing: border-box;
        box-sizing: border-box;
+  background-color: #3498db;
 }
 *,
 *:before,
@@ -186,12 +187,7 @@ html {
        box-sizing: inherit;
 }
 body {
-  background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,0.2) 1px, rgba(0,0,0,0) 1px);
-  background-image: linear-gradient(to top, rgba(0,0,0,0.2) 1px, rgba(0,0,0,0) 1px);
-  background-size: 100% 1.5em;
-  background-position: left top;
   font: normal normal 16px/24px Helvetica, Arial, sans-serif;
-  background-color: #3498db;
   color: #fff;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -200,15 +196,19 @@ body {
   -webkit-font-feature-settings: "liga", "kern";
      -moz-font-feature-settings: "liga", "kern";
           font-feature-settings: "liga", "kern";
-  background: -webkit-linear-gradient(top, #3498db, #2488cb);
-  background: linear-gradient(to bottom, #3498db, #2488cb);
+  background: -webkit-linear-gradient(top, #3498db, #217ebd);
+  background: linear-gradient(to bottom, #3498db, #217ebd);
   background-attachment: fixed;
 }
 .panel {
-  margin: 0 -10% 40px;
   background: #1b6496;
-  padding: 24px;
+  line-height: 0;
+  padding: 24px 0;
   text-align: center;
+  margin-bottom: 1.5em;
+}
+.panel iframe {
+  height: 24px !important;
 }
 h1 {
   font-family: 'PT Sans', sans-serif;
@@ -249,8 +249,8 @@ label {
   display: block;
 }
 .main {
-  width: 83.33333333333334%;
-  margin: 0 8.333333333333334% 0;
+  width: 95%;
+  margin: auto;
 }
 .hljs {
   background: rgba(248,248,248,0.7) !important;
@@ -260,6 +260,11 @@ footer {
   background: #1d6ca1;
   padding: 5px;
   text-align: center;
+}
+@media only screen and (max-width: 31.25em) {
+  h1 span {
+    display: block;
+  }
 }
 @media only screen and (max-width: 47.9375em) {
   button,
