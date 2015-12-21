@@ -13,6 +13,9 @@ html
 	box-sizing inherit
 
 body
+	background: linear-gradient(to bottom, $bg-color, darken($bg-color, 18%))
+	background-attachment: fixed
+
 	if $debug-vertical-rhythm == true
 		background-image: linear-gradient(to top, rgba($debug-color-line, 0.2) 1px, rgba(0, 0, 0, 0) 1px)
 		background-size: 100% em($base-line-height, $base-font-size)
@@ -26,80 +29,25 @@ body
 	font-smoothing auto
 	font-feature-settings "liga", "kern"
 
-	background: linear-gradient(to bottom, $bg-color, darken($bg-color, 18%))
-	background-attachment: fixed
 
-.panel
-	background: darken($bg-color, 35%)
-	line-height: 0
-	padding: $base-line-height 0
-	text-align: center
-	trailer(1)
-
-	iframe
-		height: $base-line-height !important
-
-h1
-	@extend .h1
-	font-family: 'PT Sans', sans-serif
-	margin-top: 0
-
-	svg
-		max-height: $base-line-height * 4
-		display: block
-		margin: 0 auto $base-line-height
-
-p
-	p-typography()
+#btn-gerar-CPF
+	display: block
 
 a
 	color #FFF
 
 	&:hover
 		color #FFFF32
-button
-	background: darken($bg-color, 60%)
-	border: none
-	padding: 10px
-	border-radius: 5px
 
 input, select
-	padding: 5px
-	border-radius: 5px
-	border: none
-	font-weight: bold
-	color: lighten(#000, 60%)
+	@extend .input
 
-form
-	margin-bottom: 20px
-
-select
-	color: lighten(#000, 40%)
 
 label
 	display: block
 
-.main
-	width: 95%
-	margin: auto
-
-.hljs
-// 	color lighten(#000, 35%)
-// 	background rgba(255, 255, 255, .7)
-	background rgba(248, 248, 248, .7) !important
-	border-radius 5px
-// 	padding 10px
-// 	font-size em(12px)
-
-footer
-	background darken($bg-color, 30%)
-	padding 5px
-	text-align center
-
-+below(em(500px))
-	h1
-		span
-			display: block
+dl
+	margin: $base-line-height 0
 
 
 +below(em(767px))
@@ -107,6 +55,3 @@ footer
 	input,
 	select
 		width: 100%
-
-	dd
-		margin 0

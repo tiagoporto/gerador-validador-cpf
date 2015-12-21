@@ -1,0 +1,24 @@
+.panel
+	background: darken($bg-color, 35%)
+	line-height: 0
+	padding: $base-line-height 0
+	text-align: center
+	trailer(1)
+
+	iframe
+		height: $base-line-height !important
+
+	&__title
+		@extend .h1
+		font-family: 'PT Sans', sans-serif
+		margin-top: 0
+
+	&__logo
+		max-height: $base-line-height * 4
+		display: block
+		margin: 0 auto $base-line-height
+
++below(em(500px))
+	.panel
+		span
+			display: block

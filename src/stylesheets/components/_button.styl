@@ -1,5 +1,5 @@
 $basicButton
-	adjust-font-size-to($base-font-size - 2)
+	adjust-font-size-to($base-font-size - 2, 2)
 	border: none
 	border-radius: 5px
 	display: inline-block
@@ -14,7 +14,7 @@ $basicButton
 	-webkit-tap-highlight-color: transparent
 	box-shadow: 0 1px 2px rgba(0, 0, 0, .1), 0 1px 2px rgba(0, 0, 0, 0.1)
 	color: #fff
-	background-color: #3FAA96
+	background-color: darken($bg-color, 60%)
 	transition: .15s ease-out
 	cursor: pointer
 
@@ -26,7 +26,7 @@ $basicButton
 	@extend $basicButton
 
 	&:hover
-		background-color: #2bbbad
+		background-color: darken($bg-color, 50%)
 		box-shadow: 0 1px 4px rgba(0, 0, 0, .15), 0 1px 4px rgba(0, 0, 0, .15)
 
 	// &:active

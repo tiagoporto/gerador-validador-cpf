@@ -32,6 +32,10 @@ addLoadEvent(
     // }),
 
 	//$('#logo').downloadTip({ 'position': 'right' })
-	$('#cpf-validacao').mask('000.000.000-00')
+
+	// Highlight
+	hljs.initHighlightingOnLoad(),
+
+	$('#cpf-validacao').mask('999.999.999-99')
 
 );

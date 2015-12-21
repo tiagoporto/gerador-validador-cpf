@@ -10,7 +10,7 @@ var CPF = new CPF();
 document.getElementById('btn-gerar-CPF').onclick = function(){
 	'use strict';
 
-	document.getElementById('CPF').innerHTML = CPF.gera();
+	document.getElementById('CPF').value = CPF.gera();
 
 	ga('send', 'event', 'button', 'click', 'Generate CPF');
 
@@ -21,13 +21,20 @@ document.getElementById('valida-CPF').onsubmit = function(){
 	'use strict';
 	var mensagem = '';
 
-	if ( CPF.valida(document.getElementById('cpf-validacao').value) === true ) {
-		mensagem = 'CPF Válido';
-	}else{
-		mensagem = 'CPF Inválido';
-	}
+	document.getElementById('resultado-validacao').innerHTML = '';
 
-	document.getElementById('resultado-validacao').innerHTML = mensagem;
+	setTimeout(function(){
+
+		if ( CPF.valida(document.getElementById('cpf-validacao').value) === true ) {
+			mensagem = 'CPF Válido';
+		}else{
+			mensagem = 'CPF Inválido';
+		}
+
+		document.getElementById('resultado-validacao').innerHTML = mensagem;
+	}, 400);
+
+
 
 	ga('send', 'event', 'button', 'click', 'Validate CPF');
 
