@@ -1,3 +1,20 @@
+function addClass(el, klass){
+	'use strict';
+
+	el.className += ' ' + klass;
+}
+
+function removeClass(el, klass){
+	'use strict';
+
+	var elClass = ' ' + el.className + ' ';
+
+	while(elClass.indexOf(' ' + klass + ' ') !== -1){
+		elClass = elClass.replace(' ' + klass + ' ', '');
+	}
+
+	el.className = elClass;
+}
 
 var CPF = new CPF();
 
@@ -21,11 +38,17 @@ document.getElementById('valida-CPF').onsubmit = function(){
 
 		if ( CPF.valida(document.getElementById('cpf-validacao').value) === true ) {
 			mensagem = 'CPF Válido';
+
+			removeClass(document.getElementById('resultado-validacao'), 'invalid');
+			addClass(document.getElementById('resultado-validacao'), 'valid');
 		}else{
 			mensagem = 'CPF Inválido';
+			removeClass(document.getElementById('resultado-validacao'), 'valid');
+			addClass(document.getElementById('resultado-validacao'), 'invalid');
 		}
 
-		document.getElementById('resultado-validacao').innerHTML = mensagem;
+
+		document.getElementById('resultado-validacao').value = mensagem;
 	}, 400);
 
 

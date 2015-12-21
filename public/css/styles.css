@@ -136,10 +136,10 @@ select {
   margin-bottom: 0.8em;
 }
 .h4 {
-  font-size: 1.75em;
-  line-height: 1.714285714285714em;
-  margin-top: 0.857142857142857em;
-  margin-bottom: 0.857142857142857em;
+  font-size: 1.625em;
+  line-height: 1.846153846153846em;
+  margin-top: 0.923076923076923em;
+  margin-bottom: 0.923076923076923em;
 }
 .h5 {
   font-size: 1.5em;
@@ -213,7 +213,8 @@ p {
   }
 }
 .main {
-  max-width: 900px;
+  max-width: 1000px;
+  padding: 0 20px;
   margin: auto;
 }
 .panel {
@@ -276,7 +277,22 @@ body {
      -moz-font-feature-settings: "liga", "kern";
           font-feature-settings: "liga", "kern";
 }
-#btn-gerar-CPF {
+.valid {
+  color: #008000;
+  border-color: #8cff8c;
+  background: #8cff8c;
+  -webkit-transition: all ease 1s;
+  transition: all ease 1s;
+}
+.invalid {
+  color: #f00;
+  border-color: #ffb3b3;
+  background: #ffb3b3;
+  -webkit-transition: all ease 1s;
+  transition: all ease 1s;
+}
+#btn-gerar-CPF,
+#valida-CPF button {
   display: block;
 }
 a {
@@ -290,6 +306,9 @@ label {
 }
 dl {
   margin: 24px 0;
+}
+dd {
+  margin: 0;
 }
 @media only screen and (max-width: 47.9375em) {
   button,

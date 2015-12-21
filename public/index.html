@@ -71,6 +71,8 @@
 				<span>Gerador e</span> validador de CPF
 			</h1>
 
+			<p>Biblioteca JS open-source para gerar, validar e formatar CPF.</p>
+
 			<a class="github-button" href="https://github.com/tiagoporto" data-count-href="/tiagoporto/followers" data-count-api="/users/tiagoporto#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @tiagoporto on GitHub">Follow @tiagoporto</a>
 
 			<a class="github-button" href="https://github.com/tiagoporto/gerador-validador-cpf/fork" data-icon="octicon-git-branch" data-count-href="/tiagoporto/gerador-validador-cpf/network" data-count-api="/repos/tiagoporto/gerador-validador-cpf#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork tiagoporto/gerador-validador-cpf on GitHub">Fork</a>
@@ -83,26 +85,25 @@
 
 		<main class="main">
 			<section>
-				<h2 class="h2">Gerar CPF</h2>
+				<h2 class="h2">Gerar</h2>
 
 				<button id="btn-gerar-CPF" type="button" class="button">Gerar CPF</button>
 
 				<input id="CPF" type="text" placeholder="CPF gerado" disabled>
 
-				<h2 class="h2">Validar CPF</h2>
+				<h2 class="h2">Validar</h2>
 
 				<form action="#" id="valida-CPF">
 					<label for="cpf-validacao">Insira o CPF para validação</label>
 					<input id="cpf-validacao" type="text" required>
 
-					<p id="resultado-validacao"></p>
+					<input id="resultado-validacao" type="text" placeholder="Insira CPF para validação" disabled>
 
-					<p>*Permitido somente algarismos</p>
 					<button  type="submit" class="button">Validar CPF</button>
 				</form>
 
 
-				<h2 class="h2">Formatar CPF</h2>
+				<h2 class="h2">Formatar</h2>
 
 				<form action="#" id="formata-CPF">
 
@@ -173,6 +174,8 @@
 
 			<pre><code class="javascript">var CPF = new CPF();</code></pre>
 
+			<h3 class="h3">Gerando CPF</h3>
+
 			<p>Para <strong>gerar CPF</strong> basta chamar a função `gera()`, veja um exemplo:</p>
 
 			<pre><code class="javascript">CPF.gera();</code></pre>
@@ -186,19 +189,21 @@
 			<p>A função recebe como parâmetro opcional a formatação que o CPF será gerado.</p>
 
 			<dl>
-				<dt>Padrão</dt>
+				<dt class="h4">Padrão</dt>
 				<dd><pre><code class="javascript">CPF.gera();</code></pre>
 				</dd>
 				<dd>Gera um CPF no formato xxx.xxx.xxx-xx</dd>
 
-				<dt>Dígitos</dt>
+				<dt class="h4">Dígitos</dt>
 				<dd><pre><code class="javascript">CPF.gera('digitos');</code></pre></dd>
 				<dd>Gera um CPF no formato xxxxxxxxxxx</dd>
 
-				<dt>Verificador</dt>
+				<dt class="h4">Verificador</dt>
 				<dd><pre><code class="javascript">CPF.gera('verificador');</code></pre></dd>
 				<dd>Gera um CPF no formato xxxxxxxxx-xx</dd>
 			</dl>
+
+			<h3 class="h3">Validando CPF</h3>
 
 			<p>Para <strong>validar um CPF</strong> basta chamar a função `valida(cpf)`, passando como string o número a ser validado, não se preocupe com os caracteres '.', '-' e espaço, a função fica encarregada de eliminar essescaracterespara verificação posterior, veja um exemplo:</p>
 
@@ -216,6 +221,8 @@
   document.getElementById('resultado-validacao').innerHTML = mensagem;
 };</code></pre>
 
+			<h3 class="h3">Formatando CPF</h3>
+
 			<p>Para <strong>formatar um CPF</strong> basta chamar a função `formata(cpf)`, passando como string o CPF a ser formatado, não se preocupe com os caracteres '.', '-' e espaço, a função fica encarregada de eliminar esses caracteres para verificação posterior, veja um exemplo:</p>
 
 			<pre><code class="javascript">CPF.formata("123.456.789-00");</code></pre>
@@ -230,16 +237,16 @@
 			<p>A função recebe como parâmetro opcional a formatação do CPF.</p>
 
 			<dl>
-				<dt>Padrão</dt>
+				<dt class="h4">Padrão</dt>
 				<dd><pre><code class="javascript">CPF.formata('12345678901');</code></pre>
 				</dd>
 				<dd>Gera um CPF no formato xxx.xxx.xxx-xx</dd>
 
-				<dt>Dígitos</dt>
+				<dt class="h4">Dígitos</dt>
 				<dd><pre><code class="javascript">CPF.formata('123.456.789-01', 'digitos');</code></pre></dd>
 				<dd>Gera um CPF no formato xxxxxxxxxxx</dd>
 
-				<dt>Verificador</dt>
+				<dt class="h4">Verificador</dt>
 				<dd><pre><code class="javascript">CPF.formata('12345678901', 'verificador');</code></pre></dd>
 				<dd>Gera um CPF no formato xxxxxxxxx-xx</dd>
 			</dl>

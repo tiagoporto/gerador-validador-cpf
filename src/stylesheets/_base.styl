@@ -30,8 +30,22 @@ body
 	font-feature-settings "liga", "kern"
 
 
+.valid
+	color: $cor = green
+	border-color: lighten($cor, 70%)
+	background: lighten($cor, 70%)
+	transition: all ease 1s
+
+.invalid
+	color: $cor = red
+	border-color: lighten($cor, 70%)
+	background: lighten($cor, 70%)
+	transition: all ease 1s
+
 #btn-gerar-CPF
+#valida-CPF button
 	display: block
+
 
 a
 	color #FFF
@@ -49,6 +63,8 @@ label
 dl
 	margin: $base-line-height 0
 
+dd
+	margin: 0
 
 +below(em(767px))
 	button,
