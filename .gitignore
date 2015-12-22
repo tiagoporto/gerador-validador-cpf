@@ -242,3 +242,4 @@ bower_components/
 #################
 
 build/
+.publish/

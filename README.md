@@ -4,6 +4,7 @@
 [![Coverage Status](https://img.shields.io/coveralls/tiagoporto/gerador-validador-cpf.svg)](https://coveralls.io/github/tiagoporto/gerador-validador-cpf)
 [![Github Release](https://img.shields.io/github/release/tiagoporto/gerador-validador-cpf.svg)](https://github.com/tiagoporto/gerador-validador-cpf)
 [![Github Issues](https://img.shields.io/github/issues/tiagoporto/gerador-validador-cpf.svg)](https://github.com/tiagoporto/gerador-validador-cpf/issues)
+[![Issues Stats](http://issuestats.com/github/Tiagoporto/gerador-validador-cpf/badge/issue)](https://github.com/tiagoporto/gerador-validador-cpf/issues)
 [![Github License](https://img.shields.io/github/license/tiagoporto/gerador-validador-cpf.svg)](http://opensource.org/licenses/MIT)
 
 A ferramenta pode ser acessada pelo link: [http://tiagoporto.github.io/gerador-validador-cpf/](http://tiagoporto.github.io/gerador-validador-cpf/).
