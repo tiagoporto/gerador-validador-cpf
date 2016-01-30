@@ -28,6 +28,7 @@
     "highlightjs": "~8.5.0",
     "jquery": "~2.1.4",
     "jquery.maskedinput": "jquery-maskedinput#~1.4.1",
-    "normalize-css": "normalize.css#~3.0.3"
+    "normalize-css": "normalize.css#~3.0.3",
+    "clipboard": "~1.5.5"
   }
 }
