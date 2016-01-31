@@ -55,6 +55,7 @@ pre {
 }
 .input,
 .textarea,
+#copy-cpf,
 input,
 select {
   font-size: 1em;
@@ -70,6 +71,7 @@ select {
 }
 .input:focus,
 .textarea:focus,
+#copy-cpf:focus,
 input:focus,
 select:focus {
   border-color: #66afe9;
@@ -84,6 +86,7 @@ select:focus {
   padding: 1.4375em;
 }
 .input,
+#copy-cpf,
 input,
 select {
   height: 2.25em;
@@ -246,6 +249,24 @@ p {
   overflow: hidden;
   text-align: center;
 }
+#CPF {
+  float: left;
+}
+#copy-cpf {
+  border: none;
+  margin-left: 0.625em;
+  color: #fff;
+  text-transform: lowercase;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media only screen and (max-width: 48em) {
+  #copy-cpf {
+    margin: 0 2%;
+    margin-bottom: 0.75em;
+    width: 96%;
+  }
+}
 /*
 *
 * Box model reset
@@ -309,6 +330,16 @@ dl {
 }
 dd {
   margin: 0;
+}
+#resultado-validacao,
+#formatacao {
+  margin-left: 0.3125em;
+}
+@media only screen and (max-width: 48em) {
+  #resultado-validacao,
+  #formatacao {
+    margin-left: 0;
+  }
 }
 @media only screen and (max-width: 47.9375em) {
   button,
