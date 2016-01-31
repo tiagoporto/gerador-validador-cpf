@@ -34,12 +34,11 @@ function CPF(){
 			soma += noveDigitos.toString().charAt(j)*(10-j);
 		}
 
-		var verificador1 = soma % 11;
+		var somaFinalVerificador1 = soma % 11,
+			verificador1 = 11 - somaFinalVerificador1;
 
-		if (verificador1 < 2) {
+		if (somaFinalVerificador1 < 2) {
 			verificador1 = 0;
-		}else {
-			verificador1 = 11 - verificador1;
 		}
 
 		return verificador1;
@@ -52,12 +51,11 @@ function CPF(){
 			soma +=  cpfComVerificador1.toString().charAt(k)*(11-k);
 		}
 
-		var verificador2 = soma % 11;
+		var somaFinalVerificador2 = soma % 11,
+			verificador2 = 11 - somaFinalVerificador2;
 
-		if (verificador2 < 2) {
+		if (somaFinalVerificador2 < 2) {
 			verificador2 = 0;
-		}else {
-			verificador2 = 11 - verificador2;
 		}
 
 		return verificador2;
@@ -70,8 +68,8 @@ function CPF(){
 	}
 
 	function formataCPF(value, formatacao){
-		var sepDigitos = '.';
-		var sepVerificador = '-';
+		var sepDigitos = '.',
+			sepVerificador = '-';
 
 		if (formatacao === 'digitos') {
 			sepDigitos = '';
