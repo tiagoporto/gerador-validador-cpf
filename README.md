@@ -19,9 +19,9 @@ A ferramenta pode ser acessada pelo link: [http://tiagoporto.github.io/gerador-v
 
 * Faça o download de uma das versões:
 
-    * [Não Compactada](https://raw.githubusercontent.com/tiagoporto/gerador-validador-cpf/gh-pages/PROJECT/public/js/CPF.js)
+    * [Não Compactada](https://raw.githubusercontent.com/tiagoporto/gerador-validador-cpf/master/public/js/CPF.js)
 
-    * [Compactada](https://raw.githubusercontent.com/tiagoporto/gerador-validador-cpf/gh-pages/PROJECT/public/js/CPF.min.js)
+    * [Compactada](https://raw.githubusercontent.com/tiagoporto/gerador-validador-cpf/master/public/js/CPF.min.js)
 
 Se preferir baixe com [Bower](http://bower.io/).
 
