@@ -23,8 +23,7 @@ document.getElementById('btn-gerar-CPF').onclick = function(){
 
 	document.getElementById('CPF').value = CPF.gera();
 
-	ga('send', 'event', 'button', 'click', 'Generate CPF');
-
+	typeof ga === 'function' && ga('send', 'event', 'button', 'click', 'Generate CPF');
 };
 
 
@@ -53,7 +52,8 @@ document.getElementById('valida-CPF').onsubmit = function(){
 
 
 
-	ga('send', 'event', 'button', 'click', 'Validate CPF');
+
+	typeof ga === 'function' &&  ga('send', 'event', 'button', 'click', 'Validate CPF');
 
 	return false;
 
@@ -64,7 +64,7 @@ document.getElementById('formata-CPF').onsubmit = function(){
 
 	document.getElementById('resultado-formatacao').innerHTML = CPF.formata(document.getElementById('cpf-formatacao').value, document.getElementById('formatacao').value);
 
-	ga('send', 'event', 'button', 'click', 'Formate CPF');
+	typeof ga === 'function' &&  ga('send', 'event', 'button', 'click', 'Formate CPF');
 
 	return false;
 
@@ -73,7 +73,7 @@ document.getElementById('formata-CPF').onsubmit = function(){
 document.getElementById('download-nao-compactada').onclick = function(){
 	'use strict';
 
-	ga('send', 'event', 'download', 'click', 'Download versão Não Compactada');
+	typeof ga === 'function' &&  ga('send', 'event', 'download', 'click', 'Download versão Não Compactada');
 
 };
 
@@ -81,7 +81,7 @@ document.getElementById('download-nao-compactada').onclick = function(){
 document.getElementById('download-compactada').onclick = function(){
 	'use strict';
 
-	ga('send', 'event', 'download', 'click', 'Download versão Compactada');
+	typeof ga === 'function' &&  ga('send', 'event', 'download', 'click', 'Download versão Compactada');
 
 };
 

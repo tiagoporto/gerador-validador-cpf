@@ -57,6 +57,8 @@ paths = {
 	},
 
 //******************************* Settings *******************************//
+
+    		  env = (args.prod) ? 'prod' : 'dev',
 	 argProcessor = '',
 	 preprocessor = 'stylus',
    extensionStyle = '',
@@ -184,11 +186,13 @@ gulp.task('images', function () {
 
 // Concatenate vendor scripts and Minify
 gulp.task('vendor-scripts', function () {
+	var envProd = (env === 'prod') ? '' : '!';
+
 	return gulp.src([
 					'!' + paths.scripts.src + '**/*_IGNORE.js',
-					paths.scripts.src + 'settings/google_analytics.js',
 					paths.scripts.src + 'vendor/frameworks_libs/*',
 					paths.scripts.src + 'vendor/plugins/**',
+					envProd + paths.scripts.src + 'settings/google_analytics.js',
 					paths.scripts.src + 'settings/*.js'
 				])
 				.pipe(plugins.plumber())
@@ -473,6 +477,7 @@ gulp.task('gh', function() {
 });
 
 gulp.task('ghpages', function() {
+	env = 'prod';
 	sequence(['images', 'bitmap-sprite', 'vetor-sprite', 'styles-helpers', 'vendor-scripts'], 'svg2png', 'styles', 'scripts', 'copy', 'gh');
 });
 
