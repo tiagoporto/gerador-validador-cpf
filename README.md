@@ -25,9 +25,15 @@ A ferramenta pode ser acessada pelo link: [http://tiagoporto.github.io/gerador-v
 
 Se preferir baixe com [Bower](http://bower.io/).
 
-```sh
-	$ bower install gerador-validador-cpf --save
-```
+	```sh
+		$ bower install gerador-validador-cpf --save
+	```
+
+Ou com [NPM](https://www.npmjs.com/).
+
+	```sh
+		$ npm install gerador-validador-cpf --save
+	```
 
 * Inclua o arquivo no rodapé da sua página, como no exemplo.
 
@@ -74,4 +80,4 @@ Se preferir baixe com [Bower](http://bower.io/).
 
 ## Licença
 
-Gerador e validador de CPFs está sobre os termos da [licença MIT](http://opensource.org/licenses/MIT).
+Gerador e validador de CPFs está sobre os termos da [licença MIT](https://github.com/tiagoporto/gerador-validador-cpf/blob/master/LICENSE.md).
