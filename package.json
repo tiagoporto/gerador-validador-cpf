@@ -20,6 +20,7 @@
     "type": "git",
     "url": "https://tiagoporto/gerador-validador-cpf.git"
   },
+  "main": "public/js/CPF.js",
   "license": "MIT",
   "devDependencies": {
     "browser-sync": "^2.10.0",
