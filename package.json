@@ -1,17 +1,26 @@
 {
-  "name": "your-project",
-  "version": "0.0.1",
-  "description": "Description of your project",
-  "keywords": [],
-  "homepage": "",
+  "name": "gerador-validador-cpf",
+  "version": "2.0.1",
+  "description": "Gerador e validador de cpf em javascript.",
+  "homepage": "http://tiagoporto.github.io/gerador-validador-cpf/",
   "author": {
-    "name": "",
-    "url": ""
+    "name": "Tiago Porto",
+    "url": "http://tiagoporto.com"
   },
+  "keywords": [
+    "cpf",
+    "gerador",
+    "gera",
+    "validador",
+    "valida",
+    "formata",
+    "brasil"
+  ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://tiagoporto/gerador-validador-cpf.git"
   },
+  "license": "MIT",
   "devDependencies": {
     "browser-sync": "^2.10.0",
     "del": "^2.1.0",

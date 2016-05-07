@@ -6,14 +6,16 @@
     "url": "git://github.com/tiagoporto/gerador-validador-cpf.git"
   },
   "keywords": [
-    "gerador",
-    "validador",
     "cpf",
+    "gerador",
+    "gera",
+    "validador",
+    "valida",
+    "formata",
     "brasil"
   ],
   "author": {
     "name": "Tiago Porto",
-    "email": "tiago@tiagoporto.com",
     "homepage": "http://tiagoporto.com"
   },
   "main": "public/js/CPF.js",
