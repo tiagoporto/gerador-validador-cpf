@@ -1,0 +1,31 @@
+$input
+	adjust-font-size-to($base-font-size)
+	rhythm-borders(1px, .25, $base-font-size, solid lighten(#000, 60%))
+	border-radius 5px
+	color lighten(#000, 35%)
+	width 100%
+	trailer(.5)
+
+	&:focus
+		border-color #66afe9
+		outline 0
+		box-shadow inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+
+input[type="text"]
+input[type="search"]
+input[type="email"]
+input[type="number"]
+input[type="password"]
+select
+	@extend $input
+	height: em($base-line-height / 2 * 3)
+
+	&:disabled
+		background lighten(#000, 95%)
+
+select
+	width: auto
+
+::placeholder
+	color lighten(#000, 55%)
+	font-size em($base-font-size - 2)

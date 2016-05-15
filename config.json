@@ -1,65 +1,82 @@
 {
-	"basePaths": {
-		   "src": "src/",
-		  "dest": "public/",
-		 "build": "build/",
-		 "bower": "public/bower_components",
+  "basePaths": {
+     "src": "src/",
+    "dest": "dist/",
+   "build": "build/",
+   "bower": "dist/bower_components",
 
-		"images": {
-			 "src": "images/",
-			"dest": "img/"
-		},
+    "handlebars": {
+       "src": "html/",
+       "partials": {
+          "src": "includes/"
+        }
+    },
 
-		"sprite": {
-			"src": "sprite/"
-		},
+    "images": {
+       "src": "images/",
+      "dest": "img/"
+    },
 
-		"scripts": {
-			 "src": "scripts/",
-			"dest": "js/"
-		},
+    "fonts": {
+      "dest": "fonts/"
+    },
 
-		"styles": {
-			 "src": "stylesheets/",
-			"dest": "css/"
-		}
-	},
+    "sprite": {
+      "src": "sprite/"
+    },
 
-	"components": false,
+    "scripts": {
+       "src": "scripts/",
+      "dest": "js/"
+    },
 
-	"jquery": false,
+    "styles": {
+      "src": "stylesheets/",
+      "dest": "css/"
+    }
+  },
 
-	"lintCSS": false,
+  "components": true,
 
-	"lintJS": true,
+  "es6": true,
 
-	"autoprefixerBrowsers": [
-		"ie >= 8",
-		"ie_mob >= 10",
-		"Firefox > 24",
-		"last 10 Chrome versions",
-		"safari >= 6",
-		"opera >= 24",
-		"ios >= 6",
-		"android >= 4",
-		"bb >= 10"
-	],
+  "outdatedBrowser": true,
 
-	"browserSync": {
-		"notify": false,
-		"port": 80,
-		"logPrefix": "BrowserSync",
-		"server": {
-			"baseDir": ["public/"]
-		}
-	},
+  "logoDownloadtip": true,
 
-	"browserSyncBuild": {
-		"notify": false,
-		"port": 80,
-		"logPrefix": "BrowserSync",
-		"server": {
-			"baseDir": ["build/"]
-		}
-	}
+  "jQuery": true,
+
+  "lintCSS": false,
+
+  "lintJS": true,
+
+  "inlineSVG": false,
+
+  "autoprefixerBrowsers": [
+    "ie >= 8",
+    "ie_mob >= 10",
+    "Firefox > 24",
+    "last 10 Chrome versions",
+    "safari >= 6",
+    "opera >= 24",
+    "ios >= 6",
+    "android >= 4",
+    "bb >= 10"
+  ],
+
+  "browserSync": {
+    "notify": false,
+    "logPrefix": "BrowserSync",
+    "server": {
+      "baseDir": ["dist/"]
+    }
+  },
+
+  "browserSyncBuild": {
+    "notify": false,
+    "logPrefix": "BrowserSync",
+    "server": {
+      "baseDir": ["build/"]
+    }
+  }
 }

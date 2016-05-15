@@ -19,12 +19,11 @@
     "homepage": "http://tiagoporto.com"
   },
   "main": "public/js/CPF.js",
+  "license": "MIT",
   "ignore": [
     "**/*",
     "!LICENSE.md",
-    "!public/js/CPF.js",
-    "!public/js/CPF.min.js",
+    "!dist/**/*",
     "!README.md"
-  ],
-  "license": "MIT"
+  ]
 }

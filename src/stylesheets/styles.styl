@@ -4,34 +4,23 @@
 @import "helpers/_mixins"
 
 // Web Fonts
-@import "settings/_web-fonts"
+// @import "settings/_web-fonts"
 
 // Sprites
 // @import "helpers/_bitmap-sprite"
 // @import "helpers/_vetor-sprite"
 
-
 // Vendors
-// @import "../../public/bower_components/"
+// @import "../../dist/bower_components/"
 
 // Vertical Rhythm module from Compass ported to Stylus
-@import "vendor/_vertical-rhythm"
+@import "../vendors/vertical-rhythm-port-from-compass/_vertical-rhythm"
 
 /*! ==================================================================
    Main Styles
    ================================================================== */
-@import "settings/_placeholders"
-@import "components/_button"
-@import "components/_code"
-@import "components/_form"
-@import "components/_typography"
-@import "components/_github-corner"
-@import "components/_main"
-@import "components/_panel"
-@import "components/_footer"
-@import "components/_CPF"
-@import "components/_copy-cpf"
-@import "_base"
+@import "partials"
+@import "components"
 
 
 
@@ -40,18 +29,4 @@
    ================================================================== */
 
 @media print
-	@import "media_queries/_print"
-
-/*!
-*
-* Better Font Smoothing in Chrome & Safari
-* http://www.intridea.com/blog/2014/5/8/better-font-smoothing-in-chrome-on-mac-os-x
-*
-*/
-@media only screen and (-webkit-min-device-pixel-ratio: 1.25),\
-	only screen and ( min-device-pixel-ratio: 1.25),\
-	only screen and ( min-resolution: 200dpi),\
-	only screen and ( min-resolution: 1.25dppx)
-
-	body
-		-webkit-font-smoothing: subpixel-antialiased
+    @import "partials/_print"

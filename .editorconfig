@@ -5,21 +5,17 @@
 root = true
 
 [*]
-
-# Change these settings to your own preference
-indent_style = tab
-indent_size = 4
-
-# Matches the exact files either package.json or bower.json
-[{package.json,bower.json}]
-indent_style = space
-indent_size = 2
-
-# We recommend you to keep these unchanged
-end_of_line = lf
 charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
 trim_trailing_whitespace = true
+insert_final_newline = true
+
+[{*.json,.bowerrc,.csslintrc,.eslintrc,.gitignore,.gitattributes}]
+indent_size = 2
 insert_final_newline = false
 
 [*.md]
+insert_final_newline = false
 trim_trailing_whitespace = false
