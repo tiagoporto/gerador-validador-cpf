@@ -36,15 +36,15 @@
     }
   },
 
-  "components": true,
+  "components": false,
 
   "es6": true,
 
-  "outdatedBrowser": true,
+  "outdatedBrowser": false,
 
-  "logoDownloadtip": true,
+  "logoDownloadtip": false,
 
-  "jQuery": true,
+  "jQuery": false,
 
   "lintCSS": false,
 
