@@ -10,12 +10,12 @@
     "type": "git",
     "url": "git://github.com/tiagoporto/gerador-validador-cpf.git"
   },
-  "main": "PROJECT/public/js/CPF.js",
+  "main": "dist/js/CPF.js",
   "license": "MIT",
   "ignore": [
     "**/*",
-    "!PROJECT/public/js/CPF.js",
-    "!PROJECT/public/js/CPF.min.js",
+    "!dist/**/*",
+    "!LICENSE.md",
     "!README.md"
   ],
   "keywords": [

@@ -16,7 +16,7 @@ addLoadEvent(
 	// Highlight
 	hljs.initHighlightingOnLoad(),
 
-	new Clipboard('#copy-cpf'),
+	new Clipboard('.generate-section__copy-button'),
 
 	$('#cpf-validacao').mask('999.999.999-99')
 

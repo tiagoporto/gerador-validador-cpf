@@ -23,7 +23,7 @@
   "main": "dist/js/CPF.js",
   "license": "MIT",
   "devDependencies": {
-    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-es2015-without-strict": "0.0.2",
     "browser-sync": "^2.10.0",
     "del": "^2.1.0",
     "gulp": "^3.9.0",

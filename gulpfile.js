@@ -235,7 +235,7 @@ gulp.task('vendor-scripts', function() {
 
 // Concatenate and Minify Main Scripts
 gulp.task('scripts', function() {
-    var babelOption = { presets: ['es2015'] };
+    var babelOption = { presets: ['es2015-without-strict'] };
     var headerWrapper = { header: headerProject + '\n' };
     var jQueryWrapper = {
                             header: 'jQuery(document).ready(function($) {\n\n',

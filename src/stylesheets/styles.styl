@@ -23,10 +23,35 @@
 @import "components"
 
 
-
 /*! ==================================================================
    Media Queries
    ================================================================== */
 
 @media print
     @import "partials/_print"
+
+.valid
+    color: $cor = green
+    border-color: lighten($cor, 70%)
+    background: lighten($cor, 70%)
+    transition: all ease 1s
+
+.invalid
+    color: $cor = red
+    border-color: lighten($cor, 70%)
+    background: lighten($cor, 70%)
+    transition: all ease 1s
+
+dl
+    margin: $base-line-height 0
+
+dd
+    margin: 0
+
+@media (max-width: em($tablet - 1))
+    button,
+    input,
+    select
+        width: 100%
+
+
