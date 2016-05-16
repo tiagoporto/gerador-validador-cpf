@@ -1,8 +1,8 @@
 /*!
-*	Gerador e Validador de CPF v3.0.0
-*	https://github.com/tiagoporto/gerador-validador-cpf
-*	Copyright (c) 2014-2016 Tiago Porto (http://www.tiagoporto.com)
-*	Released under the MIT license
+*   Gerador e Validador de CPF v3.0.0
+*   https://github.com/tiagoporto/gerador-validador-cpf
+*   Copyright (c) 2014-2016 Tiago Porto (http://www.tiagoporto.com)
+*   Released under the MIT license
 */
 
 /**
@@ -23,119 +23,134 @@
  * @return {string}            O CPF formatado ou mensagem com erro da formatação.
  */
 
-/* exported CPF */
-function CPF(){
-	'use strict';
+/*eslint-env node*/
+(function(){
+    'use strict';
 
-	function calculoVerificador1(noveDigitos){
-		var soma = null;
+    var root = typeof self === 'object' && self.self === self && self || typeof global === 'object' && global.global === global && global || this;
 
-		for (var j = 0; j < 9; ++j) {
-			soma += noveDigitos.toString().charAt(j)*(10-j);
-		}
+    var CPF = function(){};
 
-		var somaFinalVerificador1 = soma % 11,
-			verificador1 = 11 - somaFinalVerificador1;
+    if (typeof exports !== 'undefined' && !exports.nodeType) {
+        if (typeof module !== 'undefined' && !module.nodeType && module.exports) {
+            exports = module.exports = CPF;
+        }
+        exports.CPF = CPF;
+    } else {
+        root.CPF = CPF;
+    }
 
-		if (somaFinalVerificador1 < 2) {
-			verificador1 = 0;
-		}
+    function calculoVerificador1(noveDigitos){
+        var soma = null;
 
-		return verificador1;
-	}
+        for (var j = 0; j < 9; ++j) {
+            soma += noveDigitos.toString().charAt(j)*(10-j);
+        }
 
-	function calculoVerificador2(cpfComVerificador1){
-		var soma = null;
+        var somaFinalVerificador1 = soma % 11,
+            verificador1 = 11 - somaFinalVerificador1;
 
-		for (var k = 0; k < 10; ++k){
-			soma +=  cpfComVerificador1.toString().charAt(k)*(11-k);
-		}
+        if (somaFinalVerificador1 < 2) {
+            verificador1 = 0;
+        }
 
-		var somaFinalVerificador2 = soma % 11,
-			verificador2 = 11 - somaFinalVerificador2;
+        return verificador1;
+    }
 
-		if (somaFinalVerificador2 < 2) {
-			verificador2 = 0;
-		}
+    function calculoVerificador2(cpfComVerificador1){
+        var soma = null;
 
-		return verificador2;
-	}
+        for (var k = 0; k < 10; ++k){
+            soma += cpfComVerificador1.toString().charAt(k)*(11-k);
+        }
 
-	function limpa(valor){
-		var digitos = valor.replace(/\.|\-|\s/g,'');
+        var somaFinalVerificador2 = soma % 11,
+            verificador2 = 11 - somaFinalVerificador2;
 
-		return digitos;
-	}
+        if (somaFinalVerificador2 < 2) {
+            verificador2 = 0;
+        }
 
-	function formataCPF(value, formatacao){
-		var sepDigitos = '.',
-			sepVerificador = '-';
+        return verificador2;
+    }
 
-		if (formatacao === 'digitos') {
-			sepDigitos = '';
-			sepVerificador = '';
-		}else if (formatacao === 'verificador') {
-			sepDigitos = '';
-			sepVerificador = '-';
-		}
+    function limpa(valor){
+        var digitos = valor.replace(/\.|\-|\s/g,'');
 
-		if (! /^[0-9]+$/.test(value)) {
-			return 'O valor informado contém caracteres inválidos.';
-		}
+        return digitos;
+    }
 
-		if (value.length > 11 ) {
-			return 'O valor informado contém erro. Está passando dígitos.';
-		}else if(value.length < 11){
-			return 'O valor informado contém erro. Está faltando dígitos.';
+    function formataCPF(value, formatacao){
+        var sepDigitos = '.',
+            sepVerificador = '-';
 
-		}
+        if (formatacao === 'digitos') {
+            sepDigitos = '';
+            sepVerificador = '';
+        }else if (formatacao === 'verificador') {
+            sepDigitos = '';
+            sepVerificador = '-';
+        }
 
-		else{
-			return value.slice(0, 3) + sepDigitos + value.slice(3, 6) + sepDigitos +  value.slice(6, 9) + sepVerificador +  value.slice(9, 11);
-		}
-	}
+        if (! /^[0-9]+$/.test(value)) {
+            return 'O valor informado contém caracteres inválidos.';
+        }
 
-	this.gera = function (formatacao){
-		var noveDigitos = '';
+        if (value.length > 11 ) {
+            return 'O valor informado contém erro. Está passando dígitos.';
+        }else if(value.length < 11){
+            return 'O valor informado contém erro. Está faltando dígitos.';
 
-		//Gerando os 9 primeiros digitos do CPF
-		for (var i = 0; i < 9; ++i) {
-			noveDigitos += Math.floor(Math.random() * 9) + '';
-		}
+        }
 
-		var verificador1 = calculoVerificador1(noveDigitos);
+        else{
+            return value.slice(0, 3) + sepDigitos + value.slice(3, 6) + sepDigitos + value.slice(6, 9) + sepVerificador + value.slice(9, 11);
+        }
+    }
 
-		var getCPF = noveDigitos + verificador1 + calculoVerificador2(noveDigitos + verificador1);
+    CPF.gera = function (formatacao){
+        var noveDigitos = '';
 
-		return formataCPF(getCPF, formatacao);
-	};
+        //Gerando os 9 primeiros digitos do CPF
+        for (var i = 0; i < 9; ++i) {
+            noveDigitos += Math.floor(Math.random() * 9) + '';
+        }
 
-	this.valida = function (valor){
-		var clearCPF = limpa(valor),
-			noveDigitos = clearCPF.substring(0,9),
-			verificadores = clearCPF.substring(9,11);
+        var verificador1 = calculoVerificador1(noveDigitos);
 
-		//Verificando se todos os digitos são iguais
-		for (var i = 0; i < 10; i++){
-			if('' + noveDigitos + verificadores === Array(12).join( i ) ){
-				return false;
-			}
-		}
+        var getCPF = noveDigitos + verificador1 + calculoVerificador2(noveDigitos + verificador1);
 
-		var verificador1 = calculoVerificador1(noveDigitos);
+        return formataCPF(getCPF, formatacao);
+    };
 
-		var verificador2 = calculoVerificador2(noveDigitos + '' + verificador1);
+    CPF.valida = function (valor){
+        var clearCPF = limpa(valor),
+            noveDigitos = clearCPF.substring(0,9),
+            verificadores = clearCPF.substring(9,11);
 
-		if (verificadores.toString() === verificador1.toString() + verificador2.toString()){
-			return true;
-		}else{
-			return false;
-		}
-	};
+        //Verificando se todos os digitos são iguais
+        for (var i = 0; i < 10; i++){
+            if('' + noveDigitos + verificadores === Array(12).join( i ) ){
+                return false;
+            }
+        }
 
-	this.formata = function (valor, formatacao){
-		var getCPF = limpa(valor);
+        var verificador1 = calculoVerificador1(noveDigitos);
 
-		return formataCPF(getCPF, formatacao);
-	};
-}
+        var verificador2 = calculoVerificador2(noveDigitos + '' + verificador1);
+
+        if (verificadores.toString() === verificador1.toString() + verificador2.toString()){
+            return true;
+        }else{
+            return false;
+        }
+    };
+
+    CPF.formata = function (valor, formatacao){
+        var getCPF = limpa(valor);
+
+        return formataCPF(getCPF, formatacao);
+    };
+
+    return CPF;
+}());
