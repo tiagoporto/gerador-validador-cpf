@@ -34,7 +34,7 @@
     "commonjs": false,         // CommonJS global variables and CommonJS scoping
                               // (use this for browser-only code that uses Browserify/WebPack).
     "embertest": false,       // Ember test helper globals.
-    "es6": false,             // enable all ECMAScript 6 features except for modules.
+    "es6": true,             // enable all ECMAScript 6 features except for modules.
     "jasmine": false,         // adds all of the Jasmine testing global variables for version 1.3 and 2.0
     "jest": false,            // Jest global variables.
     "jquery": true,           // jquery global variables

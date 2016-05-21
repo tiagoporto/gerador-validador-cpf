@@ -1,12 +1,11 @@
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
 /*!
 *   Gerador e Validador de CPF v3.0.0
 *   https://github.com/tiagoporto/gerador-validador-cpf
 *   Copyright (c) 2014-2016 Tiago Porto (http://www.tiagoporto.com)
 *   Released under the MIT license
 */
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
 /**
  * CPF Class

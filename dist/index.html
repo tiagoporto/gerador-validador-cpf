@@ -38,7 +38,6 @@
         <!-- endbuild -->
     </head>
     <body>
-
         <header class="panel">
             <a href="https://github.com/tiagoporto/gerador-validador-cpf/" class="github-corner">
                 <svg width="80" viewBox="0 0 250 250" style="fill:#fff; color:#1b6496; position: absolute; top: 0; border: 0; right: 0;">
@@ -74,46 +73,48 @@
 
         <main class="main">
             <section class="generate-section">
-                <h2 class="generate-section__title">Gerar</h2>
+                <h2>Gerar</h2>
 
-                <button id="generate-section__generate-button" type="button">Gerar CPF</button>
+                <button class="generate-section__submit-button" type="button">Gerar CPF</button>
 
-                <input id="generate-section__input--generated" type="text" placeholder="CPF gerado" readonly>
+                <input class="generate-section__input--generated" type="text" placeholder="CPF gerado" readonly>
 
-                <button class="generate-section__copy-button" type="button" data-clipboard-target="#generate-section__input-cpf">copiar</button>
+                <button class="generate-section__copy-button" type="button" data-clipboard-target=".generate-section__input--generated">copiar</button>
             </section>
 
 
             <section class="validate-section">
-                <h2 class="h2">Validar</h2>
+                <h2>Validar</h2>
 
-                <form action="#" id="valida-CPF">
+                <form class="validate-section__form">
                     <label for="validate-section__input--to-format">Insira o CPF para validação</label>
                     <input id="validate-section__input--to-format" type="text" required>
 
-                    <input id="validate-section__input--message" type="text" placeholder="Insira CPF para validação" readonly>
+                    <input class="validate-section__input--message" type="text" placeholder="Insira CPF para validação" readonly>
 
-                    <button class="validate-section__button" type="submit" class="button">Validar CPF</button>
+                    <button class="validate-section__submit-button" type="submit">Validar CPF</button>
                 </form>
             </section>
 
 
             <section class="format-section">
-                <h2 class="h2">Formatar</h2>
+                <h2>Formatar</h2>
 
-                <form action="#" id="formata-CPF">
-                    <label for="cpf-formatacao">Insira o CPF para validação</label>
-                    <input id="cpf-formatacao" type="text" required>
+                <form class="format-section__form">
+                    <label for="format-section__input">Insira o CPF para validação</label>
+                    <input id="format-section__input" type="text" required>
 
-                    <select id="formatacao">
+                    <select class="format-section__params">
                         <option value="padrao">Padrão</option>
                         <option value="digitos">Somente Digitos</option>
                         <option value="verificador">Separa o Verificador</option>
                     </select>
 
-                    <p id="resultado-formatacao"></p>
+                    <input class="format-section__input--message" type="text" placeholder="CPF formatado" readonly>
 
-                    <button  type="submit" class="button">Formatar CPF</button>
+                    <button class="format-section__copy-button" type="button"   data-clipboard-target="#format-section__input--message">copiar</button>
+
+                    <button class="format-section__submit-button" type="submit">Formatar CPF</button>
                 </form>
             </section>
 
@@ -148,11 +149,11 @@
 
             <ul>
                 <li>
-                    <a id="download-nao-compactada" href="https://raw.githubusercontent.com/tiagoporto/gerador-validador-cpf/master/public/js/CPF.js">Desenvolvimento</a>
+                    <a class="download-development" href="https://raw.githubusercontent.com/tiagoporto/gerador-validador-cpf/master/public/js/CPF.js">Desenvolvimento</a>
                 </li>
 
                 <li>
-                    <a id="download-compactada" href="https://raw.githubusercontent.com/tiagoporto/gerador-validador-cpf/master/public/js/CPF.min.js">Minificada</a>
+                    <a class="download-production" href="https://raw.githubusercontent.com/tiagoporto/gerador-validador-cpf/master/public/js/CPF.min.js">Minificada</a>
                 </li>
             </ul>
 
@@ -251,7 +252,7 @@
         </main>
 
         <footer class="footer">
-            <p>Copyright © 2014 - <span id="year"></span> Tiago Porto</p>
+            <p>Copyright © 2014 - <span class="footer__year"></span> Tiago Porto</p>
         </footer>
 
 

@@ -1,3 +1,9 @@
+/*!
+*   Gerador e Validador de CPF v3.0.0
+*   https://github.com/tiagoporto/gerador-validador-cpf
+*   Copyright (c) 2014-2016 Tiago Porto (http://www.tiagoporto.com)
+*   Released under the MIT license
+*/
 
 /* ==================================================================
    Main Styles
@@ -109,6 +115,12 @@ a {
 }
 a:hover {
   color: #ffff32;
+}
+dl {
+  margin: 24px 0;
+}
+dd {
+  margin: 0;
 }
 fieldset {
   margin: 0;
@@ -448,25 +460,19 @@ input[type="submit"]:disabled {
     page-break-inside: avoid;
   }
 }
-.valid {
+input[type="text"].valid {
   color: #008000;
   border-color: #8cff8c;
   background: #8cff8c;
   -webkit-transition: all ease 1s;
   transition: all ease 1s;
 }
-.invalid {
+input[type="text"].invalid {
   color: #f00;
   border-color: #ffb3b3;
   background: #ffb3b3;
   -webkit-transition: all ease 1s;
   transition: all ease 1s;
-}
-dl {
-  margin: 24px 0;
-}
-dd {
-  margin: 0;
 }
 @media (max-width: 47.9375em) {
   button,

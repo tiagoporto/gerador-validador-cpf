@@ -13,11 +13,9 @@ function addLoadEvent(func) {
 addLoadEvent(
 	//call plugins after DOM ready
 
-	// Highlight
 	hljs.initHighlightingOnLoad(),
 
 	new Clipboard('.generate-section__copy-button'),
 
-	$('#cpf-validacao').mask('999.999.999-99')
-
+	$('#validate-section__input--to-format').mask('999.999.999-99')
 );

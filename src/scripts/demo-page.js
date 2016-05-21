@@ -1,57 +1,50 @@
-/*!
-*   Gerador e Validador de CPF v3.0.0
-*   https://github.com/tiagoporto/gerador-validador-cpf
-*   Copyright (c) 2014-2016 Tiago Porto (http://www.tiagoporto.com)
-*   Released under the MIT license
-*/
-
 /*global CPF*/
 
-var date = new Date();
+
+const date = new Date();
 document.getElementsByClassName('footer__year')[0].innerHTML = date.getFullYear();
 
-var addClass = function addClass(el, klass) {
-    'use strict';
 
+const addClass = (el, klass) => {
+    'use strict';
     el[0].className += ' ' + klass;
 };
 
-var removeClass = function removeClass(el, klass) {
+const removeClass = (el, klass) => {
     'use strict';
-
     var elClass = ' ' + el[0].className + ' ';
 
-    while (elClass.indexOf(' ' + klass + ' ') !== -1) {
+    while(elClass.indexOf(' ' + klass + ' ') !== -1){
         elClass = elClass.replace(' ' + klass + ' ', '');
     }
 
     el[0].className = elClass;
 };
 
-var setListener = function setListener(className, func, action) {
+const setListener = (className, func, action) => {
     'use strict';
 
-    var elements = document.getElementsByClassName(className);
+    const elements = document.getElementsByClassName(className);
 
-    Array.from(elements).forEach(function (element) {
+    Array.from(elements).forEach( (element) => {
         element.addEventListener(action, func, false);
     });
 };
 
-var validate = function validate() {
-    'use strict';
 
+const validate = () => {
+    'use strict';
     event.preventDefault();
 
-    var cpf = document.getElementById('validate-section__input--to-format').value,
+    const cpf = document.getElementById('validate-section__input--to-format').value,
         validCPF = CPF.valida(cpf),
         messageInput = document.getElementsByClassName('validate-section__input--message'),
-        message = validCPF ? 'CPF Válido' : 'CPF Inválido';
+        message = (validCPF) ? 'CPF Válido' : 'CPF Inválido';
 
     if (validCPF) {
         removeClass(messageInput, 'invalid');
         addClass(messageInput, 'valid');
-    } else {
+    }else{
         removeClass(messageInput, 'valid');
         addClass(messageInput, 'invalid');
     }
@@ -61,37 +54,39 @@ var validate = function validate() {
     typeof ga === 'function' && ga('send', 'event', 'button', 'click', 'Validate CPF');
 };
 
-var generate = function generate() {
+const generate = () => {
     'use strict';
-
     document.getElementsByClassName('generate-section__input--generated')[0].setAttribute('value', CPF.gera());
 
     typeof ga === 'function' && ga('send', 'event', 'button', 'click', 'Generate CPF');
 };
 
-var format = function format() {
+const format = () => {
     'use strict';
-
     event.preventDefault();
-    var params = document.getElementsByClassName('format-section__params')[0].value,
+    const params = document.getElementsByClassName('format-section__params')[0].value,
         cpfField = document.getElementById('format-section__input').value;
+
 
     document.getElementsByClassName('format-section__input--message')[0].setAttribute('value', CPF.formata(cpfField, params));
 
     typeof ga === 'function' && ga('send', 'event', 'button', 'click', 'Formate CPF');
 };
 
-var downloadDev = function downloadDev() {
+
+
+const downloadDev = () => {
     'use strict';
 
     typeof ga === 'function' && ga('send', 'event', 'download', 'click', 'Download versão Não Compactada');
 };
 
-var downloadProd = function downloadProd() {
+const downloadProd = () => {
     'use strict';
 
     typeof ga === 'function' && ga('send', 'event', 'download', 'click', 'Download versão Compactada');
 };
+
 
 setListener('generate-section__submit-button', generate, 'click');
 setListener('validate-section__form', validate, 'submit');
