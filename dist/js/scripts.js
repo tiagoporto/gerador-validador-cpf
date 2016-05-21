@@ -46,7 +46,7 @@ var validate = function validate() {
     event.preventDefault();
 
     var cpf = document.getElementById('validate-section__input--to-format').value,
-        validCPF = CPF.valida(cpf),
+        validCPF = CPF.validate(cpf),
         messageInput = document.getElementsByClassName('validate-section__input--message'),
         message = validCPF ? 'CPF Válido' : 'CPF Inválido';
 
@@ -66,7 +66,7 @@ var validate = function validate() {
 var generate = function generate() {
     'use strict';
 
-    document.getElementsByClassName('generate-section__input--generated')[0].setAttribute('value', CPF.gera());
+    document.getElementsByClassName('generate-section__input--generated')[0].setAttribute('value', CPF.generate());
 
     typeof ga === 'function' && ga('send', 'event', 'button', 'click', 'Generate CPF');
 };
@@ -76,9 +76,9 @@ var format = function format() {
 
     event.preventDefault();
     var params = document.getElementsByClassName('format-section__params')[0].value,
-        cpfField = document.getElementById('format-section__input').value;
+        fieldValue = document.getElementById('format-section__input').value;
 
-    document.getElementsByClassName('format-section__input--message')[0].setAttribute('value', CPF.formata(cpfField, params));
+    document.getElementsByClassName('format-section__input--message')[0].setAttribute('value', CPF.format(fieldValue, params));
 
     typeof ga === 'function' && ga('send', 'event', 'button', 'click', 'Formate CPF');
 };
@@ -87,13 +87,13 @@ var format = function format() {
 var downloadDev = function downloadDev() {
     'use strict';
 
-    typeof ga === 'function' && ga('send', 'event', 'download', 'click', 'Download versão Não Compactada');
+    typeof ga === 'function' && ga('send', 'event', 'download', 'click', 'Download Dev version');
 };
 
 var downloadProd = function downloadProd() {
     'use strict';
 
-    typeof ga === 'function' && ga('send', 'event', 'download', 'click', 'Download versão Compactada');
+    typeof ga === 'function' && ga('send', 'event', 'download', 'click', 'Download Production version');
 };
 
 setListener('generate-section__submit-button', generate, 'click');

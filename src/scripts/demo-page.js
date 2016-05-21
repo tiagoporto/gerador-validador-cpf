@@ -37,7 +37,7 @@ const validate = () => {
     event.preventDefault();
 
     const cpf = document.getElementById('validate-section__input--to-format').value,
-        validCPF = CPF.valida(cpf),
+        validCPF = CPF.validate(cpf),
         messageInput = document.getElementsByClassName('validate-section__input--message'),
         message = (validCPF) ? 'CPF Válido' : 'CPF Inválido';
 
@@ -56,7 +56,7 @@ const validate = () => {
 
 const generate = () => {
     'use strict';
-    document.getElementsByClassName('generate-section__input--generated')[0].setAttribute('value', CPF.gera());
+    document.getElementsByClassName('generate-section__input--generated')[0].setAttribute('value', CPF.generate());
 
     typeof ga === 'function' && ga('send', 'event', 'button', 'click', 'Generate CPF');
 };
@@ -65,10 +65,9 @@ const format = () => {
     'use strict';
     event.preventDefault();
     const params = document.getElementsByClassName('format-section__params')[0].value,
-        cpfField = document.getElementById('format-section__input').value;
+        fieldValue = document.getElementById('format-section__input').value;
 
-
-    document.getElementsByClassName('format-section__input--message')[0].setAttribute('value', CPF.formata(cpfField, params));
+    document.getElementsByClassName('format-section__input--message')[0].setAttribute('value', CPF.format(fieldValue, params));
 
     typeof ga === 'function' && ga('send', 'event', 'button', 'click', 'Formate CPF');
 };
@@ -78,13 +77,13 @@ const format = () => {
 const downloadDev = () => {
     'use strict';
 
-    typeof ga === 'function' && ga('send', 'event', 'download', 'click', 'Download versão Não Compactada');
+    typeof ga === 'function' && ga('send', 'event', 'download', 'click', 'Download Dev version');
 };
 
 const downloadProd = () => {
     'use strict';
 
-    typeof ga === 'function' && ga('send', 'event', 'download', 'click', 'Download versão Compactada');
+    typeof ga === 'function' && ga('send', 'event', 'download', 'click', 'Download Production version');
 };
 
 
