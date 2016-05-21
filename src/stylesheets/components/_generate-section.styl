@@ -1,22 +1,9 @@
 .generate-section
     &__copy-button
-        border: none
-        margin-left: em(10px)
-        color: #FFF
         text-transform: lowercase
-        padding-left: 20px
-        padding-right: 20px
+        rhythm-padding(.25)
+        adjust-font-size-to($base-font-size)
+        trailer(.5)
 
-        // +below($tablet)
-        //  margin: 0 2%
-        //  trailer(.5)
-        //  width: 96%
-
-
-#generate-section
-    &__generate-button
+    &__submit-button
         display: block
-
-    &__input--generated
-        float: left
-

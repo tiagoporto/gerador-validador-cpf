@@ -27,7 +27,7 @@ html {
 }
 body {
   font: normal normal 16px/1.5em Helvetica, Arial, sans-serif;
-  background-color: #3498db;
+  background-color: #217bb8;
   color: #fff;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -49,11 +49,11 @@ body {
   }
 }
 ::-moz-selection {
-  background: #3498db;
+  background: #217bb8;
   color: #fff;
 }
 ::selection {
-  background: #3498db;
+  background: #217bb8;
   color: #fff;
 }
 h1,
@@ -198,6 +198,20 @@ select:read-only {
 select {
   width: auto;
 }
+input[type="text"].valid {
+  color: #008000;
+  border-color: #8cff8c;
+  background: #8cff8c;
+  -webkit-transition: all ease 1s;
+  transition: all ease 1s;
+}
+input[type="text"].invalid {
+  color: #f00;
+  border-color: #ffb3b3;
+  background: #ffb3b3;
+  -webkit-transition: all ease 1s;
+  transition: all ease 1s;
+}
 ::-webkit-input-placeholder {
   color: #8c8c8c;
   font-size: 0.875em;
@@ -241,16 +255,17 @@ input[type="submit"]:disabled {
   -webkit-tap-highlight-color: transparent;
   box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.1);
   color: #fff;
-  background-color: #103e5c;
+  background-color: #0d314a;
   -webkit-transition: 0.15s ease-out;
   transition: 0.15s ease-out;
   cursor: pointer;
+  margin-bottom: 1.714285714285714em;
 }
 button:hover:not([disabled]),
 input[type="button"]:hover:not([disabled]),
 input[type="reset"]:hover:not([disabled]),
 input[type="submit"]:hover:not([disabled]) {
-  background-color: #144d73;
+  background-color: #103d5c;
   box-shadow: 0 1px 4px rgba(0,0,0,0.15), 0 1px 4px rgba(0,0,0,0.15);
 }
 button:disabled,
@@ -267,7 +282,7 @@ input[type="submit"]:disabled {
   margin: auto;
 }
 .panel {
-  background: #1b6496;
+  background: #155078;
   line-height: 0;
   padding: 24px 0;
   text-align: center;
@@ -327,153 +342,42 @@ input[type="submit"]:disabled {
             transform: rotate(10deg);
   }
 }
+.hljs {
+  border-radius: 5px;
+}
 .generate-section__copy-button {
-  border: none;
-  margin-left: 0.625em;
-  color: #fff;
   text-transform: lowercase;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-top: 0.375em;
+  padding-bottom: 0.375em;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-bottom: 0.75em;
 }
-#generate-section__generate-button {
+.generate-section__submit-button {
   display: block;
 }
-#generate-section__input--generated {
-  float: left;
-}
-.validate-section__button {
+.validate-section__submit-button {
   display: block;
 }
-.format_section #resultado-validacao,
-.format_section #formatacao {
-  margin-left: 0.3125em;
+.format-section__copy-button {
+  text-transform: lowercase;
+  padding-top: 0.375em;
+  padding-bottom: 0.375em;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-bottom: 0.75em;
+}
+.format-section__submit-button {
+  display: block;
 }
 .footer {
-  background: #1d6ca1;
+  background: #175681;
   overflow: hidden;
   text-align: center;
 }
 /* ==================================================================
    Media Queries
    ================================================================== */
-@media print {
-  * {
-    background: transparent !important;
-    color: #000 !important /* Black prints faster: h5bp.com/s */;
-    text-shadow: none !important;
-    -webkit-filter: none !important;
-            filter: none !important;
-    -ms-filter: none !important;
-  }
-  body {
-    margin: 0;
-    padding: 0;
-    line-height: 1.4em;
-    font: 12pt Georgia, "Times New Roman", Times, serif;
-    color: #000;
-  }
-  @page {
-    margin: 1.5cm;
-  }
-  .wrap {
-    width: 100%;
-    margin: 0;
-    float: none !important;
-  }
-  .no-print,
-  nav,
-  footer,
-  video,
-  audio,
-  object,
-  embed {
-    display: none;
-  }
-  .print {
-    display: block;
-  }
-  .page-break {
-    page-break-before: always;
-  }
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-  a:link:after,
-  a:visited:after {
-    content: " (" attr(href) ") ";
-  }
-  p a {
-    word-wrap: break-word;
-  }
-  q:after {
-    content: " (" attr(cite) ")";
-  }
-  a:after,
-  a[href^="javascript:"]:after,
-  a[href^="#"]:after {
-    content: "";
-  }
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
-  abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-  aside {
-    display: block;
-    page-break-before: always;
-  }
-  h1 {
-    font-size: 24pt;
-  }
-  h2 {
-    font-size: 18pt;
-    orphans: 3;
-    widows: 3;
-    page-break-after: avoid;
-  }
-  h3 {
-    font-size: 14pt;
-    orphans: 3;
-    widows: 3;
-    page-break-after: avoid;
-  }
-  img {
-    max-width: 100% !important;
-  }
-  p {
-    font-size: 12pt;
-    widows: 3;
-    orphans: 3;
-  }
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-  thead {
-    display: table-header-group /* h5bp.com/t */;
-  }
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-}
-input[type="text"].valid {
-  color: #008000;
-  border-color: #8cff8c;
-  background: #8cff8c;
-  -webkit-transition: all ease 1s;
-  transition: all ease 1s;
-}
-input[type="text"].invalid {
-  color: #f00;
-  border-color: #ffb3b3;
-  background: #ffb3b3;
-  -webkit-transition: all ease 1s;
-  transition: all ease 1s;
-}
 @media (max-width: 47.9375em) {
   button,
   input,

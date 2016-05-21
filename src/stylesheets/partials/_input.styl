@@ -26,6 +26,20 @@ select
 select
     width: auto
 
+
+input[type="text"].valid
+    color: $cor = green
+    border-color: lighten($cor, 70%)
+    background: lighten($cor, 70%)
+    transition: all ease 1s
+
+
+input[type="text"].invalid
+    color: $cor = red
+    border-color: lighten($cor, 70%)
+    background: lighten($cor, 70%)
+    transition: all ease 1s
+
 ::placeholder
     color lighten(#000, 55%)
     font-size em($base-font-size - 2)

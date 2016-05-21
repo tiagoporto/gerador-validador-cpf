@@ -15,7 +15,7 @@ addLoadEvent(
 
 	hljs.initHighlightingOnLoad(),
 
-	new Clipboard('.generate-section__copy-button'),
+	new Clipboard('.generate-section__copy-button, .format-section__copy-button'),
 
 	$('#validate-section__input--to-format').mask('999.999.999-99')
 );

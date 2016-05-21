@@ -10,6 +10,7 @@
 var date = new Date();
 document.getElementsByClassName('footer__year')[0].innerHTML = date.getFullYear();
 
+//Helper functions
 var addClass = function addClass(el, klass) {
     'use strict';
 
@@ -38,6 +39,7 @@ var setListener = function setListener(className, func, action) {
     });
 };
 
+//CPF functions
 var validate = function validate() {
     'use strict';
 
@@ -81,6 +83,7 @@ var format = function format() {
     typeof ga === 'function' && ga('send', 'event', 'button', 'click', 'Formate CPF');
 };
 
+// Download analytcs
 var downloadDev = function downloadDev() {
     'use strict';
 

@@ -1,10 +1,9 @@
 /*global CPF*/
 
-
 const date = new Date();
 document.getElementsByClassName('footer__year')[0].innerHTML = date.getFullYear();
 
-
+//Helper functions
 const addClass = (el, klass) => {
     'use strict';
     el[0].className += ' ' + klass;
@@ -32,6 +31,7 @@ const setListener = (className, func, action) => {
 };
 
 
+//CPF functions
 const validate = () => {
     'use strict';
     event.preventDefault();
@@ -74,7 +74,7 @@ const format = () => {
 };
 
 
-
+// Download analytcs
 const downloadDev = () => {
     'use strict';
 
