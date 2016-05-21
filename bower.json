@@ -22,6 +22,7 @@
   "license": "MIT",
   "ignore": [
     "**/*",
+    "!CHANGELOG.md",
     "!LICENSE.md",
     "!dist/**/*",
     "!README.md"

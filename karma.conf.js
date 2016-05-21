@@ -14,7 +14,7 @@ module.exports = function(config) {
 
         // list of files / patterns to load in the browser
         files: [
-            'src/scripts/CPF_SEPARATE.js',
+            'dist/js/CPF.js',
             'spec/cpf-spec.js'
         ],
 
