@@ -7,14 +7,9 @@
 [![NPM Downloads](https://img.shields.io/npm/dt/gerador-validador-cpf.svg)](https://www.npmjs.com/package/gerador-validador-cpf)
 [![Github License](https://img.shields.io/github/license/tiagoporto/gerador-validador-cpf.svg)](https://raw.githubusercontent.com/tiagoporto/gerador-validador-cpf/master/LICENSE.md)
 
+> Biblioteca JS open-source para gerar, validar e formatar CPF.
 
 A ferramenta pode ser acessada pelo link: [http://tiagoporto.github.io/gerador-validador-cpf/](http://tiagoporto.github.io/gerador-validador-cpf/).
-
-## Funcionalidades
-
-* Gerar CPFs válidos
-* Validar CPFs
-* Formatar CPF
 
 ## Uso
 
@@ -59,16 +54,17 @@ document.getElementById('btn-gerar-CPF').onclick = function(){
 };
 ```
 
+A função recebe como parâmetro opcional a formatação do CPF, [opções](#opcoes-de-formatacao).
 
 ### Validando CPF
 
-Para __validar um CPF__ basta chamar a função `validate(cpf)`, passando como string o número a ser validado, não importa se tiver pontuação, a função fica encarregada de eliminar caracteres não numéricos para verificação posterior, veja um exemplo:
+Para __validar um CPF__ basta chamar a função `validate(cpf)`, passando como parâmetro o número a ser validado, não se preocupe com os caracteres `.`, `-` e `espaço`, a função fica encarregada de eliminar esses caracteres para verificação posterior, veja um exemplo:
 
 ```javascript
 CPF.validate("123.456.789-00");
 ```
 
-Exemplo completo de uma possível utilização com javascript puro.
+Exemplo completo de uma possível utilização com javascript com tratamento da mensagem de erro.
 
 ```javascript
 document.getElementById('valida-CPF').onsubmit = function (event){
@@ -77,6 +73,42 @@ document.getElementById('valida-CPF').onsubmit = function (event){
     return false;
 };
 ```
+
+### Formatando CPF
+
+Para __formatar um CPF__ basta chamar a função `format(cpf, param)`, passando como parâmetro o CPF a ser formatado, não se preocupe com os caracteres `.`, `-` e `espaço`, a função fica encarregada de eliminar esses caracteres para verificação posterior, veja um exemplo:
+
+```javascript
+CPF.format("123.456.789-00");
+```
+
+Exemplo completo de uma possível utilização com javascript.
+
+```javascript
+document.getElementById('CPF').onblur = function (){
+    document.getElementById('CPF').value = CPF.formata(document.getElementById('CPF').value);
+};
+```
+
+#### Opções de formatação
+
+##### Padrão
+```javascript
+CPF.format('12345678901');
+```
+Gera um CPF no formato xxx.xxx.xxx-xx
+
+##### Dígitos
+```javascript
+CPF.format('123.456.789-01', 'digits');
+```
+Gera um CPF no formato xxxxxxxxxxx
+
+##### Verificador
+```javascript
+CPF.format('12345678901', 'checker');
+```
+Gera um CPF no formato xxxxxxxxx-xx
 
 ## Licença
 

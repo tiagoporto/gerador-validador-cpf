@@ -16,13 +16,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
  *
  * validate function
  * @param  {string} value      The value for validation
- * @return {boolean}           True para cpf válido - False para cpf inválido.
+ * @return {boolean}           True = valid || False = invalid
  *
  * format function
  * @param  {string} value      The value for formatting
  * @param  {string} param      Formatting option
  *
- * @return {string}            Formatted CPF or error message
+ * @return {string}            Formatted CPF || error message
  */
 
 /*eslint-env node*/

@@ -46,7 +46,6 @@
     "gulp-if": "^2.0.0",
     "gulp-imagemin": "^2.4.0",
     "gulp-inline": "^0.1.1",
-    "gulp-jasmine": "^2.2.1",
     "gulp-karma": "0.0.5",
     "gulp-load-plugins": "^1.1.0",
     "gulp-newer": "^1.1.0",
