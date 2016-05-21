@@ -116,11 +116,27 @@ a {
 a:hover {
   color: #ffff32;
 }
+li {
+  list-style-type: none;
+}
 dl {
   margin: 24px 0;
 }
+dt {
+  font-weight: bold;
+  font-size: 1.25em;
+  line-height: 1.2em;
+  margin-top: 0.75em;
+}
 dd {
   margin: 0;
+}
+kbd {
+  color: #fff;
+  font-family: "Courier New", Courier, monospace;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 3px;
+  padding: 0.2em;
 }
 fieldset {
   margin: 0;
