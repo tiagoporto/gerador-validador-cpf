@@ -1,4 +1,4 @@
-# Gerador e Validador de CPFs
+# Gerador e Validador de CPF
 
 [![Build Status](https://travis-ci.org/tiagoporto/gerador-validador-cpf.svg)](https://travis-ci.org/tiagoporto/gerador-validador-cpf)
 [![Coverage Status](https://img.shields.io/coveralls/tiagoporto/gerador-validador-cpf.svg)](https://coveralls.io/github/tiagoporto/gerador-validador-cpf)
@@ -46,7 +46,7 @@ Para __gerar CPF__ basta chamar a função `generate()`, veja um exemplo:
 CPF.generate();
 ```
 
-Exemplo completo de uma possível utilização com javascript puro.
+Exemplo completo de uma possível utilização com javascript.
 
 ```javascript
 document.getElementById('btn-gerar-CPF').onclick = function(){
@@ -54,7 +54,7 @@ document.getElementById('btn-gerar-CPF').onclick = function(){
 };
 ```
 
-A função recebe como parâmetro opcional a formatação do CPF, [opções](#opcoes-de-formatacao).
+A função recebe como parâmetro opcional a formatação do CPF, [opções](#opções-de-formatação).
 
 ### Validando CPF
 
@@ -112,4 +112,4 @@ Gera um CPF no formato xxxxxxxxx-xx
 
 ## Licença
 
-Gerador e validador de CPFs está sobre os termos da [licença MIT](https://github.com/tiagoporto/gerador-validador-cpf/blob/master/LICENSE.md).
+Gerador e validador de CPF está sobre os termos da [licença MIT](https://github.com/tiagoporto/gerador-validador-cpf/blob/master/LICENSE.md).
