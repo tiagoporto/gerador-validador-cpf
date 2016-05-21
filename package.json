@@ -18,9 +18,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://tiagoporto/gerador-validador-cpf.git"
+    "url": "https://github.com/tiagoporto/gerador-validador-cpf.git"
   },
   "main": "dist/js/CPF.js",
+  "bugs": {
+    "url": "https://github.com/tiagoporto/gerador-validador-cpf/issues"
+  },
   "license": "MIT",
   "devDependencies": {
     "babel-preset-es2015-without-strict": "0.0.2",
