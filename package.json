@@ -1,6 +1,6 @@
 {
   "name": "gerador-validador-cpf",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Gerador e validador de cpf em javascript.",
   "homepage": "http://tiagoporto.github.io/gerador-validador-cpf/",
   "author": {

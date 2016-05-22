@@ -1,12 +1,19 @@
 .csslintrc
-.gitattributes
+.editorconfig
 .eslintrc
 .gitattributes
+.gitattributes
 .travis.yml
+
+bower.json
 config.json
 gulpfile.js
 karma.conf.js
 
-/spec
-/src
-/tasks
+.publish/
+build/
+coverage/
+dist/bower_components/
+spec/
+src/
+tasks/
