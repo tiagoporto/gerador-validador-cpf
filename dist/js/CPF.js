@@ -69,7 +69,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     }
 
     function cleaner(value) {
-        var digits = value.replace(/\.|\-|\s/g, '');
+        var digits = value.replace(/[^\d]/g, '');
 
         return digits;
     }
