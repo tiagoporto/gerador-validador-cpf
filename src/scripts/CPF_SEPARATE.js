@@ -60,7 +60,7 @@
     }
 
     function cleaner(value){
-        const digits = value.replace(/\.|\-|\s/g,'');
+        const digits = value.replace(/[^\d]/g,'');
 
         return digits;
     }
@@ -75,10 +75,6 @@
         }else if (formatter === 'checker') {
             digitsSeparator = '';
             checkersSeparator = '-';
-        }
-
-        if (! /^[0-9]+$/.test(value)) {
-            return 'The value contains invalid characters.';
         }
 
         if (value.length > 11 ) {

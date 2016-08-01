@@ -4,6 +4,7 @@
 'use strict';
 
 describe('Validando CPF', function () {
+
     it('Número válido', function () {
         expect(CPF.validate('13768663663')).toBeTruthy();
     });
