@@ -1,6 +1,6 @@
 {
   "name": "gerador-validador-cpf",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "Gerador e validador de cpf em javascript.",
   "homepage": "http://tiagoporto.github.io/gerador-validador-cpf/",
   "author": {
@@ -68,9 +68,9 @@
     "gulp.spritesmith": "^6.0.0",
     "jasmine-core": "^2.4.1",
     "karma": "^1.1.0",
-    "karma-chrome-launcher": "^1.0.1",
     "karma-coverage": "^1.0.0",
     "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.2",
     "merge-stream": "^1.0.0",
     "rf": "0.0.1",
     "run-sequence": "^1.1.5",
