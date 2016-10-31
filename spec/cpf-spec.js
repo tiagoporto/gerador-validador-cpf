@@ -21,6 +21,14 @@ describe('Validando CPF', function () {
         expect(CPF.validate('064.875.987-10')).toBeFalsy();
     });
 
+    it('Número inválido', function () {
+        expect(CPF.validate('064.875.987-10a')).toBeFalsy();
+    });
+
+    it('Número inválido', function () {
+        expect(CPF.validate('a064.875.987-10')).toBeFalsy();
+    });
+
     it('Números iguais', function () {
         expect(CPF.validate('00000000000')).toBeFalsy();
     });

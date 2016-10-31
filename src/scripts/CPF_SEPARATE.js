@@ -59,12 +59,6 @@
         return checker2;
     }
 
-    function cleaner(value){
-        const digits = value.replace(/[^\d]/g,'');
-
-        return digits;
-    }
-
     function formatCPF(value, formatter){
         let digitsSeparator = '.',
             checkersSeparator = '-';
@@ -104,9 +98,13 @@
     };
 
     CPF.validate = function (value){
-        const cleanCPF = cleaner(value),
+        const cleanCPF = value.replace(/\.|\-|\s/g, ''),
             firstNineDigits = cleanCPF.substring(0,9),
             checker = cleanCPF.substring(9,11);
+
+        if (cleanCPF.length !== 11) {
+            return false;
+        }
 
         // Checking if all digits are equal
         for (let i = 0; i < 10; i++){
@@ -126,7 +124,7 @@
     };
 
     CPF.format = function (value, param){
-        const getCPF = cleaner(value);
+        const getCPF = value.replace(/[^\d]/g,'');
 
         return formatCPF(getCPF, param);
     };

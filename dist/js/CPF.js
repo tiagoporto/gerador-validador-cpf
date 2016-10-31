@@ -1,11 +1,11 @@
 /*!
-*   Gerador e Validador de CPF v3.1.0
+*   Gerador e Validador de CPF v3.1.1
 *   https://github.com/tiagoporto/gerador-validador-cpf
 *   Copyright (c) 2014-2016 Tiago Porto (http://www.tiagoporto.com)
 *   Released under the MIT license
 */
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 /**
  * CPF Class
@@ -68,12 +68,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         return checker2;
     }
 
-    function cleaner(value) {
-        var digits = value.replace(/[^\d]/g, '');
-
-        return digits;
-    }
-
     function formatCPF(value, formatter) {
         var digitsSeparator = '.',
             checkersSeparator = '-';
@@ -110,9 +104,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     };
 
     CPF.validate = function (value) {
-        var cleanCPF = cleaner(value),
+        var cleanCPF = value.replace(/\.|\-|\s/g, ''),
             firstNineDigits = cleanCPF.substring(0, 9),
             checker = cleanCPF.substring(9, 11);
+
+        if (cleanCPF.length !== 11) {
+            return false;
+        }
 
         // Checking if all digits are equal
         for (var i = 0; i < 10; i++) {
@@ -132,7 +130,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     };
 
     CPF.format = function (value, param) {
-        var getCPF = cleaner(value);
+        var getCPF = value.replace(/[^\d]/g, '');
 
         return formatCPF(getCPF, param);
     };
