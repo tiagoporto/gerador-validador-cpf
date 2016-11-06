@@ -14,13 +14,13 @@
  */
 
 at2x($path, $width = auto, $height = auto)
-	background-image url($image-path + $path)
+    background-image url($image-path + $path)
 
-	@media (-webkit-min-device-pixel-ratio: 1.5),\
-	       (-o-min-device-pixel-ratio: 3 / 2),\
-	       (min--moz-device-pixel-ratio: 1.5),\
-	       (min-device-pixel-ratio: 1.5),
-	       (min-resolution: 1.5dppx)
+    @media (-webkit-min-device-pixel-ratio: 1.5),\
+           (-o-min-device-pixel-ratio: 3 / 2),\
+           (min--moz-device-pixel-ratio: 1.5),\
+           (min-device-pixel-ratio: 1.5),
+           (min-resolution: 1.5dppx)
 
-		background-image url($image-path + replace('\.', '@2x.', $path))
-		background-size $width $height
+        background-image url($image-path + replace('\.', '@2x.', $path))
+        background-size $width $height

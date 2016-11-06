@@ -1,5 +1,6 @@
-//event listener: DOM ready
+// event listener: DOM ready
 function addLoadEvent(func) {
+    'use strict';
     var oldonload = window.onload;
     if (typeof window.onload !== 'function') {
         window.onload = func;
@@ -11,11 +12,11 @@ function addLoadEvent(func) {
     }
 }
 addLoadEvent(
-	//call plugins after DOM ready
+    // call plugins after DOM ready
 
-	hljs.initHighlightingOnLoad(),
+    hljs.initHighlightingOnLoad(),
 
-	new Clipboard('.generate-section__copy-button, .format-section__copy-button'),
+    new Clipboard('.generate-section__copy-button, .format-section__copy-button'),
 
-	$('#validate-section__input--to-format').mask('999.999.999-99')
+    $('#validate-section__input--to-format').mask('999.999.999-99')
 );

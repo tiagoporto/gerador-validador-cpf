@@ -19,17 +19,17 @@ $color = #FFF
 $var + var
 
 .test
-	background: url($path + 'file.jpg')
+    background: url($path + 'file.jpg')
 
 // ********** COLOR FUNCTIONS *********** //
 
-darken(#D62828, 50%) //Darken the given color by amount.
-lighten(#2c2c2c, 10%) //Lighten the given color by amount.
-saturate(#00c, 20%) //Saturate the given color by amount.
-desaturate(#f00, 20%) //Desaturate the given color by amount.
-tint(#fd0cc7, 10%) //Mix the given color with white.
-shade(#fd0cc7, 10%) //Mix the given color with black.
-rgba(#ffcc00, .7) //Return RGBA from the r,g,b,a channels
+rgba(#ffcc00, .7)     // Return RGBA from the r,g,b,a channels
+tint(#fd0cc7, 10%)    // Mix the given color with white.
+shade(#fd0cc7, 10%)   // Mix the given color with black.
+saturate(#00c, 20%)   // Saturate the given color by amount.
+darken(#D62828, 50%)  // Darken the given color by amount.
+lighten(#2c2c2c, 10%) // Lighten the given color by amount.
+desaturate(#f00, 20%) // Desaturate the given color by amount.
 
 
 // **** Getting image width & height **** //
@@ -42,47 +42,47 @@ image-size("../images/header-bg.jpg")[1] //height
 // ********** This is a mixin *********** //
 
 inline()
-	display: inline
-	float: left
+    display: inline
+    float: left
 
 // ******* This is a placeholder ******** //
 
 $inline
-	display: inline
-	float: left
+    display: inline
+    float: left
 
 // ************ Using mixin ************* //
 
 .using-mixin-1
-	inline()
+    inline()
 
 .using-mixin-2
-	inline()
+    inline()
 
 // CSS Output
 .using-mixin-1 {
-	display: inline;
-	float: left;
+    display: inline;
+    float: left;
 }
 
 .using-mixin-2 {
-	display: inline;
-	float: left;
+    display: inline;
+    float: left;
 }
 // End CSS Output
 
 // ********* Using placeholder ********** //
 
 .extend-placeholder-1
-	@extend $inline
+    @extend $inline
 
 .extend-placeholder-2
-	@extend $inline
+    @extend $inline
 
 // CSS Output
 .extend-placeholder-1,
 .extend-placeholder-2 {
-	display: inline;
-	float: left;
+    display: inline;
+    float: left;
 }
 // End CSS Output

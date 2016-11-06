@@ -87,6 +87,8 @@ const downloadProd = () => {
 };
 
 
+generate();
+
 setListener('generate-section__submit-button', generate, 'click');
 setListener('validate-section__form', validate, 'submit');
 setListener('format-section__form', format, 'submit');
