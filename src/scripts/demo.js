@@ -1,9 +1,9 @@
-/*global CPF*/
+/* global CPF */
 
 const date = new Date();
 document.getElementsByClassName('footer__year')[0].innerHTML = date.getFullYear();
 
-//Helper functions
+// Helper functions
 const addClass = (el, klass) => {
     'use strict';
     el[0].className += ' ' + klass;
@@ -13,7 +13,7 @@ const removeClass = (el, klass) => {
     'use strict';
     var elClass = ' ' + el[0].className + ' ';
 
-    while(elClass.indexOf(' ' + klass + ' ') !== -1){
+    while (elClass.indexOf(' ' + klass + ' ') !== -1) {
         elClass = elClass.replace(' ' + klass + ' ', '');
     }
 
@@ -25,26 +25,26 @@ const setListener = (className, func, action) => {
 
     const elements = document.getElementsByClassName(className);
 
-    Array.from(elements).forEach( (element) => {
+    Array.from(elements).forEach(element => {
         element.addEventListener(action, func, false);
     });
 };
 
 
-//CPF functions
+// CPF functions
 const validate = () => {
     'use strict';
     event.preventDefault();
 
-    const cpf = document.getElementById('validate-section__input--to-format').value,
-        validCPF = CPF.validate(cpf),
-        messageInput = document.getElementsByClassName('validate-section__input--message'),
-        message = (validCPF) ? 'CPF Válido' : 'CPF Inválido';
+    const cpf = document.getElementById('validate-section__input--to-format').value;
+    const validCPF = CPF.validate(cpf);
+    const messageInput = document.getElementsByClassName('validate-section__input--message');
+    const message = (validCPF) ? 'CPF Válido' : 'CPF Inválido';
 
     if (validCPF) {
         removeClass(messageInput, 'invalid');
         addClass(messageInput, 'valid');
-    }else{
+    } else {
         removeClass(messageInput, 'valid');
         addClass(messageInput, 'invalid');
     }
@@ -64,8 +64,8 @@ const generate = () => {
 const format = () => {
     'use strict';
     event.preventDefault();
-    const params = document.getElementsByClassName('format-section__params')[0].value,
-        fieldValue = document.getElementById('format-section__input').value;
+    const params = document.getElementsByClassName('format-section__params')[0].value;
+    const fieldValue = document.getElementById('format-section__input').value;
 
     document.getElementsByClassName('format-section__input--message')[0].setAttribute('value', CPF.format(fieldValue, params));
 

@@ -25,7 +25,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
  * @return {string}            Formatted CPF || error message
  */
 
-/*eslint-env node*/
+/* eslint-env node */
 (function () {
     'use strict';
 

@@ -5,12 +5,12 @@
 *   Released under the MIT license
 */
 
-/*global CPF*/
+/* global CPF */
 
 var date = new Date();
 document.getElementsByClassName('footer__year')[0].innerHTML = date.getFullYear();
 
-//Helper functions
+// Helper functions
 var addClass = function addClass(el, klass) {
     'use strict';
 
@@ -39,16 +39,16 @@ var setListener = function setListener(className, func, action) {
     });
 };
 
-//CPF functions
+// CPF functions
 var validate = function validate() {
     'use strict';
 
     event.preventDefault();
 
-    var cpf = document.getElementById('validate-section__input--to-format').value,
-        validCPF = CPF.validate(cpf),
-        messageInput = document.getElementsByClassName('validate-section__input--message'),
-        message = validCPF ? 'CPF Válido' : 'CPF Inválido';
+    var cpf = document.getElementById('validate-section__input--to-format').value;
+    var validCPF = CPF.validate(cpf);
+    var messageInput = document.getElementsByClassName('validate-section__input--message');
+    var message = validCPF ? 'CPF Válido' : 'CPF Inválido';
 
     if (validCPF) {
         removeClass(messageInput, 'invalid');
@@ -75,8 +75,8 @@ var format = function format() {
     'use strict';
 
     event.preventDefault();
-    var params = document.getElementsByClassName('format-section__params')[0].value,
-        fieldValue = document.getElementById('format-section__input').value;
+    var params = document.getElementsByClassName('format-section__params')[0].value;
+    var fieldValue = document.getElementById('format-section__input').value;
 
     document.getElementsByClassName('format-section__input--message')[0].setAttribute('value', CPF.format(fieldValue, params));
 

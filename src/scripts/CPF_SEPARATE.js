@@ -16,13 +16,13 @@
  * @return {string}            Formatted CPF || error message
  */
 
-/*eslint-env node*/
-(function(){
+/* eslint-env node */
+(function() {
     'use strict';
 
     const root = typeof self === 'object' && self.self === self && self || typeof global === 'object' && global.global === global && global || this;
 
-    const CPF = function(){};
+    const CPF = () => {};
 
     if (typeof exports !== 'undefined' && !exports.nodeType) {
         if (typeof module !== 'undefined' && !module.nodeType && module.exports) {
@@ -33,11 +33,11 @@
         root.CPF = CPF;
     }
 
-    function calcChecker1(firstNineDigits){
+    function calcChecker1(firstNineDigits) {
         let sum = null;
 
         for (let j = 0; j < 9; ++j) {
-            sum += firstNineDigits.toString().charAt(j)*(10-j);
+            sum += firstNineDigits.toString().charAt(j) * (10 - j);
         }
 
         const lastSumChecker1 = sum % 11;
@@ -46,11 +46,11 @@
         return checker1;
     }
 
-    function calcChecker2(cpfWithChecker1){
+    function calcChecker2(cpfWithChecker1) {
         let sum = null;
 
-        for (let k = 0; k < 10; ++k){
-            sum += cpfWithChecker1.toString().charAt(k)*(11-k);
+        for (let k = 0; k < 10; ++k) {
+            sum += cpfWithChecker1.toString().charAt(k) * (11 - k);
         }
 
         const lastSumChecker2 = sum % 11;
@@ -59,31 +59,28 @@
         return checker2;
     }
 
-    function formatCPF(value, formatter){
+    function formatCPF(value, formatter) {
         let digitsSeparator = '.',
             checkersSeparator = '-';
 
         if (formatter === 'digits') {
             digitsSeparator = '';
             checkersSeparator = '';
-        }else if (formatter === 'checker') {
+        } else if (formatter === 'checker') {
             digitsSeparator = '';
             checkersSeparator = '-';
         }
 
-        if (value.length > 11 ) {
+        if (value.length > 11) {
             return 'The value contains error. Has more than 11 digits.';
-        }else if(value.length < 11){
+        } else if (value.length < 11) {
             return 'The value contains error. Has fewer than 11 digits.';
-
-        }
-
-        else{
+        } else {
             return value.slice(0, 3) + digitsSeparator + value.slice(3, 6) + digitsSeparator + value.slice(6, 9) + checkersSeparator + value.slice(9, 11);
         }
     }
 
-    CPF.generate = function (param){
+    CPF.generate = param => {
         let firstNineDigits = '';
 
         // Generating the first 9 digits of the CPF
@@ -97,18 +94,18 @@
         return formatCPF(generatedCPF, param);
     };
 
-    CPF.validate = function (value){
+    CPF.validate = value => {
         const cleanCPF = value.replace(/\.|\-|\s/g, ''),
-            firstNineDigits = cleanCPF.substring(0,9),
-            checker = cleanCPF.substring(9,11);
+                firstNineDigits = cleanCPF.substring(0, 9),
+                checker = cleanCPF.substring(9, 11);
 
         if (cleanCPF.length !== 11) {
             return false;
         }
 
         // Checking if all digits are equal
-        for (let i = 0; i < 10; i++){
-            if('' + firstNineDigits + checker === Array(12).join(i) ){
+        for (let i = 0; i < 10; i++) {
+            if ('' + firstNineDigits + checker === Array(12).join(i)) {
                 return false;
             }
         }
@@ -116,15 +113,15 @@
         const checker1 = calcChecker1(firstNineDigits);
         const checker2 = calcChecker2(firstNineDigits + '' + checker1);
 
-        if (checker.toString() === checker1.toString() + checker2.toString()){
+        if (checker.toString() === checker1.toString() + checker2.toString()) {
             return true;
-        }else{
+        } else {
             return false;
         }
     };
 
-    CPF.format = function (value, param){
-        const getCPF = value.replace(/[^\d]/g,'');
+    CPF.format = (value, param) => {
+        const getCPF = value.replace(/[^\d]/g, '');
 
         return formatCPF(getCPF, param);
     };
