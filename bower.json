@@ -1,30 +1,39 @@
 {
   "name": "gerador-validador-cpf",
-  "homepage": "http://tiagoporto.github.io/gerador-validador-cpf/",
-  "author": {
-    "name": "Tiago Porto",
-    "homepage": "http://tiagoporto.com"
-  },
+  "description": "Biblioteca JS open-source para gerar, validar e formatar CPF.",
+  "homepage": "http://tiagoporto.github.io/gerador-validador-cpf",
+  "keywords": [
+    "cpf",
+    "gerador",
+    "generator",
+    "generates",
+    "validador",
+    "valida",
+    "validates",
+    "formata",
+    "format"
+  ],
+  "authors": [
+    {
+      "name": "Tiago Porto",
+      "homepage": "http://tiagoporto.com"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/tiagoporto/gerador-validador-cpf.git"
   },
-  "keywords": [
-    "cpf",
-    "gerador",
-    "gera",
-    "validador",
-    "valida",
-    "formata",
-    "brasil"
+  "main": [
+    "dist/js/CPF.js"
   ],
-  "main": "dist/js/CPF.js",
-  "license": "MIT",
   "ignore": [
     "**/*",
     "!CHANGELOG.md",
-    "!LICENSE.md",
-    "!dist/**/*",
-    "!README.md"
-  ]
+    "!LICENSE",
+    "!README.md",
+    "!dist/**/*"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "license": "MIT"
 }
