@@ -11,26 +11,22 @@
 // @import "helpers/_vetor-sprite"
 
 // Vendors
-// @import "../../dist/bower_components/"
+// @import "../../node_modules/"
 
 // Vertical Rhythm module from Compass ported to Stylus
 @import "../vendors/vertical-rhythm-port-from-compass/_vertical-rhythm"
 
+
 /*! ==================================================================
    Main Styles
    ================================================================== */
-@import "partials"
-@import "components"
+@import "partials/_index"
+@import "components/_index"
+
 
 
 /*! ==================================================================
    Media Queries
    ================================================================== */
-
-@media (max-width: em($tablet - 1))
-    button,
-    input,
-    select
-        width: 100%
-
-
+@media print
+    @import "partials/_print"

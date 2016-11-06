@@ -19,13 +19,12 @@ select
     @extend $input
     height: em($base-line-height / 2 * 3)
 
-    &:disabled,
-    &:read-only
-        background lighten(#000, 95%)
+    // &:read-only,
+    // &:disabled
+    //  background lighten(#000, 95%)
 
-select
-    width: auto
-
+    @media (max-width: em($tablet))
+        width: 100%
 
 input[type="text"].valid
     color: $cor = green
@@ -39,6 +38,9 @@ input[type="text"].invalid
     border-color: lighten($cor, 70%)
     background: lighten($cor, 70%)
     transition: all ease 1s
+
+// select
+    // width: auto
 
 ::placeholder
     color lighten(#000, 55%)

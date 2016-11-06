@@ -132,19 +132,6 @@ kbd {
   border-radius: 3px;
   padding: 0.2em;
 }
-code {
-  color: #0f0;
-  background: #242424;
-  padding: 0 0.75em;
-  padding-top: 0.75em;
-  padding-bottom: 0.75em;
-  width: 100%;
-  display: inline-block;
-  border-radius: 6px;
-  overflow: auto;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-}
 fieldset {
   margin: 0;
   border-color: #999;
@@ -168,7 +155,6 @@ textarea {
   padding: 0.3125em;
   border-radius: 5px;
   color: #595959;
-  width: 100%;
   margin-bottom: 0.75em;
 }
 input[type="text"]:focus,
@@ -190,8 +176,29 @@ input[type="password"],
 select {
   height: 2.25em;
 }
-select {
-  width: auto;
+@media (max-width: 48em) {
+  input[type="text"],
+  input[type="search"],
+  input[type="email"],
+  input[type="number"],
+  input[type="password"],
+  select {
+    width: 100%;
+  }
+}
+input[type="text"].valid {
+  color: #008000;
+  border-color: #8cff8c;
+  background: #8cff8c;
+  -webkit-transition: all ease 1s;
+  transition: all ease 1s;
+}
+input[type="text"].invalid {
+  color: #f00;
+  border-color: #ffb3b3;
+  background: #ffb3b3;
+  -webkit-transition: all ease 1s;
+  transition: all ease 1s;
 }
 ::-webkit-input-placeholder {
   color: #8c8c8c;
@@ -218,7 +225,7 @@ input[type="button"]:disabled,
 input[type="reset"]:disabled,
 input[type="submit"]:disabled {
   font-size: 0.875em;
-  line-height: 1.714285714285714em;
+  line-height: 3.428571428571428em;
   border: none;
   border-radius: 5px;
   display: inline-block;
@@ -236,17 +243,26 @@ input[type="submit"]:disabled {
   -webkit-tap-highlight-color: transparent;
   box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.1);
   color: #fff;
-  background-color: #3faa96;
+  background-color: #0d314a;
   -webkit-transition: 0.15s ease-out;
   transition: 0.15s ease-out;
   cursor: pointer;
+  margin-bottom: 1.714285714285714em;
 }
 button:hover:not([disabled]),
 input[type="button"]:hover:not([disabled]),
 input[type="reset"]:hover:not([disabled]),
 input[type="submit"]:hover:not([disabled]) {
-  background-color: #2bbbad;
+  background-color: #103d5c;
   box-shadow: 0 1px 4px rgba(0,0,0,0.15), 0 1px 4px rgba(0,0,0,0.15);
+}
+@media (max-width: 48em) {
+  button,
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"] {
+    width: 100%;
+  }
 }
 button:disabled,
 input[type="button"]:disabled,

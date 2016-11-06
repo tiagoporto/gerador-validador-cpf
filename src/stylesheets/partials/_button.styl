@@ -1,22 +1,22 @@
 $basicButton
     adjust-font-size-to($base-font-size - 2, 2)
-    border none
-    border-radius 5px
-    display inline-block
-    padding 0 em(20px)
-    overflow hidden
+    border: none
+    border-radius: 5px
+    display: inline-block
+    padding: 0 em(20px)
+    overflow: hidden
     margin: 0
-    text-align center
-    text-decoration none
-    text-transform uppercase
-    user-select none
-    vertical-align bottom
-    -webkit-tap-highlight-color transparent
-    box-shadow 0 1px 2px rgba(0, 0, 0, .1), 0 1px 2px rgba(0, 0, 0, 0.1)
-    color #fff
+    text-align: center
+    text-decoration: none
+    text-transform: uppercase
+    user-select: none
+    vertical-align: bottom
+    -webkit-tap-highlight-color: transparent
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .1), 0 1px 2px rgba(0, 0, 0, 0.1)
+    color: #fff
     background-color: darken($bg-color, 60%)
-    transition .15s ease-out
-    cursor pointer
+    transition: .15s ease-out
+    cursor: pointer
     trailer(1, $base-font-size - 2)
 
     // &:focus
@@ -33,10 +33,14 @@ input[type="submit"]
         background-color: darken($bg-color, 50%)
         box-shadow: 0 1px 4px rgba(0, 0, 0, .15), 0 1px 4px rgba(0, 0, 0, .15)
 
+    @media (max-width: em($tablet))
+        width: 100%
+
+
     // &:active
 
     &:disabled
         @extend $basicButton
-        background-color #DFDFDF
-        color #9F9F9F
-        cursor default
+        background-color: #DFDFDF
+        color: #9F9F9F
+        cursor: default

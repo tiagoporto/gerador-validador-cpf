@@ -1,7 +1,7 @@
 /*!
 *   Gerador e Validador de CPF v3.1.1
-*   https://github.com/tiagoporto/gerador-validador-cpf
-*   Copyright (c) 2014-2016 Tiago Porto (http://www.tiagoporto.com)
+*   http://tiagoporto.github.io/gerador-validador-cpf
+*   Copyright (c) 2014-2016 Tiago Porto (http://tiagoporto.com)
 *   Released under the MIT license
 */
 
