@@ -1,6 +1,6 @@
 // Vertical Rhythm ported from SASS/Compass
-// Works exactly as before, with three exceptions:
-// 1. rhythm() is a mixin, -rhythm() is a function. Stylus doesn't differentiate between same-name mixins and functions
+// Works exactly as before but with three exceptions:
+// 1. rhythm() is a mixin and -rhythm() is a function.  Stylus doesn't differentiate between same name mixins and functions
 // 2. debug-vertical-alignment uses a temporary online image solution via http://basehold.it
 // 3. There is no h-borders alias. Use horizontal-borders instead.
 
@@ -24,11 +24,10 @@ $relative-font-sizing ?= true
 // nearest integral line height to avoid large spacing between lines.
 $round-to-nearest-half-line ?= false
 
-// Ensure there is at least this many pixels
-// of vertical padding above and below the text.
+// Ensure there is at least this many pixels of vertical padding above and below the text.
 $min-line-padding ?= 2px
 
-// $base-font-size but in your output unit of choice.
+// Same as $base-font-size but with your output unit of choice.
 // Defaults to 1em when `$relative-font-sizing` is true.
 $font-unit ?= $relative-font-sizing ? 1em : $base-font-size
 
@@ -64,25 +63,23 @@ if (relative-font-sizing) and (not relative-unit(font-unit))
 // Mixin
 // Establishes a font baseline for the given font-size.
 establish-baseline($font-size = $base-font-size)
-  // IE 6 refuses to resize fonts set in pixels and it weirdly resizes fonts
-  // whose root is set in ems. So we set the root font size in percentages of
-  // the default font size.
+  // IE 6 refuses to resize fonts set in pixels and it weirdly resizes fonts whose root is set in ems.
+  // So we set the root font size in percentages of the default font size.
   * html
     font-size 100% * ($font-size / $browser-default-font-size)
   html
     font-size $font-size
     adjust-leading-to(1, $relative-font-sizing ? $font-size : $base-font-size)
 
-// Show a background image that can be used to debug your alignments.
-// Requires internet connection
+// Shows a background image that can be used to debug your alignments.
+// Requires an internet connection
 // TODO: Make a better version of this
 debug-vertical-alignment()
   background-image url('http://basehold.it/i/' + unit(base-line-height, ''))
 
-// Adjust a block to have a different font size and line height to maintain the
-// rhythm. $lines specifies how many multiples of the baseline rhythm each line
-// of this font should use up. It does not have to be an integer, but it
-// defaults to the smallest integer that is large enough to fit the font.
+// Adjusts a block to have a different font size and line height to maintain the rhythm.
+// $lines specifies how many multiples of the baseline rhythm each line of this font should use up.
+// It does not have to be an integer, but it defaults to the smallest integer that is large enough to fit the font.
 // Use $from-size to adjust from a font-size other than the base font-size.
 adjust-font-size-to($to-size, $lines = lines-for-font-size($to-size), $from-size = $base-font-size)
   if (not $relative-font-sizing) and ($from-size is not $base-font-size)
@@ -90,14 +87,13 @@ adjust-font-size-to($to-size, $lines = lines-for-font-size($to-size), $from-size
   font-size $font-unit * ($to-size / $from-size)
   adjust-leading-to $lines, $relative-font-sizing ? $to-size : $base-font-size
 
-// Adjust a block to have different line height to maintain the rhythm.
-// $lines specifies how many multiples of the baseline rhythm each line of this
-// font should use up. It does not have to be an integer, but it defaults to the
-// smallest integer that is large enough to fit the font.
+// Adjusts a block to have different line heights to maintain the rhythm.
+// $lines specifies how many multiples of the baseline rhythm each line of this font should use up.
+// It does not have to be an integer, but it defaults to the smallest integer that is large enough to fit the font.
 adjust-leading-to($lines, $font-size = $base-font-size)
   line-height -rhythm($lines, $font-size)
 
-// Calculate rhythm units.
+// Calculates rhythm units.
 -rhythm($lines = 1, $font-size = $base-font-size, $offset = 0)
   if (not $relative-font-sizing) and ($font-size is not $base-font-size)
     warn('relative-font-sizing is false but a relative font size was passed to the rhythm function')
@@ -107,34 +103,34 @@ adjust-leading-to($lines, $font-size = $base-font-size)
     $rhythm = floor($rhythm)
   return $rhythm
 
-// Calculate the minimum multiple of rhythm units needed to contain the font-size.
+// Calculates the minimum multiple of rhythm units needed to contain the font-size.
 lines-for-font-size($font-size)
   $lines = $round-to-nearest-half-line ? ceil(2 * $font-size / $base-line-height) / 2 : ceil($font-size / $base-line-height)
   if $lines * $base-line-height - $font-size < $min-line-padding * 2
     $lines = $lines + ($round-to-nearest-half-line ? 0.5 : 1)
   return unit($lines, '')
 
-// Apply leading whitespace. The $property can be margin or padding.
+// Applies leading whitespace. The $property can be margin or padding.
 leader($lines = 1, $font-size = $base-font-size, $property = margin)
   {$property}-top -rhythm($lines, $font-size)
 
-// Apply leading whitespace as padding.
+// Applies leading whitespace as padding.
 padding-leader($lines = 1, $font-size = $base-font-size)
   padding-top -rhythm($lines, $font-size)
 
-// Apply leading whitespace as margin.
+// Applies leading whitespace as margin.
 margin-leader($lines = 1, $font-size = $base-font-size)
   margin-top -rhythm($lines, $font-size)
 
-// Apply trailing whitespace. The $property can be margin or padding.
+// Applies trailing whitespace. The $property can be margin or padding.
 trailer($lines = 1, $font-size = $base-font-size, $property = margin)
   {$property}-bottom -rhythm($lines, $font-size)
 
-// Apply trailing whitespace as padding.
+// Applies trailing whitespace as padding.
 padding-trailer($lines = 1, $font-size = $base-font-size)
   padding-bottom -rhythm($lines, $font-size)
 
-// Apply trailing whitespace as margin.
+// Applies trailing whitespace as margin.
 margin-trailer($lines = 1, $font-size = $base-font-size)
   margin-bottom -rhythm($lines, $font-size)
 
@@ -147,16 +143,16 @@ rhythm($leader = 0, $padding-leader = 0, $padding-trailer = 0, $trailer = 0, $fo
 
 // Shorthand mixin to apply whitespace for top and bottom margins.
 rhythm-margins($leader = 1, $trailer = $leader, $font-size = $base-font-size)
-	margin-top -rhythm($leader, $font-size)
-	margin-bottom -rhythm($trailer, $font-size)
+    margin-top -rhythm($leader, $font-size)
+    margin-bottom -rhythm($trailer, $font-size)
 
 // Shorthand mixin to apply whitespace for top and bottom padding.
 rhythm-padding($padding-leader = 1, $padding-trailer = $padding-leader, $font-size = $base-font-size)
-	padding-top -rhythm($padding-leader, $font-size)
-	padding-bottom -rhythm($padding-trailer, $font-size)
+    padding-top -rhythm($padding-leader, $font-size)
+    padding-bottom -rhythm($padding-trailer, $font-size)
 
-// Apply a border and whitespace to any side without destroying the vertical
-// rhythm. The whitespace must be greater than the width of the border.
+// Applies a border and whitespace to any side without destroying the vertical rhythm.
+// The whitespace must be greater than the width of the border.
 apply-side-rhythm-border($side, $width = 1px, $lines = 1, $font-size = $base-font-size, $border-style = $default-rhythm-border-style)
   if (not $relative-font-sizing) and ($font-size is not $base-font-size)
     warn('relative-font-sizing is false but a relative font size was passed to apply-side-rhythm-border')
@@ -165,7 +161,7 @@ apply-side-rhythm-border($side, $width = 1px, $lines = 1, $font-size = $base-fon
   border-{$side}-width $font-unit * ($width / $font-size)
   padding-{$side} -rhythm($lines, $font-size, $offset = $width)
 
-// Apply borders and whitespace equally to all sides.
+// Applies borders and whitespace equally to all sides.
 rhythm-borders($width = 1px, $lines = 1, $font-size = $base-font-size, $border-style = $default-rhythm-border-style)
   if (not $relative-font-sizing) and ($font-size is not $base-font-size)
     warn('relative-font-sizing is false but a relative font size was passed to rhythm-borders')
@@ -174,15 +170,15 @@ rhythm-borders($width = 1px, $lines = 1, $font-size = $base-font-size, $border-s
   border-width $font-unit * ($width / $font-size)
   padding -rhythm($lines, $font-size, $offset = $width)
 
-// Apply a leading border.
+// Applies a leading border.
 leading-border($width = 1px, $lines = 1, $font-size = $base-font-size, $border-style = $default-rhythm-border-style)
   apply-side-rhythm-border(top, $width, $lines, $font-size, $border-style)
 
-// Apply a trailing border.
+// Applies a trailing border.
 trailing-border($width = 1px, $lines = 1, $font-size = $base-font-size, $border-style = $default-rhythm-border-style)
   apply-side-rhythm-border(bottom, $width, $lines, $font-size, $border-style)
 
-// Apply both leading and trailing borders.
+// Applies both leading and trailing borders.
 horizontal-borders($width = 1px, $lines = 1, $font-size = $base-font-size, $border-style = $default-rhythm-border-style)
   leading-border($width, $lines, $font-size, $border-style)
   trailing-border($width, $lines, $font-size, $border-style)
