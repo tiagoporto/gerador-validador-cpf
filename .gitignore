@@ -53,3 +53,7 @@ bower_components/
 #################
 
 build/
+app/templates/src/stylesheets/stylus/helpers/_functions.styl
+app/templates/src/stylesheets/stylus/helpers/_mixins.styl
+app/templates/src/stylesheets/sass/helpers/_functions.scss
+app/templates/src/stylesheets/sass/helpers/_mixins.scss

@@ -2,18 +2,17 @@
 .editorconfig
 .eslintrc
 .gitattributes
-.gitattributes
 .travis.yml
+.yo-rc.json
 
 bower.json
 config.json
 gulpfile.js
 karma.conf.js
+yarn.lock
 
 .publish/
-build/
 coverage/
-dist/bower_components/
+build/
 spec/
 src/
-tasks/
