@@ -118,6 +118,21 @@ a:active,
 a:hover {
   color: #ffff32;
 }
+li {
+  list-style-type: none;
+}
+dl {
+  margin: 24px 0;
+}
+dt {
+  font-weight: bold;
+  font-size: 1.25em;
+  line-height: 1.2em;
+  margin-top: 0.75em;
+}
+dd {
+  margin: 0;
+}
 blockquote {
   font-style: italic;
   padding-left: 0.625em;
