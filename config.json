@@ -1,19 +1,18 @@
 {
   "basePaths": {
-     "src": "src/",
+    "src": "src/",
     "dest": "dist/",
-   "build": "build/",
-   "bower": "dist/bower_components",
+    "build": "build/",
 
     "handlebars": {
-       "src": "html/",
+       "src": "handlebars/",
        "partials": {
           "src": "includes/"
         }
     },
 
     "images": {
-       "src": "images/",
+      "src": "images/",
       "dest": "img/"
     },
 
@@ -26,23 +25,23 @@
     },
 
     "scripts": {
-       "src": "scripts/",
+      "src": "scripts/",
       "dest": "js/"
     },
 
     "styles": {
       "src": "stylesheets/",
       "dest": "css/"
+    },
+
+    "clean": {
+      "ignore": [
+        "!dist/img/{copyright,logos}{,**/*{,**/*}}"
+      ]
     }
   },
 
-  "components": false,
-
-  "es6": true,
-
-  "outdatedBrowser": false,
-
-  "logoDownloadtip": false,
+  "components": true,
 
   "jQuery": false,
 
@@ -52,23 +51,29 @@
 
   "inlineSVG": false,
 
+  "handlebars": true,
+
   "autoprefixerBrowsers": [
-    "ie >= 8",
-    "ie_mob >= 10",
+    "ie > 7",
+    "ie_mob > 9",
     "Firefox > 24",
     "last 10 Chrome versions",
-    "safari >= 6",
-    "opera >= 24",
-    "ios >= 6",
-    "android >= 4",
-    "bb >= 10"
+    "safari > 5",
+    "opera > 24",
+    "ios > 5",
+    "android > 4",
+    "bb > 10"
   ],
 
   "browserSync": {
     "notify": false,
     "logPrefix": "BrowserSync",
     "server": {
-      "baseDir": ["dist/"]
+      "baseDir": ["dist/", "./"]
+    },
+    "routes": {
+        "/bower_components": "bower_components",
+        "/node_modules": "node_modules"
     }
   },
 
