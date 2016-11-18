@@ -83,24 +83,9 @@ var format = function format(event) {
     typeof ga === 'function' && ga('send', 'event', 'button', 'click', 'Formate CPF');
 };
 
-// Download analytcs
-var downloadDev = function downloadDev() {
-    'use strict';
-
-    typeof ga === 'function' && ga('send', 'event', 'download', 'click', 'Download Dev version');
-};
-
-var downloadProd = function downloadProd() {
-    'use strict';
-
-    typeof ga === 'function' && ga('send', 'event', 'download', 'click', 'Download Production version');
-};
-
 generate();
 
 setListener('generate-section__submit-button', generate, 'click');
 setListener('validate-section__form', validate, 'submit');
 setListener('format-section__form', format, 'submit');
 setListener('format-section__form', format, 'submit');
-setListener('download-development', downloadDev, 'click');
-setListener('download-production', downloadProd, 'click');
