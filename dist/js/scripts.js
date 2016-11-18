@@ -40,7 +40,7 @@ var setListener = function setListener(className, func, action) {
 };
 
 // CPF functions
-var validate = function validate() {
+var validate = function validate(event) {
     'use strict';
 
     event.preventDefault();
@@ -71,7 +71,7 @@ var generate = function generate() {
     typeof ga === 'function' && ga('send', 'event', 'button', 'click', 'Generate CPF');
 };
 
-var format = function format() {
+var format = function format(event) {
     'use strict';
 
     event.preventDefault();

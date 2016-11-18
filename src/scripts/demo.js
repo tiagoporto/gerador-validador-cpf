@@ -32,7 +32,7 @@ const setListener = (className, func, action) => {
 
 
 // CPF functions
-const validate = () => {
+const validate = event => {
     'use strict';
     event.preventDefault();
 
@@ -61,7 +61,7 @@ const generate = () => {
     typeof ga === 'function' && ga('send', 'event', 'button', 'click', 'Generate CPF');
 };
 
-const format = () => {
+const format = event => {
     'use strict';
     event.preventDefault();
     const params = document.getElementsByClassName('format-section__params')[0].value;
