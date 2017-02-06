@@ -18,7 +18,7 @@ A ferramenta pode ser acessada pelo link: [http://tiagoporto.github.io/gerador-v
     * [Gerando CPF](#gerando-cpf)
     * [Validando CPF](#validando-cpf)
     * [Formatando CPF](#formatando-cpf)
-* [Contribuição](#contribuicao)
+* [Contribuição](#contribuição)
 * [Licença](#licenca)
 
 
