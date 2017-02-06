@@ -18,7 +18,7 @@ A ferramenta pode ser acessada pelo link: [http://tiagoporto.github.io/gerador-v
     * [Gerando CPF](#gerando-cpf)
     * [Validando CPF](#validando-cpf)
     * [Formatando CPF](#formatando-cpf)
-* [Contribuuição](#contribuicao)
+* [Contribuição](#contribuicao)
 * [Licença](#licenca)
 
 
@@ -116,8 +116,7 @@ CPF.format('12345678901', 'checker');
 Gera um CPF no formato xxxxxxxxx-xx
 
 
-## Contributing
-
+## Contribuição
 [Veja como contribuir](https://github.com/tiagoporto/gerador-validador-cpf/blob/master/CONTRIBUTING.md).
 
 ## Licença
