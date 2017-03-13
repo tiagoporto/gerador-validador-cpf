@@ -59,6 +59,20 @@ document.getElementById('btn-gerar-CPF').onclick = function(){
 };
 ```
 
+Exemplo de validação utilizando um método com vuejs.
+```javascript
+import cpf from 'gerador-validador-cpf';
+
+new Vue({
+    el: '#app',
+    
+    methods: {
+        validar_seu_cpf(value) {
+            return cpf.validate(value);
+        }
+});
+```
+
 A função recebe como parâmetro opcional a formatação do CPF, [opções](#opções-de-formatação).
 
 ### Validando CPF
@@ -91,7 +105,7 @@ Exemplo completo de uma possível utilização.
 
 ```javascript
 document.getElementById('CPF').onblur = function (){
-    document.getElementById('CPF').value = CPF.formata(document.getElementById('CPF').value);
+    document.getElementById('CPF').value = CPF.format(document.getElementById('CPF').value);
 };
 ```
 
