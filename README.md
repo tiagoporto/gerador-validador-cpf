@@ -91,7 +91,7 @@ Exemplo completo de uma possível utilização.
 
 ```javascript
 document.getElementById('CPF').onblur = function (){
-    document.getElementById('CPF').value = CPF.formata(document.getElementById('CPF').value);
+    document.getElementById('CPF').value = CPF.format(document.getElementById('CPF').value);
 };
 ```
 
