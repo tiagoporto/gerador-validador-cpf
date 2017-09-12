@@ -5,9 +5,7 @@
 [![devDependencies Status](https://david-dm.org/tiagoporto/gerador-validador-cpf/dev-status.svg)](https://david-dm.org/tiagoporto/gerador-validador-cpf?type=dev)
 [![NPM Downloads](https://img.shields.io/npm/dt/gerador-validador-cpf.svg)](https://www.npmjs.com/package/gerador-validador-cpf)
 [![Github Release](https://img.shields.io/github/release/tiagoporto/gerador-validador-cpf.svg)](https://github.com/tiagoporto/gerador-validador-cpf/releases)
-[![Github Issues](https://img.shields.io/github/issues/tiagoporto/gerador-validador-cpf.svg)](https://github.com/tiagoporto/gerador-validador-cpf/issues)
-[![Github License](https://img.shields.io/github/license/tiagoporto/gerador-validador-cpf.svg)](https://github.com/tiagoporto/gerador-validador-cpf/blob/master/LICENSE)
-
+[![Github Issues](https://img.shields.io/github/issues/tiagoporto/gerador-validador-cpf.svg)](https://github.com/tiagoporto/gerador-validador-cp
 > Biblioteca JS open-source para gerar, validar e formatar CPF.
 
 A ferramenta pode ser acessada pelo link: [tiagoporto.github.io/gerador-validador-cpf/](http://tiagoporto.github.io/gerador-validador-cpf/).
@@ -19,8 +17,6 @@ A ferramenta pode ser acessada pelo link: [tiagoporto.github.io/gerador-validado
     * [Validando CPF](#validando-cpf)
     * [Formatando CPF](#formatando-cpf)
 * [Contribuição](#contribuição)
-* [Licença](#licença)
-
 
 ## Uso
 
@@ -132,7 +128,3 @@ Gera um CPF no formato xxxxxxxxx-xx
 
 ## Contribuição
 [Veja como contribuir](https://github.com/tiagoporto/gerador-validador-cpf/blob/master/CONTRIBUTING.md).
-
-## Licença
-
-Gerador e validador de CPF está sobre os termos da [licença MIT](https://github.com/tiagoporto/gerador-validador-cpf/blob/master/LICENSE).
