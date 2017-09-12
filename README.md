@@ -19,7 +19,7 @@ A ferramenta pode ser acessada pelo link: [tiagoporto.github.io/gerador-validado
     * [Validando CPF](#validando-cpf)
     * [Formatando CPF](#formatando-cpf)
 * [Contribuição](#contribuição)
-* [Licença](#licenca)
+* [Licença](#licença)
 
 
 ## Uso
@@ -137,4 +137,4 @@ Gera um CPF no formato xxxxxxxxx-xx
 
 Gerador e validador de CPF está sobre os termos da [licença MIT](license).
 
-[license]: https://raw.githubusercontent.com/tiagoporto/gerador-validador-cpf/master/LICENSE
+[license]: https://github.com/tiagoporto/gerador-validador-cpf/blob/master/LICENSE
