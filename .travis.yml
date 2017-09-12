@@ -4,9 +4,7 @@ node_js:
   - "stable"
 
 before_install:
-  - npm install -g gulp
   - gem install awesome_bot
 
 script:
-  - awesome_bot README.md --allow-redirect
-  - gulp test
+  - awesome_bot README.md
