@@ -8,5 +8,5 @@ before_install:
   - gem install awesome_bot
 
 script:
-  - awesome_bot README.md --white-list travis-ci
+  - awesome_bot README.md --allow-redirect --white-list travis-ci
   - gulp test
