@@ -43,7 +43,7 @@
 
   "components": true,
 
-  "jQuery": false,
+  "jQuery": true,
 
   "lintCSS": false,
 

@@ -14,7 +14,7 @@
       "formata",
       "format"
     ],
-    "language": "en",
+    "language": "pt-BR",
     "authorName": "Tiago Porto",
     "authorEmail": "tiago@tiagoporto.com",
     "authorHomepage": "http://tiagoporto.com",
@@ -37,15 +37,17 @@
       "lintJS"
     ],
     "features": [
+      "jquery",
       "normalize"
     ],
+    "jqueryLogoDownloadtip": false,
     "files": [
       "readme",
       "contributing",
       "changelog",
       "travis",
       "npmignore",
-      "bower"
+      "manifestJson"
     ]
   }
 }

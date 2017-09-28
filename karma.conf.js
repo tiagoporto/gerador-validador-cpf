@@ -1,7 +1,5 @@
 // Karma configuration
 
-/* eslint-env node */
-/* eslint strict: ["error", "global"] */
 'use strict';
 module.exports = function(config) {
     var configuration = {
