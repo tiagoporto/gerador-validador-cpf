@@ -1,73 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{#if lang}}{{lang}}{{else}}en{{/if}}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>{{#if title}}{{title}}{{else}}{-}{{/if}}</title>
-        <meta name="description" content="{{#if description}}{{description}}{{else}}{-}{{/if}}">
-        <meta name="keywords" content="{{#if keywords}}{{keywords}}{{else}}{-}{{/if}}">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{#if title}}{{title}}{{else}}Unknow{{/if}}</title>
+    <meta name="description" content="{{#if description}}{{description}}{{/if}}">
+    <meta name="keywords" content="{{#if keywords}}{{keywords}}{{/if}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/manifest.json">
 
-        <!-- Add to homescreen for Chrome on Android -->
-        <meta name="theme-color" content="#1b6496">
-        <meta name="mobile-web-app-capable" content="yes">
-        <link rel="icon" sizes="192x192" href="img/touch/chrome-touch-icon-192x192.png">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="theme-color" content="#1b6496">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="img/touch/chrome-touch-icon-192x192.png">
 
-        <!-- Add to homescreen for Safari on iOS -->
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="apple-mobile-web-app-title" content="{{#if title}}{{title}}{{else}}{-}{{/if}}">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="{{#if title}}{{title}}{{else}}Unknow{{/if}}">
+    <link rel="apple-touch-icon" href="img/touch/apple-touch-icon.png">
 
-        <!-- Tile icon for Win8 -->
-        <meta name="application-name" content="{{#if title}}{{title}}{{else}}{-}{{/if}}"/>
-        <meta name="msapplication-TileColor" content="#1b6496"/>
-        <meta name="msapplication-square70x70logo" content="img/touch/tile.png"/>
-        <meta name="msapplication-square150x150logo" content="img/touch/tile.png"/>
-        <meta name="msapplication-wide310x150logo" content="img/touch/tile-wide.png"/>
-        <meta name="msapplication-square310x310logo" content="img/touch/tile.png"/>
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 
-        <link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+    <!-- build:css css/styles.combined.min.css -->
+    <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css">
+    <link rel="stylesheet" href="../node_modules/highlightjs/styles/googlecode.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <!-- endbuild -->
+  </head>
+  <body>
+    <header class="panel">
+      <a href="https://github.com/tiagoporto/gerador-validador-cpf/" class="github-corner">
+        <svg width="80" viewBox="0 0 250 250" style="fill:#fff; color:#1b6496; position: absolute; top: 0; border: 0; right: 0;">
+            <title>Página do projeto no github</title>
+            <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+            <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+            <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+        </svg>
+      </a>
 
-        <!-- build:css css/styles.combined.min.css -->
-        <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css">
-        <link rel="stylesheet" href="../node_modules/highlightjs/styles/googlecode.css">
-        <link rel="stylesheet" href="css/demo.css">
-        <!-- endbuild -->
-    </head>
-    <body>
-        <header class="panel">
-            <a href="https://github.com/tiagoporto/gerador-validador-cpf/" class="github-corner">
-                <svg width="80" viewBox="0 0 250 250" style="fill:#fff; color:#1b6496; position: absolute; top: 0; border: 0; right: 0;">
-                    <title>Página do projeto no github</title>
-                    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-                    <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-                    <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
-                </svg>
-            </a>
+      <h1 class="panel__title">
+        <svg class="panel__logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 191 192">
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFF" d="M133.7 107.2l9.9-59.8L98.8 0 57.2 43.6l61.5 8.8"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFF" d="M83.8 134.6l59.8 10L191 99.3l-43.6-42-8.7 62.1"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFF" d="M58 84.8l-12.1 59.8L89.4 192l43.3-43.6-61.6-8.8"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFF" d="M109.1 57.5L49.2 47.4 0 92.7l42.5 41.9 10.9-62"/>
+        </svg>
 
+        <span>Gerador e</span> validador de CPF
+      </h1>
 
-            <h1 class="panel__title">
-                <svg class="panel__logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 191 192">
-                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFF" d="M133.7 107.2l9.9-59.8L98.8 0 57.2 43.6l61.5 8.8"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFF" d="M83.8 134.6l59.8 10L191 99.3l-43.6-42-8.7 62.1"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFF" d="M58 84.8l-12.1 59.8L89.4 192l43.3-43.6-61.6-8.8"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFF" d="M109.1 57.5L49.2 47.4 0 92.7l42.5 41.9 10.9-62"/>
-                </svg>
+      <p>Biblioteca JS open-source para gerar, validar e formatar CPF.</p>
 
-                <span>Gerador e</span> validador de CPF
-            </h1>
+      <a class="github-button" href="https://github.com/tiagoporto" data-count-href="/tiagoporto/followers" data-count-api="/users/tiagoporto#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @tiagoporto on GitHub">Follow @tiagoporto</a>
 
-            <p>Biblioteca JS open-source para gerar, validar e formatar CPF.</p>
+      <a class="github-button" href="https://github.com/tiagoporto/gerador-validador-cpf/fork" data-icon="octicon-git-branch" data-count-href="/tiagoporto/gerador-validador-cpf/network" data-count-api="/repos/tiagoporto/gerador-validador-cpf#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork tiagoporto/gerador-validador-cpf on GitHub">Fork</a>
 
-            <a class="github-button" href="https://github.com/tiagoporto" data-count-href="/tiagoporto/followers" data-count-api="/users/tiagoporto#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @tiagoporto on GitHub">Follow @tiagoporto</a>
+      <a class="github-button" href="https://github.com/tiagoporto/gerador-validador-cpf/issues" data-icon="octicon-issue-opened" data-count-api="/repos/tiagoporto/gerador-validador-cpf#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue tiagoporto/gerador-validador-cpf on GitHub">Issue</a>
 
-            <a class="github-button" href="https://github.com/tiagoporto/gerador-validador-cpf/fork" data-icon="octicon-git-branch" data-count-href="/tiagoporto/gerador-validador-cpf/network" data-count-api="/repos/tiagoporto/gerador-validador-cpf#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork tiagoporto/gerador-validador-cpf on GitHub">Fork</a>
-
-            <a class="github-button" href="https://github.com/tiagoporto/gerador-validador-cpf/issues" data-icon="octicon-issue-opened" data-count-api="/repos/tiagoporto/gerador-validador-cpf#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue tiagoporto/gerador-validador-cpf on GitHub">Issue</a>
-
-            <a class="github-button" href="https://github.com/tiagoporto/gerador-validador-cpf" data-icon="octicon-star" data-count-href="/tiagoporto/gerador-validador-cpf/stargazers" data-count-api="/repos/tiagoporto/gerador-validador-cpf#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star tiagoporto/gerador-validador-cpf on GitHub">Star</a>
-        </header>
+      <a class="github-button" href="https://github.com/tiagoporto/gerador-validador-cpf" data-icon="octicon-star" data-count-href="/tiagoporto/gerador-validador-cpf/stargazers" data-count-api="/repos/tiagoporto/gerador-validador-cpf#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star tiagoporto/gerador-validador-cpf on GitHub">Star</a>
+    </header>
 
 {{> @partial-block }}
 

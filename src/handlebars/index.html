@@ -1,162 +1,158 @@
 {{#> header
-    title="Gerador e validador de CPF"
-    description="Biblioteca JS open-source para gerar, validar e formatar CPF."
-    keywords="cpf,gerador,generator,generates,validador,valida,validates,formata,format"
-    lang="pt-BR"
+  title="Gerador e validador de CPF"
+  description="Biblioteca JS open-source para gerar, validar e formatar CPF."
+  keywords="cpf,gerador,generator,generates,validador,valida,validates,formata,format"
+  lang="pt-BR"
 }}
-    <main class="main">
-        <section class="generate-section">
-            <h2>Gerar</h2>
 
-            <button class="generate-section__submit-button" type="button">Gerar CPF</button>
+  <main class="main">
+    <section class="generate-section">
+      <h2>Gerar</h2>
 
-            <input class="generate-section__input--generated" type="text" placeholder="CPF gerado" readonly>
+      <button class="generate-section__submit-button" type="button">Gerar CPF</button>
 
-            <button class="generate-section__copy-button" type="button" data-clipboard-target=".generate-section__input--generated">copiar</button>
-        </section>
+      <input class="generate-section__input--generated" type="text" placeholder="CPF gerado" readonly>
 
+      <button class="generate-section__copy-button" type="button" data-clipboard-target=".generate-section__input--generated">copiar</button>
+    </section>
 
-        <section class="validate-section">
-            <h2>Validar</h2>
+    <section class="validate-section">
+     <h2>Validar</h2>
 
-            <form class="validate-section__form">
-                <label for="validate-section__input--to-format">Insira o CPF para validação</label>
-                <input id="validate-section__input--to-format" type="text" required>
+     <form class="validate-section__form">
+        <label for="validate-section__input--to-format">Insira o CPF para validação</label>
+          <input id="validate-section__input--to-format" type="text" required>
 
-                <input class="validate-section__input--message" type="text" placeholder="Insira CPF para validação" readonly>
+        <input class="validate-section__input--message" type="text" placeholder="Insira CPF para validação" readonly>
 
-                <button class="validate-section__submit-button" type="submit">Validar CPF</button>
-            </form>
-        </section>
+        <button class="validate-section__submit-button" type="submit">Validar CPF</button>
+      </form>
+    </section>
 
+    <section class="format-section">
+      <h2>Formatar</h2>
 
-        <section class="format-section">
-            <h2>Formatar</h2>
+      <form class="format-section__form">
+        <label for="format-section__input">Insira o CPF para validação</label>
 
-            <form class="format-section__form">
-                <label for="format-section__input">Insira o CPF para validação</label>
-                <input id="format-section__input" type="text" required>
+        <input id="format-section__input" type="text" required>
 
-                <select class="format-section__params">
-                    <option value="padrao">Padrão</option>
-                    <option value="digits">Somente Digitos</option>
-                    <option value="checker">Separa o Verificador</option>
-                </select>
+        <select class="format-section__params">
+          <option value="padrao">Padrão</option>
+          <option value="digits">Somente Digitos</option>
+          <option value="checker">Separa o Verificador</option>
+        </select>
 
-                <input class="format-section__input--message" type="text" placeholder="CPF formatado" readonly>
+        <input class="format-section__input--message" type="text" placeholder="CPF formatado" readonly>
 
-                <button class="format-section__copy-button" type="button"   data-clipboard-target=".format-section__input--message">copiar</button>
+        <button class="format-section__copy-button" type="button"   data-clipboard-target=".format-section__input--message">copiar</button>
 
-                <button class="format-section__submit-button" type="submit">Formatar CPF</button>
-            </form>
-        </section>
+        <button class="format-section__submit-button" type="submit">Formatar CPF</button>
+      </form>
+    </section>
 
+    <section class="documentation">
+      <p>Este foi um dos meus primeiros exercícios aprendendo PHP, depois de um bom tempo resolvi converter o código para JS e melhorá-lo. Disponibilizo está ferramenta para auxiliar outros desenvolvedores em testes de software, não possui qualquer vínculo com a Receita Federal do Brasil.</p>
 
-        <section class="documentation">
-            <p>Este foi um dos meus primeiros exercícios aprendendo PHP, depois de um bom tempo resolvi converter o código para JS e melhorá-lo. Disponibilizo está ferramenta para auxiliar outros desenvolvedores em testes de software, não possui qualquer vínculo com a Receita Federal do Brasil.</p>
+      <p>A ferramenta utiliza o seguinte <a href="http://www.geradorcpf.com/algoritmo_do_cpf.htm">algoritmo</a> para verificação e geração do CPF.</p>
 
-            <p>A ferramenta utiliza o seguinte <a href="http://www.geradorcpf.com/algoritmo_do_cpf.htm">algoritmo</a> para verificação e geração do CPF.</p>
+      <p>Um CPF declarado como válido por essa ferramenta não significa que ele exista no Cadastro Nacional de Pessoas Físicas, nem que seja um número ativo ou com situação cadastral regular. Para conferir tais dados, consulte o site oficial da <a href="http://www.receita.fazenda.gov.br/aplicacoes/atcta/cpf/consultapublica.asp">Secretaria da Receita Federal do Brasil</a>.</p>
 
-            <p>Um CPF declarado como válido por essa ferramenta não significa que ele exista no Cadastro Nacional de Pessoas Físicas, nem que seja um número ativo ou com situação cadastral regular. Para conferir tais dados, consulte o site oficial da <a href="http://www.receita.fazenda.gov.br/aplicacoes/atcta/cpf/consultapublica.asp">Secretaria da Receita Federal do Brasil</a>.</p>
+      <p>O número CPF guarda o estado de onde foi emitido, esse número corresponde ao último algarismo anterior aos dois dígitos verificadores.</p>
 
-            <p>O número CPF guarda o estado de onde foi emitido, esse número corresponde ao último algarismo anterior aos dois dígitos verificadores.</p>
+      <p>Um exemplo de CPF nº 000.000.008-00, o número 8 corresponde ao estado de São Paulo.</p>
 
-            <p>Um exemplo de CPF nº 000.000.008-00, o número 8 corresponde ao estado de São Paulo.</p>
+      <p>Veja abaixo os códigos correspondentes aos estados brasileiros:</p>
 
-            <p>Veja abaixo os códigos correspondentes aos estados brasileiros:</p>
-
-            <ul>
-                <li>1. Distrito Federal, Goiás, Mato Grosso do Sul e Tocantins;</li>
-                <li>2. Pará, Amazonas, Acre, Amapá, Rondônia e Roraima;</li>
-                <li>3. Ceará, Maranhão e Piauí;</li>
-                <li>4. Pernambuco, Rio Grande do Norte, Paraíba e Alagoas;</li>
-                <li>5. Bahia e Sergipe;</li>
-                <li>6. Minas Gerais;</li>
-                <li>7. Rio de Janeiro e Espírito Santo;</li>
-                <li>8. São Paulo;</li>
-                <li>9. Paraná e Santa Catarina;</li>
-                <li>0. Rio Grande do Sul.</li>
-            </ul>
-
+      <ul>
+        <li>1. Distrito Federal, Goiás, Mato Grosso do Sul e Tocantins;</li>
+        <li>2. Pará, Amazonas, Acre, Amapá, Rondônia e Roraima;</li>
+        <li>3. Ceará, Maranhão e Piauí;</li>
+        <li>4. Pernambuco, Rio Grande do Norte, Paraíba e Alagoas;</li>
+        <li>5. Bahia e Sergipe;</li>
+        <li>6. Minas Gerais;</li>
+        <li>7. Rio de Janeiro e Espírito Santo;</li>
+        <li>8. São Paulo;</li>
+        <li>9. Paraná e Santa Catarina;</li>
+        <li>0. Rio Grande do Sul.</li>
+      </ul>
 
 
-            <h2 class="h2">Como usar</h2>
+      <h2 class="h2">Como usar</h2>
 
-            <p>Faça o download com NPM.</p>
+      <p>Faça o download com NPM.</p>
 
-            <pre><code class="bash">npm install gerador-validador-cpf --save</code></pre>
+      <pre><code class="bash">npm install gerador-validador-cpf --save</code></pre>
 
-            <p>ou com Bower.</p>
+      <p>ou com Bower.</p>
 
-            <pre><code class="bash">bower install gerador-validador-cpf --save</code></pre>
+      <pre><code class="bash">bower install gerador-validador-cpf --save</code></pre>
 
+      <p>Inclua o arquivo no rodapé da sua página, como no exemplo.</p>
 
-            <p>Inclua o arquivo no rodapé da sua página, como no exemplo.</p>
-
-            <pre><code class="html">&lt;script src=&quot;node_modules/dist/js/CPF.js&quot;&gt;&lt;/script&gt;</code></pre>
-
+      <pre><code class="html">&lt;script src=&quot;node_modules/dist/js/CPF.js&quot;&gt;&lt;/script&gt;</code></pre>
 
 
-            <h3 class="h3">Gerando CPF</h3>
+      <h3 class="h3">Gerando CPF</h3>
 
-            <p>Para <strong>gerar CPF</strong> basta chamar a função <kbd>generate()</kbd>, veja um exemplo:</p>
+      <p>Para <strong>gerar CPF</strong> basta chamar a função <kbd>generate()</kbd>, veja um exemplo:</p>
 
-            <pre><code class="javascript">CPF.generate();</code></pre>
+      <pre><code class="javascript">CPF.generate();</code></pre>
 
-            <p>Exemplo completo de uma possível utilização com javascript.</p>
+      <p>Exemplo completo de uma possível utilização com javascript.</p>
 
-            <pre><code class="javascript">document.getElementById('btn-gerar-CPF').onclick = function(){
-    document.getElementById('CPF').innerHTML = CPF.generate();
-    };</code></pre>
+      <pre><code class="javascript">document.getElementById('btn-gerar-CPF').onclick = function(){
+document.getElementById('CPF').innerHTML = CPF.generate();
+};</code></pre>
 
-            <p>A função recebe como parâmetro opcional a formatação do CPF, <a href="#documentation__generate-options">opções</a>.</p>
+      <p>A função recebe como parâmetro opcional a formatação do CPF, <a href="#documentation__generate-options">opções</a>.</p>
 
-            <h3 class="h3">Validando CPF</h3>
+      <h3 class="h3">Validando CPF</h3>
 
-            <p>Para <strong>validar um CPF</strong> basta chamar a função <kbd>validate(cpf)</kbd>, passando como parâmetro o número a ser validado, não se preocupe com os caracteres <kbd>.</kbd>, <kbd>-</kbd> e <kbd>espaço</kbd>, a função fica encarregada de eliminar esses caracteres para verificação posterior, veja um exemplo:</p>
+      <p>Para <strong>validar um CPF</strong> basta chamar a função <kbd>validate(cpf)</kbd>, passando como parâmetro o número a ser validado, não se preocupe com os caracteres <kbd>.</kbd>, <kbd>-</kbd> e <kbd>espaço</kbd>, a função fica encarregada de eliminar esses caracteres para verificação posterior, veja um exemplo:</p>
 
-            <pre><code class="javascript">CPF.validate("123.456.789-00");</code></pre>
+      <pre><code class="javascript">CPF.validate("123.456.789-00");</code></pre>
 
-            <p>Exemplo completo de uma possível utilização com javascript com tratamento da mensagem de erro.</p>
+      <p>Exemplo completo de uma possível utilização com javascript com tratamento da mensagem de erro.</p>
 
-            <pre><code class="javascript">document.getElementById('valida-CPF').onsubmit = function (event){
-    if ( CPF.validate(document.getElementById('cpf-validacao').value) === true ) {
-    var mensagem = 'CPF Válido';
-    }else{
-    var mensagem = 'CPF Inválido';
-    }
+      <pre><code class="javascript">document.getElementById('valida-CPF').onsubmit = function (event){
+if ( CPF.validate(document.getElementById('cpf-validacao').value) === true ) {
+var mensagem = 'CPF Válido';
+}else{
+var mensagem = 'CPF Inválido';
+}
 
-    document.getElementById('resultado-validacao').innerHTML = mensagem;
-    };</code></pre>
+document.getElementById('resultado-validacao').innerHTML = mensagem;
+};</code></pre>
 
-            <h3 class="h3">Formatando CPF</h3>
+      <h3 class="h3">Formatando CPF</h3>
 
-            <p>Para <strong>formatar um CPF</strong> basta chamar a função <kbd>format(cpf, param)</kbd>, passando como parâmetro o CPF a ser formatado, não se preocupe com os caracteres <kbd>.</kbd>, <kbd>-</kbd> e <kbd>espaço</kbd>, a função fica encarregada de eliminar esses caracteres para verificação posterior, veja um exemplo:</p>
+      <p>Para <strong>formatar um CPF</strong> basta chamar a função <kbd>format(cpf, param)</kbd>, passando como parâmetro o CPF a ser formatado, não se preocupe com os caracteres <kbd>.</kbd>, <kbd>-</kbd> e <kbd>espaço</kbd>, a função fica encarregada de eliminar esses caracteres para verificação posterior, veja um exemplo:</p>
 
-            <pre><code class="javascript">CPF.format("123.456.789-00");</code></pre>
+      <pre><code class="javascript">CPF.format("123.456.789-00");</code></pre>
 
-            <p>Exemplo completo de uma possível utilização com javascript.</p>
+      <p>Exemplo completo de uma possível utilização com javascript.</p>
 
-            <pre><code class="javascript">document.getElementById('CPF').onblur = function (){
-    document.getElementById('CPF').value = CPF.format(document.getElementById('CPF').value);
-    };</code></pre>
+      <pre><code class="javascript">document.getElementById('CPF').onblur = function (){
+document.getElementById('CPF').value = CPF.format(document.getElementById('CPF').value);
+};</code></pre>
 
-            <h4 id="documentation__generate-options">Opções de formatação.</h4>
+      <h4 id="documentation__generate-options">Opções de formatação.</h4>
 
-            <dl>
-                <dt class="h4">Padrão</dt>
-                <dd><pre><code class="javascript">CPF.format('12345678901');</code></pre>
-                </dd>
-                <dd>Gera um CPF no formato xxx.xxx.xxx-xx</dd>
+      <dl>
+        <dt class="h4">Padrão</dt>
+        <dd><pre><code class="javascript">CPF.format('12345678901');</code></pre>
+        </dd>
+        <dd>Gera um CPF no formato xxx.xxx.xxx-xx</dd>
 
-                <dt class="h4">Dígitos</dt>
-                <dd><pre><code class="javascript">CPF.format('123.456.789-01', 'digits');</code></pre></dd>
-                <dd>Gera um CPF no formato xxxxxxxxxxx</dd>
+        <dt class="h4">Dígitos</dt>
+        <dd><pre><code class="javascript">CPF.format('123.456.789-01', 'digits');</code></pre></dd>
+        <dd>Gera um CPF no formato xxxxxxxxxxx</dd>
 
-                <dt class="h4">Verificador</dt>
-                <dd><pre><code class="javascript">CPF.format('12345678901', 'checker');</code></pre></dd>
-                <dd>Gera um CPF no formato xxxxxxxxx-xx</dd>
-            </dl>
-        </section>
-    </main>
+        <dt class="h4">Verificador</dt>
+        <dd><pre><code class="javascript">CPF.format('12345678901', 'checker');</code></pre></dd>
+        <dd>Gera um CPF no formato xxxxxxxxx-xx</dd>
+      </dl>
+    </section>
+  </main>
 {{/header}}
