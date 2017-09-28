@@ -1,9 +1,23 @@
 .format-section
     &__copy-button
-        text-transform: lowercase
-        rhythm-padding(.25)
-        adjust-font-size-to($base-font-size)
-        trailer(.5)
+      text-transform: lowercase
+      rhythm-padding(.25)
+      adjust-font-size-to($base-font-size)
+      trailer(.5)
+      background-color: darken($bg-color, 60%)
+
+      &:hover:not([disabled])
+        background-color: darken($bg-color, 50%)
+
+      @media (max-width: em($tablet))
+        width: 100%
 
     &__submit-button
-        display: block
+      display: block
+      background-color: darken($bg-color, 60%)
+
+      &:hover:not([disabled])
+        background-color: darken($bg-color, 50%)
+
+      @media (max-width: em($tablet))
+        width: 100%

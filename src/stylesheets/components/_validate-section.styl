@@ -1,3 +1,10 @@
 .validate-section
-    &__submit-button
-        display: block
+  &__submit-button
+    display: block
+    background-color: darken($bg-color, 60%)
+
+    &:hover:not([disabled])
+      background-color: darken($bg-color, 50%)
+
+    @media (max-width: em($tablet))
+      width: 100%
