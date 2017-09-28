@@ -54,10 +54,9 @@ arrow($width = 20px, $height = 20px, $direction = up, $color = red)
 
 
 circle($width = 20px)
-
-    border-radius floor($width/2)
-    width $width
-    height $width
+    border-radius: floor($width/2)
+    width: $width
+    height: $width
 
 /**
 *
@@ -67,14 +66,14 @@ circle($width = 20px)
 **/
 
 $clearfix
-    zoom 1
+    zoom: 1
 
 $clearfix-after-before
-    content ""
-    display table
+    content: ""
+    display: table
 
 $clearfix-after
-    clear both
+    clear: both
 
 clearfix()
     @extend $clearfix
@@ -93,7 +92,6 @@ clearfix()
 **/
 
 opacity($value)
-
     opacity: $value
     filter: unquote('alpha(opacity=' + round($value * 100) + ')') //IE8 and earlier
 
@@ -113,7 +111,7 @@ opacity($value)
  */
 
 at2x($path, $width = auto, $height = auto)
-    background-image url($image-path + $path)
+    background-image: url($image-path + $path)
 
     @media (-webkit-min-device-pixel-ratio: 1.5),\
            (-o-min-device-pixel-ratio: 3 / 2),\
@@ -121,5 +119,5 @@ at2x($path, $width = auto, $height = auto)
            (min-device-pixel-ratio: 1.5),
            (min-resolution: 1.5dppx)
 
-        background-image url($image-path + replace('\.', '@2x.', $path))
-        background-size $width $height
+        background-image: url($image-path + replace('\.', '@2x.', $path))
+        background-size: $width $height
