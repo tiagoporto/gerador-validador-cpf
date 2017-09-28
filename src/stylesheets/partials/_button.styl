@@ -1,5 +1,5 @@
 $basicButton
-    adjust-font-size-to($base-font-size - 2, 2)
+    adjust-font-size-to($base-font-size - 2)
     border: none
     border-radius: 5px
     display: inline-block
@@ -14,10 +14,9 @@ $basicButton
     -webkit-tap-highlight-color: transparent
     box-shadow: 0 1px 2px rgba(0, 0, 0, .1), 0 1px 2px rgba(0, 0, 0, 0.1)
     color: #fff
-    background-color: darken($bg-color, 60%)
+    background-color: #3FAA96
     transition: .15s ease-out
     cursor: pointer
-    trailer(1, $base-font-size - 2)
 
     // &:focus
     //  outline none
@@ -30,12 +29,8 @@ input[type="submit"]
     @extend $basicButton
 
     &:hover:not([disabled])
-        background-color: darken($bg-color, 50%)
+        background-color: #2bbbad
         box-shadow: 0 1px 4px rgba(0, 0, 0, .15), 0 1px 4px rgba(0, 0, 0, .15)
-
-    @media (max-width: em($tablet))
-        width: 100%
-
 
     // &:active
 
