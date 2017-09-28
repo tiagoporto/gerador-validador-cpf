@@ -42,11 +42,11 @@ const validate = event => {
     const message = (validCPF) ? 'CPF Válido' : 'CPF Inválido';
 
     if (validCPF) {
-        removeClass(messageInput, 'invalid');
-        addClass(messageInput, 'valid');
+        removeClass(messageInput, 'validate-section__input--invalid');
+        addClass(messageInput, 'validate-section__input--valid');
     } else {
-        removeClass(messageInput, 'valid');
-        addClass(messageInput, 'invalid');
+        removeClass(messageInput, 'validate-section__input--valid');
+        addClass(messageInput, 'validate-section__input--invalid');
     }
 
     messageInput[0].setAttribute('value', message);

@@ -1,14 +1,14 @@
 $input
     adjust-font-size-to($base-font-size)
     rhythm-borders(1px, .25, $base-font-size, solid lighten(#000, 60%))
-    border-radius 5px
-    color lighten(#000, 35%)
+    border-radius: 5px
+    color: lighten(#000, 35%)
     trailer(.5)
 
     &:focus
-        border-color #66afe9
-        outline 0
-        box-shadow inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+        border-color: #66afe9
+        outline: 0
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
 
 input[type="text"]
 input[type="search"]
@@ -23,25 +23,9 @@ select
     // &:disabled
     //  background lighten(#000, 95%)
 
-    @media (max-width: em($tablet))
-        width: 100%
-
-input[type="text"].valid
-    color: $cor = green
-    border-color: lighten($cor, 70%)
-    background: lighten($cor, 70%)
-    transition: all ease 1s
-
-
-input[type="text"].invalid
-    color: $cor = red
-    border-color: lighten($cor, 70%)
-    background: lighten($cor, 70%)
-    transition: all ease 1s
-
-// select
-    // width: auto
+select
+    width: auto
 
 ::placeholder
-    color lighten(#000, 55%)
-    font-size em($base-font-size - 2)
+    color: lighten(#000, 55%)
+    font-size: em($base-font-size - 2)
