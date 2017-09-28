@@ -1,13 +1,7 @@
-li
-    list-style-type: none
-
+ul,
+ol,
 dl
-    margin: $base-line-height 0
+    rhythm-margins(1, 1, $base-font-size)
 
-dt
-    font-weight: bold
-    adjust-font-size-to(20px, 1)
-    leader(.5)
-
-dd
-    margin: 0
+    li &
+        margin: 0
