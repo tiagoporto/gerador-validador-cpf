@@ -214,7 +214,6 @@ textarea {
 	padding: 0.3125em;
 	border-radius: 5px;
 	color: #595959;
-	width: 100%;
 	margin-bottom: 0.75em;
 }
 
@@ -372,19 +371,48 @@ i[class^="icon-"] {
 .generate-section__submit-button {
 	display: block;
 	background-color: #0d314a;
+	margin-bottom: 0.75em;
+	font-size: 0.875em;
+	line-height: 3.428571428571428em;
 }
 
 .generate-section__submit-button:hover:not([disabled]) {
 	background-color: #103d5c;
 }
 
+.validate-section__label {
+	display: block;
+}
+
 .validate-section__submit-button {
 	display: block;
 	background-color: #0d314a;
+	font-size: 0.875em;
+	line-height: 3.428571428571428em;
 }
 
 .validate-section__submit-button:hover:not([disabled]) {
 	background-color: #103d5c;
+}
+
+.validate-section__input--valid {
+	color: #008000;
+	border-color: #8cff8c;
+	background: #8cff8c;
+	-webkit-transition: all ease 1s;
+	transition: all ease 1s;
+}
+
+.validate-section__input--invalid {
+	color: #f00;
+	border-color: #ffb3b3;
+	background: #ffb3b3;
+	-webkit-transition: all ease 1s;
+	transition: all ease 1s;
+}
+
+.format-section__label {
+	display: block;
 }
 
 .format-section__copy-button {
@@ -404,10 +432,32 @@ i[class^="icon-"] {
 .format-section__submit-button {
 	display: block;
 	background-color: #0d314a;
+	font-size: 0.875em;
+	line-height: 3.428571428571428em;
 }
 
 .format-section__submit-button:hover:not([disabled]) {
 	background-color: #103d5c;
+}
+
+.list--unordered {
+	padding-left: 1.25em;
+	list-style-type: none;
+}
+
+.list--definition {
+	margin: 24px 0;
+}
+
+.list__term {
+	font-weight: bold;
+	font-size: 1.25em;
+	line-height: 1.2em;
+	margin-top: 0.75em;
+}
+
+.list__definition {
+	margin: 0;
 }
 
 .footer {
@@ -448,6 +498,10 @@ body {
 	width: 100%;
 }
 
+.generate-section__input--generated {
+	width: 100%;
+}
+
 .generate-section__submit-button {
 	width: 100%;
 }
@@ -456,7 +510,18 @@ body {
 	width: 100%;
 }
 
+#validate-section__input--to-format,
+.validate-section__input--message {
+	width: 100%;
+}
+
 .format-section__copy-button {
+	width: 100%;
+}
+
+.format-section #format-section__input,
+.format-section__input--message,
+.format-section__params {
 	width: 100%;
 }
 

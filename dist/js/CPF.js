@@ -1,9 +1,11 @@
 /*!
 *   Gerador e Validador de CPF v3.1.1
 *   http://tiagoporto.github.io/gerador-validador-cpf
-*   Copyright (c) 2014-2016 Tiago Porto (http://tiagoporto.com)
+*   Copyright (c) 2014-2017 Tiago Porto (http://tiagoporto.com)
 *   Released under the MIT license
 */
+
+'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -25,115 +27,113 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
  * @return {string}            Formatted CPF || error message
  */
 
-/* eslint-env node */
 (function () {
-    'use strict';
+  var root = (typeof self === 'undefined' ? 'undefined' : _typeof(self)) === 'object' && self.self === self && self || (typeof global === 'undefined' ? 'undefined' : _typeof(global)) === 'object' && global.global === global && global || this;
 
-    var root = (typeof self === 'undefined' ? 'undefined' : _typeof(self)) === 'object' && self.self === self && self || (typeof global === 'undefined' ? 'undefined' : _typeof(global)) === 'object' && global.global === global && global || this;
+  var CPF = function CPF() {};
 
-    var CPF = function CPF() {};
+  if (typeof exports !== 'undefined' && !exports.nodeType) {
+    if (typeof module !== 'undefined' && !module.nodeType && module.exports) {
+      exports = module.exports = CPF;
+    }
 
-    if (typeof exports !== 'undefined' && !exports.nodeType) {
-        if (typeof module !== 'undefined' && !module.nodeType && module.exports) {
-            exports = module.exports = CPF;
-        }
-        exports.CPF = CPF;
+    exports.CPF = CPF;
+  } else {
+    root.CPF = CPF;
+  }
+
+  function calcChecker1(firstNineDigits) {
+    var sum = null;
+
+    for (var j = 0; j < 9; ++j) {
+      sum += firstNineDigits.toString().charAt(j) * (10 - j);
+    }
+
+    var lastSumChecker1 = sum % 11;
+    var checker1 = lastSumChecker1 < 2 ? 0 : 11 - lastSumChecker1;
+
+    return checker1;
+  }
+
+  function calcChecker2(cpfWithChecker1) {
+    var sum = null;
+
+    for (var k = 0; k < 10; ++k) {
+      sum += cpfWithChecker1.toString().charAt(k) * (11 - k);
+    }
+
+    var lastSumChecker2 = sum % 11;
+    var checker2 = lastSumChecker2 < 2 ? 0 : 11 - lastSumChecker2;
+
+    return checker2;
+  }
+
+  function formatCPF(value, formatter) {
+    var digitsSeparator = '.';
+    var checkersSeparator = '-';
+
+    if (formatter === 'digits') {
+      digitsSeparator = '';
+      checkersSeparator = '';
+    } else if (formatter === 'checker') {
+      digitsSeparator = '';
+      checkersSeparator = '-';
+    }
+
+    if (value.length > 11) {
+      return 'The value contains error. Has more than 11 digits.';
+    } else if (value.length < 11) {
+      return 'The value contains error. Has fewer than 11 digits.';
     } else {
-        root.CPF = CPF;
+      return value.slice(0, 3) + digitsSeparator + value.slice(3, 6) + digitsSeparator + value.slice(6, 9) + checkersSeparator + value.slice(9, 11);
+    }
+  }
+
+  CPF.generate = function (param) {
+    var firstNineDigits = '';
+
+    // Generating the first 9 digits of the CPF
+    for (var i = 0; i < 9; ++i) {
+      firstNineDigits += String(Math.floor(Math.random() * 9));
     }
 
-    function calcChecker1(firstNineDigits) {
-        var sum = null;
+    var checker1 = calcChecker1(firstNineDigits);
+    var generatedCPF = firstNineDigits + checker1 + calcChecker2(firstNineDigits + checker1);
 
-        for (var j = 0; j < 9; ++j) {
-            sum += firstNineDigits.toString().charAt(j) * (10 - j);
-        }
+    return formatCPF(generatedCPF, param);
+  };
 
-        var lastSumChecker1 = sum % 11;
-        var checker1 = lastSumChecker1 < 2 ? 0 : 11 - lastSumChecker1;
+  CPF.validate = function (value) {
+    var cleanCPF = value.replace(/\.|-|\s/g, '');
+    var firstNineDigits = cleanCPF.substring(0, 9);
+    var checker = cleanCPF.substring(9, 11);
 
-        return checker1;
+    if (cleanCPF.length !== 11) {
+      return false;
     }
 
-    function calcChecker2(cpfWithChecker1) {
-        var sum = null;
-
-        for (var k = 0; k < 10; ++k) {
-            sum += cpfWithChecker1.toString().charAt(k) * (11 - k);
-        }
-
-        var lastSumChecker2 = sum % 11;
-        var checker2 = lastSumChecker2 < 2 ? 0 : 11 - lastSumChecker2;
-
-        return checker2;
+    // Checking if all digits are equal
+    for (var i = 0; i < 10; i++) {
+      if ('' + firstNineDigits + checker === Array(12).join(i)) {
+        return false;
+      }
     }
 
-    function formatCPF(value, formatter) {
-        var digitsSeparator = '.',
-            checkersSeparator = '-';
+    var checker1 = calcChecker1(firstNineDigits);
+    var checker2 = calcChecker2('' + firstNineDigits + checker1);
 
-        if (formatter === 'digits') {
-            digitsSeparator = '';
-            checkersSeparator = '';
-        } else if (formatter === 'checker') {
-            digitsSeparator = '';
-            checkersSeparator = '-';
-        }
-
-        if (value.length > 11) {
-            return 'The value contains error. Has more than 11 digits.';
-        } else if (value.length < 11) {
-            return 'The value contains error. Has fewer than 11 digits.';
-        } else {
-            return value.slice(0, 3) + digitsSeparator + value.slice(3, 6) + digitsSeparator + value.slice(6, 9) + checkersSeparator + value.slice(9, 11);
-        }
+    if (checker.toString() === checker1.toString() + checker2.toString()) {
+      return true;
+    } else {
+      return false;
     }
+  };
 
-    CPF.generate = function (param) {
-        var firstNineDigits = '';
+  CPF.format = function (value, param) {
+    var getCPF = value.replace(/[^\d]/g, '');
 
-        // Generating the first 9 digits of the CPF
-        for (var i = 0; i < 9; ++i) {
-            firstNineDigits += Math.floor(Math.random() * 9) + '';
-        }
+    return formatCPF(getCPF, param);
+  };
 
-        var checker1 = calcChecker1(firstNineDigits);
-        var generatedCPF = firstNineDigits + checker1 + calcChecker2(firstNineDigits + checker1);
-
-        return formatCPF(generatedCPF, param);
-    };
-
-    CPF.validate = function (value) {
-        var cleanCPF = value.replace(/\.|\-|\s/g, ''),
-            firstNineDigits = cleanCPF.substring(0, 9),
-            checker = cleanCPF.substring(9, 11);
-
-        if (cleanCPF.length !== 11) {
-            return false;
-        }
-
-        // Checking if all digits are equal
-        for (var i = 0; i < 10; i++) {
-            if ('' + firstNineDigits + checker === Array(12).join(i)) {
-                return false;
-            }
-        }
-
-        var checker1 = calcChecker1(firstNineDigits);
-        var checker2 = calcChecker2(firstNineDigits + '' + checker1);
-
-        if (checker.toString() === checker1.toString() + checker2.toString()) {
-            return true;
-        } else {
-            return false;
-        }
-    };
-
-    CPF.format = function (value, param) {
-        var getCPF = value.replace(/[^\d]/g, '');
-
-        return formatCPF(getCPF, param);
-    };
-
-    return CPF;
+  return CPF;
 })();
