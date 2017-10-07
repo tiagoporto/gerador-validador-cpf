@@ -9,10 +9,10 @@ const addClass = (el, klass) => {
 }
 
 const removeClass = (el, klass) => {
-  var elClass = ` ${el[0].className} `
+  let elClass = ` ${el[0].className} `
 
-  while (elClass.indexOf(' ' + klass + ' ') !== -1) {
-    elClass = elClass.replace(' ' + klass + ' ', '')
+  while (elClass.indexOf(` ${klass} `) !== -1) {
+    elClass = elClass.replace(` ${klass} `, '')
   }
 
   el[0].className = elClass
