@@ -1132,7 +1132,7 @@ center-align@^0.1.1:
     align-text "^0.1.3"
     lazy-cache "^1.0.3"
 
-chalk@*, chalk@^2.1.0:
+chalk@*:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.1.0.tgz#ac5becf14fa21b99c6c92ca7a7d7cfd5b17e743e"
   dependencies:
@@ -3202,21 +3202,21 @@ gulp-if@2.0.2, gulp-if@^2.0.0:
     ternary-stream "^2.0.1"
     through2 "^2.0.1"
 
-gulp-imagemin@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/gulp-imagemin/-/gulp-imagemin-3.4.0.tgz#23a8d4c5133f50a2a708aca87ca4b2d6eb7c4403"
+gulp-imagemin@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/gulp-imagemin/-/gulp-imagemin-3.1.1.tgz#05029523228114a0dfb19e72b114c5e25c455f20"
   dependencies:
-    chalk "^2.1.0"
-    gulp-util "^3.0.8"
-    imagemin "^5.3.1"
-    plur "^2.1.2"
+    chalk "^1.0.0"
+    gulp-util "^3.0.0"
+    imagemin "^5.0.0"
+    plur "^2.0.0"
     pretty-bytes "^4.0.2"
-    through2-concurrent "^1.1.1"
+    through2-concurrent "^1.1.0"
   optionalDependencies:
-    imagemin-gifsicle "^5.2.0"
-    imagemin-jpegtran "^5.0.2"
-    imagemin-optipng "^5.2.1"
-    imagemin-svgo "^5.2.2"
+    imagemin-gifsicle "^5.0.0"
+    imagemin-jpegtran "^5.0.0"
+    imagemin-optipng "^5.1.0"
+    imagemin-svgo "^5.1.0"
 
 gulp-inline@0.1.3:
   version "0.1.3"
@@ -3714,7 +3714,7 @@ ignore@^3.2.0:
   version "3.3.5"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.5.tgz#c4e715455f6073a8d7e5dae72d2fc9d71663dba6"
 
-imagemin-gifsicle@^5.2.0:
+imagemin-gifsicle@^5.0.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/imagemin-gifsicle/-/imagemin-gifsicle-5.2.0.tgz#3781524c457612ef04916af34241a2b42bfcb40a"
   dependencies:
@@ -3722,7 +3722,7 @@ imagemin-gifsicle@^5.2.0:
     gifsicle "^3.0.0"
     is-gif "^1.0.0"
 
-imagemin-jpegtran@^5.0.2:
+imagemin-jpegtran@^5.0.0:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/imagemin-jpegtran/-/imagemin-jpegtran-5.0.2.tgz#e6882263b8f7916fddb800640cf75d2e970d2ad6"
   dependencies:
@@ -3730,7 +3730,7 @@ imagemin-jpegtran@^5.0.2:
     is-jpg "^1.0.0"
     jpegtran-bin "^3.0.0"
 
-imagemin-optipng@^5.2.1:
+imagemin-optipng@^5.1.0:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/imagemin-optipng/-/imagemin-optipng-5.2.1.tgz#d22da412c09f5ff00a4339960b98a88b1dbe8695"
   dependencies:
@@ -3738,14 +3738,14 @@ imagemin-optipng@^5.2.1:
     is-png "^1.0.0"
     optipng-bin "^3.0.0"
 
-imagemin-svgo@^5.2.2:
+imagemin-svgo@^5.1.0:
   version "5.2.2"
   resolved "https://registry.yarnpkg.com/imagemin-svgo/-/imagemin-svgo-5.2.2.tgz#501699f5789730a57922b8736ea15c53f7b55838"
   dependencies:
     is-svg "^2.0.0"
     svgo "^0.7.0"
 
-imagemin@^5.3.1:
+imagemin@^5.0.0:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/imagemin/-/imagemin-5.3.1.tgz#f19c2eee1e71ba6c6558c515f9fc96680189a6d4"
   dependencies:
@@ -5693,7 +5693,7 @@ pixelsmith@~2.1.0:
     save-pixels "~2.3.0"
     vinyl-file "~1.3.0"
 
-plur@^2.1.2:
+plur@^2.0.0:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/plur/-/plur-2.1.2.tgz#7482452c1a0f508e3e344eaec312c91c29dc655a"
   dependencies:
@@ -7068,7 +7068,7 @@ throttleit@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/throttleit/-/throttleit-1.0.0.tgz#9e785836daf46743145a5984b6268d828528ac6c"
 
-through2-concurrent@^1.1.1:
+through2-concurrent@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/through2-concurrent/-/through2-concurrent-1.1.1.tgz#11cb4ea4c9e31bca6e4c1e6dba48d1c728c3524b"
   dependencies:
