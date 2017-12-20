@@ -354,6 +354,260 @@ i[class^="icon-"] {
 	border-radius: 5px;
 }
 
+.donation a {
+	color: #000;
+	text-decoration: none;
+	outline: none;
+	border: none;
+}
+
+.donation .list,
+.donation .list li,
+.donation .list-left li {
+	list-style: none;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.donation .left-100 {
+	width: 100%;
+	height: 100%;
+}
+
+.donation .blur {
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
+}
+
+.donation .tr3 {
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.donation #DonateText {
+	position: relative;
+	font-size: 12px;
+	width: 70px;
+	height: 70px;
+	line-height: 70px;
+	color: #fff;
+	background: #ffd886 url("../img/like.svg") no-repeat center 10px;
+	background-size: 20px;
+	border-radius: 35px;
+	text-align: center;
+	left: -webkit-calc(50% - 60px);
+	left: calc(50% - 60px);
+	top: -webkit-calc(50% - 60px);
+	top: calc(50% - 60px);
+	z-index: -1;
+	-webkit-transform: rotatez(-15deg);
+	-ms-transform: rotate(-15deg);
+	transform: rotatez(-15deg);
+}
+
+.donation #donateBox {
+	left: -webkit-calc(50% - 150px);
+	left: calc(50% - 150px);
+	top: -webkit-calc(50% - 15px);
+	top: calc(50% - 15px);
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	height: 28px;
+	float: left;
+	z-index: 1;
+	position: relative;
+}
+
+.donation #donateBox li {
+	width: 74px;
+	float: left;
+	text-align: center;
+	border-left: 1px solid #ddd;
+	background: no-repeat center center;
+	background-color: rgba(204,217,220,0.1);
+	background-size: 45px;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	cursor: pointer;
+	overflow: hidden;
+	line-height: 600px;
+	height: 28px;
+	-webkit-filter: grayscale(1);
+	filter: grayscale(1);
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+
+.donation #donateBox li:hover {
+	background-color: rgba(204,217,220,0.3);
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+
+.donation #donateBox>li:first-child {
+	border-width: 0;
+}
+
+.donation #donateBox a {
+	display: block;
+}
+
+.donation #donateBox #PayPal {
+	background-image: url("../img/paypal.svg");
+}
+
+.donation #donateBox>#BTC {
+	background-image: url("../img/bitcoin.svg");
+	line-height: 28px;
+}
+
+.donation #donateBox>#BTC:hover {
+	overflow: visible;
+}
+
+.donation #BTC>button {
+	opacity: 0;
+	filter: alpha(opacity=0);
+	cursor: pointer;
+}
+
+.donation #QRBox {
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background-color: rgba(255,255,255,0.3);
+	display: none;
+	-webkit-perspective: 400px;
+	perspective: 400px;
+}
+
+.donation #MainBox {
+	cursor: pointer;
+	position: absolute;
+	text-align: center;
+	width: 200px;
+	height: 200px;
+	left: -webkit-calc(50% - 100px);
+	left: calc(50% - 100px);
+	top: -webkit-calc(50% - 100px);
+	top: calc(50% - 100px);
+	background: #fff no-repeat center center;
+	background-size: 190px;
+	border-radius: 6px;
+	box-shadow: 0px 2px 7px rgba(0,0,0,0.3);
+	opacity: 0;
+	filter: alpha(opacity=0);
+	-webkit-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform-origin: center center;
+	-ms-transform-origin: center center;
+	transform-origin: center center;
+	overflow: hidden;
+}
+
+.donation #btc-key,
+.donation #ltc-key {
+	opacity: 0;
+	filter: alpha(opacity=0);
+	width: 2px;
+	height: 8px;
+	overflow: hidden;
+	left: -2px;
+	top: -8px;
+}
+
+.donation [data-footnote] {
+	position: relative;
+	overflow: hidden;
+}
+
+.donation [data-footnote]:hover {
+	overflow: visible;
+}
+
+.donation [data-footnote]::before,
+.donation [data-footnote]::after {
+	position: absolute;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	-webkit-transform: translate3d(-50%, 0, 0);
+	transform: translate3d(-50%, 0, 0);
+	opacity: 0;
+	filter: alpha(opacity=0);
+	left: 37px;
+	z-index: 10;
+}
+
+.donation [data-footnote]::before {
+	content: attr(data-footnote);
+	border-radius: 6px;
+	background-color: rgba(100,100,100,0.8);
+	color: #fff;
+	height: 24px;
+	line-height: 24px;
+	padding: 0 6px;
+	font-size: 12px;
+	white-space: nowrap;
+	top: -24px;
+	left: 37px;
+}
+
+.donation [data-footnote]::after {
+	content: '';
+	border: 5px solid #333;
+	border-color: rgba(100,100,100,0.8) transparent transparent transparent;
+	top: 0;
+	left: 37px;
+}
+
+.donation [data-footnote]:hover::before,
+.donation [data-footnote]:hover::after {
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+
+.donation [data-footnote]:hover::before,
+.donation [data-footnote]:hover::after {
+	-webkit-transform: translate3d(-50%, -7px, 0);
+	transform: translate3d(-50%, -7px, 0);
+}
+
+.donation #MainBox.showQR {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-animation-name: showQR;
+	animation-name: showQR;
+	-webkit-animation-duration: 3s;
+	animation-duration: 3s;
+	-webkit-animation-timing-function: ease-in-out;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-iteration-count: 1;
+	animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+
+.donation #MainBox.hideQR {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-animation-name: hideQR;
+	animation-name: hideQR;
+	-webkit-animation-duration: 0.5s;
+	animation-duration: 0.5s;
+	-webkit-animation-timing-function: ease-in-out;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-iteration-count: 1;
+	animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+
 .generate-section__copy-button {
 	text-transform: lowercase;
 	padding-top: 0.375em;
@@ -690,6 +944,182 @@ img {
 40%,80% {
 	-webkit-transform: rotate(10deg);
 	transform: rotate(10deg);
+}
+
+}
+
+@-webkit-keyframes showQR {
+
+from {
+	-webkit-transform: rotateX(90deg);
+	transform: rotateX(90deg);
+}
+
+8% {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transform: rotateX(-60deg);
+	transform: rotateX(-60deg);
+}
+
+18% {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transform: rotateX(40deg);
+	transform: rotateX(40deg);
+}
+
+34% {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transform: rotateX(-28deg);
+	transform: rotateX(-28deg);
+}
+
+44% {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transform: rotateX(18deg);
+	transform: rotateX(18deg);
+}
+
+58% {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transform: rotateX(-12deg);
+	transform: rotateX(-12deg);
+}
+
+72% {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transform: rotateX(9deg);
+	transform: rotateX(9deg);
+}
+
+88% {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transform: rotateX(-5deg);
+	transform: rotateX(-5deg);
+}
+
+96% {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transform: rotateX(2deg);
+	transform: rotateX(2deg);
+}
+
+to {
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+
+}
+
+@keyframes showQR {
+
+from {
+	-webkit-transform: rotateX(90deg);
+	transform: rotateX(90deg);
+}
+
+8% {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transform: rotateX(-60deg);
+	transform: rotateX(-60deg);
+}
+
+18% {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transform: rotateX(40deg);
+	transform: rotateX(40deg);
+}
+
+34% {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transform: rotateX(-28deg);
+	transform: rotateX(-28deg);
+}
+
+44% {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transform: rotateX(18deg);
+	transform: rotateX(18deg);
+}
+
+58% {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transform: rotateX(-12deg);
+	transform: rotateX(-12deg);
+}
+
+72% {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transform: rotateX(9deg);
+	transform: rotateX(9deg);
+}
+
+88% {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transform: rotateX(-5deg);
+	transform: rotateX(-5deg);
+}
+
+96% {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transform: rotateX(2deg);
+	transform: rotateX(2deg);
+}
+
+to {
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+
+}
+
+@-webkit-keyframes hideQR {
+
+20%,50% {
+	-webkit-transform: scale(1.08, 1.08);
+	transform: scale(1.08, 1.08);
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+
+to {
+	opacity: 0;
+	filter: alpha(opacity=0);
+	-webkit-transform: rotateZ(40deg) scale(0.6, 0.6);
+	transform: rotateZ(40deg) scale(0.6, 0.6);
+}
+
+}
+
+@keyframes hideQR {
+
+20%,50% {
+	-webkit-transform: scale(1.08, 1.08);
+	transform: scale(1.08, 1.08);
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+
+to {
+	opacity: 0;
+	filter: alpha(opacity=0);
+	-webkit-transform: rotateZ(40deg) scale(0.6, 0.6);
+	transform: rotateZ(40deg) scale(0.6, 0.6);
 }
 
 }
