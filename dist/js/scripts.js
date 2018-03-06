@@ -82,28 +82,45 @@ setListener('validate-section__form', validate, 'submit');
 setListener('format-section__form', format, 'submit');
 setListener('format-section__form', format, 'submit');
 
+/* global ga */
+
 jQuery(document).ready(function () {
   var QRBox = $('#QRBox');
   var MainBox = $('#MainBox');
   var BTCQR = 'img/BTCQR.png';
-
-  function showQR(QR) {
-    if (QR) {
-      MainBox.css('background-image', 'url(\'' + QR + '\')');
-    }
+  var LTCQR = 'img/LTCQR.png';
+  var showQR = function showQR(QR) {
+    QR && MainBox.css('background-image', 'url(\'' + QR + '\')');
 
     $('#DonateText,#donateBox,#github').addClass('blur');
     QRBox.fadeIn(300, function (argument) {
       MainBox.addClass('showQR');
     });
-  }
+  };
 
   $('#donateBox>li').click(function (event) {
     var thisID = $(this).attr('id');
 
+    typeof ga === 'function' && ga('send', 'event', 'button', 'click', thisID);
+
     if (thisID === 'BTC') {
       showQR(BTCQR);
-      new Clipboard('#BTCBn');
+      var inputhidden = $($(this).attr('data-clipboard-target'));
+      new Clipboard('#BTC', {
+        text: function text(trigger) {
+          return inputhidden.val();
+        }
+      });
+    }
+
+    if (thisID === 'LTC') {
+      showQR(LTCQR);
+      var _inputhidden = $($(this).attr('data-clipboard-target'));
+      new Clipboard('#LTC', {
+        text: function text(trigger) {
+          return _inputhidden.val();
+        }
+      });
     }
   });
 

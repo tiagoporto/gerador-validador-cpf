@@ -54,11 +54,31 @@
 
       <a class="github-button" href="https://github.com/tiagoporto" data-show-count="true" aria-label="Follow @tiagoporto on GitHub">Follow @tiagoporto</a>
 
-      <a class="github-button" href="https://github.com/tiagoporto/gerador-validador-cpf/fork" data-icon="octicon-git-branch" data-show-count="true" aria-label="Fork tiagoporto/gerador-validador-cpf on GitHub">Fork</a>
-
-      <a class="github-button" href="https://github.com/tiagoporto/gerador-validador-cpf/issues" data-icon="octicon-issue-opened" data-show-count="true" aria-label="Issue tiagoporto/gerador-validador-cpf on GitHub">Issue</a>
-
       <a class="github-button" href="https://github.com/tiagoporto/gerador-validador-cpf" data-icon="octicon-star" data-show-count="true" aria-label="Star tiagoporto/gerador-validador-cpf on GitHub">Star</a>
+
+    <section class="donation">
+      <p>Faça sua doação</p>
+
+      <ul id="donateBox" class="list pos-f tr3">
+        <li id="PayPal">
+          <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YTDUQ8RZ2G4Q8&lc=BR&item_name=tiagoporto&item_number=geradorcpf&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted" target="_blank">PayPal</a>
+        </li>
+
+        <li id="BTC" data-footnote="Copy address and show QRCod" data-clipboard-target="#btc-key">
+          <button id="BTCBn" alt="Copy to clipboard">Bitcoin</button>
+        </li>
+
+        <li id="LTC" data-footnote="Copy address and show QRCod" data-clipboard-target="#ltc-key">
+          <button id="LTCBn" alt="Copy to clipboard">Litcoin</button>
+        </li>
+      </ul>
+      <div id="QRBox" class="left-100">
+        <div id="MainBox"></div>
+      </div>
+
+      <input id="btc-key" type="text" value="14iqQcwYPLBceRURHuFosGTDXxMmt3cLDp" readonly>
+      <input id="ltc-key" type="text" value="LbWBDcokB9ShS4NpR3xZ5xxgQa3ycp9wpe" readonly>
+    </section>
     </header>
 
 
@@ -102,25 +122,10 @@
 
         <input class="format-section__input--message" type="text" placeholder="CPF formatado" readonly>
 
-        <button class="format-section__copy-button" type="button"   data-clipboard-target=".format-section__input--message">copiar</button>
+        <button class="format-section__copy-button" type="button" data-clipboard-target=".format-section__input--message">copiar</button>
 
         <button class="format-section__submit-button" type="submit">Formatar CPF</button>
       </form>
-    </section>
-
-    <section class="donation">
-      <div id="DonateText" class="tr3">Donate</div>
-      <ul id="donateBox" class="list pos-f tr3">
-        <li id="PayPal"><a href="https://www.paypal.me/KaiyuanXie" target="_blank">PayPal</a></li>
-        <li id="BTC" data-footnote="Copy address and show QRCod"><button id="BTCBn"  data-clipboard-target="#btc-key" alt="Copy to clipboard">Bitcoin</button></li>
-        <li id="LTC" data-footnote="Copy address and show QRCod"><button id="LTCBn"  data-clipboard-target="#ltc-key" alt="Copy to clipboard">Bitcoin</button></li>
-      </ul>
-      <div id="QRBox" class="left-100">
-        <div id="MainBox"></div>
-      </div>
-
-      <input id="btc-key" type="text" value="14JkMR68n4PBASB3TgvpjtaPTbfffSwFbW" readonly="readonly">
-      <input id="ltc-key" type="text" value="14JkMR68n4PBASB3TgvpjtaPTbfffSwFbW" readonly="readonly">
     </section>
 
     <section class="documentation">

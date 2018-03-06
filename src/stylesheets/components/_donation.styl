@@ -1,12 +1,4 @@
 .donation
-// body {
-//   font-family: "Helvetica Neue", Ubuntu, "WenQuanYi Micro Hei", Helvetica, "Hiragino Sans GB", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Micro Hei Mono", "WenQuanYi Zen Hei", "WenQuanYi Zen Hei", "Apple LiGothic Medium", "SimHei", "ST Heiti", "WenQuanYi Zen Hei Sharp", Arial, sans-serif;
-//   -webkit-font-smoothing:antialiased;
-//   line-height: 1.8em;
-//   text-shadow: 0 0 1px rgba(255,255,255,0.1);
-//   background: #fff;
-// }
-
   a
     color: #000
     text-decoration: none
@@ -31,25 +23,8 @@
   .tr3
     transition: all .3s
 
-  #DonateText
-    position: relative
-    font-size: 12px
-    width: 70px
-    height: 70px
-    line-height: 70px
-    color: #fff
-    background: #ffd886 url($image-path + 'like.svg') no-repeat center 10px
-    background-size: 20px
-    border-radius: 35px
-    text-align: center
-    left: calc(50% - 60px)
-    top: calc(50% - 60px)
-    z-index: -1
-    transform: rotatez(-15deg )
-
   #donateBox
-    left: calc(50% - 150px)
-    top: calc(50% - 15px)
+    left: calc(50% - 110px)
     background-color: #fff
     border: 1px solid #ddd
     border-radius: 6px
@@ -71,13 +46,11 @@
     overflow: hidden
     line-height: 600px
     height: 28px
-    -webkit-filter: grayscale(1)
     filter: grayscale(1)
-    opacity: 0.5
+    opacity: .6
 
   #donateBox li:hover
-    background-color: rgba(204, 217, 220,0.3)
-    -webkit-filter: grayscale(0)
+    background-color: rgba(204, 217, 220, 0.3)
     filter: grayscale(0)
     opacity: 1
 
@@ -94,10 +67,16 @@
     background-image: url($image-path  + 'bitcoin.svg')
     line-height: 28px
 
-  #donateBox>#BTC:hover
+  #donateBox>#LTC
+    background-image: url($image-path  + 'litecoin.svg')
+    line-height: 28px
+
+  #donateBox>#BTC:hover,
+  #donateBox>#LTC:hover
     overflow: visible
 
-  #BTC>button
+  #BTC>button,
+  #LTC>button
     opacity: 0
     cursor: pointer
 
@@ -108,6 +87,7 @@
     background-color: rgba(255,255,255,0.3)
     display: none
     perspective: 400px
+    position: relative
 
   #MainBox
     cursor: pointer

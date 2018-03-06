@@ -385,32 +385,9 @@ i[class^="icon-"] {
 	transition: all 0.3s;
 }
 
-.donation #DonateText {
-	position: relative;
-	font-size: 12px;
-	width: 70px;
-	height: 70px;
-	line-height: 70px;
-	color: #fff;
-	background: #ffd886 url("../img/like.svg") no-repeat center 10px;
-	background-size: 20px;
-	border-radius: 35px;
-	text-align: center;
-	left: -webkit-calc(50% - 60px);
-	left: calc(50% - 60px);
-	top: -webkit-calc(50% - 60px);
-	top: calc(50% - 60px);
-	z-index: -1;
-	-webkit-transform: rotatez(-15deg);
-	-ms-transform: rotate(-15deg);
-	transform: rotatez(-15deg);
-}
-
 .donation #donateBox {
-	left: -webkit-calc(50% - 150px);
-	left: calc(50% - 150px);
-	top: -webkit-calc(50% - 15px);
-	top: calc(50% - 15px);
+	left: -webkit-calc(50% - 110px);
+	left: calc(50% - 110px);
 	background-color: #fff;
 	border: 1px solid #ddd;
 	border-radius: 6px;
@@ -436,8 +413,8 @@ i[class^="icon-"] {
 	height: 28px;
 	-webkit-filter: grayscale(1);
 	filter: grayscale(1);
-	opacity: 0.5;
-	filter: alpha(opacity=50);
+	opacity: 0.6;
+	filter: alpha(opacity=60);
 }
 
 .donation #donateBox li:hover {
@@ -465,11 +442,18 @@ i[class^="icon-"] {
 	line-height: 28px;
 }
 
-.donation #donateBox>#BTC:hover {
+.donation #donateBox>#LTC {
+	background-image: url("../img/litecoin.svg");
+	line-height: 28px;
+}
+
+.donation #donateBox>#BTC:hover,
+.donation #donateBox>#LTC:hover {
 	overflow: visible;
 }
 
-.donation #BTC>button {
+.donation #BTC>button,
+.donation #LTC>button {
 	opacity: 0;
 	filter: alpha(opacity=0);
 	cursor: pointer;
@@ -483,6 +467,7 @@ i[class^="icon-"] {
 	display: none;
 	-webkit-perspective: 400px;
 	perspective: 400px;
+	position: relative;
 }
 
 .donation #MainBox {
