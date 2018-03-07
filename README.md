@@ -39,7 +39,7 @@ $ bower install gerador-validador-cpf --save
 * Inclua o arquivo no rodapé da sua página, como no exemplo.
 
 ```html
-<script src="node_modules/dist/js/CPF.js"></script>
+<script src="node_modules/gerador-validador-cpf/dist/js/CPF.js"></script>
 ```
 
 
