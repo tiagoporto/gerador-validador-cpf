@@ -20,6 +20,7 @@ A ferramenta pode ser acessada em [tiagoporto.github.io/gerador-validador-cpf](h
     * [Validando CPF](#validando-cpf)
     * [Formatando CPF](#formatando-cpf)
 * [Contribuição](#contribuição)
+* [Doações](#doações)
 * [Licença](#licença)
 
 
@@ -29,12 +30,6 @@ Faça o download com [NPM](https://www.npmjs.com).
 
 ```sh
 $ npm install gerador-validador-cpf --save
-```
-
-ou com [Bower](http://bower.io).
-
-```sh
-$ bower install gerador-validador-cpf --save
 ```
 
 * Inclua o arquivo no rodapé da sua página, como no exemplo.
@@ -62,15 +57,16 @@ document.getElementById('btn-gerar-CPF').onclick = function(){
 
 Exemplo de validação utilizando um método com vuejs.
 ```javascript
-import cpf from 'gerador-validador-cpf';
+import CPF from 'gerador-validador-cpf';
 
 new Vue({
-    el: '#app',
-    
-    methods: {
-        validar_seu_cpf(value) {
-            return cpf.validate(value);
-        }
+  el: '#app',
+
+  methods: {
+    validarCPF(value) {
+      return CPF.validate(value)
+    }
+  }
 });
 ```
 
@@ -133,6 +129,13 @@ Gera um CPF no formato xxxxxxxxx-xx
 
 ## Contribuição
 [Veja como contribuir](https://github.com/tiagoporto/gerador-validador-cpf/blob/master/CONTRIBUTING.md).
+
+## Doações
+
+Este projeto é desenvolvido no meu tempo livre, e qualquer doação é bem vinda.
+
+[![Donate](https://img.shields.io/badge/donate-PayPal-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YTDUQ8RZ2G4Q8&lc=BR&item_name=tiagoporto&item_number=geradorcpf&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
+![Donate](https://img.shields.io/badge/bitcoin-14iqQcwYPLBceRURHuFosGTDXxMmt3cLDp-yellow.svg?logo=bitcoin)
 
 ## Licença
 
