@@ -1,22 +1,21 @@
-# Gerador e Validador de CPF
-
-[![NPM Release](https://img.shields.io/npm/v/gerador-validador-cpf.svg?style=flat-square&label=version)](https://github.com/tiagoporto/gerador-validador-cpf/releases)
-[![NPM Downloads](https://img.shields.io/npm/dt/gerador-validador-cpf.svg?style=flat-square)](https://www.npmjs.com/package/gerador-validador-cpf)
-[![Github License](https://img.shields.io/github/license/tiagoporto/gerador-validador-cpf.svg?style=flat-square)](https://raw.githubusercontent.com/tiagoporto/gerador-validador-cpf/master/LICENSE)
-
-[![Build Status](https://img.shields.io/travis/tiagoporto/gerador-validador-cpf.svg?style=flat-square&logo=travis)](https://travis-ci.org/tiagoporto/gerador-validador-cpf)
-[![Coverage Status](https://img.shields.io/coveralls/tiagoporto/gerador-validador-cpf.svg?style=flat-square)](https://coveralls.io/github/tiagoporto/gerador-validador-cpf)
-[![devDependencies Status](https://img.shields.io/david/dev/tiagoporto/gerador-validador-cpf.svg?style=flat-square)](https://david-dm.org/tiagoporto/gerador-validador-cpf?type=dev)
-
-
-> Biblioteca JS open-source para gerar, validar e formatar CPF.
-
-A ferramenta pode ser acessada em [tiagoporto.github.io/gerador-validador-cpf](http://tiagoporto.github.io/gerador-validador-cpf).
+# Gerador e Validador de CPF ![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)
 
 <p align="right">
   <img src="http://icons.iconarchive.com/icons/icons8/christmas-flat-color/256/star-icon.png" alt="Star" height="25"><img src="http://icons.iconarchive.com/icons/icons8/christmas-flat-color/256/star-icon.png" alt="Star" height="25"><img src="http://icons.iconarchive.com/icons/icons8/christmas-flat-color/256/star-icon.png" alt="Star" height="25"><br>
   <code>LIKED ? Leave a <a href="https://github.com/tiagoporto/gerador-validador-cpf">Star</a> : 😞</code>
 </p>
+
+[![Release](https://img.shields.io/npm/v/gerador-validador-cpf.svg?style=flat-square&label=version)](https://github.com/tiagoporto/gerador-validador-cpf/releases)
+[![Downloads](https://img.shields.io/npm/dt/gerador-validador-cpf.svg?style=flat-square)](https://www.npmjs.com/package/gerador-validador-cpf)
+[![License](https://img.shields.io/github/license/tiagoporto/gerador-validador-cpf.svg?style=flat-square)](https://raw.githubusercontent.com/tiagoporto/gerador-validador-cpf/master/LICENSE)
+[![Build Status](https://img.shields.io/travis/tiagoporto/gerador-validador-cpf.svg?style=flat-square&logo=travis)](https://travis-ci.org/tiagoporto/gerador-validador-cpf)
+[![Coverage Status](https://img.shields.io/coveralls/tiagoporto/gerador-validador-cpf.svg?style=flat-square)](https://coveralls.io/github/tiagoporto/gerador-validador-cpf)
+[![devDependencies Status](https://img.shields.io/david/dev/tiagoporto/gerador-validador-cpf.svg?style=flat-square)](https://david-dm.org/tiagoporto/gerador-validador-cpf?type=dev)
+
+Biblioteca JS open-source para gerar, validar e formatar CPF.
+
+A ferramenta pode ser acessada em [tiagoporto.github.io/gerador-validador-cpf](http://tiagoporto.github.io/gerador-validador-cpf).
+
 
 ## Índice
 
