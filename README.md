@@ -13,6 +13,11 @@
 
 A ferramenta pode ser acessada em [tiagoporto.github.io/gerador-validador-cpf](http://tiagoporto.github.io/gerador-validador-cpf).
 
+<p align="right">
+  <img src="http://icons.iconarchive.com/icons/icons8/christmas-flat-color/256/star-icon.png" alt="Star" height="25"><img src="http://icons.iconarchive.com/icons/icons8/christmas-flat-color/256/star-icon.png" alt="Star" height="25"><img src="http://icons.iconarchive.com/icons/icons8/christmas-flat-color/256/star-icon.png" alt="Star" height="25"><br>
+  <code>LIKED ? Leave a <a href="https://github.com/tiagoporto/gerador-validador-cpf">Star</a> : 😞</code>
+</p>
+
 ## Índice
 
 * [Uso](#uso)
