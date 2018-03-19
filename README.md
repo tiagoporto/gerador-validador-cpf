@@ -60,7 +60,7 @@ document.getElementById('btn-gerar-CPF').onclick = function(){
 
 Exemplo de validação utilizando um método com vuejs.
 ```javascript
-import CPF from 'gerador-validador-cpf';
+import CPF from 'gerador-validador-cpf'
 
 new Vue({
   el: '#app',
