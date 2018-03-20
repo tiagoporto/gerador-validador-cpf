@@ -11,7 +11,7 @@
 [![Coverage Status](https://img.shields.io/coveralls/tiagoporto/gerador-validador-cpf.svg?style=flat-square)](https://coveralls.io/github/tiagoporto/gerador-validador-cpf)
 [![devDependencies Status](https://img.shields.io/david/dev/tiagoporto/gerador-validador-cpf.svg?style=flat-square)](https://david-dm.org/tiagoporto/gerador-validador-cpf?type=dev)
 
-Biblioteca JS open-source para gerar, validar e formatar CPF.
+> Biblioteca JS open-source para gerar, validar e formatar CPF.
 
 A ferramenta pode ser acessada em [tiagoporto.github.io/gerador-validador-cpf](http://tiagoporto.github.io/gerador-validador-cpf).
 
@@ -31,8 +31,8 @@ A ferramenta pode ser acessada em [tiagoporto.github.io/gerador-validador-cpf](h
 
 Faça o download com [NPM](https://www.npmjs.com).
 
-```sh
-$ npm install gerador-validador-cpf --save
+```
+npm install gerador-validador-cpf --save
 ```
 
 * Inclua o arquivo no rodapé da sua página, como no exemplo.
