@@ -1,7 +1,7 @@
 # Gerador e Validador de CPF ![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)
 
 <p align="right">
-  <code>LIKED ? Leave a <a href="https://github.com/tiagoporto/gerador-validador-cpf">⭐</a> : 😞</code>
+  <code>LIKED ? Leave a <a href="https://github.com/tiagoporto/gerador-validador-cpf">⭐</a> : <a href="https://github.com/tiagoporto/gerador-validador-cpf/issues">😞</a></code>
 </p>
 
 [![Release](https://img.shields.io/npm/v/gerador-validador-cpf.svg?style=flat-square&label=release)](https://github.com/tiagoporto/gerador-validador-cpf/releases)
