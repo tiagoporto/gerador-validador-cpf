@@ -29,7 +29,9 @@
     "build": "gulp build",
     "serve-build": "gulp build --serve",
     "gh-pages": "gulp gh-pages",
-    "test": "gulp test"
+    "test": "gulp test",
+    "tag": "git tag v$npm_package_version",
+    "postpublish": "npm run tag && git push --tags"
   },
   "main": "dist/js/CPF.js",
   "devDependencies": {
