@@ -31,7 +31,7 @@
     root.CPF = CPF
   }
 
-  function calcChecker1 (firstNineDigits) {
+  const calcChecker1 = firstNineDigits => {
     let sum = null
 
     for (let j = 0; j < 9; ++j) {
@@ -44,7 +44,7 @@
     return checker1
   }
 
-  function calcChecker2 (cpfWithChecker1) {
+  const calcChecker2 = cpfWithChecker1 => {
     let sum = null
 
     for (let k = 0; k < 10; ++k) {
@@ -57,7 +57,7 @@
     return checker2
   }
 
-  function formatCPF (value, formatter) {
+  const formatCPF = (value, formatter) => {
     let digitsSeparator = '.'
     let checkersSeparator = '-'
 
@@ -93,6 +93,10 @@
   }
 
   CPF.validate = value => {
+    if (!value) {
+      return false
+    }
+
     const cleanCPF = value.replace(/\.|-|\s/g, '')
     const firstNineDigits = cleanCPF.substring(0, 9)
     const checker = cleanCPF.substring(9, 11)
@@ -119,6 +123,10 @@
   }
 
   CPF.format = (value, param) => {
+    if (!value) {
+      return
+    }
+
     const getCPF = value.replace(/[^\d]/g, '')
 
     return formatCPF(getCPF, param)

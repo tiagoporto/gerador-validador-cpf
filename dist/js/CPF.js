@@ -42,7 +42,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     root.CPF = CPF;
   }
 
-  function calcChecker1(firstNineDigits) {
+  var calcChecker1 = function calcChecker1(firstNineDigits) {
     var sum = null;
 
     for (var j = 0; j < 9; ++j) {
@@ -53,9 +53,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     var checker1 = lastSumChecker1 < 2 ? 0 : 11 - lastSumChecker1;
 
     return checker1;
-  }
+  };
 
-  function calcChecker2(cpfWithChecker1) {
+  var calcChecker2 = function calcChecker2(cpfWithChecker1) {
     var sum = null;
 
     for (var k = 0; k < 10; ++k) {
@@ -66,9 +66,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     var checker2 = lastSumChecker2 < 2 ? 0 : 11 - lastSumChecker2;
 
     return checker2;
-  }
+  };
 
-  function formatCPF(value, formatter) {
+  var formatCPF = function formatCPF(value, formatter) {
     var digitsSeparator = '.';
     var checkersSeparator = '-';
 
@@ -87,7 +87,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     } else {
       return value.slice(0, 3) + digitsSeparator + value.slice(3, 6) + digitsSeparator + value.slice(6, 9) + checkersSeparator + value.slice(9, 11);
     }
-  }
+  };
 
   CPF.generate = function (param) {
     var firstNineDigits = '';
@@ -104,6 +104,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   };
 
   CPF.validate = function (value) {
+    if (!value) {
+      return false;
+    }
+
     var cleanCPF = value.replace(/\.|-|\s/g, '');
     var firstNineDigits = cleanCPF.substring(0, 9);
     var checker = cleanCPF.substring(9, 11);
@@ -130,6 +134,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   };
 
   CPF.format = function (value, param) {
+    if (!value) {
+      return;
+    }
+
     var getCPF = value.replace(/[^\d]/g, '');
 
     return formatCPF(getCPF, param);
