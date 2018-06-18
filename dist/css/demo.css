@@ -257,6 +257,11 @@ select {
 	font-size: 0.875em;
 }
 
+::-ms-input-placeholder {
+	color: #8c8c8c;
+	font-size: 0.875em;
+}
+
 ::placeholder {
 	color: #8c8c8c;
 	font-size: 0.875em;

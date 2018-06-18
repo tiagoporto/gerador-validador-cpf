@@ -127,7 +127,7 @@ jQuery(document).ready(function () {
   MainBox.click(function (event) {
     MainBox.removeClass('showQR').addClass('hideQR');
 
-    setTimeout(function (a) {
+    setTimeout(function () {
       QRBox.fadeOut(300, function (argument) {
         MainBox.removeClass('hideQR');
       });
