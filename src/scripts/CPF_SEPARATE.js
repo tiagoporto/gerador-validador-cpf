@@ -93,8 +93,12 @@
   }
 
   CPF.validate = value => {
-    if (!value) {
-      return false
+    if (!value && value === true) {
+      return
+    }
+
+    if (typeof value === 'number') {
+      value = String(value)
     }
 
     const cleanCPF = value.replace(/\.|-|\s/g, '')

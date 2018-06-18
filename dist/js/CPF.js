@@ -104,8 +104,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   };
 
   CPF.validate = function (value) {
-    if (!value) {
-      return false;
+    if (!value && value === true) {
+      return;
+    }
+
+    if (typeof value === 'number') {
+      value = String(value);
     }
 
     var cleanCPF = value.replace(/\.|-|\s/g, '');

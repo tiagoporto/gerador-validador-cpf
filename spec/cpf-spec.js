@@ -94,18 +94,42 @@ describe('Formatando CPF com input errado', function () {
 
 describe('No values', function () {
   it('Null', function () {
-    expect(CPF.format(null)).toBeFalsy()
+    expect(CPF.format(null) === true).toBeFalsy()
+  })
+
+  it('Null', function () {
+    expect(CPF.format(null) === false).toBeFalsy()
   })
 
   it('Undefined', function () {
-    expect(CPF.format(undefined)).toBeFalsy()
+    expect(CPF.format(undefined) === true).toBeFalsy()
+  })
+
+  it('Undefined', function () {
+    expect(CPF.format(undefined) === false).toBeFalsy()
   })
 
   it('Empty string', function () {
-    expect(CPF.format('')).toBeFalsy()
+    expect(CPF.format('') === false).toBeFalsy()
+  })
+
+  it('Empty string', function () {
+    expect(CPF.format('') === true).toBeFalsy()
   })
 
   it('No value', function () {
-    expect(CPF.format('')).toBeFalsy()
+    expect(CPF.format() === true).toBeFalsy()
+  })
+
+  it('No value', function () {
+    expect(CPF.format() === false).toBeFalsy()
+  })
+
+  it('NaN value', function () {
+    expect(CPF.format(NaN) === false).toBeFalsy()
+  })
+
+  it('NaN value', function () {
+    expect(CPF.format(NaN) === true).toBeFalsy()
   })
 })
