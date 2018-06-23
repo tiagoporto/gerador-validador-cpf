@@ -11,7 +11,7 @@
 
       <button class="generate-section__submit-button" type="button">Gerar CPF</button>
 
-      <input class="generate-section__input--generated" type="text" placeholder="CPF gerado" readonly>
+      <input aria-label="CPF gerado" class="generate-section__input--generated" type="text" placeholder="CPF gerado" readonly>
 
       <button class="generate-section__copy-button" type="button" data-clipboard-target=".generate-section__input--generated">copiar</button>
     </section>
@@ -21,9 +21,9 @@
 
      <form class="validate-section__form">
         <label class="validate-section__label" for="validate-section__input--to-format">Insira o CPF para validação</label>
-          <input id="validate-section__input--to-format" type="text" required>
+        <input id="validate-section__input--to-format" type="text" required>
 
-        <input class="validate-section__input--message" type="text" placeholder="Insira CPF para validação" readonly>
+        <input class="validate-section__input--message" aria-label="CPF para validação" type="text" placeholder="Insira CPF para validação" readonly>
 
         <button class="validate-section__submit-button" type="submit">Validar CPF</button>
       </form>
@@ -37,13 +37,13 @@
 
         <input id="format-section__input" type="text" required>
 
-        <select class="format-section__params">
+        <select class="format-section__params" aria-label="Parametros para formatação do CPF">
           <option value="padrao">Padrão</option>
           <option value="digits">Somente Digitos</option>
           <option value="checker">Separa o Verificador</option>
         </select>
 
-        <input class="format-section__input--message" type="text" placeholder="CPF formatado" readonly>
+        <input class="format-section__input--message" type="text" placeholder="CPF formatado" aria-label="CPF formatado" readonly>
 
         <button class="format-section__copy-button" type="button" data-clipboard-target=".format-section__input--message">copiar</button>
 
