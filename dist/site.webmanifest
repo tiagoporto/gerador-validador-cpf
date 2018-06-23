@@ -1,6 +1,8 @@
 {
   "name": "Gerador e validador de CPF",
   "short_name": "Ger.Val. CPF",
+  "theme_color": "#1B6496",
+  "background_color": "#1B6496",
   "icons": [{
         "src": "img/touch/icon-128x128.png",
         "sizes": "128x128"
@@ -13,7 +15,10 @@
       }, {
         "src": "img/touch/chrome-touch-icon-192x192.png",
         "sizes": "192x192"
+      }, {
+        "src": "img/touch/icon-512x512.png",
+        "sizes": "512x512"
       }],
-  "start_url": "/index.html",
+  "start_url": "https://tiagoporto.github.io/gerador-validador-cpf/",
   "display": "standalone"
 }
