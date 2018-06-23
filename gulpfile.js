@@ -13,7 +13,6 @@ var buffer = require('vinyl-buffer')
 var config = require('./config.json')
 var del = require('del')
 var fs = require('fs')
-var ghPages = require('gulp-gh-pages')
 var gulp = require('gulp')
 var handlebars = require('gulp-hb')
 var Karma = require('karma').Server
@@ -24,7 +23,7 @@ var sequence = require('run-sequence')
 var spritesmith = require('gulp.spritesmith')
 var svgSprite = require('gulp-svg-sprite')
 
-  // ***************************** Path configs ***************************** //
+// ***************************** Path configs ***************************** //
 
 var basePaths = config.basePaths
 
@@ -316,7 +315,7 @@ gulp.task('scripts', function () {
     .pipe(plugins.rename({suffix: '.min'}))
     .pipe(plugins.uglify({preserveComments: 'some'}))
     .pipe(gulp.dest(paths.scripts.dest))
-      .pipe(plugins.notify({message: 'Scripts task complete', onLast: true}))
+    .pipe(plugins.notify({message: 'Scripts task complete', onLast: true}))
 
   return merge(concatenate, copy)
 })
@@ -341,6 +340,7 @@ gulp.task('copy', function () {
   var allFiles = gulp
     .src([
       basePaths.dest + '**/*',
+      basePaths.dest + 'service-worker.js',
       '!' + paths.styles.dest + '**/*',
       '!' + paths.scripts.dest + '**/*',
       '!' + basePaths.dest + '**/*.{html,php}'
@@ -464,34 +464,6 @@ gulp.task('compile', function () {
     'svg-inline',
     'styles',
     'scripts'
-  )
-})
-
-gulp.task('gh', function () {
-  return gulp
-    .src(basePaths.build + '**/*')
-    .pipe(ghPages())
-})
-
-// Build the project and push the builded folder to gh-pages branch
-gulp.task('gh-pages', function () {
-  env = 'prod'
-  sequence(
-    [
-      'outdatedbrowser',
-      'handlebars',
-      'images',
-      'bitmap-sprite',
-      'vetor-sprite',
-      'styles-helpers',
-      'vendor-scripts'
-    ],
-    'svg2png',
-    'svg-inline',
-    'styles',
-    'scripts',
-    'copy',
-    'gh'
   )
 })
 
