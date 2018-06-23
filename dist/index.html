@@ -7,7 +7,7 @@
     <meta name="description" content="Biblioteca JS open-source para gerar, validar e formatar CPF.">
     <meta name="keywords" content="cpf,gerador,generator,generates,validador,valida,validates,formata,format">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="site.webmanifest">
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="theme-color" content="#1b6496">
@@ -59,7 +59,7 @@
 
       <ul id="donateBox" class="list pos-f tr3">
         <li id="PayPal">
-          <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YTDUQ8RZ2G4Q8&lc=BR&item_name=tiagoporto&item_number=geradorcpf&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted" target="_blank">PayPal</a>
+          <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YTDUQ8RZ2G4Q8&lc=BR&item_name=tiagoporto&item_number=geradorcpf&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted" target="_blank" rel="noopener">PayPal</a>
         </li>
 
         <li id="BTC" data-footnote="Copy address and show QRCod" data-clipboard-target="#btc-key">
@@ -74,8 +74,8 @@
         <div id="MainBox"></div>
       </div>
 
-      <input id="btc-key" type="text" value="14iqQcwYPLBceRURHuFosGTDXxMmt3cLDp" readonly>
-      <input id="ltc-key" type="text" value="LbWBDcokB9ShS4NpR3xZ5xxgQa3ycp9wpe" readonly>
+      <input id="btc-key" aria-label="Carteira bitcoin de Tiago Porto" type="text" value="14iqQcwYPLBceRURHuFosGTDXxMmt3cLDp" readonly>
+      <input id="ltc-key" aria-label="Carteira de litecoin de Tiago Porto" type="text" value="LbWBDcokB9ShS4NpR3xZ5xxgQa3ycp9wpe" readonly>
     </section>
     </header>
 
@@ -86,7 +86,7 @@
 
       <button class="generate-section__submit-button" type="button">Gerar CPF</button>
 
-      <input class="generate-section__input--generated" type="text" placeholder="CPF gerado" readonly>
+      <input aria-label="CPF gerado" class="generate-section__input--generated" type="text" placeholder="CPF gerado" readonly>
 
       <button class="generate-section__copy-button" type="button" data-clipboard-target=".generate-section__input--generated">copiar</button>
     </section>
@@ -96,9 +96,9 @@
 
      <form class="validate-section__form">
         <label class="validate-section__label" for="validate-section__input--to-format">Insira o CPF para validação</label>
-          <input id="validate-section__input--to-format" type="text" required>
+        <input id="validate-section__input--to-format" type="text" required>
 
-        <input class="validate-section__input--message" type="text" placeholder="Insira CPF para validação" readonly>
+        <input class="validate-section__input--message" aria-label="CPF para validação" type="text" placeholder="Insira CPF para validação" readonly>
 
         <button class="validate-section__submit-button" type="submit">Validar CPF</button>
       </form>
@@ -112,13 +112,13 @@
 
         <input id="format-section__input" type="text" required>
 
-        <select class="format-section__params">
+        <select class="format-section__params" aria-label="Parametros para formatação do CPF">
           <option value="padrao">Padrão</option>
           <option value="digits">Somente Digitos</option>
           <option value="checker">Separa o Verificador</option>
         </select>
 
-        <input class="format-section__input--message" type="text" placeholder="CPF formatado" readonly>
+        <input class="format-section__input--message" type="text" placeholder="CPF formatado" aria-label="CPF formatado" readonly>
 
         <button class="format-section__copy-button" type="button" data-clipboard-target=".format-section__input--message">copiar</button>
 
