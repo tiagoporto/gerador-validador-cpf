@@ -93,7 +93,7 @@
   }
 
   CPF.validate = value => {
-    if (!value && value === true) {
+    if (!value || value === true) {
       return
     }
 

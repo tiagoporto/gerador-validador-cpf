@@ -1,7 +1,7 @@
 {{#> header
-  title="Gerador e validador de CPF"
-  description="Biblioteca JS open-source para gerar, validar e formatar CPF."
-  keywords="cpf,gerador,generator,generates,validador,valida,validates,formata,format"
+  title="Gerador e validador de CPF Open-Source | Tiago Porto"
+  description="Gerador e validador de CPF, biblioteca JS open-source para gerar, validar e formatar CPF."
+  keywords="cpf,gerar,gerador,generator,generates,validador,valida,validates,formata,format"
   lang="pt-BR"
 }}
 
@@ -90,19 +90,17 @@
 
       <p>Inclua o arquivo no rodapé da sua página, como no exemplo.</p>
 
-      <pre><code class="html">&lt;script src=&quot;node_modules/gerador-validador-cpf/dist/js/CPF.js&quot;&gt;&lt;/script&gt;</code></pre>
-
 
       <h3>Gerando CPF</h3>
 
       <p>Para <strong>gerar CPF</strong> basta chamar a função <kbd>generate()</kbd>, veja um exemplo:</p>
 
-      <pre><code class="javascript">CPF.generate();</code></pre>
+      <pre><code class="javascript">CPF.generate()</code></pre>
 
       <p>Exemplo completo de uma possível utilização com javascript.</p>
 
       <pre><code class="javascript">document.getElementById('btn-gerar-CPF').onclick = function(){
-  document.getElementById('CPF').innerHTML = CPF.generate();
+  document.getElementById('CPF').innerHTML = CPF.generate()
 };</code></pre>
 
       <p>A função recebe como parâmetro opcional a formatação do CPF, <a href="#documentation__generate-options">opções</a>.</p>
@@ -111,46 +109,46 @@
 
       <p>Para <strong>validar um CPF</strong> basta chamar a função <kbd>validate(cpf)</kbd>, passando como parâmetro o número a ser validado, não se preocupe com os caracteres <kbd>.</kbd>, <kbd>-</kbd> e <kbd>espaço</kbd>, a função fica encarregada de eliminar esses caracteres para verificação posterior, veja um exemplo:</p>
 
-      <pre><code class="javascript">CPF.validate("123.456.789-00");</code></pre>
+      <pre><code class="javascript">CPF.validate("123.456.789-00")
+CPF.validate(12345678900)</code></pre>
 
       <p>Exemplo completo de uma possível utilização com javascript com tratamento da mensagem de erro.</p>
 
       <pre><code class="javascript">document.getElementById('valida-CPF').onsubmit = function (event){
+  var mensagem = 'CPF Inválido'
   if ( CPF.validate(document.getElementById('cpf-validacao').value) === true ) {
-    var mensagem = 'CPF Válido';
-  }else{
-    var mensagem = 'CPF Inválido';
+    mensagem = 'CPF Válido'
   }
 
-  document.getElementById('resultado-validacao').innerHTML = mensagem;
+  document.getElementById('resultado-validacao').innerHTML = mensagem
 };</code></pre>
 
       <h3>Formatando CPF</h3>
 
       <p>Para <strong>formatar um CPF</strong> basta chamar a função <kbd>format(cpf, param)</kbd>, passando como parâmetro o CPF a ser formatado, não se preocupe com os caracteres <kbd>.</kbd>, <kbd>-</kbd> e <kbd>espaço</kbd>, a função fica encarregada de eliminar esses caracteres para verificação posterior, veja um exemplo:</p>
 
-      <pre><code class="javascript">CPF.format("123.456.789-00");</code></pre>
+      <pre><code class="javascript">CPF.format("123.456.789-00")</code></pre>
 
       <p>Exemplo completo de uma possível utilização com javascript.</p>
 
       <pre><code class="javascript">document.getElementById('CPF').onblur = function (){
-  document.getElementById('CPF').value = CPF.format(document.getElementById('CPF').value);
-};</code></pre>
+  document.getElementById('CPF').value = CPF.format(document.getElementById('CPF').value)
+}</code></pre>
 
       <h4 id="documentation__generate-options">Opções de formatação.</h4>
 
       <dl class="list--definition">
         <dt class="list__term">Padrão</dt>
-        <dd class="list__definition"><pre><code class="javascript">CPF.format('12345678901');</code></pre>
+        <dd class="list__definition"><pre><code class="javascript">CPF.format('12345678901')</code></pre>
         </dd>
         <dd class="list__definition">Gera um CPF no formato xxx.xxx.xxx-xx</dd>
 
         <dt class="list__term">Dígitos</dt>
-        <dd class="list__definition"><pre><code class="javascript">CPF.format('123.456.789-01', 'digits');</code></pre></dd>
+        <dd class="list__definition"><pre><code class="javascript">CPF.format('123.456.789-01', 'digits')</code></pre></dd>
         <dd class="list__definition">Gera um CPF no formato xxxxxxxxxxx</dd>
 
         <dt class="list__term">Verificador</dt>
-        <dd class="list__definition"><pre><code class="javascript">CPF.format('12345678901', 'checker');</code></pre></dd>
+        <dd class="list__definition"><pre><code class="javascript">CPF.format('12345678901', 'checker')</code></pre></dd>
         <dd class="list__definition">Gera um CPF no formato xxxxxxxxx-xx</dd>
       </dl>
     </section>

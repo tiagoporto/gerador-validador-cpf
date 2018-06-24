@@ -42,7 +42,7 @@ describe('Gerando CPF', function () {
   })
 })
 
-describe('Verificando os verificador', function () {
+describe('Verificando os verificadores', function () {
   it('Verificador 1 = 0', function () {
     expect(CPF.validate('76381842202')).toBeTruthy()
   })
@@ -94,42 +94,22 @@ describe('Formatando CPF com input errado', function () {
 
 describe('No values', function () {
   it('Null', function () {
-    expect(CPF.format(null) === true).toBeFalsy()
-  })
-
-  it('Null', function () {
-    expect(CPF.format(null) === false).toBeFalsy()
+    expect(CPF.format(null) === undefined).toBeTruthy()
   })
 
   it('Undefined', function () {
-    expect(CPF.format(undefined) === true).toBeFalsy()
-  })
-
-  it('Undefined', function () {
-    expect(CPF.format(undefined) === false).toBeFalsy()
+    expect(CPF.format(undefined) === undefined).toBeTruthy()
   })
 
   it('Empty string', function () {
-    expect(CPF.format('') === false).toBeFalsy()
-  })
-
-  it('Empty string', function () {
-    expect(CPF.format('') === true).toBeFalsy()
+    expect(CPF.format('') === undefined).toBeTruthy()
   })
 
   it('No value', function () {
-    expect(CPF.format() === true).toBeFalsy()
-  })
-
-  it('No value', function () {
-    expect(CPF.format() === false).toBeFalsy()
+    expect(CPF.format() === undefined).toBeTruthy()
   })
 
   it('NaN value', function () {
-    expect(CPF.format(NaN) === false).toBeFalsy()
-  })
-
-  it('NaN value', function () {
-    expect(CPF.format(NaN) === true).toBeFalsy()
+    expect(CPF.format(NaN) === undefined).toBeTruthy()
   })
 })

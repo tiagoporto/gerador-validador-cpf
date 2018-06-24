@@ -1,7 +1,7 @@
 /*!
-*   Gerador e Validador de CPF v3.1.1
+*   Gerador e Validador de CPF v3.1.3
 *   http://tiagoporto.github.io/gerador-validador-cpf
-*   Copyright (c) 2014-2017 Tiago Porto (http://tiagoporto.com)
+*   Copyright (c) 2014-2018 Tiago Porto (http://tiagoporto.com)
 *   Released under the MIT license
 */
 
@@ -104,7 +104,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   };
 
   CPF.validate = function (value) {
-    if (!value && value === true) {
+    if (!value || value === true) {
       return;
     }
 
