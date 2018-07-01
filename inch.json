@@ -1,7 +1,7 @@
 {
   "files": {
     "included": [
-      "dist/js/CPF.js"
+      "src/js/CPF.js"
     ]
   }
 }

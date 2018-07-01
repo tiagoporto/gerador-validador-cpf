@@ -1,3 +1,5 @@
+const CPF = require('../dist/CPF.umd.js')
+
 describe('Validate CPF', function () {
   it('Valid Number, just number', function () {
     expect(CPF.validate('13768663663')).toBeTruthy()
