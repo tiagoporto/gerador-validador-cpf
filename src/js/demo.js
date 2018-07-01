@@ -1,8 +1,8 @@
 import '../styles/demo.styl'
+import 'highlightjs/styles/googlecode.css'
 import * as CPF from './CPF.js'
 import Clipboard from 'clipboard'
 import hljs from 'highlightjs'
-import 'highlightjs/styles/googlecode.css'
 
 new Clipboard('.generate-section__copy-button, .format-section__copy-button')
 

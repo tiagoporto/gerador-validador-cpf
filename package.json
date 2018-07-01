@@ -25,6 +25,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode=development",
     "build": "webpack --mode=production",
+    "rollup": "rollup -c",
     "deploy": "npm run build && gh-pages -d build",
     "lint": "eslint ./src",
     "lint-fix": "npm run lint -- --fix",
@@ -36,7 +37,8 @@
     "tag": "git tag v$npm_package_version",
     "postpublish": "npm run tag && git push --tags"
   },
-  "main": "dist/js/CPF.js",
+  "main": "dist/CPF.umd.min.js",
+  "module": "dist/CPF.es.js",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -54,17 +56,16 @@
     "handlebars-loader": "^1.7.0",
     "highlightjs": "^9.10.0",
     "html-webpack-plugin": "^3.2.0",
+    "rollup": "^0.62.0",
+    "rollup-plugin-babel": "^3.0.6",
+    "rollup-plugin-license": "^0.6.0",
+    "rollup-plugin-uglify": "^4.0.0",
     "style-loader": "^0.21.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "webpack": "^4.13.0",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4"
-  },
-  "babel": {
-    "presets": [
-      "env"
-    ]
   },
   "eslintConfig": {
     "extends": [

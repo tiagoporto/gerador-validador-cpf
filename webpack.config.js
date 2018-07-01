@@ -5,8 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const config = [
   {
     entry: {
-      'js/demo': path.join(__dirname, 'src/index.js'),
-      'js/CPF': path.join(__dirname, 'src/js/CPF.js')
+      'js/demo': path.join(__dirname, 'src/index.js')
     },
     output: {
       filename: '[name].js'

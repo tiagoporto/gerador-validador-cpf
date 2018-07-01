@@ -1,7 +1,3 @@
-/* eslint-env jasmine */
-/* global CPF */
-/* eslint strict: ["error", "global"] */
-
 describe('Validate CPF', function () {
   it('Valid Number, just number', function () {
     expect(CPF.validate('13768663663')).toBeTruthy()
