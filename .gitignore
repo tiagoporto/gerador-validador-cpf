@@ -29,6 +29,9 @@ coverage
 # nyc test coverage
 .nyc_output
 
+# stryker
+reports
+
 #############
 ## Logs
 #############

@@ -1,6 +1,23 @@
-const CPF = require('../dist/CPF.umd.js')
+const CPF = require('./CPF.js')
 
 describe('Validate CPF', function () {
+
+  it('NaN value', function () {
+    expect(CPF.validate(true) === undefined).toBeTruthy()
+  })
+
+  it('NaN value', function () {
+    expect(CPF.validate(123456789)).toBeFalsy()
+  })
+
+  it('NaN value', function () {
+    expect(CPF.validate() === undefined).toBeTruthy()
+  })
+
+  it('NaN value', function () {
+    expect(CPF.validate(13768663663)).toBeTruthy()
+  })
+
   it('Valid Number, just number', function () {
     expect(CPF.validate('13768663663')).toBeTruthy()
   })

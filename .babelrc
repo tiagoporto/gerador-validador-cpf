@@ -7,5 +7,12 @@
         "loose": true
       }
     ]
-  ]
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        "env"
+      ]
+    }
+  }
 }
