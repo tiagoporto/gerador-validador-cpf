@@ -33,6 +33,7 @@
     "coveralls": "npm run cover && cat ./coverage/lcov.info | coveralls",
     "test": "jest",
     "test-mutable": "stryker run",
+    "report-mutable": "test-mutable --reporter clear-text,progress,dots,dashboard",
     "test-watch": "npm test -- --watch",
     "precommit": "npm run lint",
     "tag": "git tag v$npm_package_version",
