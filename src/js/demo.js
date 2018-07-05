@@ -1,12 +1,5 @@
 import '../styles/demo.styl'
-import 'highlightjs/styles/googlecode.css'
 import * as CPF from './CPF.js'
-import Clipboard from 'clipboard'
-import hljs from 'highlightjs'
-
-new Clipboard('.generate-section__copy-button, .format-section__copy-button')
-
-hljs.initHighlightingOnLoad()
 
 const date = new Date()
 document.getElementsByClassName('footer__year')[0].innerHTML = date.getFullYear()
