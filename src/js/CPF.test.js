@@ -1,130 +1,141 @@
 const CPF = require('./CPF.js')
 
-describe('Validate CPF', function () {
+describe('Test validate()', function () {
+  describe('Real Values', function () {
+    describe('Type Number', function () {
+      it('Should return true when valide CPF', function () {
+        expect(CPF.validate(13768663663)).toBeTruthy()
+      })
+    })
 
-  it('NaN value', function () {
-    expect(CPF.validate(true) === undefined).toBeTruthy()
+    describe('Type String', function () {
+      it('Valid Number, just number', function () {
+        expect(CPF.validate('13768663663')).toBeTruthy()
+      })
+    })
+
+    it('Valid Number, numbers with dots', function () {
+      expect(CPF.validate('137.686.636-63')).toBeTruthy()
+    })
+
+    it('Valid Number', function () {
+      expect(CPF.validate('137686636-63')).toBeTruthy()
+    })
+
+    it('Número inválido', function () {
+      expect(CPF.validate('064.875.987-10')).toBeFalsy()
+    })
+
+    it('Número inválido', function () {
+      expect(CPF.validate('064.875.987-10a')).toBeFalsy()
+    })
+
+    it('Número inválido', function () {
+      expect(CPF.validate('a064.875.987-10')).toBeFalsy()
+    })
+
+    it('Números iguais', function () {
+      expect(CPF.validate('00000000000')).toBeFalsy()
+    })
+
+    it('Dígitos a mais e caracteres fora do padrão', function () {
+      expect(CPF.validate('&*00.000.00a-00')).toBeFalsy()
+    })
+
   })
 
-  it('NaN value', function () {
-    expect(CPF.validate(123456789)).toBeFalsy()
+  describe('Verificando os verificadores', function () {
+    it('Verificador 1 = 0', function () {
+      expect(CPF.validate('76381842202')).toBeTruthy()
+    })
+
+    it('Verificador 1 > 1', function () {
+      expect(CPF.validate('125.828.106-65')).toBeTruthy()
+    })
+
+    it('Verificador 2 = 0', function () {
+      expect(CPF.validate('433.787.588-30')).toBeTruthy()
+    })
+
+    it('Verificador 2 > 1', function () {
+      expect(CPF.validate('855.178.021-25')).toBeTruthy()
+    })
   })
 
-  it('NaN value', function () {
-    expect(CPF.validate() === undefined).toBeTruthy()
-  })
+  describe('No values', function () {
+    it('NaN value', function () {
+      expect(CPF.validate(123456789)).toBeFalsy()
+    })
+    it('NaN value', function () {
+      expect(CPF.validate(true) === undefined).toBeTruthy()
+    })
 
-  it('NaN value', function () {
-    expect(CPF.validate(13768663663)).toBeTruthy()
-  })
+    it('Null', function () {
+      expect(CPF.format(null) === undefined).toBeTruthy()
+    })
 
-  it('Valid Number, just number', function () {
-    expect(CPF.validate('13768663663')).toBeTruthy()
-  })
+    it('Undefined', function () {
+      expect(CPF.format(undefined) === undefined).toBeTruthy()
+    })
 
-  it('Valid Number, numbers with dots', function () {
-    expect(CPF.validate('137.686.636-63')).toBeTruthy()
-  })
+    it('Empty string', function () {
+      expect(CPF.format('') === undefined).toBeTruthy()
+    })
 
-  it('Valid Number', function () {
-    expect(CPF.validate('137686636-63')).toBeTruthy()
-  })
+    it('No value', function () {
+      expect(CPF.format() === undefined).toBeTruthy()
+    })
 
-  it('Número inválido', function () {
-    expect(CPF.validate('064.875.987-10')).toBeFalsy()
-  })
+    it('NaN value', function () {
+      expect(CPF.format(NaN) === undefined).toBeTruthy()
+    })
 
-  it('Número inválido', function () {
-    expect(CPF.validate('064.875.987-10a')).toBeFalsy()
-  })
 
-  it('Número inválido', function () {
-    expect(CPF.validate('a064.875.987-10')).toBeFalsy()
-  })
-
-  it('Números iguais', function () {
-    expect(CPF.validate('00000000000')).toBeFalsy()
-  })
-
-  it('Dígitos a mais e caracteres fora do padrão', function () {
-    expect(CPF.validate('&*00.000.00a-00')).toBeFalsy()
+    it('NaN value', function () {
+      expect(CPF.validate() === undefined).toBeTruthy()
+    })
   })
 })
 
-describe('Gerando CPF', function () {
+
+describe('Generate', function () {
   it('Valid Number', function () {
     expect(CPF.validate(CPF.generate())).toBeTruthy()
   })
 })
 
-describe('Verificando os verificadores', function () {
-  it('Verificador 1 = 0', function () {
-    expect(CPF.validate('76381842202')).toBeTruthy()
+describe('Format', function () {
+  describe('Formatando CPF com input errado', function () {
+    it('Default formatação só digitos', function () {
+      expect(CPF.format('13768663663') === '137.686.636-63').toBeTruthy()
+    })
+
+    it('Default formatação com pontuação', function () {
+      expect(CPF.format('137.686.636-63') === '137.686.636-63').toBeTruthy()
+    })
+
+    it('Formatação Digitos', function () {
+      expect(CPF.format('13768663663', 'digits') === '13768663663').toBeTruthy()
+    })
+
+    it('Formatação Verificador', function () {
+      expect(CPF.format('13768663663', 'checker') === '137686636-63').toBeTruthy()
+    })
   })
 
-  it('Verificador 1 > 1', function () {
-    expect(CPF.validate('125.828.106-65')).toBeTruthy()
-  })
+  describe('Formatando CPF com input errado', function () {
+    it('Passando dígitos', function () {
+      expect(CPF.format('137686.663663') === '137.686.636-63').toBeFalsy()
+    })
 
-  it('Verificador 2 = 0', function () {
-    expect(CPF.validate('433.787.588-30')).toBeTruthy()
-  })
+    it('Faltando dígitos', function () {
+      expect(CPF.format('136.6636-63') === '137.686.636-63').toBeFalsy()
+    })
 
-  it('Verificador 2 > 1', function () {
-    expect(CPF.validate('855.178.021-25')).toBeTruthy()
+    it('Com outros caracteres', function () {
+      expect(CPF.format('13a6.6636-63') === '137.686.636-63').toBeFalsy()
+    })
   })
 })
 
-describe('Formatando CPF', function () {
-  it('Default formatação só digitos', function () {
-    expect(CPF.format('13768663663') === '137.686.636-63').toBeTruthy()
-  })
 
-  it('Default formatação com pontuação', function () {
-    expect(CPF.format('137.686.636-63') === '137.686.636-63').toBeTruthy()
-  })
-
-  it('Formatação Digitos', function () {
-    expect(CPF.format('13768663663', 'digits') === '13768663663').toBeTruthy()
-  })
-
-  it('Formatação Verificador', function () {
-    expect(CPF.format('13768663663', 'checker') === '137686636-63').toBeTruthy()
-  })
-})
-
-describe('Formatando CPF com input errado', function () {
-  it('Passando dígitos', function () {
-    expect(CPF.format('137686.663663') === '137.686.636-63').toBeFalsy()
-  })
-
-  it('Faltando dígitos', function () {
-    expect(CPF.format('136.6636-63') === '137.686.636-63').toBeFalsy()
-  })
-
-  it('Com outros caracteres', function () {
-    expect(CPF.format('13a6.6636-63') === '137.686.636-63').toBeFalsy()
-  })
-})
-
-describe('No values', function () {
-  it('Null', function () {
-    expect(CPF.format(null) === undefined).toBeTruthy()
-  })
-
-  it('Undefined', function () {
-    expect(CPF.format(undefined) === undefined).toBeTruthy()
-  })
-
-  it('Empty string', function () {
-    expect(CPF.format('') === undefined).toBeTruthy()
-  })
-
-  it('No value', function () {
-    expect(CPF.format() === undefined).toBeTruthy()
-  })
-
-  it('NaN value', function () {
-    expect(CPF.format(NaN) === undefined).toBeTruthy()
-  })
-})

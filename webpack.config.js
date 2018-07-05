@@ -42,6 +42,14 @@ const config = [
       new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
         template: path.join(__dirname, 'src/index.hbs')
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'pt-br/index.html',
+        template: path.join(__dirname, 'src/index.hbs')
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'en/index.html',
+        template: path.join(__dirname, 'src/index.hbs')
       })
     ],
     devServer: {
