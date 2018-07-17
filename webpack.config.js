@@ -35,6 +35,9 @@ const config = [
             'css-loader',
             'stylus-loader'
           ]
+        }, {
+          test: /\.svg$/,
+          loader: 'file-loader'
         }
       ]
     },

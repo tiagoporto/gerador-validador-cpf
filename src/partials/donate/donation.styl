@@ -60,20 +60,21 @@
   #donateBox a
     display: block
 
-  #donateBox #PayPal
-    background-image: url($image-path + 'paypal.svg')
+  #donateBox
+    .PayPal
+      background-image: url('../../img/paypal.svg')
 
-  #donateBox>#BTC
-    background-image: url($image-path  + 'bitcoin.svg')
-    line-height: 28px
+    #BTC
+      background-image: url('../../img/bitcoin.svg')
+      line-height: 28px
 
-  #donateBox>#LTC
-    background-image: url($image-path  + 'litecoin.svg')
-    line-height: 28px
+    #LTC
+      background-image: url('../../img/litecoin.svg')
+      line-height: 28px
 
-  #donateBox>#BTC:hover,
-  #donateBox>#LTC:hover
-    overflow: visible
+    &>#BTC:hover,
+    &>#LTC:hover
+      overflow: visible
 
   #BTC>button,
   #LTC>button

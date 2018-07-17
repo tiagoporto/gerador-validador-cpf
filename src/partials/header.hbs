@@ -48,29 +48,7 @@
 
       <p>Biblioteca JS open-source para gerar, validar e formatar CPF.</p>
 
-    <section class="donation">
-      <p>Este projeto é mantido no meu pouco tempo livre, se foi útil para você dê um <a href="https://github.com/tiagoporto/gerador-validador-cpf" style="color: #FFF">★</a>, qualquer doação é bem vinda.</p>
-
-      <ul id="donateBox" class="list pos-f tr3">
-        <li id="PayPal">
-          <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YTDUQ8RZ2G4Q8&lc=BR&item_name=tiagoporto&item_number=geradorcpf&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted" target="_blank" rel="noopener">PayPal</a>
-        </li>
-
-        <li id="BTC" data-footnote="Copy address and show QRCod" data-clipboard-target="#btc-key">
-          <button id="BTCBn">Bitcoin</button>
-        </li>
-
-        <li id="LTC" data-footnote="Copy address and show QRCod" data-clipboard-target="#ltc-key">
-          <button id="LTCBn">Litcoin</button>
-        </li>
-      </ul>
-      <div id="QRBox" class="left-100">
-        <div id="MainBox"></div>
-      </div>
-
-      <input id="btc-key" aria-label="Carteira bitcoin de Tiago Porto" type="text" value="14iqQcwYPLBceRURHuFosGTDXxMmt3cLDp" readonly>
-      <input id="ltc-key" aria-label="Carteira de litecoin de Tiago Porto" type="text" value="LbWBDcokB9ShS4NpR3xZ5xxgQa3ycp9wpe" readonly>
-    </section>
+      {{>[donate/donate]}}
     </header>
 
 {{> @partial-block }}

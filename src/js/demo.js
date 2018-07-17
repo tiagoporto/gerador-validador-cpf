@@ -1,5 +1,6 @@
 import '../styles/demo.styl'
 import * as CPF from './CPF.js'
+import '../partials/donate/donate.js'
 
 const date = new Date()
 document.getElementsByClassName('footer__year')[0].innerHTML = date.getFullYear()
