@@ -1,23 +1,21 @@
 <section class="donation">
   <p>Este projeto é mantido no meu pouco tempo livre, se foi útil para você dê um <a href="https://github.com/tiagoporto/gerador-validador-cpf" style="color: #FFF">★</a>, qualquer doação é bem vinda.</p>
 
-  <ul id="donateBox" class="list pos-f tr3">
-    <li class="PayPal">
+  <ul class="donate-list">
+    <li>
       <a id="PayPal" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YTDUQ8RZ2G4Q8&lc=BR&item_name=tiagoporto&item_number=geradorcpf&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted" target="_blank" rel="noopener">PayPal</a>
     </li>
 
-    <li id="BTC">
-      <button id="BTCBn" data-clipboard-target="btc-key" data-footnote="Copy address and show QRCode">Bitcoin</button>
+    <li>
+      <button id="BTC" data-clipboard-text="14iqQcwYPLBceRURHuFosGTDXxMmt3cLDp">Bitcoin</button>
     </li>
 
-    <li id="LTC">
-      <button id="LTCBn" data-footnote="Copy address and show QRCod" data-clipboard-target="ltc-key">Litcoin</button>
+    <li>
+      <button id="LTC" data-clipboard-text="LbWBDcokB9ShS4NpR3xZ5xxgQa3ycp9wpe">Litcoin</button>
     </li>
   </ul>
-  <div id="QRBox" class="left-100">
+
+  <div id="QRBox">
     <div id="MainBox"></div>
   </div>
-
-  <input id="btc-key" aria-label="Carteira bitcoin de Tiago Porto" type="text" value="14iqQcwYPLBceRURHuFosGTDXxMmt3cLDp" readonly>
-  <input id="ltc-key" aria-label="Carteira de litecoin de Tiago Porto" type="text" value="LbWBDcokB9ShS4NpR3xZ5xxgQa3ycp9wpe" readonly>
 </section>

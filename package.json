@@ -79,7 +79,8 @@
     "stylus-loader": "^3.0.2",
     "webpack": "^4.13.0",
     "webpack-cli": "^3.0.8",
-    "webpack-dev-server": "^3.1.4"
+    "webpack-dev-server": "^3.1.4",
+    "jquery": "^3.3.1"
   },
   "eslintConfig": {
     "extends": [
