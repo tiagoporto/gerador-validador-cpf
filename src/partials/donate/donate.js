@@ -9,7 +9,7 @@ $(document).ready(() => {
   const showQR = QR => {
     QR && MainBox.css('background-image', `url('${QR}')`)
 
-    $('#donateBox').addClass('blur')
+    $('.donate-list').addClass('blur')
 
     QRBox.fadeIn(300, argument => {
       MainBox.addClass('showQR')
@@ -36,7 +36,7 @@ $(document).ready(() => {
 
     setTimeout(() => {
       QRBox.fadeOut(300, argument => { MainBox.removeClass('hideQR') })
-      $('#donateBox').removeClass('blur')
+      $('.donate-list').removeClass('blur')
     }, 600)
   })
 })
