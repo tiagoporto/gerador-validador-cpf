@@ -1,3 +1,5 @@
+/* eslint no-new: "off" */
+
 import './donation.styl'
 import Clipboard from 'clipboard'
 import $ from 'jquery'

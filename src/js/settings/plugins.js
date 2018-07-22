@@ -1,3 +1,5 @@
+/* eslint no-new: "off" */
+
 import 'highlightjs/styles/googlecode.css'
 import Clipboard from 'clipboard'
 import hljs from 'highlightjs'

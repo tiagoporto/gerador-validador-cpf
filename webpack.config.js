@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const config = [
   {
@@ -44,16 +45,17 @@ const config = [
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
-        template: path.join(__dirname, 'src/index.hbs')
-      }),
-      new HtmlWebpackPlugin({
-        filename: 'pt-br/index.html',
-        template: path.join(__dirname, 'src/index.hbs')
-      }),
-      new HtmlWebpackPlugin({
-        filename: 'en/index.html',
-        template: path.join(__dirname, 'src/index.hbs')
+        favicon: 'public/favicon.ico',
+        template: path.join(__dirname, 'public/index.hbs')
       })
+      // new HtmlWebpackPlugin({
+      //   filename: 'pt-br/index.html',
+      //   template: path.join(__dirname, 'src/index.hbs')
+      // }),
+      // new HtmlWebpackPlugin({
+      //   filename: 'en/index.html',
+      //   template: path.join(__dirname, 'src/index.hbs')
+      // })
     ],
     devServer: {
       open: true,
@@ -68,4 +70,24 @@ const config = [
   }
 ]
 
-module.exports = config
+module.exports = (env, argv) => {
+  if (argv.mode === 'production') {
+    config[0].output.path = path.resolve(__dirname, 'site')
+    config[0].optimization = {
+      splitChunks: {
+        chunks: 'all'
+      },
+      minimizer: [
+        new UglifyJsPlugin({
+          uglifyOptions: {
+            output: {
+              comments: false
+            }
+          }
+        })
+      ]
+    }
+  }
+
+  return config
+}

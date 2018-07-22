@@ -47,13 +47,13 @@ const validate = event => {
 
   messageInput[0].setAttribute('value', message)
 
-  typeof ga === 'function' && ga('send', 'event', 'button', 'click', 'Validate CPF')
+  typeof window.ga === 'function' && window.ga('send', 'event', 'button', 'click', 'Validate CPF')
 }
 
 const generate = () => {
   document.getElementsByClassName('generate-section__input--generated')[0].setAttribute('value', CPF.generate())
 
-  typeof ga === 'function' && ga('send', 'event', 'button', 'click', 'Generate CPF')
+  typeof window.ga === 'function' && window.ga('send', 'event', 'button', 'click', 'Generate CPF')
 }
 
 const format = event => {
@@ -63,7 +63,7 @@ const format = event => {
 
   document.getElementsByClassName('format-section__input--message')[0].setAttribute('value', CPF.format(fieldValue, params))
 
-  typeof ga === 'function' && ga('send', 'event', 'button', 'click', 'Formate CPF')
+  typeof window.ga === 'function' && window.ga('send', 'event', 'button', 'click', 'Formate CPF')
 }
 
 generate()
