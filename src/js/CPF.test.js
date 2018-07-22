@@ -7,36 +7,46 @@ describe('generate()', () => {
 })
 
 describe('format()', () => {
+  describe('Type Number', () => {
   // it('Default formatação só digitos', () => {
   //   expect(CPF.format(13768663663) === '137.686.636-63').toBeTruthy()
   // })
-
-  it('Default formatação só digitos', () => {
-    expect(CPF.format('13768663663') === '137.686.636-63').toBeTruthy()
   })
 
-  it('Default formatação com pontuação', () => {
-    expect(CPF.format('137.686.636-63') === '137.686.636-63').toBeTruthy()
-  })
+  describe('Type String', () => {
+    describe('Default Param', () => {
+      it('Should return a valid CPF formatted XXX.XXX.XXX-XX passing numbers', () => {
+        expect(CPF.format('13768663663') === '137.686.636-63').toBeTruthy()
+      })
 
-  it('Formatação Digitos', () => {
-    expect(CPF.format('13768663663', 'digits') === '13768663663').toBeTruthy()
-  })
+      it('Should return a valid CPF formatted XXX.XXX.XXX-XX passing formatted CPF', () => {
+        expect(CPF.format('137.686.636-63') === '137.686.636-63').toBeTruthy()
+      })
 
-  it('Formatação Verificador', () => {
-    expect(CPF.format('13768663663', 'checker') === '137686636-63').toBeTruthy()
-  })
+      it('Passando dígitos', () => {
+        expect(CPF.format('137686.63663') === '137.686.636-63').toBeTruthy()
+      })
 
-  it('Passando dígitos', () => {
-    expect(CPF.format('137686.663663') === '137.686.636-63').toBeFalsy()
-  })
+      it('Faltando dígitos', () => {
+        expect(CPF.format('136.6636-63') === '137.686.636-63').toBeFalsy()
+      })
 
-  it('Faltando dígitos', () => {
-    expect(CPF.format('136.6636-63') === '137.686.636-63').toBeFalsy()
-  })
+      it('Com outros caracteres', () => {
+        expect(CPF.format('13a6.6636-63') === '137.686.636-63').toBeFalsy()
+      })
+    })
 
-  it('Com outros caracteres', () => {
-    expect(CPF.format('13a6.6636-63') === '137.686.636-63').toBeFalsy()
+    describe('Checker Param', () => {
+      it('Should return a valid CPF formatted XXXXXXXXX-XX', () => {
+        expect(CPF.format('13768663663', 'checker') === '137686636-63').toBeTruthy()
+      })
+    })
+
+    describe('Digits Param', () => {
+      it('Should return a valid CPF formatted XXXXXXXXXXX', () => {
+        expect(CPF.format('137.686.636-63', 'digits') === '13768663663').toBeTruthy()
+      })
+    })
   })
 })
 
@@ -99,6 +109,22 @@ describe('validate()', () => {
     it('Should return false is 11 repeat digits', () => {
       expect(CPF.validate('00000000000')).toBeFalsy()
     })
+
+    it('Verificador 1 = 0', () => {
+      expect(CPF.validate('76381842202')).toBeTruthy()
+    })
+
+    it('Verificador 1 > 1', () => {
+      expect(CPF.validate('125.828.106-65')).toBeTruthy()
+    })
+
+    it('Verificador 2 = 0', () => {
+      expect(CPF.validate('433.787.588-30')).toBeTruthy()
+    })
+
+    it('Verificador 2 > 1', () => {
+      expect(CPF.validate('855.178.021-25')).toBeTruthy()
+    })
   })
 
   describe('No values', () => {
@@ -128,24 +154,6 @@ describe('validate()', () => {
 
     it('Should return undefined to NaN', () => {
       expect(CPF.validate(NaN) === undefined).toBeTruthy()
-    })
-  })
-
-  describe('Verificando os verificadores', () => {
-    it('Verificador 1 = 0', () => {
-      expect(CPF.validate('76381842202')).toBeTruthy()
-    })
-
-    it('Verificador 1 > 1', () => {
-      expect(CPF.validate('125.828.106-65')).toBeTruthy()
-    })
-
-    it('Verificador 2 = 0', () => {
-      expect(CPF.validate('433.787.588-30')).toBeTruthy()
-    })
-
-    it('Verificador 2 > 1', () => {
-      expect(CPF.validate('855.178.021-25')).toBeTruthy()
     })
   })
 })
