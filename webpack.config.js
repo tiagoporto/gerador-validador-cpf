@@ -14,33 +14,33 @@ const config = [
     module: {
       rules: [
         {
-          test: /\.(js|jsx)$/,
+          test: /\.(js|jsx|ts|tsx)$/,
           exclude: /(node_modules)/,
-          loader: 'babel-loader'
-        }, {
+          loader: 'ts-loader'
+        },
+        {
           test: /\.hbs$/,
           loader: 'handlebars-loader',
           options: {
             partialDirs: [path.resolve(__dirname, 'src/partials')]
           }
-        }, {
+        },
+        {
           test: /\.css$/,
-          loader: [
-            'style-loader',
-            'css-loader'
-          ]
-        }, {
+          loader: ['style-loader', 'css-loader']
+        },
+        {
           test: /\.styl$/,
-          loader: [
-            'style-loader',
-            'css-loader',
-            'stylus-loader'
-          ]
-        }, {
+          loader: ['style-loader', 'css-loader', 'stylus-loader']
+        },
+        {
           test: /\.svg$/,
           loader: 'file-loader'
         }
       ]
+    },
+    resolve: {
+      extensions: ['.tsx', '.ts', '.js', '.jsx']
     },
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
@@ -63,9 +63,7 @@ const config = [
       inline: true,
       watchContentBase: true,
       hot: true,
-      contentBase: [
-        path.join(__dirname, 'src')
-      ]
+      contentBase: [path.join(__dirname, 'src')]
     }
   }
 ]

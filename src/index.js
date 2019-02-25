@@ -1,7 +1,7 @@
 import 'normalize.css'
-import './js/demo.js'
-import './js/settings/plugins.js'
-import './js/settings/google_analytics.js'
+import './js/demo'
+import './js/settings/plugins'
+import './js/settings/google_analytics'
 
 if (module.hot) {
   module.hot.accept()

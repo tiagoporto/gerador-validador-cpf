@@ -1,6 +1,6 @@
 {
   "name": "gerador-validador-cpf",
-  "version": "3.1.3",
+  "version": "4.0.0",
   "description": "Biblioteca JS open-source para gerar, validar e formatar CPF.",
   "homepage": "http://tiagoporto.github.io/gerador-validador-cpf",
   "keywords": [
@@ -32,9 +32,8 @@
     "test-watch": "npm test -- --watch",
     "test-mutable": "stryker run",
     "report-mutable": "npm run test-mutable -- --reporter clear-text,progress,dots,dashboard",
-    "lint": "eslint ./src",
+    "lint": "eslint --ext .ts,.js ./src",
     "lint-fix": "npm run lint -- --fix",
-    "precommit": "npm run lint && npm run test",
     "prepare": "rm -rf dist && rollup -c",
     "postpublish": "npm run tag && git push --tags",
     "tag": "git tag v$npm_package_version"
@@ -43,49 +42,52 @@
   "module": "dist/CPF.es.js",
   "license": "MIT",
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-jest": "^23.4.0",
-    "babel-loader": "^7.1.5",
-    "babel-preset-env": "^1.7.0",
+    "@types/jest": "^24.0.6",
+    "@typescript-eslint/parser": "^1.4.1",
     "clipboard": "^2.0.1",
     "css-loader": "^1.0.0",
-    "eslint": "^5.2.0",
-    "eslint-config-standard": "^11.0.0",
+    "eslint": "^5.14.1",
+    "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-jest": "^21.18.0",
+    "eslint-plugin-jest": "^22.3.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^3.8.0",
-    "eslint-plugin-standard": "^3.1.0",
+    "eslint-plugin-standard": "^4.0.0",
     "file-loader": "^1.1.11",
     "gh-pages": "^1.2.0",
-    "handlebars": "^4.0.11",
+    "handlebars": "^4.1.0",
     "handlebars-loader": "^1.7.0",
     "highlightjs": "^9.10.0",
     "html-webpack-plugin": "^3.2.0",
-    "husky": "^0.14.3",
+    "husky": "^1.3.1",
     "inputmask": "^4.0.0",
-    "jest": "^23.4.1",
+    "jest": "^24.1.0",
     "jquery": "^3.3.1",
     "normalize.css": "^8.0.0",
+    "prettier-standard": "^9.1.1",
     "regenerator-runtime": "^0.12.0",
     "rollup": "^0.63.4",
     "rollup-plugin-babel": "^3.0.7",
-    "rollup-plugin-license": "^0.7.0",
+    "rollup-plugin-license": "^0.8.1",
     "rollup-plugin-uglify": "^4.0.0",
     "stryker": "^0.25.0",
     "stryker-api": "^0.18.0",
     "stryker-babel-transpiler": "^0.6.0",
     "stryker-html-reporter": "^0.15.0",
-    "stryker-javascript-mutator": "^0.8.0",
+    "stryker-javascript-mutator": "^0.14.1",
     "stryker-jest-runner": "^1.0.0",
     "style-loader": "^0.21.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    "ts-jest": "^24.0.0",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.3.3333",
     "webpack": "^4.16.1",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5"
+    "webpack-dev-server": "^3.2.0"
   },
   "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
     "extends": [
       "standard",
       "plugin:jest/recommended"
@@ -93,5 +95,10 @@
     "plugins": [
       "jest"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run test"
+    }
   }
 }
