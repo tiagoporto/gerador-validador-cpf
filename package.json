@@ -34,10 +34,10 @@
     "report-mutable": "npm run test-mutable -- --reporter clear-text,progress,dots,dashboard",
     "lint": "eslint --ext .ts,.js ./src",
     "lint-fix": "npm run lint -- --fix",
-    "prepare": "rm -rf dist && rollup -c",
+    "prepare": "rm -rf dist && rollup -c && npm run types",
     "postpublish": "npm run tag && git push --tags",
     "tag": "git tag v$npm_package_version",
-    "build:types": "tsc --emitDeclarationOnly"
+    "types": "tsc --emitDeclarationOnly"
   },
   "main": "./dist/CPF.umd.js",
   "module": "./dist/CPF.es.js",
