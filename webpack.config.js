@@ -63,7 +63,7 @@ const config = [
       inline: true,
       watchContentBase: true,
       hot: true,
-      contentBase: [path.join(__dirname, 'src')]
+      contentBase: [path.join(__dirname, 'public')]
     }
   }
 ]
