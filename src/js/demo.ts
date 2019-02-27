@@ -14,11 +14,11 @@ document.getElementsByClassName('footer__year')[0].innerHTML = String(
 )
 
 // Helper functions
-const addClass = (el: HTMLCollectionOf<Element>, klass: string) => {
+const addClass = (el: HTMLCollectionOf<Element>, klass: string): void => {
   el[0].className += ` ${klass}`
 }
 
-const removeClass = (el: HTMLCollectionOf<Element>, klass: string) => {
+const removeClass = (el: HTMLCollectionOf<Element>, klass: string): void => {
   let elClass = ` ${el[0].className} `
 
   while (elClass.indexOf(` ${klass} `) !== -1) {
@@ -32,11 +32,11 @@ const setListener = (
   className: string,
   func: (event?: Event) => void,
   action: string
-) => {
+): void => {
   const elements = document.getElementsByClassName(className)
 
   Array.from(elements).forEach(
-    (element: any): void => {
+    (element: Element): void => {
       element.addEventListener(action, func, false)
     }
   )
