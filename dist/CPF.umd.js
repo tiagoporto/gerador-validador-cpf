@@ -8,11 +8,8 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
-  (factory((global.CPF = {})));
-}(this, (function (exports) { 'use strict';
-
-  /* eslint-disable */
-  /* eslint-enable */
+  (global = global || self, factory(global.CPF = {}));
+}(this, function (exports) { 'use strict';
 
   (function (formatOptions) {
     formatOptions["digits"] = "digits";
@@ -44,21 +41,21 @@
   };
 
   var formatCPF = function formatCPF(value, formatter) {
-    var digitsSeparator = ".";
-    var checkersSeparator = "-";
+    var digitsSeparator = '.';
+    var checkersSeparator = '-';
 
-    if (formatter === "digits") {
-      digitsSeparator = "";
-      checkersSeparator = "";
-    } else if (formatter === "checker") {
-      digitsSeparator = "";
-      checkersSeparator = "-";
+    if (formatter === 'digits') {
+      digitsSeparator = '';
+      checkersSeparator = '';
+    } else if (formatter === 'checker') {
+      digitsSeparator = '';
+      checkersSeparator = '-';
     }
 
     if (value.length > 11) {
-      return "The value contains error. Has more than 11 digits.";
+      return 'The value contains error. Has more than 11 digits.';
     } else if (value.length < 11) {
-      return "The value contains error. Has fewer than 11 digits.";
+      return 'The value contains error. Has fewer than 11 digits.';
     } else {
       return value.slice(0, 3) + digitsSeparator + value.slice(3, 6) + digitsSeparator + value.slice(6, 9) + checkersSeparator + value.slice(9, 11);
     }
@@ -71,7 +68,7 @@
 
 
   var generate = function generate(formatOption) {
-    var firstNineDigits = ""; // Generating the first CPF's 9 digits
+    var firstNineDigits = ''; // Generating the first CPF's 9 digits
 
     for (var i = 0; i < 9; ++i) {
       firstNineDigits += String(Math.floor(Math.random() * 9));
@@ -92,11 +89,11 @@
       return;
     }
 
-    if (typeof value === "number") {
+    if (typeof value === 'number') {
       value = String(value);
     }
 
-    var cleanCPF = value.replace(/\.|-|\s/g, "");
+    var cleanCPF = value.replace(/\.|-|\s/g, '');
     var firstNineDigits = cleanCPF.substring(0, 9);
     var checker = cleanCPF.substring(9, 11);
 
@@ -133,7 +130,7 @@
       return;
     }
 
-    var getCPF = value.replace(/[^\d]/g, "");
+    var getCPF = value.replace(/[^\d]/g, '');
     return formatCPF(getCPF, formatOption);
   };
 
@@ -143,4 +140,4 @@
 
   Object.defineProperty(exports, '__esModule', { value: true });
 
-})));
+}));

@@ -7,7 +7,7 @@ export declare enum formatOptions {
  * @param  {string} formatOption   Formatting option
  * @return {string}                Valid and formatted CPF
  */
-export declare const generate: (formatOption?: formatOptions | undefined) => string;
+export declare const generate: (formatOption?: formatOptions) => string;
 /**
  * validate function
  * @param  {string|number} value  CPF for validation
@@ -21,4 +21,4 @@ export declare const validate: (value: string | number) => boolean;
  *
  * @return {string}               Formatted CPF || error message
  */
-export declare const format: (value: string, formatOption?: formatOptions | undefined) => string;
+export declare const format: (value: string, formatOption?: formatOptions) => string;
