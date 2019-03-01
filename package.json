@@ -29,15 +29,16 @@
     "cover": "npm test -- --coverage",
     "coveralls": "npm run cover && cat ./coverage/lcov.info | coveralls",
     "test": "jest",
-    "test-watch": "npm test -- --watch",
-    "test-mutable": "stryker run",
-    "report-mutable": "npm run test-mutable -- --reporter clear-text,progress,dots,dashboard",
+    "test:watch": "npm test -- --watch",
+    "test:mutation": "stryker run",
+    "test:mutation-report": "npm run test-mutable -- --reporter clear-text,progress,dots,dashboard",
     "lint": "eslint --ext .ts,.js ./src",
-    "lint-fix": "npm run lint -- --fix",
+    "lint:fix": "npm run lint -- --fix",
     "prepare": "rm -rf dist && rollup -c && npm run types",
     "postpublish": "npm run tag && git push --tags",
     "tag": "git tag v$npm_package_version",
-    "types": "tsc --emitDeclarationOnly"
+    "types": "tsc --emitDeclarationOnly",
+    "check-types": "tsc --noEmit"
   },
   "main": "./dist/CPF.umd.js",
   "module": "./dist/CPF.es.js",
@@ -46,8 +47,14 @@
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-typescript": "^7.3.3",
+    "@stryker-mutator/core": "^1.0.3",
+    "@stryker-mutator/html-reporter": "^1.0.3",
+    "@stryker-mutator/javascript-mutator": "^1.0.3",
+    "@stryker-mutator/jest-runner": "^1.0.3",
+    "@stryker-mutator/typescript": "^1.0.3",
     "@types/jest": "^24.0.9",
     "@typescript-eslint/eslint-plugin": "^1.4.2",
     "@typescript-eslint/parser": "^1.4.2",
@@ -80,12 +87,6 @@
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-license": "^0.8.1",
     "rollup-plugin-uglify": "^4.0.0",
-    "stryker": "^0.35.1",
-    "stryker-api": "^0.18.0",
-    "stryker-babel-transpiler": "^0.6.3",
-    "stryker-html-reporter": "^0.15.3",
-    "stryker-javascript-mutator": "^0.14.1",
-    "stryker-jest-runner": "^1.4.1",
     "style-loader": "^0.23.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
@@ -113,5 +114,6 @@
     "hooks": {
       "pre-commit": "npm run lint"
     }
-  }
+  },
+  "dependencies": {}
 }

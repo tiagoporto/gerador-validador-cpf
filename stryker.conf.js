@@ -1,11 +1,12 @@
 module.exports = function(config) {
   config.set({
-    testRunner: "jest",
     mutator: "javascript",
-    transpilers: ["babel"],
-    reporter: ["html"],
+    packageManager: "npm",
+    reporters: ["html"],
+    testRunner: "jest",
+    transpilers: [],
     coverageAnalysis: "off",
-    mutate: ["src/js/CPF.js"],
+    mutate: ["src/js/CPF.ts"],
     babelrcFile: ".babelrc"
   });
 };
