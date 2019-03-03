@@ -24,21 +24,22 @@
   },
   "scripts": {
     "start": "webpack-dev-server --mode=development",
-    "build:site": "rm -rf site && webpack --mode=production",
-    "deploy": "npm run build:site && gh-pages -d site",
-    "cover": "npm test -- --coverage",
-    "coveralls": "npm run cover && cat ./coverage/lcov.info | coveralls",
+    "lint": "eslint --ext .ts,.js ./src",
+    "lint:fix": "npm run lint -- --fix",
+    "check-types": "tsc --noEmit",
     "test": "jest",
     "test:watch": "npm test -- --watch",
     "test:mutation": "stryker run",
-    "test:mutation-report": "npm run test-mutable -- --reporter clear-text,progress,dots,dashboard",
-    "lint": "eslint --ext .ts,.js ./src",
-    "lint:fix": "npm run lint -- --fix",
-    "prepare": "rm -rf dist && rollup -c && npm run types",
-    "postpublish": "npm run tag && git push --tags",
-    "tag": "git tag v$npm_package_version",
+    "test:mutation-report": "npm run test:mutation -- --reporter clear-text,progress,dots,dashboard",
+    "cover": "npm test -- --coverage",
+    "coveralls": "npm run cover && cat ./coverage/lcov.info | coveralls",
+    "ci": "npm run lint && npm run check-types && npm run test && npm run coveralls && npm run test:mutation-report",
+    "compile": "rm -rf dist && rollup -c && npm run types",
     "types": "tsc --emitDeclarationOnly",
-    "check-types": "tsc --noEmit"
+    "build:site": "rm -rf site && webpack --mode=production",
+    "deploy": "npm run build:site && gh-pages -d site",
+    "postpublish": "npm run tag && git push --tags",
+    "tag": "git tag v$npm_package_version"
   },
   "main": "./dist/CPF.umd.js",
   "module": "./dist/CPF.es.js",
@@ -47,12 +48,10 @@
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
-    "@babel/plugin-proposal-export-default-from": "^7.2.0",
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-typescript": "^7.3.3",
     "@stryker-mutator/core": "^1.0.3",
     "@stryker-mutator/html-reporter": "^1.0.3",
-    "@stryker-mutator/javascript-mutator": "^1.0.3",
     "@stryker-mutator/jest-runner": "^1.0.3",
     "@stryker-mutator/typescript": "^1.0.3",
     "@types/jest": "^24.0.9",
@@ -60,6 +59,7 @@
     "@typescript-eslint/parser": "^1.4.2",
     "babel-loader": "^8.0.5",
     "clipboard": "^2.0.4",
+    "coveralls": "^3.0.3",
     "css-loader": "^2.1.0",
     "eslint": "^5.14.1",
     "eslint-config-prettier": "^4.1.0",
@@ -112,8 +112,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "npm run lint && npm run check-types"
     }
-  },
-  "dependencies": {}
+  }
 }
