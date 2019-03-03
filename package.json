@@ -33,7 +33,7 @@
     "test:mutation-report": "npm run test:mutation -- --reporter clear-text,progress,dots,dashboard",
     "cover": "npm test -- --coverage",
     "coveralls": "npm run cover && cat ./coverage/lcov.info | coveralls",
-    "ci": "npm run lint && npm run check-types && npm run test && npm run coveralls && npm run test:mutation-report",
+    "ci": "npm run lint && npm run check-types && npm run coveralls && npm run test:mutation-report",
     "compile": "rm -rf dist && rollup -c && npm run types",
     "types": "tsc --emitDeclarationOnly",
     "build:site": "rm -rf site && webpack --mode=production",
