@@ -4,7 +4,7 @@ node_js:
 before_install:
   - gem install awesome_bot
 script:
-  - awesome_bot README.md --allow-redirect --white-list travis-ci
+  - awesome_bot *.md --allow-redirect --white-list travis-ci,packagephobia.now
   - npm run ci
 env:
   global:
