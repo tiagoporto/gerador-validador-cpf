@@ -1,13 +1,14 @@
 import './donation.styl'
 import Clipboard from 'clipboard'
 import $ from 'jquery'
+import BTCQR from '../../img/BTCQR.png'
 
 $(document).ready(() => {
   const QRBox = $('#QRBox')
   const MainBox = $('#MainBox')
 
   const showQR = QR => {
-    QR && MainBox.css('background-image', `url('${QR}')`)
+    QR && MainBox.attr('src', QR)
 
     $('.donate-list').addClass('blur')
 
@@ -16,21 +17,15 @@ $(document).ready(() => {
     })
   }
 
-  $('#BTC,#LTC,PayPal').click(event => {
+  $('#BTC,PayPal').click(event => {
     const thisID = event.currentTarget.id
     typeof window.ga === 'function' &&
       window.ga('send', 'event', 'button', 'click', thisID)
 
     if (thisID === 'BTC') {
-      showQR('img/BTCQR.png')
+      showQR(BTCQR)
       // eslint-disable-next-line no-new
       new Clipboard('#BTC')
-    }
-
-    if (thisID === 'LTC') {
-      showQR('img/LTCQR.png')
-      // eslint-disable-next-line no-new
-      new Clipboard('#LTC')
     }
   })
 

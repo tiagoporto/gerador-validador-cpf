@@ -34,7 +34,7 @@ const config = [
           loader: ['style-loader', 'css-loader', 'stylus-loader']
         },
         {
-          test: /\.svg$/,
+          test: /\.(png|jpg|gif|svg)$/,
           loader: 'file-loader'
         }
       ]

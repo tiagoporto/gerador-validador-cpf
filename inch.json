@@ -1,7 +1,5 @@
 {
   "files": {
-    "included": [
-      "src/js/CPF.js"
-    ]
+    "included": ["src/js/CPF.ts"]
   }
 }
