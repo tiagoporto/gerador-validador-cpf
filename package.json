@@ -34,10 +34,10 @@
     "cover": "npm test -- --coverage",
     "coveralls": "npm run cover && cat ./coverage/lcov.info | coveralls",
     "ci": "npm run lint && npm run check-types && npm run coveralls && npm run test:mutation-report",
-    "compile": "rm -rf dist && rollup -c && npm run types",
     "types": "tsc --emitDeclarationOnly",
     "build:site": "rm -rf site && webpack --mode=production",
     "deploy": "npm run build:site && gh-pages -d site",
+    "prepublishOnly": "rm -rf dist && rollup -c && npm run types",
     "postpublish": "npm run tag && git push --tags",
     "tag": "git tag v$npm_package_version"
   },
