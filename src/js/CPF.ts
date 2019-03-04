@@ -1,3 +1,4 @@
+/* eslint no-console: ["error", { allow: ["error", "warn"] }] */
 export enum formatOptions {
   digits = 'digits',
   checker = 'checker'
@@ -29,7 +30,7 @@ const calcSecondChecker = (cpfWithChecker1: number): number => {
   return checker2
 }
 
-const formatCPF = (value: string, formatter?: formatOptions): string => {
+const formatCPF = (value: string, formatter?: formatOptions): string | void => {
   let digitsSeparator = '.'
   let checkersSeparator = '-'
 
@@ -42,9 +43,9 @@ const formatCPF = (value: string, formatter?: formatOptions): string => {
   }
 
   if (value.length > 11) {
-    return 'The value contains error. Has more than 11 digits.'
+    return console.error('The value contains error. Has more than 11 digits.')
   } else if (value.length < 11) {
-    return 'The value contains error. Has fewer than 11 digits.'
+    return console.error('The value contains error. Has fewer than 11 digits.')
   } else {
     return (
       value.slice(0, 3) +
@@ -77,7 +78,7 @@ export const generate = (formatOption?: formatOptions): string => {
     checker1 +
     calcSecondChecker(Number(firstNineDigits + checker1))
 
-  return formatCPF(generatedCPF, formatOption)
+  return formatCPF(generatedCPF, formatOption) as string
 }
 
 /**
@@ -86,15 +87,12 @@ export const generate = (formatOption?: formatOptions): string => {
  * @return {boolean}              True = valid || False = invalid
  */
 export const validate = (value: string | number): boolean => {
-  if (!value) {
-    return
+  if (typeof value !== 'string' && typeof value !== 'number') {
+    console.warn('Unsupported value')
+    return false
   }
 
-  if (typeof value === 'number') {
-    value = String(value)
-  }
-
-  const cleanCPF = value.replace(/\.|-|\s/g, '')
+  const cleanCPF = String(value).replace(/\.|-|\s/g, '')
   const firstNineDigits = cleanCPF.substring(0, 9)
   const checker = cleanCPF.substring(9, 11)
 
@@ -126,12 +124,15 @@ export const validate = (value: string | number): boolean => {
  *
  * @return {string}               Formatted CPF || error message
  */
-export const format = (value: string, formatOption?: formatOptions): string => {
+export const format = (
+  value: string | number,
+  formatOption?: formatOptions
+): string | void => {
   if (!value) {
     return
   }
 
-  const getCPF = value.replace(/[^\d]/g, '')
+  const getCPF = String(value).replace(/[^\d]/g, '')
 
   return formatCPF(getCPF, formatOption)
 }
