@@ -60,9 +60,9 @@ const formatCPF = (value: string, formatter?: formatOptions): string | void => {
 }
 
 /**
- * generate a valide CPF number
- * @param  {string} formatOption   Formatting option
- * @return {string}                Valid and formatted CPF
+ * generate a valid CPF number
+ * @param  {string} [formatOption]   Formatting option
+ * @return {string}                  Valid and formatted CPF
  */
 export const generate = (formatOption?: formatOptions): string => {
   let firstNineDigits = ''
@@ -82,9 +82,9 @@ export const generate = (formatOption?: formatOptions): string => {
 }
 
 /**
- * validate function
- * @param  {string|number} value  CPF for validation
- * @return {boolean}              True = valid || False = invalid
+ * validate CPF numbers
+ * @param  {(string|number)} value  CPF for validation
+ * @return {boolean}                True = valid || False = invalid
  */
 export const validate = (value: string | number): boolean => {
   if (typeof value !== 'string' && typeof value !== 'number') {
@@ -110,19 +110,15 @@ export const validate = (value: string | number): boolean => {
   const checker1 = calcFirstChecker(Number(firstNineDigits))
   const checker2 = calcSecondChecker(Number(`${firstNineDigits}${checker1}`))
 
-  if (checker.toString() === checker1.toString() + checker2.toString()) {
-    return true
-  } else {
-    return false
-  }
+  return checker.toString() === checker1.toString() + checker2.toString()
 }
 
 /**
- * format function
- * @param  {string|number} value  The value for formatting
- * @param  {string} formatOption  Formatting option
+ * format CPF numbers
+ * @param  {(string|number)} value  Formatting value
+ * @param  {string} [formatOption]  Formatting option
  *
- * @return {string}               Formatted CPF || error message
+ * @return {string}                 Formatted CPF || error message
  */
 export const format = (
   value: string | number,
