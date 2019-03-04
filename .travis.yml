@@ -6,6 +6,3 @@ before_install:
 script:
   - awesome_bot *.md --allow-redirect --white-list travis-ci,packagephobia.now
   - npm run ci
-env:
-  global:
-    secure: GqaBQQK5/efJxjN66tfwrvU7D51OSPR4laHIOkTaRdXCL82bcZ8ZHtd8l6ARVfzHMhtm8XxfuU1ACordWEq5kQ57C1v7/8xacA4HhB8J3pCo1B85Ve7ZdTHyTJAy3oKwG4Up2YPMwMQgbuKZ/2039qSKFM/2BrbrzU3F/36xgBGuReVA1v0r3KKLjvt5NVSsYw54UGa1c8M1fGFBxyK2pPjrioc47fMWqgkv4vey923RUlwMezDyL/O6n5AN6vFfrM/4ZnQxSSOD28N0JdAl/P1oIBmASHuwuVQKkMv5sbb84ZYVWp1UUmDaZfkGOsBy3LW2l8cubG30L5ZTO6vyys0ujUR8nJ3XcBwg5XOO7CrRybg7chihUhuixl44ZCjdElvSYtBK/4in+GNOqRyuLio9eAuXUn+Af+KUUb7/KFCTXAMEDC98m1GazVWb8xSwMXOUjcZ4p/y3AAf2Hg7AaHhdcY6V4p4Tq+FLNNTZisyYzIvxGuiwAQJtD5p4lYT870AdFLf9v+9/6AXvkZ5o0aPg+ErUH03WGfuMsluuN5FnNfHVumWCQjn/U4sRAf4P5xWwHeNLV5grh8xcgVinddQX9Xoickknj5LAw1D4rlFFPZRAs5maCXcx/k26BG/c+60rijTmpF0mtPbgK2cv14MNkOBXglqvI/wuhGolMLA=
