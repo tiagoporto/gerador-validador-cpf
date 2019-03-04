@@ -1,6 +1,6 @@
 {
   "files": {
-    "included": ["src/js/CPF.ts"]
+    "included": ["dist/CPF.es.js"]
   },
-  "excluded": ["src/js/demo.js", "src/js/settings/**/*.js"]
+  "excluded": ["src/**/*.js"]
 }
