@@ -1,8 +1,11 @@
 language: node_js
 node_js:
-  - node
+- node
 before_install:
-  - gem install awesome_bot
+- gem install awesome_bot
 script:
-  - awesome_bot *.md --allow-redirect --white-list travis-ci,packagephobia.now
-  - npm run ci
+- awesome_bot *.md --allow-redirect --white-list travis-ci,packagephobia.now
+- npm run ci
+env:
+  global:
+    secure: n6Hvnz5mzvfxVAmeZPQHLIJ6kF/sHwV0AxvqelQQHsVKPJnWTGtlTeHKY336a3/3f+7jBFtwUVHbCIr9ImIU06mcXO38QLSbxej/DN0ezURNBSN7NYI3CG8DJ5vS3t+9icDugo1+vWrboWe5yPQb6nreQzpAu6nyYpxX6ExCKbu5A7NJuwjf6Zel9QAObhZyzhWiDzlZ6N6RsLvVMWMnQwKyPpY6CMDq8CWbLmKagPOWa61i4irCcezo5Ervgxo1MvEZ/1VN2Bw7E85Jz7GM0v5HBn9mjsskI05wnw231683icyD0AH4zZaVB2p3JhcNxyPrIfYiSld0ryPxOISejT+ftn/LWpDYgBSDs6Py1v+38M3UDMeGX6mmYbIA0l6O9I+jF/1WUCpjrSOSpm7BU1ric8Om8cHOrzqv0Rixeafay+I1hiqKf64hoFpHcKUV6EAjiZeu3qRmBL8BR31wETfZVyT45mmHQjv3xtr+5WX20cPMMCjhQOMQNHYoYr7XvEU5mJrEv1M1x4QEGyFzggoo6I+SLFF/GBjkabAp6ImE871y4s2zoxOFxjmMN0FsbFOkffmPCzHdPLCYhaaxki3bClcaoPty+XchaPDhoW+/WmQfSoG5n7MfXWBO1EmlUrZbIiXK0MRvYASbwRz9f4TrF4TaF/nlwDSVWTSq/dk=
