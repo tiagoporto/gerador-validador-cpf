@@ -33,7 +33,7 @@ A ferramenta pode ser acessada em [tiagoporto.github.io/gerador-validador-cpf](h
 ## Instalação
 
 ```sh
-npm install gerador-validador-cpf --save
+npm install gerador-validador-cpf@beta --save
 ```
 
 ### Gerando CPF
