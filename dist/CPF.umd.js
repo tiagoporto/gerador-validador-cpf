@@ -1,5 +1,5 @@
 /*!
-*   Gerador e Validador de CPF v4.0.0
+*   Gerador e Validador de CPF v4.0.0-beta.0
 *   http://tiagoporto.github.io/gerador-validador-cpf
 *   Copyright (c) 2014-2019 Tiago Porto (http://tiagoporto.com)
 *   Released under the MIT license
@@ -10,6 +10,8 @@
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
   (global = global || self, factory(global.CPF = {}));
 }(this, function (exports) { 'use strict';
+
+  /* eslint no-console: ["error", { allow: ["error", "warn"] }] */
 
   (function (formatOptions) {
     formatOptions["digits"] = "digits";
@@ -53,17 +55,17 @@
     }
 
     if (value.length > 11) {
-      return 'The value contains error. Has more than 11 digits.';
+      return console.error('The value contains error. Has more than 11 digits.');
     } else if (value.length < 11) {
-      return 'The value contains error. Has fewer than 11 digits.';
+      return console.error('The value contains error. Has fewer than 11 digits.');
     } else {
       return value.slice(0, 3) + digitsSeparator + value.slice(3, 6) + digitsSeparator + value.slice(6, 9) + checkersSeparator + value.slice(9, 11);
     }
   };
   /**
-   * generate a valide CPF number
-   * @param  {string} formatOption   Formatting option
-   * @return {string}                Valid and formatted CPF
+   * generate a valid CPF number
+   * @param  {string} [formatOption]   Formatting option
+   * @return {string}                  Valid and formatted CPF
    */
 
 
@@ -79,21 +81,18 @@
     return formatCPF(generatedCPF, formatOption);
   };
   /**
-   * validate function
-   * @param  {string|number} value  CPF for validation
-   * @return {boolean}              True = valid || False = invalid
+   * validate CPF numbers
+   * @param  {(string|number)} value  CPF for validation
+   * @return {boolean}                True = valid || False = invalid
    */
 
   var validate = function validate(value) {
-    if (!value) {
-      return;
+    if (typeof value !== 'string' && typeof value !== 'number') {
+      console.warn('Unsupported value');
+      return false;
     }
 
-    if (typeof value === 'number') {
-      value = String(value);
-    }
-
-    var cleanCPF = value.replace(/\.|-|\s/g, '');
+    var cleanCPF = String(value).replace(/\.|-|\s/g, '');
     var firstNineDigits = cleanCPF.substring(0, 9);
     var checker = cleanCPF.substring(9, 11);
 
@@ -110,19 +109,14 @@
 
     var checker1 = calcFirstChecker(Number(firstNineDigits));
     var checker2 = calcSecondChecker(Number("" + firstNineDigits + checker1));
-
-    if (checker.toString() === checker1.toString() + checker2.toString()) {
-      return true;
-    } else {
-      return false;
-    }
+    return checker.toString() === checker1.toString() + checker2.toString();
   };
   /**
-   * format function
-   * @param  {string|number} value  The value for formatting
-   * @param  {string} formatOption  Formatting option
+   * format CPF numbers
+   * @param  {(string|number)} value  Formatting value
+   * @param  {string} [formatOption]  Formatting option
    *
-   * @return {string}               Formatted CPF || error message
+   * @return {string}                 Formatted CPF || error message
    */
 
   var format = function format(value, formatOption) {
@@ -130,7 +124,7 @@
       return;
     }
 
-    var getCPF = value.replace(/[^\d]/g, '');
+    var getCPF = String(value).replace(/[^\d]/g, '');
     return formatCPF(getCPF, formatOption);
   };
 
