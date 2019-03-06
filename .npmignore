@@ -11,6 +11,7 @@ rollup.config.js
 stryker.conf.js
 tsconfig.json
 yarn.lock
+webpack.config.js
 
 .github/
 .stryker-tmp/
