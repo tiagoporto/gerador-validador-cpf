@@ -59,7 +59,6 @@ validateCPF("123.456.789-00");
 
 ### Formatando CPF
 
-**Obs.** não se preocupe com os caracteres `.`, `-` e `espaço`, eles são tratados para validação.
 
 ```javascript
 import { format as formatCPF } from "gerador-validador-cpf";
@@ -68,6 +67,8 @@ formatCPF("123.456.789-00", [formatOption]);
 ```
 
 Veja as [opções de formatação](#opções-de-formatação)
+
+**Obs.** não se preocupe com os caracteres `.`, `-` e `espaço`, eles são tratados para validação.
 
 #### Opções de formatação
 
