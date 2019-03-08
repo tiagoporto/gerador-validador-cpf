@@ -5,17 +5,9 @@ node_js:
 before_install:
   - gem install awesome_bot
   
-before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
-
 script:
   - awesome_bot *.md --allow-redirect --white-list travis-ci,packagephobia.now
   - npm run ci
-
-after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 env:
   global:
