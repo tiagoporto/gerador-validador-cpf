@@ -17,27 +17,30 @@
 [![Inline docs](http://inch-ci.org/github/tiagoporto/gerador-validador-cpf.svg?branch=master&style=flat-square)](http://inch-ci.org/github/tiagoporto/gerador-validador-cpf)
 [![devDependencies Status](https://img.shields.io/david/dev/tiagoporto/gerador-validador-cpf.svg?style=flat-square)](https://david-dm.org/tiagoporto/gerador-validador-cpf?type=dev)
 
-> Biblioteca JS open-source para gerar, validar e formatar CPF.
+> JS open-source lib to generate, validate and formate CPF.
 
-A ferramenta pode ser acessada em [tiagoporto.github.io/gerador-validador-cpf](http://tiagoporto.github.io/gerador-validador-cpf).
+The tool can be accessed on [tiagoporto.github.io/gerador-validador-cpf](http://tiagoporto.github.io/gerador-validador-cpf).
 
-## Índice
+*Read this in other languages: English, [Português(Brasil)](README.md)*
 
-- [Instalação](#instalacao)
-  - [Gerando CPF](#gerando-cpf)
-  - [Validando CPF](#validando-cpf)
-  - [Formatando CPF](#formatando-cpf)
-- [Contribuição](#contribuição)
-- [Doações](#doações)
-- [Licença](#licença)
 
-## Instalação
+## Topics
+
+- [Installation](#installation)
+  - [Generate CPF](#generate-cpf)
+  - [Validate CPF](#validate-cpf)
+  - [Formate CPF](#formate-cpf)
+- [Contribute](#contribute)
+- [Donation](#donation)
+- [License](#license)
+
+## Installation
 
 ```sh
 npm install gerador-validador-cpf@beta --save
 ```
 
-### Gerando CPF
+### Generate CPF
 
 ```javascript
 import { generate as generateCPF } from "gerador-validador-cpf";
@@ -47,7 +50,7 @@ generateCPF([formatOption]);
 
 Veja as [opções de formatação](#opções-de-formatação)
 
-### Validando CPF
+### Validate CPF
 
 ```javascript
 import { validate as validateCPF } from "gerador-validador-cpf";
@@ -57,8 +60,7 @@ validateCPF("123.456.789-00");
 
 **Obs.** não se preocupe com os caracteres `.`, `-` e `espaço`, eles são tratados para validação.
 
-### Formatando CPF
-
+### Formate CPF
 
 ```javascript
 import { format as formatCPF } from "gerador-validador-cpf";
@@ -70,9 +72,9 @@ Veja as [opções de formatação](#opções-de-formatação)
 
 **Obs.** não se preocupe com os caracteres `.`, `-` e `espaço`, eles são tratados para validação.
 
-#### Opções de formatação
+#### Format options
 
-##### Padrão
+##### Default
 
 ```javascript
 import { format as formatCPF } from "gerador-validador-cpf";
@@ -80,9 +82,9 @@ import { format as formatCPF } from "gerador-validador-cpf";
 formatCPF("12345678901");
 ```
 
-Gera um CPF no formato xxx.xxx.xxx-xx
+Generates a CPF in the format xxx.xxx.xxx-xx
 
-##### Dígitos
+##### Digits
 
 ```javascript
 import { format as formatCPF } from "gerador-validador-cpf";
@@ -90,9 +92,9 @@ import { format as formatCPF } from "gerador-validador-cpf";
 formatCPF("123.456.789-01", "digits");
 ```
 
-Gera um CPF no formato xxxxxxxxxxx
+Generates a CPF in the format xxxxxxxxxxx
 
-##### Verificador
+##### Checker
 
 ```javascript
 import { format as formatCPF } from "gerador-validador-cpf";
@@ -100,19 +102,19 @@ import { format as formatCPF } from "gerador-validador-cpf";
 formatCPF("12345678901", "checker");
 ```
 
-Gera um CPF no formato xxxxxxxxx-xx
+Generates CPF in the format xxxxxxxxx-xx
 
-## Contribuição
+## Contribute
 
 [Veja como contribuir](https://github.com/tiagoporto/gerador-validador-cpf/blob/master/CONTRIBUTING.md).
 
-## Doações
+## Donation
 
 Este projeto é desenvolvido no meu tempo livre, e qualquer doação é bem vinda.
 
 [![Donate](https://img.shields.io/badge/donate-PayPal-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YTDUQ8RZ2G4Q8&lc=BR&item_name=tiagoporto&item_number=geradorcpf&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
 ![Donate](https://img.shields.io/badge/bitcoin-3QYymprPXg8Ki5go7Thm8oQjZHD5rFuPP4-yellow.svg?logo=bitcoin)
 
-## Licença
+## License
 
-Gerador e validador de CPF está sobre os termos da [licença MIT](https://github.com/tiagoporto/gerador-validador-cpf/blob/master/LICENSE).
+Gerador e validador de CPF is released under the terms of the [MIT license](https://github.com/tiagoporto/gerador-validador-cpf/blob/master/LICENSE).
