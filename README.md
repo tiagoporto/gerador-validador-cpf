@@ -48,7 +48,7 @@ import { generate as generateCPF } from "gerador-validador-cpf";
 generateCPF([formatOption]);
 ```
 
-Veja as [opções de formatação](#opções-de-formatação)
+Check [format options](#format-options)
 
 ### Validate CPF
 
@@ -68,7 +68,7 @@ import { format as formatCPF } from "gerador-validador-cpf";
 formatCPF("123.456.789-00", [formatOption]);
 ```
 
-Veja as [opções de formatação](#opções-de-formatação)
+Check [format options](#format-options)
 
 **Obs.** não se preocupe com os caracteres `.`, `-` e `espaço`, eles são tratados para validação.
 
@@ -106,11 +106,11 @@ Generates CPF in the format xxxxxxxxx-xx
 
 ## Contribute
 
-[Veja como contribuir](https://github.com/tiagoporto/gerador-validador-cpf/blob/master/CONTRIBUTING.md).
+[How to contribute](https://github.com/tiagoporto/gerador-validador-cpf/blob/master/CONTRIBUTING.md).
 
 ## Donation
 
-Este projeto é desenvolvido no meu tempo livre, e qualquer doação é bem vinda.
+This project is developed in my free time, donations are welcome.
 
 [![Donate](https://img.shields.io/badge/donate-PayPal-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YTDUQ8RZ2G4Q8&lc=BR&item_name=tiagoporto&item_number=geradorcpf&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
 ![Donate](https://img.shields.io/badge/bitcoin-3QYymprPXg8Ki5go7Thm8oQjZHD5rFuPP4-yellow.svg?logo=bitcoin)
