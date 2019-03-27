@@ -58,7 +58,7 @@ import { validate as validateCPF } from "gerador-validador-cpf";
 validateCPF("123.456.789-00");
 ```
 
-**Obs.** não se preocupe com os caracteres `.`, `-` e `espaço`, eles são tratados para validação.
+**Note:** characters like `.`, `-` and `space` are allowed.
 
 ### Formate CPF
 
@@ -70,7 +70,7 @@ formatCPF("123.456.789-00", [formatOption]);
 
 Check [format options](#format-options)
 
-**Obs.** não se preocupe com os caracteres `.`, `-` e `espaço`, eles são tratados para validação.
+**Note:** characters like `.`, `-` and `space` are allowed.
 
 #### Format options
 
