@@ -22,6 +22,10 @@
     "type": "git",
     "url": "https://github.com/tiagoporto/gerador-validador-cpf.git"
   },
+  "main": "./dist/CPF.umd.js",
+  "module": "./dist/CPF.es.js",
+  "typings": "./dist/CPF.d.ts",
+  "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --mode=development",
     "lint": "eslint --ext .ts,.js ./src",
@@ -41,10 +45,6 @@
     "postpublish": "npm run tag && git push --tags",
     "tag": "git tag v$npm_package_version"
   },
-  "main": "./dist/CPF.umd.js",
-  "module": "./dist/CPF.es.js",
-  "typings": "./dist/CPF",
-  "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
