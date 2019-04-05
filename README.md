@@ -114,7 +114,6 @@ This project is developed in my free time, donations are welcome.
 
 [![Donate](https://img.shields.io/badge/donate-PayPal-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YTDUQ8RZ2G4Q8&lc=BR&item_name=tiagoporto&item_number=geradorcpf&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
 ![Donate](https://img.shields.io/badge/bitcoin-3QYymprPXg8Ki5go7Thm8oQjZHD5rFuPP4-yellow.svg?logo=bitcoin)
-[]()
 
 ## License
 
