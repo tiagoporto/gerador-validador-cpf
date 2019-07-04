@@ -1,4 +1,4 @@
-# Gerador e Validador de CPF ![Open Source Love](https://github.com/ellerbrock/open-source-badges/blob/master/badges/open-source-v3/open-source.svg)
+# Gerador e Validador de CPF ![Open Source Love](https://raw.githubusercontent.com/ellerbrock/open-source-badges/master/badges/open-source-v3/open-source.svg?sanitize=true)
 
 <p align="right">
   <code>LIKED ? Leave a <a href="https://github.com/tiagoporto/gerador-validador-cpf/stargazers">⭐</a> : <a href="https://github.com/tiagoporto/gerador-validador-cpf/issues">😞</a></code>
@@ -21,8 +21,7 @@
 
 The tool can be accessed on [tiagoporto.github.io/gerador-validador-cpf](http://tiagoporto.github.io/gerador-validador-cpf).
 
-*Read this in other languages: English, [Português(Brasil)](README.md)*
-
+_Read this in other languages: English, [Português(Brasil)](README.md)_
 
 ## Topics
 
@@ -43,9 +42,9 @@ npm install gerador-validador-cpf@beta --save
 ### Generate CPF
 
 ```javascript
-import { generate as generateCPF } from "gerador-validador-cpf";
+import { generate as generateCPF } from 'gerador-validador-cpf'
 
-generateCPF([formatOption]);
+generateCPF([formatOption])
 ```
 
 Check [format options](#format-options)
@@ -53,9 +52,9 @@ Check [format options](#format-options)
 ### Validate CPF
 
 ```javascript
-import { validate as validateCPF } from "gerador-validador-cpf";
+import { validate as validateCPF } from 'gerador-validador-cpf'
 
-validateCPF("123.456.789-00");
+validateCPF('123.456.789-00')
 ```
 
 **Note:** characters like `.`, `-` and `space` are allowed.
@@ -63,9 +62,9 @@ validateCPF("123.456.789-00");
 ### Formate CPF
 
 ```javascript
-import { format as formatCPF } from "gerador-validador-cpf";
+import { format as formatCPF } from 'gerador-validador-cpf'
 
-formatCPF("123.456.789-00", [formatOption]);
+formatCPF('123.456.789-00', [formatOption])
 ```
 
 Check [format options](#format-options)
@@ -77,9 +76,9 @@ Check [format options](#format-options)
 ##### Default
 
 ```javascript
-import { format as formatCPF } from "gerador-validador-cpf";
+import { format as formatCPF } from 'gerador-validador-cpf'
 
-formatCPF("12345678901");
+formatCPF('12345678901')
 ```
 
 Generates a CPF in the format xxx.xxx.xxx-xx
@@ -87,9 +86,9 @@ Generates a CPF in the format xxx.xxx.xxx-xx
 ##### Digits
 
 ```javascript
-import { format as formatCPF } from "gerador-validador-cpf";
+import { format as formatCPF } from 'gerador-validador-cpf'
 
-formatCPF("123.456.789-01", "digits");
+formatCPF('123.456.789-01', 'digits')
 ```
 
 Generates a CPF in the format xxxxxxxxxxx
@@ -97,9 +96,9 @@ Generates a CPF in the format xxxxxxxxxxx
 ##### Checker
 
 ```javascript
-import { format as formatCPF } from "gerador-validador-cpf";
+import { format as formatCPF } from 'gerador-validador-cpf'
 
-formatCPF("12345678901", "checker");
+formatCPF('12345678901', 'checker')
 ```
 
 Generates CPF in the format xxxxxxxxx-xx

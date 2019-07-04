@@ -1,5 +1,5 @@
 /*!
-*   Gerador e Validador de CPF v4.0.0-beta.0
+*   Gerador e Validador de CPF v4.0.0-beta.1
 *   http://tiagoporto.github.io/gerador-validador-cpf
 *   Copyright (c) 2014-2019 Tiago Porto (http://tiagoporto.com)
 *   Released under the MIT license
@@ -76,8 +76,8 @@
       firstNineDigits += String(Math.floor(Math.random() * 9));
     }
 
-    var checker1 = calcFirstChecker(Number(firstNineDigits));
-    var generatedCPF = firstNineDigits + checker1 + calcSecondChecker(Number(firstNineDigits + checker1));
+    var checker1 = calcFirstChecker(firstNineDigits);
+    var generatedCPF = firstNineDigits + checker1 + calcSecondChecker(firstNineDigits + checker1);
     return formatCPF(generatedCPF, formatOption);
   };
   /**
@@ -107,8 +107,8 @@
       }
     }
 
-    var checker1 = calcFirstChecker(Number(firstNineDigits));
-    var checker2 = calcSecondChecker(Number("" + firstNineDigits + checker1));
+    var checker1 = calcFirstChecker(firstNineDigits);
+    var checker2 = calcSecondChecker("" + firstNineDigits + checker1);
     return checker.toString() === checker1.toString() + checker2.toString();
   };
   /**
@@ -128,9 +128,9 @@
     return formatCPF(getCPF, formatOption);
   };
 
+  exports.format = format;
   exports.generate = generate;
   exports.validate = validate;
-  exports.format = format;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 
