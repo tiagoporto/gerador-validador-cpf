@@ -4,7 +4,7 @@ export enum formatOptions {
   checker = 'checker'
 }
 
-const calcFirstChecker = (firstNineDigits: number): number => {
+const calcFirstChecker = (firstNineDigits: string): number => {
   let sum: number | null = null
 
   for (let j = 0; j < 9; ++j) {
@@ -17,7 +17,7 @@ const calcFirstChecker = (firstNineDigits: number): number => {
   return checker1
 }
 
-const calcSecondChecker = (cpfWithChecker1: number): number => {
+const calcSecondChecker = (cpfWithChecker1: string): number => {
   let sum: null | number = null
 
   for (let k = 0; k < 10; ++k) {
@@ -72,11 +72,9 @@ export const generate = (formatOption?: formatOptions): string => {
     firstNineDigits += String(Math.floor(Math.random() * 9))
   }
 
-  const checker1 = calcFirstChecker(Number(firstNineDigits))
+  const checker1 = calcFirstChecker(firstNineDigits)
   const generatedCPF =
-    firstNineDigits +
-    checker1 +
-    calcSecondChecker(Number(firstNineDigits + checker1))
+    firstNineDigits + checker1 + calcSecondChecker(firstNineDigits + checker1)
 
   return formatCPF(generatedCPF, formatOption) as string
 }
@@ -107,8 +105,8 @@ export const validate = (value: string | number): boolean => {
     }
   }
 
-  const checker1 = calcFirstChecker(Number(firstNineDigits))
-  const checker2 = calcSecondChecker(Number(`${firstNineDigits}${checker1}`))
+  const checker1 = calcFirstChecker(firstNineDigits)
+  const checker2 = calcSecondChecker(`${firstNineDigits}${checker1}`)
 
   return checker.toString() === checker1.toString() + checker2.toString()
 }

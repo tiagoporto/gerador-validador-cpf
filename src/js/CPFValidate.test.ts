@@ -32,6 +32,10 @@ describe('Validate function', () => {
   })
 
   describe('Type String', () => {
+    it('Should return true to a valid CPF starting with 0', () => {
+      expect(CPF.validate('06325112733')).toBeTruthy()
+    })
+
     it('Should return true to a valid CPF just with digits', () => {
       expect(CPF.validate('13768663663')).toBeTruthy()
     })
