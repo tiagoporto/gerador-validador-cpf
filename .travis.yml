@@ -1,13 +1,13 @@
 language: node_js
 node_js:
   - 'lts/*'
-  
+
 before_install:
   - gem install awesome_bot
-  
+
 script:
   - awesome_bot *.md --allow-redirect --white-list travis-ci,packagephobia.now
-  - npm run ci
+  - npm run checks:reports
 
 env:
   global:
