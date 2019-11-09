@@ -91,13 +91,11 @@ describe('Validate function', () => {
 
   describe('No values', () => {
     it('Should return undefined to true', () => {
-      // @ts-ignore
       expect(CPF.validate(true)).toBeFalsy()
       expect(spy).toHaveBeenCalledWith(WARN_MESSAGE)
     })
 
     it('Should return undefined to false', () => {
-      // @ts-ignore
       expect(CPF.validate(false)).toBeFalsy()
       expect(spy).toHaveBeenCalledWith(WARN_MESSAGE)
     })
@@ -117,13 +115,11 @@ describe('Validate function', () => {
     })
 
     it('Should return undefined to no parameters', () => {
-      // @ts-ignore
       expect(CPF.validate()).toBeFalsy()
       expect(spy).toHaveBeenCalledWith(WARN_MESSAGE)
     })
 
     it('Should return undefined to NaN', () => {
-      // @ts-ignore
       expect(CPF.validate(NaN)).toBeFalsy()
     })
   })
