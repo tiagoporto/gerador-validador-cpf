@@ -108,4 +108,5 @@ typings/
 
 
 
-site
+site/
+dist/
