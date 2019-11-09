@@ -1,6 +1,0 @@
-{
-  "files": {
-    "included": ["dist/CPF.es.js"]
-  },
-  "excluded": ["src/**/*.js"]
-}
