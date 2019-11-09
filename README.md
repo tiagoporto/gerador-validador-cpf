@@ -35,7 +35,7 @@ _Read this in other languages: English, [Português(Brasil)](README.md)_
 ## Installation
 
 ```sh
-npm install gerador-validador-cpf@beta --save
+npm install gerador-validador-cpf --save
 ```
 
 ### Generate CPF
