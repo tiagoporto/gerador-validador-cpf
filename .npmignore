@@ -1,11 +1,10 @@
 .babelrc
 .editorconfig
+.prettierrc
 .csslintrc
 .eslintrc
 .gitattributes
 .travis.yml
-.yo-rc.json
-inch.json
 jest.config.js
 rollup.config.js
 stryker.conf.js
@@ -22,3 +21,4 @@ spec/
 public/
 reports/
 src/
+site/
