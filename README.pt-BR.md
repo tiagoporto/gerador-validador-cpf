@@ -14,14 +14,13 @@
 [![Build Status](https://img.shields.io/travis/com/tiagoporto/gerador-validador-cpf/master.svg?label=tests&logo=travis&style=flat-square)](https://travis-ci.com/tiagoporto/gerador-validador-cpf)
 [![Coverage Status](https://img.shields.io/coveralls/tiagoporto/gerador-validador-cpf.svg?style=flat-square)](https://coveralls.io/github/tiagoporto/gerador-validador-cpf)
 [![Mutation testing cover](https://badge.stryker-mutator.io/github.com/tiagoporto/gerador-validador-cpf/master)](https://stryker-mutator.github.io)
-[![Inline docs](http://inch-ci.org/github/tiagoporto/gerador-validador-cpf.svg?branch=master&style=flat-square)](http://inch-ci.org/github/tiagoporto/gerador-validador-cpf)
 [![devDependencies Status](https://img.shields.io/david/dev/tiagoporto/gerador-validador-cpf.svg?style=flat-square)](https://david-dm.org/tiagoporto/gerador-validador-cpf?type=dev)
 
 > Biblioteca JS open-source para gerar, validar e formatar CPF.
 
 A ferramenta pode ser acessada em [tiagoporto.github.io/gerador-validador-cpf](http://tiagoporto.github.io/gerador-validador-cpf).
 
-*Leia em outros idiomas: [English](README.md), Português(Brasil)*
+_Leia em outros idiomas: [English](https://github.com/tiagoporto/gerador-validador-cpf), Português(Brasil)_
 
 ## Índice
 
@@ -36,53 +35,49 @@ A ferramenta pode ser acessada em [tiagoporto.github.io/gerador-validador-cpf](h
 ## Instalação
 
 ```sh
-npm install gerador-validador-cpf@beta --save
+npm install gerador-validador-cpf --save
 ```
-
 
 ### Gerando CPF
 
 ```javascript
-import { generate as generateCPF } from "gerador-validador-cpf";
+import { generate as generateCPF } from 'gerador-validador-cpf'
 
-generateCPF([formatOption]);
+generateCPF([formatOption])
 ```
 
 Veja as [opções de formatação](#opções-de-formatação)
-
 
 ### Validando CPF
 
 ```javascript
-import { validate as validateCPF } from "gerador-validador-cpf";
+import { validate as validateCPF } from 'gerador-validador-cpf'
 
-validateCPF("123.456.789-00");
+validateCPF('123.456.789-00')
 ```
 
 **Obs.** os caracteres `.`, `-` e `espaço`, são tratados na validação.
 
-
 ### Formatando CPF
 
 ```javascript
-import { format as formatCPF } from "gerador-validador-cpf";
+import { format as formatCPF } from 'gerador-validador-cpf'
 
-formatCPF("123.456.789-00", [formatOption]);
+formatCPF('123.456.789-00', [formatOption])
 ```
 
 Veja as [opções de formatação](#opções-de-formatação)
 
 **Obs.** os caracteres `.`, `-` e `espaço`, são tratados na validação.
-
 
 #### Opções de formatação
 
 ##### Padrão
 
 ```javascript
-import { format as formatCPF } from "gerador-validador-cpf";
+import { format as formatCPF } from 'gerador-validador-cpf'
 
-formatCPF("12345678901");
+formatCPF('12345678901')
 ```
 
 Gera um CPF no formato xxx.xxx.xxx-xx
@@ -90,9 +85,9 @@ Gera um CPF no formato xxx.xxx.xxx-xx
 ##### Dígitos
 
 ```javascript
-import { format as formatCPF } from "gerador-validador-cpf";
+import { format as formatCPF } from 'gerador-validador-cpf'
 
-formatCPF("123.456.789-01", "digits");
+formatCPF('123.456.789-01', 'digits')
 ```
 
 Gera um CPF no formato xxxxxxxxxxx
@@ -100,9 +95,9 @@ Gera um CPF no formato xxxxxxxxxxx
 ##### Verificador
 
 ```javascript
-import { format as formatCPF } from "gerador-validador-cpf";
+import { format as formatCPF } from 'gerador-validador-cpf'
 
-formatCPF("12345678901", "checker");
+formatCPF('12345678901', 'checker')
 ```
 
 Gera um CPF no formato xxxxxxxxx-xx

@@ -20,7 +20,7 @@
 
 The tool can be accessed on [tiagoporto.github.io/gerador-validador-cpf](http://tiagoporto.github.io/gerador-validador-cpf).
 
-_Read this in other languages: English, [Português(Brasil)](README.md)_
+_Read this in other languages: English, [Português(Brasil)](https://github.com/tiagoporto/gerador-validador-cpf/blob/master/README.pt-BR.md)_
 
 ## Topics
 
