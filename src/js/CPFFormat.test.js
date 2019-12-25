@@ -12,6 +12,12 @@ beforeEach(() => {
 })
 
 describe('Format function', () => {
+  describe('No value', () => {
+    it('return valid formatted CPF 137.686.636-63', () => {
+      expect(CPF.format() === undefined).toBeTruthy()
+    })
+  })
+
   describe('Type Number', () => {
     describe('Default Param', () => {
       it('return valid formatted CPF 137.686.636-63', () => {
@@ -19,8 +25,10 @@ describe('Format function', () => {
       })
     })
 
+    // FIXME: add test
     describe('Checker Param', () => undefined)
 
+    // FIXME: add test
     describe('Digits Param', () => undefined)
   })
 
