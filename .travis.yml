@@ -8,3 +8,4 @@ before_install:
 script:
   - awesome_bot *.md --allow-redirect --white-list travis-ci,packagephobia.now
   - npm run checks:reports
+  - npm run prepublishOnly

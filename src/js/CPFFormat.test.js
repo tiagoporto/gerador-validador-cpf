@@ -19,9 +19,9 @@ describe('Format function', () => {
       })
     })
 
-    describe('Checker Param', () => {})
+    describe('Checker Param', () => undefined)
 
-    describe('Digits Param', () => {})
+    describe('Digits Param', () => undefined)
   })
 
   describe('Type String', () => {
