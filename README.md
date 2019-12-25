@@ -8,13 +8,14 @@
 [![Downloads](https://img.shields.io/npm/dt/gerador-validador-cpf.svg?style=flat-square)](https://www.npmjs.com/package/gerador-validador-cpf)
 [![install size](https://packagephobia.now.sh/badge?p=gerador-validador-cpf)](https://packagephobia.now.sh/result?p=gerador-validador-cpf)
 [![bundle size](https://img.shields.io/bundlephobia/min/gerador-validador-cpf?style=flat-square&label=bundle%20size)](https://bundlephobia.com/result?p=gerador-validador-cpf)
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-yellow.svg?style=flat-square)](http://standardjs.com)
 ![npm type definitions](https://img.shields.io/npm/types/gerador-validador-cpf.svg?style=flat-square)
 [![License](https://img.shields.io/github/license/tiagoporto/gerador-validador-cpf.svg?style=flat-square)](https://raw.githubusercontent.com/tiagoporto/gerador-validador-cpf/master/LICENSE)
 
 [![Build Status](https://img.shields.io/travis/com/tiagoporto/gerador-validador-cpf/master.svg?label=tests&logo=travis&style=flat-square)](https://travis-ci.com/tiagoporto/gerador-validador-cpf)
 [![Coverage Status](https://img.shields.io/coveralls/tiagoporto/gerador-validador-cpf.svg?style=flat-square)](https://coveralls.io/github/tiagoporto/gerador-validador-cpf)
 [![Mutation testing cover](https://badge.stryker-mutator.io/github.com/tiagoporto/gerador-validador-cpf/master)](https://stryker-mutator.github.io)
+
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-yellow.svg?style=flat-square)](http://standardjs.com)
 [![devDependencies Status](https://img.shields.io/david/dev/tiagoporto/gerador-validador-cpf.svg?style=flat-square)](https://david-dm.org/tiagoporto/gerador-validador-cpf?type=dev)
 
 > JS open-source lib to generate, validate and formate CPF.
