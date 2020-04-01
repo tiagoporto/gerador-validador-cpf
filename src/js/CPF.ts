@@ -69,7 +69,7 @@ export const generate = (formatOption?: formatOptions): string => {
 
   // Generating the first CPF's 9 digits
   for (let i = 0; i < 9; ++i) {
-    firstNineDigits += String(Math.floor(Math.random() * 9))
+    firstNineDigits += String(Math.floor(Math.random() * 10))
   }
 
   const checker1 = calcFirstChecker(firstNineDigits)
