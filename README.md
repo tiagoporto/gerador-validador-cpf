@@ -29,7 +29,7 @@ _Read this in other languages: English, [Português(Brasil)](https://github.com/
 - [Installation](#installation)
   - [Generate CPF](#generate-cpf)
   - [Validate CPF](#validate-cpf)
-  - [Formate CPF](#formate-cpf)
+  - [Format CPF](#format-cpf)
 - [Contribute](#contribute)
 - [Donation](#donation)
 - [License](#license)
@@ -60,7 +60,7 @@ validateCPF('123.456.789-00')
 
 **Note:** characters like `.`, `-` and `space` are allowed.
 
-### Formate CPF
+### Format CPF
 
 ```javascript
 import { format as formatCPF } from 'gerador-validador-cpf'

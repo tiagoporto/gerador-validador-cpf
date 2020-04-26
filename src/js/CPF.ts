@@ -59,18 +59,32 @@ const formatCPF = (value: string, formatter?: formatOptions): string | void => {
   }
 }
 
+const allDigitsAreEqual = (digits: string) => {
+  for (let i = 1; i < digits.length; ++i) {
+    if (digits[i] !== digits[0]) {
+      return false
+    }
+  }
+
+  return true
+}
+
 /**
  * generate a valid CPF number
  * @param  {string} [formatOption]   Formatting option
  * @return {string}                  Valid and formatted CPF
  */
 export const generate = (formatOption?: formatOptions): string => {
-  let firstNineDigits = ''
+  let firstNineDigits: string
 
   // Generating the first CPF's 9 digits
-  for (let i = 0; i < 9; ++i) {
-    firstNineDigits += String(Math.floor(Math.random() * 9))
-  }
+  do {
+    firstNineDigits = ''
+
+    for (let i = 0; i < 9; ++i) {
+      firstNineDigits += String(Math.floor(Math.random() * 10))
+    }
+  } while (allDigitsAreEqual(firstNineDigits))
 
   const checker1 = calcFirstChecker(firstNineDigits)
   const generatedCPF =
@@ -99,10 +113,8 @@ export const validate = (value: string | number): boolean => {
   }
 
   // Checking if all digits are equal
-  for (let i = 0; i < 10; i++) {
-    if (`${firstNineDigits}${checker}` === Array(12).join(String(i))) {
-      return false
-    }
+  if (allDigitsAreEqual(`${firstNineDigits}${checker}`)) {
+    return false
   }
 
   const checker1 = calcFirstChecker(firstNineDigits)
