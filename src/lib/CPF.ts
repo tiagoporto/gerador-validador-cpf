@@ -1,8 +1,4 @@
-/* eslint no-console: ["error", { allow: ["error", "warn"] }] */
-export enum formatOptions {
-  digits = 'digits',
-  checker = 'checker'
-}
+export type formatOptions = 'digits' | 'checker' | 'default'
 
 const calcFirstChecker = (firstNineDigits: string): number => {
   let sum: number | null = null
@@ -59,7 +55,7 @@ const formatCPF = (value: string, formatter?: formatOptions): string | void => {
   }
 }
 
-const allDigitsAreEqual = (digits: string) => {
+const allDigitsAreEqual: boolean = (digits: string) => {
   for (let i = 1; i < digits.length; ++i) {
     if (digits[i] !== digits[0]) {
       return false

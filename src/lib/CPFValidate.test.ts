@@ -115,6 +115,7 @@ describe('Validate function', () => {
     })
 
     it('Should return undefined to no parameters', () => {
+      // @ts-expect-error
       expect(CPF.validate()).toBeFalsy()
       expect(spy).toHaveBeenCalledWith(WARN_MESSAGE)
     })

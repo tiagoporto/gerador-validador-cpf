@@ -4,7 +4,7 @@ const CPF = { format, formatOptions }
 const spy = jest.spyOn(console, 'error')
 const ERROR_MESSAGE = {
   fewer: 'The value contains error. Has fewer than 11 digits.',
-  more: 'The value contains error. Has more than 11 digits.'
+  more: 'The value contains error. Has more than 11 digits.',
 }
 
 beforeEach(() => {
@@ -14,6 +14,7 @@ beforeEach(() => {
 describe('Format function', () => {
   describe('No value', () => {
     it('return valid formatted CPF 137.686.636-63', () => {
+      // @ts-expect-error
       expect(CPF.format() === undefined).toBeTruthy()
     })
   })
