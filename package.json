@@ -27,10 +27,13 @@
   "typings": "./dist/CPF.d.ts",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --mode=development",
+    "start": "webpack-dev-server --hot --config webpack.config.dev.js",
     "lint": "eslint --ext .ts,.js ./src --max-warnings 0",
     "lint:fix": "npm run lint -- --fix",
+    "checks": "npm run lint && npm run check-types",
     "check-types": "tsc --noEmit",
+    "check-formatting": "prettier --check './src/**/*.{js,jsx,ts,tsx,html}'",
+    "formatting-write": "prettier --write './src/**/*.{js,jsx,ts,tsx,html}'",
     "test": "jest",
     "test:watch": "npm test -- --watch",
     "test:mutation": "stryker run --reporters html",
@@ -118,7 +121,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run lint && npm run check-types"
+      "pre-push": "npm run checks"
     }
   }
 }
