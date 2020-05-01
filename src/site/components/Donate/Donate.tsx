@@ -7,13 +7,12 @@ import CopyToClipboard from 'react-copy-to-clipboard'
 export const Donate: FC = () => {
   const [isCodeVisible, setIsCodeVisible] = useState(false)
 
-  const trackClick = ({
-    category,
-    type,
-  }: {
+  interface Track {
     category: string
     type: string
-  }) => (): void => {
+  }
+
+  const trackClick = ({ category, type }: Track) => (): void => {
     if (process.env.NODE_ENV === 'production') {
       import('react-ga').then((ReactGA) => {
         ReactGA.ga('send', 'event', category, 'click', type)
@@ -25,8 +24,8 @@ export const Donate: FC = () => {
     setIsCodeVisible(!isCodeVisible)
   }
 
-  const handleClick = (clickType) => (): void => {
-    trackClick(clickType)()
+  const handleClick = (trackInfo: Track) => (): void => {
+    trackClick(trackInfo)()
     toggleCodeVisibility()
   }
 
