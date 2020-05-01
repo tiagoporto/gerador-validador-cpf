@@ -13,7 +13,7 @@ const banner = `/*!
 
 export default [
   {
-    input: 'src/js/CPF.ts',
+    input: 'src/lib/CPF.ts',
     output: [
       {
         file: 'dist/CPF.umd.js',
