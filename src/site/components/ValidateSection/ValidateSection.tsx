@@ -1,7 +1,8 @@
-import './ValidateSection.styl'
+import style from './ValidateSection.module.styl'
 import React, { FC, useState, useEffect, ChangeEvent } from 'react'
 import { validate as validadeCPF } from '../../../lib/CPF'
-import InputMask from 'react-input-mask'
+// @ts-expect-error
+import { IMaskInput } from 'react-imask'
 
 export const ValidateSection: FC = () => {
   const [validation, setValidation] = useState({
@@ -31,30 +32,28 @@ export const ValidateSection: FC = () => {
   }, [validation.cpf])
 
   return (
-    <section className="validate-section">
+    <section>
       <h2>Validar</h2>
 
-      <form className="validate-section__form">
+      <form>
         <label
-          className="validate-section__label"
+          className={style.validateSectionLabel}
           htmlFor="validate-section__input--to-format"
         >
           Insira o CPF para validação
         </label>
 
-        <InputMask
+        <IMaskInput
           value={validation.cpf}
           onChange={handleChangeCPF}
           type="text"
-          mask={'999.999.999-99'}
+          mask={'000.000.000-00'}
           required
         />
 
         <input
-          className={`validate-section__input--message ${
-            validation.isValid
-              ? 'validate-section__input--valid'
-              : 'validate-section__input--invalid'
+          className={`${style.input} ${
+            validation.isValid ? style.messageValid : style.messageInvalid
           }`}
           aria-label="CPF para validação"
           type="text"

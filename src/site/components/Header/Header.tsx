@@ -1,4 +1,4 @@
-import styles from './panel.module.styl'
+import styles from './Header.module.styl'
 import React, { FC } from 'react'
 import { Donate } from '../Donate'
 import GithubCorner from 'react-github-corner'

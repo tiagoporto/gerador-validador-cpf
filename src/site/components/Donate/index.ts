@@ -1,3 +1,3 @@
-import './donation.styl'
+import './Donation.styl'
 
 export { Donate } from './Donate'

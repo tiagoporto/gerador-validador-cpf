@@ -1,15 +1,12 @@
 export type formatOptions = 'digits' | 'checker' | 'default'
 
 const calcFirstChecker = (firstNineDigits: string): number => {
-  // @ts-expect-error
-  let sum: number | undefined = null
+  let sum = 0
 
   for (let j = 0; j < 9; ++j) {
-    // @ts-expect-error
-    sum += Number(firstNineDigits.toString().charAt(j)) * (10 - j)
+    sum += Number(firstNineDigits.charAt(j)) * (10 - j)
   }
 
-  // @ts-expect-error
   const lastSumChecker1 = sum % 11
   const checker1 = lastSumChecker1 < 2 ? 0 : 11 - lastSumChecker1
 
@@ -17,14 +14,12 @@ const calcFirstChecker = (firstNineDigits: string): number => {
 }
 
 const calcSecondChecker = (cpfWithChecker1: string): number => {
-  let sum: null | number = null
+  let sum = 0
 
   for (let k = 0; k < 10; ++k) {
-    // @ts-expect-error
-    sum += Number(cpfWithChecker1.toString().charAt(k)) * (11 - k)
+    sum += Number(cpfWithChecker1.charAt(k)) * (11 - k)
   }
 
-  // @ts-expect-error
   const lastSumChecker2 = sum % 11
   const checker2 = lastSumChecker2 < 2 ? 0 : 11 - lastSumChecker2
 
@@ -131,28 +126,4 @@ export const validate = (value: string | number): boolean => {
   const checker2 = calcSecondChecker(`${firstNineDigits}${checker1}`)
 
   return checker.toString() === checker1.toString() + checker2.toString()
-}
-
-/**
- *
- * [Gerador e Validador de CPF](https://tiagoporto.github.io/gerador-validador-cpf)
- * @author Tiago Porto
- *
- * @function Format
- * @param  {(string|number)} value - CPF number
- * @param  {string} [formatOption="default"] - 'digits' | 'checker' | 'default'
- *
- * @returns {string|void}            Formatted CPF
- */
-export const format = (
-  value: string | number,
-  formatOption?: formatOptions
-): string | void => {
-  if (!value) {
-    return
-  }
-
-  const getCPF = String(value).replace(/[^\d]/g, '')
-
-  return formatCPF(getCPF, formatOption)
 }
