@@ -2,40 +2,56 @@ language: node_js
 node_js:
   - 'lts/*'
 
+stages:
+  - checks
+  - name: tests
+    if: NOT branch = master
+  - name: tests and reports
+    if: branch = master
+  - name: deploy website
+    if: branch = master
+
 jobs:
   include:
-    - name: Check Doc links
-      script:
+    - stage: checks
+    - script:
         - gem install awesome_bot
         - awesome_bot *.md --allow-redirect --white-list travis-ci,packagephobia.now
+      name: Check Doc links
 
-    - name: Check Formatting
-      script: npm run check-formatting
+    - script: npm run check-typing
+      name: Check Typing
 
-    - name: Check Typing
-      script: npm run check-typing
+    - script: npm run check-formatting
+      name: Check Formatting
 
-    - name: Lint
-      script: npm run lint
+    - script: npm run lint
+      name: Lint
 
-    - name: Run test and generate coverage
-      if: (branch = master)
-      script: npm run test:coverage
+    - script: npm run prepublishOnly
+      name: Check Prepublish
 
-    - name: Publish Coverage
-      if: (branch = master)
-      script: npm run coveralls
+    - stage: tests and reports
+    - script: npm run test:coverage & npm run coveralls
+      name: Run Unit Tests, generate coverage and publish to coveralls
 
-    - name: Run test
-      if: (NOT branch = master)
-      script: npm run test
+    - script: npm run test:mutation-report"
+      name: Run Mutation Tests and publish reports
 
-    - name: Run and publish Mutation tests
-      if: (branch = master)
-      script: npm run test:mutation-report"
+    - stage: tests
+    - script: npm run test
+      name: Run Unit Tests
 
-    - name: Check Prepublish
-      script: npm run prepublishOnly
+    - script: npm run test:mutation
+      name: Run Mutation Tests
 
-after_success:
-  - echo "Some console message"
+    - stage: deploy website
+    - script: npm run build:site
+      name: Compile website
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN
+        keep_history: true
+        on:
+          branch: master
