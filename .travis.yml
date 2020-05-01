@@ -5,25 +5,35 @@ node_js:
 before_install:
   - gem install awesome_bot
 
-deploy:
-  - provider: script
-    script:
-      - awesome_bot *.md --allow-redirect --white-list travis-ci,packagephobia.now
-      - npm run lint
-      - npm run check-typing
-      - npm run coveralls
-      - npm run test:mutation-report"
-      - npm run prepublishOnly
-    on:
-      branch: master
+jobs:
+  include:
+    - name: Check Doc links
+      script: awesome_bot *.md --allow-redirect --white-list travis-ci,packagephobia.now
 
-  - provider: script
-    script:
-      - awesome_bot *.md --allow-redirect --white-list travis-ci,packagephobia.now
-      - npm run lint
-      - npm run check-typing
-      - npm run test
-      - npm run test:mutation-report"
-      - npm run prepublishOnly
-    on:
-      branch: NOT master
+    - name: Check Formatting
+      script: npm run check-formatting
+
+    - name: Check Typing
+      script: npm run check-typing
+
+    - name: Lint
+      script: npm run lint
+
+    - name: Run test and generate coverage
+      if: (branch = master)
+      script: npm run test:coverage
+
+    - name: Publish Coverage
+      if: (branch = master)
+      script: npm run coveralls
+
+    - name: Run test
+      if: (NOT branch = master)
+      script: npm run test
+
+    - name: Run and publish Mutation tests
+      if: (branch = master)
+      script: npm run test:mutation-report"
+
+    - name: Check Prepublish
+      script: npm run prepublishOnly

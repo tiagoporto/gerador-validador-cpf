@@ -39,7 +39,7 @@
     "test:mutation": "stryker run --reporters html",
     "test:mutation-report": "stryker run --reporters dashboard",
     "test:coverage": "npm test -- --coverage",
-    "coveralls": "npm run cover && cat ./coverage/lcov.info | coveralls",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
     "types": "tsc --emitDeclarationOnly",
     "build:site": "rm -rf site && webpack --mode=production",
     "deploy": "npm run build:site && gh-pages -d site",
