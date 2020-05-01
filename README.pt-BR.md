@@ -17,7 +17,7 @@
 [![Mutation testing cover](https://badge.stryker-mutator.io/github.com/tiagoporto/gerador-validador-cpf/master)](https://stryker-mutator.github.io)
 [![devDependencies Status](https://img.shields.io/david/dev/tiagoporto/gerador-validador-cpf.svg?style=flat-square)](https://david-dm.org/tiagoporto/gerador-validador-cpf?type=dev)
 
-> Biblioteca JS open-source para gerar, validar e formatar CPF.
+> Biblioteca JS open-source para gerar, validar CPF.
 
 A ferramenta pode ser acessada em [tiagoporto.github.io/gerador-validador-cpf](http://tiagoporto.github.io/gerador-validador-cpf).
 
@@ -28,7 +28,6 @@ _Leia em outros idiomas: [English](https://github.com/tiagoporto/gerador-validad
 - [Instalação](#instalacao)
   - [Gerando CPF](#gerando-cpf)
   - [Validando CPF](#validando-cpf)
-  - [Formatando CPF](#formatando-cpf)
 - [Contribuição](#contribuição)
 - [Doações](#doações)
 - [Licença](#licença)
@@ -56,18 +55,6 @@ import { validate as validateCPF } from 'gerador-validador-cpf'
 
 validateCPF('123.456.789-00')
 ```
-
-**Obs.** os caracteres `.`, `-` e `espaço`, são tratados na validação.
-
-### Formatando CPF
-
-```javascript
-import { format as formatCPF } from 'gerador-validador-cpf'
-
-formatCPF('123.456.789-00', [formatOption])
-```
-
-Veja as [opções de formatação](#opções-de-formatação)
 
 **Obs.** os caracteres `.`, `-` e `espaço`, são tratados na validação.
 

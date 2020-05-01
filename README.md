@@ -18,7 +18,7 @@
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-yellow.svg?style=flat-square)](http://standardjs.com)
 [![devDependencies Status](https://img.shields.io/david/dev/tiagoporto/gerador-validador-cpf.svg?style=flat-square)](https://david-dm.org/tiagoporto/gerador-validador-cpf?type=dev)
 
-> JS open-source lib to generate, validate and formate CPF.
+> JS open-source lib to generate, validate CPF.
 
 The tool can be accessed on [tiagoporto.github.io/gerador-validador-cpf](http://tiagoporto.github.io/gerador-validador-cpf).
 
@@ -29,7 +29,6 @@ _Read this in other languages: English, [Português(Brasil)](https://github.com/
 - [Installation](#installation)
   - [Generate CPF](#generate-cpf)
   - [Validate CPF](#validate-cpf)
-  - [Format CPF](#format-cpf)
 - [Contribute](#contribute)
 - [Donation](#donation)
 - [License](#license)
@@ -57,18 +56,6 @@ import { validate as validateCPF } from 'gerador-validador-cpf'
 
 validateCPF('123.456.789-00')
 ```
-
-**Note:** characters like `.`, `-` and `space` are allowed.
-
-### Format CPF
-
-```javascript
-import { format as formatCPF } from 'gerador-validador-cpf'
-
-formatCPF('123.456.789-00', [formatOption])
-```
-
-Check [format options](#format-options)
 
 **Note:** characters like `.`, `-` and `space` are allowed.
 
