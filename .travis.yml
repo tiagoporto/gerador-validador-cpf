@@ -36,3 +36,6 @@ jobs:
 
     - name: Check Prepublish
       script: npm run prepublishOnly
+
+after_success:
+  - echo "Some console message"
