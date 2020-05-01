@@ -1,6 +1,18 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const stylusLoaderConfig = {
+  loader: 'stylus-loader',
+  options: {
+    sourceMap: true,
+    import: [
+      path.resolve(__dirname, './src/site/styles/settings/_variables.styl'),
+      path.resolve(__dirname, './src/site/styles/helpers/index.styl')
+    ]
+  }
+}
+
+
 module.exports = {
   mode: 'development',
   entry: {
@@ -33,28 +45,12 @@ module.exports = {
             sourceMap: true,
             localsConvention: 'camelCaseOnly'
           }
-        }, {
-            loader: 'stylus-loader',
-            options: {
-              import: [
-                path.resolve(__dirname, './src/site/styles/_vertical-rhythm.styl'),
-                path.resolve(__dirname, './src/site/styles/settings/_variables.styl')
-              ],
-            },
-          },]
+        }, stylusLoaderConfig]
       },
       {
         test: /\.styl$/,
         exclude: /\.module\.styl$/,
-        loader: ['style-loader', 'css-loader', {
-          loader: 'stylus-loader',
-          options: {
-            import: [
-              path.resolve(__dirname, './src/site/styles/_vertical-rhythm.styl'),
-              path.resolve(__dirname, './src/site/styles/settings/_variables.styl')
-            ],
-          },
-        },]
+        loader: ['style-loader', 'css-loader', stylusLoaderConfig]
       },
       {
         test: /\.css$/,
@@ -80,13 +76,5 @@ module.exports = {
         lang: 'pt-BR'
       }
     })
-    // new HtmlWebpackPlugin({
-    //   filename: 'pt-br/index.html',
-    //   template: path.join(__dirname, 'src/index.hbs')
-    // }),
-    // new HtmlWebpackPlugin({
-    //   filename: 'en/index.html',
-    //   template: path.join(__dirname, 'src/index.hbs')
-    // })
   ]
 }
