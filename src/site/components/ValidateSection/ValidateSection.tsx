@@ -13,7 +13,6 @@ export const ValidateSection: FC = () => {
   })
 
   const { cpf, isValid, message, tempCpf } = validation
-  console.log('isValid ', isValid, cpf)
 
   const handleChangeCPF = (event: ChangeEvent<HTMLInputElement>): void => {
     setValidation({
@@ -28,7 +27,6 @@ export const ValidateSection: FC = () => {
 
   useEffect(() => {
     if (tempCpf.length === 14) {
-      console.log('tempCpf ', tempCpf)
       const isValid = validadeCPF(tempCpf)
       setValidation({
         ...validation,

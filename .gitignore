@@ -108,5 +108,5 @@ typings/
 
 
 
-site/**/*
+website/**/*
 dist/

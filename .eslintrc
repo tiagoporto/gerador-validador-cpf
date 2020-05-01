@@ -13,5 +13,8 @@
     "prettier/react",
     "prettier/standard"
   ],
+  "rules": {
+    "no-console": ["error", { "allow": ["warn", "error"] }]
+  },
   "plugins": ["jest", "@typescript-eslint"]
 }
