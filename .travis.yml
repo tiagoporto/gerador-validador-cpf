@@ -4,8 +4,25 @@ node_js:
 
 before_install:
   - gem install awesome_bot
-
-script:
   - awesome_bot *.md --allow-redirect --white-list travis-ci,packagephobia.now
-  - npm run checks:reports
-  - npm run prepublishOnly
+
+deploy:
+  - provider: script
+    script:
+      - npm run lint
+      - npm run check-typing
+      - npm run coveralls
+      - npm run test:mutation-report"
+      - npm run prepublishOnly
+    on:
+      branch: master
+
+  - provider: script
+    script:
+      - npm run lint
+      - npm run check-typing
+      - npm run test
+      - npm run test:mutation-report"
+      - npm run prepublishOnly
+    on:
+      branch: NOT master
