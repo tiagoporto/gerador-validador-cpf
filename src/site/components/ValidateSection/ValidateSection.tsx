@@ -6,62 +6,68 @@ import { IMaskInput } from 'react-imask'
 
 export const ValidateSection: FC = () => {
   const [validation, setValidation] = useState({
+    tempCpf: '',
     cpf: '',
     isValid: false,
     message: '',
   })
+
+  const { cpf, isValid, message, tempCpf } = validation
+  console.log('isValid ', isValid, cpf)
+
   const handleChangeCPF = (event: ChangeEvent<HTMLInputElement>): void => {
     setValidation({
       ...validation,
-      cpf: event.currentTarget.value,
+      tempCpf: event.currentTarget.value,
     })
+
     // messageInput[0].setAttribute('value', message)
     // typeof window.ga === 'function' &&
     //   window.ga('send', 'event', 'button', 'click', 'Validate CPF')
   }
 
   useEffect(() => {
-    if (validation.cpf) {
-      const isValid = validadeCPF(validation.cpf)
+    if (tempCpf.length === 14) {
+      console.log('tempCpf ', tempCpf)
+      const isValid = validadeCPF(tempCpf)
       setValidation({
         ...validation,
-        message: isValid ? 'CPF Válido' : 'CPF Inválido',
+        cpf: tempCpf,
         isValid,
+        message: isValid ? 'CPF Válido' : 'CPF Inválido',
+      })
+    } else {
+      setValidation({
+        ...validation,
+        cpf: '',
+        message: tempCpf ? 'incompleto' : '',
       })
     }
-  }, [validation.cpf])
+  }, [tempCpf])
 
   return (
-    <section>
+    <section className={style.validateSection}>
       <h2>Validar</h2>
 
-      <form>
-        <label
-          className={style.validateSectionLabel}
-          htmlFor="validate-section__input--to-format"
-        >
-          Insira o CPF para validação
-        </label>
+      <IMaskInput
+        value={tempCpf}
+        onChange={handleChangeCPF}
+        placeholder="Insira o CPF"
+        className={style.validateSectionInput}
+        type="text"
+        mask={'000.000.000-00'}
+        required
+      />
 
-        <IMaskInput
-          value={validation.cpf}
-          onChange={handleChangeCPF}
-          type="text"
-          mask={'000.000.000-00'}
-          required
-        />
-
-        <input
-          className={`${style.input} ${
-            validation.isValid ? style.messageValid : style.messageInvalid
-          }`}
-          aria-label="CPF para validação"
-          type="text"
-          placeholder="Insira CPF para validação"
-          value={validation.message}
-          readOnly
-        />
-      </form>
+      <input
+        className={`${style.validateSectionInput} ${style.message} ${
+          isValid && cpf ? style.messageValid : ''
+        } ${!isValid && cpf ? style.messageInvalid : ''}`}
+        type="text"
+        placeholder="..."
+        value={message}
+        readOnly
+      />
     </section>
   )
 }

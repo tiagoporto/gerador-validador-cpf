@@ -29,7 +29,12 @@ export const Header: FC = () => (
       <span>Gerador e</span> validador de CPF
     </h1>
 
-    <p>Biblioteca JS open-source para gerar, validar e formatar CPF.</p>
+    <p>Lib JS open-source para gerar e validar CPF.</p>
+    <pre>
+      <code className="hljs" style={{ display: 'inline-block' }}>
+        npm install gerador-validador-cpf --save
+      </code>
+    </pre>
 
     <Donate />
   </header>

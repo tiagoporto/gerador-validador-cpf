@@ -21,31 +21,27 @@ export const GenerateSection: FC = () => {
   }, [])
 
   return (
-    <section>
+    <section className={styles.generateSection}>
       <h2>Gerar</h2>
+
+      <CopyToClipboard text={cpf} options={{ message: 'cpied' }}>
+        <input
+          value={cpf}
+          aria-label="CPF gerado"
+          className={styles.input}
+          type="text"
+          placeholder="CPF gerado"
+          readOnly
+        />
+      </CopyToClipboard>
 
       <button
         onClick={generateNewCPF}
-        className={styles.submitButton}
+        className={styles.generateButton}
         type="button"
       >
-        Gerar CPF
+        Gerar
       </button>
-
-      <input
-        value={cpf}
-        aria-label="CPF gerado"
-        className={styles.input}
-        type="text"
-        placeholder="CPF gerado"
-        readOnly
-      />
-
-      <CopyToClipboard text={cpf}>
-        <button className={styles.copyButton} type="button">
-          copiar
-        </button>
-      </CopyToClipboard>
     </section>
   )
 }
