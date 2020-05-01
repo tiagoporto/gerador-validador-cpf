@@ -1,12 +1,15 @@
 export type formatOptions = 'digits' | 'checker' | 'default'
 
 const calcFirstChecker = (firstNineDigits: string): number => {
-  let sum: number | null = null
+  // @ts-expect-error
+  let sum: number | undefined = null
 
   for (let j = 0; j < 9; ++j) {
+    // @ts-expect-error
     sum += Number(firstNineDigits.toString().charAt(j)) * (10 - j)
   }
 
+  // @ts-expect-error
   const lastSumChecker1 = sum % 11
   const checker1 = lastSumChecker1 < 2 ? 0 : 11 - lastSumChecker1
 
@@ -17,9 +20,11 @@ const calcSecondChecker = (cpfWithChecker1: string): number => {
   let sum: null | number = null
 
   for (let k = 0; k < 10; ++k) {
+    // @ts-expect-error
     sum += Number(cpfWithChecker1.toString().charAt(k)) * (11 - k)
   }
 
+  // @ts-expect-error
   const lastSumChecker2 = sum % 11
   const checker2 = lastSumChecker2 < 2 ? 0 : 11 - lastSumChecker2
 
@@ -55,7 +60,7 @@ const formatCPF = (value: string, formatter?: formatOptions): string | void => {
   }
 }
 
-const allDigitsAreEqual: boolean = (digits: string) => {
+const allDigitsAreEqual = (digits: string): boolean => {
   for (let i = 1; i < digits.length; ++i) {
     if (digits[i] !== digits[0]) {
       return false
@@ -66,9 +71,13 @@ const allDigitsAreEqual: boolean = (digits: string) => {
 }
 
 /**
- * generate a valid CPF number
- * @param  {string} [formatOption]   Formatting option
- * @return {string}                  Valid and formatted CPF
+ * [Gerador e Validador de CPF](https://tiagoporto.github.io/gerador-validador-cpf)
+ * @author Tiago Porto
+ *
+ * @function Generate
+ * @param  {string} [formatOption="default"] - 'digits' | 'checker' | 'default'
+ *
+ * @returns {string}                  Valid and formatted CPF
  */
 export const generate = (formatOption?: formatOptions): string => {
   let firstNineDigits: string
@@ -90,9 +99,14 @@ export const generate = (formatOption?: formatOptions): string => {
 }
 
 /**
- * validate CPF numbers
- * @param  {(string|number)} value  CPF for validation
- * @return {boolean}                True = valid || False = invalid
+ *
+ * [Gerador e Validador de CPF](https://tiagoporto.github.io/gerador-validador-cpf)
+ * @author Tiago Porto
+ *
+ * @function Validate
+ * @param  {(string|number)} value  CPF number
+ *
+ * @returns {boolean}                true = valid || false = invalid
  */
 export const validate = (value: string | number): boolean => {
   if (typeof value !== 'string' && typeof value !== 'number') {
@@ -120,11 +134,15 @@ export const validate = (value: string | number): boolean => {
 }
 
 /**
- * format CPF numbers
- * @param  {(string|number)} value  Formatting value
- * @param  {string} [formatOption]  Formatting option
  *
- * @return {string}                 Formatted CPF || error message
+ * [Gerador e Validador de CPF](https://tiagoporto.github.io/gerador-validador-cpf)
+ * @author Tiago Porto
+ *
+ * @function Format
+ * @param  {(string|number)} value - CPF number
+ * @param  {string} [formatOption="default"] - 'digits' | 'checker' | 'default'
+ *
+ * @returns {string|void}            Formatted CPF
  */
 export const format = (
   value: string | number,

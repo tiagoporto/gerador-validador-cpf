@@ -91,21 +91,25 @@ describe('Validate function', () => {
 
   describe('No values', () => {
     it('Should return undefined to true', () => {
+      // @ts-expect-error
       expect(CPF.validate(true)).toBeFalsy()
       expect(spy).toHaveBeenCalledWith(WARN_MESSAGE)
     })
 
     it('Should return undefined to false', () => {
+      // @ts-expect-error
       expect(CPF.validate(false)).toBeFalsy()
       expect(spy).toHaveBeenCalledWith(WARN_MESSAGE)
     })
 
     it('Should return undefined to null', () => {
+      // @ts-expect-error
       expect(CPF.validate(null)).toBeFalsy()
       expect(spy).toHaveBeenCalledWith(WARN_MESSAGE)
     })
 
     it('Should return undefined to undefined', () => {
+      // @ts-expect-error
       expect(CPF.validate(undefined)).toBeFalsy()
       expect(spy).toHaveBeenCalledWith(WARN_MESSAGE)
     })
