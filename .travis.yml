@@ -1,8 +1,9 @@
+language: node_js
+node_js:
+  - 'lts/*'
+
 jobs:
   include:
-    language: node_js
-    node_js: 'lts/*'
-
     - name: Check Doc links
       script:
         - gem install awesome_bot
