@@ -1,14 +1,12 @@
-language: node_js
-node_js:
-  - 'lts/*'
-
-before_install:
-  - gem install awesome_bot
-
 jobs:
   include:
+    language: node_js
+    node_js: 'lts/*'
+
     - name: Check Doc links
-      script: awesome_bot *.md --allow-redirect --white-list travis-ci,packagephobia.now
+      script:
+        - gem install awesome_bot
+        - awesome_bot *.md --allow-redirect --white-list travis-ci,packagephobia.now
 
     - name: Check Formatting
       script: npm run check-formatting
