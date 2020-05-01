@@ -1,5 +1,5 @@
 import babel from 'rollup-plugin-babel'
-import { uglify } from 'rollup-plugin-uglify'
+import { terser } from 'rollup-plugin-terser'
 import license from 'rollup-plugin-license'
 
 const date = new Date()
@@ -43,7 +43,7 @@ export default [
     ],
     plugins: [
       babel({ extensions: ['.js', '.ts'] }),
-      uglify(),
+      terser(),
       license({
         banner
       })
