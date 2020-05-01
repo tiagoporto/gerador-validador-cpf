@@ -1,3 +1,3 @@
-import "./donation.styl";
+import './donation.styl'
 
-export { Donate } from "./Donate";
+export { Donate } from './Donate'
