@@ -4,11 +4,11 @@ node_js:
 
 before_install:
   - gem install awesome_bot
-  - awesome_bot *.md --allow-redirect --white-list travis-ci,packagephobia.now
 
 deploy:
   - provider: script
     script:
+      - awesome_bot *.md --allow-redirect --white-list travis-ci,packagephobia.now
       - npm run lint
       - npm run check-typing
       - npm run coveralls
@@ -19,6 +19,7 @@ deploy:
 
   - provider: script
     script:
+      - awesome_bot *.md --allow-redirect --white-list travis-ci,packagephobia.now
       - npm run lint
       - npm run check-typing
       - npm run test
