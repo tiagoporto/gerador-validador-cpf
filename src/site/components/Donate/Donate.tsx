@@ -83,7 +83,7 @@ export const Donate: FC = () => {
       </ul>
 
       <div
-        className={codeStyles.qrBox}
+        className={codeStyles.codeBox}
         style={{ display: isCodeVisible ? 'block' : 'none' }}
       >
         <img
