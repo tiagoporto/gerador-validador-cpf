@@ -1,9 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { App } from './App'
-// import './js/demo'
-// import './js/settings/plugins'
-// import './js/settings/google_analytics'
+
+if (process.env.NODE_ENV === 'production') {
+  import('react-ga').then((ReactGA) => {
+    ReactGA.initialize('UA-32351360-4')
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  })
+}
 
 ReactDOM.render(<App />, document.getElementById('root'))
 

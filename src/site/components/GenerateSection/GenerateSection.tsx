@@ -6,18 +6,17 @@ import { generate as generateCPF } from '../../../lib/CPF'
 export const GenerateSection: FC = () => {
   const [cpf, setCpf] = useState<string>('')
 
-  const generateNewCPF = (): void => {
+  const generateNewCPF = (type: string) => (): void => {
     setCpf(generateCPF())
-    // declare global {
-    //   interface Window {
-    //     ga: (a: string, b: string, c: string, d: string, e: string) => void
-    //   }
-    // }
-    // typeof window.ga === 'function' &&
-    //   window.ga('send', 'event', 'button', 'click', 'Generate CPF')
+
+    if (process.env.NODE_ENV === 'production') {
+      import('react-ga').then((ReactGA) => {
+        ReactGA.ga('send', 'event', 'Generate', type, 'Generate CPF')
+      })
+    }
   }
   useEffect(() => {
-    generateNewCPF()
+    generateNewCPF('load')()
   }, [])
 
   return (
@@ -36,7 +35,7 @@ export const GenerateSection: FC = () => {
       </CopyToClipboard>
 
       <button
-        onClick={generateNewCPF}
+        onClick={generateNewCPF('click')}
         className={styles.generateButton}
         type="button"
       >

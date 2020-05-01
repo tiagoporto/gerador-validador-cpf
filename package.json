@@ -95,6 +95,7 @@
     "react": "^16.13.1",
     "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "^16.13.1",
+    "react-ga": "^2.7.0",
     "react-github-corner": "^2.3.0",
     "react-imask": "^6.0.3",
     "rollup": "^2.7.2",

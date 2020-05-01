@@ -7,10 +7,27 @@ import CopyToClipboard from 'react-copy-to-clipboard'
 export const Donate: FC = () => {
   const [isCodeVisible, setIsCodeVisible] = useState(false)
 
+  const trackClick = ({
+    category,
+    type,
+  }: {
+    category: string
+    type: string
+  }) => (): void => {
+    if (process.env.NODE_ENV === 'production') {
+      import('react-ga').then((ReactGA) => {
+        ReactGA.ga('send', 'event', category, 'click', type)
+      })
+    }
+  }
+
   const toggleCodeVisibility = (): void => {
-    // typeof window.ga === 'function' &&
-    //   window.ga('send', 'event', 'button', 'click', thisID)
     setIsCodeVisible(!isCodeVisible)
+  }
+
+  const handleClick = (clickType) => (): void => {
+    trackClick(clickType)()
+    toggleCodeVisibility()
   }
 
   return (
@@ -19,6 +36,10 @@ export const Donate: FC = () => {
         <li>
           <a
             className={`${styles.button} ${styles.buttonStar}`}
+            onClick={trackClick({
+              category: 'Star',
+              type: 'generate-validade-cpf',
+            })}
             data-footnote="Deixe um ★"
             href="https://github.com/tiagoporto/gerador-validador-cpf/stargazers"
             target="_blank"
@@ -32,6 +53,10 @@ export const Donate: FC = () => {
         <li>
           <a
             className={`${styles.button} ${styles.buttonPaypal}`}
+            onClick={trackClick({
+              category: 'Donate',
+              type: 'Paypal generate-validade-cpf',
+            })}
             data-footnote="Abre a página do Paypal"
             href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YTDUQ8RZ2G4Q8&lc=BR&item_name=tiagoporto&item_number=geradorcpf&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted"
             target="_blank"
@@ -45,7 +70,10 @@ export const Donate: FC = () => {
           <CopyToClipboard text="3DztnDvY7McQ7zwGS8Vjafsbc1ee1HDAmE">
             <button
               className={`${styles.button} ${styles.buttonBitcoin}`}
-              onClick={toggleCodeVisibility}
+              onClick={handleClick({
+                category: 'Donate',
+                type: 'Bitcoin generat-validate-cpf',
+              })}
               data-footnote="Copia o número da carteira e exibe QRCode"
             >
               Bitcoin

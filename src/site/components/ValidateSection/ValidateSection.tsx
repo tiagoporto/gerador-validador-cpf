@@ -19,14 +19,16 @@ export const ValidateSection: FC = () => {
       ...validation,
       tempCpf: event.currentTarget.value,
     })
-
-    // messageInput[0].setAttribute('value', message)
-    // typeof window.ga === 'function' &&
-    //   window.ga('send', 'event', 'button', 'click', 'Validate CPF')
   }
 
   useEffect(() => {
     if (tempCpf.length === 14) {
+      if (process.env.NODE_ENV === 'production') {
+        import('react-ga').then((ReactGA) => {
+          ReactGA.ga('send', 'event', 'Validate', 'type', 'Validate CPF')
+        })
+      }
+
       const isValid = validadeCPF(tempCpf)
       setValidation({
         ...validation,

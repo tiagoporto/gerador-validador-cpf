@@ -23,6 +23,7 @@ module.exports = {
   },
   devtool: 'eval-source-map',
   devServer: {
+    contentBase: path.join(__dirname, 'public'),
     overlay: true,
     inline: true
   },
