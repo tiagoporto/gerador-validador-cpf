@@ -3,6 +3,7 @@ import codeStyles from './Code.module.styl'
 import React, { FC, useState } from 'react'
 import BTCQR from './img/BTCQR.png'
 import CopyToClipboard from 'react-copy-to-clipboard'
+import { toast } from 'react-toastify'
 
 export const Donate: FC = () => {
   const [isCodeVisible, setIsCodeVisible] = useState(false)
@@ -18,6 +19,10 @@ export const Donate: FC = () => {
         ReactGA.ga('send', 'event', category, 'click', type)
       })
     }
+  }
+
+  const handleCopy = (): void => {
+    toast('Wallet copiado!')
   }
 
   const toggleCodeVisibility = (): void => {
@@ -56,7 +61,7 @@ export const Donate: FC = () => {
               category: 'Donate',
               type: 'Paypal generate-validade-cpf',
             })}
-            data-footnote="Abre a página do Paypal"
+            data-footnote="Contribua pelo Paypal"
             href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YTDUQ8RZ2G4Q8&lc=BR&item_name=tiagoporto&item_number=geradorcpf&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted"
             target="_blank"
             rel="noopener noreferrer"
@@ -66,14 +71,17 @@ export const Donate: FC = () => {
         </li>
 
         <li>
-          <CopyToClipboard text="3DztnDvY7McQ7zwGS8Vjafsbc1ee1HDAmE">
+          <CopyToClipboard
+            text="3DztnDvY7McQ7zwGS8Vjafsbc1ee1HDAmE"
+            onCopy={handleCopy}
+          >
             <button
               className={`${styles.button} ${styles.buttonBitcoin}`}
               onClick={handleClick({
                 category: 'Donate',
                 type: 'Bitcoin generat-validate-cpf',
               })}
-              data-footnote="Copia o número da carteira e exibe QRCode"
+              data-footnote="Contribua por bitcoin"
             >
               Bitcoin
             </button>

@@ -27,12 +27,16 @@
     background-color: shade($bg-color, 20%)
 
   @media (max-width: em($tablet))
+    border-radius: 6px
     width: 100%
 
 
 .input
   @extend $disable-select
   border-radius: 6px 0 0 6px
+  cursor: pointer
   text-align: center
+
   @media (max-width: em($tablet))
-      width: 100%
+    border-radius: 6px
+    width: 100%

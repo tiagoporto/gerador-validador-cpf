@@ -2,9 +2,14 @@ import styles from './GenerateSection.module.styl'
 import React, { FC, useState, useEffect } from 'react'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import { generate as generateCPF } from '../../../lib/CPF'
+import { toast } from 'react-toastify'
 
 export const GenerateSection: FC = () => {
   const [cpf, setCpf] = useState<string>('')
+
+  const handleCopy = (): void => {
+    toast('CPF copiado!')
+  }
 
   const generateNewCPF = (type: string) => (): void => {
     setCpf(generateCPF())
@@ -23,7 +28,7 @@ export const GenerateSection: FC = () => {
     <section className={styles.generateSection}>
       <h2>Gerar</h2>
 
-      <CopyToClipboard text={cpf} options={{ message: 'cpied' }}>
+      <CopyToClipboard text={cpf} onCopy={handleCopy}>
         <input
           value={cpf}
           aria-label="CPF gerado"
