@@ -19,7 +19,7 @@ i18n.use(initReactI18next).init({
     en: { translation: i18nResources.en },
     br: { translation: i18nResources.br },
   },
-  lng: 'en',
+  lng: 'br',
   fallbackLng: 'br',
 })
 
