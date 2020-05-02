@@ -92,6 +92,9 @@ module.exports = {
         lang: 'pt-BR'
       }
     }),
-    new GenerateSW()
+    new GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
+    })
   ]
 }
