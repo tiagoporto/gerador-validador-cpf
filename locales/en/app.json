@@ -1,50 +1,50 @@
 {
   "header": {
-    "libInfo": "Lib JS open-source for generate and CPF.",
-    "projectPageGithub": "Página do projeto no github"
+    "libInfo": "JS open-source lib to generate and validate CPF.",
+    "projectPageGithub": "Github project page"
   },
   "validate": {
     "title": "Validate",
     "insertCPF": "Insert CPF"
   },
   "generate": {
-    "title": "Genarate",
+    "title": "Generate",
     "cpfGenerated": "Generated CPF"
   },
   "docs": {
     "title": "Use",
-    "fullDocumentation": "Documentação completa em <0>github.com/tiagoporto/gerador-validador-cpf</0>."
+    "fullDocumentation": "Full documentation in <0>github.com/tiagoporto/gerador-validador-cpf</0>."
   },
   "info": {
     "title": "Info",
-    "algorithm": "Utiliza o seguinte <0>algoritmo</0>.",
-    "disclaimer": "Lib disponível para auxiliar desenvolvedores em testes de software, não possui qualquer vínculo com a Receita Federal do Brasil.",
-    "cpfByState": "O CPF guarda o estado brasileiro de onde foi emitido, esse número corresponde ao último algarismo anterior aos dois dígitos verificadores.",
-    "codeByState": "Códigos correspondentes aos estados brasileiros:",
-    "example": "Exemplo: CPF <0>XXX.XXX.XX8-XX</0>, o número 8 corresponde ao estado de São Paulo.",
-    "stateCode1": "1. Distrito Federal, Goiás, Mato Grosso do Sul e Tocantins;",
-    "stateCode2": "2. Pará, Amazonas, Acre, Amapá, Rondônia e Roraima;",
-    "stateCode3": "3. Ceará, Maranhão e Piauí;",
-    "stateCode4": "4. Pernambuco, Rio Grande do Norte, Paraíba e Alagoas;",
-    "stateCode5": "5. Bahia e Sergipe;",
+    "algorithm": "Implements the follow <0>algorithm</0>.",
+    "disclaimer": "Lib available to assist developers in software testing, doesn't have link with \"Receita Federal do Brasil\".",
+    "cpfByState": "The last digit before verifiers (last 2 digits), corresponds with the brasilian state were CPF was issued.",
+    "codeByState": "Code by brasilian states:",
+    "example": "Example: CPF <0>XXX.XXX.XX8-XX</0>, number 8 corresponds to São Paulo state.",
+    "stateCode1": "1. Distrito Federal, Goiás, Mato Grosso do Sul and Tocantins;",
+    "stateCode2": "2. Pará, Amazonas, Acre, Amapá, Rondônia and Roraima;",
+    "stateCode3": "3. Ceará, Maranhão and Piauí;",
+    "stateCode4": "4. Pernambuco, Rio Grande do Norte, Paraíba and Alagoas;",
+    "stateCode5": "5. Bahia and Sergipe;",
     "stateCode6": "6. Minas Gerais;",
-    "stateCode7": "7. Rio de Janeiro e Espírito Santo;",
+    "stateCode7": "7. Rio de Janeiro and Espírito Santo;",
     "stateCode8": "8. São Paulo;",
-    "stateCode9": "9. Paraná e Santa Catarina;",
+    "stateCode9": "9. Paraná and Santa Catarina;",
     "stateCode10": "0. Rio Grande do Sul.",
-    "disclaimerValidCPF": "Um CPF válido não significa que ele exista no Cadastro Nacional de Pessoas Físicas, nem que esteja ativo ou com situação cadastral regular. Para conferir tais dados, consulte o site oficial da <0>Secretaria da Receita Federal do Brasil</0>."
+    "disclaimerValidCPF": "Valid CPD doesn't mean is registered or is active. For those informations, check <0>Secretaria da Receita Federal do Brasil</0>."
   },
   "donate": {
-    "leaveStar": "Deixe um ★",
-    "contributePaypal": "Contribua pelo Paypal",
-    "contributeBitcoin": "Contribua por bitcoin"
+    "leaveStar": "Leave a ★",
+    "contributePaypal": "Contribute (Paypal)",
+    "contributeBitcoin": "Contribute (bitcoin)"
   },
   "messages": {
-    "copied": "Copiado!",
-    "cpfCopied": "CPF copiado!",
-    "validCPF": "CPF Válido",
-    "invalidCPF": "CPF Inválido",
-    "walletCopied": "Wallet copiado!",
-    "incomplete": "incompleto"
+    "copied": "Copied!",
+    "cpfCopied": "CPF Copied!",
+    "validCPF": "CPF Valid",
+    "invalidCPF": "CPF Invalid",
+    "walletCopied": "Wallet copied!",
+    "incomplete": "incomplete"
   }
 }

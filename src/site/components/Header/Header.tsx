@@ -6,6 +6,7 @@ import { toast } from 'react-toastify'
 import i18nResources from '@i18nResources'
 import { useTranslation } from 'react-i18next'
 import { Donate } from '../Donate'
+import { ChangeLocale } from '../ChangeLocale'
 
 export const Header: FC = () => {
   const { t } = useTranslation()
@@ -16,6 +17,7 @@ export const Header: FC = () => {
 
   return (
     <header className={styles.panel}>
+      <ChangeLocale />
       <GithubCorner
         href="https://github.com/tiagoporto/gerador-validador-cpf/"
         size={80}

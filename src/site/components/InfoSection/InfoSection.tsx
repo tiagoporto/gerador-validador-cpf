@@ -21,15 +21,17 @@ export const InfoSection: FC = () => {
         ]}
       />
 
-      <Trans
-        i18nKey={i18nResources.info.disclaimerValidCPF}
-        components={[
-          <a
-            key="link"
-            href="http://www.receita.fazenda.gov.br/aplicacoes/atcta/cpf/consultapublica.asp"
-          />,
-        ]}
-      />
+      <p>
+        <Trans
+          i18nKey={i18nResources.info.disclaimerValidCPF}
+          components={[
+            <a
+              key="link"
+              href="http://www.receita.fazenda.gov.br/aplicacoes/atcta/cpf/consultapublica.asp"
+            />,
+          ]}
+        />
+      </p>
 
       <p>{t(i18nResources.info.cpfByState)}</p>
 
