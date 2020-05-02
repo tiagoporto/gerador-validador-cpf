@@ -4,11 +4,11 @@ node_js:
 
 stages:
   - 'Checks'
-  - name: tests
-    if: branch = master
+  - name: test
+    if: NOT branch = master
   - name: 'Tests and Reports'
     if: branch = master
-  - name: deploy gh-pages
+  - name: 'Deploy gh-pages'
     if: branch = master
 
 before_deploy: npm run build:site
@@ -40,13 +40,13 @@ jobs:
     - script: npm run test:mutation-report
       name: Run Mutation Tests and publish reports
 
-    - stage: tests
+    - stage:
       name: Run Unit Tests
 
     - script: npm run test:mutation
       name: Run Mutation Tests
 
-    - stage: 'deploy gh-pages'
+    - stage: 'Deploy gh-pages'
       deploy:
         provider: pages
         local_dir: website
