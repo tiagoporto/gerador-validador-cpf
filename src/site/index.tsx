@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { App } from './App'
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
-import { i18nResources } from './locales'
+import { i18nResources } from '../../locales'
 
 if (process.env.NODE_ENV === 'production') {
   import('react-ga').then((ReactGA) => {
@@ -15,18 +15,12 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 i18n.use(initReactI18next).init({
-  debug: true,
-
   resources: {
-    en: {
-      translation: i18nResources.en,
-    },
-    'pt-br': {
-      translation: i18nResources.br,
-    },
+    en: { translation: i18nResources.en },
+    br: { translation: i18nResources.br },
   },
   lng: 'en',
-  fallbackLng: 'pt-br',
+  fallbackLng: 'br',
 })
 
 ReactDOM.render(<App />, document.getElementById('root'))

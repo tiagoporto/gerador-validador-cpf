@@ -37,7 +37,7 @@
     "resolveJsonModule": true,
     "moduleResolution": "node", // Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6).
     "baseUrl": "src", // Base directory to resolve non-absolute module names.
-    "paths": { "@i18nResources": ["site/locales/br/translations.json"] }, // A series of entries which re-map imports to lookup locations relative to the 'baseUrl'.
+    "paths": { "@i18nResources": ["../locales/en/app.json"] }, // A series of entries which re-map imports to lookup locations relative to the 'baseUrl'.
     "rootDir": ".",
     // "typeRoots": ["node_modules/@types", "@types"], // List of folders to include type definitions from.
     // "types": [], // Type declaration files to be included in compilation.

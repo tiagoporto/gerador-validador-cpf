@@ -73,13 +73,21 @@ module.exports = {
         options: {
           outputPath: 'img',
         },
+      },
+      {
+        test: /app\.json$/,
+        use: [
+          {
+            loader: path.resolve('loader/generate-mappings.js')
+          }
+        ]
       }
     ]
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
     alias: {
-      '@i18nResources': path.join(__dirname, 'src/site/locales/br/translations.json'),
+      '@i18nResources': path.join(__dirname, './locales/resources.json')
     }
   },
   plugins: [
