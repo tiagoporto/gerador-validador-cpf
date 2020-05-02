@@ -55,7 +55,7 @@ export const ValidateSection: FC = () => {
 
   return (
     <section className={style.validateSection}>
-      <h2>{i18nResources.validate.title}</h2>
+      <h2>{t(i18nResources.validate.title)}</h2>
 
       <IMaskInput
         value={tempCpf}
