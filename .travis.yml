@@ -3,8 +3,8 @@ node_js:
   - 'lts/*'
 
 stages:
-  - 'Checks'
-  - name: test
+  - Checks
+  - name: Tests
     if: NOT branch = master
   - name: 'Tests and Reports'
     if: branch = master
@@ -15,7 +15,7 @@ before_deploy: npm run build:site
 
 jobs:
   include:
-    - stage: 'Checks'
+    - stage: Checks
     - script:
         - gem install awesome_bot
         - awesome_bot *.md --allow-redirect --white-list travis-ci,packagephobia.now
@@ -40,7 +40,7 @@ jobs:
     - script: npm run test:mutation-report
       name: Run Mutation Tests and publish reports
 
-    - stage:
+    - stage: Tests
       name: Run Unit Tests
 
     - script: npm run test:mutation
