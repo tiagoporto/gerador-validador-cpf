@@ -5,8 +5,8 @@ node_js:
 stages:
   - checks
   - name: tests
-    if: NOT branch = master
-  - name: tests and reports
+    if: branch = master
+  - name: 'Tests and Reports'
     if: branch = master
   - name: deploy gh-pages
     if: branch = master
@@ -33,7 +33,7 @@ jobs:
     - script: npm run prepublishOnly
       name: Check Prepublish
 
-    - stage: tests and reports
+    - stage: 'Tests and Reports'
     - script: npm run test:coverage && npm run coveralls
       name: Run Unit Tests, generate coverage and publish to coveralls
 
@@ -42,7 +42,6 @@ jobs:
 
     - stage: tests
       name: Run Unit Tests
-    - script: npm run test
 
     - script: npm run test:mutation
       name: Run Mutation Tests
