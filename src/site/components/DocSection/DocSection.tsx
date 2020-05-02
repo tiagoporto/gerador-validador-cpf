@@ -3,15 +3,20 @@ import React, { FC, useEffect } from 'react'
 import hljs from 'highlight.js/lib/core.js'
 import javascript from 'highlight.js/lib/languages/javascript.js'
 import 'highlight.js/styles/github.css'
+import i18nResources from '@i18nResources'
+import { useTranslation, Trans } from 'react-i18next'
+
 hljs.registerLanguage('js', javascript)
 
 export const DocSection: FC = () => {
+  const { t } = useTranslation()
+
   useEffect(() => {
     hljs.initHighlighting()
   }, [])
   return (
     <section>
-      <h2>Uso</h2>
+      <h2>{t(i18nResources.docs.title)}</h2>
 
       <pre>
         <code className="hljs js">
@@ -23,10 +28,15 @@ validate('123.456.789-00')`}
       </pre>
 
       <p>
-        Documentação completa em{' '}
-        <a href="https://github.com/tiagoporto/gerador-validador-cpf">
-          github.com/tiagoporto/gerador-validador-cpf
-        </a>
+        <Trans
+          i18nKey={i18nResources.docs.fullDocumentation}
+          components={[
+            <a
+              key="link"
+              href="https://github.com/tiagoporto/gerador-validador-cpf"
+            />,
+          ]}
+        />
       </p>
     </section>
   )

@@ -3,8 +3,12 @@ import React, { FC, useState, useEffect, ChangeEvent } from 'react'
 import { validate as validadeCPF } from '../../../lib/CPF'
 // @ts-expect-error
 import { IMaskInput } from 'react-imask'
+import { useTranslation } from 'react-i18next'
+import i18nResources from '@i18nResources'
 
 export const ValidateSection: FC = () => {
+  const { t } = useTranslation()
+
   const [validation, setValidation] = useState({
     tempCpf: '',
     cpf: '',
@@ -14,10 +18,12 @@ export const ValidateSection: FC = () => {
 
   const { cpf, isValid, message, tempCpf } = validation
 
-  const handleChangeCPF = (event: ChangeEvent<HTMLInputElement>): void => {
+  const handleChangeCPF = ({
+    currentTarget,
+  }: ChangeEvent<HTMLInputElement>): void => {
     setValidation({
       ...validation,
-      tempCpf: event.currentTarget.value,
+      tempCpf: currentTarget.value,
     })
   }
 
@@ -34,25 +40,27 @@ export const ValidateSection: FC = () => {
         ...validation,
         cpf: tempCpf,
         isValid,
-        message: isValid ? 'CPF Válido' : 'CPF Inválido',
+        message: isValid
+          ? i18nResources.messages.validCPF
+          : i18nResources.messages.invalidCPF,
       })
     } else {
       setValidation({
         ...validation,
         cpf: '',
-        message: tempCpf ? 'incompleto' : '',
+        message: tempCpf ? i18nResources.messages.incomplete : '',
       })
     }
   }, [tempCpf])
 
   return (
     <section className={style.validateSection}>
-      <h2>Validar</h2>
+      <h2>{i18nResources.validate.title}</h2>
 
       <IMaskInput
         value={tempCpf}
         onChange={handleChangeCPF}
-        placeholder="Insira o CPF"
+        placeholder={t(i18nResources.validate.insertCPF)}
         className={style.validateSectionInput}
         type="text"
         mask={'000.000.000-00'}

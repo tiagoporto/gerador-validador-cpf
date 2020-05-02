@@ -1,0 +1,50 @@
+{
+  "header": {
+    "libInfo": "Lib JS open-source para gerar e validar CPF.",
+    "projectPageGithub": "Página do projeto no github"
+  },
+  "validate": {
+    "title": "Validar",
+    "insertCPF": "Insira o CPF"
+  },
+  "generate": {
+    "title": "Gerar",
+    "cpfGenerated": "CPF gerado"
+  },
+  "docs": {
+    "title": "Uso",
+    "fullDocumentation": "Documentação completa em <0>github.com/tiagoporto/gerador-validador-cpf</0>."
+  },
+  "info": {
+    "title": "Obs",
+    "algorithm": "Utiliza o seguinte <0>algoritmo</0>.",
+    "disclaimer": "Lib disponível para auxiliar desenvolvedores em testes de software, não possui qualquer vínculo com a Receita Federal do Brasil.",
+    "cpfByState": "O CPF guarda o estado brasileiro de onde foi emitido, esse número corresponde ao último algarismo anterior aos dois dígitos verificadores.",
+    "codeByState": "Códigos correspondentes aos estados brasileiros:",
+    "example": "Exemplo: CPF <0>XXX.XXX.XX8-XX</0>, o número 8 corresponde ao estado de São Paulo.",
+    "stateCode1": "1. Distrito Federal, Goiás, Mato Grosso do Sul e Tocantins;",
+    "stateCode2": "2. Pará, Amazonas, Acre, Amapá, Rondônia e Roraima;",
+    "stateCode3": "3. Ceará, Maranhão e Piauí;",
+    "stateCode4": "4. Pernambuco, Rio Grande do Norte, Paraíba e Alagoas;",
+    "stateCode5": "5. Bahia e Sergipe;",
+    "stateCode6": "6. Minas Gerais;",
+    "stateCode7": "7. Rio de Janeiro e Espírito Santo;",
+    "stateCode8": "8. São Paulo;",
+    "stateCode9": "9. Paraná e Santa Catarina;",
+    "stateCode10": "0. Rio Grande do Sul.",
+    "disclaimerValidCPF": "Um CPF válido não significa que ele exista no Cadastro Nacional de Pessoas Físicas, nem que esteja ativo ou com situação cadastral regular. Para conferir tais dados, consulte o site oficial da <0>Secretaria da Receita Federal do Brasil</0>."
+  },
+  "donate": {
+    "leaveStar": "Deixe um ★",
+    "contributePaypal": "Contribua pelo Paypal",
+    "contributeBitcoin": "Contribua por bitcoin"
+  },
+  "messages": {
+    "copied": "Copiado!",
+    "cpfCopied": "CPF copiado!",
+    "validCPF": "CPF Válido",
+    "invalidCPF": "CPF Inválido",
+    "walletCopied": "Wallet copiado!",
+    "incomplete": "incompleto"
+  }
+}

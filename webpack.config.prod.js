@@ -77,7 +77,10 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx']
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
+    alias: {
+      '@i18nResources': path.join(__dirname, 'src/site/locales/br/translations.json'),
+    }
   },
   plugins: [
     new CopyPlugin(['public'],

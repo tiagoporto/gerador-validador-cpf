@@ -5,7 +5,7 @@ export const Footer: FC = () => {
   const date = new Date()
   return (
     <footer className={styles.footer}>
-      <p>Copyright © 2014 - {date.getFullYear()} Tiago Porto</p>
+      <p>© 2014-{date.getFullYear()} | Tiago Porto</p>
     </footer>
   )
 }

@@ -25,7 +25,8 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'public'),
     overlay: true,
-    inline: true
+    inline: true,
+    open: true
   },
   module: {
     rules: [
@@ -64,7 +65,10 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx']
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
+    alias: {
+      '@i18nResources': path.join(__dirname, 'src/site/locales/br/translations.json'),
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({

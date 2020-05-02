@@ -2,12 +2,16 @@ import styles from './Header.module.styl'
 import React, { FC } from 'react'
 import GithubCorner from 'react-github-corner'
 import CopyToClipboard from 'react-copy-to-clipboard'
-import { Donate } from '../Donate'
 import { toast } from 'react-toastify'
+import i18nResources from '@i18nResources'
+import { useTranslation } from 'react-i18next'
+import { Donate } from '../Donate'
 
 export const Header: FC = () => {
+  const { t } = useTranslation()
+
   const handleCopy = (): void => {
-    toast('Copiado!')
+    toast(t(i18nResources.messages.copied))
   }
 
   return (
@@ -17,14 +21,14 @@ export const Header: FC = () => {
         size={80}
         bannerColor="#fff"
         octoColor="#155078"
-        ariaLabel="Página do projeto no github"
+        ariaLabel={t(i18nResources.header.projectPageGithub)}
       />
 
       <h1 className={styles.panelTitle}>
         <span>Gerador e</span> validador de CPF
       </h1>
 
-      <p>Lib JS open-source para gerar e validar CPF.</p>
+      <p>{t(i18nResources.header.libInfo)}</p>
 
       <CopyToClipboard
         text="npm install gerador-validador-cpf --save"
@@ -32,7 +36,7 @@ export const Header: FC = () => {
       >
         <pre>
           <code className={`${styles.copy} hljs`}>
-            npm install gerador-validador-cpf --save
+            npm install gerador-validador-cpf --save-dev
           </code>
         </pre>
       </CopyToClipboard>
