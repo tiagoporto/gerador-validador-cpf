@@ -6,7 +6,7 @@ stages:
   - checks
   - name: tests
     if: NOT branch = master
-  - name: tests and reports
+  - name: 'tests and reports'
     if: branch = master
   - name: deploy gh-pages
     if: branch = master
@@ -40,7 +40,7 @@ jobs:
     - script: npm run test:mutation-report
       name: Run Mutation Tests and publish reports
 
-    - stage: Tests
+    - stage: tests
       name: Run Unit Tests
 
     - script: npm run test:mutation
