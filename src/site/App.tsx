@@ -19,7 +19,7 @@ export const App: FC = () => (
       className={styles.toast}
       toastClassName={styles.toastContent}
       position="bottom-center"
-      autoClose={false}
+      autoClose={2500}
       hideProgressBar
       newestOnTop
       closeOnClick
