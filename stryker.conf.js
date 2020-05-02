@@ -5,7 +5,7 @@ module.exports = function (config) {
     testRunner: 'jest',
     transpilers: [],
     coverageAnalysis: 'off',
-    mutate: ['src/js/CPF.ts'],
+    mutate: ['src/lib/CPF.ts'],
     babelrcFile: '.babelrc'
   })
 }
