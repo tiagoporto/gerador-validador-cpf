@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const brResources = require('./locales/br/app.json')
 
 const stylusLoaderConfig = {
   loader: 'stylus-loader',
@@ -82,12 +83,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       favicon: './public/favicon.ico',
       template: './src/site/index.ejs',
+      meta: {
+        description: brResources.app.description,
+        keywords: brResources.app.keywords,
+      },
       templateParameters: {
-        title: 'Gerador e validador de CPF Open-Source | Tiago Porto',
-        description: 'Gerador e validador de CPF, biblioteca JS open-source para gerar, validar e formatar CPF.',
-        keywords: 'cpf,gerar,gerador,generator,generates,validador,valida,validates,formata,format,online',
+        title: brResources.app.title,
         lang: 'pt-BR'
       }
-    })
+    }),
   ]
 }

@@ -41,14 +41,14 @@ export const ValidateSection: FC = () => {
         cpf: tempCpf,
         isValid,
         message: isValid
-          ? i18nResources.messages.validCPF
-          : i18nResources.messages.invalidCPF,
+          ? t(i18nResources.messages.validCPF)
+          : t(i18nResources.messages.invalidCPF),
       })
     } else {
       setValidation({
         ...validation,
         cpf: '',
-        message: tempCpf ? i18nResources.messages.incomplete : '',
+        message: tempCpf ? t(i18nResources.messages.incomplete) : '',
       })
     }
   }, [tempCpf])
