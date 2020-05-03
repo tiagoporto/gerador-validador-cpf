@@ -1,4 +1,9 @@
 {
+  "app": {
+    "title": "Gerador e validador de CPF Open-Source | Tiago Porto",
+    "description": "Gerador e validador de CPF, open-source JS lib to generate and validate CPF.",
+    "keywords": "cpf,gerar,gerador,generator,generates,validador,valida,validates,online"
+  },
   "header": {
     "libInfo": "JS open-source lib to generate and validate CPF.",
     "projectPageGithub": "Github project page"
