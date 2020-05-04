@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { GenerateSW } = require('workbox-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const brResources = require('./locales/br/app.json')
-const enResources = require('./locales/en/app.json')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const stylusLoaderConfig = {
   loader: 'stylus-loader',
@@ -14,6 +14,28 @@ const stylusLoaderConfig = {
     ]
   }
 }
+
+const miniCSSLoaderConfig = {
+  loader: MiniCssExtractPlugin.loader,
+  options: {
+    esModule: true,
+  }
+}
+
+const postCSSLoaderConfig = {
+  loader: 'postcss-loader',
+  options: {
+    sourceMap: true,
+    plugins: (loader) => [
+      require('postcss-preset-env')({
+        stage: 3,
+      }),
+      require('postcss-combine-media-query')(),
+      require('cssnano')(),
+    ]
+  }
+}
+
 
 
 module.exports = {
@@ -36,7 +58,13 @@ module.exports = {
           test: /node_modules/,
           chunks: 'all',
           enforce: true
-        }
+        },
+        styles: {
+          name: 'styles',
+          test: /\.css$/,
+          chunks: 'all',
+          enforce: true,
+        },
       }
     },
   },
@@ -49,25 +77,26 @@ module.exports = {
       },
       {
         test: /\.module\.styl$/,
-        loader: ['style-loader', {
+        loader: [miniCSSLoaderConfig, {
           loader: 'css-loader',
           options: {
+            importLoaders: 2,
             modules: {
               localIdentName: '[local]--[hash:base64:7]',
             },
             esModule: true,
             localsConvention: 'camelCaseOnly'
           }
-        }, stylusLoaderConfig]
+        }, postCSSLoaderConfig, stylusLoaderConfig]
       },
       {
         test: /\.styl$/,
         exclude: /\.module\.styl$/,
-        loader: ['style-loader', 'css-loader', stylusLoaderConfig]
+        loader: [miniCSSLoaderConfig, 'css-loader', postCSSLoaderConfig, stylusLoaderConfig]
       },
       {
         test: /\.css$/,
-        loader: ['style-loader', 'css-loader']
+        loader: [miniCSSLoaderConfig, 'css-loader', postCSSLoaderConfig]
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
@@ -93,6 +122,9 @@ module.exports = {
     }
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css'
+    }),
     new CopyPlugin(['public']),
     new HtmlWebpackPlugin({
       favicon: './public/favicon.ico',
