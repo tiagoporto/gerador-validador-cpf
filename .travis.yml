@@ -17,6 +17,7 @@ jobs:
   include:
     - stage: Checks
       script: true
+
     - script:
         - gem install awesome_bot
         - awesome_bot *.md --allow-redirect --white-list travis-ci,packagephobia.now
@@ -35,6 +36,8 @@ jobs:
       name: Check Prepublish
 
     - stage: 'Tests and Reports'
+      script: true
+
     - script: npm run test:coverage && npm run coveralls
       name: Run Unit Tests, generate coverage and publish to coveralls
 
