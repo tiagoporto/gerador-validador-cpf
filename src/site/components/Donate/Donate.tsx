@@ -82,7 +82,7 @@ export const Donate: FC = () => {
               className={`${styles.button} ${styles.buttonBitcoin}`}
               onClick={handleClick({
                 category: 'Donate',
-                type: 'Bitcoin generat-validate-cpf',
+                type: 'Bitcoin generate-validate-cpf',
               })}
               data-footnote={t(i18nResources.donate.contributeBitcoin)}
             >
