@@ -13,6 +13,19 @@ const stylusLoaderConfig = {
   }
 }
 
+const postCSSLoaderConfig = {
+  loader: 'postcss-loader',
+  options: {
+    sourceMap: true,
+    plugins: (loader) => [
+      require('postcss-preset-env')({
+        stage: 3,
+      }),
+      require('postcss-combine-media-query')(),
+    ],
+  }
+}
+
 
 module.exports = {
   mode: 'development',
@@ -41,6 +54,7 @@ module.exports = {
         loader: ['style-loader', {
           loader: 'css-loader',
           options: {
+            importLoaders: 2,
             modules: {
               localIdentName: '[local]--[hash:base64:7]',
             },
@@ -48,16 +62,16 @@ module.exports = {
             sourceMap: true,
             localsConvention: 'camelCaseOnly'
           }
-        }, stylusLoaderConfig]
+        }, postCSSLoaderConfig, stylusLoaderConfig]
       },
       {
         test: /\.styl$/,
         exclude: /\.module\.styl$/,
-        loader: ['style-loader', 'css-loader', stylusLoaderConfig]
+        loader: ['style-loader', 'css-loader', postCSSLoaderConfig, stylusLoaderConfig]
       },
       {
         test: /\.css$/,
-        loader: ['style-loader', 'css-loader']
+        loader: ['style-loader', 'css-loader', postCSSLoaderConfig]
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
