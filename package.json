@@ -42,8 +42,9 @@
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "types": "tsc ./src/lib/CPF.ts --declarationDir dist --emitDeclarationOnly --declaration",
     "build:site": "rm -rf website && webpack --config webpack.config.prod.js",
+    "build": "rollup --config",
     "deploy": "npm run build:site && gh-pages -d website",
-    "prepublishOnly": "rm -rf dist && rollup -c && npm run types",
+    "prepublishOnly": "rm -rf dist && npm run build && npm run types",
     "postpublish": "npm run tag && git push --tags",
     "tag": "git tag v$npm_package_version"
   },
