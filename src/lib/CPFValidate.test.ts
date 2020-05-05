@@ -1,8 +1,7 @@
 import { validate } from './CPF'
 
 const CPF = { validate }
-const spy = jest.spyOn(console, 'warn')
-const WARN_MESSAGE = 'Unsupported value'
+const spy = jest.spyOn(console, 'error')
 
 beforeEach(() => {
   spy.mockReset()
@@ -93,25 +92,21 @@ describe('Validate function', () => {
     it('Should return undefined to true', () => {
       // @ts-expect-error
       expect(CPF.validate(true)).toBeFalsy()
-      expect(spy).toHaveBeenCalledWith(WARN_MESSAGE)
     })
 
     it('Should return undefined to false', () => {
       // @ts-expect-error
       expect(CPF.validate(false)).toBeFalsy()
-      expect(spy).toHaveBeenCalledWith(WARN_MESSAGE)
     })
 
     it('Should return undefined to null', () => {
       // @ts-expect-error
       expect(CPF.validate(null)).toBeFalsy()
-      expect(spy).toHaveBeenCalledWith(WARN_MESSAGE)
     })
 
     it('Should return undefined to undefined', () => {
       // @ts-expect-error
       expect(CPF.validate(undefined)).toBeFalsy()
-      expect(spy).toHaveBeenCalledWith(WARN_MESSAGE)
     })
 
     it('Should return undefined to an empty string', () => {
@@ -121,7 +116,6 @@ describe('Validate function', () => {
     it('Should return undefined to no parameters', () => {
       // @ts-expect-error
       expect(CPF.validate()).toBeFalsy()
-      expect(spy).toHaveBeenCalledWith(WARN_MESSAGE)
     })
 
     it('Should return undefined to NaN', () => {
