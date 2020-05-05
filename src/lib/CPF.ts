@@ -44,11 +44,15 @@ export const validate = (value: string | number): boolean => {
     return false
   }
 
+  if (typeof value === 'number' && isNaN(value)) {
+    return false
+  }
+
   const cleanCPF = String(value).replace(/\.|-|\s/g, '')
   const firstNineDigits = cleanCPF.substring(0, 9)
   const checker = cleanCPF.substring(9, 11)
 
-  if (allDigitsAreEqual(cleanCPF) || !hasCPFLength(cleanCPF)) {
+  if (!hasCPFLength(cleanCPF) || allDigitsAreEqual(cleanCPF)) {
     return false
   }
 
