@@ -1,6 +1,5 @@
-import { validate } from './CPF'
+import * as CPF from './CPF'
 
-const CPF = { validate }
 const spy = jest.spyOn(console, 'error')
 
 beforeEach(() => {
