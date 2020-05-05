@@ -36,7 +36,7 @@
     "formatting-write": "prettier --write './src/**/*.{js,jsx,ts,tsx,html}'",
     "test": "jest",
     "test:watch": "npm test -- --watch",
-    "test:mutation": "stryker run --reporters html",
+    "test:mutation": "stryker run",
     "test:mutation-report": "stryker run --reporters dashboard",
     "test:coverage": "npm test -- --coverage",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
