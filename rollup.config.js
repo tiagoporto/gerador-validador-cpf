@@ -31,6 +31,9 @@ export default [
     },
     plugins: [
       babel({ extensions: ['.js', '.ts'] }),
+      resolve({
+        extensions: ['.ts', '.js']
+      }),
       license({
         banner
       })
@@ -47,7 +50,9 @@ export default [
     ],
     plugins: [
       babel({ extensions: ['.js', '.ts'] }),
-      resolve(),
+      resolve({
+        extensions: ['.ts']
+      }),
       terser(),
       license({
         banner
