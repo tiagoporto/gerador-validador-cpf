@@ -43,11 +43,11 @@ export const formatCPF = (cpf: string, format?: boolean): string => {
 }
 
 export const allDigitsAreEqual = (digits: string): boolean => {
-  for (let i = 1; i < digits.length; ++i) {
-    if (digits[i] !== digits[0]) {
-      return false
+  for (let i = 0; i < 10; i++) {
+    if (digits === Array(digits.length + 1).join(String(i))) {
+      return true
     }
   }
 
-  return true
+  return false
 }
