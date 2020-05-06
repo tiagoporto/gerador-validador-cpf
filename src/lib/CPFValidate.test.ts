@@ -1,10 +1,6 @@
 import * as CPF from './CPF'
 
-const spy = jest.spyOn(console, 'error')
-
-beforeEach(() => {
-  spy.mockReset()
-})
+jest.spyOn(console, 'error')
 
 describe('Validate function', () => {
   describe('Type Number', () => {
@@ -88,37 +84,42 @@ describe('Validate function', () => {
   })
 
   describe('No values', () => {
-    it('Should return undefined to true', () => {
+    it('Should return false to true', () => {
       // @ts-expect-error
       expect(CPF.validate(true)).toBeFalsy()
     })
 
-    it('Should return undefined to false', () => {
+    it('Should return false to false', () => {
       // @ts-expect-error
       expect(CPF.validate(false)).toBeFalsy()
     })
 
-    it('Should return undefined to null', () => {
+    it('Should return false to null', () => {
       // @ts-expect-error
       expect(CPF.validate(null)).toBeFalsy()
     })
 
-    it('Should return undefined to undefined', () => {
+    it('Should return false to undefined', () => {
       // @ts-expect-error
       expect(CPF.validate(undefined)).toBeFalsy()
     })
 
-    it('Should return undefined to an empty string', () => {
+    it('Should return false to an empty string', () => {
       expect(CPF.validate('')).toBeFalsy()
     })
 
-    it('Should return undefined to no parameters', () => {
+    it('Should return false to no parameters', () => {
       // @ts-expect-error
       expect(CPF.validate()).toBeFalsy()
     })
 
-    it('Should return undefined to NaN', () => {
+    it('Should return false to NaN', () => {
       expect(CPF.validate(NaN)).toBeFalsy()
+    })
+
+    it('Should return false to object', () => {
+      // @ts-expect-error
+      expect(CPF.validate({})).toBeFalsy()
     })
   })
 })

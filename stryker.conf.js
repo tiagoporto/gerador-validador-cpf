@@ -4,6 +4,7 @@ module.exports = function (config) {
     packageManager: 'npm',
     testRunner: 'jest',
     transpilers: [],
+    reporters: ['clear-text'],
     coverageAnalysis: 'off',
     mutate: ['src/lib/CPF.ts'],
     babelrcFile: '.babelrc'
