@@ -18,12 +18,10 @@ export const ValidateSection: FC = () => {
 
   const { cpf, isValid, message, tempCpf } = validation
 
-  const handleChangeCPF = ({
-    currentTarget,
-  }: ChangeEvent<HTMLInputElement>): void => {
+  const handleChangeCPF = (cpf: string): void => {
     setValidation({
       ...validation,
-      tempCpf: currentTarget.value,
+      tempCpf: cpf,
     })
   }
 
@@ -59,8 +57,8 @@ export const ValidateSection: FC = () => {
 
       <IMaskInput
         value={tempCpf}
-        onChange={handleChangeCPF}
         placeholder={t(i18nResources.validate.insertCPF)}
+        onAccept={handleChangeCPF}
         className={style.validateSectionInput}
         type="text"
         mask={'000.000.000-00'}
