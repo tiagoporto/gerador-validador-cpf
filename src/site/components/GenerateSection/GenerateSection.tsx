@@ -5,6 +5,8 @@ import { generate as generateCPF } from '../../../lib/CPF'
 import { toast } from 'react-toastify'
 import { useTranslation } from 'react-i18next'
 import i18nResources from '@i18nResources'
+// @ts-expect-error
+import { IMaskInput } from 'react-imask'
 
 export const GenerateSection: FC = () => {
   const [cpf, setCpf] = useState<string>('')
@@ -32,11 +34,12 @@ export const GenerateSection: FC = () => {
       <h2>{t(i18nResources.generate.title)}</h2>
 
       <CopyToClipboard text={cpf} onCopy={handleCopy}>
-        <input
+        <IMaskInput
           value={cpf}
+          placeholder={i18nResources.generate.cpfGenerated}
           className={styles.input}
           type="text"
-          placeholder={i18nResources.generate.cpfGenerated}
+          mask={'000.000.000-00'}
           readOnly
         />
       </CopyToClipboard>

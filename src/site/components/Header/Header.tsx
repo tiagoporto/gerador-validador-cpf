@@ -36,8 +36,8 @@ export const Header: FC = () => {
         text="npm install gerador-validador-cpf --save"
         onCopy={handleCopy}
       >
-        <pre>
-          <code className={`${styles.copy} hljs`}>
+        <pre className={styles.copy}>
+          <code className="hljs">
             npm install gerador-validador-cpf --save-dev
           </code>
         </pre>

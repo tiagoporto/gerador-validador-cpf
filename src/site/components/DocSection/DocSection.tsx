@@ -1,3 +1,4 @@
+import styles from './DocSection.module.styl'
 import React, { FC, useEffect } from 'react'
 // @ts-expect-error
 import hljs from 'highlight.js/lib/core.js'
@@ -18,12 +19,12 @@ export const DocSection: FC = () => {
     <section>
       <h2>{t(i18nResources.docs.title)}</h2>
 
-      <pre>
+      <pre className={styles.code}>
         <code className="hljs js">
           {`import { generate, validate } from 'gerador-validador-cpf'
 
-generate()
-validate('123.456.789-00')`}
+const cpf = generate()
+const isValidCPF = validate('123.456.789-00')`}
         </code>
       </pre>
 

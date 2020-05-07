@@ -23,12 +23,18 @@
 
 .copy
   cursor: pointer
-  display: inline-block !important
-  padding-right: 40px !important
+  border-radius: em(3px)
   trailer(1)
 
-  &:hover
-    background-image: url('./copy.svg')
-    background-position: center right 10px
-    background-repeat: no-repeat
-    background-size: 20px 20px
+  code
+    display: inline-block !important
+
+    @media (min-width: em($phone))
+      padding-right: 40px !important
+
+    &:hover
+      @media (min-width: em($phone))
+        background-position: center right 10px
+        background-repeat: no-repeat
+        background-size: 20px 20px
+        background-image: url('./copy.svg')

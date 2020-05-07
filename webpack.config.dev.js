@@ -40,7 +40,8 @@ module.exports = {
     contentBase: path.join(__dirname, 'public'),
     overlay: true,
     inline: true,
-    open: true
+    open: true,
+    host: '0.0.0.0'
   },
   module: {
     rules: [
@@ -62,16 +63,35 @@ module.exports = {
             sourceMap: true,
             localsConvention: 'camelCaseOnly'
           }
-        }, postCSSLoaderConfig, stylusLoaderConfig]
+        },
+          postCSSLoaderConfig,
+          stylusLoaderConfig]
       },
       {
         test: /\.styl$/,
         exclude: /\.module\.styl$/,
-        loader: ['style-loader', 'css-loader', postCSSLoaderConfig, stylusLoaderConfig]
+        loader: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            }
+          },
+          postCSSLoaderConfig,
+          stylusLoaderConfig
+        ]
       },
       {
         test: /\.css$/,
-        loader: ['style-loader', 'css-loader', postCSSLoaderConfig]
+        loader: [
+          'style-loader', {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            }
+          },
+          postCSSLoaderConfig]
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
