@@ -16,9 +16,7 @@ before_deploy: npm run build:site
 jobs:
   include:
     - stage: Checks
-      script: true
-
-    - script:
+      script:
         - gem install awesome_bot
         - awesome_bot *.md --allow-redirect --white-list travis-ci,packagephobia.now
       name: Check Doc links
@@ -36,9 +34,7 @@ jobs:
       name: Check Prepublish
 
     - stage: 'Tests and Reports'
-      script: true
-
-    - script: npm run test:coverage && npm run coveralls
+      script: npm run test:coverage && npm run coveralls
       name: Run Unit Tests, generate coverage and publish to coveralls
 
     - script: npm run test:mutation-report
