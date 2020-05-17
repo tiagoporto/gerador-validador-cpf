@@ -47,6 +47,7 @@ export const Donate: FC = () => {
               category: 'Star',
               type: 'generate-validade-cpf',
             })}
+            aria-label={t(i18nResources.donate.leaveStar)}
             data-footnote={t(i18nResources.donate.leaveStar)}
             href="https://github.com/tiagoporto/gerador-validador-cpf/stargazers"
             target="_blank"
@@ -64,6 +65,7 @@ export const Donate: FC = () => {
               category: 'Donate',
               type: 'Paypal generate-validade-cpf',
             })}
+            aria-label={t(i18nResources.donate.contributePaypal)}
             data-footnote={t(i18nResources.donate.contributePaypal)}
             href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YTDUQ8RZ2G4Q8&lc=BR&item_name=tiagoporto&item_number=geradorcpf&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted"
             target="_blank"
@@ -84,6 +86,7 @@ export const Donate: FC = () => {
                 category: 'Donate',
                 type: 'Bitcoin generate-validate-cpf',
               })}
+              aria-label={t(i18nResources.donate.contributeBitcoin)}
               data-footnote={t(i18nResources.donate.contributeBitcoin)}
             >
               Bitcoin
