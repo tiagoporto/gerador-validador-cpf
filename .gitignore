@@ -110,4 +110,4 @@ typings/
 
 website/**/*
 dist/
-locales/resources.json
+src/site/locales/resources.json

@@ -1,6 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const brResources = require('./locales/br/app.json')
+const brResources = require('./src/site/locales/br/app.json')
 
 const stylusLoaderConfig = {
   loader: 'stylus-loader',
@@ -31,9 +31,6 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './src/site/index.tsx'
-  },
-  output: {
-    filename: '[name].[hash].js'
   },
   devtool: 'eval-source-map',
   devServer: {
@@ -110,7 +107,7 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
     alias: {
-      '@i18nResources': path.join(__dirname, './locales/resources.json')
+      '@i18nResources': path.join(__dirname, './src/site/locales/resources.json')
     }
   },
   plugins: [

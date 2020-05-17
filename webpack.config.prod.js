@@ -2,7 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { GenerateSW } = require('workbox-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
-const brResources = require('./locales/br/app.json')
+const brResources = require('./src/site/locales/br/app.json')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const stylusLoaderConfig = {
@@ -118,7 +118,7 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
     alias: {
-      '@i18nResources': path.join(__dirname, './locales/resources.json')
+      '@i18nResources': path.join(__dirname, './src/site/locales/resources.json')
     }
   },
   plugins: [

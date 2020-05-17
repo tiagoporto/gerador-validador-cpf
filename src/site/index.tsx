@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { App } from './App'
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
-import { i18nResources } from '../../locales'
+import { i18nResources } from './locales'
 
 if (process.env.NODE_ENV === 'production') {
   import('react-ga').then((ReactGA) => {

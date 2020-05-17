@@ -12,7 +12,7 @@ function generateMappings(content) {
   // read source files
   const resources = { ...parser.parse(JSON.parse(content)) }
 
-  const outputDir = path.resolve(process.cwd(), './locales')
+  const outputDir = path.resolve(process.cwd(), './src/site/locales')
   fse.mkdirsSync(outputDir)
   fse.writeFileSync(`${outputDir}/resources.json`, JSON.stringify(resources))
   callback(null, content)
