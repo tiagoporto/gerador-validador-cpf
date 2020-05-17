@@ -2,6 +2,7 @@ import styles from './DocSection.module.styl'
 import React, { FC, useEffect } from 'react'
 // @ts-expect-error
 import hljs from 'highlight.js/lib/core.js'
+// @ts-expect-error
 import javascript from 'highlight.js/lib/languages/javascript.js'
 import 'highlight.js/styles/github.css'
 import i18nResources from '@i18nResources'
