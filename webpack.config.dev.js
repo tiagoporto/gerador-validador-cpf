@@ -5,6 +5,7 @@ const brResources = require('./src/site/locales/br/app.json')
 const stylusLoaderConfig = {
   loader: 'stylus-loader',
   options: {
+    'include css': true,
     sourceMap: true,
     import: [
       path.resolve(__dirname, './src/site/styles/settings/_variables.styl'),

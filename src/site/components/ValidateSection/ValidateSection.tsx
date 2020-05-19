@@ -53,27 +53,28 @@ export const ValidateSection: FC = () => {
 
   return (
     <section className={style.validateSection}>
-      <h2>{t(i18nResources.validate.title)}</h2>
+      <div className={style.center}>
+        <h2>{t(i18nResources.validate.title)}</h2>
 
-      <IMaskInput
-        value={tempCpf}
-        placeholder={t(i18nResources.validate.insertCPF)}
-        onAccept={handleChangeCPF}
-        className={style.validateSectionInput}
-        type="text"
-        mask={'000.000.000-00'}
-        required
-      />
+        <IMaskInput
+          aria-label={t(i18nResources.validate.insertCPF)}
+          value={tempCpf}
+          placeholder={t(i18nResources.validate.insertCPF)}
+          onAccept={handleChangeCPF}
+          className={style.validateSectionInput}
+          type="text"
+          mask={'000.000.000-00'}
+          required
+        />
 
-      <input
-        className={`${style.validateSectionInput} ${style.message} ${
-          isValid && cpf ? style.messageValid : ''
-        } ${!isValid && cpf ? style.messageInvalid : ''}`}
-        type="text"
-        placeholder="..."
-        value={message}
-        readOnly
-      />
+        <div
+          className={`${style.validateSectionInput} ${style.message} ${
+            isValid && cpf ? style.messageValid : ''
+          } ${!isValid && cpf ? style.messageInvalid : ''}`}
+        >
+          {message || '...'}
+        </div>
+      </div>
     </section>
   )
 }
