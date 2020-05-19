@@ -16,12 +16,7 @@
     "title": "Generate",
     "cpfGenerated": "Generated CPF"
   },
-  "docs": {
-    "title": "Use",
-    "fullDocumentation": "Full documentation in <0>github.com/tiagoporto/gerador-validador-cpf</0>."
-  },
   "info": {
-    "title": "Info",
     "algorithm": "Implements the follow <0>algorithm</0>.",
     "disclaimer": "Lib available to assist developers in software testing, doesn't have link with \"Receita Federal do Brasil\".",
     "cpfByState": "The last digit before verifiers (last 2 digits), corresponds with the brasilian state were CPF was issued.",

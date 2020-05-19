@@ -7,50 +7,51 @@ export const InfoSection: FC = () => {
   const { t } = useTranslation()
 
   return (
-    <section>
-      <h2>{t(i18nResources.info.title)}</h2>
-      <p>{t(i18nResources.info.disclaimer)}</p>
+    <section className={styles.infoSection}>
+      <div className={styles.center}>
+        <p>{t(i18nResources.info.disclaimer)}</p>
 
-      <Trans
-        i18nKey={i18nResources.info.algorithm}
-        components={[
-          <a
-            key="link"
-            href="http://www.geradorcpf.com/algoritmo_do_cpf.htm"
-          />,
-        ]}
-      />
-
-      <p>
         <Trans
-          i18nKey={i18nResources.info.disclaimerValidCPF}
+          i18nKey={i18nResources.info.algorithm}
           components={[
             <a
               key="link"
-              href="http://www.receita.fazenda.gov.br/aplicacoes/atcta/cpf/consultapublica.asp"
+              href="http://www.geradorcpf.com/algoritmo_do_cpf.htm"
             />,
           ]}
         />
-      </p>
 
-      <p>{t(i18nResources.info.cpfByState)}</p>
+        <p>
+          <Trans
+            i18nKey={i18nResources.info.disclaimerValidCPF}
+            components={[
+              <a
+                key="link"
+                href="http://www.receita.fazenda.gov.br/aplicacoes/atcta/cpf/consultapublica.asp"
+              />,
+            ]}
+          />
+        </p>
 
-      <blockquote>
-        <Trans
-          i18nKey={i18nResources.info.example}
-          components={[<strong key="strong" />]}
-        />
-      </blockquote>
+        <p>{t(i18nResources.info.cpfByState)}</p>
 
-      <p>{t(i18nResources.info.codeByState)}</p>
+        <blockquote>
+          <Trans
+            i18nKey={i18nResources.info.example}
+            components={[<strong key="strong" />]}
+          />
+        </blockquote>
 
-      <ol className={styles.list}>
-        {Array.from(Array(10).keys()).map((i) => (
-          <li key={`item${i}`}>
-            {t(i18nResources.info[`stateCode${i + 1}` as 'stateCode1'])}
-          </li>
-        ))}
-      </ol>
+        <p>{t(i18nResources.info.codeByState)}</p>
+
+        <ol className={styles.list}>
+          {Array.from(Array(10).keys()).map((i) => (
+            <li key={`item${i}`}>
+              {t(i18nResources.info[`stateCode${i + 1}` as 'stateCode1'])}
+            </li>
+          ))}
+        </ol>
+      </div>
     </section>
   )
 }

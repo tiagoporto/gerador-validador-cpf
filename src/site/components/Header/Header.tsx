@@ -7,6 +7,7 @@ import i18nResources from '@i18nResources'
 import { useTranslation } from 'react-i18next'
 import { Donate } from '../Donate'
 import { ChangeLocale } from '../ChangeLocale'
+import 'highlight.js/styles/github.css'
 
 export const Header: FC = () => {
   const { t } = useTranslation()
@@ -44,6 +45,14 @@ export const Header: FC = () => {
       </CopyToClipboard>
 
       <Donate />
+      {/* <p style={{ textAlign: 'center' }}>
+        <a
+          className={styles.docButton}
+          href="https://github.com/tiagoporto/gerador-validador-cpf"
+        >
+          DOC
+        </a>
+      </p> */}
     </header>
   )
 }

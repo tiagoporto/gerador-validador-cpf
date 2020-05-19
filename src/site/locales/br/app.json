@@ -16,12 +16,7 @@
     "title": "Gerar",
     "cpfGenerated": "CPF gerado"
   },
-  "docs": {
-    "title": "Uso",
-    "fullDocumentation": "Documentação completa em <0>github.com/tiagoporto/gerador-validador-cpf</0>."
-  },
   "info": {
-    "title": "Obs",
     "algorithm": "Utiliza o seguinte <0>algoritmo</0>.",
     "disclaimer": "Lib disponível para auxiliar desenvolvedores em testes de software, não possui qualquer vínculo com a Receita Federal do Brasil.",
     "cpfByState": "O CPF guarda o estado brasileiro de onde foi emitido, esse número corresponde ao último algarismo anterior aos dois dígitos verificadores.",

@@ -31,26 +31,28 @@ export const GenerateSection: FC = () => {
 
   return (
     <section className={styles.generateSection}>
-      <h2>{t(i18nResources.generate.title)}</h2>
+      <div className={styles.center}>
+        <h2>{t(i18nResources.generate.title)}</h2>
 
-      <CopyToClipboard text={cpf} onCopy={handleCopy}>
-        <IMaskInput
-          value={cpf}
-          placeholder={i18nResources.generate.cpfGenerated}
-          className={styles.input}
-          type="text"
-          mask={'000.000.000-00'}
-          readOnly
-        />
-      </CopyToClipboard>
+        <CopyToClipboard text={cpf} onCopy={handleCopy}>
+          <IMaskInput
+            aria-label={t(i18nResources.generate.cpfGenerated)}
+            value={cpf}
+            className={styles.input}
+            type="text"
+            mask={'000.000.000-00'}
+            readOnly
+          />
+        </CopyToClipboard>
 
-      <button
-        onClick={generateNewCPF('click')}
-        className={styles.generateButton}
-        type="button"
-      >
-        {t(i18nResources.generate.title)}
-      </button>
+        <button
+          onClick={generateNewCPF('click')}
+          className={styles.generateButton}
+          type="button"
+        >
+          {t(i18nResources.generate.title)}
+        </button>
+      </div>
     </section>
   )
 }

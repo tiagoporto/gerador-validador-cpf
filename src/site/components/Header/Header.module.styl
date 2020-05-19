@@ -5,7 +5,9 @@
   );
   padding: $base-line-height 20px
   text-align: center
-  trailer(1)
+  box-shadow: 0 2px 6px lighten(#000, 20%)
+  position relative
+  z-index: 1
 
   span
     @media (max-width: em($phone))
@@ -38,3 +40,9 @@
         background-repeat: no-repeat
         background-size: 20px 20px
         background-image: url('./copy.svg')
+
+// .doc-button
+//   border: 2px solid #FFF
+//   padding: 5px 30px
+//   text-decoration none
+//   font-weight 700
