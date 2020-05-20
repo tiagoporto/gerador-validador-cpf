@@ -35,6 +35,7 @@
     "check-formatting": "prettier --check './src/**/*.{js,jsx,ts,tsx,html}'",
     "formatting-write": "prettier --write './src/**/*.{js,jsx,ts,tsx,html}'",
     "test": "jest",
+    "test:bundle": "jest --config ./jest/es.config.js && jest --config ./jest/umd.config.js && jest --config ./jest/umd.min.config.js",
     "test:watch": "npm test -- --watch",
     "test:mutation": "stryker run",
     "test:mutation-report": "stryker run --reporters dashboard",

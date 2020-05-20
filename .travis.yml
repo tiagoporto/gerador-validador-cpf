@@ -40,11 +40,21 @@ jobs:
     - script: npm run test:mutation-report
       name: Run Mutation Tests and publish reports
 
+    - script:
+        - npm run build
+        - npm run test:bundle
+      name: Run bundle tests
+
     - stage: Tests
       name: Run Unit Tests
 
     - script: npm run test:mutation
       name: Run Mutation Tests
+
+    - script:
+        - npm run build
+        - npm run test:bundle
+      name: Run bundle tests
 
     - stage: 'Deploy gh-pages'
       deploy:
