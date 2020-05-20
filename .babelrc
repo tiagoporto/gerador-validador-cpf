@@ -7,7 +7,7 @@
           "browsers": ["ie > 8", "cover 95%"]
         },
         "corejs": 3,
-        "useBuiltIns": "usage",
+        "useBuiltIns": "entry",
         "modules": false,
         "loose": true
       }
