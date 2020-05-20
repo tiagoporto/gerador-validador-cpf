@@ -1,6 +1,10 @@
 import * as CPF from './CPF'
 
-jest.spyOn(console, 'error')
+const spy = jest.spyOn(console, 'error')
+
+beforeEach(() => {
+  spy.mockReset()
+})
 
 describe('Validate function', () => {
   describe('Type Number', () => {
@@ -10,14 +14,17 @@ describe('Validate function', () => {
 
     it("Should return false when isn't a valid CPF", () => {
       expect(CPF.validate(123456789012)).toBeFalsy()
+      expect(spy).toHaveBeenCalledTimes(1)
     })
 
     it('Should return false when is missing digits', () => {
       expect(CPF.validate(13768664)).toBeFalsy()
+      expect(spy).toHaveBeenCalledTimes(1)
     })
 
     it('Should return false when is more than 11 digits', () => {
       expect(CPF.validate(1376864235262564)).toBeFalsy()
+      expect(spy).toHaveBeenCalledTimes(1)
     })
 
     it('Should return false is 11 repeat digits', () => {
@@ -56,10 +63,12 @@ describe('Validate function', () => {
 
     it('Should return false when is mixing digits and letter', () => {
       expect(CPF.validate('a064.875.987-10')).toBeFalsy()
+      expect(spy).toHaveBeenCalledTimes(1)
     })
 
     it('Should return false to special caracters', () => {
       expect(CPF.validate('0&.*00.00a-00')).toBeFalsy()
+      expect(spy).toHaveBeenCalledTimes(1)
     })
 
     it('Should return false is 11 repeat digits', () => {
