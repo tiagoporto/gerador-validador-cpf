@@ -43,6 +43,7 @@ module.exports = {
   entry: {
     index: [
       'core-js/modules/esnext.global-this.js',
+      'core-js/modules/es.number.is-nan.js',
       './src/site/index.tsx'
     ],
     shared: 'react'
