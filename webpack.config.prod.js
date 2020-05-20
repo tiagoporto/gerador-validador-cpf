@@ -41,7 +41,10 @@ const postCSSLoaderConfig = {
 module.exports = {
   mode: 'production',
   entry: {
-    index: './src/site/index.tsx',
+    index: [
+      'core-js/modules/esnext.global-this.js',
+      './src/site/index.tsx'
+    ],
     shared: 'react'
   },
   output: {

@@ -43,7 +43,7 @@ jobs:
     - script:
         - npm run build
         - npm run test:bundle
-      name: Run bundle tests
+      name: Run Unit test against dist
 
     - stage: Tests
       name: Run Unit Tests
@@ -54,7 +54,7 @@ jobs:
     - script:
         - npm run build
         - npm run test:bundle
-      name: Run bundle tests
+      name: Run Unit test against dist
 
     - stage: 'Deploy gh-pages'
       deploy:
