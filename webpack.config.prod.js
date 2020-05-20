@@ -45,6 +45,7 @@ module.exports = {
       'core-js/modules/esnext.global-this.js',
       'core-js/modules/es.number.is-nan.js',
       'core-js/modules/es.map.js',
+      'core-js/modules/es.set.js',
       './src/site/index.tsx'
     ],
     shared: 'react'
