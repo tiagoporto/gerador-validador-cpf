@@ -6,12 +6,12 @@ import { initReactI18next } from 'react-i18next'
 import { i18nResources } from './locales'
 
 if (process.env.NODE_ENV === 'production') {
-  import('react-ga').then((ReactGA) => {
+  import(/* webpackChunkName: "react-ga" */ 'react-ga').then((ReactGA) => {
     ReactGA.initialize('UA-32351360-4')
     ReactGA.pageview(window.location.pathname + window.location.search)
   })
   // @ts-expect-error
-  import('./serviceWorker')
+  import(/* webpackChunkName: "serviceWorker" */ './serviceWorker')
 }
 
 i18n.use(initReactI18next).init({

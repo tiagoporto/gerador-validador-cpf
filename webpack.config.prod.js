@@ -25,7 +25,6 @@ const miniCSSLoaderConfig = {
 const postCSSLoaderConfig = {
   loader: 'postcss-loader',
   options: {
-    sourceMap: true,
     plugins: (loader) => [
       require('postcss-preset-env')({
         stage: 3,
@@ -41,27 +40,32 @@ const postCSSLoaderConfig = {
 module.exports = {
   mode: 'production',
   entry: {
-    index: [
-      'core-js/modules/esnext.global-this.js',
-      'core-js/modules/es.number.is-nan.js',
-      'core-js/modules/es.map.js',
-      'core-js/modules/es.set.js',
-      './src/site/index.tsx'
-    ],
+    index: './src/site/index.tsx',
     shared: 'react'
   },
+  devtool: 'source-map',
   output: {
     filename: '[name].[contenthash].js',
     chunkFilename: '[name].[contenthash].bundle.js',
     path: path.resolve(__dirname, 'website')
   },
   optimization: {
-    minimize: true,
+    minimize: false,
     splitChunks: {
       chunks: 'all',
       cacheGroups: {
+        react: {
+          test: /node_modules\/(react|react-dom)/,
+          chunks: 'all',
+          enforce: true
+        },
+        polyfill: {
+          test: /node_modules\/(core-js)/,
+          chunks: 'all',
+          enforce: true
+        },
         vendors: {
-          test: /node_modules/,
+          test: /node_modules\/(?!core-js|react)/,
           chunks: 'all',
           enforce: true
         },
@@ -78,7 +82,7 @@ module.exports = {
     rules: [
       {
         test: /\.(jsx?|tsx?)$/,
-        exclude: /node_modules/,
+        // exclude: /node_modules/,
         loader: 'babel-loader'
       },
       {
