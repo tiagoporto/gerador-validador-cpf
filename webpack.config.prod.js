@@ -140,7 +140,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css'
     }),
-    new CopyPlugin(['public']),
+    new CopyPlugin({ patterns: ['public'] }),
     new HtmlWebpackPlugin({
       favicon: './public/favicon.ico',
       template: './src/site/index.ejs',
