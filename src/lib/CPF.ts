@@ -35,16 +35,12 @@ export const generate = ({ format }: { format?: boolean } = {}): string => {
  * @author Tiago Porto
  *
  * @function Validate
- * @param  {(string|number)} value  CPF number
+ * @param  {string} value  CPF number
  *
  * @returns {boolean}                true = valid || false = invalid
  */
-export const validate = (value: string | number): boolean => {
-  if (typeof value !== 'string' && typeof value !== 'number') {
-    return false
-  }
-
-  if (typeof value === 'number' && isNaN(value)) {
+export const validate = (value: string): boolean => {
+  if (typeof value !== 'string') {
     return false
   }
 
