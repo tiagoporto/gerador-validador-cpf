@@ -1,5 +1,4 @@
 {
-  "ignore": ["/core-js/"],
   "presets": [
     [
       "@babel/preset-env",
