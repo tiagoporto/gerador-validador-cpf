@@ -40,8 +40,13 @@ const postCSSLoaderConfig = {
 module.exports = {
   mode: 'production',
   entry: {
-    index: './src/site/index.tsx',
-    shared: 'react'
+    index: [
+      'core-js/modules/esnext.global-this.js',
+      'core-js/modules/es.number.is-nan.js',
+      'core-js/modules/es.map.js',
+      'core-js/modules/es.set.js',
+      './src/site/index.tsx'
+    ]
   },
   devtool: 'source-map',
   output: {
@@ -82,7 +87,7 @@ module.exports = {
     rules: [
       {
         test: /\.(jsx?|tsx?)$/,
-        // exclude: /node_modules/,
+        exclude: /node_modules/,
         loader: 'babel-loader'
       },
       {
