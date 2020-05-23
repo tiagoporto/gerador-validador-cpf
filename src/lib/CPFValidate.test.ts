@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import * as CPF from './CPF'
 
 const spy = jest.spyOn(console, 'error')
