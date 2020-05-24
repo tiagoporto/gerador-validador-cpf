@@ -11,7 +11,16 @@ stryker.conf.js
 tsconfig.json
 yarn.lock
 webpack.config.js
+webpack.config.dev.js
+webpack.config.prod.js
+gerador-validador-cpf-*.tgz
 
+.vscode/
+@types/
+jest/
+loader/
+website/
+website/
 .github/
 .stryker-tmp/
 .publish/
