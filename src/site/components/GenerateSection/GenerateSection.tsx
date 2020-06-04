@@ -4,7 +4,7 @@ import CopyToClipboard from 'react-copy-to-clipboard'
 import { generate as generateCPF } from '../../../lib/CPF'
 import { toast } from 'react-toastify'
 import { useTranslation } from 'react-i18next'
-import i18nResources from '@i18nResources'
+import i18nResources from '@i18n/app.json'
 // @ts-expect-error
 import { IMaskInput } from 'react-imask'
 
