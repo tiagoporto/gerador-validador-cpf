@@ -4,7 +4,7 @@ import { validate as validadeCPF } from '../../../lib/CPF'
 // @ts-expect-error
 import { IMaskInput } from 'react-imask'
 import { useTranslation } from 'react-i18next'
-import i18nResources from '@i18nResources'
+import i18nResources from '@i18n/app.json'
 
 export const ValidateSection: FC = () => {
   const { t } = useTranslation()

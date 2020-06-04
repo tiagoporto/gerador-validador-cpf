@@ -4,7 +4,7 @@ import React, { FC, useState } from 'react'
 import BTCQR from './img/BTCQR.png'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import { toast } from 'react-toastify'
-import i18nResources from '@i18nResources'
+import i18nResources from '@i18n/app.json'
 import { useTranslation } from 'react-i18next'
 
 export const Donate: FC = () => {
