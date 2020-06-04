@@ -18,7 +18,6 @@ gerador-validador-cpf-*.tgz
 .vscode/
 @types/
 jest/
-loader/
 website/
 website/
 .github/
