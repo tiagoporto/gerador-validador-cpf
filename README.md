@@ -76,4 +76,4 @@ validate('123.456.789-00')
 
 ## Licença
 
-Gerador e validador de CPF está sobre os termos da [licença MIT](https://github.com/tiagoporto/gerador-validador-cpf/blob/master/LICENSE).
+Gerador e validador de CPF está sob os termos da [licença MIT](https://github.com/tiagoporto/gerador-validador-cpf/blob/master/LICENSE).
