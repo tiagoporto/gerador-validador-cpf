@@ -41,7 +41,7 @@ _Leia em outros idiomas: [English](https://github.com/tiagoporto/gerador-validad
 ## Instalação
 
 ```sh
-npm install gerador-validador-cpf@next --save
+npm install gerador-validador-cpf --save
 ```
 
 ### Gerando CPF
