@@ -41,7 +41,7 @@ _Read in other languages: English, [Português(Brasil)](https://github.com/tiago
 ## Installation
 
 ```sh
-npm install gerador-validador-cpf@next --save
+npm install gerador-validador-cpf --save
 ```
 
 ### Generate CPF
