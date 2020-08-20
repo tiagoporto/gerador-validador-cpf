@@ -19,7 +19,8 @@
     "prettier/standard"
   ],
   "rules": {
-    "no-console": ["error", { "allow": ["warn", "error", "info"] }]
+    "no-console": ["error", { "allow": ["warn", "error", "info"] }],
+    "@typescript-eslint/ban-ts-comment": "off"
   },
   "plugins": ["jest", "@typescript-eslint"]
 }

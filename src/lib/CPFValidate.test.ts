@@ -1,11 +1,4 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import * as CPF from './CPF'
-
-const spy = jest.spyOn(console, 'error')
-
-beforeEach(() => {
-  spy.mockReset()
-})
 
 describe('CPF.validate()', () => {
   describe('Passing string', () => {
@@ -36,7 +29,6 @@ describe('CPF.validate()', () => {
 
     it('Should return false to a non valid CPF', () => {
       expect(CPF.validate('123456789012')).toBeFalsy()
-      expect(spy).toHaveBeenCalledTimes(1)
     })
 
     it('Should return true to a valid formated CPF', () => {
@@ -61,12 +53,10 @@ describe('CPF.validate()', () => {
 
     it('Should return false to a value missing digits', () => {
       expect(CPF.validate('1376866366')).toBeFalsy()
-      expect(spy).toHaveBeenCalledTimes(1)
     })
 
     it('Should return false to a value with more than 11 digits', () => {
       expect(CPF.validate('137686636631')).toBeFalsy()
-      expect(spy).toHaveBeenCalledTimes(1)
     })
 
     it('Should return false to letters and special caracters', () => {
@@ -78,7 +68,6 @@ describe('CPF.validate()', () => {
       expect(CPF.validate('0&.*00.00a-00')).toBeFalsy()
       expect(CPF.validate('00?.*00.01a-89')).toBeFalsy()
       expect(CPF.validate('?.**-%^(%(')).toBeFalsy()
-      expect(spy).toHaveBeenCalledTimes(5)
     })
 
     it('Should return true to a valid CPF where first verifier is 0', () => {
