@@ -9,10 +9,8 @@ export const generateFirstDigits = (): string => {
 
 export const hasCPFLength = (cpf: string): void | boolean => {
   if (cpf.length > 11) {
-    console.error('CPF number has more than 11 digits.')
     return false
   } else if (cpf.length < 11) {
-    console.error('CPF number has fewer than 11 digits.')
     return false
   }
 
