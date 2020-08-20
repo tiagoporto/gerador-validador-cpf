@@ -23,6 +23,10 @@
   "main": "./dist/CPF.umd.js",
   "module": "./dist/CPF.es.js",
   "typings": "./dist/CPF.d.ts",
+  "files": [
+    "/dist",
+    "/README-en.md"
+  ],
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --hot --config webpack.config.dev.js",
