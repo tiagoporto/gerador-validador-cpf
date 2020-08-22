@@ -63,7 +63,7 @@ validate('12345678900')
 validate('123.456.789-00')
 ```
 
-**Obs.** os caracteres `.`, `-` e `espaço`, ignorados na validação.
+**Obs.** os caracteres `.`, `-` e `espaço`, são ignorados na validação.
 
 ## Contribuição
 
