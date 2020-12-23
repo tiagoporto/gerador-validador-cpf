@@ -1,7 +1,7 @@
-import babel from '@rollup/plugin-babel';
+import babel from '@rollup/plugin-babel'
 import { terser } from 'rollup-plugin-terser'
 import license from 'rollup-plugin-license'
-import resolve from '@rollup/plugin-node-resolve';
+import resolve from '@rollup/plugin-node-resolve'
 
 const banner = `
 @preserve
@@ -17,26 +17,26 @@ export default [
     output: [
       {
         file: 'dist/CPF.es.js',
-        format: 'es'
+        format: 'es',
       },
       {
         file: 'dist/CPF.umd.js',
         format: 'umd',
-        name: 'CPF'
-      }
+        name: 'CPF',
+      },
     ],
     external(id) {
-      return id.includes('core-js');
+      return id.includes('core-js')
     },
     plugins: [
       babel({ extensions: ['.js', '.ts'] }),
       resolve({
-        extensions: ['.ts', '.js']
+        extensions: ['.ts', '.js'],
       }),
       license({
-        banner
-      })
-    ]
+        banner,
+      }),
+    ],
   },
   {
     input: 'src/lib/CPF.ts',
@@ -44,18 +44,18 @@ export default [
       {
         file: 'dist/CPF.umd.min.js',
         format: 'umd',
-        name: 'CPF'
-      }
+        name: 'CPF',
+      },
     ],
     plugins: [
       babel({ extensions: ['.js', '.ts'] }),
       resolve({
-        extensions: ['.ts']
+        extensions: ['.ts'],
       }),
       terser(),
       license({
-        banner
-      })
-    ]
-  }
+        banner,
+      }),
+    ],
+  },
 ]

@@ -3,6 +3,6 @@ module.exports = {
   roots: ['<rootDir>/src'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   moduleNameMapper: {
-    './CPF': '<rootDir>/dist/CPF.umd.min'
-  }
+    './CPF': '<rootDir>/dist/CPF.umd.min',
+  },
 }

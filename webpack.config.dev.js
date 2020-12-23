@@ -9,9 +9,9 @@ const stylusLoaderConfig = {
     sourceMap: true,
     import: [
       path.resolve(__dirname, './src/site/styles/settings/_variables.styl'),
-      path.resolve(__dirname, './src/site/styles/helpers/index.styl')
-    ]
-  }
+      path.resolve(__dirname, './src/site/styles/helpers/index.styl'),
+    ],
+  },
 }
 
 const postCSSLoaderConfig = {
@@ -24,14 +24,13 @@ const postCSSLoaderConfig = {
       }),
       require('postcss-combine-media-query')(),
     ],
-  }
+  },
 }
-
 
 module.exports = {
   mode: 'development',
   entry: {
-    index: './src/site/index.tsx'
+    index: './src/site/index.tsx',
   },
   devtool: 'eval-source-map',
   devServer: {
@@ -39,31 +38,34 @@ module.exports = {
     overlay: true,
     inline: true,
     open: true,
-    host: '0.0.0.0'
+    host: '0.0.0.0',
   },
   module: {
     rules: [
       {
         test: /\.(jsx?|tsx?)$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
       },
       {
         test: /\.module\.styl$/,
-        loader: ['style-loader', {
-          loader: 'css-loader',
-          options: {
-            importLoaders: 2,
-            modules: {
-              localIdentName: '[local]--[hash:base64:7]',
+        loader: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+              modules: {
+                localIdentName: '[local]--[hash:base64:7]',
+              },
+              esModule: true,
+              sourceMap: true,
+              localsConvention: 'camelCaseOnly',
             },
-            esModule: true,
-            sourceMap: true,
-            localsConvention: 'camelCaseOnly'
-          }
-        },
+          },
           postCSSLoaderConfig,
-          stylusLoaderConfig]
+          stylusLoaderConfig,
+        ],
       },
       {
         test: /\.styl$/,
@@ -74,42 +76,42 @@ module.exports = {
             loader: 'css-loader',
             options: {
               sourceMap: true,
-            }
+            },
           },
           postCSSLoaderConfig,
-          stylusLoaderConfig
-        ]
+          stylusLoaderConfig,
+        ],
       },
       {
         test: /\.css$/,
         loader: [
-          'style-loader', {
+          'style-loader',
+          {
             loader: 'css-loader',
             options: {
               sourceMap: true,
-            }
+            },
           },
-          postCSSLoaderConfig]
+          postCSSLoaderConfig,
+        ],
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
-        loader: 'file-loader'
+        loader: 'file-loader',
       },
       {
         test: /\.json$/,
-        include: [
-          path.resolve(__dirname, 'src/site/locales/en/')
-        ],
-        use: ['json-map-keys-loader']
-      }
-    ]
+        include: [path.resolve(__dirname, 'src/site/locales/en/')],
+        use: ['json-map-keys-loader'],
+      },
+    ],
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
     alias: {
       '@i18n': path.join(__dirname, './src/site/locales/en'),
-      '@i18nResources': path.join(__dirname, './src/site/locales')
-    }
+      '@i18nResources': path.join(__dirname, './src/site/locales'),
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -121,8 +123,8 @@ module.exports = {
       },
       templateParameters: {
         title: brResources.app.title,
-        lang: 'pt-BR'
-      }
+        lang: 'pt-BR',
+      },
     }),
-  ]
+  ],
 }
