@@ -1,5 +1,5 @@
+import React from 'react'
 import styles from './Header.module.styl'
-import React, { FC } from 'react'
 import GithubCorner from 'react-github-corner'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import { toast } from 'react-toastify'
@@ -9,7 +9,7 @@ import { Donate } from '../Donate'
 import { ChangeLocale } from '../ChangeLocale'
 import 'highlight.js/styles/github.css'
 
-export const Header: FC = () => {
+export const Header = () => {
   const { t } = useTranslation()
 
   const handleCopy = (): void => {

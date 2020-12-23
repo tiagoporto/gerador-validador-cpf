@@ -1,9 +1,9 @@
-import React, { FC } from 'react'
+import React from 'react'
 import { GenerateSection } from '../GenerateSection'
 import { ValidateSection } from '../ValidateSection'
 import { InfoSection } from '../InfoSection'
 
-export const Main: FC = () => (
+export const Main = () => (
   <main>
     <GenerateSection />
 

@@ -1,13 +1,13 @@
+import React, { useState } from 'react'
 import styles from './Donation.module.styl'
 import codeStyles from './Code.module.styl'
-import React, { FC, useState } from 'react'
 import BTCQR from './img/BTCQR.png'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import { toast } from 'react-toastify'
 import i18nResources from '@i18n/app.json'
 import { useTranslation } from 'react-i18next'
 
-export const Donate: FC = () => {
+export const Donate = () => {
   const { t } = useTranslation()
   const [isCodeVisible, setIsCodeVisible] = useState(false)
 

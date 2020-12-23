@@ -1,9 +1,9 @@
+import React from 'react'
 import styles from './InfoSection.module.styl'
-import React, { FC } from 'react'
 import { useTranslation, Trans } from 'react-i18next'
 import i18nResources from '@i18n/app.json'
 
-export const InfoSection: FC = () => {
+export const InfoSection = () => {
   const { t } = useTranslation()
 
   return (

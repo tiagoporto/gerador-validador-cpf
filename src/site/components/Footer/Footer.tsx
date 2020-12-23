@@ -1,7 +1,7 @@
+import React from 'react'
 import styles from './Footer.module.styl'
-import React, { FC } from 'react'
 
-export const Footer: FC = () => {
+export const Footer = () => {
   const date = new Date()
   return (
     <footer className={styles.footer}>
