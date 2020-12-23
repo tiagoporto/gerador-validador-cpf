@@ -1,7 +1,7 @@
 const jsConfig = {
   extends: [
     'eslint:recommended',
-    // 'plugin:unicorn/recommended',
+    'plugin:unicorn/recommended',
     'plugin:promise/recommended',
     'plugin:node/recommended',
     // 'plugin:import/errors',
@@ -15,7 +15,7 @@ const jsConfig = {
     'standard',
     'prettier',
     'prettier/standard',
-    // 'prettier/unicorn',
+    'prettier/unicorn',
   ],
   extendsInMD: ['eslint:recommended', 'standard'],
   rules: {
@@ -23,7 +23,7 @@ const jsConfig = {
     'jest/lowercase-name': ['error', { ignore: ['describe'] }],
     'node/no-unsupported-features/es-syntax': 'off',
     'node/no-missing-import': 'off',
-    // 'unicorn/filename-case': 'off',
+    'unicorn/filename-case': 'off',
     'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
   },
   rulesInMD: {
@@ -65,7 +65,11 @@ const reactConfig = {
     'prettier/react',
   ],
   extendsInMD: ['plugin:react/recommended'],
-  rules: { ...jsConfig.rules, 'react/prop-types': 'off' },
+  rules: {
+    ...jsConfig.rules,
+    'react/prop-types': 'off',
+    'react-hooks/exhaustive-deps': 'off',
+  },
   rulesInMd: {
     ...jsConfig.rulesInMD,
     'react/react-in-jsx-scope': 'off',
