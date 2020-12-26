@@ -6,9 +6,7 @@ export const calcFirstChecker = (firstNineDigits: string): number => {
   }
 
   const lastSumChecker = sum % 11
-  const firstChecker = lastSumChecker < 2 ? 0 : 11 - lastSumChecker
-
-  return firstChecker
+  return lastSumChecker < 2 ? 0 : 11 - lastSumChecker
 }
 
 export const calcSecondChecker = (cpfWithChecker1: string): number => {
@@ -19,7 +17,5 @@ export const calcSecondChecker = (cpfWithChecker1: string): number => {
   }
 
   const lastSumChecker2 = sum % 11
-  const checker2 = lastSumChecker2 < 2 ? 0 : 11 - lastSumChecker2
-
-  return checker2
+  return lastSumChecker2 < 2 ? 0 : 11 - lastSumChecker2
 }

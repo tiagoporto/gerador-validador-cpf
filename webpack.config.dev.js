@@ -5,12 +5,14 @@ const brResources = require('./src/site/locales/br/app.json')
 const stylusLoaderConfig = {
   loader: 'stylus-loader',
   options: {
-    'include css': true,
     sourceMap: true,
-    import: [
-      path.resolve(__dirname, './src/site/styles/settings/_variables.styl'),
-      path.resolve(__dirname, './src/site/styles/helpers/index.styl'),
-    ],
+    stylusOptions: {
+      includeCSS: true,
+      import: [
+        path.resolve(__dirname, './src/site/styles/settings/_variables.styl'),
+        path.resolve(__dirname, './src/site/styles/helpers/index.styl'),
+      ],
+    },
   },
 }
 
@@ -18,12 +20,17 @@ const postCSSLoaderConfig = {
   loader: 'postcss-loader',
   options: {
     sourceMap: true,
-    plugins: (loader) => [
-      require('postcss-preset-env')({
-        stage: 3,
-      }),
-      require('postcss-combine-media-query')(),
-    ],
+    postcssOptions: {
+      plugins: [
+        [
+          'postcss-preset-env',
+          {
+            stage: 3,
+          },
+        ],
+        'postcss-combine-media-query',
+      ],
+    },
   },
 }
 
@@ -49,18 +56,18 @@ module.exports = {
       },
       {
         test: /\.module\.styl$/,
-        loader: [
+        use: [
           'style-loader',
           {
             loader: 'css-loader',
             options: {
               importLoaders: 2,
-              modules: {
-                localIdentName: '[local]--[hash:base64:7]',
-              },
               esModule: true,
               sourceMap: true,
-              localsConvention: 'camelCaseOnly',
+              modules: {
+                localIdentName: '[local]--[hash:base64:7]',
+                exportLocalsConvention: 'camelCaseOnly',
+              },
             },
           },
           postCSSLoaderConfig,
@@ -70,7 +77,7 @@ module.exports = {
       {
         test: /\.styl$/,
         exclude: /\.module\.styl$/,
-        loader: [
+        use: [
           'style-loader',
           {
             loader: 'css-loader',
@@ -84,7 +91,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: [
+        use: [
           'style-loader',
           {
             loader: 'css-loader',

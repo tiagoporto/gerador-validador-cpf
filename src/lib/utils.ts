@@ -8,9 +8,7 @@ export const generateFirstDigits = (): string => {
 }
 
 export const hasCPFLength = (cpf: string): void | boolean => {
-  if (cpf.length > 11) {
-    return false
-  } else if (cpf.length < 11) {
+  if (cpf.length > 11 || cpf.length < 11) {
     return false
   }
 
