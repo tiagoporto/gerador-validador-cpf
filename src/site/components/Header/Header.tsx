@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './Header.module.styl'
 import GithubCorner from 'react-github-corner'
 import CopyToClipboard from 'react-copy-to-clipboard'

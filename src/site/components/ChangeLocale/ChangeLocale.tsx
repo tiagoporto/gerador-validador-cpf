@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import i18next from 'i18next'
 import styles from './ChangeLocale.module.styl'
 
@@ -34,6 +34,7 @@ export const ChangeLocale = () => {
     }
   }, [])
 
+  // eslint-disable-next-line unicorn/no-null
   return isLoading ? null : (
     <div className={styles.box}>
       <button

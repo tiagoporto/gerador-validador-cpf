@@ -1,52 +1,59 @@
 import style from './ValidateSection.module.styl'
-import React, { FC, useState, useEffect, ChangeEvent } from 'react'
+import { useState, useEffect } from 'react'
 import { validate as validadeCPF } from '../../../lib/CPF'
-// @ts-expect-error
+// @ts-expect-error: Missing types
 import { IMaskInput } from 'react-imask'
 import { useTranslation } from 'react-i18next'
 import i18nResources from '@i18n/app.json'
 
-export const ValidateSection: FC = () => {
-  const { t } = useTranslation()
+const enableAnalytics = async () => {
+  const ReactGA = await import('react-ga')
+  ReactGA.ga('send', 'event', 'Validate', 'type', 'Validate CPF')
+}
 
+export const ValidateSection = () => {
+  const { t } = useTranslation()
   const [validation, setValidation] = useState({
     tempCpf: '',
     cpf: '',
     isValid: false,
     message: '',
   })
-
   const { cpf, isValid, message, tempCpf } = validation
 
+  type Validation = typeof validation
+
+  const updateValidationState = (parameters: Partial<Validation>) => {
+    setValidation((previousState) => ({
+      ...previousState,
+      ...parameters,
+    }))
+  }
+
   const handleChangeCPF = (cpf: string): void => {
-    setValidation({
-      ...validation,
-      tempCpf: cpf,
-    })
+    updateValidationState({ tempCpf: cpf })
   }
 
   useEffect(() => {
     if (tempCpf.length === 14) {
-      if (process.env.NODE_ENV === 'production') {
-        import('react-ga').then((ReactGA) => {
-          ReactGA.ga('send', 'event', 'Validate', 'type', 'Validate CPF')
-        })
-      }
+      process.env.NODE_ENV === 'production' && enableAnalytics()
 
       const isValid = validadeCPF(tempCpf)
-      setValidation({
-        ...validation,
+      const message = isValid
+        ? t(i18nResources.messages.validCPF)
+        : t(i18nResources.messages.invalidCPF)
+
+      updateValidationState({
         cpf: tempCpf,
         isValid,
-        message: isValid
-          ? t(i18nResources.messages.validCPF)
-          : t(i18nResources.messages.invalidCPF),
+        message,
       })
     } else {
-      setValidation({
-        ...validation,
+      const message = tempCpf ? t(i18nResources.messages.incomplete) : ''
+
+      updateValidationState({
         cpf: '',
-        message: tempCpf ? t(i18nResources.messages.incomplete) : '',
+        message,
       })
     }
   }, [tempCpf])

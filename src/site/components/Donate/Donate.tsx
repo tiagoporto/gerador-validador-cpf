@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import styles from './Donation.module.styl'
 import codeStyles from './Code.module.styl'
 import BTCQR from './img/BTCQR.png'
@@ -18,9 +18,10 @@ export const Donate = () => {
 
   const trackClick = ({ category, type }: Track) => (): void => {
     if (process.env.NODE_ENV === 'production') {
-      import('react-ga').then((ReactGA) => {
+      ;(async () => {
+        const ReactGA = await import('react-ga')
         ReactGA.ga('send', 'event', category, 'click', type)
-      })
+      })()
     }
   }
 
@@ -100,7 +101,10 @@ export const Donate = () => {
         style={{ display: isCodeVisible ? 'block' : 'none' }}
       >
         <img
+          role="presentation"
+          alt="QRCode Bitcoin Wallet"
           src={BTCQR}
+          onKeyPress={toggleCodeVisibility}
           onClick={toggleCodeVisibility}
           className={`${codeStyles.code} ${
             isCodeVisible ? codeStyles.showCode : codeStyles.hideCode

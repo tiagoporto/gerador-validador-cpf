@@ -1,4 +1,3 @@
-import React from 'react'
 import { GenerateSection } from '../GenerateSection'
 import { ValidateSection } from '../ValidateSection'
 import { InfoSection } from '../InfoSection'

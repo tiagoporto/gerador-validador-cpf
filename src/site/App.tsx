@@ -1,5 +1,5 @@
 import './styles'
-import React, { StrictMode } from 'react'
+import { StrictMode } from 'react'
 import styles from './Toast.module.styl'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'

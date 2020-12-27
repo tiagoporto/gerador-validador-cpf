@@ -1,5 +1,5 @@
 import styles from './GenerateSection.module.styl'
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import { generate as generateCPF } from '../../../lib/CPF'
 import { toast } from 'react-toastify'
@@ -20,9 +20,10 @@ export const GenerateSection = () => {
     setCpf(generateCPF())
 
     if (process.env.NODE_ENV === 'production') {
-      import('react-ga').then((ReactGA) => {
+      ;(async () => {
+        const ReactGA = await import('react-ga')
         ReactGA.ga('send', 'event', 'Generate', type, 'Generate CPF')
-      })
+      })()
     }
   }
   useEffect(() => {
