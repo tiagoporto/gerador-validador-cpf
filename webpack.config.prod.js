@@ -4,6 +4,7 @@ const { GenerateSW } = require('workbox-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const brResources = require('./src/site/locales/br/app.json')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const babel = require('./babel.site')
 
 const stylusLoaderConfig = {
   loader: 'stylus-loader',
@@ -95,6 +96,9 @@ module.exports = {
         test: /\.(jsx?|tsx?)$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
+        options: {
+          ...babel,
+        },
       },
       {
         test: /\.module\.styl$/,

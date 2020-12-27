@@ -52,7 +52,8 @@
     "deploy": "npm run build:site && npx gh-pages -d website",
     "prepublishOnly": "rm -rf dist && npm run build && npm run types",
     "postpublish": "npm run tag && git push --tags",
-    "tag": "git tag v$npm_package_version"
+    "tag": "git tag v$npm_package_version",
+    "prepack": "npm run build"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",

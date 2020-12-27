@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const brResources = require('./src/site/locales/br/app.json')
+const babel = require('./babel.site')
 
 const stylusLoaderConfig = {
   loader: 'stylus-loader',
@@ -52,6 +53,9 @@ module.exports = {
         test: /\.(mjs|jsx?|tsx?)$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
+        options: {
+          ...babel,
+        },
       },
       {
         test: /\.module\.styl$/,
