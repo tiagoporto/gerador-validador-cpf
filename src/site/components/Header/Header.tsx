@@ -28,7 +28,8 @@ export const Header = () => {
       />
 
       <h1 className={styles.panelTitle}>
-        <span>Gerador e</span> validador de CPF
+        <span>Gerador e</span> validador de{' '}
+        <abbr title="Cadastro de Pessoas Físicas">CPF</abbr>
       </h1>
 
       <p>{t(i18nResources.header.libInfo)}</p>
