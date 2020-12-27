@@ -2,6 +2,7 @@ import babel from '@rollup/plugin-babel'
 import { terser } from 'rollup-plugin-terser'
 import license from 'rollup-plugin-license'
 import resolve from '@rollup/plugin-node-resolve'
+import babelConfig from './babel.lib.js'
 
 const banner = `
 @preserve
@@ -25,32 +26,14 @@ export default [
         name: 'CPF',
       },
     ],
-    external(id) {
-      return id.includes('core-js')
-    },
     plugins: [
-      babel({ extensions: ['.js', '.ts'] }),
+      babel({
+        extensions: ['.js', '.ts'],
+        babelHelpers: 'runtime',
+        ...babelConfig,
+      }),
       resolve({
         extensions: ['.ts', '.js'],
-      }),
-      license({
-        banner,
-      }),
-    ],
-  },
-  {
-    input: 'src/lib/CPF.ts',
-    output: [
-      {
-        file: 'dist/CPF.umd.min.js',
-        format: 'umd',
-        name: 'CPF',
-      },
-    ],
-    plugins: [
-      babel({ extensions: ['.js', '.ts'] }),
-      resolve({
-        extensions: ['.ts'],
       }),
       terser(),
       license({
