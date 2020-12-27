@@ -115,8 +115,8 @@ module.exports = {
     },
     // .js files
     {
-      files: ['*.js'],
-      excludedFiles: ['**/*.{md,mdx}/*.{js,javascript}', '**/*.test.js'],
+      files: ['*.{js,mjs}'],
+      excludedFiles: ['**/*.{md,mdx}/*.{js,mjs,javascript}', '**/*.test.js'],
       extends: [...jsConfig.extends],
       rules: { ...jsConfig.rules },
     },
@@ -127,7 +127,7 @@ module.exports = {
     },
     // .js in Markdown files
     {
-      files: ['**/*.{md,mdx}/*.{js,javascript}'],
+      files: ['**/*.{md,mdx}/*.{js,mjs,javascript}'],
       extends: [...jsConfig.extendsInMD],
       rules: { ...jsConfig.rulesInMD },
     },
