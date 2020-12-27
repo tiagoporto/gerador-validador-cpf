@@ -9,8 +9,7 @@ stages:
   - name: 'Tests and Reports'
     if: branch = master
   - name: 'Deploy gh-pages'
-    if: branch = master
-    if: NOT type = pull_request
+    if: branch = master AND NOT type = pull_request
 
 before_deploy: npm run build:site
 
