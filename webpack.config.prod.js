@@ -8,16 +8,19 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const stylusLoaderConfig = {
   loader: 'stylus-loader',
   options: {
-    import: [
-      path.resolve(__dirname, './src/site/styles/settings/_variables.styl'),
-      path.resolve(__dirname, './src/site/styles/helpers/index.styl'),
-    ],
+    stylusOptions: {
+      import: [
+        path.resolve(__dirname, './src/site/styles/settings/_variables.styl'),
+        path.resolve(__dirname, './src/site/styles/helpers/index.styl'),
+      ],
+    },
   },
 }
 
 const miniCSSLoaderConfig = {
   loader: MiniCssExtractPlugin.loader,
   options: {
+    publicPath: '',
     esModule: true,
   },
 }
@@ -25,13 +28,18 @@ const miniCSSLoaderConfig = {
 const postCSSLoaderConfig = {
   loader: 'postcss-loader',
   options: {
-    plugins: (loader) => [
-      require('postcss-preset-env')({
-        stage: 3,
-      }),
-      require('postcss-combine-media-query')(),
-      require('cssnano')(),
-    ],
+    postcssOptions: {
+      plugins: [
+        [
+          'postcss-preset-env',
+          {
+            stage: 3,
+          },
+        ],
+        'postcss-combine-media-query',
+        'cssnano',
+      ],
+    },
   },
 }
 
@@ -90,17 +98,17 @@ module.exports = {
       },
       {
         test: /\.module\.styl$/,
-        loader: [
+        use: [
           miniCSSLoaderConfig,
           {
             loader: 'css-loader',
             options: {
               importLoaders: 2,
+              esModule: true,
               modules: {
                 localIdentName: '[local]--[hash:base64:7]',
+                exportLocalsConvention: 'camelCaseOnly',
               },
-              esModule: true,
-              localsConvention: 'camelCaseOnly',
             },
           },
           postCSSLoaderConfig,
@@ -110,7 +118,7 @@ module.exports = {
       {
         test: /\.styl$/,
         exclude: /\.module\.styl$/,
-        loader: [
+        use: [
           miniCSSLoaderConfig,
           'css-loader',
           postCSSLoaderConfig,
@@ -119,7 +127,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: [miniCSSLoaderConfig, 'css-loader', postCSSLoaderConfig],
+        use: [miniCSSLoaderConfig, 'css-loader', postCSSLoaderConfig],
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,

@@ -1,14 +1,12 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const brResources = require('./src/site/locales/br/app.json')
-const babel = require('./babel.site.js')
 
 const stylusLoaderConfig = {
   loader: 'stylus-loader',
   options: {
     sourceMap: true,
     stylusOptions: {
-      includeCSS: true,
       import: [
         path.resolve(__dirname, './src/site/styles/settings/_variables.styl'),
         path.resolve(__dirname, './src/site/styles/helpers/index.styl'),
@@ -54,9 +52,6 @@ module.exports = {
         test: /\.(mjs|jsx?|tsx?)$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        options: {
-          ...babel,
-        },
       },
       {
         test: /\.module\.styl$/,
@@ -79,7 +74,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(styl|css)$/,
+        test: /\.styl$/,
         exclude: /\.module\.styl$/,
         use: [
           'style-loader',
@@ -91,6 +86,20 @@ module.exports = {
           },
           postCSSLoaderConfig,
           stylusLoaderConfig,
+        ],
+      },
+      {
+        test: /\.css$/,
+        exclude: /\.module\.styl$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+          postCSSLoaderConfig,
         ],
       },
       {
