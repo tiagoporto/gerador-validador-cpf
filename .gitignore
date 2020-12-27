@@ -111,3 +111,4 @@ typings/
 website/**/*
 dist/
 src/site/locales/resources.json
+package/

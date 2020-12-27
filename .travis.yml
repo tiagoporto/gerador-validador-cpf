@@ -42,6 +42,8 @@ jobs:
 
     - script:
         - npm run build
+        - npm pack
+        - tar zxvf *.tgz
         - npm run test:bundle
       name: Run Unit test against dist
 
@@ -53,6 +55,8 @@ jobs:
 
     - script:
         - npm run build
+        - npm pack
+        - tar zxvf *.tgz
         - npm run test:bundle
       name: Run Unit test against dist
 
