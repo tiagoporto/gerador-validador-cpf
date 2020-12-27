@@ -19,6 +19,7 @@ const jsConfig = {
   ],
   extendsInMD: ['eslint:recommended', 'standard'],
   rules: {
+    'unicorn/prevent-abbreviations': 'off',
     'jest/prefer-expect-assertions': 'off',
     'jest/lowercase-name': ['error', { ignore: ['describe'] }],
     'node/no-unsupported-features/es-syntax': 'off',
@@ -44,16 +45,12 @@ const tsConfig = {
   ],
   rules: {
     ...jsConfig.rules,
-    'no-use-before-define': 'off',
-    '@typescript-eslint/no-use-before-define': ['error'],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
   },
   rulesInMd: {
     ...jsConfig.rulesInMD,
     '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-    'no-use-before-define': 'off',
-    '@typescript-eslint/no-use-before-define': ['error'],
   },
 }
 
@@ -69,10 +66,11 @@ const reactConfig = {
     ...jsConfig.rules,
     'react/prop-types': 'off',
     'react-hooks/exhaustive-deps': 'off',
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
   },
   rulesInMd: {
     ...jsConfig.rulesInMD,
-    'react/react-in-jsx-scope': 'off',
   },
 }
 
@@ -89,7 +87,7 @@ module.exports = {
     'react-hooks',
     'jsx-a11y',
     'promise',
-    // 'unicorn',
+    'unicorn',
     'import',
     'node',
     'jest',
@@ -118,9 +116,14 @@ module.exports = {
     // .js files
     {
       files: ['*.js'],
-      excludedFiles: ['**/*.{md,mdx}/*.{js,javascript}'],
+      excludedFiles: ['**/*.{md,mdx}/*.{js,javascript}', '**/*.test.js'],
       extends: [...jsConfig.extends],
       rules: { ...jsConfig.rules },
+    },
+    // .js in test files
+    {
+      files: ['**/*.test.js'],
+      extends: [...jsConfig.extendsInMD],
     },
     // .js in Markdown files
     {
@@ -131,10 +134,16 @@ module.exports = {
     // .ts files
     {
       files: ['*.ts'],
-      excludedFiles: ['**/*.{md,mdx}/*.{ts,typescript}'],
+      excludedFiles: ['**/*.{md,mdx}/*.{ts,typescript}', '**/*.test.ts'],
       parser: '@typescript-eslint/parser',
       extends: [...tsConfig.extends],
       rules: { ...tsConfig.rules },
+    },
+    // .ts in test files
+    {
+      files: ['**/*.test.ts'],
+      parser: '@typescript-eslint/parser',
+      extends: [...tsConfig.extendsInMD],
     },
     // .ts in Markdown files
     {
@@ -146,9 +155,14 @@ module.exports = {
     // .jsx files
     {
       files: ['*.jsx'],
-      excludedFiles: ['**/*.{md,mdx}/*.jsx'],
+      excludedFiles: ['**/*.{md,mdx}/*.jsx', '**/*.test.jsx'],
       extends: [...jsConfig.extends, ...reactConfig.extends],
       rules: { ...jsConfig.rules, ...reactConfig.rules },
+    },
+    // .jsx in test files
+    {
+      files: ['**/*.test.jsx'],
+      extends: [...jsConfig.extendsInMD, ...reactConfig.extendsInMD],
     },
     // .jsx in Markdown files
     {
@@ -159,13 +173,19 @@ module.exports = {
     // .tsx files
     {
       files: ['*.tsx'],
-      excludedFiles: ['**/*.{md,mdx}/*.tsx'],
+      excludedFiles: ['**/*.{md,mdx}/*.tsx', '**/*.test.tsx'],
       parser: '@typescript-eslint/parser',
       extends: [...reactConfig.extends, ...tsConfig.extends],
       rules: {
         ...tsConfig.rules,
         ...reactConfig.rules,
       },
+    },
+    // .tsx in test files
+    {
+      files: ['**/*.test.tsx'],
+      parser: '@typescript-eslint/parser',
+      extends: [...reactConfig.extendsInMD, ...tsConfig.extendsInMD],
     },
     // .tsx in Markdown files
     {
