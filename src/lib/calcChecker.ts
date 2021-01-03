@@ -1,8 +1,8 @@
 export const calcFirstChecker = (firstNineDigits: string): number => {
   let sum = 0
 
-  for (let j = 0; j < 9; ++j) {
-    sum += Number(firstNineDigits.charAt(j)) * (10 - j)
+  for (let i = 0; i < 9; ++i) {
+    sum += Number(firstNineDigits.charAt(i)) * (10 - i)
   }
 
   const lastSumChecker = sum % 11
@@ -12,8 +12,8 @@ export const calcFirstChecker = (firstNineDigits: string): number => {
 export const calcSecondChecker = (cpfWithChecker1: string): number => {
   let sum = 0
 
-  for (let k = 0; k < 10; ++k) {
-    sum += Number(cpfWithChecker1.charAt(k)) * (11 - k)
+  for (let i = 0; i < 10; ++i) {
+    sum += Number(cpfWithChecker1.charAt(i)) * (11 - i)
   }
 
   const lastSumChecker2 = sum % 11

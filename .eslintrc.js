@@ -4,8 +4,8 @@ const jsConfig = {
     'plugin:unicorn/recommended',
     'plugin:promise/recommended',
     'plugin:node/recommended',
-    // 'plugin:import/errors',
-    // 'plugin:import/warnings',
+    'plugin:import/errors',
+    'plugin:import/warnings',
     'plugin:testing-library/recommended',
     'plugin:jest/all',
     'plugin:jest-dom/recommended',
@@ -17,18 +17,77 @@ const jsConfig = {
     'prettier/standard',
     'prettier/unicorn',
   ],
-  extendsInMD: ['eslint:recommended', 'standard'],
+  extendsMD: ['eslint:recommended', 'standard'],
   rules: {
-    'unicorn/prevent-abbreviations': 'off',
-    'jest/prefer-expect-assertions': 'off',
-    'jest/lowercase-name': ['error', { ignore: ['describe'] }],
+    'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
     'node/no-unsupported-features/es-syntax': 'off',
     'node/no-missing-import': 'off',
+    'jest/prefer-expect-assertions': 'off',
+    'jest/lowercase-name': ['error', { ignore: ['describe'] }],
     'unicorn/filename-case': 'off',
-    'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
+    'unicorn/prevent-abbreviations': [
+      'error',
+      {
+        checkDefaultAndNamespaceImports: false,
+        extendDefaultReplacements: false,
+        replacements: {
+          cb: {
+            callback: true,
+          },
+          ctx: {
+            context: true,
+          },
+          cur: {
+            current: true,
+          },
+          curr: {
+            current: true,
+          },
+          e: {
+            error: true,
+            event: true,
+          },
+          el: {
+            element: true,
+          },
+          elem: {
+            element: true,
+          },
+          err: {
+            error: true,
+          },
+          ev: {
+            event: true,
+          },
+          evt: {
+            event: true,
+          },
+          fn: {
+            function: true,
+          },
+          idx: {
+            index: true,
+          },
+          len: {
+            length: true,
+          },
+          rel: {
+            related: true,
+            relationship: true,
+            relative: true,
+          },
+          ver: {
+            version: true,
+          },
+        },
+      },
+    ],
   },
-  rulesInMD: {
+  rulesMD: {
     'no-unused-vars': 'off',
+  },
+  rulesTest: {
+    'unicorn/no-null': 'off',
   },
 }
 
@@ -39,18 +98,18 @@ const tsConfig = {
     'plugin:@typescript-eslint/recommended',
     'prettier/@typescript-eslint',
   ],
-  extendsInMD: [
-    ...jsConfig.extendsInMD,
-    'plugin:@typescript-eslint/recommended',
-  ],
+  extendsInMD: [...jsConfig.extendsMD, 'plugin:@typescript-eslint/recommended'],
   rules: {
     ...jsConfig.rules,
     '@typescript-eslint/explicit-module-boundary-types': 'off',
   },
-  rulesInMd: {
-    ...jsConfig.rulesInMD,
+  rulesMD: {
+    ...jsConfig.rulesMD,
     '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+  },
+  rulesTest: {
+    ...jsConfig.rulesTest,
   },
 }
 
@@ -61,24 +120,32 @@ const reactConfig = {
     'plugin:react-hooks/recommended',
     'prettier/react',
   ],
-  extendsInMD: ['plugin:react/recommended'],
+  extendsMD: ['plugin:react/recommended'],
   rules: {
-    ...jsConfig.rules,
     'react/prop-types': 'off',
     'react-hooks/exhaustive-deps': 'off',
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
   },
-  rulesInMd: {
-    ...jsConfig.rulesInMD,
+  rulesMD: {},
+  rulesTest: {
+    'react/display-name': 'off',
   },
 }
 
 module.exports = {
-  ignorePatterns: ['.eslintrc.js'],
+  // ignorePatterns: ['.eslintrc.js'],
   settings: {
     react: {
       version: 'detect',
+    },
+    'import/resolver': {
+      alias: {
+        map: [
+          ['@i18n', './src/site/locales/en'],
+          ['!!@i18nResources', './src/site/locales'],
+        ],
+      },
     },
   },
   plugins: [
@@ -123,13 +190,14 @@ module.exports = {
     // .js in test files
     {
       files: ['**/*.test.js'],
-      extends: [...jsConfig.extendsInMD],
+      extends: [...jsConfig.extends],
+      rules: { ...jsConfig.rules, ...jsConfig.rulesTest },
     },
     // .js in Markdown files
     {
       files: ['**/*.{md,mdx}/*.{js,mjs,javascript}'],
-      extends: [...jsConfig.extendsInMD],
-      rules: { ...jsConfig.rulesInMD },
+      extends: [...jsConfig.extendsMD],
+      rules: { ...jsConfig.rulesMD },
     },
     // .ts files
     {
@@ -143,14 +211,15 @@ module.exports = {
     {
       files: ['**/*.test.ts'],
       parser: '@typescript-eslint/parser',
-      extends: [...tsConfig.extendsInMD],
+      extends: [...tsConfig.extends],
+      rules: { ...tsConfig.rules, ...tsConfig.rulesTest },
     },
     // .ts in Markdown files
     {
       files: ['**/*.{md,mdx}/*.{ts,typescript}'],
       parser: '@typescript-eslint/parser',
       extends: [...tsConfig.extendsInMD],
-      rules: { ...tsConfig.rulesInMd },
+      rules: { ...tsConfig.rulesMD },
     },
     // .jsx files
     {
@@ -162,13 +231,19 @@ module.exports = {
     // .jsx in test files
     {
       files: ['**/*.test.jsx'],
-      extends: [...jsConfig.extendsInMD, ...reactConfig.extendsInMD],
+      extends: [...jsConfig.extends, ...reactConfig.extends],
+      rules: {
+        ...jsConfig.rules,
+        ...jsConfig.rulesTest,
+        ...reactConfig.rules,
+        ...reactConfig.rulesTest,
+      },
     },
     // .jsx in Markdown files
     {
       files: ['**/*.{md,mdx}/*.jsx'],
-      extends: [...jsConfig.extendsInMD, ...reactConfig.extendsInMD],
-      rules: { ...jsConfig.rulesInMd, ...reactConfig.rulesInMd },
+      extends: [...jsConfig.extendsMD, ...reactConfig.extendsMD],
+      rules: { ...jsConfig.rulesInMd, ...reactConfig.rulesMD },
     },
     // .tsx files
     {
@@ -185,16 +260,22 @@ module.exports = {
     {
       files: ['**/*.test.tsx'],
       parser: '@typescript-eslint/parser',
-      extends: [...reactConfig.extendsInMD, ...tsConfig.extendsInMD],
+      extends: [...reactConfig.extends, ...tsConfig.extends],
+      rules: {
+        ...tsConfig.rules,
+        ...tsConfig.rulesTest,
+        ...reactConfig.rules,
+        ...reactConfig.rulesTest,
+      },
     },
     // .tsx in Markdown files
     {
       files: ['**/*.{md,mdx}/*.tsx'],
       parser: '@typescript-eslint/parser',
-      extends: [...reactConfig.extendsInMD, ...tsConfig.extendsInMD],
+      extends: [...reactConfig.extendsMD, ...tsConfig.extendsInMD],
       rules: {
-        ...tsConfig.rulesInMd,
-        ...reactConfig.rulesInMd,
+        ...tsConfig.rulesMD,
+        ...reactConfig.rulesMD,
       },
     },
   ],
