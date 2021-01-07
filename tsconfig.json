@@ -61,7 +61,7 @@
 
     /* Advanced Options */
     // "declarationDir": "dist" // Output directory for generated declaration files.
-    forceConsistentCasingInFileNames: true
+    "forceConsistentCasingInFileNames": true
   }
   // "include": ["src/**/*"],
   // "exclude": ["node_modules", "dist"]
