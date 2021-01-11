@@ -4,7 +4,6 @@ about: Open new issue.
 title: ''
 labels: ''
 assignees: ''
-
 ---
 
 <!--

@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
     /* Basic Options */
-    "target": "esnext", // Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'.
-    "module": "esnext", // Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'.
+    "target": "ESNext", // Specify ECMAScript target version: 'ES3' (default)
+    "module": "ESNext", // Specify module code generation
     // "lib": [],                             // Specify library files to be included in the compilation.
     // "allowJs": true,                       // Allow javascript files to be compiled.
     // "checkJs": true,                       // Report errors in .js files.
-    "jsx": "react", // Specify JSX code generation: 'preserve', 'react-native', or 'react'.
+    "jsx": "react-jsxdev", // Specify JSX code generation
     // "declaration": true,                   // Generates corresponding '.d.ts' file.
     // "declarationMap": true,                // Generates a sourcemap for each corresponding '.d.ts' file.
     // "outDir": "./dist/",                   // Redirect output structure to the directory.
@@ -35,7 +35,7 @@
 
     /* Module Resolution Options */
     "resolveJsonModule": true,
-    "moduleResolution": "node", // Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6).
+    "moduleResolution": "Node", // Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6).
     "baseUrl": "src", // Base directory to resolve non-absolute module names.
     "paths": {
       "@i18n/*": ["site/locales/en/*"],
@@ -49,7 +49,7 @@
     // "preserveSymlinks": true,              // Do not resolve the real path of symlinks.
 
     /* Source Map Options */
-    "sourceMap": true // Generates corresponding '.map' file.
+    "sourceMap": true, // Generates corresponding '.map' file.
     // "sourceRoot": "./",                    // Specify the location where debugger should locate TypeScript files instead of source locations.
     // "mapRoot": "./",                       // Specify the location where debugger should locate map files instead of generated locations.
     // "inlineSourceMap": true,               // Emit a single file with source maps instead of having a separate file.
@@ -61,6 +61,7 @@
 
     /* Advanced Options */
     // "declarationDir": "dist" // Output directory for generated declaration files.
+    "forceConsistentCasingInFileNames": true
   }
   // "include": ["src/**/*"],
   // "exclude": ["node_modules", "dist"]

@@ -1,10 +1,10 @@
-import React, { FC, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import i18next from 'i18next'
 import styles from './ChangeLocale.module.styl'
 
 type AvailableLocales = 'en' | 'br'
 
-export const ChangeLocale: FC = () => {
+export const ChangeLocale = () => {
   const handleLocale = (
     locale: AvailableLocales,
     callback?: () => void
@@ -34,6 +34,7 @@ export const ChangeLocale: FC = () => {
     }
   }, [])
 
+  // eslint-disable-next-line unicorn/no-null
   return isLoading ? null : (
     <div className={styles.box}>
       <button

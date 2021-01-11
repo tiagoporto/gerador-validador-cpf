@@ -1,13 +1,13 @@
+import { useState } from 'react'
 import styles from './Donation.module.styl'
 import codeStyles from './Code.module.styl'
-import React, { FC, useState } from 'react'
 import BTCQR from './img/BTCQR.png'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import { toast } from 'react-toastify'
 import i18nResources from '@i18n/app.json'
 import { useTranslation } from 'react-i18next'
 
-export const Donate: FC = () => {
+export const Donate = () => {
   const { t } = useTranslation()
   const [isCodeVisible, setIsCodeVisible] = useState(false)
 
@@ -18,9 +18,10 @@ export const Donate: FC = () => {
 
   const trackClick = ({ category, type }: Track) => (): void => {
     if (process.env.NODE_ENV === 'production') {
-      import('react-ga').then((ReactGA) => {
+      ;(async () => {
+        const ReactGA = await import('react-ga')
         ReactGA.ga('send', 'event', category, 'click', type)
-      })
+      })()
     }
   }
 
@@ -100,7 +101,10 @@ export const Donate: FC = () => {
         style={{ display: isCodeVisible ? 'block' : 'none' }}
       >
         <img
+          role="presentation"
+          alt="QRCode Bitcoin Wallet"
           src={BTCQR}
+          onKeyPress={toggleCodeVisibility}
           onClick={toggleCodeVisibility}
           className={`${codeStyles.code} ${
             isCodeVisible ? codeStyles.showCode : codeStyles.hideCode

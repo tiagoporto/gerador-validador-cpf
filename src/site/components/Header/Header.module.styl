@@ -1,3 +1,5 @@
+@import '../../styles/settings/_variables';
+
 .panel
   background: linear-gradient(
     to bottom, darken($bg-color, 30%) 0%,
@@ -8,6 +10,9 @@
   box-shadow: 0 2px 6px lighten(#000, 20%)
   position relative
   z-index: 1
+
+  abbr
+    text-decoration: none
 
   span
     @media (max-width: em($phone))

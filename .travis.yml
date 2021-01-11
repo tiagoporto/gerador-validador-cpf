@@ -9,7 +9,7 @@ stages:
   - name: 'Tests and Reports'
     if: branch = master
   - name: 'Deploy gh-pages'
-    if: branch = master
+    if: branch = master AND NOT type = pull_request
 
 before_deploy: npm run build:site
 
@@ -41,7 +41,8 @@ jobs:
       name: Run Mutation Tests and publish reports
 
     - script:
-        - npm run build
+        - npm pack
+        - tar zxvf *.tgz
         - npm run test:bundle
       name: Run Unit test against dist
 
@@ -52,7 +53,8 @@ jobs:
       name: Run Mutation Tests
 
     - script:
-        - npm run build
+        - npm pack
+        - tar zxvf *.tgz
         - npm run test:bundle
       name: Run Unit test against dist
 

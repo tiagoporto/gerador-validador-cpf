@@ -1,14 +1,14 @@
 import styles from './GenerateSection.module.styl'
-import React, { FC, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import { generate as generateCPF } from '../../../lib/CPF'
 import { toast } from 'react-toastify'
 import { useTranslation } from 'react-i18next'
 import i18nResources from '@i18n/app.json'
-// @ts-expect-error
+// @ts-expect-error: Missing types
 import { IMaskInput } from 'react-imask'
 
-export const GenerateSection: FC = () => {
+export const GenerateSection = () => {
   const [cpf, setCpf] = useState<string>('')
   const { t } = useTranslation()
 
@@ -20,9 +20,10 @@ export const GenerateSection: FC = () => {
     setCpf(generateCPF())
 
     if (process.env.NODE_ENV === 'production') {
-      import('react-ga').then((ReactGA) => {
+      ;(async () => {
+        const ReactGA = await import('react-ga')
         ReactGA.ga('send', 'event', 'Generate', type, 'Generate CPF')
-      })
+      })()
     }
   }
   useEffect(() => {

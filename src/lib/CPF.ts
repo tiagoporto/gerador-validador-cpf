@@ -8,6 +8,7 @@ import {
 
 /**
  * [Gerador e Validador de CPF](https://tiagoporto.github.io/gerador-validador-cpf)
+ *
  * @author Tiago Porto
  *
  * @function Generate
@@ -32,6 +33,7 @@ export const generate = ({ format }: { format?: boolean } = {}): string => {
 /**
  *
  * [Gerador e Validador de CPF](https://tiagoporto.github.io/gerador-validador-cpf)
+ *
  * @author Tiago Porto
  *
  * @function Validate
@@ -44,9 +46,9 @@ export const validate = (value: string): boolean => {
     return false
   }
 
-  const cleanCPF = String(value).replace(/\.|-|\s/g, '')
-  const firstNineDigits = cleanCPF.substring(0, 9)
-  const checker = cleanCPF.substring(9, 11)
+  const cleanCPF = String(value).replace(/[\s.-]/g, '')
+  const firstNineDigits = cleanCPF.slice(0, 9)
+  const checker = cleanCPF.slice(9, 11)
 
   if (!hasCPFLength(cleanCPF) || allDigitsAreEqual(cleanCPF)) {
     return false

@@ -7,6 +7,6 @@ module.exports = function (config) {
     reporters: ['clear-text'],
     coverageAnalysis: 'off',
     mutate: ['src/lib/CPF.ts'],
-    babelrcFile: '.babelrc'
+    babelrcFile: '.babelrc',
   })
 }

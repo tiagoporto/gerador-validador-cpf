@@ -1,0 +1,5 @@
+{
+  "hooks": {
+    "pre-push": "echo 'Running checks...' && npm run checks"
+  }
+}

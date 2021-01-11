@@ -1,5 +1,4 @@
 import styles from './Header.module.styl'
-import React, { FC } from 'react'
 import GithubCorner from 'react-github-corner'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import { toast } from 'react-toastify'
@@ -9,7 +8,7 @@ import { Donate } from '../Donate'
 import { ChangeLocale } from '../ChangeLocale'
 import 'highlight.js/styles/github.css'
 
-export const Header: FC = () => {
+export const Header = () => {
   const { t } = useTranslation()
 
   const handleCopy = (): void => {
@@ -28,7 +27,8 @@ export const Header: FC = () => {
       />
 
       <h1 className={styles.panelTitle}>
-        <span>Gerador e</span> validador de CPF
+        <span>Gerador e</span> validador de{' '}
+        <abbr title="Cadastro de Pessoas Físicas">CPF</abbr>
       </h1>
 
       <p>{t(i18nResources.header.libInfo)}</p>

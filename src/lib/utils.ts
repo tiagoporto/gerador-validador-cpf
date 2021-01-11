@@ -8,9 +8,7 @@ export const generateFirstDigits = (): string => {
 }
 
 export const hasCPFLength = (cpf: string): void | boolean => {
-  if (cpf.length > 11) {
-    return false
-  } else if (cpf.length < 11) {
+  if (cpf.length > 11 || cpf.length < 11) {
     return false
   }
 
@@ -42,7 +40,7 @@ export const formatCPF = (cpf: string, format?: boolean): string => {
 
 export const allDigitsAreEqual = (digits: string): boolean => {
   for (let i = 0; i < 10; i++) {
-    if (digits === Array(digits.length + 1).join(String(i))) {
+    if (digits === new Array(digits.length + 1).join(String(i))) {
       return true
     }
   }

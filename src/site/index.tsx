@@ -1,18 +1,21 @@
-import React from 'react'
 import ReactDOM from 'react-dom'
 import { App } from './App'
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import { i18nResources } from './locales'
 
-if (process.env.NODE_ENV === 'production') {
-  import(/* webpackChunkName: "react-ga" */ 'react-ga').then((ReactGA) => {
-    ReactGA.initialize('UA-32351360-4')
-    ReactGA.pageview(window.location.pathname + window.location.search)
-  })
-  // @ts-expect-error
-  import(/* webpackChunkName: "serviceWorker" */ './serviceWorker')
+const loadOnProd = async () => {
+  const ReactGA = await import(/* webpackChunkName: "react-ga" */ 'react-ga')
+
+  ReactGA.initialize('UA-32351360-4')
+  ReactGA.pageview(window.location.pathname + window.location.search)
+  const { registerServiceWorker } = await import(
+    /* webpackChunkName: "serviceWorker" */ './serviceWorker'
+  )
+  registerServiceWorker()
 }
+
+process.env.NODE_ENV === 'production' && loadOnProd()
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -23,7 +26,7 @@ i18n.use(initReactI18next).init({
   fallbackLng: 'br',
 })
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<App />, document.querySelector('#root'))
 
 if (module.hot) {
   module.hot.accept()
