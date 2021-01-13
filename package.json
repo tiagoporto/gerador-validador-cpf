@@ -100,7 +100,6 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-sonarjs": "^0.5.0",
-    "eslint-plugin-standard": "^5.0.0",
     "eslint-plugin-testing-library": "^3.10.1",
     "eslint-plugin-unicorn": "^24.0.0",
     "file-loader": "^6.2.0",
