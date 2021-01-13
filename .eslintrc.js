@@ -23,7 +23,12 @@ const jsConfig = {
     'node/no-unsupported-features/es-syntax': 'off',
     'node/no-missing-import': 'off',
     'jest/prefer-expect-assertions': 'off',
-    'jest/lowercase-name': ['error', { ignore: ['describe'] }],
+    "jest/lowercase-name": [
+      "error",
+      {
+        "ignoreTopLevelDescribe": true
+      }
+    ],
     'unicorn/filename-case': 'off',
     'unicorn/prevent-abbreviations': [
       'error',
