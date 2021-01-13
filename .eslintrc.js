@@ -20,6 +20,9 @@ const jsConfig = {
   extendsMD: ['eslint:recommended', 'standard'],
   rules: {
     'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
+    "no-alert": "error",
+    "no-debugger": "error",
+    "no-nested-ternary": "error",
     'node/no-unsupported-features/es-syntax': 'off',
     'node/no-missing-import': 'off',
     'jest/prefer-expect-assertions': 'off',
@@ -107,6 +110,10 @@ const tsConfig = {
   rules: {
     ...jsConfig.rules,
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+    "@typescript-eslint/ban-ts-comment": [
+      "error",
+      { "ts-expect-error": "allow-with-description" }
+    ],
   },
   rulesMD: {
     ...jsConfig.rulesMD,
