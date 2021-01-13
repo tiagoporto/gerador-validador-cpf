@@ -119,6 +119,7 @@ const reactConfig = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'prettier/react',
+    'plugin:testing-library/react',
   ],
   extendsMD: ['plugin:react/recommended'],
   rules: {
