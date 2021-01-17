@@ -192,6 +192,9 @@ module.exports = {
     {
       files: ['*.json'],
       extends: ['plugin:json/recommended'],
+      rules: {
+        'json/*': ['error', { allowComments: true }],
+      },
     },
     // .js files
     {
