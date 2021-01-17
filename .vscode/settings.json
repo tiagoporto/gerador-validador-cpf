@@ -8,6 +8,7 @@
     "typescript",
     "typescriptreact",
     "markdown",
-    "mdx"
+    "mdx",
+    "json"
   ]
 }

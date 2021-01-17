@@ -3,7 +3,6 @@ const jsConfig = {
     'eslint:recommended',
     'plugin:unicorn/recommended',
     'plugin:promise/recommended',
-    'plugin:node/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:testing-library/recommended',
@@ -20,17 +19,15 @@ const jsConfig = {
   extendsMD: ['eslint:recommended', 'standard'],
   rules: {
     'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
-    "no-alert": "error",
-    "no-debugger": "error",
-    "no-nested-ternary": "error",
-    'node/no-unsupported-features/es-syntax': 'off',
-    'node/no-missing-import': 'off',
+    'no-alert': 'error',
+    'no-debugger': 'error',
+    'no-nested-ternary': 'error',
     'jest/prefer-expect-assertions': 'off',
-    "jest/lowercase-name": [
-      "error",
+    'jest/lowercase-name': [
+      'error',
       {
-        "ignoreTopLevelDescribe": true
-      }
+        ignoreTopLevelDescribe: true,
+      },
     ],
     'unicorn/filename-case': 'off',
     'unicorn/prevent-abbreviations': [
@@ -110,9 +107,9 @@ const tsConfig = {
   rules: {
     ...jsConfig.rules,
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-    "@typescript-eslint/ban-ts-comment": [
-      "error",
-      { "ts-expect-error": "allow-with-description" }
+    '@typescript-eslint/ban-ts-comment': [
+      'error',
+      { 'ts-expect-error': 'allow-with-description' },
     ],
   },
   rulesMD: {
@@ -147,7 +144,7 @@ const reactConfig = {
 }
 
 module.exports = {
-  // ignorePatterns: ['.eslintrc.js'],
+  ignorePatterns: [],
   settings: {
     react: {
       version: 'detect',
@@ -169,7 +166,6 @@ module.exports = {
     'promise',
     'unicorn',
     'import',
-    'node',
     'jest',
     'jest-dom',
     'eslint-comments',
