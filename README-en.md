@@ -1,4 +1,4 @@
-# Gerador e Validador de CPF ![Open Source Love](https://raw.githubusercontent.com/ellerbrock/open-source-badges/master/badges/open-source-v3/open-source.svg?sanitize=true)
+# Gerador e Validador de CPF ![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg)
 
 <p align="right">
   <code>LIKED ? Leave a <a href="https://github.com/tiagoporto/gerador-validador-cpf/stargazers">⭐</a> : <a href="https://github.com/tiagoporto/gerador-validador-cpf/issues">😞</a></code>
@@ -8,13 +8,13 @@
 ![npm type definitions](https://img.shields.io/npm/types/gerador-validador-cpf.svg?style=flat-square)
 [![install size](https://packagephobia.now.sh/badge?p=gerador-validador-cpf)](https://packagephobia.now.sh/result?p=gerador-validador-cpf)
 [![bundle size](https://img.shields.io/bundlephobia/min/gerador-validador-cpf?style=flat-square&label=bundle%20size)](https://bundlephobia.com/result?p=gerador-validador-cpf)
-[![License](https://img.shields.io/github/license/tiagoporto/gerador-validador-cpf.svg?style=flat-square)](https://raw.githubusercontent.com/tiagoporto/gerador-validador-cpf/master/LICENSE)
+[![License](https://img.shields.io/github/license/tiagoporto/gerador-validador-cpf.svg?style=flat-square)](LICENSE)
 
 Coverage
 
-[![Build Status](https://img.shields.io/travis/com/tiagoporto/gerador-validador-cpf/master.svg?label=tests&logo=travis&style=flat-square)](https://travis-ci.com/tiagoporto/gerador-validador-cpf)
+[![Build Status](https://img.shields.io/travis/com/tiagoporto/gerador-validador-cpf/main.svg?label=tests&logo=travis&style=flat-square)](https://travis-ci.com/tiagoporto/gerador-validador-cpf)
 [![Coverage Status](https://img.shields.io/coveralls/tiagoporto/gerador-validador-cpf.svg?logo=coveralls&style=flat-square)](https://coveralls.io/github/tiagoporto/gerador-validador-cpf)
-[![Mutation testing cover](https://img.shields.io/endpoint?style=flat-square&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Ftiagoporto%2Fgerador-validador-cpf%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/tiagoporto/gerador-validador-cpf/master)
+[![Mutation testing cover](https://img.shields.io/endpoint?style=flat-square&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Ftiagoporto%2Fgerador-validador-cpf%main)](https://dashboard.stryker-mutator.io/reports/github.com/tiagoporto/gerador-validador-cpf/main)
 
 Statistics
 
@@ -67,7 +67,7 @@ validate('123.456.789-00')
 
 ## Contribute
 
-[How to contribute](https://github.com/tiagoporto/gerador-validador-cpf/blob/master/CONTRIBUTING.md).
+[How to contribute](CONTRIBUTING.md).
 
 ## Donation
 
@@ -76,4 +76,4 @@ validate('123.456.789-00')
 
 ## License
 
-Gerador e validador de CPF is released under the terms of the [MIT license](https://github.com/tiagoporto/gerador-validador-cpf/blob/master/LICENSE).
+Gerador e validador de CPF is released under the terms of the [MIT license](LICENSE).

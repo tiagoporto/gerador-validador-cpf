@@ -5,11 +5,11 @@ node_js:
 stages:
   - Checks
   - name: Tests
-    if: NOT branch = master
+    if: NOT branch = main
   - name: 'Tests and Reports'
-    if: branch = master
+    if: branch = main
   - name: 'Deploy gh-pages'
-    if: branch = master AND NOT type = pull_request
+    if: branch = main AND NOT type = pull_request
 
 before_deploy: npm run build:site
 
