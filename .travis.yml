@@ -16,13 +16,11 @@ before_deploy: npm run build:site
 jobs:
   include:
     - stage: Checks
-      script:
-        - npm run check-links
+    - script: npm run check-links
       name: Check Doc links
 
-      # script:
-      #   - npm run check-urls
-      # name: Check Doc URLs
+    - script: npm run check-urls
+      name: Check Doc URLs
 
     - script: npm run check-typing
       name: Check Typing
