@@ -1,12 +1,8 @@
-module.exports = function (config) {
-  config.set({
-    mutator: 'typescript',
-    packageManager: 'npm',
-    testRunner: 'jest',
-    transpilers: [],
-    reporters: ['clear-text'],
-    coverageAnalysis: 'off',
-    mutate: ['src/lib/CPF.ts'],
-    babelrcFile: '.babelrc',
-  })
+/**
+ * @type {import('@stryker-mutator/api/core').StrykerOptions}
+ */
+module.exports = {
+  packageManager: 'npm',
+  testRunner: 'jest',
+  coverageAnalysis: 'perTest',
 }

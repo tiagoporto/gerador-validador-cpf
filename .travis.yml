@@ -17,9 +17,12 @@ jobs:
   include:
     - stage: Checks
       script:
-        - gem install awesome_bot
-        - awesome_bot *.md --allow-redirect --white-list travis-ci,packagephobia.now
+        - npm run check-links
       name: Check Doc links
+
+      # script:
+      #   - npm run check-urls
+      # name: Check Doc URLs
 
     - script: npm run check-typing
       name: Check Typing
