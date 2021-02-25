@@ -41,7 +41,7 @@
     "test": "jest",
     "test:bundle": "jest --config ./jest/es.config.js && jest --config ./jest/umd.config.js",
     "test:watch": "npm test -- --watch",
-    "test:mutation": "stryker run --reporters clear-text",
+    "test:mutation": "stryker run --reporters html",
     "test:mutation-report": "stryker run --reporters dashboard",
     "test:coverage": "npm test -- --coverage",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
