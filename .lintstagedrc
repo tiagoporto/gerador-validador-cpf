@@ -6,6 +6,6 @@
   "*.{ts,tsx}": "tsc --noEmit --skipLibCheck",
   "*.{js,jsx,ts,tsx,md,mdx}": [
     "eslint --ext js,jsx,ts,tsx,md,mdx --max-warnings 0",
-    "npm jest --bail —-findRelatedTests"
+    "jest --bail --findRelatedTests"
   ]
 }
