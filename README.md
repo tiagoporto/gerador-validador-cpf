@@ -18,6 +18,8 @@ Cobertura
 
 Estatísticas
 
+![Website](https://img.shields.io/website?style=flat-square&url=https%3A%2F%2Ftiagoporto.github.io%2Fgerador-validador-cpf%2F)
+
 [![Downloads](https://img.shields.io/npm/dt/gerador-validador-cpf.svg?logo=npm&style=flat-square)](https://www.npmjs.com/package/gerador-validador-cpf)
 
 [![Dependencies Status](https://img.shields.io/david/tiagoporto/gerador-validador-cpf.svg?style=flat-square)](https://david-dm.org/tiagoporto/gerador-validador-cpf)
@@ -28,15 +30,6 @@ Estatísticas
 A ferramenta pode ser acessada em [tiagoporto.github.io/gerador-validador-cpf](http://tiagoporto.github.io/gerador-validador-cpf).
 
 _Leia em outros idiomas: [English](https://github.com/tiagoporto/gerador-validador-cpf/blob/main/README-en.md), Português(Brasil)_
-
-## Índice
-
-- [Instalação](#instalação)
-  - [Gerando CPF](#gerando-cpf)
-  - [Validando CPF](#validando-cpf)
-- [Contribuição](#contribuição)
-- [Doações](#doações)
-- [Licença](#licença)
 
 ## Instalação
 
