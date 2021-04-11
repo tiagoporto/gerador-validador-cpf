@@ -14,11 +14,11 @@ Cobertura
 
 [![Build Status](https://img.shields.io/travis/com/tiagoporto/gerador-validador-cpf/main.svg?label=tests&logo=travis&style=flat-square)](https://travis-ci.com/tiagoporto/gerador-validador-cpf)
 [![Coverage Status](https://img.shields.io/coveralls/tiagoporto/gerador-validador-cpf.svg?logo=coveralls&style=flat-square)](https://coveralls.io/github/tiagoporto/gerador-validador-cpf)
-[![Mutation testing cover](https://img.shields.io/endpoint?style=flat-square&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Ftiagoporto%2Fgerador-validador-cpf%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/tiagoporto/gerador-validador-cpf/main)
+[![Mutation testing cover](https://img.shields.io/endpoint?style=flat-square&url=https://badge-api.stryker-mutator.io/github.com/tiagoporto/gerador-validador-cpf/main)](https://dashboard.stryker-mutator.io/reports/github.com/tiagoporto/gerador-validador-cpf/main)
 
 Estatísticas
 
-![Website](https://img.shields.io/website?style=flat-square&url=https%3A%2F%2Ftiagoporto.github.io%2Fgerador-validador-cpf%2F)
+![Website](https://img.shields.io/website?style=flat-square&url=https://tiagoporto.github.io/gerador-validador-cpf)
 
 [![Downloads](https://img.shields.io/npm/dt/gerador-validador-cpf.svg?logo=npm&style=flat-square)](https://www.npmjs.com/package/gerador-validador-cpf)
 
@@ -64,8 +64,9 @@ validate('123.456.789-00')
 
 ## Doações
 
-[![Donate](https://img.shields.io/badge/donate-PayPal-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YTDUQ8RZ2G4Q8&lc=BR&item_name=tiagoporto&item_number=geradorcpf&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
-![Donate](https://img.shields.io/badge/bitcoin-3DztnDvY7McQ7zwGS8Vjafsbc1ee1HDAmE-yellow.svg?logo=bitcoin)
+[![Donate](https://img.shields.io/badge/donate-PayPal-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YTDUQ8RZ2G4Q8&lc=BR&item_name=tiagoporto&item_number=geradorcpf&currency_code=BRL&bn=PP%2dDonationsBF:btn_donateCC_LG%2egif:NonHosted)
+
+<!-- ![Donate](https://img.shields.io/badge/bitcoin-3DztnDvY7McQ7zwGS8Vjafsbc1ee1HDAmE-yellow.svg?logo=bitcoin) -->
 
 ## Licença
 
