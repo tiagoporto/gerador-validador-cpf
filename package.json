@@ -35,7 +35,7 @@
     "lint": "eslint --ext js,jsx,ts,tsx,md,mdx ./src --max-warnings 0",
     "lint:fix": "npm run lint -- --fix",
     "checks": "npm run check-formatting && npm run check-typing && npm run lint",
-    "check-typing": "tsc --noEmit",
+    "check-typing": "tsc --project tsconfig.json",
     "check-formatting": "prettier --check --ignore-unknown '**/*'",
     "formatting:fix": "npm run check-formatting -- --write",
     "test": "jest",
