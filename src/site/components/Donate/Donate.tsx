@@ -78,7 +78,7 @@ export const Donate = () => {
 
         <li>
           <CopyToClipboard
-            text="3DztnDvY7McQ7zwGS8Vjafsbc1ee1HDAmE"
+            text="14iqQcwYPLBceRURHuFosGTDXxMmt3cLDp"
             onCopy={handleCopy}
           >
             <button
