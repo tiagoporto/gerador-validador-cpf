@@ -7,10 +7,6 @@ import {
 } from './utils'
 
 /**
- * [Gerador e Validador de CPF](https://tiagoporto.github.io/gerador-validador-cpf)
- *
- * @author Tiago Porto
- *
  * @function Generate
  * @param  {string} [formatOption="default"] - 'digits' | 'checker' | 'default'
  *
@@ -31,11 +27,6 @@ export const generate = ({ format }: { format?: boolean } = {}): string => {
 }
 
 /**
- *
- * [Gerador e Validador de CPF](https://tiagoporto.github.io/gerador-validador-cpf)
- *
- * @author Tiago Porto
- *
  * @function Validate
  * @param  {string} value  CPF number
  *
