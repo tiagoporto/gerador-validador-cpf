@@ -28,8 +28,8 @@ jobs:
     - script: npm run lint
       name: Lint
 
-    - script: npm run prepublishOnly
-      name: Check Prepublish
+    - script: npm run prepack
+      name: Check Prepack
 
     - stage: 'Tests and Reports'
       script: npm run test:coverage && npm run coveralls
