@@ -31,7 +31,7 @@
   "scripts": {
     "prepare": "husky install",
     "start": "webpack serve --hot --config webpack.config.dev.js",
-    "check-docs": "remark --frail --use validate-links --use remark-lint-no-dead-urls --use remark-lint-no-url-trailing-slash .",
+    "check-docs": "remark --frail .",
     "lint": "eslint --ext js,jsx,ts,tsx,md,mdx ./src --max-warnings 0",
     "lint:fix": "npm run lint -- --fix",
     "checks": "npm run check-docs && npm run check-formatting && npm run check-typing && npm run lint",
