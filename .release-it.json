@@ -10,7 +10,7 @@
     "releaseName": "v${version}",
     "release": true,
     "draft": false,
-    "assets": []
+    "assets": ["dd/*.zip"]
   },
   "npm": {
     "publish": false
