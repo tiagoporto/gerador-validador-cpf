@@ -1,0 +1,88 @@
+name: Tests
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  NODE_VERSION: '16'
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [
+        synchronize, # PR was updated
+        opened, # PR was open
+        reopened, # PR was closed and is now open again
+        ready_for_review, # PR was converted from draft to open
+      ]
+
+jobs:
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          token: ${{ env.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install Dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Run Unit Tests
+        run: npm run test
+
+      - name: Run Mutation Tests
+        run: npm run test:mutation
+
+      - name: Run Unit test against dist
+        run: |
+          npm pack
+          tar zxvf *.tgz
+          npm run test:bundle
+
+  tests-reports:
+    name: Tests and Reports
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          token: ${{ env.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install Dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Run Unit Tests and generate coverage
+        run: npm run test:coverage
+
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ env.GITHUB_TOKEN }}
+
+      - name: Run Mutation Tests and publish reports
+        env:
+          STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
+        run: npm run test:mutation-report
+
+      - name: Run Unit test against dist
+        run: |
+          npm pack
+          tar zxvf *.tgz
+          npm run test:bundle
