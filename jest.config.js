@@ -9,6 +9,5 @@ module.exports = {
   transform: {
     '\\.[jt]sx?$': 'babel-jest',
     '.+\\.(styl|less|sass|scss)$': 'jest-css-modules-transform',
-    'src/site/locales/en/.+\\.json$': 'json-map-keys-jest',
   },
 }
