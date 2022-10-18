@@ -3,11 +3,6 @@ node_js:
   - 'lts/*'
 
 stages:
-  - Checks
-  - name: Tests
-    if: NOT branch = main
-  - name: 'Tests and Reports'
-    if: branch = main
   - name: 'Deploy gh-pages'
     if: branch = main AND NOT type = pull_request
 
@@ -15,47 +10,6 @@ before_deploy: npm run build:site
 
 jobs:
   include:
-    - stage: Checks
-    - script: npm run check-docs
-      name: Check Docs
-
-    - script: npm run check-typing
-      name: Check Typing
-
-    - script: npm run check-formatting
-      name: Check Formatting
-
-    - script: npm run lint
-      name: Lint
-
-    - script: npm run prepack
-      name: Check Prepack
-
-    - stage: 'Tests and Reports'
-      script: npm run test:coverage && npm run coveralls
-      name: Run Unit Tests, generate coverage and publish to coveralls
-
-    - script: npm run test:mutation-report
-      name: Run Mutation Tests and publish reports
-
-    - script:
-        - npm pack
-        - tar zxvf *.tgz
-        - npm run test:bundle
-      name: Run Unit test against dist
-
-    - stage: Tests
-      name: Run Unit Tests
-
-    - script: npm run test:mutation
-      name: Run Mutation Tests
-
-    - script:
-        - npm pack
-        - tar zxvf *.tgz
-        - npm run test:bundle
-      name: Run Unit test against dist
-
     - stage: 'Deploy gh-pages'
       deploy:
         provider: pages
