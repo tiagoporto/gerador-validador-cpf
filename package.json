@@ -104,7 +104,7 @@
     "file-loader": "^6.2.0",
     "highlight.js": "^10.5.0",
     "html-webpack-plugin": "^4.5.0",
-    "husky": "^7.0.2",
+    "husky": "^8.0.1",
     "i18next": "^19.8.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
