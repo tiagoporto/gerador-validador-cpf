@@ -6,7 +6,8 @@
     "EditorConfig.EditorConfig",
     "esbenp.prettier-vscode",
     "ionutvmi.path-autocomplete",
-    "unifiedjs.vscode-mdx",
-    "stevencl.addDocComments"
+    "stevencl.addDocComments",
+    "sysoev.language-stylus",
+    "unifiedjs.vscode-mdx"
   ]
 }
