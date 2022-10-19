@@ -27,7 +27,3 @@ i18n.use(initReactI18next).init({
 })
 
 ReactDOM.render(<App />, document.querySelector('#root'))
-
-if (module.hot) {
-  module.hot.accept()
-}
