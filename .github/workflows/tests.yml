@@ -19,39 +19,6 @@ jobs:
   tests:
     name: Tests
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          token: ${{ env.GITHUB_TOKEN }}
-          fetch-depth: 0
-
-      - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: Install Dependencies
-        run: npm ci --legacy-peer-deps
-
-      - name: Run Unit Tests
-        run: npm run test
-
-      - name: Run Mutation Tests
-        run: npm run test:mutation
-
-      - name: Run Unit Test in dist
-        run: |
-          npm pack
-          tar zxvf *.tgz
-          npm run test:bundle
-
-  tests-reports:
-    name: Tests and Reports
-    runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request'
 
     steps:
       - name: Checkout
@@ -76,7 +43,12 @@ jobs:
         with:
           github-token: ${{ env.GITHUB_TOKEN }}
 
+      - name: Run Mutation Tests
+        if: github.event_name == 'pull_request'
+        run: npm run test:mutation
+
       - name: Run Mutation Tests and publish reports
+        if: github.event_name != 'pull_request'
         env:
           STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
         run: npm run test:mutation-report
