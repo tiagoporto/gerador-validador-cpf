@@ -16,14 +16,16 @@ export const Donate = () => {
     type: string
   }
 
-  const trackClick = ({ category, type }: Track) => (): void => {
-    if (process.env.NODE_ENV === 'production') {
-      ;(async () => {
-        const ReactGA = await import('react-ga')
-        ReactGA.ga('send', 'event', category, 'click', type)
-      })()
+  const trackClick =
+    ({ category, type }: Track) =>
+    (): void => {
+      if (process.env.NODE_ENV === 'production') {
+        ;(async () => {
+          const ReactGA = await import('react-ga')
+          ReactGA.ga('send', 'event', category, 'click', type)
+        })()
+      }
     }
-  }
 
   const handleCopy = (): void => {
     toast(t(i18nResources.messages.walletCopied))
