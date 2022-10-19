@@ -39,7 +39,10 @@ jobs:
       - name: Run Unit Tests
         run: npm run test
 
-      - name: Run Unit test against dist
+      - name: Run Mutation Tests
+        run: npm run test:mutation
+
+      - name: Run Unit Test in dist
         run: |
           npm pack
           tar zxvf *.tgz
@@ -78,7 +81,7 @@ jobs:
           STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
         run: npm run test:mutation-report
 
-      - name: Run Unit test against dist
+      - name: Run Unit Test in dist
         run: |
           npm pack
           tar zxvf *.tgz
