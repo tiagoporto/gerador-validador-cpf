@@ -5,18 +5,16 @@ import styles from './ChangeLocale.module.styl'
 type AvailableLocales = 'en' | 'br'
 
 export const ChangeLocale = () => {
-  const handleLocale = (
-    locale: AvailableLocales,
-    callback?: () => void
-  ) => (): void => {
-    i18next.changeLanguage(locale)
-    window.history.replaceState(
-      {},
-      'Gerador e Validador de CPF',
-      `?lang=${locale}`
-    )
-    callback && setTimeout(callback, 5)
-  }
+  const handleLocale =
+    (locale: AvailableLocales, callback?: () => void) => (): void => {
+      i18next.changeLanguage(locale)
+      window.history.replaceState(
+        {},
+        'Gerador e Validador de CPF',
+        `?lang=${locale}`
+      )
+      callback && setTimeout(callback, 5)
+    }
   const [locale, setLocale] = useState('')
   const [isLoading, setIsLoading] = useState(true)
 

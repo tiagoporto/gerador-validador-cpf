@@ -1,3 +1,19 @@
+const parser = '@typescript-eslint/parser'
+
+const testConfig = {
+  extends: ['plugin:jest/all', 'plugin:jest-dom/recommended'],
+  rules: {
+    'jest/max-expects': 'off',
+    'jest/prefer-expect-assertions': 'off',
+    'jest/prefer-lowercase-title': [
+      'error',
+      {
+        ignoreTopLevelDescribe: true,
+      },
+    ],
+  },
+}
+
 const jsConfig = {
   extends: [
     'eslint:recommended',
@@ -6,8 +22,6 @@ const jsConfig = {
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:testing-library/recommended',
-    'plugin:jest/all',
-    'plugin:jest-dom/recommended',
     'plugin:eslint-comments/recommended',
     'plugin:jsdoc/recommended',
     'plugin:sonarjs/recommended',
@@ -22,13 +36,6 @@ const jsConfig = {
     'no-alert': 'error',
     'no-debugger': 'error',
     'no-nested-ternary': 'error',
-    'jest/prefer-expect-assertions': 'off',
-    'jest/lowercase-name': [
-      'error',
-      {
-        ignoreTopLevelDescribe: true,
-      },
-    ],
     'unicorn/filename-case': 'off',
     'unicorn/prevent-abbreviations': [
       'error',
@@ -202,8 +209,12 @@ module.exports = {
     // .js in test files
     {
       files: ['**/*.test.js'],
-      extends: [...jsConfig.extends],
-      rules: { ...jsConfig.rules, ...jsConfig.rulesTest },
+      extends: [...jsConfig.extends, ...testConfig.extends],
+      rules: {
+        ...jsConfig.rules,
+        ...jsConfig.rulesTest,
+        ...testConfig.rules,
+      },
     },
     // .js in Markdown files
     {
@@ -215,21 +226,21 @@ module.exports = {
     {
       files: ['*.ts'],
       excludedFiles: ['**/*.{md,mdx}/*.{ts,typescript}', '**/*.test.ts'],
-      parser: '@typescript-eslint/parser',
+      parser,
       extends: [...tsConfig.extends],
       rules: { ...tsConfig.rules },
     },
     // .ts in test files
     {
       files: ['**/*.test.ts'],
-      parser: '@typescript-eslint/parser',
-      extends: [...tsConfig.extends],
-      rules: { ...tsConfig.rules, ...tsConfig.rulesTest },
+      parser,
+      extends: [...tsConfig.extends, ...testConfig.extends],
+      rules: { ...tsConfig.rules, ...tsConfig.rulesTest, ...testConfig.rules },
     },
     // .ts in Markdown files
     {
       files: ['**/*.{md,mdx}/*.{ts,typescript}'],
-      parser: '@typescript-eslint/parser',
+      parser,
       extends: [...tsConfig.extendsInMD],
       rules: { ...tsConfig.rulesMD },
     },
@@ -243,12 +254,17 @@ module.exports = {
     // .jsx in test files
     {
       files: ['**/*.test.jsx'],
-      extends: [...jsConfig.extends, ...reactConfig.extends],
+      extends: [
+        ...jsConfig.extends,
+        ...reactConfig.extends,
+        ...testConfig.extends,
+      ],
       rules: {
         ...jsConfig.rules,
         ...jsConfig.rulesTest,
         ...reactConfig.rules,
         ...reactConfig.rulesTest,
+        ...testConfig.rules,
       },
     },
     // .jsx in Markdown files
@@ -261,7 +277,7 @@ module.exports = {
     {
       files: ['*.tsx'],
       excludedFiles: ['**/*.{md,mdx}/*.tsx', '**/*.test.tsx'],
-      parser: '@typescript-eslint/parser',
+      parser,
       extends: [...reactConfig.extends, ...tsConfig.extends],
       rules: {
         ...tsConfig.rules,
@@ -271,19 +287,24 @@ module.exports = {
     // .tsx in test files
     {
       files: ['**/*.test.tsx'],
-      parser: '@typescript-eslint/parser',
-      extends: [...reactConfig.extends, ...tsConfig.extends],
+      parser,
+      extends: [
+        ...reactConfig.extends,
+        ...tsConfig.extends,
+        ...testConfig.extends,
+      ],
       rules: {
         ...tsConfig.rules,
         ...tsConfig.rulesTest,
         ...reactConfig.rules,
         ...reactConfig.rulesTest,
+        ...testConfig.rules,
       },
     },
     // .tsx in Markdown files
     {
       files: ['**/*.{md,mdx}/*.tsx'],
-      parser: '@typescript-eslint/parser',
+      parser,
       extends: [...reactConfig.extendsMD, ...tsConfig.extendsInMD],
       rules: {
         ...tsConfig.rulesMD,
