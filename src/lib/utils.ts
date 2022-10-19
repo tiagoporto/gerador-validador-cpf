@@ -7,13 +7,7 @@ export const generateFirstDigits = (): string => {
   return digits
 }
 
-export const hasCPFLength = (cpf: string): void | boolean => {
-  if (cpf.length > 11 || cpf.length < 11) {
-    return false
-  }
-
-  return true
-}
+export const hasCPFLength = (cpf: string): void | boolean => cpf.length === 11
 
 // format option
 // true   return 000.000.000-00

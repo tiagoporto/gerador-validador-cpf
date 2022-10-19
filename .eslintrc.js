@@ -30,6 +30,7 @@ const jsConfig = {
       },
     ],
     'unicorn/filename-case': 'off',
+    'unicorn/no-reduce': 'off',
     'unicorn/prevent-abbreviations': [
       'error',
       {
@@ -143,6 +144,8 @@ const reactConfig = {
   },
 }
 
+const parser = '@typescript-eslint/parser'
+
 module.exports = {
   ignorePatterns: [],
   settings: {
@@ -215,21 +218,21 @@ module.exports = {
     {
       files: ['*.ts'],
       excludedFiles: ['**/*.{md,mdx}/*.{ts,typescript}', '**/*.test.ts'],
-      parser: '@typescript-eslint/parser',
+      parser,
       extends: [...tsConfig.extends],
       rules: { ...tsConfig.rules },
     },
     // .ts in test files
     {
       files: ['**/*.test.ts'],
-      parser: '@typescript-eslint/parser',
+      parser,
       extends: [...tsConfig.extends],
       rules: { ...tsConfig.rules, ...tsConfig.rulesTest },
     },
     // .ts in Markdown files
     {
       files: ['**/*.{md,mdx}/*.{ts,typescript}'],
-      parser: '@typescript-eslint/parser',
+      parser,
       extends: [...tsConfig.extendsInMD],
       rules: { ...tsConfig.rulesMD },
     },
@@ -261,7 +264,7 @@ module.exports = {
     {
       files: ['*.tsx'],
       excludedFiles: ['**/*.{md,mdx}/*.tsx', '**/*.test.tsx'],
-      parser: '@typescript-eslint/parser',
+      parser,
       extends: [...reactConfig.extends, ...tsConfig.extends],
       rules: {
         ...tsConfig.rules,
@@ -271,7 +274,7 @@ module.exports = {
     // .tsx in test files
     {
       files: ['**/*.test.tsx'],
-      parser: '@typescript-eslint/parser',
+      parser,
       extends: [...reactConfig.extends, ...tsConfig.extends],
       rules: {
         ...tsConfig.rules,
@@ -283,7 +286,7 @@ module.exports = {
     // .tsx in Markdown files
     {
       files: ['**/*.{md,mdx}/*.tsx'],
-      parser: '@typescript-eslint/parser',
+      parser,
       extends: [...reactConfig.extendsMD, ...tsConfig.extendsInMD],
       rules: {
         ...tsConfig.rulesMD,
