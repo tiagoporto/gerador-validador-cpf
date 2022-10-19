@@ -20,10 +20,12 @@ export const Donate = () => {
     ({ category, type }: Track) =>
     (): void => {
       if (process.env.NODE_ENV === 'production') {
-        ;(async () => {
+        const pushData = async () => {
           const ReactGA = await import('react-ga')
           ReactGA.ga('send', 'event', category, 'click', type)
-        })()
+        }
+
+        pushData()
       }
     }
 

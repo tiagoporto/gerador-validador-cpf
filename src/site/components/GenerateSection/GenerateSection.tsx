@@ -20,10 +20,12 @@ export const GenerateSection = () => {
     setCpf(generateCPF())
 
     if (process.env.NODE_ENV === 'production') {
-      ;(async () => {
+      const pushData = async () => {
         const ReactGA = await import('react-ga')
         ReactGA.ga('send', 'event', 'Generate', type, 'Generate CPF')
-      })()
+      }
+
+      pushData()
     }
   }
   useEffect(() => {

@@ -45,7 +45,7 @@ export const InfoSection = () => {
         <p>{t(i18nResources.info.codeByState)}</p>
 
         <ol className={styles.list}>
-          {[...new Array(10).keys()].map((index) => (
+          {Array.from({ length: 10 }).map((value, index) => (
             <li key={`item${index}`}>
               {t(i18nResources.info[`stateCode${index + 1}` as 'stateCode1'])}
             </li>

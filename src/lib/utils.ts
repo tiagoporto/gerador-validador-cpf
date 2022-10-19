@@ -40,7 +40,7 @@ export const formatCPF = (cpf: string, format?: boolean): string => {
 
 export const allDigitsAreEqual = (digits: string): boolean => {
   for (let i = 0; i < 10; i++) {
-    if (digits === new Array(digits.length + 1).join(String(i))) {
+    if (digits === Array.from({ length: digits.length + 1 }).join(String(i))) {
       return true
     }
   }

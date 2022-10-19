@@ -9,7 +9,6 @@ import {
 /**
  * @function Generate
  * @param  {string} [formatOption="default"] - 'digits' | 'checker' | 'default'
- *
  * @returns {string}                  Valid and formatted CPF
  */
 export const generate = ({ format }: { format?: boolean } = {}): string => {
@@ -29,7 +28,6 @@ export const generate = ({ format }: { format?: boolean } = {}): string => {
 /**
  * @function Validate
  * @param  {string} value  CPF number
- *
  * @returns {boolean}                true = valid || false = invalid
  */
 export const validate = (value: string): boolean => {
