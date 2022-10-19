@@ -41,11 +41,14 @@ module.exports = {
   },
   devtool: 'eval-source-map',
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
-    overlay: true,
-    inline: true,
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
     open: true,
     host: '0.0.0.0',
+    client: {
+      overlay: true,
+    },
   },
   module: {
     rules: [
