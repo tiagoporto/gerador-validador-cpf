@@ -1,7 +1,11 @@
 const parser = '@typescript-eslint/parser'
 
 const testConfig = {
-  extends: ['plugin:jest/all', 'plugin:jest-dom/recommended'],
+  extends: [
+    'plugin:jest/all',
+    'plugin:jest-dom/recommended',
+    'plugin:testing-library/react',
+  ],
   rules: {
     'jest/max-expects': 'off',
     'jest/prefer-expect-assertions': 'off',
@@ -21,14 +25,11 @@ const jsConfig = {
     'plugin:promise/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
-    'plugin:testing-library/recommended',
     'plugin:eslint-comments/recommended',
     'plugin:jsdoc/recommended',
     'plugin:sonarjs/recommended',
     'standard',
     'prettier',
-    'prettier/standard',
-    'prettier/unicorn',
   ],
   extendsMD: ['eslint:recommended', 'standard'],
   rules: {
@@ -36,6 +37,7 @@ const jsConfig = {
     'no-alert': 'error',
     'no-debugger': 'error',
     'no-nested-ternary': 'error',
+    'sonarjs/prefer-single-boolean-return': 'off',
     'unicorn/filename-case': 'off',
     'unicorn/prevent-abbreviations': [
       'error',
@@ -108,7 +110,6 @@ const tsConfig = {
     ...jsConfig.extends,
     'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
-    'prettier/@typescript-eslint',
   ],
   extendsInMD: [...jsConfig.extendsMD, 'plugin:@typescript-eslint/recommended'],
   rules: {
@@ -134,8 +135,6 @@ const reactConfig = {
     'plugin:jsx-a11y/recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
-    'prettier/react',
-    'plugin:testing-library/react',
   ],
   extendsMD: ['plugin:react/recommended'],
   rules: {
