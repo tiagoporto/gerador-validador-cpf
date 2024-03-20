@@ -12,7 +12,7 @@
 
 Coverage
 
-[![Tests](https://img.shields.io/github/workflow/status/tiagoporto/gerador-validador-cpf/Tests?label=tests&logo=github&style=flat-square)](https://github.com/tiagoporto/gerador-validador-cpf/actions/workflows/tests.yml)
+[![Tests](https://img.shields.io/github/actions/workflow/status/tiagoporto/gerador-validador-cpf/tests.yml?label=tests&logo=github&style=flat-square)](https://github.com/tiagoporto/gerador-validador-cpf/actions/workflows/tests.yml)
 [![Coverage Status](https://img.shields.io/coveralls/tiagoporto/gerador-validador-cpf.svg?logo=coveralls&style=flat-square)](https://coveralls.io/github/tiagoporto/gerador-validador-cpf)
 [![Mutation testing cover](https://img.shields.io/endpoint?style=flat-square&url=https://badge-api.stryker-mutator.io/github.com/tiagoporto/gerador-validador-cpf/main)](https://dashboard.stryker-mutator.io/reports/github.com/tiagoporto/gerador-validador-cpf/main)
 
@@ -57,7 +57,7 @@ validate('123.456.789-00')
 
 ## Contribute
 
-[How to contribute](CONTRIBUTING.md).
+[How to contribute](https://github.com/tiagoporto/.github/blob/main/CONTRIBUTING.md).
 
 ## Donation
 
