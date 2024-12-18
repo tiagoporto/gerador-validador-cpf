@@ -2,48 +2,48 @@
 (self["webpackChunkgerador_validador_cpf"] = self["webpackChunkgerador_validador_cpf"] || []).push([[516],{
 
 /***/ 1516:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "OutboundLink": function() { return /* binding */ esm_OutboundLink; },
-  "addTrackers": function() { return /* binding */ esm_addTrackers; },
-  "default": function() { return /* binding */ esm; },
-  "event": function() { return /* binding */ esm_event; },
-  "exception": function() { return /* binding */ esm_exception; },
-  "ga": function() { return /* binding */ esm_ga; },
-  "initialize": function() { return /* binding */ esm_initialize; },
-  "modalview": function() { return /* binding */ esm_modalview; },
-  "outboundLink": function() { return /* binding */ esm_outboundLink; },
-  "pageview": function() { return /* binding */ esm_pageview; },
-  "plugin": function() { return /* binding */ esm_plugin; },
-  "send": function() { return /* binding */ esm_send; },
-  "set": function() { return /* binding */ esm_set; },
-  "testModeAPI": function() { return /* binding */ esm_testModeAPI; },
-  "timing": function() { return /* binding */ esm_timing; }
+  "OutboundLink": () => (/* binding */ esm_OutboundLink),
+  "addTrackers": () => (/* binding */ esm_addTrackers),
+  "default": () => (/* binding */ esm),
+  "event": () => (/* binding */ esm_event),
+  "exception": () => (/* binding */ esm_exception),
+  "ga": () => (/* binding */ esm_ga),
+  "initialize": () => (/* binding */ esm_initialize),
+  "modalview": () => (/* binding */ esm_modalview),
+  "outboundLink": () => (/* binding */ esm_outboundLink),
+  "pageview": () => (/* binding */ esm_pageview),
+  "plugin": () => (/* binding */ esm_plugin),
+  "send": () => (/* binding */ esm_send),
+  "set": () => (/* binding */ esm_set),
+  "testModeAPI": () => (/* binding */ esm_testModeAPI),
+  "timing": () => (/* binding */ esm_timing)
 });
 
 // NAMESPACE OBJECT: ./node_modules/react-ga/dist/esm/core.js
 var core_namespaceObject = {};
 __webpack_require__.r(core_namespaceObject);
 __webpack_require__.d(core_namespaceObject, {
-  "addTrackers": function() { return addTrackers; },
-  "default": function() { return core; },
-  "event": function() { return core_event; },
-  "exception": function() { return exception; },
-  "ga": function() { return ga; },
-  "initialize": function() { return initialize; },
-  "modalview": function() { return modalview; },
-  "outboundLink": function() { return outboundLink; },
-  "pageview": function() { return pageview; },
-  "plugin": function() { return core_plugin; },
-  "send": function() { return send; },
-  "set": function() { return set; },
-  "testModeAPI": function() { return core_testModeAPI; },
-  "timing": function() { return timing; }
+  "addTrackers": () => (addTrackers),
+  "default": () => (core),
+  "event": () => (core_event),
+  "exception": () => (exception),
+  "ga": () => (ga),
+  "initialize": () => (initialize),
+  "modalview": () => (modalview),
+  "outboundLink": () => (outboundLink),
+  "pageview": () => (pageview),
+  "plugin": () => (core_plugin),
+  "send": () => (send),
+  "set": () => (set),
+  "testModeAPI": () => (core_testModeAPI),
+  "timing": () => (timing)
 });
 
 // EXTERNAL MODULE: ./node_modules/react/index.js
@@ -299,7 +299,7 @@ function log(s) {
 }
 ;// CONCATENATED MODULE: ./node_modules/react-ga/dist/esm/utils/testModeAPI.js
 var gaCalls = [];
-/* harmony default export */ var testModeAPI = ({
+/* harmony default export */ const testModeAPI = ({
   calls: gaCalls,
   ga: function ga() {
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
@@ -934,7 +934,7 @@ function outboundLink(args, hitCallback, trackerNames) {
   }
 }
 var core_testModeAPI = testModeAPI;
-/* harmony default export */ var core = ({
+/* harmony default export */ const core = ({
   initialize: initialize,
   ga: ga,
   set: set,
@@ -986,11 +986,11 @@ var esm_testModeAPI = core_testModeAPI;
 OutboundLink.origTrackLink = OutboundLink.trackLink;
 OutboundLink.trackLink = outboundLink;
 var esm_OutboundLink = OutboundLink;
-/* harmony default export */ var esm = (esm_objectSpread(esm_objectSpread({}, core_namespaceObject), {}, {
+/* harmony default export */ const esm = (esm_objectSpread(esm_objectSpread({}, core_namespaceObject), {}, {
   OutboundLink: esm_OutboundLink
 }));
 
 /***/ })
 
 }]);
-//# sourceMappingURL=516.2fe1bb62ea579183b3e0.bundle.js.map
+//# sourceMappingURL=516.52c39718501468b96f5b.bundle.js.map

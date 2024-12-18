@@ -2,7 +2,7 @@
 (self["webpackChunkgerador_validador_cpf"] = self["webpackChunkgerador_validador_cpf"] || []).push([[986],{
 
 /***/ 7905:
-/***/ (function() {
+/***/ (() => {
 
 // extracted by mini-css-extract-plugin
 
@@ -10,7 +10,7 @@
 /***/ }),
 
 /***/ 4300:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
 
@@ -130,7 +130,7 @@ _defineProperty(CopyToClipboard, "defaultProps", {
 /***/ }),
 
 /***/ 4855:
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 
 
@@ -143,7 +143,7 @@ module.exports = CopyToClipboard;
 /***/ }),
 
 /***/ 4448:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 /** @license React v17.0.1
  * react-dom.production.min.js
@@ -447,7 +447,7 @@ exports.unstable_renderSubtreeIntoContainer=function(a,b,c,d){if(!rk(c))throw Er
 /***/ }),
 
 /***/ 3935:
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 
 
@@ -481,7 +481,7 @@ if (true) {
 /***/ }),
 
 /***/ 7792:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 var __webpack_unused_export__;
 
@@ -629,7 +629,7 @@ exports.Z = GithubCorner;
 /***/ }),
 
 /***/ 103:
-/***/ (function(__unused_webpack_module, exports) {
+/***/ ((__unused_webpack_module, exports) => {
 
 
 
@@ -645,10 +645,10 @@ exports["default"] = function () {
 /***/ }),
 
 /***/ 9189:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "c": function() { return /* binding */ Trans; }
+/* harmony export */   "c": () => (/* binding */ Trans)
 /* harmony export */ });
 /* unused harmony export nodesToString */
 /* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5987);
@@ -937,16 +937,16 @@ function Trans(_ref) {
 /***/ }),
 
 /***/ 7031:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "OO": function() { return /* binding */ I18nContext; },
-  "zv": function() { return /* binding */ ReportNamespaces; },
-  "JP": function() { return /* binding */ getDefaults; },
-  "nI": function() { return /* binding */ getI18n; },
-  "Db": function() { return /* binding */ initReactI18next; }
+  "OO": () => (/* binding */ I18nContext),
+  "zv": () => (/* binding */ ReportNamespaces),
+  "JP": () => (/* binding */ getDefaults),
+  "nI": () => (/* binding */ getI18n),
+  "Db": () => (/* binding */ initReactI18next)
 });
 
 // UNUSED EXPORTS: composeInitialProps, getInitialProps, setDefaults, setI18n
@@ -1093,10 +1093,10 @@ function getInitialProps() {
 /***/ }),
 
 /***/ 6793:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "$": function() { return /* binding */ useTranslation; }
+/* harmony export */   "$": () => (/* binding */ useTranslation)
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8152);
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4942);
@@ -1227,13 +1227,13 @@ function useTranslation(ns) {
 /***/ }),
 
 /***/ 8236:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "DC": function() { return /* binding */ loadNamespaces; },
-/* harmony export */   "F0": function() { return /* binding */ hasLoadedNamespace; },
-/* harmony export */   "O4": function() { return /* binding */ warnOnce; },
-/* harmony export */   "ZK": function() { return /* binding */ warn; }
+/* harmony export */   "DC": () => (/* binding */ loadNamespaces),
+/* harmony export */   "F0": () => (/* binding */ hasLoadedNamespace),
+/* harmony export */   "O4": () => (/* binding */ warnOnce),
+/* harmony export */   "ZK": () => (/* binding */ warn)
 /* harmony export */ });
 /* unused harmony export getDisplayName */
 function warn() {
@@ -1322,12 +1322,12 @@ function getDisplayName(Component) {
 /***/ }),
 
 /***/ 6681:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "o": function() { return /* reexport */ input; }
+  "o": () => (/* reexport */ input)
 });
 
 // UNUSED EXPORTS: IMaskMixin
@@ -1664,7 +1664,7 @@ var InputComponent = function InputComponent(_ref) {
 
 var IMaskInput = IMaskMixin(InputComponent);
 
-/* harmony default export */ var input = (IMaskInput);
+/* harmony default export */ const input = (IMaskInput);
 
 ;// CONCATENATED MODULE: ./node_modules/react-imask/esm/index.js
 
@@ -1678,13 +1678,13 @@ var IMaskInput = IMaskMixin(InputComponent);
 /***/ }),
 
 /***/ 4723:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "Ix": function() { return /* binding */ ToastContainer; },
-  "Am": function() { return /* binding */ toast; }
+  "Ix": () => (/* binding */ ToastContainer),
+  "Am": () => (/* binding */ toast)
 });
 
 // UNUSED EXPORTS: Bounce, Flip, Slide, Zoom, collapseToast, cssTransition, useToast, useToastContainer
@@ -1698,12 +1698,12 @@ var inheritsLoose = __webpack_require__(4578);
 // EXTERNAL MODULE: ./node_modules/react-dom/index.js
 var react_dom = __webpack_require__(3935);
 ;// CONCATENATED MODULE: ./node_modules/react-transition-group/esm/config.js
-/* harmony default export */ var config = ({
+/* harmony default export */ const config = ({
   disabled: false
 });
 ;// CONCATENATED MODULE: ./node_modules/react-transition-group/esm/TransitionGroupContext.js
 
-/* harmony default export */ var TransitionGroupContext = (react.createContext(null));
+/* harmony default export */ const TransitionGroupContext = (react.createContext(null));
 ;// CONCATENATED MODULE: ./node_modules/react-transition-group/esm/Transition.js
 
 
@@ -2134,7 +2134,7 @@ Transition.EXITED = EXITED;
 Transition.ENTERING = ENTERING;
 Transition.ENTERED = ENTERED;
 Transition.EXITING = EXITING;
-/* harmony default export */ var esm_Transition = (Transition);
+/* harmony default export */ const esm_Transition = (Transition);
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.m.js
 var clsx_m = __webpack_require__(6010);
 ;// CONCATENATED MODULE: ./node_modules/react-toastify/dist/react-toastify.esm.js
@@ -3436,7 +3436,7 @@ eventManager.on(2
 /***/ }),
 
 /***/ 5251:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 /** @license React v17.0.1
  * react-jsx-runtime.production.min.js
@@ -3453,7 +3453,7 @@ function q(c,a,k){var b,d={},e=null,l=null;void 0!==k&&(e=""+k);void 0!==a.key&&
 /***/ }),
 
 /***/ 2408:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 /** @license React v17.0.1
  * react.production.min.js
@@ -3483,7 +3483,7 @@ exports.useLayoutEffect=function(a,b){return S().useLayoutEffect(a,b)};exports.u
 /***/ }),
 
 /***/ 7294:
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 
 
@@ -3495,7 +3495,7 @@ if (true) {
 /***/ }),
 
 /***/ 5893:
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 
 
@@ -3507,4 +3507,4 @@ if (true) {
 /***/ })
 
 }]);
-//# sourceMappingURL=986.f9d16e08eae1f770f99d.js.map
+//# sourceMappingURL=986.b2a708386510d6ee0792.js.map
