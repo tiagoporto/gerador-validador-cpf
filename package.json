@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tiagoporto/gerador-validador-cpf.git"
+    "url": "git+https://github.com/tiagoporto/gerador-validador-cpf.git"
   },
   "main": "./dist/CPF.umd.js",
   "module": "./dist/CPF.es.js",
