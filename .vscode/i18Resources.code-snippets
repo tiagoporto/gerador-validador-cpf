@@ -10,6 +10,6 @@
     "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "prefix": "@i18nResources",
     "body": ["import i18nResources from '@i18nResources'"],
-    "description": "Add i18nResources import"
-  }
+    "description": "Add i18nResources import",
+  },
 }

@@ -11,7 +11,7 @@ export const ChangeLocale = () => {
       window.history.replaceState(
         {},
         'Gerador e Validador de CPF',
-        `?lang=${locale}`
+        `?lang=${locale}`,
       )
       callback && setTimeout(callback, 5)
     }

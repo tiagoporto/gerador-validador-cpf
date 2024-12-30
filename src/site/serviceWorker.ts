@@ -7,7 +7,7 @@ export const registerServiceWorker = () => {
       .register('service-worker.js', { scope: './' })
       .then(function (reg) {
         return console.info(
-          'Service worker has been registered for scope: ' + reg.scope
+          'Service worker has been registered for scope: ' + reg.scope,
         )
       })
       .catch(() => {
