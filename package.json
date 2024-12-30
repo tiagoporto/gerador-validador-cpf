@@ -25,7 +25,7 @@
   "typings": "./dist/CPF.d.ts",
   "files": [
     "/dist",
-    "/README-en.md"
+    "/README.en.md"
   ],
   "license": "MIT",
   "scripts": {
@@ -68,6 +68,7 @@
     "@stryker-mutator/core": "^6.2.3",
     "@stryker-mutator/jest-runner": "^6.2.3",
     "@tiagoporto/prettier-config": "^1.0.0",
+    "@tiagoporto/remark-config": "^1.0.0",
     "@types/jest": "^29.2.0",
     "@types/react-copy-to-clipboard": "^5.0.4",
     "@types/react-dom": "^17.0.0",
@@ -124,10 +125,8 @@
     "react-imask": "^6.0.5",
     "react-toastify": "^6.2.0",
     "release-it": "^15.5.0",
-    "remark-cli": "^11.0.0",
-    "remark-lint-no-dead-urls": "^1.1.0",
-    "remark-lint-no-url-trailing-slash": "^3.0.1",
-    "remark-validate-links": "^12.1.0",
+    "remark": "^15.0.1",
+    "remark-cli": "^12.0.1",
     "rollup": "^3.2.3",
     "rollup-plugin-license": "^2.8.2",
     "rollup-plugin-terser": "^7.0.2",

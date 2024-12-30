@@ -28,7 +28,7 @@ Estatísticas
 
 A ferramenta pode ser acessada em [tiagoporto.github.io/gerador-validador-cpf](http://tiagoporto.github.io/gerador-validador-cpf).
 
-_Leia em outros idiomas: [English](https://github.com/tiagoporto/gerador-validador-cpf/blob/main/README-en.md), Português(Brasil)_
+_Leia em outros idiomas: [English](https://github.com/tiagoporto/gerador-validador-cpf/blob/main/README.en.md), Português(Brasil)_
 
 ## Instalação
 

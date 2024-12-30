@@ -1,7 +1,9 @@
 {
   "plugins": [
-    "validate-links",
-    "lint-no-dead-urls",
-    "lint-no-url-trailing-slash"
+    "@tiagoporto/remark-config",
+    [
+      "remark-lint-no-file-name-mixed-case",
+      false
+    ]
   ]
 }
