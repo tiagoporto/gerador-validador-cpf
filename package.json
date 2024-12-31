@@ -20,6 +20,7 @@
     "type": "git",
     "url": "git+https://github.com/tiagoporto/gerador-validador-cpf.git"
   },
+  "funding": "https://github.com/sponsors/tiagoporto",
   "main": "./dist/CPF.umd.js",
   "module": "./dist/CPF.es.js",
   "typings": "./dist/CPF.d.ts",
