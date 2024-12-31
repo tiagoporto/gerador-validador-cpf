@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   '*': 'prettier --check --ignore-unknown --write',
   '*.md': 'remark --frail',
   '*.{md,mdx}': 'eslint --ext md,mdx --max-warnings 0',
