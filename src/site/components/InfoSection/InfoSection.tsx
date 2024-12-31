@@ -1,6 +1,5 @@
 import styles from './InfoSection.module.styl'
 import { useTranslation, Trans } from 'react-i18next'
-import i18nResources from '@i18n/app.json'
 
 export const InfoSection = () => {
   const { t } = useTranslation()
@@ -8,10 +7,10 @@ export const InfoSection = () => {
   return (
     <section className={styles.infoSection}>
       <div className={styles.center}>
-        <p>{t(i18nResources.info.disclaimer)}</p>
+        <p>{t('info.disclaimer')}</p>
 
         <Trans
-          i18nKey={i18nResources.info.algorithm}
+          i18nKey={'info.algorithm'}
           components={[
             <a key="link" href="http://www.geradorcpf.com/algoritmo_do_cpf.htm">
               mock
@@ -21,7 +20,7 @@ export const InfoSection = () => {
 
         <p>
           <Trans
-            i18nKey={i18nResources.info.disclaimerValidCPF}
+            i18nKey={'info.disclaimerValidCPF'}
             components={[
               <a
                 key="link"
@@ -33,21 +32,21 @@ export const InfoSection = () => {
           />
         </p>
 
-        <p>{t(i18nResources.info.cpfByState)}</p>
+        <p>{t('info.cpfByState')}</p>
 
         <blockquote>
           <Trans
-            i18nKey={i18nResources.info.example}
+            i18nKey={'info.example'}
             components={[<strong key="strong" />]}
           />
         </blockquote>
 
-        <p>{t(i18nResources.info.codeByState)}</p>
+        <p>{t('info.codeByState')}</p>
 
         <ol className={styles.list}>
           {Array.from({ length: 10 }).map((value, index) => (
             <li key={`item${index}`}>
-              {t(i18nResources.info[`stateCode${index + 1}` as 'stateCode1'])}
+              {t(`info.stateCode${index + 1}` as 'info.stateCode1')}
             </li>
           ))}
         </ol>

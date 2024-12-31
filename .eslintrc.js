@@ -155,14 +155,6 @@ module.exports = {
     react: {
       version: 'detect',
     },
-    'import/resolver': {
-      alias: {
-        map: [
-          ['@i18n', './src/site/locales/en'],
-          ['!!@i18nResources', './src/site/locales'],
-        ],
-      },
-    },
   },
   plugins: [
     'testing-library',

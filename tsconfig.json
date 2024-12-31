@@ -21,7 +21,7 @@
     /* Strict Type-Checking Options */
     "strict": true, // Enable all strict type-checking options.
     // "noImplicitAny": true,                 // Raise error on expressions and declarations with an implied 'any' type.
-    // "strictNullChecks": true,              // Enable strict null checks.
+    "strictNullChecks": true, // Enable strict null checks.
     // "strictFunctionTypes": true,           // Enable strict checking of function types.
     // "strictPropertyInitialization": true,  // Enable strict checking of property initialization in classes.
     // "noImplicitThis": true,                // Raise error on 'this' expressions with an implied 'any' type.
@@ -37,13 +37,10 @@
     "resolveJsonModule": true,
     "moduleResolution": "Node", // Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6).
     "baseUrl": "src", // Base directory to resolve non-absolute module names.
-    "paths": {
-      "@i18n/*": ["site/locales/en/*"],
-      "!!@i18nResources/*": ["site/locales/*"]
-    }, // A series of entries which re-map imports to lookup locations relative to the 'baseUrl'.
+    // "paths": {},                          // A series of entries which re-map imports to lookup locations relative to the 'baseUrl'.
     // "rootDir": ".",
-    // "typeRoots": ["node_modules/@types", "@types"], // List of folders to include type definitions from.
-    // "types": [], // Type declaration files to be included in compilation.
+    // "typeRoots": [ "@types"],             // List of folders to include type definitions from.
+    // "types": [],                          // Type declaration files to be included in compilation.
     "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export. This does not affect code emit, just typechecking.
     "esModuleInterop": true, // Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'.
     // "preserveSymlinks": true,              // Do not resolve the real path of symlinks.
@@ -60,9 +57,9 @@
     // "emitDecoratorMetadata": true,         // Enables experimental support for emitting type metadata for decorators.
 
     /* Advanced Options */
-    // "declarationDir": "dist" // Output directory for generated declaration files.
+    // "declarationDir": "dist"               // Output directory for generated declaration files.
     "forceConsistentCasingInFileNames": true
   }
-  // "include": ["src/**/*"],
+  // "include": ["src"]
   // "exclude": ["node_modules", "dist"]
 }

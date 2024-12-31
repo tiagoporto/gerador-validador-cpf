@@ -4,7 +4,6 @@ import CopyToClipboard from 'react-copy-to-clipboard'
 import { generate as generateCPF } from '../../../lib/CPF'
 import { toast } from 'react-toastify'
 import { useTranslation } from 'react-i18next'
-import i18nResources from '@i18n/app.json'
 import { IMaskInput } from 'react-imask'
 
 export const GenerateSection = () => {
@@ -12,7 +11,7 @@ export const GenerateSection = () => {
   const { t } = useTranslation()
 
   const handleCopy = (): void => {
-    toast(t(i18nResources.messages.cpfCopied))
+    toast(t('messages.cpfCopied'))
   }
 
   const generateNewCPF = (type: string) => (): void => {
@@ -34,11 +33,11 @@ export const GenerateSection = () => {
   return (
     <section className={styles.generateSection}>
       <div className={styles.center}>
-        <h2>{t(i18nResources.generate.title)}</h2>
+        <h2>{t('generate.title')}</h2>
 
         <CopyToClipboard text={cpf} onCopy={handleCopy}>
           <IMaskInput
-            aria-label={t(i18nResources.generate.cpfGenerated)}
+            aria-label={t('generate.cpfGenerated')}
             value={cpf}
             className={styles.input}
             type="text"
@@ -52,7 +51,7 @@ export const GenerateSection = () => {
           className={styles.generateButton}
           type="button"
         >
-          {t(i18nResources.generate.title)}
+          {t('generate.title')}
         </button>
       </div>
     </section>

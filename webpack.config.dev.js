@@ -109,19 +109,10 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)$/,
         loader: 'file-loader',
       },
-      {
-        test: /\.json$/,
-        include: [path.resolve(__dirname, 'src/site/locales/en/')],
-        use: ['json-map-keys-loader'],
-      },
     ],
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
-    alias: {
-      '@i18n': path.join(__dirname, './src/site/locales/en'),
-      '@i18nResources': path.join(__dirname, './src/site/locales'),
-    },
   },
   plugins: [
     new HtmlWebpackPlugin({

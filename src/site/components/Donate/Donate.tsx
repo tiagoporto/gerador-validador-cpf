@@ -4,7 +4,6 @@ import codeStyles from './Code.module.styl'
 import BTCQR from './img/BTCQR.png'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import { toast } from 'react-toastify'
-import i18nResources from '@i18n/app.json'
 import { useTranslation } from 'react-i18next'
 
 export const Donate = () => {
@@ -30,7 +29,7 @@ export const Donate = () => {
     }
 
   const handleCopy = (): void => {
-    toast(t(i18nResources.messages.walletCopied))
+    toast(t('messages.walletCopied'))
   }
 
   const toggleCodeVisibility = (): void => {
@@ -52,8 +51,8 @@ export const Donate = () => {
               category: 'Star',
               type: 'generate-validade-cpf',
             })}
-            aria-label={t(i18nResources.donate.leaveStar)}
-            data-footnote={t(i18nResources.donate.leaveStar)}
+            aria-label={t('donate.leaveStar')}
+            data-footnote={t('donate.leaveStar')}
             href="https://github.com/tiagoporto/gerador-validador-cpf/stargazers"
             target="_blank"
             rel="noopener noreferrer"
@@ -70,8 +69,8 @@ export const Donate = () => {
               category: 'Donate',
               type: 'Paypal generate-validade-cpf',
             })}
-            aria-label={t(i18nResources.donate.contributePaypal)}
-            data-footnote={t(i18nResources.donate.contributePaypal)}
+            aria-label={t('donate.contributePaypal')}
+            data-footnote={t('donate.contributePaypal')}
             href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YTDUQ8RZ2G4Q8&lc=BR&item_name=tiagoporto&item_number=geradorcpf&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted"
             target="_blank"
             rel="noopener noreferrer"
@@ -91,8 +90,8 @@ export const Donate = () => {
                 category: 'Donate',
                 type: 'Bitcoin generate-validate-cpf',
               })}
-              aria-label={t(i18nResources.donate.contributeBitcoin)}
-              data-footnote={t(i18nResources.donate.contributeBitcoin)}
+              aria-label={t('donate.contributeBitcoin')}
+              data-footnote={t('donate.contributeBitcoin')}
             >
               Bitcoin
             </button>

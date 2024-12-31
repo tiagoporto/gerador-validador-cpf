@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 import { validate as validadeCPF } from '../../../lib/CPF'
 import { IMaskInput } from 'react-imask'
 import { useTranslation } from 'react-i18next'
-import i18nResources from '@i18n/app.json'
 
 const enableAnalytics = async () => {
   const ReactGA = await import('react-ga')
@@ -39,8 +38,8 @@ export const ValidateSection = () => {
 
       const isValid = validadeCPF(tempCpf)
       const message = isValid
-        ? t(i18nResources.messages.validCPF)
-        : t(i18nResources.messages.invalidCPF)
+        ? t('messages.validCPF')
+        : t('messages.invalidCPF')
 
       updateValidationState({
         cpf: tempCpf,
@@ -48,7 +47,7 @@ export const ValidateSection = () => {
         message,
       })
     } else {
-      const message = tempCpf ? t(i18nResources.messages.incomplete) : ''
+      const message = tempCpf ? t('messages.incomplete') : ''
 
       updateValidationState({
         cpf: '',
@@ -60,12 +59,12 @@ export const ValidateSection = () => {
   return (
     <section className={style.validateSection}>
       <div className={style.center}>
-        <h2>{t(i18nResources.validate.title)}</h2>
+        <h2>{t('validate.title')}</h2>
 
         <IMaskInput
-          aria-label={t(i18nResources.validate.insertCPF)}
+          aria-label={t('validate.insertCPF')}
           value={tempCpf}
-          placeholder={t(i18nResources.validate.insertCPF)}
+          placeholder={t('validate.insertCPF')}
           onAccept={handleChangeCPF}
           className={style.validateSectionInput}
           type="text"
