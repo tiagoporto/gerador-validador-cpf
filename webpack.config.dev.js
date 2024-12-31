@@ -45,10 +45,6 @@ module.exports = {
       directory: path.join(__dirname, 'public'),
     },
     open: true,
-    host: '0.0.0.0',
-    client: {
-      overlay: true,
-    },
   },
   module: {
     rules: [
