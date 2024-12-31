@@ -1,20 +1,9 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const brResources = require('./src/site/locales/br/app.json')
-const babel = require('./babel.site')
+import path from 'node:path'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import brResources from './src/site/locales/br/app.json' with { type: 'json' }
+import babel from './babel.site.js'
 
-const stylusLoaderConfig = {
-  loader: 'stylus-loader',
-  options: {
-    sourceMap: true,
-    stylusOptions: {
-      import: [
-        path.resolve(__dirname, './src/site/styles/settings/_variables.styl'),
-        path.resolve(__dirname, './src/site/styles/helpers/index.styl'),
-      ],
-    },
-  },
-}
+const __dirname = import.meta.dirname
 
 const postCSSLoaderConfig = {
   loader: 'postcss-loader',
@@ -34,7 +23,7 @@ const postCSSLoaderConfig = {
   },
 }
 
-module.exports = {
+export default {
   mode: 'development',
   entry: {
     index: './src/site/index.tsx',
@@ -57,7 +46,7 @@ module.exports = {
         },
       },
       {
-        test: /\.module\.styl$/,
+        test: /\.styl$/,
         use: [
           'style-loader',
           {
@@ -67,33 +56,35 @@ module.exports = {
               esModule: true,
               sourceMap: true,
               modules: {
+                auto: /\.module\.\w+$/i,
                 localIdentName: '[local]--[hash:base64:7]',
                 exportLocalsConvention: 'camelCaseOnly',
               },
             },
           },
           postCSSLoaderConfig,
-          stylusLoaderConfig,
-        ],
-      },
-      {
-        test: /\.styl$/,
-        exclude: /\.module\.styl$/,
-        use: [
-          'style-loader',
           {
-            loader: 'css-loader',
+            loader: 'stylus-loader',
             options: {
               sourceMap: true,
+              stylusOptions: {
+                import: [
+                  path.resolve(
+                    __dirname,
+                    './src/site/styles/settings/_variables.styl',
+                  ),
+                  path.resolve(
+                    __dirname,
+                    './src/site/styles/helpers/index.styl',
+                  ),
+                ],
+              },
             },
           },
-          postCSSLoaderConfig,
-          stylusLoaderConfig,
         ],
       },
       {
         test: /\.css$/,
-        exclude: /\.module\.styl$/,
         use: [
           'style-loader',
           {
@@ -106,8 +97,8 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/,
-        loader: 'file-loader',
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
     ],
   },

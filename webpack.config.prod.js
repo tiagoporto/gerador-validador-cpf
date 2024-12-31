@@ -1,22 +1,12 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { GenerateSW } = require('workbox-webpack-plugin')
-const CopyPlugin = require('copy-webpack-plugin')
-const brResources = require('./src/site/locales/br/app.json')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const babel = require('./babel.site')
+import path from 'node:path'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import { GenerateSW } from 'workbox-webpack-plugin'
+import CopyPlugin from 'copy-webpack-plugin'
+import brResources from './src/site/locales/br/app.json' with { type: 'json' }
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import babel from './babel.site.js'
 
-const stylusLoaderConfig = {
-  loader: 'stylus-loader',
-  options: {
-    stylusOptions: {
-      import: [
-        path.resolve(__dirname, './src/site/styles/settings/_variables.styl'),
-        path.resolve(__dirname, './src/site/styles/helpers/index.styl'),
-      ],
-    },
-  },
-}
+const __dirname = import.meta.dirname
 
 const miniCSSLoaderConfig = {
   loader: MiniCssExtractPlugin.loader,
@@ -44,7 +34,7 @@ const postCSSLoaderConfig = {
   },
 }
 
-module.exports = {
+export default {
   mode: 'production',
   entry: {
     index: [
@@ -101,7 +91,7 @@ module.exports = {
         },
       },
       {
-        test: /\.module\.styl$/,
+        test: /\.styl$/,
         use: [
           miniCSSLoaderConfig,
           {
@@ -110,23 +100,30 @@ module.exports = {
               importLoaders: 2,
               esModule: true,
               modules: {
+                auto: /\.module\.\w+$/i,
                 localIdentName: '[local]--[hash:base64:7]',
                 exportLocalsConvention: 'camelCaseOnly',
               },
             },
           },
           postCSSLoaderConfig,
-          stylusLoaderConfig,
-        ],
-      },
-      {
-        test: /\.styl$/,
-        exclude: /\.module\.styl$/,
-        use: [
-          miniCSSLoaderConfig,
-          'css-loader',
-          postCSSLoaderConfig,
-          stylusLoaderConfig,
+          {
+            loader: 'stylus-loader',
+            options: {
+              stylusOptions: {
+                import: [
+                  path.resolve(
+                    __dirname,
+                    './src/site/styles/settings/_variables.styl',
+                  ),
+                  path.resolve(
+                    __dirname,
+                    './src/site/styles/helpers/index.styl',
+                  ),
+                ],
+              },
+            },
+          },
         ],
       },
       {
@@ -134,10 +131,10 @@ module.exports = {
         use: [miniCSSLoaderConfig, 'css-loader', postCSSLoaderConfig],
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/,
-        loader: 'file-loader',
-        options: {
-          outputPath: 'img',
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/[hash][ext][query]',
         },
       },
     ],

@@ -1,5 +1,14 @@
 {
   "compilerOptions": {
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules",
+        "options": {
+          "classnameTransform": "camelCaseOnly",
+          "namedExports": false
+        }
+      }
+    ],
     /* Basic Options */
     "target": "ESNext", // Specify ECMAScript target version: 'ES3' (default)
     "module": "ESNext", // Specify module code generation
