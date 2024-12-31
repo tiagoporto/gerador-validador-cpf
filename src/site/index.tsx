@@ -1,6 +1,6 @@
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import { App } from './App'
-import i18n from 'i18next'
+import { use } from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import { i18nResources } from './locales'
 
@@ -17,7 +17,7 @@ const loadOnProd = async () => {
 
 process.env.NODE_ENV === 'production' && loadOnProd()
 
-i18n.use(initReactI18next).init({
+use(initReactI18next).init({
   resources: {
     en: { translation: i18nResources.en },
     br: { translation: i18nResources.br },
@@ -26,4 +26,8 @@ i18n.use(initReactI18next).init({
   fallbackLng: 'br',
 })
 
-ReactDOM.render(<App />, document.querySelector('#root'))
+const rootElement = document.querySelector('#root')
+if (rootElement) {
+  const root = createRoot(rootElement)
+  root.render(<App />)
+}

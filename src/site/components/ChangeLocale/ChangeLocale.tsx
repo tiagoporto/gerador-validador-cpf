@@ -1,20 +1,21 @@
 import { useState, useEffect } from 'react'
-import i18next from 'i18next'
+import i18next, { changeLanguage } from 'i18next'
 import styles from './ChangeLocale.module.styl'
 
 type AvailableLocales = 'en' | 'br'
 
+const handleLocale =
+  (locale: AvailableLocales, callback?: () => void) => (): void => {
+    changeLanguage(locale)
+    window.history.replaceState(
+      {},
+      'Gerador e Validador de CPF',
+      `?lang=${locale}`,
+    )
+    callback && setTimeout(callback, 5)
+  }
+
 export const ChangeLocale = () => {
-  const handleLocale =
-    (locale: AvailableLocales, callback?: () => void) => (): void => {
-      i18next.changeLanguage(locale)
-      window.history.replaceState(
-        {},
-        'Gerador e Validador de CPF',
-        `?lang=${locale}`,
-      )
-      callback && setTimeout(callback, 5)
-    }
   const [locale, setLocale] = useState('')
   const [isLoading, setIsLoading] = useState(true)
 

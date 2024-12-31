@@ -5,7 +5,6 @@ import { generate as generateCPF } from '../../../lib/CPF'
 import { toast } from 'react-toastify'
 import { useTranslation } from 'react-i18next'
 import i18nResources from '@i18n/app.json'
-// @ts-expect-error: Missing types
 import { IMaskInput } from 'react-imask'
 
 export const GenerateSection = () => {
