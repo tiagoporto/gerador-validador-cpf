@@ -1,5 +1,2 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
-npm run commit-msg -- $1
-
+echo 'Checking commit message...'
+npx --no -- commitlint --edit $1
