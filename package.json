@@ -45,7 +45,7 @@
     "test:mutation": "stryker run --reporters html",
     "test:mutation-report": "stryker run --reporters dashboard",
     "test:coverage": "npm test -- --coverage",
-    "types": "tsc ./src/lib/CPF.ts --skipLibCheck --declarationDir dist --emitDeclarationOnly --declaration",
+    "types": "tsc ./src/lib/CPF.ts --skipLibCheck --declarationDir dist --emitDeclarationOnly --declaration --target es2015",
     "build:site": "rm -rf website && webpack --config webpack.config.prod.js",
     "build": "rollup --config --bundleConfigAsCjs",
     "deploy": "npm run build:site && npx gh-pages -d website",
