@@ -12,7 +12,10 @@ export const InfoSection = () => {
         <Trans
           i18nKey={'info.algorithm'}
           components={[
-            <a key="link" href="http://www.geradorcpf.com/algoritmo_do_cpf.htm">
+            <a
+              key="link"
+              href="https://www.geradorcpf.com/algoritmo_do_cpf.htm"
+            >
               mock
             </a>,
           ]}
@@ -24,7 +27,7 @@ export const InfoSection = () => {
             components={[
               <a
                 key="link"
-                href="http://www.receita.fazenda.gov.br/aplicacoes/atcta/cpf/consultapublica.asp"
+                href="https://servicos.receita.fazenda.gov.br/Servicos/CPF/ConsultaSituacao/ConsultaPublica.asp"
               >
                 mock
               </a>,

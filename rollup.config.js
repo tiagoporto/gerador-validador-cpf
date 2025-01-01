@@ -7,8 +7,8 @@ import babelConfig from './babel.lib.js'
 const banner = `
 @preserve
 Gerador e Validador de CPF v<%= pkg.version %>
-http://tiagoporto.github.io/gerador-validador-cpf
-Copyright (c) 2014-present Tiago Porto (http://tiagoporto.com)
+https://tiagoporto.github.io/gerador-validador-cpf
+Copyright (c) 2014-present Tiago Porto (https://tiagoporto.com)
 Released under the MIT license
 `
 
