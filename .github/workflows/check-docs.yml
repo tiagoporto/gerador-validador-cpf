@@ -1,4 +1,4 @@
-name: Checks
+name: Check Docs
 
 on:
   push:
@@ -12,8 +12,8 @@ on:
       ]
 
 jobs:
-  checks:
-    name: Checks
+  check:
+    name: Check
     runs-on: ubuntu-latest
 
     steps:
@@ -29,14 +29,5 @@ jobs:
       - name: Install Dependencies
         run: npm ci --legacy-peer-deps --ignore-scripts
 
-      - name: Check Typing
-        run: npm run typecheck
-
-      - name: Check Formatting
-        run: npm run check-formatting
-
-      - name: Lint
-        run: npm run lint
-
-      - name: Check Prepack
-        run: npm run prepack
+      - name: Check Docs
+        run: npm run check-docs
