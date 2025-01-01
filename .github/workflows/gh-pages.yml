@@ -1,22 +1,23 @@
 name: Deploy GH Pages
 
-env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-on:
-  workflow_run:
-    workflows: ['Tests']
-    branches: [main]
-    types:
-      - completed
+on: workflow_dispatch
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
 
 jobs:
   deploy:
-    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    name: Generate Build and Deploy to GitHub Pages
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,12 +29,19 @@ jobs:
           cache: 'npm'
 
       - name: Install Dependencies
-        run: npm ci --legacy-peer-deps
+        run: npm ci --legacy-peer-deps --ignore-scripts
 
       - name: Build website
         run: npm run build:site
 
-      - name: Deploy GH Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          folder: website
+          path: './website'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
