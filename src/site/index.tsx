@@ -30,4 +30,6 @@ const rootElement = document.querySelector('#root')
 if (rootElement) {
   const root = createRoot(rootElement)
   root.render(<App />)
+} else {
+  console.error('Failed to find the root element')
 }
