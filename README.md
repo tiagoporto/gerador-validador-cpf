@@ -1,6 +1,6 @@
 # Gerador e Validador de CPF ![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg)
 
-> Biblioteca JS open-source para gerar e validar CPF.
+> Biblioteca JS para gerar e validar CPF (Cadastro de Pessoas Físicas) do Brasil.
 
 [![Release](https://img.shields.io/npm/v/gerador-validador-cpf.svg?style=flat-square&label=release)](https://github.com/tiagoporto/gerador-validador-cpf/releases)
 ![npm type definitions](https://img.shields.io/npm/types/gerador-validador-cpf.svg?style=flat-square)

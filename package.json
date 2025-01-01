@@ -1,7 +1,7 @@
 {
   "name": "gerador-validador-cpf",
   "version": "5.0.2",
-  "description": "Biblioteca JS open-source para gerar, validar e formatar CPF.",
+  "description": "Biblioteca JS para gerar e validar CPF (Cadastro de Pessoas Físicas) do Brasil.",
   "homepage": "https://tiagoporto.github.io/gerador-validador-cpf",
   "keywords": [
     "cpf",
