@@ -24,7 +24,7 @@ updates:
     directory: '/'
     schedule:
       interval: 'monthly'
-      day: 'monday'
+      day: 'friday'
       time: '01:00'
       # UTC -03:00
       timezone: 'America/Sao_Paulo'
