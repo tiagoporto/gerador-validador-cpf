@@ -1,7 +1,6 @@
 export const calcFirstChecker = (firstNineDigits: string): number => {
-  const sum = firstNineDigits
-    .split('')
-    .map((number) => Number(number))
+  const sum = [...firstNineDigits]
+    .map(Number)
     .reduce((previous, current, index) => previous + current * (10 - index), 0)
 
   const lastSumChecker = sum % 11
@@ -9,9 +8,8 @@ export const calcFirstChecker = (firstNineDigits: string): number => {
 }
 
 export const calcSecondChecker = (cpfWithChecker1: string): number => {
-  const sum = cpfWithChecker1
-    .split('')
-    .map((number) => Number(number))
+  const sum = [...cpfWithChecker1]
+    .map(Number)
     .reduce((previous, current, index) => previous + current * (11 - index), 0)
 
   const lastSumChecker2 = sum % 11
