@@ -7,9 +7,11 @@ import {
 } from './utils'
 
 /**
- * @function Generate
- * @param  {string} [formatOption="default"] - 'digits' | 'checker' | 'default'
- * @returns {string}                  Valid and formatted CPF
+ * Generates a valid CPF (Cadastro de Pessoas Físicas) number.
+ *
+ * @param {object} [options]         - Options for CPF generation.
+ * @param {boolean} [options.format] - If true, the generated CPF will be formatted with dots and a dash (e.g., 123.456.789-09).
+ * @returns {string}                 The generated CPF number, optionally formatted.
  */
 export const generate = ({ format }: { format?: boolean } = {}) => {
   let firstNineDigits = ''
@@ -26,9 +28,10 @@ export const generate = ({ format }: { format?: boolean } = {}) => {
 }
 
 /**
- * @function Validate
- * @param  {string} value  CPF number
- * @returns {boolean}                true = valid || false = invalid
+ * Validates a given CPF (Cadastro de Pessoas Físicas) number.
+ *
+ * @param  {string} value  - The CPF number as a string
+ * @returns {boolean}      true = valid || false = invalid
  */
 export const validate = (value: string) => {
   if (typeof value !== 'string') {

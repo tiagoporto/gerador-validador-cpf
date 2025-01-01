@@ -10,8 +10,8 @@ export const generateFirstDigits = () => {
 export const hasCPFLength = (cpf: string) => cpf.length === 11
 
 // format option
-// true   return 000.000.000-00
-// false  return 00000000000
+// true  - 000.000.000-00
+// false - 00000000000
 export const formatCPF = (cpf: string, format?: boolean) => {
   let digitsSeparator = ''
   let checkersSeparator = ''
