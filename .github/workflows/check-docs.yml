@@ -11,6 +11,10 @@ on:
         ready_for_review, # PR was converted from draft to open
       ]
 
+concurrency:
+  group: 'check-docs'
+  cancel-in-progress: true
+
 jobs:
   check:
     name: Check
