@@ -1,4 +1,4 @@
-export const generateFirstDigits = (): string => {
+export const generateFirstDigits = () => {
   let digits = ''
   for (let i = 0; i < 9; ++i) {
     digits += String(Math.floor(Math.random() * 10))
@@ -7,12 +7,12 @@ export const generateFirstDigits = (): string => {
   return digits
 }
 
-export const hasCPFLength = (cpf: string): void | boolean => cpf.length === 11
+export const hasCPFLength = (cpf: string) => cpf.length === 11
 
 // format option
 // true   return 000.000.000-00
 // false  return 00000000000
-export const formatCPF = (cpf: string, format?: boolean): string => {
+export const formatCPF = (cpf: string, format?: boolean) => {
   let digitsSeparator = ''
   let checkersSeparator = ''
 
@@ -32,7 +32,7 @@ export const formatCPF = (cpf: string, format?: boolean): string => {
   )
 }
 
-export const allDigitsAreEqual = (digits: string): boolean => {
+export const allDigitsAreEqual = (digits: string) => {
   for (let i = 0; i < 10; i++) {
     if (digits === Array.from({ length: digits.length + 1 }).join(String(i))) {
       return true
