@@ -1,8 +1,5 @@
 name: Unit Tests
 
-env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 on:
   push:
     branches: [main]
@@ -22,9 +19,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          token: ${{ env.GITHUB_TOKEN }}
-          fetch-depth: 0
 
       - name: Setup node
         uses: actions/setup-node@v4
@@ -33,15 +27,13 @@ jobs:
           cache: 'npm'
 
       - name: Install Dependencies
-        run: npm ci --legacy-peer-deps
+        run: npm ci --legacy-peer-deps --ignore-scripts
 
       - name: Run Unit Tests and generate coverage
         run: npm run test:coverage
 
       - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ env.GITHUB_TOKEN }}
+        uses: coverallsapp/github-action@v2
 
       - name: Run Mutation Tests
         if: github.event_name == 'pull_request'
