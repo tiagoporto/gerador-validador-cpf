@@ -40,7 +40,7 @@ _Leia em outros idiomas: [English](https://github.com/tiagoporto/gerador-validad
 ![coveralls](https://img.shields.io/badge/coveralls-%233F5767?style=for-the-badge&logo=coveralls)
 ![Dependabot](https://img.shields.io/badge/dependabot-%23025E8C?style=for-the-badge&logo=dependabot&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
-![GitHub Pages](https://img.shields.io/badge/GH%20Pages-%23222222?style=for-the-badge&logo=githubpages&logoColor=white)
+![GitHub Pages](https://img.shields.io/badge/Github%20Pages-%23222222?style=for-the-badge&logo=githubpages&logoColor=white)
 ![Semantic Release](https://img.shields.io/badge/Semantic%20Release-%23494949?style=for-the-badge&logo=semantic-release)
 ![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-%23FE5196?style=for-the-badge&logo=conventional%20commits&logoColor=white)
 ![Webpack](https://img.shields.io/badge/Webpack-%232b3a42?style=for-the-badge&logo=webpack)
