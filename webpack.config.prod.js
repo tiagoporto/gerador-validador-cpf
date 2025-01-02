@@ -2,7 +2,7 @@ import path from 'node:path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { GenerateSW } from 'workbox-webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
-import brResources from './src/site/locales/br/app.json' with { type: 'json' }
+import brResources from './site/src/locales/br/app.json' with { type: 'json' }
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import babel from './babel.site.js'
 
@@ -42,7 +42,7 @@ export default {
       'core-js/modules/es.number.is-nan.js',
       'core-js/modules/es.map.js',
       'core-js/modules/es.set.js',
-      './src/site/index.tsx',
+      './site/src/index.tsx',
     ],
   },
   devtool: 'source-map',
@@ -114,11 +114,11 @@ export default {
                 import: [
                   path.resolve(
                     __dirname,
-                    './src/site/styles/settings/_variables.styl',
+                    './site/src/styles/settings/_variables.styl',
                   ),
                   path.resolve(
                     __dirname,
-                    './src/site/styles/helpers/index.styl',
+                    './site/src/styles/helpers/index.styl',
                   ),
                 ],
               },
@@ -146,10 +146,10 @@ export default {
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
     }),
-    new CopyPlugin({ patterns: ['public'] }),
+    new CopyPlugin({ patterns: ['site/public'] }),
     new HtmlWebpackPlugin({
-      favicon: './public/favicon.ico',
-      template: './src/site/index.ejs',
+      favicon: './site/public/favicon.ico',
+      template: './site/src/index.ejs',
       meta: {
         description: brResources.app.description,
         keywords: brResources.app.keywords,
