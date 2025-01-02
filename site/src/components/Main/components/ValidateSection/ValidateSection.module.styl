@@ -1,5 +1,9 @@
+@import '../../../../styles/helpers/_vertical-rhythm'
+@import '../../../../styles/settings/_variables'
+@import '../_center'
+
 .validate-section
-  @extend $disable-select
+  user-select: none
   text-align: center
   background: #FFF
   color: $bg-color
@@ -12,7 +16,7 @@
     line-height: 1
 
 
-    @media (max-width: em($phone))
+    @media (max-width: $phone)
       border-radius: 6px !important
       width: 100%
 

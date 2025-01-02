@@ -67,18 +67,6 @@ export default {
             loader: 'stylus-loader',
             options: {
               sourceMap: true,
-              stylusOptions: {
-                import: [
-                  path.resolve(
-                    __dirname,
-                    './site/src/styles/settings/_variables.styl',
-                  ),
-                  path.resolve(
-                    __dirname,
-                    './site/src/styles/helpers/index.styl',
-                  ),
-                ],
-              },
             },
           },
         ],

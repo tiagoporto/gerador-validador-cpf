@@ -3,8 +3,8 @@ import GithubCorner from 'react-github-corner'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import { toast } from 'react-toastify'
 import { useTranslation } from 'react-i18next'
-import { Donate } from '../Donate'
-import { ChangeLocale } from '../ChangeLocale'
+import { Donate } from './components/Donate'
+import { ChangeLocale } from './components/ChangeLocale'
 import 'highlight.js/styles/github.css'
 
 export const Header = () => {
@@ -44,14 +44,6 @@ export const Header = () => {
       </CopyToClipboard>
 
       <Donate />
-      {/* <p style={{ textAlign: 'center' }}>
-        <a
-          className={styles.docButton}
-          href="https://github.com/tiagoporto/gerador-validador-cpf"
-        >
-          DOC
-        </a>
-      </p> */}
     </header>
   )
 }

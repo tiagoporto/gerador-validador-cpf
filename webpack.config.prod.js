@@ -107,23 +107,7 @@ export default {
             },
           },
           postCSSLoaderConfig,
-          {
-            loader: 'stylus-loader',
-            options: {
-              stylusOptions: {
-                import: [
-                  path.resolve(
-                    __dirname,
-                    './site/src/styles/settings/_variables.styl',
-                  ),
-                  path.resolve(
-                    __dirname,
-                    './site/src/styles/helpers/index.styl',
-                  ),
-                ],
-              },
-            },
-          },
+          'stylus-loader',
         ],
       },
       {
