@@ -25,6 +25,7 @@ const postCSSLoaderConfig = {
 
 export default {
   mode: 'development',
+  target: 'browserslist',
   entry: {
     index: './site/src/index.tsx',
   },
