@@ -1,4 +1,8 @@
 const parser = '@typescript-eslint/parser'
+const parserOptions = {
+  projectService: true,
+  tsconfigRootDir: __dirname,
+}
 
 const testConfig = {
   extends: [
@@ -109,9 +113,12 @@ const tsConfig = {
   extends: [
     ...jsConfig.extends,
     'plugin:import/typescript',
-    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-type-checked',
   ],
-  extendsInMD: [...jsConfig.extendsMD, 'plugin:@typescript-eslint/recommended'],
+  extendsInMD: [
+    ...jsConfig.extendsMD,
+    'plugin:@typescript-eslint/recommended-type-checked',
+  ],
   rules: {
     ...jsConfig.rules,
     '@typescript-eslint/explicit-module-boundary-types': 'off',
@@ -218,6 +225,7 @@ module.exports = {
       files: ['*.ts'],
       excludedFiles: ['**/*.{md,mdx}/*.{ts,typescript}', '**/*.test.ts'],
       parser,
+      parserOptions,
       extends: [...tsConfig.extends],
       rules: { ...tsConfig.rules },
     },
@@ -225,6 +233,7 @@ module.exports = {
     {
       files: ['**/*.test.ts'],
       parser,
+      parserOptions,
       extends: [...tsConfig.extends, ...testConfig.extends],
       rules: { ...tsConfig.rules, ...tsConfig.rulesTest, ...testConfig.rules },
     },
@@ -232,6 +241,7 @@ module.exports = {
     {
       files: ['**/*.{md,mdx}/*.{ts,typescript}'],
       parser,
+      parserOptions,
       extends: [...tsConfig.extendsInMD],
       rules: { ...tsConfig.rulesMD },
     },
@@ -269,6 +279,7 @@ module.exports = {
       files: ['*.tsx'],
       excludedFiles: ['**/*.{md,mdx}/*.tsx', '**/*.test.tsx'],
       parser,
+      parserOptions,
       extends: [...reactConfig.extends, ...tsConfig.extends],
       rules: {
         ...tsConfig.rules,
@@ -279,6 +290,7 @@ module.exports = {
     {
       files: ['**/*.test.tsx'],
       parser,
+      parserOptions,
       extends: [
         ...reactConfig.extends,
         ...tsConfig.extends,
@@ -296,6 +308,7 @@ module.exports = {
     {
       files: ['**/*.{md,mdx}/*.tsx'],
       parser,
+      parserOptions,
       extends: [...reactConfig.extendsMD, ...tsConfig.extendsInMD],
       rules: {
         ...tsConfig.rulesMD,
