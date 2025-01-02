@@ -1,34 +1,9 @@
 {
-  "name": "gerador-validador-cpf",
-  "version": "5.0.2",
-  "description": "Biblioteca JS para gerar e validar CPF (Cadastro de Pessoas Físicas) do Brasil.",
-  "homepage": "https://tiagoporto.github.io/gerador-validador-cpf",
-  "keywords": [
-    "cpf",
-    "gerador",
-    "generator",
-    "generates",
-    "validador",
-    "valida",
-    "validates"
+  "name": "gerador-validador-cpf-project",
+  "private": true,
+  "workspaces": [
+    "packages/gerador-validador-cpf"
   ],
-  "author": {
-    "name": "Tiago Porto",
-    "url": "https://tiagoporto.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tiagoporto/gerador-validador-cpf.git"
-  },
-  "funding": "https://github.com/sponsors/tiagoporto",
-  "main": "./dist/CPF.umd.js",
-  "module": "./dist/CPF.es.js",
-  "typings": "./dist/CPF.d.ts",
-  "files": [
-    "/dist",
-    "/README.en.md"
-  ],
-  "license": "MIT",
   "scripts": {
     "prepare": "husky",
     "start": "webpack serve --hot --config webpack.config.dev.js",
