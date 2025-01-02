@@ -36,5 +36,14 @@
     "/dist",
     "/README.en.md"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@stryker-mutator/core": "^8.7.1",
+    "@stryker-mutator/jest-runner": "^8.7.1",
+    "rollup": "^3.2.3",
+    "rollup-plugin-license": "^2.8.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^5.7.2"
+  }
 }

@@ -12,7 +12,9 @@ const handleLocale =
       'Gerador e Validador de CPF',
       `?lang=${locale}`,
     )
-    callback && setTimeout(callback, 5)
+    if (callback) {
+      setTimeout(callback, 5)
+    }
   }
 
 export const ChangeLocale = () => {

@@ -7,7 +7,6 @@ import {
 
 /**
  * Validates a given CPF (Cadastro de Pessoas Físicas) number.
- *
  * @param  {string} value  - The CPF number as a string
  * @returns {boolean}      true = valid || false = invalid
  */

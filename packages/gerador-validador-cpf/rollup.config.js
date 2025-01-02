@@ -1,8 +1,8 @@
-import babel from '@rollup/plugin-babel'
+// import babel from '@rollup/plugin-babel'
 import { terser } from 'rollup-plugin-terser'
 import license from 'rollup-plugin-license'
 import resolve from '@rollup/plugin-node-resolve'
-import babelConfig from './babel.lib.js'
+// import babelConfig from './babel.lib.js'
 
 const banner = `
 @preserve
@@ -27,11 +27,11 @@ export default [
       },
     ],
     plugins: [
-      babel({
-        extensions: ['.js', '.ts'],
-        babelHelpers: 'runtime',
-        ...babelConfig,
-      }),
+      // babel({
+      //   extensions: ['.js', '.ts'],
+      //   babelHelpers: 'runtime',
+      //   ...babelConfig,
+      // }),
       resolve({
         extensions: ['.ts', '.js'],
       }),
