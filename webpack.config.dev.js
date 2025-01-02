@@ -1,6 +1,6 @@
 import path from 'node:path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import brResources from './src/site/locales/br/app.json' with { type: 'json' }
+import brResources from './site/src/locales/br/app.json' with { type: 'json' }
 import babel from './babel.site.js'
 
 const __dirname = import.meta.dirname
@@ -26,7 +26,7 @@ const postCSSLoaderConfig = {
 export default {
   mode: 'development',
   entry: {
-    index: './src/site/index.tsx',
+    index: './site/src/index.tsx',
   },
   devtool: 'eval-source-map',
   devServer: {
@@ -71,11 +71,11 @@ export default {
                 import: [
                   path.resolve(
                     __dirname,
-                    './src/site/styles/settings/_variables.styl',
+                    './site/src/styles/settings/_variables.styl',
                   ),
                   path.resolve(
                     __dirname,
-                    './src/site/styles/helpers/index.styl',
+                    './site/src/styles/helpers/index.styl',
                   ),
                 ],
               },
@@ -107,8 +107,8 @@ export default {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      favicon: './public/favicon.ico',
-      template: './src/site/index.ejs',
+      favicon: './site/public/favicon.ico',
+      template: './site/src/index.ejs',
       meta: {
         description: brResources.app.description,
         keywords: brResources.app.keywords,
