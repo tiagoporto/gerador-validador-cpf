@@ -15,7 +15,9 @@ const loadOnProd = async () => {
   registerServiceWorker()
 }
 
-process.env.NODE_ENV === 'production' && loadOnProd()
+if (process.env.NODE_ENV === 'production') {
+  loadOnProd()
+}
 
 use(initReactI18next).init({
   resources: {

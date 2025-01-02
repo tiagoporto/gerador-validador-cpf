@@ -8,7 +8,6 @@ import {
 
 /**
  * Generates a valid CPF (Cadastro de Pessoas Físicas) number.
- *
  * @param {object} [options]         - Options for CPF generation.
  * @param {boolean} [options.format] - If true, the generated CPF will be formatted with dots and a dash (e.g., 123.456.789-09).
  * @returns {string}                 The generated CPF number, optionally formatted.

@@ -27,7 +27,7 @@ const jsConfig = {
     'plugin:import/warnings',
     'plugin:eslint-comments/recommended',
     'plugin:jsdoc/recommended',
-    'plugin:sonarjs/recommended',
+    'plugin:sonarjs/recommended-legacy',
     'standard',
     'prettier',
   ],
