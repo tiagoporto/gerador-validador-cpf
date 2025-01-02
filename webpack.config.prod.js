@@ -36,6 +36,7 @@ const postCSSLoaderConfig = {
 
 export default {
   mode: 'production',
+  target: 'browserslist',
   entry: {
     index: [
       'core-js/modules/esnext.global-this.js',
