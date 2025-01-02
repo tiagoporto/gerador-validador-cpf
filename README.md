@@ -95,4 +95,4 @@ Este projeto é desenvolvido no meu tempo livre, qualquer doação é bem-vinda.
 
 ## Licença 📄
 
-Este projeto está sob os termos da [licença MIT](LICENSE).
+Este projeto está sob os termos da [licença MIT](./packages/gerador-validador-cpf/LICENSE).

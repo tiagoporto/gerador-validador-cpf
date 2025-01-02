@@ -95,4 +95,4 @@ This project is developed on my free time, any donation is welcome.
 
 ## License 📄
 
-This project is licensed under the [MIT license](LICENSE).
+This project is licensed under the [MIT license](./packages/gerador-validador-cpf/LICENSE).
