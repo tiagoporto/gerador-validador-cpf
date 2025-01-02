@@ -1,4 +1,5 @@
 @import '../../styles/settings/_variables';
+@import '../../styles/helpers/_vertical-rhythm'
 
 .panel
   background: linear-gradient(
@@ -15,7 +16,7 @@
     text-decoration: none
 
   span
-    @media (max-width: em($phone))
+    @media (max-width: $phone)
       display: block
 
   &__title
@@ -30,24 +31,19 @@
 
 .copy
   cursor: pointer
-  border-radius: em(3px)
+  border-radius: 3px
   trailer(1)
 
   code
     display: inline-block !important
 
-    @media (min-width: em($phone))
+    @media (min-width: $phone)
       padding-right: 40px !important
 
     &:hover
-      @media (min-width: em($phone))
+      @media (min-width: $phone)
         background-position: center right 10px
         background-repeat: no-repeat
         background-size: 20px 20px
         background-image: url('./copy.svg')
 
-// .doc-button
-//   border: 2px solid #FFF
-//   padding: 5px 30px
-//   text-decoration none
-//   font-weight 700

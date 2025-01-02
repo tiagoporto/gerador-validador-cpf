@@ -1,5 +1,9 @@
+@import '../../../../styles/helpers/_vertical-rhythm'
+@import '../../../../styles/settings/_variables'
+@import '../_center'
+
 .generate-section
-  @extend $disable-select
+  user-select: none
   text-align: center
   background: #FFF
   color: $bg-color
@@ -8,7 +12,7 @@
   @extend $center
 
 .generate-button
-  @extend $disable-select
+  user-select: none
   border: none
   border-radius: 0 6px 6px 0
   display: inline-block
@@ -31,18 +35,18 @@
   &:hover:not([disabled])
     background-color: shade($bg-color, 20%)
 
-  @media (max-width: em($phone))
+  @media (max-width: $phone)
     border-radius: 6px
     width: 100%
 
 
 .input
-  @extend $disable-select
+  user-select: none
   border-radius: 6px 0 0 6px
   cursor: pointer
   text-align: center
   background: #ededed
 
-  @media (max-width: em($phone))
+  @media (max-width: $phone)
     border-radius: 6px
     width: 100%

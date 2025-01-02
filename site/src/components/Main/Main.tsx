@@ -1,6 +1,6 @@
-import { GenerateSection } from '../GenerateSection'
-import { ValidateSection } from '../ValidateSection'
-import { InfoSection } from '../InfoSection'
+import { GenerateSection } from './components/GenerateSection'
+import { ValidateSection } from './components/ValidateSection'
+import { InfoSection } from './components/InfoSection'
 
 export const Main = () => (
   <main>
