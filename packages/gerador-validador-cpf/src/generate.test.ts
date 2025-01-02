@@ -1,23 +1,23 @@
-import * as CPF from './CPF'
+import { generate, validate } from '.'
 import * as utils from './utils'
 
-describe('CPF.generate()', () => {
+describe('generate', () => {
   it('should generate a valid CPF', () => {
-    const cpf = CPF.generate()
+    const cpf = generate()
 
-    expect(CPF.validate(cpf)).toBeTruthy()
+    expect(validate(cpf)).toBeTruthy()
     expect(Number.isNaN(Number(cpf))).toBeFalsy()
   })
 
   it('should generate a non formated CPF 12345678900', () => {
-    const cpf = CPF.generate({ format: false })
+    const cpf = generate({ format: false })
 
     expect(/^\d{11}$/.test(cpf)).toBeTruthy()
     expect(Number.isNaN(Number(cpf))).toBeFalsy()
   })
 
   it('should generate a formated CPF 000.000.000-00', () => {
-    const cpf = CPF.generate({ format: true })
+    const cpf = generate({ format: true })
 
     expect(/^\d{3}.\d{3}.\d{3}-\d{2}$/.test(cpf)).toBeTruthy()
     expect(Number.isNaN(Number(cpf))).toBeTruthy()
@@ -27,6 +27,6 @@ describe('CPF.generate()', () => {
     const mock = jest.spyOn(utils, 'generateFirstDigits')
     mock.mockReturnValueOnce('000000000')
 
-    expect(CPF.validate(CPF.generate())).toBeTruthy()
+    expect(validate(generate())).toBeTruthy()
   })
 })

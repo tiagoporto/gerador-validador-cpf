@@ -1,7 +1,7 @@
 import styles from './GenerateSection.module.styl'
 import { useState, useEffect } from 'react'
 import CopyToClipboard from 'react-copy-to-clipboard'
-import { generate as generateCPF } from '../../../lib/CPF'
+import { generate as generateCPF } from 'gerador-validador-cpf'
 import { toast } from 'react-toastify'
 import { useTranslation } from 'react-i18next'
 import { IMaskInput } from 'react-imask'
