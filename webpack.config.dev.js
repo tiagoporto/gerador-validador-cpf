@@ -47,7 +47,7 @@ export default {
         },
       },
       {
-        test: /\.styl$/,
+        test: /\.scss$/,
         use: [
           'style-loader',
           {
@@ -65,7 +65,7 @@ export default {
           },
           postCSSLoaderConfig,
           {
-            loader: 'stylus-loader',
+            loader: 'sass-loader',
             options: {
               sourceMap: true,
             },
