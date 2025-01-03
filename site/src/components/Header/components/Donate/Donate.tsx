@@ -17,26 +17,26 @@ export const Donate = () => {
 
   const trackClick =
     ({ category, type }: Track) =>
-    (): void => {
+    () => {
       if (process.env.NODE_ENV === 'production') {
         const pushData = async () => {
           const ReactGA = await import('react-ga')
           ReactGA.ga('send', 'event', category, 'click', type)
         }
 
-        pushData()
+        void pushData()
       }
     }
 
-  const handleCopy = (): void => {
+  const handleCopy = () => {
     toast(t('messages.walletCopied'))
   }
 
-  const toggleCodeVisibility = (): void => {
+  const toggleCodeVisibility = () => {
     setIsCodeVisible(!isCodeVisible)
   }
 
-  const handleClick = (trackInfo: Track) => (): void => {
+  const handleClick = (trackInfo: Track) => () => {
     trackClick(trackInfo)()
     toggleCodeVisibility()
   }
@@ -107,7 +107,7 @@ export const Donate = () => {
           role="presentation"
           alt="QRCode Bitcoin Wallet"
           src={BTCQR}
-          onKeyPress={toggleCodeVisibility}
+          onKeyDown={toggleCodeVisibility}
           onClick={toggleCodeVisibility}
           className={`${codeStyles.code} ${
             isCodeVisible ? codeStyles.showCode : codeStyles.hideCode

@@ -16,7 +16,7 @@ const loadOnProd = async () => {
 }
 
 if (process.env.NODE_ENV === 'production') {
-  loadOnProd()
+  void loadOnProd()
 }
 
 use(initReactI18next).init({

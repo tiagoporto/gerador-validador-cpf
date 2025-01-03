@@ -15,7 +15,7 @@ export const validate = (value: string) => {
     return false
   }
 
-  const cleanCPF = String(value).replace(/[\s.-]/g, '')
+  const cleanCPF = String(value).replaceAll(/[\s.-]/g, '')
   const firstNineDigits = cleanCPF.slice(0, 9)
   const checker = cleanCPF.slice(9, 11)
 

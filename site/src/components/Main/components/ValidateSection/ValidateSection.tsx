@@ -35,7 +35,7 @@ export const ValidateSection = () => {
   useEffect(() => {
     if (tempCpf.length === 14) {
       if (process.env.NODE_ENV === 'production') {
-        enableAnalytics()
+        void enableAnalytics()
       }
 
       const isValid = validadeCPF(tempCpf)

@@ -23,7 +23,7 @@ export const GenerateSection = () => {
         ReactGA.ga('send', 'event', 'Generate', type, 'Generate CPF')
       }
 
-      pushData()
+      void pushData()
     }
   }
   useEffect(() => {

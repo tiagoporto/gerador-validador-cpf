@@ -5,8 +5,9 @@ import styles from './ChangeLocale.module.scss'
 type AvailableLocales = 'en' | 'br'
 
 const handleLocale =
-  (locale: AvailableLocales, callback?: () => void) => (): void => {
+  (locale: AvailableLocales, callback?: () => void) => () => {
     changeLanguage(locale)
+
     window.history.replaceState(
       {},
       'Gerador e Validador de CPF',

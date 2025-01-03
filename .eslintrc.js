@@ -37,6 +37,7 @@ const jsConfig = {
   ],
   extendsMD: ['eslint:recommended', 'standard'],
   rules: {
+    'no-void': ['error', { allowAsStatement: true }],
     'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
     'no-alert': 'error',
     'no-debugger': 'error',
@@ -121,6 +122,10 @@ const tsConfig = {
   ],
   rules: {
     ...jsConfig.rules,
+    '@typescript-eslint/no-floating-promises': [
+      'error',
+      { ignoreVoid: true, ignoreIIFE: true },
+    ],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/ban-ts-comment': [
       'error',
