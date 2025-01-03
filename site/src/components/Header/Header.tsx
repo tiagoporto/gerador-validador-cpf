@@ -1,4 +1,4 @@
-import styles from './Header.module.styl'
+import styles from './Header.module.scss'
 import GithubCorner from 'react-github-corner'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import { toast } from 'react-toastify'

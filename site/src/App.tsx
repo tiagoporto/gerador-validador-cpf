@@ -1,9 +1,8 @@
 import 'normalize.css'
-import './App.styl'
+import './App.scss'
 import { StrictMode } from 'react'
-import styles from './Toast.module.styl'
+import styles from './Toast.module.scss'
 import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 import { Header } from './components/Header'
 import { Main } from './components/Main'
 import { Footer } from './components/Footer'
@@ -16,10 +15,10 @@ export const App = () => {
       <Footer />
 
       <ToastContainer
-        className={styles.toast}
-        toastClassName={styles.toastContent}
+        toastClassName={styles.toast}
         position="bottom-center"
         autoClose={2500}
+        closeButton={false}
         hideProgressBar
         newestOnTop
         closeOnClick

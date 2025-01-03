@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import i18next, { changeLanguage } from 'i18next'
-import styles from './ChangeLocale.module.styl'
+import styles from './ChangeLocale.module.scss'
 
 type AvailableLocales = 'en' | 'br'
 

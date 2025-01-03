@@ -1,0 +1,123 @@
+@use 'sass:color';
+
+.list {
+  position: relative;
+  z-index: 1;
+  display: table;
+  padding: 0;
+  margin: auto;
+  list-style: none;
+  list-style-type: none;
+  transition: all 0.3s;
+
+  li {
+    border: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    background-color: white;
+    float: left;
+
+    &:first-child {
+      border-radius: 6px 0 0 6px;
+      border-right: 0;
+    }
+
+    &:last-child {
+      border-radius: 0 6px 6px 0;
+      border-left: 0;
+    }
+  }
+}
+
+.blur {
+  filter: blur(3px);
+}
+
+.button {
+  display: block;
+  width: 74px;
+  height: 26px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: no-repeat center center;
+  background-size: 45px;
+  color: black;
+  cursor: pointer;
+  filter: grayscale(1);
+  line-height: 999;
+  opacity: 0.6;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s;
+
+  &:visited {
+    color: black;
+  }
+
+  &:hover {
+    background-color: rgb(204 217 220 / 50%);
+    filter: grayscale(0);
+    opacity: 1;
+  }
+
+  &--star {
+    line-height: 28px;
+  }
+
+  &--paypal {
+    background-image: url('./img/paypal.svg');
+  }
+
+  &--bitcoin {
+    background-image: url('./img/bitcoin.svg');
+  }
+
+  &--litcoin {
+    background-image: url('./img/litecoin.svg');
+  }
+}
+
+[data-footnote] {
+  position: relative;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    position: absolute;
+    z-index: 10;
+    left: 37px;
+    opacity: 0;
+    transform: translate3d(-50%, 0, 0);
+    transition: all 0.3s;
+  }
+
+  &::before {
+    top: -24px;
+    height: 26px;
+    padding: 0 6px;
+    border-radius: 4px;
+    background-color: color.adjust(#000, $lightness: 17%);
+    color: #fff;
+    content: attr(data-footnote);
+    font-size: 12px;
+    line-height: 26px;
+    white-space: nowrap;
+  }
+
+  &::after {
+    top: 0;
+    border: 5px solid color.adjust(#000, $lightness: 17%);
+    border-color: color.adjust(#000, $lightness: 17%) transparent transparent;
+    content: '';
+  }
+
+  &:hover {
+    overflow: visible;
+
+    &::before,
+    &::after {
+      opacity: 1;
+      transform: translate3d(-50%, -7px, 0);
+    }
+  }
+}

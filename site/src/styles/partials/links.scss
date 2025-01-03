@@ -1,0 +1,17 @@
+@use 'sass:color';
+
+a {
+  color: #fff;
+
+  &:visited {
+    color: #fff;
+  }
+
+  &:hover {
+    color: #ffff32;
+  }
+
+  &:active {
+    color: color.change(#ffff32, $blue: 10);
+  }
+}

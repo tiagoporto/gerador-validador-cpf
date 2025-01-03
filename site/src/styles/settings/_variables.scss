@@ -1,0 +1,26 @@
+// Color
+$primary-color: #217bb8;
+$bg-color: $primary-color;
+$selection-color: #fff;
+$selection-bg-color: $primary-color;
+
+// Typography
+$font-family-mono: 'Courier New', courier, monospace;
+$font-family-base: 'Inter', helvetica, arial, sans-serif;
+$base-font-size: 16px;
+$base-line-height: 24px;
+$base-text-color: #fff;
+
+// Vertical Rhythmn
+$debug-vertical-rhythm: false;
+$debug-color-line: #fff;
+
+// Media queries
+
+// The EMs have it: Proportional Media Queries FTW!
+// http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/
+// 7 Habits of Highly Effective Media Queries
+// http://bradfrost.com/blog/post/7-habits-of-highly-effective-media-queries/
+$phone: 480px;
+$tablet: 768px;
+$desktop: 992px;

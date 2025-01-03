@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import styles from './Donation.module.styl'
-import codeStyles from './Code.module.styl'
+import styles from './Donation.module.scss'
+import codeStyles from './Code.module.scss'
 import BTCQR from './img/BTCQR.png'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import { toast } from 'react-toastify'

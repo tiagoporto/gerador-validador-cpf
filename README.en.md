@@ -46,8 +46,7 @@ _Read in other languages: English, [Português(Brasil)](https://github.com/tiago
 ![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-%23FE5196?style=for-the-badge&logo=conventional%20commits&logoColor=white)
 ![Webpack](https://img.shields.io/badge/Webpack-%232b3a42?style=for-the-badge&logo=webpack)
 ![Stylelint](https://img.shields.io/badge/Stylelint-%231B3A4B.svg?style=for-the-badge&logo=stylelint&logoColor=white)
-
-<!-- ![sass](https://img.shields.io/badge/sass-%23CC6699?style=for-the-badge&logo=sass&logoColor=white) -->
+![sass](https://img.shields.io/badge/sass-%23CC6699?style=for-the-badge&logo=sass&logoColor=white)
 
 ## Playground 🎮
 

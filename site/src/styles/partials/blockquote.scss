@@ -1,0 +1,10 @@
+@use '../settings/variables' as v;
+@use '../helpers/functions' as f;
+
+blockquote {
+  padding-left: 0.625em;
+  border-left: 0.3125em solid #999;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  font-style: italic;
+}

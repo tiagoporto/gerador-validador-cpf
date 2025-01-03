@@ -1,4 +1,4 @@
-import style from './ValidateSection.module.styl'
+import style from './ValidateSection.module.scss'
 import { useState, useEffect } from 'react'
 import { validate as validadeCPF } from 'gerador-validador-cpf'
 import { IMaskInput } from 'react-imask'
@@ -59,29 +59,27 @@ export const ValidateSection = () => {
   }, [tempCpf])
 
   return (
-    <section className={style.validateSection}>
-      <div className={style.center}>
-        <h2>{t('validate.title')}</h2>
+    <div className={style.validateSection}>
+      <h2>{t('validate.title')}</h2>
 
-        <IMaskInput
-          aria-label={t('validate.insertCPF')}
-          value={tempCpf}
-          placeholder={t('validate.insertCPF')}
-          onAccept={handleChangeCPF}
-          className={style.validateSectionInput}
-          type="text"
-          mask={'000.000.000-00'}
-          required
-        />
+      <IMaskInput
+        aria-label={t('validate.insertCPF')}
+        value={tempCpf}
+        placeholder={t('validate.insertCPF')}
+        onAccept={handleChangeCPF}
+        className={style.validateSectionInput}
+        type="text"
+        mask={'000.000.000-00'}
+        required
+      />
 
-        <div
-          className={`${style.validateSectionInput} ${style.message} ${
-            isValid && cpf ? style.messageValid : ''
-          } ${!isValid && cpf ? style.messageInvalid : ''}`}
-        >
-          {message || '...'}
-        </div>
+      <div
+        className={`${style.validateSectionInput} ${style.message} ${
+          isValid && cpf ? style.messageValid : ''
+        } ${!isValid && cpf ? style.messageInvalid : ''}`}
+      >
+        {message || '...'}
       </div>
-    </section>
+    </div>
   )
 }
