@@ -1,11 +1,11 @@
-import styles from './InfoSection.module.styl'
+import styles from './InfoSection.module.scss'
 import { useTranslation, Trans } from 'react-i18next'
 
 export const InfoSection = () => {
   const { t } = useTranslation()
 
   return (
-    <section className={styles.infoSection}>
+    <div className={styles.infoSection}>
       <div className={styles.center}>
         <p>{t('info.disclaimer')}</p>
 
@@ -54,6 +54,6 @@ export const InfoSection = () => {
           ))}
         </ol>
       </div>
-    </section>
+    </div>
   )
 }

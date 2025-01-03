@@ -1,0 +1,52 @@
+@use 'sass:color';
+@use 'styles/settings/variables' as v;
+@use 'styles/helpers/functions' as f;
+@use 'styles/partials/index';
+
+/*!
+*
+* Box model reset
+* http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+*
+*/
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: color.adjust(v.$bg-color, $lightness: -10%);
+  color: v.$base-text-color;
+  font: normal normal #{v.$base-font-size} / f.em(v.$base-line-height)
+    v.$font-family-base;
+  font-feature-settings: 'liga', 'kern';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+}
+
+::selection {
+  background: v.$selection-bg-color;
+  color: v.$selection-color;
+}
+
+// /*!
+// *
+// * Better Font Smoothing in Chrome & Safari
+// * http://www.intridea.com/blog/2014/5/8/better-font-smoothing-in-chrome-on-mac-os-x
+// *
+// */
+@media only screen and (-min-device-pixel-ratio: 1.25),
+  only screen and (-min-device-pixel-ratio: 1.25),
+  only screen and (resolution >= 200dpi),
+  only screen and (resolution >= 1.25dppx) {
+  body {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}

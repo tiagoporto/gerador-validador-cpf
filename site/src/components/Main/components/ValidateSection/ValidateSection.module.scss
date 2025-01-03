@@ -1,0 +1,42 @@
+@use 'sass:color';
+@use '../../../../styles/settings/variables' as v;
+
+.validate-section {
+  overflow: auto;
+  padding-bottom: 3em;
+  background: #fff;
+  color: v.$bg-color;
+  text-align: center;
+  user-select: none;
+
+  &__input {
+    padding: 10px;
+    border-radius: 6px 0 0 6px;
+    background: #ededed;
+    line-height: 1;
+    text-align: center;
+
+    @media (max-width: v.$phone) {
+      width: 100%;
+      border-radius: 6px !important;
+    }
+  }
+}
+
+.message {
+  display: inline-block;
+  border-radius: 0 6px 6px 0;
+  background-color: color.adjust(#fff, $lightness: -28%);
+  color: color.adjust(#000, $lightness: 25%);
+  transition: all ease 1s;
+
+  &--valid {
+    background-color: color.adjust(green, $lightness: 70%);
+    color: green;
+  }
+
+  &--invalid {
+    background-color: color.adjust(red, $lightness: 70%);
+    color: red;
+  }
+}

@@ -1,0 +1,18 @@
+@use 'sass:math';
+@use 'sass:color';
+@use '../settings/variables' as v;
+@use '../helpers/functions' as f;
+
+input {
+  height: f.em(math.div(v.$base-line-height, 2) * 3);
+  border: none;
+  margin-bottom: 0.75em;
+  color: color.adjust(#000, $lightness: 35%);
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+::placeholder {
+  color: color.adjust(#000, $lightness: 55%);
+  font-size: f.em(v.$base-font-size - 2);
+}

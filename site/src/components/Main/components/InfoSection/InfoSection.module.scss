@@ -1,0 +1,17 @@
+@use '../../../../styles/settings/variables' as v;
+
+.info-section {
+  background: v.$bg-color;
+}
+
+.center {
+  overflow: auto;
+  max-width: 1000px;
+  padding: 0 20px;
+  margin: auto;
+}
+
+.list {
+  padding-left: 20px;
+  list-style-type: none;
+}

@@ -1,4 +1,4 @@
-import styles from './GenerateSection.module.styl'
+import styles from './GenerateSection.module.scss'
 import { useState, useEffect } from 'react'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import { generate as generateCPF } from 'gerador-validador-cpf'
@@ -31,8 +31,8 @@ export const GenerateSection = () => {
   }, [])
 
   return (
-    <section className={styles.generateSection}>
-      <div className={styles.center}>
+    <div className={styles.generateSection}>
+      <div>
         <h2>{t('generate.title')}</h2>
 
         <CopyToClipboard text={cpf} onCopy={handleCopy}>
@@ -54,6 +54,6 @@ export const GenerateSection = () => {
           {t('generate.title')}
         </button>
       </div>
-    </section>
+    </div>
   )
 }
