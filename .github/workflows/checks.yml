@@ -39,6 +39,9 @@ jobs:
       - name: Check Formatting
         run: npm run check-formatting
 
+      - name: Lint Styles
+        run: npm run lint:styles
+
       - name: Lint
         run: npm run lint
 

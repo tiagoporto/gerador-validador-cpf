@@ -7,7 +7,7 @@
     "esbenp.prettier-vscode",
     "ionutvmi.path-autocomplete",
     "stevencl.addDocComments",
-    "sysoev.language-stylus",
-    "unifiedjs.vscode-mdx"
+    "stylelint.vscode-stylelint",
+    "unifiedjs.vscode-remark"
   ]
 }

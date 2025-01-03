@@ -1,4 +1,12 @@
 {
+  "[markdown]": {
+    "editor.defaultFormatter": "unifiedjs.vscode-remark",
+    "editor.formatOnSave": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": "always"
+  },
+  "stylelint.validate": ["scss"],
   "typescript.tsdk": "./node_modules/typescript/lib",
   "editor.formatOnSave": true,
   // enable for eslint-plugin json-format
