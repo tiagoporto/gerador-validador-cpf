@@ -15,7 +15,7 @@ _Leia em outros idiomas: [English](https://github.com/tiagoporto/gerador-validad
 
 ![Website](https://img.shields.io/website?logo=githubpages&style=flat-square&url=https://tiagoporto.github.io/gerador-validador-cpf)
 [![Docs GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/gerador-validador-cpf/check-docs.yml?label=docs&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/gerador-validador-cpf/actions/workflows/check-docs.yml)
-[![Checks GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/gerador-validador-cpf/checks.yml?label=checks&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/gerador-validador-cpf/actions/workflows/checks.yml)
+[![Lint GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/gerador-validador-cpf/lint.yml?label=lint&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/gerador-validador-cpf/actions/workflows/lint.yml)
 [![Tests GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/gerador-validador-cpf/unit-tests.yml?label=unit%20tests&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/gerador-validador-cpf/actions/workflows/unit-tests.yml)
 [![Coverage Status](https://img.shields.io/coveralls/tiagoporto/gerador-validador-cpf.svg?logo=coveralls&style=flat-square)](https://coveralls.io/github/tiagoporto/gerador-validador-cpf)
 [![Mutation Score](https://img.shields.io/endpoint?style=flat-square&url=https://badge-api.stryker-mutator.io/github.com/tiagoporto/gerador-validador-cpf/main)](https://dashboard.stryker-mutator.io/reports/github.com/tiagoporto/gerador-validador-cpf/main)
@@ -48,6 +48,9 @@ _Leia em outros idiomas: [English](https://github.com/tiagoporto/gerador-validad
 ![Stylelint](https://img.shields.io/badge/Stylelint-%231B3A4B.svg?style=for-the-badge&logo=stylelint&logoColor=white)
 ![sass](https://img.shields.io/badge/sass-%23CC6699?style=for-the-badge&logo=sass&logoColor=white)
 ![css modules](https://img.shields.io/badge/css%20modules-%23333?style=for-the-badge&logo=css-modules)
+![swc](https://img.shields.io/badge/swc-%23F8C457?style=for-the-badge&logo=swc&logoColor=black)
+![postcss](https://img.shields.io/badge/postcss-%23DD3A0A?style=for-the-badge&logo=postcss)
+![autoprefixer](https://img.shields.io/badge/autoprefixer-%23DD3735?style=for-the-badge&logo=autoprefixer&logoColor=white)
 
 ## Playground 🎮
 

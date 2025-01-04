@@ -1,4 +1,4 @@
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, jest } from '@jest/globals'
 import { generate, validate } from '.'
 import * as utils from './utils'
 
