@@ -1,4 +1,4 @@
-name: Checks
+name: Lint
 
 on:
   push:
@@ -12,7 +12,7 @@ on:
       ]
 
 concurrency:
-  group: 'checks'
+  group: 'lint'
   cancel-in-progress: true
 
 jobs:
