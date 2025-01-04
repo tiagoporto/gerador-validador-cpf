@@ -21,9 +21,9 @@
     "lint:styles": "stylelint \"**/*.scss\"",
     "lint": "eslint --ext js,jsx,mjs,ts,tsx,md,mdx . --max-warnings 0",
     "lint:fix": "pnpm lint -- --fix",
+    "coverage": "npm test -- --coverage",
     "test": "jest",
     "test:watch": "npm test -- --watch",
-    "test:coverage": "npm test -- --coverage",
     "test:package": "jest --config jest.config.package.mjs",
     "test:mutation": "stryker run --reporters html",
     "test:mutation:dashboard": "stryker run --reporters dashboard"
