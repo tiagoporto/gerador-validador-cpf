@@ -162,7 +162,7 @@ const reactConfig = {
 }
 
 module.exports = {
-  ignorePatterns: [],
+  ignorePatterns: ['dist', '!.*.mjs'],
   settings: {
     react: {
       version: 'detect',
