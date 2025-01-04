@@ -1,10 +1,10 @@
 import {
+  allDigitsAreEqual,
   calcFirstChecker,
   calcSecondChecker,
-  allDigitsAreEqual,
-  generateFirstDigits,
   formatCPF,
-} from './utils'
+  generateFirstDigits,
+} from './utils/index.js'
 
 /**
  * Generates a valid CPF (Cadastro de Pessoas Físicas) number.

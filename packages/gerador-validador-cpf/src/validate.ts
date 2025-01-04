@@ -1,9 +1,9 @@
 import {
+  allDigitsAreEqual,
   calcFirstChecker,
   calcSecondChecker,
-  allDigitsAreEqual,
   hasCPFLength,
-} from './utils'
+} from './utils/index.js'
 
 /**
  * Validates a given CPF (Cadastro de Pessoas Físicas) number.

@@ -1,5 +1,6 @@
-import path from 'node:path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import path from 'node:path'
+
 import brResources from './site/src/locales/br/app.json' with { type: 'json' }
 
 const __dirname = import.meta.dirname
@@ -19,6 +20,9 @@ export default {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
+    extensionAlias: {
+      '.js': ['.ts', '.js'],
+    },
   },
   devServer: {
     static: {
