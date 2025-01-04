@@ -3,12 +3,8 @@
 @use 'styles/helpers/functions' as f;
 @use 'styles/partials/index';
 
-/*!
-*
-* Box model reset
-* http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
-*
-*/
+// Box model reset
+// http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 html {
   box-sizing: border-box;
   font-size: 100%;
@@ -36,12 +32,8 @@ body {
   color: v.$selection-color;
 }
 
-// /*!
-// *
-// * Better Font Smoothing in Chrome & Safari
-// * http://www.intridea.com/blog/2014/5/8/better-font-smoothing-in-chrome-on-mac-os-x
-// *
-// */
+// Better Font Smoothing in Chrome & Safari
+// http://www.intridea.com/blog/2014/5/8/better-font-smoothing-in-chrome-on-mac-os-x
 @media only screen and (-min-device-pixel-ratio: 1.25),
   only screen and (-min-device-pixel-ratio: 1.25),
   only screen and (resolution >= 200dpi),

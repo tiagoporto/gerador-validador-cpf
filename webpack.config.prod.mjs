@@ -1,12 +1,11 @@
 import path from 'node:path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { GenerateSW } from 'workbox-webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
-import brResources from './site/src/locales/br/app.json' with { type: 'json' }
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import babel from './babel.site.js'
 
-const __dirname = import.meta.dirname
+import brResources from './site/src/locales/br/app.json' with { type: 'json' }
 
 const miniCSSLoaderConfig = {
   loader: MiniCssExtractPlugin.loader,
@@ -19,58 +18,36 @@ const miniCSSLoaderConfig = {
 const postCSSLoaderConfig = {
   loader: 'postcss-loader',
   options: {
-    postcssOptions: {
-      plugins: [
-        [
-          'postcss-preset-env',
-          {
-            stage: 3,
-          },
-        ],
-        'postcss-combine-media-query',
-        'cssnano',
-      ],
-    },
+    sourceMap: true,
   },
 }
 
 export default {
   mode: 'production',
   target: 'browserslist',
-  entry: {
-    index: [
-      'core-js/modules/esnext.global-this.js',
-      'core-js/modules/es.number.is-nan.js',
-      'core-js/modules/es.map.js',
-      'core-js/modules/es.set.js',
-      './site/src/index.tsx',
-    ],
-  },
   devtool: 'source-map',
+  entry: {
+    index: ['./site/src/index.tsx'],
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
+  },
   output: {
     filename: '[name].[contenthash].js',
-    chunkFilename: '[name].[contenthash].bundle.js',
-    path: path.resolve(__dirname, 'website'),
+    chunkFilename: '[name].[id].[contenthash].js',
   },
   optimization: {
-    minimize: false,
+    minimize: true,
+    minimizer: ['...', new CssMinimizerPlugin()],
     splitChunks: {
       chunks: 'all',
       cacheGroups: {
         react: {
-          test: /node_modules\/(react|react-dom)/,
+          test: /[\\/]node_modules[\\/]react/,
+          filename: '[name].js',
           chunks: 'all',
           enforce: true,
-        },
-        polyfill: {
-          test: /node_modules\/(core-js)/,
-          chunks: 'all',
-          enforce: true,
-        },
-        vendors: {
-          test: /node_modules\/(?!core-js|react)/,
-          chunks: 'all',
-          enforce: true,
+          reuseExistingChunk: true,
         },
         styles: {
           name: 'styles',
@@ -84,15 +61,12 @@ export default {
   module: {
     rules: [
       {
-        test: /\.(jsx?|tsx?)$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-        options: {
-          ...babel,
-        },
+        test: /\.(mjs|jsx?|tsx?)$/,
+        exclude: /(node_modules)/,
+        loader: 'swc-loader',
       },
       {
-        test: /\.styl$/,
+        test: /\.scss$/,
         use: [
           miniCSSLoaderConfig,
           {
@@ -108,7 +82,7 @@ export default {
             },
           },
           postCSSLoaderConfig,
-          'stylus-loader',
+          'sass-loader',
         ],
       },
       {
@@ -124,14 +98,12 @@ export default {
       },
     ],
   },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx'],
-  },
+
   plugins: [
+    new CopyPlugin({ patterns: ['site/public'] }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
     }),
-    new CopyPlugin({ patterns: ['site/public'] }),
     new HtmlWebpackPlugin({
       favicon: './site/public/favicon.ico',
       template: './site/src/index.ejs',
