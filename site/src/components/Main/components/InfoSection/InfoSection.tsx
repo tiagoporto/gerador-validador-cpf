@@ -1,5 +1,6 @@
+import { Trans, useTranslation } from 'react-i18next'
+
 import styles from './InfoSection.module.scss'
-import { useTranslation, Trans } from 'react-i18next'
 
 export const InfoSection = () => {
   const { t } = useTranslation()

@@ -1,11 +1,11 @@
-import 'normalize.css'
-import './App.scss'
 import { StrictMode } from 'react'
-import styles from './Toast.module.scss'
 import { ToastContainer } from 'react-toastify'
+
+import './App.scss'
+import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { Main } from './components/Main'
-import { Footer } from './components/Footer'
+import styles from './Toast.module.scss'
 
 export const App = () => {
   return (

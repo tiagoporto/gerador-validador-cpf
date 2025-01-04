@@ -1,5 +1,5 @@
-import enResources from './en/app.json'
 import brResources from './br/app.json'
+import enResources from './en/app.json'
 
 export const i18nResources = {
   en: enResources,

@@ -1,11 +1,12 @@
-import styles from './Header.module.scss'
-import GithubCorner from 'react-github-corner'
-import CopyToClipboard from 'react-copy-to-clipboard'
-import { toast } from 'react-toastify'
-import { useTranslation } from 'react-i18next'
-import { Donate } from './components/Donate'
-import { ChangeLocale } from './components/ChangeLocale'
 import 'highlight.js/styles/github.css'
+import CopyToClipboard from 'react-copy-to-clipboard'
+import GithubCorner from 'react-github-corner'
+import { useTranslation } from 'react-i18next'
+import { toast } from 'react-toastify'
+
+import { ChangeLocale } from './components/ChangeLocale'
+import { Donate } from './components/Donate'
+import styles from './Header.module.scss'
 
 export const Header = () => {
   const { t } = useTranslation()

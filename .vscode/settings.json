@@ -4,7 +4,8 @@
     "editor.formatOnSave": true
   },
   "editor.codeActionsOnSave": {
-    "source.fixAll.stylelint": "always"
+    "source.fixAll.stylelint": "always",
+    "source.fixAll.eslint": "always"
   },
   "stylelint.validate": ["scss"],
   "typescript.tsdk": "./node_modules/typescript/lib",

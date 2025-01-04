@@ -11,7 +11,16 @@ const testConfig = {
     'plugin:testing-library/react',
   ],
   rules: {
+    '@typescript-eslint/consistent-type-imports': [
+      'error',
+      {
+        prefer: 'type-imports',
+        fixStyle: 'separate-type-imports',
+      },
+    ],
     'jest/max-expects': 'off',
+    '@typescript-eslint/no-unsafe-call': 'off',
+    '@typescript-eslint/no-unsafe-member-access': 'off',
     'jest/prefer-expect-assertions': 'off',
     'jest/prefer-lowercase-title': [
       'error',
@@ -37,6 +46,35 @@ const jsConfig = {
   ],
   extendsMD: ['eslint:recommended', 'standard'],
   rules: {
+    'import/order': [
+      'warn',
+      {
+        groups: [
+          ['builtin', 'external'],
+          'internal',
+          'unknown',
+          ['parent', 'sibling', 'index'],
+          'object',
+        ],
+        pathGroups: [
+          {
+            pattern: 'react',
+            group: 'external',
+            position: 'before',
+          },
+        ],
+        distinctGroup: false,
+
+        pathGroupsExcludedImportTypes: ['react'],
+        'newlines-between': 'always',
+        named: true,
+        warnOnUnassignedImports: true,
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
     'no-void': ['error', { allowAsStatement: true }],
     'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
     'no-alert': 'error',
@@ -122,6 +160,8 @@ const tsConfig = {
   ],
   rules: {
     ...jsConfig.rules,
+    'import/no-unresolved': ['error', { ignore: ['\\.js$'] }],
+
     '@typescript-eslint/no-floating-promises': [
       'error',
       { ignoreVoid: true, ignoreIIFE: true },
@@ -167,6 +207,9 @@ module.exports = {
     react: {
       version: 'detect',
     },
+  },
+  env: {
+    'jest/globals': true,
   },
   plugins: [
     'testing-library',

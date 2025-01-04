@@ -1,8 +1,9 @@
-import style from './ValidateSection.module.scss'
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { validate as validadeCPF } from 'gerador-validador-cpf'
-import { IMaskInput } from 'react-imask'
 import { useTranslation } from 'react-i18next'
+import { IMaskInput } from 'react-imask'
+
+import style from './ValidateSection.module.scss'
 
 const enableAnalytics = async () => {
   const ReactGA = await import('react-ga')
