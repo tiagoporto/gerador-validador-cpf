@@ -51,6 +51,10 @@ Biblioteca JS para gerar e validar CPF (Cadastro de Pessoas Físicas) do Brasil.
 ![swc](https://img.shields.io/badge/swc-%23F8C457?style=for-the-badge\&logo=swc\&logoColor=black)
 ![postcss](https://img.shields.io/badge/postcss-%23DD3A0A?style=for-the-badge\&logo=postcss)
 ![autoprefixer](https://img.shields.io/badge/autoprefixer-%23DD3735?style=for-the-badge\&logo=autoprefixer\&logoColor=white)
+![i18next](https://img.shields.io/badge/i18next-%2326A69A?style=for-the-badge\&logo=i18next\&logoColor=white)
+![pnpm](https://img.shields.io/badge/pnpm-%231A191B?style=for-the-badge\&logo=pnpm)
+![nvm](https://img.shields.io/badge/nvm-%23333?style=for-the-badge\&logo=nvm)
+![rollup](https://img.shields.io/badge/rollup.js-%231B1B1F?style=for-the-badge\&logo=rollup.js)
 
 ## Playground 🎮
 
