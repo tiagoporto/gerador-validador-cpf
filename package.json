@@ -24,13 +24,18 @@
     "test": "jest",
     "test:watch": "npm test --watch",
     "test:coverage": "npm test --coverage",
-    "test:bundle": "jest --config jest.config.bundle.mjs"
+    "test:package": "jest --config jest.config.package.mjs",
+    "test:mutation": "stryker run --reporters html",
+    "test:mutation:dashboard": "stryker run --reporters dashboard"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
     "@jest/globals": "^29.7.0",
     "@rollup/plugin-typescript": "^12.1.2",
+    "@stryker-mutator/core": "^8.7.1",
+    "@stryker-mutator/jest-runner": "^8.7.1",
+    "@stryker-mutator/typescript-checker": "^8.7.1",
     "@swc/core": "^1.10.4",
     "@swc/jest": "^0.2.37",
     "@tiagoporto/prettier-config": "^1.0.0",
