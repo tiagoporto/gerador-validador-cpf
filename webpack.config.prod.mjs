@@ -1,9 +1,10 @@
 import path from 'node:path'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
+
+import CopyPlugin from 'copy-webpack-plugin'
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { GenerateSW } from 'workbox-webpack-plugin'
-import CopyPlugin from 'copy-webpack-plugin'
 
 import brResources from './site/src/locales/br/app.json' with { type: 'json' }
 
@@ -31,6 +32,9 @@ export default {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
+    extensionAlias: {
+      '.js': ['.ts', '.js'],
+    },
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -43,7 +47,7 @@ export default {
       chunks: 'all',
       cacheGroups: {
         react: {
-          test: /[\\/]node_modules[\\/]react/,
+          test: /[/\\]node_modules[/\\]react/,
           filename: '[name].js',
           chunks: 'all',
           enforce: true,

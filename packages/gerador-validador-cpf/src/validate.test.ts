@@ -1,5 +1,6 @@
 import { describe, expect, it } from '@jest/globals'
-import { validate } from '.'
+
+import { validate } from './index.js'
 
 describe('validate', () => {
   describe('passing string', () => {

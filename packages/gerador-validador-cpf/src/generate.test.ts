@@ -1,6 +1,9 @@
 import { describe, expect, it, jest } from '@jest/globals'
-import { generate, validate } from '.'
-import * as utils from './utils'
+
+import { generate, validate } from './index.js'
+import { generateFirstDigits } from './utils/index.js'
+
+const utils = { generateFirstDigits }
 
 describe('generate', () => {
   it('should generate a valid CPF', () => {
@@ -25,8 +28,7 @@ describe('generate', () => {
   })
 
   it('should regenerate a new cpf if generate a cpf with all number equals', () => {
-    const mock = jest.spyOn(utils, 'generateFirstDigits')
-    mock.mockReturnValueOnce('000000000')
+    jest.spyOn(utils, 'generateFirstDigits').mockReturnValueOnce('000000000')
 
     expect(validate(generate())).toBeTruthy()
   })

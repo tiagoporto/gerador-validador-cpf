@@ -1,0 +1,18 @@
+{
+  /* Visit https://aka.ms/tsconfig to read more about this file */
+  /* https://gist.github.com/tiagoporto/14db8e6257c962054108265bdf2a6bfa */
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "ES5",
+    "lib": ["es2021"],
+    "module": "node16",
+    "moduleResolution": "node16",
+    "importHelpers": true,
+    "downlevelIteration": true,
+    "noEmit": false,
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "isolatedModules": true
+  }
+}

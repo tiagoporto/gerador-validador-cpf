@@ -1,2 +1,2 @@
-export * from './generate'
-export * from './validate'
+export * from './generate.js'
+export * from './validate.js'
