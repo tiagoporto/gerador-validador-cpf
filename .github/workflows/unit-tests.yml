@@ -36,24 +36,23 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts
 
-      - name: Run Unit Tests and generate coverage
+      - name: Run Unit Tests
         run: pnpm test:coverage
 
       - name: Coveralls
         uses: coverallsapp/github-action@v2
 
-      - name: Run Mutation Tests
-        if: github.event_name == 'pull_request'
-        run: pnpm test:mutation
+      - name: Run Unit Test in package
+        # pnpm has a bug with pack script https://github.com/pnpm/pnpm/issues/4351
+        run: |
+          cd packages/gerador-validador-cpf
+          pnpm pack
+          tar zxvf *.tgz
+          cd ../../
+          pnpm test:package
 
-      - name: Run Mutation Tests and publish reports
+      - name: Run Mutation Tests and publish to dashboart
         if: github.event_name != 'pull_request'
         env:
           STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
-        run: pnpm test:mutation-report
-
-      - name: Run Unit Test in dist
-        run: |
-          pnpm pack
-          tar zxvf *.tgz
-          pnpm test:bundle
+        run: pnpm test:mutation:dashboard

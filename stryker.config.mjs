@@ -1,0 +1,20 @@
+// @ts-check
+/** @type {import('@stryker-mutator/api/core').PartialStrykerOptions} */
+export default {
+  mutate: [
+    'packages/gerador-validador-cpf/src/**/*.ts',
+    '!packages/gerador-validador-cpf/src/**/*.test.ts',
+  ],
+  packageManager: 'pnpm',
+  coverageAnalysis: 'perTest',
+  testRunner: 'jest',
+  plugins: [
+    '@stryker-mutator/jest-runner',
+    '@stryker-mutator/typescript-checker',
+  ],
+  checkers: ['typescript'],
+  tsconfigFile: 'tsconfig.json',
+  typescriptChecker: {
+    prioritizePerformanceOverAccuracy: true,
+  },
+}

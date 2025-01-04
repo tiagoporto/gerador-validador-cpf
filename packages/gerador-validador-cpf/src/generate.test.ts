@@ -1,7 +1,7 @@
 import { describe, expect, it, jest } from '@jest/globals'
 
 import { generate, validate } from './index.js'
-import { generateFirstDigits } from './utils/index.js'
+import { generateFirstDigits } from './utils/generateFirstDigits.js'
 
 const utils = { generateFirstDigits }
 

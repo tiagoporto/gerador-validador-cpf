@@ -42,16 +42,12 @@
   "license": "MIT",
   "scripts": {
     "prepack": "pnpm build",
-    "build": "rm -rf dist && rollup --config",
-    "test:mutation": "stryker run --reporters html",
-    "test:mutation-report": "stryker run --reporters dashboard"
+    "build": "rm -rf dist && rollup --config"
   },
   "dependencies": {
     "tslib": "^2.8.1"
   },
   "devDependencies": {
-    "@stryker-mutator/core": "^8.7.1",
-    "@stryker-mutator/jest-runner": "^8.7.1",
     "rollup": "^4.29.1",
     "rollup-plugin-license": "^3.5.3",
     "rollup-plugin-terser": "^7.0.2",
