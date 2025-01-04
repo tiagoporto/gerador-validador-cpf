@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import styles from './Donation.module.scss'
-import codeStyles from './Code.module.scss'
-import BTCQR from './img/BTCQR.png'
 import CopyToClipboard from 'react-copy-to-clipboard'
-import { toast } from 'react-toastify'
 import { useTranslation } from 'react-i18next'
+import { toast } from 'react-toastify'
+
+import codeStyles from './Code.module.scss'
+import styles from './Donation.module.scss'
+import BTCQR from './img/BTCQR.png'
 
 export const Donate = () => {
   const { t } = useTranslation()

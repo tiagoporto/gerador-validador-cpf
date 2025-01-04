@@ -2,6 +2,7 @@
 @use 'styles/settings/variables' as v;
 @use 'styles/helpers/functions' as f;
 @use 'styles/partials/index';
+@import 'normalize.css';
 
 // Box model reset
 // http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/

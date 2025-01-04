@@ -1,7 +1,8 @@
-import { createRoot } from 'react-dom/client'
-import { App } from './App'
 import { use } from 'i18next'
+import { createRoot } from 'react-dom/client'
 import { initReactI18next } from 'react-i18next'
+
+import { App } from './App'
 import { i18nResources } from './locales'
 
 const loadOnProd = async () => {
