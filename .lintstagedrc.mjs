@@ -4,8 +4,8 @@ export default {
   '*.{md,mdx}': 'eslint --ext md,mdx --max-warnings 0',
   '*.{scss,css}': 'stylelint',
   '*.{ts,tsx}': () => 'tsc --project tsconfig.json --noEmit',
-  '*.{js,jsx,ts,tsx}': [
-    'eslint --ext js,jsx,ts,tsx --max-warnings 0',
+  '*.{js,mjs,jsx,ts,tsx}': [
+    'eslint --ext js,mjs,jsx,ts,tsx --max-warnings 0',
     'jest --bail --findRelatedTests --passWithNoTests',
   ],
 }
