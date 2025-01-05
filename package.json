@@ -15,8 +15,8 @@
     "build": "rm -rf dist && webpack --config webpack.config.prod.mjs",
     "checks": "pnpm check-docs && pnpm check-formatting && pnpm typecheck && pnpm lint:styles && pnpm lint",
     "check-docs": "remark .",
-    "check-formatting": "prettier --check --ignore-unknown \"**/*\"",
-    "check-formatting:fix": "pnpm check-formatting -- --write",
+    "formatting:check": "prettier --check --ignore-unknown \"**/*\"",
+    "formatting": "pnpm check-formatting -- --write",
     "typecheck": "tsc --project tsconfig.json",
     "lint:styles": "stylelint \"**/*.scss\"",
     "lint": "eslint --ext js,jsx,mjs,ts,tsx,md,mdx . --max-warnings 0",
@@ -25,8 +25,7 @@
     "test": "jest",
     "test:watch": "npm test -- --watch",
     "test:package": "jest --config jest.config.package.mjs",
-    "test:mutation": "stryker run --reporters html",
-    "test:mutation:dashboard": "stryker run --reporters dashboard"
+    "test:mutation": "stryker run"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",

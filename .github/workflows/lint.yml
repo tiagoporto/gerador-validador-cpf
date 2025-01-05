@@ -40,7 +40,7 @@ jobs:
         run: pnpm typecheck
 
       - name: Check Formatting
-        run: pnpm check-formatting
+        run: pnpm formatting:check
 
       - name: Lint Styles
         run: pnpm lint:styles
@@ -48,5 +48,8 @@ jobs:
       - name: Lint
         run: pnpm lint
 
-      - name: Check Lib Pack
+      - name: Check Site build
+        run: pnpm build
+
+      - name: Check Lib pack
         run: pnpm --filter gerador-validador-cpf prepack

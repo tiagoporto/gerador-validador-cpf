@@ -5,6 +5,7 @@ export default {
     'packages/gerador-validador-cpf/src/**/*.ts',
     '!packages/gerador-validador-cpf/src/**/*.test.ts',
   ],
+  reporters: process.env.CI ? ['dashboard'] : ['html'],
   packageManager: 'pnpm',
   coverageAnalysis: 'perTest',
   testRunner: 'jest',

@@ -55,4 +55,4 @@ jobs:
         if: github.event_name != 'pull_request'
         env:
           STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
-        run: pnpm test:mutation:dashboard
+        run: pnpm test:mutation
