@@ -15,7 +15,7 @@ jobs:
         uses: pnpm/action-setup@v4
 
       - name: Setup git user
-        uses: fregante/setup-git-user@v1
+        uses: fregante/setup-git-user@v2
 
       - name: Setup node
         uses: actions/setup-node@v4
