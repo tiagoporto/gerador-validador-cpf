@@ -31,12 +31,12 @@
   transition: all ease 1s;
 
   &--valid {
-    background-color: color.adjust(green, $lightness: 70%);
+    background-color: color.adjust(green, $lightness: 55%);
     color: green;
   }
 
   &--invalid {
-    background-color: color.adjust(red, $lightness: 70%);
+    background-color: color.adjust(red, $lightness: 35%);
     color: red;
   }
 }
