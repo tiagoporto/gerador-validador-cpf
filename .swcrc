@@ -5,7 +5,6 @@
       "syntax": "typescript",
       "tsx": true
     },
-    "loose": true,
     "transform": { "react": { "runtime": "automatic" } }
   }
 }

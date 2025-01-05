@@ -80,65 +80,8 @@ const jsConfig = {
     'no-alert': 'error',
     'no-debugger': 'error',
     'no-nested-ternary': 'error',
-    'sonarjs/prefer-single-boolean-return': 'off',
     'unicorn/filename-case': 'off',
-    'unicorn/prevent-abbreviations': [
-      'error',
-      {
-        checkDefaultAndNamespaceImports: false,
-        extendDefaultReplacements: false,
-        replacements: {
-          cb: {
-            callback: true,
-          },
-          ctx: {
-            context: true,
-          },
-          cur: {
-            current: true,
-          },
-          curr: {
-            current: true,
-          },
-          e: {
-            error: true,
-            event: true,
-          },
-          el: {
-            element: true,
-          },
-          elem: {
-            element: true,
-          },
-          err: {
-            error: true,
-          },
-          ev: {
-            event: true,
-          },
-          evt: {
-            event: true,
-          },
-          fn: {
-            function: true,
-          },
-          idx: {
-            index: true,
-          },
-          len: {
-            length: true,
-          },
-          rel: {
-            related: true,
-            relationship: true,
-            relative: true,
-          },
-          ver: {
-            version: true,
-          },
-        },
-      },
-    ],
+    'unicorn/prevent-abbreviations': ['off'],
   },
   rulesMD: {
     'no-unused-vars': 'off',
@@ -202,7 +145,7 @@ const reactConfig = {
 }
 
 module.exports = {
-  ignorePatterns: ['dist', '!.*.mjs'],
+  ignorePatterns: ['dist', '!.*.mjs', 'coverage', 'webpack.config.*'],
   settings: {
     react: {
       version: 'detect',

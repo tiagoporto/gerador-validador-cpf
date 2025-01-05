@@ -11,10 +11,12 @@
         }
       }
     ],
-    "target": "ESNext",
+    "target": "ES5",
     "module": "ESNext",
     "jsx": "react-jsx",
+    "lib": ["es2021", "dom"],
     "moduleResolution": "bundler",
+    "downlevelIteration": true,
     "noEmit": true,
     "isolatedModules": true,
     "forceConsistentCasingInFileNames": true,
