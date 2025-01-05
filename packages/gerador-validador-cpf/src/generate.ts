@@ -1,5 +1,4 @@
 import {
-  allDigitsAreEqual,
   calcFirstChecker,
   calcSecondChecker,
   formatCPF,
@@ -8,20 +7,16 @@ import {
 
 /**
  * Generates a valid CPF (Cadastro de Pessoas Físicas) number.
- * @param {object} [options]         - Options for CPF generation.
- * @param {boolean} [options.format] - If true, the generated CPF will be formatted with dots and a dash (e.g., 123.456.789-09).
+ * @param {object} [params]         - Options for CPF generation.
+ * @param {boolean} [params.format] - If true, the generated CPF will be formatted with dots and a dash (e.g., 123.456.789-09).
  * @returns {string}                 The generated CPF number, optionally formatted.
  */
-export const generate = ({ format }: { format?: boolean } = {}) => {
-  let firstNineDigits = ''
-
-  do {
-    firstNineDigits = generateFirstDigits()
-  } while (allDigitsAreEqual(firstNineDigits))
+export const generate = (params?: { format: boolean }) => {
+  const firstNineDigits = generateFirstDigits()
 
   const firstChecker = calcFirstChecker(firstNineDigits)
   const secondChecker = calcSecondChecker(firstNineDigits + firstChecker)
   const generatedCPF = `${firstNineDigits}${firstChecker}${secondChecker}`
 
-  return formatCPF(generatedCPF, format)
+  return params?.format ? formatCPF(generatedCPF) : generatedCPF
 }
