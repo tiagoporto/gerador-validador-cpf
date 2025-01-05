@@ -1,10 +1,12 @@
 {
   "app": {
-    "title": "Gerador e validador de CPF Open-Source | Tiago Porto",
-    "description": "Gerador e validador de CPF, open-source JS lib to generate and validate CPF.",
-    "keywords": "cpf,gerar,gerador,generator,generates,validador,valida,validates,online"
+    "title": "Generador y validador de CPF de código abierto | Tiago Porto",
+    "description": "JS lib to generate and validate CPF (Cadastro de Pessoas Físicas) of Brazil.",
+    "keywords": "cpf,generates,generator,validator,validates"
   },
   "header": {
+    "title": "<span><abbreviation>CPF</abbreviation></span> Generator and validator",
+    "cpf": "Cadastro de Pessoas Físicas",
     "libInfo": "JS open-source lib to generate and validate CPF.",
     "projectPageGithub": "Github project page"
   },
@@ -17,11 +19,12 @@
     "cpfGenerated": "Generated CPF"
   },
   "info": {
+    "disclaimer": "Lib available to assist developers in software testing, has no connection with the Brazilian Federal Revenue.",
     "algorithm": "Implements the follow <0>algorithm</0>.",
-    "disclaimer": "Lib available to assist developers in software testing, doesn't have link with \"Receita Federal do Brasil\".",
-    "cpfByState": "The last digit before verifiers (last 2 digits), corresponds with the brasilian state were CPF was issued.",
-    "codeByState": "Code by brasilian states:",
-    "example": "Example: CPF <0>XXX.XXX.XX8-XX</0>, number 8 corresponds to São Paulo state.",
+    "disclaimerValidCPF": "A valid CPF does not mean that it exists nor is active. For that information, check the official website of <0>Department of Federal Revenue of Brazil</0>.",
+    "cpfByState": "The last digit before verifiers (the last two digits), corresponds to the Brazilian state where the CPF was issued.",
+    "example": "Example: CPF <0>XXX.XXX.XX8-XX</0>, 8 corresponds to São Paulo state.",
+    "codeByState": "Code by brazilian states:",
     "stateCode1": "1. Distrito Federal, Goiás, Mato Grosso do Sul and Tocantins;",
     "stateCode2": "2. Pará, Amazonas, Acre, Amapá, Rondônia and Roraima;",
     "stateCode3": "3. Ceará, Maranhão and Piauí;",
@@ -31,8 +34,7 @@
     "stateCode7": "7. Rio de Janeiro and Espírito Santo;",
     "stateCode8": "8. São Paulo;",
     "stateCode9": "9. Paraná and Santa Catarina;",
-    "stateCode10": "0. Rio Grande do Sul.",
-    "disclaimerValidCPF": "Valid CPF doesn't mean is registered or is active. For those informations, check <0>Secretaria da Receita Federal do Brasil</0>."
+    "stateCode10": "0. Rio Grande do Sul."
   },
   "donate": {
     "leaveStar": "Leave a ★",

@@ -19,7 +19,7 @@
   }
 
   span {
-    @media (max-width: v.$phone) {
+    @media (max-width: v.$tablet) {
       display: block;
     }
   }

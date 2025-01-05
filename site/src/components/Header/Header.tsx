@@ -1,7 +1,7 @@
 import 'highlight.js/styles/github.css'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import GithubCorner from 'react-github-corner'
-import { useTranslation } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 import { toast } from 'react-toastify'
 
 import { ChangeLocale } from './components/ChangeLocale'
@@ -27,8 +27,13 @@ export const Header = () => {
       />
 
       <h1 className={styles.panelTitle}>
-        <span>Gerador e</span> validador de{' '}
-        <abbr title="Cadastro de Pessoas Físicas">CPF</abbr>
+        <Trans
+          i18nKey={'header.title'}
+          components={{
+            span: <span />,
+            abbreviation: <abbr title={t('header.cpf')} />,
+          }}
+        />
       </h1>
 
       <p>{t('header.libInfo')}</p>

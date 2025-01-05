@@ -6,8 +6,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { GenerateSW } from 'workbox-webpack-plugin'
 
-import brResources from './site/src/locales/br/app.json' with { type: 'json' }
-
+import brResources from './site/public/locales/br/translation.json' with { type: 'json' }
 const miniCSSLoaderConfig = {
   loader: MiniCssExtractPlugin.loader,
   options: {

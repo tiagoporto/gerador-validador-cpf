@@ -1,57 +1,43 @@
 import { useEffect, useState } from 'react'
-import i18next, { changeLanguage } from 'i18next'
+import { useTranslation } from 'react-i18next'
 
 import styles from './ChangeLocale.module.scss'
 
-type AvailableLocales = 'en' | 'br'
-
-const handleLocale =
-  (locale: AvailableLocales, callback?: () => void) => () => {
-    changeLanguage(locale)
-
-    window.history.replaceState(
-      {},
-      'Gerador e Validador de CPF',
-      `?lang=${locale}`,
-    )
-    if (callback) {
-      setTimeout(callback, 5)
-    }
-  }
+type AvailableLocales = 'en' | 'br' | 'es'
 
 export const ChangeLocale = () => {
   const [locale, setLocale] = useState('')
-  const [isLoading, setIsLoading] = useState(true)
+  const { i18n } = useTranslation()
+
+  const handleLocale = (locale: AvailableLocales) => () => {
+    void i18n.changeLanguage(locale)
+  }
 
   useEffect(() => {
-    setLocale(i18next.language)
-  }, [i18next.language])
+    setLocale(i18n.language)
+  }, [i18n.language])
 
-  useEffect(() => {
-    const searchParams = new URLSearchParams(window.location.search)
-    const lang = searchParams.get('lang')
-    if (lang) {
-      handleLocale(lang as AvailableLocales, () => setIsLoading(false))()
-    } else {
-      setIsLoading(false)
-    }
-  }, [])
-
-  // eslint-disable-next-line unicorn/no-null
-  return isLoading ? null : (
+  return (
     <div className={styles.box}>
       <button
         className={`${styles.button} ${locale === 'br' ? styles.selected : ''}`}
         onClick={handleLocale('br')}
       >
         pt-br
-      </button>{' '}
-      |{' '}
+      </button>
+      |
       <button
         className={`${styles.button} ${locale === 'en' ? styles.selected : ''}`}
         onClick={handleLocale('en')}
       >
         en
+      </button>
+      |
+      <button
+        className={`${styles.button} ${locale === 'es' ? styles.selected : ''}`}
+        onClick={handleLocale('es')}
+      >
+        es
       </button>
     </div>
   )

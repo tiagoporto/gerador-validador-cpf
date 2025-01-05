@@ -4,7 +4,7 @@
 [![Coverage Status](https://img.shields.io/coveralls/tiagoporto/gerador-validador-cpf.svg?logo=coveralls\&style=flat-square)](https://coveralls.io/github/tiagoporto/gerador-validador-cpf)
 [![mutation score](https://img.shields.io/endpoint?style=flat-square\&url=https://badge-api.stryker-mutator.io/github.com/tiagoporto/gerador-validador-cpf/main)](https://dashboard.stryker-mutator.io/reports/github.com/tiagoporto/gerador-validador-cpf/main)
 
-JS lib to generate and validate CPF (Cadastro de Pessoas Físicas) from Brazil.
+JS lib to generate and validate CPF (Cadastro de Pessoas Físicas) of Brazil.
 
 ## Docs 📚
 

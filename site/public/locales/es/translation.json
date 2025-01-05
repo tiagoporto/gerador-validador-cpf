@@ -1,0 +1,52 @@
+{
+  "app": {
+    "title": "Gerador e validador de CPF Open-Source | Tiago Porto",
+    "description": "Gerador e validador de CPF, biblioteca JS para gerar e validar CPF (Cadastro de Pessoas Físicas) do Brasil.",
+    "keywords": "cpf,genera,generador,validador,valida"
+  },
+  "header": {
+    "title": "<span>Generador y</span> Validador <abbreviation>CPF</abbreviation>",
+    "cpf": "Cadastro de Pessoas Físicas",
+    "libInfo": "Lib JS de código abierto para generar y validar CPF.",
+    "projectPageGithub": "Página del proyecto en github"
+  },
+  "validate": {
+    "title": "Validar",
+    "insertCPF": "Ingrese el CPF"
+  },
+  "generate": {
+    "title": "Generar",
+    "cpfGenerated": "CPF generado"
+  },
+  "info": {
+    "disclaimer": "Lib disponible para ayudar a los desarrolladores en las pruebas de software, no tiene conexión con la \"Receita Federal\" de Brasil.",
+    "algorithm": "Utilice el siguiente <0>algoritmo</0>.",
+    "disclaimerValidCPF": "Un CPF válido no significa que exista o esté activo. Para obtener esa información, consulte el sitio web oficial de la <0>Secretaría da Receita Federal de Brasil</0>.",
+    "cpfByState": "El último dígito antes de los verificadores (los dos últimos dígitos), corresponde al estado brasileño donde se emitió el CPF.",
+    "example": "Ejemplo: CPF <0>XXX.XXX.XX8-XX</0>, 8 corresponde al estado de São Paulo.",
+    "codeByState": "Códigos correspondientes a los estados brasileños:",
+    "stateCode1": "1. Distrito Federal, Goiás, Mato Grosso do Sul y Tocantins;",
+    "stateCode2": "2. Pará, Amazonas, Acre, Amapá, Rondônia y Roraima;",
+    "stateCode3": "3. Ceará, Maranhão y Piauí;",
+    "stateCode4": "4. Pernambuco, Rio Grande do Norte, Paraíba y Alagoas;",
+    "stateCode5": "5. Bahia y Sergipe;",
+    "stateCode6": "6. Minas Gerais;",
+    "stateCode7": "7. Rio de Janeiro y Espírito Santo;",
+    "stateCode8": "8. São Paulo;",
+    "stateCode9": "9. Paraná y Santa Catarina;",
+    "stateCode10": "0. Rio Grande do Sul."
+  },
+  "donate": {
+    "leaveStar": "Dejar un ★",
+    "contributePaypal": "Contribuir a través de Paypal",
+    "contributeBitcoin": "Contribuya a través de bitcoin"
+  },
+  "messages": {
+    "copied": "¡Copiado!",
+    "cpfCopied": "¡CPF copiado!",
+    "validCPF": "CPF Válido",
+    "invalidCPF": "CPF no válido",
+    "walletCopied": "¡Cartera copiada!",
+    "incomplete": "incompleto"
+  }
+}

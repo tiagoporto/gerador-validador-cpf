@@ -1,7 +1,7 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import path from 'node:path'
 
-import brResources from './site/src/locales/br/app.json' with { type: 'json' }
+import brResources from './site/public/locales/br/translation.json' with { type: 'json' }
 
 const __dirname = import.meta.dirname
 const postCSSLoaderConfig = {
@@ -26,7 +26,7 @@ export default {
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.join(__dirname, 'site/public'),
     },
     open: true,
     hot: true,
