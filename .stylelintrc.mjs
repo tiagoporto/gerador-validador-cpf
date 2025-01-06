@@ -1,10 +1,6 @@
 /** @type {import('stylelint').Config} */
 export default {
-  extends: [
-    'stylelint-config-standard-scss',
-    'stylelint-config-idiomatic-order',
-  ],
-  plugins: ['stylelint-no-unsupported-browser-features'],
+  extends: ['@tiagoporto/stylelint-config'],
   overrides: [
     {
       files: ['**/*.scss'],
