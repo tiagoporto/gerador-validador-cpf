@@ -39,6 +39,9 @@ importers:
       '@swc/jest':
         specifier: ^0.2.37
         version: 0.2.37(@swc/core@1.10.4)
+      '@tiagoporto/editor-config':
+        specifier: ^1.0.0
+        version: 1.0.0
       '@tiagoporto/prettier-config':
         specifier: ^1.0.0
         version: 1.0.0(prettier@3.4.2)
@@ -1959,6 +1962,10 @@ packages:
 
   '@tiagoporto/dependabot-config@1.0.1':
     resolution: {integrity: sha512-RUFXiLIVLFns8Wyc1fpsYbC2tD0StnY1TETQWG5iOFy3H4iytLNByRhOULH+Ro6xsgyIxp2R7PO8f41k9tcEJA==}
+    engines: {node: '>=18'}
+
+  '@tiagoporto/editor-config@1.0.0':
+    resolution: {integrity: sha512-pk7Vo0fPEyxorBpPopKxMsIulElHKcq5XB5zGyNvMw8+uB9H/SdEXD13kuxzm2cqQxu0T42kD6ZKROuWPiBDog==}
     engines: {node: '>=18'}
 
   '@tiagoporto/prettier-config@1.0.0':
@@ -10289,6 +10296,8 @@ snapshots:
       pretty-format: 27.5.1
 
   '@tiagoporto/dependabot-config@1.0.1': {}
+
+  '@tiagoporto/editor-config@1.0.0': {}
 
   '@tiagoporto/prettier-config@1.0.0(prettier@3.4.2)':
     dependencies:
