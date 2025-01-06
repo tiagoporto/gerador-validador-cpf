@@ -114,5 +114,8 @@
     "react-ga": {
       "react": ">=19"
     }
+  },
+  "dependencies": {
+    "@tiagoporto/dependabot-config": "^1.0.1"
   }
 }

@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@tiagoporto/dependabot-config':
+        specifier: ^1.0.1
+        version: 1.0.1
     devDependencies:
       '@commitlint/cli':
         specifier: ^19.6.1
@@ -1949,6 +1953,10 @@ packages:
   '@testing-library/dom@8.19.0':
     resolution: {integrity: sha512-6YWYPPpxG3e/xOo6HIWwB/58HukkwIVTOaZ0VwdMVjhRUX/01E4FtQbck9GazOOj7MXHc5RBzMrU86iBJHbI+A==}
     engines: {node: '>=12'}
+
+  '@tiagoporto/dependabot-config@1.0.1':
+    resolution: {integrity: sha512-RUFXiLIVLFns8Wyc1fpsYbC2tD0StnY1TETQWG5iOFy3H4iytLNByRhOULH+Ro6xsgyIxp2R7PO8f41k9tcEJA==}
+    engines: {node: '>=18'}
 
   '@tiagoporto/prettier-config@1.0.0':
     resolution: {integrity: sha512-smoSFrmHyMXHqeOz2G2+vz6NNMI+sZQu+ItZtgju0Hz6Fv48T2iKEwjrmao/Hbkun6YnQaJwxDH8btbyJt4Eew==}
@@ -10262,6 +10270,8 @@ snapshots:
       dom-accessibility-api: 0.5.14
       lz-string: 1.4.4
       pretty-format: 27.5.1
+
+  '@tiagoporto/dependabot-config@1.0.1': {}
 
   '@tiagoporto/prettier-config@1.0.0(prettier@3.4.2)':
     dependencies:
