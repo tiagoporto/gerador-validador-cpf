@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 // eslint-disable-next-line import/no-named-as-default-member
 void i18next.use(LanguageDetector).use(backend).use(initReactI18next).init({
-  fallbackLng: 'br',
+  fallbackLng: 'pt',
 })
 
 const rootElement = document.querySelector('#root')

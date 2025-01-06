@@ -1,8 +1,8 @@
 {
   "app": {
-    "title": "Generador y validador de CPF de código abierto | Tiago Porto",
-    "description": "JS lib to generate and validate CPF (Cadastro de Pessoas Físicas) of Brazil.",
-    "keywords": "cpf,generates,generator,validator,validates"
+    "name": "CPF Ger.",
+    "title": "CPF Generator and Validator | Tiago Porto",
+    "description": "JS lib to generate and validate Brazilian CPF (Cadastro de Pessoas Físicas)."
   },
   "header": {
     "title": "<span><abbreviation>CPF</abbreviation></span> Generator and validator",

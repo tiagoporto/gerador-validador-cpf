@@ -1,4 +1,6 @@
 import { StrictMode } from 'react'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
+import { useTranslation } from 'react-i18next'
 import { ToastContainer } from 'react-toastify'
 
 import './App.scss'
@@ -8,25 +10,37 @@ import { Main } from './components/Main'
 import styles from './Toast.module.scss'
 
 export const App = () => {
+  const { t } = useTranslation()
+
   return (
     <StrictMode>
-      <Header />
-      <Main />
-      <Footer />
+      <HelmetProvider>
+        <Helmet>
+          <title>{t('app.title')}</title>
+          <meta name="description" content={t('app.description')} />
+          <meta name="application-name" content={t('app.name')} />
+          <meta property="og:title" content={t('app.title')} />
+          <meta property="og:description" content={t('app.description')} />
+        </Helmet>
 
-      <ToastContainer
-        toastClassName={styles.toast}
-        position="bottom-center"
-        autoClose={2500}
-        closeButton={false}
-        hideProgressBar
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss={false}
-        draggable={false}
-        pauseOnHover={false}
-      />
+        <Header />
+        <Main />
+        <Footer />
+
+        <ToastContainer
+          toastClassName={styles.toast}
+          position="bottom-center"
+          autoClose={2500}
+          closeButton={false}
+          hideProgressBar
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss={false}
+          draggable={false}
+          pauseOnHover={false}
+        />
+      </HelmetProvider>
     </StrictMode>
   )
 }

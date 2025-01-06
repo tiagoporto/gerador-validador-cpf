@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next'
 
 import styles from './ChangeLocale.module.scss'
 
-type AvailableLocales = 'en' | 'br' | 'es'
+type AvailableLocales = 'en' | 'pt' | 'es'
 
 export const ChangeLocale = () => {
-  const [locale, setLocale] = useState('')
+  const [locale, setLocale] = useState<AvailableLocales>('pt')
   const { i18n } = useTranslation()
 
   const handleLocale = (locale: AvailableLocales) => () => {
@@ -14,31 +15,35 @@ export const ChangeLocale = () => {
   }
 
   useEffect(() => {
-    setLocale(i18n.language)
+    setLocale(i18n.language as AvailableLocales)
   }, [i18n.language])
 
   return (
-    <div className={styles.box}>
-      <button
-        className={`${styles.button} ${locale === 'br' ? styles.selected : ''}`}
-        onClick={handleLocale('br')}
-      >
-        pt-br
-      </button>
-      |
-      <button
-        className={`${styles.button} ${locale === 'en' ? styles.selected : ''}`}
-        onClick={handleLocale('en')}
-      >
-        en
-      </button>
-      |
-      <button
-        className={`${styles.button} ${locale === 'es' ? styles.selected : ''}`}
-        onClick={handleLocale('es')}
-      >
-        es
-      </button>
-    </div>
+    <>
+      <Helmet htmlAttributes={{ lang: locale }} />
+
+      <div className={styles.box}>
+        <button
+          className={`${styles.button} ${locale === 'en' ? styles.selected : ''}`}
+          onClick={handleLocale('en')}
+        >
+          en
+        </button>
+        |
+        <button
+          className={`${styles.button} ${locale === 'es' ? styles.selected : ''}`}
+          onClick={handleLocale('es')}
+        >
+          es
+        </button>
+        |
+        <button
+          className={`${styles.button} ${locale === 'pt' ? styles.selected : ''}`}
+          onClick={handleLocale('pt')}
+        >
+          pt
+        </button>
+      </div>
+    </>
   )
 }

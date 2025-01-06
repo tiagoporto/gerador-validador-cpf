@@ -1,29 +1,44 @@
 <!doctype html>
 <html lang="<%= lang %>">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title><%= title %></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="msapplication-config" content="browserconfig.xml" />
-    <meta name="theme-color" content="#175681">
-    <meta name="application-name" content="Ger. CPF">
+    <meta name="description" content="<%= description %>" data-rh="true" />
 
-    <link rel='mask-icon' href='img/logo.svg' color='#2698DD'>
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest">
-    
-    <meta property="og:title" content="<%= title %>" />
-    <meta property="og:description" content="Gerador e validador de CPF, open-source JS lib to generate and validate CPF." />
-    <meta property="og:image" content="https://repository-images.githubusercontent.com/20984326/cd9fe000-7ff6-11e9-8049-11aa4625738c" />
-    <meta property="og:url" content="https://tiagoporto.github.io/gerador-validador-cpf/" />
+    <meta name="msapplication-config" content="browserconfig.xml" />
+    <meta name="theme-color" content="#175681" />
+    <meta name="application-name" content="<%= name %>" data-rh="true" />
+
+    <link rel="mask-icon" href="img/logo.svg" color="#2698DD" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <meta property="og:title" content="<%= title %>" data-rh="true" />
+    <meta
+      property="og:description"
+      content="<%= description %>"
+      data-rh="true"
+    />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/20984326/cd9fe000-7ff6-11e9-8049-11aa4625738c"
+    />
+    <meta
+      property="og:url"
+      content="https://tiagoporto.github.io/gerador-validador-cpf/"
+    />
     <meta property="og:type" content="website" />
 
-
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=PT+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript
+      >Você precisa habilitar o JavaScript para executar este app.</noscript
+    >
     <div id="root"></div>
   </body>
 </html>

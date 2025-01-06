@@ -6,7 +6,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { GenerateSW } from 'workbox-webpack-plugin'
 
-import brResources from './site/public/locales/br/translation.json' with { type: 'json' }
+import brResources from './site/public/locales/pt/translation.json' with { type: 'json' }
 const miniCSSLoaderConfig = {
   loader: MiniCssExtractPlugin.loader,
   options: {
@@ -108,15 +108,12 @@ export default {
       filename: '[name].[contenthash].css',
     }),
     new HtmlWebpackPlugin({
-      favicon: './site/public/favicon.ico',
       template: './site/src/index.ejs',
-      meta: {
-        description: brResources.app.description,
-        keywords: brResources.app.keywords,
-      },
       templateParameters: {
+        name: brResources.app.name,
         title: brResources.app.title,
-        lang: 'pt-BR',
+        description: brResources.app.description,
+        lang: 'pt',
       },
     }),
     new GenerateSW({

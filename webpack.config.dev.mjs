@@ -1,7 +1,7 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import path from 'node:path'
 
-import brResources from './site/public/locales/br/translation.json' with { type: 'json' }
+import brResources from './site/public/locales/pt/translation.json' with { type: 'json' }
 
 const __dirname = import.meta.dirname
 const postCSSLoaderConfig = {
@@ -88,15 +88,12 @@ export default {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      favicon: './site/public/favicon.ico',
       template: './site/src/index.ejs',
-      meta: {
-        description: brResources.app.description,
-        keywords: brResources.app.keywords,
-      },
       templateParameters: {
+        name: brResources.app.name,
         title: brResources.app.title,
-        lang: 'pt-BR',
+        description: brResources.app.description,
+        lang: 'pt',
       },
     }),
   ],

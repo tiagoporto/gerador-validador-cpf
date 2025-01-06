@@ -1,8 +1,8 @@
 {
   "app": {
-    "title": "Gerador e validador de CPF Open-Source | Tiago Porto",
-    "description": "Biblioteca JS para gerar e validar CPF (Cadastro de Pessoas Físicas) do Brasil.",
-    "keywords": "cpf,gerar,gerador,validador,valida"
+    "name": "Ger. CPF",
+    "title": "Gerador e validador de CPF | Tiago Porto",
+    "description": "Biblioteca JS para gerar e validar CPF (Cadastro de Pessoas Físicas) do Brasil."
   },
   "header": {
     "title": "<span>Gerador e</span> validador de <abbreviation>CPF</abbreviation>",

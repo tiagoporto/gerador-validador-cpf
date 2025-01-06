@@ -36,6 +36,7 @@ Leia em outros idiomas: [English](https://github.com/tiagoporto/gerador-validado
 ![React](https://img.shields.io/badge/react-%2323272ff2?style=for-the-badge\&logo=react)
 ![i18next](https://img.shields.io/badge/i18next-%2326A69A?style=for-the-badge\&logo=i18next\&logoColor=white)
 ![Sass](https://img.shields.io/badge/sass-%23CC6699?style=for-the-badge\&logo=sass\&logoColor=white)
+![ejs](https://img.shields.io/badge/ejs-%23B4CA65?style=for-the-badge\&logo=ejs\&logoColor=black)
 ![PostCSS](https://img.shields.io/badge/postcss-%23DD3A0A?style=for-the-badge\&logo=postcss)
 ![Autoprefixer](https://img.shields.io/badge/autoprefixer-%23DD3735?style=for-the-badge\&logo=autoprefixer\&logoColor=white)
 ![CSS Modules](https://img.shields.io/badge/css%20modules-%23333?style=for-the-badge\&logo=css-modules)
