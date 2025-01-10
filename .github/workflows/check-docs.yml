@@ -1,6 +1,9 @@
 name: Check Docs
 
 on:
+  schedule:
+    # Run on the 1st of February, April, June, August, October, and December @ 00:00AM UTC-3
+    - cron: '0 3 1 FEB,APR,JUN,AUG,OCT,DEC *'
   push:
     branches: [main]
   pull_request:
@@ -16,8 +19,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  check:
-    name: Check
+  check_docs:
+    name: Check Docs
     runs-on: ubuntu-latest
 
     steps:
