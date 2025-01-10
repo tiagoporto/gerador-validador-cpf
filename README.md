@@ -1,6 +1,6 @@
 # Gerador e Validador de CPF ![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg)
 
-Biblioteca JS para gerar e validar CPF (Cadastro de Pessoas Físicas) do Brasil.
+JS lib to generate and validate CPF (Cadastro de Pessoas Físicas) of Brazil.
 
 [![Release](https://img.shields.io/npm/v/gerador-validador-cpf.svg?style=flat-square\&label=release)](https://github.com/tiagoporto/gerador-validador-cpf/releases)
 ![npm type definitions](https://img.shields.io/npm/types/gerador-validador-cpf.svg?style=flat-square)
@@ -9,7 +9,7 @@ Biblioteca JS para gerar e validar CPF (Cadastro de Pessoas Físicas) do Brasil.
 
 ## Docs 📚
 
-Leia em outros idiomas: [English](https://github.com/tiagoporto/gerador-validador-cpf/blob/main/packages/gerador-validador-cpf/README.en.md), [Español](https://github.com/tiagoporto/gerador-validador-cpf/blob/main/packages/gerador-validador-cpf/README.es.md) e [Português(Brasil)](https://github.com/tiagoporto/gerador-validador-cpf/blob/main/packages/gerador-validador-cpf/README.md)
+Read in other languages: [English](https://github.com/tiagoporto/gerador-validador-cpf/blob/main/packages/gerador-validador-cpf/README.en.md), [Español](https://github.com/tiagoporto/gerador-validador-cpf/blob/main/packages/gerador-validador-cpf/README.es.md) e [Português(Brasil)](https://github.com/tiagoporto/gerador-validador-cpf/blob/main/packages/gerador-validador-cpf/README.md)
 
 ## Status ✅
 
@@ -67,15 +67,34 @@ Leia em outros idiomas: [English](https://github.com/tiagoporto/gerador-validado
 
 <https://tiagoporto.github.io/gerador-validador-cpf>
 
-## Instalação 📦
+## Installation 📦
 
 ```bash
 npm install gerador-validador-cpf --save
 ```
 
-## Uso ➡️
+## Usage ➡️
 
-[Acesse](https://github.com/tiagoporto/gerador-validador-cpf/blob/main/packages/gerador-validador-cpf/README.md#uso-%EF%B8%8F)
+### Generate CPF
+
+```javascript
+import { generate } from 'gerador-validador-cpf'
+
+generate() // Generates a CPF in the format 00000000000
+generate({ format: true }) // Generates a CPF in the format 000.000.000-00
+```
+
+### Validate CPF
+
+```javascript
+import { validate } from 'gerador-validador-cpf'
+
+validate('123.456.789-00')
+// or
+validate('123.456.789-00')
+```
+
+**Note:** characters like `.`, `-` and `space` are allowed.
 
 ## Development 🛠
 
@@ -108,18 +127,18 @@ pnpm install
 pnpm start
 ```
 
-## Contribuição 🤝
+## Contributing 🤝
 
-[Veja como contribuir](https://github.com/tiagoporto/.github/blob/main/CONTRIBUTING.md).
+[Check how to contribute](https://github.com/tiagoporto/.github/blob/main/CONTRIBUTING.md).
 
-## Doações 🤜🤛
+## Donating 🤜🤛
 
-Este projeto é desenvolvido no meu tempo livre, qualquer doação é bem-vinda.
+This project is developed on my free time, any donation is welcome.
 
 [![GITHUB Sponsor](https://img.shields.io/badge/-github-black?logo=github)](https://github.com/sponsors/tiagoporto)
 [![Paypal Donate](https://img.shields.io/badge/PayPal-blue?logo=paypal)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations\&business=YTDUQ8RZ2G4Q8\&lc=BR\&item_name=tiagoporto\&item_number=geradorcpf\&currency_code=BRL\&bn=PP%2dDonationsBF:btn_donateCC_LG%2egif:NonHosted)
 ![Bitcoin](https://img.shields.io/badge/bitcoin-14iqQcwYPLBceRURHuFosGTDXxMmt3cLDp-yellow.svg?logo=bitcoin)
 
-## Licença 📄
+## License 📄
 
-Este projeto está sob os termos da [licença MIT](./packages/gerador-validador-cpf/LICENSE).
+This project is licensed under the [MIT License](LICENSE).
