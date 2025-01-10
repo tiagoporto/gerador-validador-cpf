@@ -12,7 +12,7 @@ on:
       ]
 
 concurrency:
-  group: 'lint'
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -36,11 +36,11 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts
 
-      - name: Check Typing
-        run: pnpm typecheck
-
       - name: Check Formatting
         run: pnpm formatting:check
+
+      - name: Check Typing
+        run: pnpm typecheck
 
       - name: Lint Styles
         run: pnpm lint:styles
