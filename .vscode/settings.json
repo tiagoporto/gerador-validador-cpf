@@ -1,8 +1,4 @@
 {
-  "[markdown]": {
-    "editor.defaultFormatter": "unifiedjs.vscode-remark",
-    "editor.formatOnSave": true
-  },
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": "always",
     "source.fixAll.eslint": "always"

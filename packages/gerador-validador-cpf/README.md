@@ -1,8 +1,8 @@
 # gerador-validador-cpf
 
-[![Tests GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/gerador-validador-cpf/unit-tests.yml?label=unit%20tests\&logo=githubactions\&logoColor=white\&style=flat-square)](https://github.com/tiagoporto/gerador-validador-cpf/actions/workflows/unit-tests.yml)
-[![Coverage Status](https://img.shields.io/coveralls/tiagoporto/gerador-validador-cpf.svg?logo=coveralls\&style=flat-square)](https://coveralls.io/github/tiagoporto/gerador-validador-cpf)
-[![mutation score](https://img.shields.io/endpoint?style=flat-square\&url=https://badge-api.stryker-mutator.io/github.com/tiagoporto/gerador-validador-cpf/main)](https://dashboard.stryker-mutator.io/reports/github.com/tiagoporto/gerador-validador-cpf/main)
+[![Tests GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/gerador-validador-cpf/unit-tests.yml?label=unit%20tests&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/gerador-validador-cpf/actions/workflows/unit-tests.yml)
+[![Coverage Status](https://img.shields.io/coverallsCoverage/github/tiagoporto/gerador-validador-cpf.svg?logo=coveralls&style=flat-square)](https://coveralls.io/github/tiagoporto/gerador-validador-cpf)
+[![mutation score](https://img.shields.io/endpoint?style=flat-square&url=https://badge-api.stryker-mutator.io/github.com/tiagoporto/gerador-validador-cpf/main)](https://dashboard.stryker-mutator.io/reports/github.com/tiagoporto/gerador-validador-cpf/main)
 
 Biblioteca JS para gerar e validar CPF (Cadastro de Pessoas Físicas) do Brasil.
 
@@ -12,7 +12,7 @@ Leia em outros idiomas: [English](https://github.com/tiagoporto/gerador-validado
 
 ## Playground 🎮
 
-<https://tiagoporto.github.io/gerador-validador-cpf>
+<https://tiagoporto.github.io/gerador-validador-cpf/>
 
 ## Instalação 📦
 
