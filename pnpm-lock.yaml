@@ -111,6 +111,9 @@ importers:
       jest:
         specifier: ^29.7.0
         version: 29.7.0(@types/node@22.10.5)
+      jest-mock-random:
+        specifier: ^1.1.1
+        version: 1.1.1
       lint-staged:
         specifier: ^15.3.0
         version: 15.3.0
@@ -4214,6 +4217,9 @@ packages:
   jest-message-util@29.7.0:
     resolution: {integrity: sha512-GBEV4GRADeP+qtB2+6u61stea8mGcOT4mCtrYISZwfu9/ISHFJ/5zOMXYbpBE9RsS5+Gb63DW4FgmnKJ79Kf6w==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+
+  jest-mock-random@1.1.1:
+    resolution: {integrity: sha512-eLduwHIZeepHCHWTgx6MGr8k4CWxTG39SN76tszzgCjX8GNu6M/05WcXMci73z1GUVqYQAsw6inz6ndgr3Gmqw==}
 
   jest-mock@29.7.0:
     resolution: {integrity: sha512-ITOMZn+UkYS4ZFh83xYAOzWStloNzJFO2s8DWrE4lhtGD+AorgnbkiKERe4wQVBydIGPx059g6riW5Btp6Llnw==}
@@ -12137,6 +12143,8 @@ snapshots:
       pretty-format: 29.7.0
       slash: 3.0.0
       stack-utils: 2.0.5
+
+  jest-mock-random@1.1.1: {}
 
   jest-mock@29.7.0:
     dependencies:

@@ -25,7 +25,7 @@ export const Donate = () => {
           ReactGA.ga('send', 'event', category, 'click', type)
         }
 
-        void pushData()
+        pushData()
       }
     }
 

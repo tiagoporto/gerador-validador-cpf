@@ -11,7 +11,7 @@ export const ChangeLocale = () => {
   const { i18n } = useTranslation()
 
   const handleLocale = (locale: AvailableLocales) => () => {
-    void i18n.changeLanguage(locale)
+    i18n.changeLanguage(locale)
   }
 
   useEffect(() => {

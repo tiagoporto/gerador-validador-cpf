@@ -18,10 +18,9 @@ const loadOnProd = async () => {
 }
 
 if (process.env.NODE_ENV === 'production') {
-  void loadOnProd()
+  loadOnProd()
 }
-// eslint-disable-next-line import/no-named-as-default-member
-void i18next.use(LanguageDetector).use(backend).use(initReactI18next).init({
+i18next.use(LanguageDetector).use(backend).use(initReactI18next).init({
   fallbackLng: 'pt',
 })
 

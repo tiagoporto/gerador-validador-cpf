@@ -4,8 +4,11 @@ export const generateFirstDigits = () => {
   let digits = ''
 
   do {
+    if (digits.length === 9) {
+      digits = ''
+    }
+
     for (let i = 0; i < 9; ++i) {
-      // eslint-disable-next-line sonarjs/pseudo-random
       digits += String(Math.floor(Math.random() * 10))
     }
   } while (allDigitsAreEqual(digits))

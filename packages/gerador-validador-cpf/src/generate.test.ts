@@ -1,35 +1,86 @@
 import { describe, expect, it, jest } from '@jest/globals'
+import { mockRandom } from 'jest-mock-random'
 
-import { generate, validate } from './index.js'
+import { generate } from './index.js'
 import { generateFirstDigits } from './utils/generateFirstDigits.js'
 
-const utils = { generateFirstDigits }
-
 describe('generate', () => {
-  it('should generate a valid CPF', () => {
+  it.each([
+    {
+      mock: [0.1, 0.0, 0.9, 0.9, 0.0, 0.3, 0.0, 0.8, 0.0],
+      expected: '10990308030',
+    },
+    {
+      mock: [0.9, 0.2, 0.6, 0.0, 0.3, 0.8, 0.9, 0.9, 0.0],
+      expected: '92603899090',
+    },
+    {
+      mock: [0.6, 0.3, 0.6, 0.1, 0.5, 0.0, 0.6, 0.4, 0.0],
+      expected: '63615064011',
+    },
+  ])('should generate a valid CPF $expected', ({ mock, expected }) => {
+    mockRandom(mock)
     const cpf = generate()
 
-    expect(validate(cpf)).toBeTruthy()
+    expect(cpf).toBe(expected)
     expect(Number.isNaN(Number(cpf))).toBeFalsy()
   })
 
-  it('should generate a non formated CPF 12345678900', () => {
-    const cpf = generate({ format: false })
+  it.each([
+    {
+      mock: [0.5, 0.3, 0.1, 0.4, 0.7, 0.4, 0.0, 0.0, 0.0],
+      expected: '53147400018',
+    },
+    {
+      mock: [0.6, 0.9, 0.0, 0.4, 0.0, 0.7, 0.2, 0.3, 0.0],
+      expected: '69040723001',
+    },
+  ])(
+    'should generate a valid non formated CPF $expected',
+    ({ mock, expected }) => {
+      mockRandom(mock)
+      const cpf = generate({ format: false })
 
-    expect(/^\d{11}$/.test(cpf)).toBeTruthy()
-    expect(Number.isNaN(Number(cpf))).toBeFalsy()
-  })
+      expect(cpf).toBe(expected)
+      expect(Number.isNaN(Number(cpf))).toBeFalsy()
+    },
+  )
 
-  it('should generate a formated CPF 000.000.000-00', () => {
+  it.each([
+    {
+      mock: [0.6, 0.4, 0.5, 0.1, 0.5, 0.2, 0.9, 0.3, 0.0],
+      expected: '645.152.930-36',
+    },
+    {
+      mock: [0.7, 0.8, 0.6, 0.0, 0.6, 0.3, 0.7, 0.7, 0.0],
+      expected: '786.063.770-74',
+    },
+  ])('should generate a formated CPF $expected', ({ mock, expected }) => {
+    mockRandom(mock)
     const cpf = generate({ format: true })
 
-    expect(/^\d{3}.\d{3}.\d{3}-\d{2}$/.test(cpf)).toBeTruthy()
+    expect(cpf).toBe(expected)
     expect(Number.isNaN(Number(cpf))).toBeTruthy()
   })
 
-  it('should regenerate a new cpf if generate a cpf with all number equals', () => {
-    jest.spyOn(utils, 'generateFirstDigits').mockReturnValueOnce('000000000')
+  it.each([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])(
+    'should regenerate a new cpf if all digits are %i',
+    (value) => {
+      const number = Number(`0.${value}`)
+      jest
+        .spyOn(Math, 'random')
+        .mockReturnValueOnce(number)
+        .mockReturnValueOnce(number)
+        .mockReturnValueOnce(number)
+        .mockReturnValueOnce(number)
+        .mockReturnValueOnce(number)
+        .mockReturnValueOnce(number)
+        .mockReturnValueOnce(number)
+        .mockReturnValueOnce(number)
+        .mockReturnValueOnce(number)
+      const cpf = generate()
 
-    expect(validate(generate())).toBeTruthy()
-  })
+      expect(cpf).not.toBe(value.toString().repeat(11))
+    },
+  )
 })

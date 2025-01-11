@@ -11,7 +11,7 @@ import styles from './Header.module.scss'
 export const Header = () => {
   const { t } = useTranslation()
 
-  const handleCopy = (): void => {
+  const handleCopy = () => {
     toast(t('messages.copied'))
   }
 

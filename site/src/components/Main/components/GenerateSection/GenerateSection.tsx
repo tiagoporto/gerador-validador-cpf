@@ -11,11 +11,11 @@ export const GenerateSection = () => {
   const [cpf, setCpf] = useState<string>('')
   const { t } = useTranslation()
 
-  const handleCopy = (): void => {
+  const handleCopy = () => {
     toast(t('messages.cpfCopied'))
   }
 
-  const generateNewCPF = (type: string) => (): void => {
+  const generateNewCPF = (type: string) => () => {
     setCpf(generateCPF())
 
     if (process.env.NODE_ENV === 'production') {
@@ -24,7 +24,7 @@ export const GenerateSection = () => {
         ReactGA.ga('send', 'event', 'Generate', type, 'Generate CPF')
       }
 
-      void pushData()
+      pushData()
     }
   }
   useEffect(() => {
