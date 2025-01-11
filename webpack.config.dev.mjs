@@ -1,4 +1,5 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import webpack from 'webpack'
 import path from 'node:path'
 
 import brResources from './site/public/locales/pt/translation.json' with { type: 'json' }
@@ -87,6 +88,9 @@ export default {
     ],
   },
   plugins: [
+    new webpack.EnvironmentPlugin({
+      CI: false,
+    }),
     new HtmlWebpackPlugin({
       template: './site/src/index.ejs',
       templateParameters: {

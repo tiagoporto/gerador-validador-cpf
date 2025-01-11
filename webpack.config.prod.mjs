@@ -1,4 +1,5 @@
 import CopyPlugin from 'copy-webpack-plugin'
+import webpack from 'webpack'
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
@@ -101,6 +102,9 @@ export default {
   },
 
   plugins: [
+    new webpack.EnvironmentPlugin({
+      CI: false,
+    }),
     new CopyPlugin({ patterns: ['site/public'] }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',

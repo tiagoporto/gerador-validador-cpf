@@ -3,6 +3,7 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import backend from 'i18next-http-backend'
 import { createRoot } from 'react-dom/client'
 import { initReactI18next } from 'react-i18next'
+import pkg from '../../package.json'
 
 import { App } from './App'
 
@@ -20,9 +21,18 @@ const loadOnProd = async () => {
 if (process.env.NODE_ENV === 'production') {
   loadOnProd()
 }
-i18next.use(LanguageDetector).use(backend).use(initReactI18next).init({
-  fallbackLng: 'pt',
-})
+i18next
+  .use(LanguageDetector)
+  .use(backend)
+  .use(initReactI18next)
+  .init({
+    fallbackLng: 'pt',
+    backend: {
+      loadPath: process.env.CI
+        ? `${pkg.homepage}/locales/{{lng}}/{{ns}}.json`
+        : '/locales/{{lng}}/{{ns}}.json',
+    },
+  })
 
 const rootElement = document.querySelector('#root')
 if (rootElement) {
