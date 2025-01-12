@@ -8,9 +8,51 @@ importers:
 
   .:
     dependencies:
-      '@tiagoporto/dependabot-config':
-        specifier: ^1.0.1
-        version: 1.0.1
+      gerador-validador-cpf:
+        specifier: workspace:*
+        version: link:packages/gerador-validador-cpf
+      i18next:
+        specifier: ^24.2.0
+        version: 24.2.0(typescript@5.7.2)
+      i18next-browser-languagedetector:
+        specifier: ^8.0.2
+        version: 8.0.2
+      i18next-http-backend:
+        specifier: ^3.0.1
+        version: 3.0.1
+      normalize.css:
+        specifier: ^8.0.1
+        version: 8.0.1
+      react:
+        specifier: ^19.0.0
+        version: 19.0.0
+      react-copy-to-clipboard:
+        specifier: ^5.1.0
+        version: 5.1.0(react@19.0.0)
+      react-dom:
+        specifier: ^19.0.0
+        version: 19.0.0(react@19.0.0)
+      react-ga:
+        specifier: ^3.3.1
+        version: 3.3.1(prop-types@15.8.1)(react@19.0.0)
+      react-github-corner:
+        specifier: ^2.5.0
+        version: 2.5.0(react@19.0.0)
+      react-helmet-async:
+        specifier: ^2.0.5
+        version: 2.0.5(react@19.0.0)
+      react-i18next:
+        specifier: ^15.4.0
+        version: 15.4.0(i18next@24.2.0(typescript@5.7.2))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react-imask:
+        specifier: ^7.6.1
+        version: 7.6.1(react@19.0.0)
+      react-syntax-highlighter:
+        specifier: ^15.6.1
+        version: 15.6.1(react@19.0.0)
+      react-toastify:
+        specifier: ^11.0.2
+        version: 11.0.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
       '@commitlint/cli':
         specifier: ^19.6.1
@@ -39,6 +81,9 @@ importers:
       '@swc/jest':
         specifier: ^0.2.37
         version: 0.2.37(@swc/core@1.10.4)
+      '@tiagoporto/dependabot-config':
+        specifier: ^1.1.0
+        version: 1.1.0
       '@tiagoporto/editor-config':
         specifier: ^1.2.0
         version: 1.2.0
@@ -87,9 +132,6 @@ importers:
       eslint:
         specifier: ^9.17.0
         version: 9.17.0(jiti@2.4.2)
-      gerador-validador-cpf:
-        specifier: workspace:*
-        version: link:packages/gerador-validador-cpf
       globals:
         specifier: ^15.14.0
         version: 15.14.0
@@ -99,15 +141,6 @@ importers:
       husky:
         specifier: ^9.1.7
         version: 9.1.7
-      i18next:
-        specifier: ^24.2.0
-        version: 24.2.0(typescript@5.7.2)
-      i18next-browser-languagedetector:
-        specifier: ^8.0.2
-        version: 8.0.2
-      i18next-http-backend:
-        specifier: ^3.0.1
-        version: 3.0.1
       jest:
         specifier: ^29.7.0
         version: 29.7.0(@types/node@22.10.5)
@@ -120,9 +153,6 @@ importers:
       mini-css-extract-plugin:
         specifier: ^2.9.2
         version: 2.9.2(webpack@5.97.1)
-      normalize.css:
-        specifier: ^8.0.1
-        version: 8.0.1
       postcss:
         specifier: ^8.4.49
         version: 8.4.49
@@ -135,36 +165,6 @@ importers:
       prettier:
         specifier: ^3.4.2
         version: 3.4.2
-      react:
-        specifier: ^19.0.0
-        version: 19.0.0
-      react-copy-to-clipboard:
-        specifier: ^5.1.0
-        version: 5.1.0(react@19.0.0)
-      react-dom:
-        specifier: ^19.0.0
-        version: 19.0.0(react@19.0.0)
-      react-ga:
-        specifier: ^3.3.1
-        version: 3.3.1(prop-types@15.8.1)(react@19.0.0)
-      react-github-corner:
-        specifier: ^2.5.0
-        version: 2.5.0(react@19.0.0)
-      react-helmet-async:
-        specifier: ^2.0.5
-        version: 2.0.5(react@19.0.0)
-      react-i18next:
-        specifier: ^15.4.0
-        version: 15.4.0(i18next@24.2.0(typescript@5.7.2))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react-imask:
-        specifier: ^7.6.1
-        version: 7.6.1(react@19.0.0)
-      react-syntax-highlighter:
-        specifier: ^15.6.1
-        version: 15.6.1(react@19.0.0)
-      react-toastify:
-        specifier: ^11.0.2
-        version: 11.0.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       remark:
         specifier: ^15.0.1
         version: 15.0.1
@@ -1864,8 +1864,8 @@ packages:
     resolution: {integrity: sha512-+PmQX0PiAYPMeVYe237LJAYvOMYW1j2rH5YROyS3b4CTVJum34HfRvKvAzozHAQG0TnHNdUfY9nCeUyRAs//cw==}
     engines: {node: '>=14.16'}
 
-  '@tiagoporto/dependabot-config@1.0.1':
-    resolution: {integrity: sha512-RUFXiLIVLFns8Wyc1fpsYbC2tD0StnY1TETQWG5iOFy3H4iytLNByRhOULH+Ro6xsgyIxp2R7PO8f41k9tcEJA==}
+  '@tiagoporto/dependabot-config@1.1.0':
+    resolution: {integrity: sha512-EPGbD6nnR5QcHlutnZ3taZnTvloRMeav4vMQ0azc6PUc58jq3W1tJgXhdjm2W5lZq1rWYQ3EBTffZe2hOgy42A==}
     engines: {node: '>=18'}
 
   '@tiagoporto/editor-config@1.2.0':
@@ -9578,7 +9578,7 @@ snapshots:
     dependencies:
       defer-to-connect: 2.0.1
 
-  '@tiagoporto/dependabot-config@1.0.1': {}
+  '@tiagoporto/dependabot-config@1.1.0': {}
 
   '@tiagoporto/editor-config@1.2.0': {}
 
