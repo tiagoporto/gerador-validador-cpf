@@ -14,9 +14,6 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v4
 
-      - name: Setup git user
-        uses: fregante/setup-git-user@v1
-
       - name: Setup node
         uses: actions/setup-node@v4
         with:
@@ -26,5 +23,5 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts
 
-      - name: Bump version, create commit, add tag, push commit and publish github release
-        run: pnpm release
+      # - name: Bump version, create commit, add tag, push commit and publish github release
+      #   run: pnpm release
