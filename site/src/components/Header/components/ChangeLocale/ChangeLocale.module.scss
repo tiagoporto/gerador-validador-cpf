@@ -1,6 +1,7 @@
 @use '../../../../styles/settings/_variables' as v;
 
 .box {
+  padding-bottom: 15px;
   text-align: left;
 
   @media (min-width: v.$tablet) {

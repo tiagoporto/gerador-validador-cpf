@@ -4,7 +4,7 @@
 @use '../helpers/functions' as f;
 
 input {
-  height: f.em(math.div(v.$base-line-height, 2) * 3);
+  height: 48px;
   border: none;
   margin-bottom: 0.75em;
   color: color.adjust(#000, $lightness: 35%);
