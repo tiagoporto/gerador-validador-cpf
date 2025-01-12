@@ -26,6 +26,7 @@ export default {
   mode: 'production',
   target: 'browserslist',
   devtool: 'source-map',
+  bail: true,
   entry: {
     index: ['./site/src/index.tsx'],
   },
@@ -107,12 +108,21 @@ export default {
     new webpack.EnvironmentPlugin({
       CI: false,
     }),
-    new CopyPlugin({ patterns: ['site/public'] }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: 'site/public',
+          globOptions: {
+            ignore: ['**/index.html'],
+          },
+        },
+      ],
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
     }),
     new HtmlWebpackPlugin({
-      template: './site/src/index.ejs',
+      template: './site/public/index.html',
       templateParameters: {
         name: brResources.app.name,
         title: brResources.app.title,

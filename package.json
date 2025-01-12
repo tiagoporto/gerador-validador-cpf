@@ -12,7 +12,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky",
-    "start": "webpack serve --config webpack.config.dev.mjs",
+    "start": "webpack serve",
     "build": "rm -rf dist && webpack --config webpack.config.prod.mjs",
     "checks": "pnpm check-docs && pnpm formatting:check && pnpm typecheck && pnpm lint:styles && pnpm lint",
     "check-docs": "remark . --frail --ext md,markdown,mdx",

@@ -1,19 +1,8 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.stylelint": "always",
-    "source.fixAll.eslint": "always"
+    "source.fixAll": "explicit"
   },
   "stylelint.validate": ["scss"],
   "typescript.tsdk": "./node_modules/typescript/lib",
-  "editor.formatOnSave": true,
-  // enable for eslint-plugin json-format
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "markdown",
-    "mdx",
-    "json"
-  ]
+  "editor.formatOnSave": true
 }

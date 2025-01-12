@@ -92,7 +92,7 @@ export default {
       CI: false,
     }),
     new HtmlWebpackPlugin({
-      template: './site/src/index.ejs',
+      template: './site/public/index.html',
       templateParameters: {
         name: brResources.app.name,
         title: brResources.app.title,
