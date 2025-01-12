@@ -2,7 +2,6 @@ import { describe, expect, it, jest } from '@jest/globals'
 import { mockRandom } from 'jest-mock-random'
 
 import { generate } from './index.js'
-import { generateFirstDigits } from './utils/generateFirstDigits.js'
 
 describe('generate', () => {
   it.each([

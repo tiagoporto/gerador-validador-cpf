@@ -4,8 +4,10 @@ import tpConfig from '@tiagoporto/eslint-config'
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   {
-    languageOptions: { globals: { ...globals.browser, ...globals.node } },
-    ignores: ['coverage/*'],
+    ignores: ['coverage/**', 'dist/**'],
   },
-  ...tpConfig.configs.base,
+  {
+    languageOptions: { globals: { ...globals.browser, ...globals.node } },
+  },
+  ...tpConfig.configs.typeScript,
 ]
