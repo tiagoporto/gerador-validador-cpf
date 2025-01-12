@@ -3,11 +3,9 @@
 <browserconfig>
   <msapplication>
     <tile>
-        <square70x70logo src="img/tiles/small.png"/>
-        <square150x150logo src="img/tiles/medium.png"/>
-        <wide310x150logo src="img/tiles/wide.png"/>
-        <square310x310logo src="img/tiles/large.png"/>
-        <TileColor>#2698DD</TileColor>
-     </tile>
+      <square150x150logo src="touch/mstile-150x150.png"/>
+      <wide310x150logo src="touch/mstile-310x150.png"/>
+      <TileColor>#2798dd</TileColor>
+    </tile>
   </msapplication>
 </browserconfig>

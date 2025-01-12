@@ -5,6 +5,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { GenerateSW } from 'workbox-webpack-plugin'
 
+import pkg from './package.json' with { type: 'json' }
 import brResources from './site/public/locales/pt/translation.json' with { type: 'json' }
 const miniCSSLoaderConfig = {
   loader: MiniCssExtractPlugin.loader,
@@ -35,6 +36,7 @@ export default {
     },
   },
   output: {
+    publicPath: process.env.CI ? `${pkg.homepage}/` : '/',
     filename: '[name].[contenthash].js',
     chunkFilename: '[name].[id].[contenthash].js',
   },

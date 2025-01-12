@@ -24,6 +24,8 @@ export const Header = () => {
         bannerColor="#fff"
         octoColor="#155078"
         ariaLabel={t('header.projectPageGithub')}
+        target="_blank"
+        rel="noopener noreferrer"
       />
 
       <h1 className={styles.panelTitle}>

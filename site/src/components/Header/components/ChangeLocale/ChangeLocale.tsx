@@ -15,7 +15,7 @@ export const ChangeLocale = () => {
   }
 
   useEffect(() => {
-    setLocale(i18n.language as AvailableLocales)
+    setLocale(i18n.language.split('-')[0] as AvailableLocales)
   }, [i18n.language])
 
   return (
