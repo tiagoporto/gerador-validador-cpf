@@ -94,8 +94,8 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0(prettier@3.4.2)
       '@tiagoporto/remark-config':
-        specifier: ^1.4.0
-        version: 1.4.0(prettier@3.4.2)(remark-cli@12.0.1)(remark@15.0.1)
+        specifier: ^1.5.0
+        version: 1.5.0(prettier@3.4.2)(remark-cli@12.0.1)(remark@15.0.1)
       '@tiagoporto/stylelint-config':
         specifier: ^1.1.0
         version: 1.1.0(postcss@8.4.49)(stylelint@16.12.0(typescript@5.7.2))
@@ -1884,8 +1884,8 @@ packages:
     peerDependencies:
       prettier: '>= 3'
 
-  '@tiagoporto/remark-config@1.4.0':
-    resolution: {integrity: sha512-9UyNiMbjnoqpj0QGydN2VplYahpjD83FASFJhu/wBJpVmlYgGlegIpcM9m2iVKDOGckJqVv6Uxd3y2ymJUlfSA==}
+  '@tiagoporto/remark-config@1.5.0':
+    resolution: {integrity: sha512-LKRX6xOM9GDAmZiZgjPHwGua/YALdZwGZleHOdVTB5RbVbZf9VBHAZAoudPWnRO7lFgIbLGa+WKVna6SiKd2dw==}
     engines: {node: '>=18'}
     peerDependencies:
       remark: ^15.0.0
@@ -9598,7 +9598,7 @@ snapshots:
     dependencies:
       prettier: 3.4.2
 
-  '@tiagoporto/remark-config@1.4.0(prettier@3.4.2)(remark-cli@12.0.1)(remark@15.0.1)':
+  '@tiagoporto/remark-config@1.5.0(prettier@3.4.2)(remark-cli@12.0.1)(remark@15.0.1)':
     dependencies:
       remark: 15.0.1
       remark-cli: 12.0.1
