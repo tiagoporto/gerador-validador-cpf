@@ -19,6 +19,9 @@
     "cpfGenerated": "CPF gerado"
   },
   "info": {
+    "usage": "Uso",
+    "generate": "Generate CPF",
+    "validate": "Validate CPF",
     "disclaimer": "Lib disponível para auxiliar desenvolvedores em testes de software, não possui qualquer vínculo com a Receita Federal do Brasil.",
     "algorithm": "Utiliza o seguinte <0>algoritmo</0>.",
     "disclaimerValidCPF": "Um CPF válido não significa que ele exista no Cadastro Nacional de Pessoas Físicas, nem que esteja ativo ou com situação cadastral regular. Para conferir tais dados, consulte o site oficial da <0>Secretaria da Receita Federal do Brasil</0>.",

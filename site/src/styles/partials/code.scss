@@ -1,9 +1,0 @@
-@use '../settings/_variables' as v;
-
-code {
-  display: inline-block;
-  overflow: auto;
-  padding: 0 #{v.$base-line-height} / 2;
-  border-radius: 3px;
-  vertical-align: bottom;
-}

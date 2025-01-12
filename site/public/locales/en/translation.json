@@ -19,6 +19,9 @@
     "cpfGenerated": "Generated CPF"
   },
   "info": {
+    "usage": "Usage",
+    "generate": "Generate CPF",
+    "validate": "Validate CPF",
     "disclaimer": "Lib available to assist developers in software testing, has no connection with the Brazilian Federal Revenue.",
     "algorithm": "Implements the follow <0>algorithm</0>.",
     "disclaimerValidCPF": "A valid CPF does not mean that it exists nor is active. For that information, check the official website of <0>Department of Federal Revenue of Brazil</0>.",

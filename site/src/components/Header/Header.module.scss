@@ -18,7 +18,7 @@
     text-decoration: none;
   }
 
-  span {
+  h1 span {
     @media (max-width: v.$tablet) {
       display: block;
     }
@@ -35,24 +35,19 @@
   }
 
   .copy {
-    border-radius: 3px;
+    display: inline-block !important;
+    width: min-content;
+    max-width: 100%;
     margin-bottom: 1.5em;
     cursor: pointer;
 
     code {
-      display: inline-block !important;
-
       @media (min-width: v.$phone) {
         padding-right: 40px !important;
-      }
-
-      &:hover {
-        @media (min-width: v.$phone) {
-          background-image: url('./copy.svg');
-          background-position: center right 10px;
-          background-repeat: no-repeat;
-          background-size: 20px 20px;
-        }
+        background-image: url('./copy.svg');
+        background-position: center right 10px;
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
       }
     }
   }

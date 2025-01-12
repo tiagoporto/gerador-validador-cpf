@@ -78,23 +78,23 @@ npm install gerador-validador-cpf --save
 ### Generate CPF
 
 ```javascript
-import { generate } from 'gerador-validador-cpf'
+import { generate as generateCpf } from 'gerador-validador-cpf'
 
-generate() // Generates a CPF in the format 00000000000
-generate({ format: true }) // Generates a CPF in the format 000.000.000-00
+const cpf = generateCpf()
+console.log(cpf) // 00000000000
+
+const formattedCpf = generateCpf({ format: true })
+console.log(formattedCpf) // 000.000.000-00
 ```
 
 ### Validate CPF
 
 ```javascript
-import { validate } from 'gerador-validador-cpf'
+import { validate as validadeCpf } from 'gerador-validador-cpf'
 
-validate('123.456.789-00')
-// or
-validate('123.456.789-00')
+const isCpfValid = validadeCpf('12345678900')
+const isFormattedCpfValid = validadeCpf('123.456.789-00')
 ```
-
-**Note:** characters like `.`, `-` and `space` are allowed.
 
 ## Development 🛠
 

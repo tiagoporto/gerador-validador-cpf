@@ -1,4 +1,5 @@
-import 'highlight.js/styles/github.css'
+import SyntaxHighlighter from 'react-syntax-highlighter'
+import { github } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import GithubCorner from 'react-github-corner'
 import { Trans, useTranslation } from 'react-i18next'
@@ -44,11 +45,13 @@ export const Header = () => {
         text="npm install gerador-validador-cpf --save"
         onCopy={handleCopy}
       >
-        <pre className={styles.copy}>
-          <code className="hljs">
-            npm install gerador-validador-cpf --save-dev
-          </code>
-        </pre>
+        <SyntaxHighlighter
+          language="base"
+          style={github}
+          className={styles.copy}
+        >
+          npm install gerador-validador-cpf --save-dev
+        </SyntaxHighlighter>
       </CopyToClipboard>
 
       <Donate />

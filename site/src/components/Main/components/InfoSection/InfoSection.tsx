@@ -1,3 +1,5 @@
+import SyntaxHighlighter from 'react-syntax-highlighter'
+import { github } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import { Trans, useTranslation } from 'react-i18next'
 
 import styles from './InfoSection.module.scss'
@@ -8,6 +10,29 @@ export const InfoSection = () => {
   return (
     <div className={styles.infoSection}>
       <div className={styles.center}>
+        <h2>{t('info.usage')}</h2>
+
+        <h3>{t('info.generate')}</h3>
+
+        <SyntaxHighlighter language="javascript" style={github}>
+          {`import { generate as generateCpf } from 'gerador-validador-cpf'
+
+const cpf = generateCpf()
+console.log(cpf) // 00000000000
+
+const formattedCpf = generateCpf({ format: true })
+console.log(formattedCpf) // 000.000.000-00`}
+        </SyntaxHighlighter>
+
+        <h3>{t('info.validate')}</h3>
+
+        <SyntaxHighlighter language="javascript" style={github}>
+          {`import { validate as validadeCpf } from 'gerador-validador-cpf'
+
+const isCpfValid = validadeCpf('12345678900')
+const isFormattedCpfValid = validadeCpf('123.456.789-00')`}
+        </SyntaxHighlighter>
+
         <p>{t('info.disclaimer')}</p>
 
         <Trans
