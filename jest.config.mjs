@@ -1,6 +1,7 @@
 /** @type {import('jest').Config} */
 export default {
   roots: ['<rootDir>'],
+  testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)test.[jt]s?(x)'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   collectCoverageFrom: ['packages/gerador-validador-cpf/**/*.{ts,tsx,js,jsx}'],
   coverageThreshold: {

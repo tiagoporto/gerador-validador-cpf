@@ -47,8 +47,8 @@
   "messages": {
     "copied": "Copied!",
     "cpfCopied": "CPF Copied!",
-    "validCPF": "CPF Valid",
-    "invalidCPF": "CPF Invalid",
+    "validCPF": "Valid CPF",
+    "invalidCPF": "Invalid CPF",
     "walletCopied": "Wallet copied!",
     "incomplete": "incomplete"
   }

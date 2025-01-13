@@ -1,0 +1,35 @@
+name: e2e Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [
+        synchronize, # PR was updated
+        opened, # PR was open
+        reopened, # PR was closed and is now open again
+        ready_for_review, # PR was converted from draft to open
+      ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          install-command: pnpm install --frozen-lockfile --ignore-scripts
+          start: pnpm start
+          wait-on: 'http://[::1]:8080'

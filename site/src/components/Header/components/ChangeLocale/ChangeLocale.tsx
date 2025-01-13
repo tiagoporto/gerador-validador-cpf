@@ -24,6 +24,7 @@ export const ChangeLocale = () => {
 
       <div className={styles.box}>
         <button
+          data-testid="en-locale-button"
           className={`${styles.button} ${locale === 'en' ? styles.selected : ''}`}
           onClick={handleLocale('en')}
         >
@@ -31,6 +32,7 @@ export const ChangeLocale = () => {
         </button>
         |
         <button
+          data-testid="es-locale-button"
           className={`${styles.button} ${locale === 'es' ? styles.selected : ''}`}
           onClick={handleLocale('es')}
         >
@@ -38,6 +40,7 @@ export const ChangeLocale = () => {
         </button>
         |
         <button
+          data-testid="pt-locale-button"
           className={`${styles.button} ${locale === 'pt' ? styles.selected : ''}`}
           onClick={handleLocale('pt')}
         >

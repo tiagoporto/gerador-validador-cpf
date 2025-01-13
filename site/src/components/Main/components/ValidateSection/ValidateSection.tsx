@@ -10,9 +10,16 @@ const enableAnalytics = async () => {
   ReactGA.ga('send', 'event', 'Validate', 'type', 'Validate CPF')
 }
 
+interface State {
+  tempCpf: string
+  cpf: string
+  isValid: boolean
+  message: string
+}
+
 export const ValidateSection = () => {
   const { t } = useTranslation()
-  const [validation, setValidation] = useState({
+  const [validation, setValidation] = useState<State>({
     tempCpf: '',
     cpf: '',
     isValid: false,
@@ -20,9 +27,7 @@ export const ValidateSection = () => {
   })
   const { cpf, isValid, message, tempCpf } = validation
 
-  type Validation = typeof validation
-
-  const updateValidationState = (parameters: Partial<Validation>) => {
+  const updateValidationState = (parameters: Partial<State>) => {
     setValidation((previousState) => ({
       ...previousState,
       ...parameters,
@@ -40,9 +45,7 @@ export const ValidateSection = () => {
       }
 
       const isValid = validadeCPF(tempCpf)
-      const message = isValid
-        ? t('messages.validCPF')
-        : t('messages.invalidCPF')
+      const message = isValid ? 'messages.validCPF' : 'messages.invalidCPF'
 
       updateValidationState({
         cpf: tempCpf,
@@ -50,7 +53,7 @@ export const ValidateSection = () => {
         message,
       })
     } else {
-      const message = tempCpf ? t('messages.incomplete') : ''
+      const message = tempCpf ? 'messages.incomplete' : ''
 
       updateValidationState({
         cpf: '',
@@ -66,6 +69,7 @@ export const ValidateSection = () => {
       <IMaskInput
         aria-label={t('validate.insertCPF')}
         value={tempCpf}
+        data-testid="input-validate-cpf"
         placeholder={t('validate.insertCPF')}
         onAccept={handleChangeCPF}
         className={style.validateSectionInput}
@@ -75,11 +79,13 @@ export const ValidateSection = () => {
       />
 
       <div
+        data-testid="validate-message"
         className={`${style.validateSectionInput} ${style.message} ${
           isValid && cpf ? style.messageValid : ''
         } ${!isValid && cpf ? style.messageInvalid : ''}`}
       >
-        {message || '...'}
+        {/* @ts-expect-error: i18n key */}
+        {t(message) || '...'}
       </div>
     </div>
   )

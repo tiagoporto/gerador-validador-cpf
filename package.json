@@ -17,7 +17,7 @@
     "checks": "pnpm check-docs && pnpm formatting:check && pnpm typecheck && pnpm lint:styles && pnpm lint",
     "check-docs": "remark . --frail --ext md,markdown,mdx",
     "formatting:check": "prettier --check --ignore-unknown \"**/*\"",
-    "formatting": "pnpm formatting:check -- --write",
+    "formatting": "pnpm formatting:check --write",
     "typecheck": "tsc --project tsconfig.json",
     "lint:styles": "stylelint \"**/*.scss\"",
     "lint": "eslint --max-warnings 0",
@@ -26,7 +26,9 @@
     "test": "jest",
     "test:watch": "npm test -- --watch",
     "test:package": "jest --config jest.config.package.mjs",
-    "test:mutation": "stryker run"
+    "test:mutation": "stryker run",
+    "test:e2e": "start-server-and-test start http-get://localhost:8080 'cypress run --e2e'",
+    "test:e2e:dev": "start-server-and-test start http-get://localhost:8080 'cypress open --e2e'"
   },
   "dependencies": {
     "gerador-validador-cpf": "workspace:*",
@@ -48,6 +50,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
+    "@cypress/webpack-preprocessor": "^6.0.2",
     "@jest/globals": "^29.7.0",
     "@rollup/plugin-typescript": "^12.1.2",
     "@stryker-mutator/core": "^8.7.1",
@@ -71,6 +74,7 @@
     "copy-webpack-plugin": "^12.0.2",
     "css-loader": "^6.11.0",
     "css-minimizer-webpack-plugin": "^7.0.0",
+    "cypress": "^13.17.0",
     "eslint": "^9.17.0",
     "globals": "^15.14.0",
     "html-webpack-plugin": "^5.6.3",
@@ -87,6 +91,7 @@
     "remark-cli": "^12.0.1",
     "sass-embedded": "^1.83.0",
     "sass-loader": "^16.0.4",
+    "start-server-and-test": "^2.0.9",
     "style-loader": "^4.0.0",
     "stylelint": "^16.12.0",
     "swc-loader": "^0.2.6",

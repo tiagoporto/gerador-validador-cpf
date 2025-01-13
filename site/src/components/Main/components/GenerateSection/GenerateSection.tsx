@@ -40,6 +40,7 @@ export const GenerateSection = () => {
           <IMaskInput
             aria-label={t('generate.cpfGenerated')}
             value={cpf}
+            data-testid="input-generate-cpf"
             className={styles.input}
             type="text"
             mask={'000.000.000-00'}
@@ -48,6 +49,7 @@ export const GenerateSection = () => {
         </CopyToClipboard>
 
         <button
+          data-testid="generate-cpf-button"
           onClick={generateNewCPF('click')}
           className={styles.generateButton}
           type="button"

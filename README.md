@@ -19,6 +19,7 @@ Read in other languages: [English](https://github.com/tiagoporto/gerador-validad
 [![Lint GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/gerador-validador-cpf/lint.yml?label=lint&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/gerador-validador-cpf/actions/workflows/lint.yml)
 [![Tests GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/gerador-validador-cpf/unit-tests.yml?label=unit%20tests&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/gerador-validador-cpf/actions/workflows/unit-tests.yml)
 [![Coverage Status](https://img.shields.io/coverallsCoverage/github/tiagoporto/gerador-validador-cpf.svg?logo=coveralls&style=flat-square)](https://coveralls.io/github/tiagoporto/gerador-validador-cpf)
+[![E2E Tests GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/gerador-validador-cpf/e2e-tests.yml?label=e2e%20tests&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/gerador-validador-cpf/actions/workflows/e2e-tests.yml)
 [![mutation score](https://img.shields.io/endpoint?style=flat-square&url=https://badge-api.stryker-mutator.io/github.com/tiagoporto/gerador-validador-cpf/main)](https://dashboard.stryker-mutator.io/reports/github.com/tiagoporto/gerador-validador-cpf/main)
 
 ## Stack 🧰
@@ -47,6 +48,7 @@ Read in other languages: [English](https://github.com/tiagoporto/gerador-validad
 ![SWC](https://img.shields.io/badge/swc-%23F8C457?style=for-the-badge&logo=swc&logoColor=black)
 ![Rollup](https://img.shields.io/badge/rollup-%231B1B1F?style=for-the-badge&logo=rollup.js)
 ![Jest](https://img.shields.io/badge/jest-%23C21325?style=for-the-badge&logo=jest)
+![Cypress](https://img.shields.io/badge/cypress-%2369D3A7?style=for-the-badge&logo=cypress&logoColor=white)
 ![Stryker](https://img.shields.io/badge/stryker-%23E74C3C?style=for-the-badge&logo=stryker&logoColor=white)
 
 ![EditorConfig](https://img.shields.io/badge/EditorConfig-%23E0EFEF.svg?style=for-the-badge&logo=editorconfig&logoColor=black)
