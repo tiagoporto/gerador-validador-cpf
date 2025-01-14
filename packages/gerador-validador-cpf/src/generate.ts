@@ -11,7 +11,7 @@ import {
  * @param {boolean} [params.format] - If true, the generated CPF will be formatted with dots and a dash (e.g., 123.456.789-09).
  * @returns {string}                 The generated CPF number, optionally formatted.
  */
-export const generate = (params?: { format: boolean }) => {
+export const generate = (params?: { format: boolean }): string => {
   const firstNineDigits = generateFirstDigits()
 
   const firstChecker = calcFirstChecker(firstNineDigits)

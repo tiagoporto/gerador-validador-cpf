@@ -10,7 +10,7 @@ import {
  * @param  {string} value  - The CPF number as a string
  * @returns {boolean}      true = valid || false = invalid
  */
-export const validate = (value: string) => {
+export const validate = (value: string): boolean => {
   if (typeof value !== 'string') {
     return false
   }
