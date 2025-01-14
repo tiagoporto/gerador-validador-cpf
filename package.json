@@ -52,7 +52,6 @@
     "@commitlint/config-conventional": "^19.6.0",
     "@cypress/webpack-preprocessor": "^6.0.2",
     "@jest/globals": "^29.7.0",
-    "@rollup/plugin-typescript": "^12.1.2",
     "@stryker-mutator/core": "^8.7.1",
     "@stryker-mutator/jest-runner": "^8.7.1",
     "@stryker-mutator/typescript-checker": "^8.7.1",
@@ -102,12 +101,12 @@
     "webpack-dev-server": "^5.2.0",
     "workbox-webpack-plugin": "^7.3.0"
   },
-  "overrides": {
-    "react-copy-to-clipboard": {
-      "react": ">=19"
-    },
-    "react-ga": {
-      "react": ">=19"
+  "pnpm": {
+    "overrides": {
+      "eslint-plugin-markdown>eslint": ">=9",
+      "react-copy-to-clipboard>react": ">=19",
+      "react-ga>react": ">=19",
+      "react-helmet-async>react": ">=19"
     }
   }
 }
