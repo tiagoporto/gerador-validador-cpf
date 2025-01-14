@@ -9,11 +9,11 @@ permissions:
 
 jobs:
   deploy:
+    name: Generate Build and Deploy to GitHub Pages
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    name: Generate Build and Deploy to GitHub Pages
     steps:
       - name: Checkout
         uses: actions/checkout@v4

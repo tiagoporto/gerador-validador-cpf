@@ -1,6 +1,7 @@
 name: Unit Tests
 
 on:
+  workflow_call:
   push:
     branches: [main]
   pull_request:
@@ -16,8 +17,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  tests:
-    name: Tests
+  unit_tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -41,8 +41,15 @@ jobs:
 
       - name: Coveralls
         uses: coverallsapp/github-action@v2
+        if: github.event_name != 'workflow_call'
 
-      - name: Run Unit Test in package
+      - name: Run Mutation Tests and Publish to Dashboard
+        if: github.event_name != 'workflow_call' && github.event_name != 'pull_request'
+        env:
+          STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
+        run: pnpm test:mutation
+
+      - name: Run Unit Test Against Package
         # pnpm has a bug with pack script https://github.com/pnpm/pnpm/issues/4351
         run: |
           cd packages/gerador-validador-cpf
@@ -50,9 +57,3 @@ jobs:
           tar zxvf *.tgz
           cd ../../
           pnpm test:package
-
-      - name: Run Mutation Tests and publish to dashboart
-        if: github.event_name != 'pull_request'
-        env:
-          STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
-        run: pnpm test:mutation

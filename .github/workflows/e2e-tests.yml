@@ -1,4 +1,4 @@
-name: e2e Tests
+name: E2E Tests
 
 on:
   push:
@@ -16,8 +16,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  tests:
-    name: Tests
+  e2e_tests:
     runs-on: ubuntu-latest
 
     steps:
