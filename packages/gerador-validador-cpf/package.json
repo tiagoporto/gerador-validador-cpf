@@ -1,6 +1,6 @@
 {
   "name": "gerador-validador-cpf",
-  "version": "6.0.0-alpha.1",
+  "version": "0.0.0-development",
   "description": "Biblioteca JS para gerar e validar CPF (Cadastro de Pessoas Físicas) do Brasil.",
   "homepage": "https://tiagoporto.github.io/gerador-validador-cpf",
   "keywords": [
@@ -12,10 +12,7 @@
     "valida",
     "validates"
   ],
-  "author": {
-    "name": "Tiago Porto",
-    "url": "https://tiagoporto.com"
-  },
+  "author": "Tiago Porto (https://www.tiagoporto.com)",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tiagoporto/gerador-validador-cpf.git",
@@ -42,15 +39,19 @@
   "license": "MIT",
   "scripts": {
     "prepack": "pnpm build",
-    "build": "rm -rf dist && rollup --config"
+    "build": "rm -rf dist && rollup --config",
+    "release": "semantic-release",
+    "release:dry-run": "semantic-release --dry-run --verify-conditions false"
   },
   "dependencies": {
     "tslib": "^2.8.1"
   },
   "devDependencies": {
-    "rollup": "^4.29.1",
+    "@anolilab/semantic-release-pnpm": "^1.1.6",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.2",
+    "rollup": "^4.30.1",
+    "semantic-release": "^24.2.1",
     "typescript": "^5.7.2"
   }
 }

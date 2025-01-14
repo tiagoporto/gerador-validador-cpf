@@ -1,12 +1,24 @@
-name: Release
+name: Release Package
 
 on: workflow_dispatch
 
 jobs:
-  generate-release:
-    name: Generate Release
-    runs-on: ubuntu-latest
+  # checks:
+  #   uses: ./.github/workflows/checks.yml
+  #   secrets: inherit
+  # unit_tests:
+  #   uses: ./.github/workflows/unit-tests.yml
+  #   secrets: inherit
 
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
+      attestations: write
+    # needs: [checks, unit_tests]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -23,5 +35,16 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts
 
-      # - name: Bump version, create commit, add tag, push commit and publish github release
-      #   run: pnpm release
+      - name: Bump version, add tag, and publish github release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
+        run: pnpm --filter gerador-validador-cpf release
+
+      - name: Remove node_modules
+        run: rm -rf packages/gerador-validador-cpf/node_modules/
+
+      - uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: '${{ github.workspace }}/packages/gerador-validador-cpf'

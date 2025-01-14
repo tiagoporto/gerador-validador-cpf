@@ -1,0 +1,22 @@
+{
+  "branches": [
+    "main",
+    {
+      "name": "alpha",
+      "channel": "alpha",
+      "prerelease": true
+    },
+    {
+      "name": "beta",
+      "channel": "beta",
+      "prerelease": true
+    }
+  ],
+  "preset": "conventionalcommits",
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@anolilab/semantic-release-pnpm",
+    "@semantic-release/github"
+  ]
+}

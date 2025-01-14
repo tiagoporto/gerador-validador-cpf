@@ -106,7 +106,8 @@
       "eslint-plugin-markdown>eslint": ">=9",
       "react-copy-to-clipboard>react": ">=19",
       "react-ga>react": ">=19",
-      "react-helmet-async>react": ">=19"
+      "react-helmet-async>react": ">=19",
+      "conventional-changelog-conventionalcommits": ">=8.0.0"
     }
   }
 }
