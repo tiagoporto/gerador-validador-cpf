@@ -19,11 +19,9 @@ jobs:
       pull-requests: write # to be able to comment on released pull requests
       id-token: write # to enable use of OIDC for npm provenance
       attestations: write
-    needs: [checks, unit_tests]
     env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      NPM_CONFIG_PROVENANCE: true
+    needs: [checks, unit_tests]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -41,7 +39,12 @@ jobs:
         run: pnpm install --frozen-lockfile --ignore-scripts
 
       - name: Bump version, add tag, and publish github release
-        run: pnpm --filter gerador-validador-cpf release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
+        run: |
+          cd packages/gerador-validador-cpf
+          pnpm release
 
       - name: Remove node_modules
         run: rm -rf packages/gerador-validador-cpf/node_modules/
