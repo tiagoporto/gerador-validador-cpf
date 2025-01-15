@@ -29,6 +29,6 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          install-command: pnpm install --frozen-lockfile --ignore-scripts
+          install-command: pnpm install --frozen-lockfile
           start: pnpm start
           wait-on: 'http://[::1]:8080'
