@@ -12,7 +12,7 @@ on:
       ]
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  group: e2e-tests_${{ github.workflow }}_${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
