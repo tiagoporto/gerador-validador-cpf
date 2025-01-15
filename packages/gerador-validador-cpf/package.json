@@ -48,6 +48,7 @@
   },
   "devDependencies": {
     "@anolilab/semantic-release-pnpm": "^1.1.6",
+    "@sebbo2002/semantic-release-jsr": "^2.0.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.2",
     "rollup": "^4.30.1",

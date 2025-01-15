@@ -1,0 +1,10 @@
+{
+  "name": "@tiagoporto/gerador-validador-cpf",
+  "version": "0.0.0",
+  "license": "MIT",
+  "exports": "./src/index.ts",
+  "publish": {
+    "include": ["LICENSE", "*.md", "src/**/*.ts"],
+    "exclude": ["src/**/*.test.ts"]
+  }
+}
