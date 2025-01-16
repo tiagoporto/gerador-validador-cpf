@@ -2,27 +2,31 @@
 
 JS lib to generate and validate CPF (Cadastro de Pessoas Físicas) of Brazil.
 
-[![Release](https://img.shields.io/npm/v/gerador-validador-cpf.svg?style=flat-square&label=release)](https://github.com/tiagoporto/gerador-validador-cpf/releases)
+[![NPM Version](https://img.shields.io/npm/v/gerador-validador-cpf?style=for-the-badge&logo=npm&label=gerador-validador-cpf)](https://www.npmjs.com/package/gerador-validador-cpf)
+[![JSR Version](https://img.shields.io/jsr/v/%40tiagoporto/gerador-validador-cpf?style=for-the-badge&logo=jsr&label=@tiagoporto/gerador-validador-cpf)](https://jsr.io/@tiagoporto/gerador-validador-cpf)
+
 ![npm type definitions](https://img.shields.io/npm/types/gerador-validador-cpf.svg?style=flat-square)
 [![npm bundle size](https://img.shields.io/bundlephobia/min/gerador-validador-cpf?style=flat-square)](https://bundlephobia.com/package/gerador-validador-cpf)
 [![Downloads](https://img.shields.io/npm/dm/gerador-validador-cpf.svg?style=flat-square)](https://www.npmjs.com/package/gerador-validador-cpf)
 
-## Docs 📚
+## 📚 Docs
 
-Read in other languages: [English](https://github.com/tiagoporto/gerador-validador-cpf/blob/main/packages/gerador-validador-cpf/README.en.md), [Español](https://github.com/tiagoporto/gerador-validador-cpf/blob/main/packages/gerador-validador-cpf/README.es.md) e [Português(Brasil)](https://github.com/tiagoporto/gerador-validador-cpf/blob/main/packages/gerador-validador-cpf/README.md)
+Read in other languages: [English](packages/gerador-validador-cpf/README.en.md), [Español](packages/gerador-validador-cpf/README.es.md) e [Português(Brasil)](packages/gerador-validador-cpf/README.md)
 
-## Status ✅
+## ✅ Status
 
-![Website](https://img.shields.io/website?logo=githubpages&style=flat-square&url=https://tiagoporto.github.io/gerador-validador-cpf)
-[![W3C Validation](https://img.shields.io/w3c-validation/html.svg?style=flat-square&targetUrl=https://tiagoporto.github.io/gerador-validador-cpf/)](https://validator.nu/?doc=https%3A%2F%2Ftiagoporto.github.io%2Fgerador-validador-cpf)
 [![Docs GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/gerador-validador-cpf/check-docs.yml?label=docs&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/gerador-validador-cpf/actions/workflows/check-docs.yml)
 [![Checks GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/gerador-validador-cpf/checks.yml?label=checks&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/gerador-validador-cpf/actions/workflows/checks.yml)
 [![Tests GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/gerador-validador-cpf/unit-tests.yml?label=unit%20tests&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/gerador-validador-cpf/actions/workflows/unit-tests.yml)
-[![Coverage Status](https://img.shields.io/coverallsCoverage/github/tiagoporto/gerador-validador-cpf.svg?logo=coveralls&style=flat-square)](https://coveralls.io/github/tiagoporto/gerador-validador-cpf)
 [![E2E Tests GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/gerador-validador-cpf/e2e-tests.yml?label=e2e%20tests&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/gerador-validador-cpf/actions/workflows/e2e-tests.yml)
+
+![Website](https://img.shields.io/website?logo=githubpages&style=flat-square&url=https://tiagoporto.github.io/gerador-validador-cpf)
+[![W3C Validation](https://img.shields.io/w3c-validation/html.svg?style=flat-square&targetUrl=https://tiagoporto.github.io/gerador-validador-cpf/)](https://validator.nu/?doc=https%3A%2F%2Ftiagoporto.github.io%2Fgerador-validador-cpf)
+
+[![Coverage Status](https://img.shields.io/coverallsCoverage/github/tiagoporto/gerador-validador-cpf.svg?logo=coveralls&style=flat-square)](https://coveralls.io/github/tiagoporto/gerador-validador-cpf)
 [![mutation score](https://img.shields.io/endpoint?style=flat-square&url=https://badge-api.stryker-mutator.io/github.com/tiagoporto/gerador-validador-cpf/main)](https://dashboard.stryker-mutator.io/reports/github.com/tiagoporto/gerador-validador-cpf/main)
 
-## Stack 🧰
+## 🧰 Stack
 
 ![node](https://img.shields.io/badge/Nodejs-%23339933.svg?style=for-the-badge&logo=node.js&logoColor=white)
 ![nvm](https://img.shields.io/badge/nvm-%23333?style=for-the-badge&logo=nvm)
@@ -65,22 +69,31 @@ Read in other languages: [English](https://github.com/tiagoporto/gerador-validad
 ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
 ![GitHub Pages](https://img.shields.io/badge/Github%20Pages-%23222222?style=for-the-badge&logo=githubpages&logoColor=white)
 
-## Playground 🎮
+## 🎮 Playground
 
 <https://tiagoporto.github.io/gerador-validador-cpf/>
 
-## Installation 📦
+## 📦 Installation
+
+Install with npm:
 
 ```bash
-npm install gerador-validador-cpf --save
+npm install gerador-validador-cpf
 ```
 
-## Usage ➡️
+Install with deno(jsr):
+
+```bash
+deno add jsr:@tiagoporto/gerador-validador-cpf
+```
+
+## ➡️ Usage
 
 ### Generate CPF
 
 ```javascript
 import { generate as generateCpf } from 'gerador-validador-cpf'
+// jsr import from "@tiagoporto/gerador-validador-cpf"
 
 const cpf = generateCpf()
 console.log(cpf) // 00000000000
@@ -93,12 +106,13 @@ console.log(formattedCpf) // 000.000.000-00
 
 ```javascript
 import { validate as validadeCpf } from 'gerador-validador-cpf'
+// jsr import from "@tiagoporto/gerador-validador-cpf"
 
 const isCpfValid = validadeCpf('12345678900')
 const isFormattedCpfValid = validadeCpf('123.456.789-00')
 ```
 
-## Development 🛠
+## 🛠 Development
 
 ### Pre-requirements
 
@@ -129,11 +143,11 @@ pnpm install
 pnpm start
 ```
 
-## Contributing 🤝
+## 🤝 Contributing
 
 [Check how to contribute](https://github.com/tiagoporto/.github/blob/main/CONTRIBUTING.md).
 
-## Donating 🤜🤛
+## 🤜🤛 Donating
 
 This project is developed on my free time, any donation is welcome.
 
@@ -141,6 +155,6 @@ This project is developed on my free time, any donation is welcome.
 [![Paypal Donate](https://img.shields.io/badge/PayPal-blue?logo=paypal)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YTDUQ8RZ2G4Q8&lc=BR&item_name=tiagoporto&item_number=geradorcpf&currency_code=BRL&bn=PP%2dDonationsBF:btn_donateCC_LG%2egif:NonHosted)
 ![Bitcoin](https://img.shields.io/badge/bitcoin-14iqQcwYPLBceRURHuFosGTDXxMmt3cLDp-yellow.svg?logo=bitcoin)
 
-## License 📄
+## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
