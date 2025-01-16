@@ -8,7 +8,7 @@ Biblioteca JS para gerar e validar CPF (Cadastro de Pessoas Físicas) do Brasil.
 
 ## Docs
 
-Leia em outros idiomas: [English](README.en.md), [Español](README.es.md) e Português(Brasil)
+Leia em outros idiomas: [English](https://github.com/tiagoporto/gerador-validador-cpf/blob/main/packages/gerador-validador-cpf/README.en.md), [Español](https://github.com/tiagoporto/gerador-validador-cpf/blob/main/packages/gerador-validador-cpf/README.es.md) e Português(Brasil)
 
 ## Playground
 
@@ -55,4 +55,4 @@ const isFormattedCpfValid = validadeCpf('123.456.789-00')
 
 ## Licença
 
-Este projeto está licenciado sob a [licença MIT](LICENSE).
+Este projeto está licenciado sob a [licença MIT](https://github.com/tiagoporto/gerador-validador-cpf/blob/main/LICENSE).
