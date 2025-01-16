@@ -42,7 +42,7 @@ export const Header = () => {
       <p>{t('header.libInfo')}</p>
 
       <CopyToClipboard
-        text="npm install gerador-validador-cpf --save"
+        text="npm install gerador-validador-cpf"
         onCopy={handleCopy}
       >
         <SyntaxHighlighter
@@ -50,7 +50,7 @@ export const Header = () => {
           style={github}
           className={styles.copy}
         >
-          npm install gerador-validador-cpf --save-dev
+          npm install gerador-validador-cpf
         </SyntaxHighlighter>
       </CopyToClipboard>
 
