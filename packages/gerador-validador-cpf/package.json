@@ -43,9 +43,6 @@
     "release": "semantic-release",
     "release:dry-run": "semantic-release --dry-run --verify-conditions false"
   },
-  "dependencies": {
-    "tslib": "^2.8.1"
-  },
   "devDependencies": {
     "@anolilab/semantic-release-pnpm": "^1.1.6",
     "@sebbo2002/semantic-release-jsr": "^2.0.3",

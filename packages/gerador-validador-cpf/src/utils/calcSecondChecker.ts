@@ -1,6 +1,7 @@
 export const calcSecondChecker = (cpfWithChecker1: string) => {
-  const sum = [...cpfWithChecker1]
-    .map(Number)
+  const sum = cpfWithChecker1
+    .split('')
+    .map((number) => Number(number))
     .reduce((previous, current, index) => previous + current * (11 - index), 0)
 
   const lastSumChecker2 = sum % 11

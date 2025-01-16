@@ -13,6 +13,5 @@ export default [
       },
     ],
     plugins: [typescript(), terser()],
-    external: ['tslib'],
   },
 ]
