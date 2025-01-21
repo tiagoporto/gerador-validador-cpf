@@ -1,5 +1,6 @@
-import { defineConfig } from 'cypress'
 import webpackPreprocessor from '@cypress/webpack-preprocessor'
+import { defineConfig } from 'cypress'
+
 // @ts-expect-error: JS module
 import webpackConfig from './webpack.config.prod.mjs'
 

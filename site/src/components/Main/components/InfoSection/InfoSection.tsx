@@ -1,6 +1,6 @@
+import { Trans, useTranslation } from 'react-i18next'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { github } from 'react-syntax-highlighter/dist/esm/styles/hljs'
-import { Trans, useTranslation } from 'react-i18next'
 
 import styles from './InfoSection.module.scss'
 

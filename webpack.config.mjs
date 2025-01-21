@@ -1,6 +1,6 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import webpack from 'webpack'
 import path from 'node:path'
+import webpack from 'webpack'
 
 import brResources from './site/public/locales/pt/translation.json' with { type: 'json' }
 

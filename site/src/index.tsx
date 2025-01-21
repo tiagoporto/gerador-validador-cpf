@@ -3,9 +3,9 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import backend from 'i18next-http-backend'
 import { createRoot } from 'react-dom/client'
 import { initReactI18next } from 'react-i18next'
-import pkg from '../../package.json'
 
 import { App } from './App'
+import pkg from '../../package.json'
 
 const loadOnProd = async () => {
   const ReactGA = await import(/* webpackChunkName: "react-ga" */ 'react-ga')
@@ -21,6 +21,8 @@ const loadOnProd = async () => {
 if (process.env.NODE_ENV === 'production') {
   loadOnProd()
 }
+
+// eslint-disable-next-line import/no-named-as-default-member
 i18next
   .use(LanguageDetector)
   .use(backend)
