@@ -7,8 +7,8 @@ import {
 
 /**
  * Validates a given CPF (Cadastro de Pessoas Físicas) number.
- * @param  {string} value  - The CPF number as a string
- * @returns {boolean}      true = valid || false = invalid
+ * @param value  - The CPF number as a string
+ * @returns      true = valid || false = invalid
  */
 export const validate = (value: string): boolean => {
   if (typeof value !== 'string') {

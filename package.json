@@ -59,7 +59,7 @@
     "@swc/jest": "^0.2.37",
     "@tiagoporto/dependabot-config": "^1.2.0",
     "@tiagoporto/editor-config": "^1.3.0",
-    "@tiagoporto/eslint-config": "^2.8.0",
+    "@tiagoporto/eslint-config": "^2.9.1",
     "@tiagoporto/prettier-config": "^1.2.0",
     "@tiagoporto/remark-config": "^1.6.0",
     "@tiagoporto/stylelint-config": "^1.1.0",
