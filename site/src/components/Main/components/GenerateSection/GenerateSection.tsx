@@ -41,6 +41,7 @@ export const GenerateSection = () => {
             aria-label={t('generate.cpfGenerated')}
             value={cpf}
             data-testid="input-generate-cpf"
+            data-chromatic="ignore"
             className={styles.input}
             type="text"
             mask={'000.000.000-00'}

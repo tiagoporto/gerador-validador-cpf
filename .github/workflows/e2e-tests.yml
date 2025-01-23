@@ -27,9 +27,56 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v4
 
-      - name: Cypress run
+      - name: Run E2E tests
         uses: cypress-io/github-action@v6
+        env:
+          ELECTRON_EXTRA_LAUNCH_ARGS: '--remote-debugging-port=9222'
         with:
           install-command: pnpm install --frozen-lockfile
           start: pnpm start
           wait-on: 'http://[::1]:8080'
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: ./cypress/downloads
+          retention-days: 30
+
+  visual_tests:
+    runs-on: ubuntu-latest
+    needs: [e2e_tests]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
+
+      - name: Download Cypress test results
+        uses: actions/download-artifact@v4
+        with:
+          name: test-results
+          path: ./cypress/downloads
+
+      - name: Run Visual tests
+        uses: chromaui/action@v1
+        env:
+          CHROMATIC_ARCHIVE_LOCATION: ./cypress/downloads
+        with:
+          cypress: true
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          skip: 'dependabot/**'
+          exitZeroOnChanges: false

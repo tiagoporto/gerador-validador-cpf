@@ -71,3 +71,4 @@ package/
 
 website/
 dist/
+/cypress/downloads/

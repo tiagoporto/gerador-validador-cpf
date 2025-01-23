@@ -1,3 +1,4 @@
+import { installPlugin } from '@chromatic-com/cypress'
 import webpackPreprocessor from '@cypress/webpack-preprocessor'
 import { defineConfig } from 'cypress'
 
@@ -6,8 +7,9 @@ import webpackConfig from './webpack.config.prod.mjs'
 
 export default defineConfig({
   e2e: {
-    setupNodeEvents(on) {
+    setupNodeEvents(on, config) {
       // implement node event listeners here
+      installPlugin(on, config)
 
       on(
         'file:preprocessor',

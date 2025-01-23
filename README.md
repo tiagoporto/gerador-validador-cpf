@@ -53,6 +53,7 @@ Read in other languages: [English](packages/gerador-validador-cpf/README.en.md),
 ![Rollup](https://img.shields.io/badge/rollup-%231B1B1F?style=for-the-badge&logo=rollup.js)
 ![Jest](https://img.shields.io/badge/jest-%23C21325?style=for-the-badge&logo=jest)
 ![Cypress](https://img.shields.io/badge/cypress-%2369D3A7?style=for-the-badge&logo=cypress&logoColor=white)
+![Chromatic](https://img.shields.io/badge/chromatic-%23FFF?style=for-the-badge&logo=chromatic)
 ![Stryker](https://img.shields.io/badge/stryker-%23E74C3C?style=for-the-badge&logo=stryker&logoColor=white)
 
 ![EditorConfig](https://img.shields.io/badge/EditorConfig-%23E0EFEF.svg?style=for-the-badge&logo=editorconfig&logoColor=black)
