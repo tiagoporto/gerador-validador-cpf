@@ -98,8 +98,8 @@ importers:
         specifier: ^2.9.1
         version: 2.9.1(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@2.4.2))(typescript@5.7.3))(eslint@9.18.0(jiti@2.4.2))(typescript@5.7.3)
       '@tiagoporto/prettier-config':
-        specifier: ^1.2.0
-        version: 1.2.0(prettier@3.4.2)
+        specifier: ^2.0.0
+        version: 2.0.0(prettier@3.4.2)
       '@tiagoporto/remark-config':
         specifier: ^1.6.0
         version: 1.6.0(prettier@3.4.2)(remark-cli@12.0.1)(remark@15.0.1)
@@ -2064,8 +2064,8 @@ packages:
     peerDependencies:
       eslint: '>= 9'
 
-  '@tiagoporto/prettier-config@1.2.0':
-    resolution: {integrity: sha512-qXNEHlppRYEmG9XtNb2lql5eGUvdE9qAi8b96TaYLTVYU917QJLO4AYlelXRIqPGTE/L8cjfK+Zl9scqrosKrQ==}
+  '@tiagoporto/prettier-config@2.0.0':
+    resolution: {integrity: sha512-Jec4b37dBL+i8SU6RWcMA4OHq2qB8V71DhaCaGwxiojsGTBPUpueAqSzsbPT3R/h/gg/4N+106GUcfktSdo78w==}
     engines: {node: '>=18'}
     peerDependencies:
       prettier: '>= 3'
@@ -11084,7 +11084,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@tiagoporto/prettier-config@1.2.0(prettier@3.4.2)':
+  '@tiagoporto/prettier-config@2.0.0(prettier@3.4.2)':
     dependencies:
       prettier: 3.4.2
 
