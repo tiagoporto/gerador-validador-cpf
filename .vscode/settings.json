@@ -4,5 +4,7 @@
   },
   "stylelint.validate": ["scss"],
   "typescript.tsdk": "./node_modules/typescript/lib",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "i18n-ally.localesPaths": ["site/public/locales"],
+  "i18n-ally.keystyle": "nested"
 }

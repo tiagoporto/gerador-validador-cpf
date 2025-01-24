@@ -5,6 +5,7 @@
     "dbaeumer.vscode-eslint",
     "EditorConfig.EditorConfig",
     "esbenp.prettier-vscode",
+    "lokalise.i18n-ally",
     "stylelint.vscode-stylelint",
     "unifiedjs.vscode-remark"
   ]
