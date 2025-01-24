@@ -5,7 +5,7 @@ import globals from 'globals'
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   {
-    ignores: ['coverage/**', '**/dist/'],
+    ignores: ['coverage/**', '**/dist/', 'cypress/downloads/'],
   },
   {
     languageOptions: { globals: { ...globals.browser, ...globals.node } },
