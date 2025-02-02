@@ -2,7 +2,7 @@
   "display": "standalone",
   "name": "Gerador e validador de CPF",
   "short_name": "Ger. CPF",
-  "start_url": "/",
+  "start_url": "/gerador-validador-cpf/",
   "theme_color": "#2798dd",
   "background_color": "#3498DB",
   "icons": [
