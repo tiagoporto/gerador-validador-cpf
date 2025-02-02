@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import CopyToClipboard from 'react-copy-to-clipboard'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { useTranslation } from 'react-i18next'
 import { toast } from 'react-toastify'
 
@@ -82,6 +82,7 @@ export const Donate = () => {
 
         <li>
           <CopyToClipboard
+            // eslint-disable-next-line no-secrets/no-secrets
             text="14iqQcwYPLBceRURHuFosGTDXxMmt3cLDp"
             onCopy={handleCopy}
           >

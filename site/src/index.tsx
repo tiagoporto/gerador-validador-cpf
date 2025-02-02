@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === 'production') {
   loadOnProd()
 }
 
-// eslint-disable-next-line import/no-named-as-default-member
+// eslint-disable-next-line import-x/no-named-as-default-member
 i18next
   .use(LanguageDetector)
   .use(backend)

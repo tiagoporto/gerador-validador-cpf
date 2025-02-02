@@ -1,4 +1,4 @@
-import CopyToClipboard from 'react-copy-to-clipboard'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 import GithubCorner from 'react-github-corner'
 import { Trans, useTranslation } from 'react-i18next'
 import SyntaxHighlighter from 'react-syntax-highlighter'

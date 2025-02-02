@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
-import { validate as validadeCPF } from 'gerador-validador-cpf'
 import { useTranslation } from 'react-i18next'
 import { IMaskInput } from 'react-imask'
+
+import { validate as validadeCPF } from 'gerador-validador-cpf'
 
 import style from './ValidateSection.module.scss'
 

@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
-import { generate as generateCPF } from 'gerador-validador-cpf'
-import CopyToClipboard from 'react-copy-to-clipboard'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { useTranslation } from 'react-i18next'
 import { IMaskInput } from 'react-imask'
 import { toast } from 'react-toastify'
+
+import { generate as generateCPF } from 'gerador-validador-cpf'
 
 import styles from './GenerateSection.module.scss'
 

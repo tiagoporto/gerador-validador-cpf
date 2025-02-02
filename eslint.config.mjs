@@ -8,8 +8,12 @@ export default [
     ignores: ['coverage/**', '**/dist/', 'cypress/downloads/'],
   },
   {
-    languageOptions: { globals: { ...globals.browser, ...globals.node } },
+    languageOptions: {
+      globals: { ...globals.browser, ...globals.node },
+      sourceType: 'module',
+      ecmaVersion: 'latest',
+    },
   },
-  ...tpConfig.configs.typeScript,
+  ...tpConfig.configs.flat,
   pluginCypress.configs.recommended,
 ]
