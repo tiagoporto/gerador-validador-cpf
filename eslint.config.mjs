@@ -14,6 +14,6 @@ export default [
       ecmaVersion: 'latest',
     },
   },
-  ...tpConfig.configs.flat,
+  ...tpConfig.configs.react,
   pluginCypress.configs.recommended,
 ]
