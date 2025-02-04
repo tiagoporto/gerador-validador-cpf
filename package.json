@@ -31,6 +31,7 @@
     "test:e2e:dev": "start-server-and-test start http-get://localhost:8080 'cypress open --e2e'"
   },
   "dependencies": {
+    "eslint-plugin-jest": "^28.11.0",
     "gerador-validador-cpf": "workspace:*",
     "i18next": "^24.2.0",
     "i18next-browser-languagedetector": "^8.0.2",

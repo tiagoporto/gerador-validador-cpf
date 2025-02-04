@@ -1,5 +1,6 @@
 import tpConfig from '@tiagoporto/eslint-config'
 import pluginCypress from 'eslint-plugin-cypress/flat'
+import pluginJest from 'eslint-plugin-jest'
 import globals from 'globals'
 
 /** @type {import('eslint').Linter.Config[]} */
@@ -16,4 +17,14 @@ export default [
   },
   ...tpConfig.configs.react,
   pluginCypress.configs.recommended,
+  {
+    files: ['**/*.test.{js,ts}'],
+    plugins: { jest: pluginJest },
+    languageOptions: {
+      globals: pluginJest.environments.globals.globals,
+    },
+    rules: {
+      ...pluginJest.configs['flat/recommended'].rules,
+    },
+  },
 ]
