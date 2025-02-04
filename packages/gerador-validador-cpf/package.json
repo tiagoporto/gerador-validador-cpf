@@ -45,9 +45,11 @@
   },
   "devDependencies": {
     "@anolilab/semantic-release-pnpm": "^1.1.6",
-    "@sebbo2002/semantic-release-jsr": "^2.0.3",
+    "@jest/globals": "^29.7.0",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.2",
+    "@sebbo2002/semantic-release-jsr": "^2.0.3",
+    "jest-mock-random": "^1.1.1",
     "rollup": "^4.30.1",
     "semantic-release": "^24.2.1",
     "typescript": "^5.7.2"
