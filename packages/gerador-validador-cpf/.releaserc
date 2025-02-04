@@ -24,7 +24,7 @@
           },
           {
             "type": "refactor",
-            "release": "patch"
+            "release": "minor"
           }
         ]
       }
