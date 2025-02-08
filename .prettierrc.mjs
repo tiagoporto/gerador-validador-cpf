@@ -1,3 +1,1 @@
-import tpConfig from '@tiagoporto/prettier-config'
-
-export default tpConfig
+export { default } from '@tiagoporto/prettier-config'

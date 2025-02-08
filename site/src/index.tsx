@@ -11,9 +11,9 @@ const loadOnProd = async () => {
   const ReactGA = await import(/* webpackChunkName: "react-ga" */ 'react-ga')
 
   ReactGA.initialize('UA-32351360-4')
-  ReactGA.pageview(window.location.pathname + window.location.search)
+  ReactGA.pageview(globalThis.location.pathname + globalThis.location.search)
   const { registerServiceWorker } = await import(
-    /* webpackChunkName: "serviceWorker" */ './serviceWorker'
+    /* webpackChunkName: "serviceWorker" */ './service-worker'
   )
   registerServiceWorker()
 }
@@ -44,6 +44,8 @@ if (rootElement) {
   console.error('Failed to find the root element')
 }
 
+/* eslint-disable unicorn/prefer-module */
 if (module.hot) {
   module.hot.accept()
 }
+/* eslint-enable unicorn/prefer-module */
