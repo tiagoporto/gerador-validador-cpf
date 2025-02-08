@@ -1,4 +1,4 @@
-import { allDigitsAreEqual } from './allDigitsAreEqual.js'
+import { allDigitsAreEqual } from './all-digits-are-equal.js'
 
 export const generateFirstDigits = () => {
   let digits = ''
