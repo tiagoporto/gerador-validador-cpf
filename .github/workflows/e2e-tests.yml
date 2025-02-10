@@ -72,7 +72,7 @@ jobs:
           path: ./cypress/downloads
 
       - name: Run Visual tests
-        uses: chromaui/action@v1
+        uses: chromaui/action@v11
         env:
           CHROMATIC_ARCHIVE_LOCATION: ./cypress/downloads
         with:
