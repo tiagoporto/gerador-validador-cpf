@@ -16,6 +16,9 @@ concurrency:
   group: unit-tests_${{ github.workflow }}_${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
   unit_tests:
     runs-on: ubuntu-latest
@@ -25,7 +28,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda
 
       - name: Setup node
         uses: actions/setup-node@v4
@@ -40,7 +43,7 @@ jobs:
         run: pnpm coverage
 
       - name: Coveralls
-        uses: coverallsapp/github-action@v2
+        uses: coverallsapp/github-action@648a8eb78e6d50909eff900e4ec85cab4524a45b
         if: github.event_name != 'workflow_call'
 
       - name: Run Mutation Tests and Publish to Dashboard
