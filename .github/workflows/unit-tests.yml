@@ -5,13 +5,12 @@ on:
   push:
     branches: [main]
   pull_request:
-    types: [
-        opened, # PR was open
-        synchronize, # PR was updated
-        reopened, # PR was closed and is now open again
-        ready_for_review, # PR was converted from draft to open
-        converted_to_draft, # PR was converted from open to draft
-      ]
+    types:
+      - opened # PR was open
+      - synchronize # PR was updated
+      - reopened # PR was closed and is now open again
+      - ready_for_review # PR was converted from draft to open
+      - converted_to_draft # PR was converted from open to draft
 
 concurrency:
   group: unit-tests_${{ github.workflow }}_${{ github.event.pull_request.number || github.ref }}
@@ -31,8 +30,8 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
+          node-version-file: .nvmrc
+          cache: pnpm
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts

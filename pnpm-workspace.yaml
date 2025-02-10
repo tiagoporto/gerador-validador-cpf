@@ -1,2 +1,2 @@
 packages:
-  - 'packages/gerador-validador-cpf'
+  - packages/gerador-validador-cpf
