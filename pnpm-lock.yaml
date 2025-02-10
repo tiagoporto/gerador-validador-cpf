@@ -92,14 +92,14 @@ importers:
         specifier: ^0.2.37
         version: 0.2.37(@swc/core@1.10.7)
       '@tiagoporto/dependabot-config':
-        specifier: ^1.5.0
-        version: 1.5.0
+        specifier: ^1.5.1
+        version: 1.5.1
       '@tiagoporto/editor-config':
         specifier: ^1.4.0
         version: 1.4.0
       '@tiagoporto/eslint-config':
-        specifier: ^4.6.0
-        version: 4.6.0(eslint@9.18.0(jiti@2.4.2))(typescript@5.7.3)
+        specifier: ^4.6.1
+        version: 4.6.1(eslint@9.18.0(jiti@2.4.2))(typescript@5.7.3)
       '@tiagoporto/prettier-config':
         specifier: ^2.0.0
         version: 2.0.0(prettier@3.4.2)
@@ -2420,16 +2420,16 @@ packages:
     resolution: {integrity: sha512-+PmQX0PiAYPMeVYe237LJAYvOMYW1j2rH5YROyS3b4CTVJum34HfRvKvAzozHAQG0TnHNdUfY9nCeUyRAs//cw==}
     engines: {node: '>=14.16'}
 
-  '@tiagoporto/dependabot-config@1.5.0':
-    resolution: {integrity: sha512-xS3tmXMqbfbCGzQSUdKBtKnqquJrKvD2WJ9XDyB3E08+QqjSfpL3zKJdrl9NhvZZeWVMwO1ZS6iKpDRCsgNqiw==}
+  '@tiagoporto/dependabot-config@1.5.1':
+    resolution: {integrity: sha512-hvx1QgPaWwN1R/tcoK0GLuEwhwl2fNf1L2c6iqZ/YDIFqmBrhH0vmrcfH3pC7ZnDS7GAAF/hV6uO2AvQfP/THg==}
     engines: {node: '>=18'}
 
   '@tiagoporto/editor-config@1.4.0':
     resolution: {integrity: sha512-j2OiGG0t4FXA+zpYRl9bZbpZErCA77PD6QBP9TEsLdrPcUoI/90W5vyrYFVY4ITMO+MCNIHYdmv13urhmUP2PQ==}
     engines: {node: '>=18'}
 
-  '@tiagoporto/eslint-config@4.6.0':
-    resolution: {integrity: sha512-7bz0ht31htgW5sllfA/sEB5j7od4Kti/u5MguwlL+RRXO3EO3SNkXrRod/1W/9f05sE999xkIyCj1ex0UtNp5Q==}
+  '@tiagoporto/eslint-config@4.6.1':
+    resolution: {integrity: sha512-l+C5Y2Af16uxHixjONaFGKuzuDo+irY+M+9O316GuN0QwF4k8RA/SuR7aJURlAR2AHLRMgnN97gCOSKxgiHA/Q==}
     engines: {node: '>=18'}
     peerDependencies:
       eslint: '>= 9.18'
@@ -12266,11 +12266,11 @@ snapshots:
     dependencies:
       defer-to-connect: 2.0.1
 
-  '@tiagoporto/dependabot-config@1.5.0': {}
+  '@tiagoporto/dependabot-config@1.5.1': {}
 
   '@tiagoporto/editor-config@1.4.0': {}
 
-  '@tiagoporto/eslint-config@4.6.0(eslint@9.18.0(jiti@2.4.2))(typescript@5.7.3)':
+  '@tiagoporto/eslint-config@4.6.1(eslint@9.18.0(jiti@2.4.2))(typescript@5.7.3)':
     dependencies:
       '@eslint-community/eslint-plugin-eslint-comments': 4.4.1(eslint@9.18.0(jiti@2.4.2))
       '@eslint/js': 9.18.0
