@@ -33,7 +33,7 @@
   "dependencies": {
     "eslint-plugin-jest": "^28.11.0",
     "gerador-validador-cpf": "workspace:*",
-    "i18next": "^24.2.0",
+    "i18next": "^24.2.2",
     "i18next-browser-languagedetector": "^8.0.2",
     "i18next-http-backend": "^3.0.1",
     "normalize.css": "^8.0.1",
