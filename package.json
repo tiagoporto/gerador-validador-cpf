@@ -31,6 +31,7 @@
     "test:e2e:dev": "start-server-and-test start http-get://localhost:8080 'cypress open --e2e'"
   },
   "dependencies": {
+    "@types/ga-gtag": "^1.2.0",
     "eslint-plugin-jest": "^28.11.0",
     "gerador-validador-cpf": "workspace:*",
     "i18next": "^24.2.2",
@@ -40,7 +41,6 @@
     "react": "^19.0.0",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^19.0.0",
-    "react-ga": "^3.3.1",
     "react-github-corner": "^2.5.0",
     "react-helmet-async": "^2.0.5",
     "react-i18next": "^15.4.0",
@@ -107,7 +107,6 @@
     "overrides": {
       "eslint-plugin-markdown>eslint": ">=9",
       "react-copy-to-clipboard>react": ">=19",
-      "react-ga>react": ">=19",
       "react-helmet-async>react": ">=19",
       "conventional-changelog-conventionalcommits": ">=8.0.0"
     }

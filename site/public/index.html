@@ -8,6 +8,20 @@
     <link rel="author" href="humans.txt" />
     <link rel="manifest" href="site.webmanifest" />
 
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=<%= process.env.GTAG_ID %>"
+    ></script>
+    <script>
+      globalThis.dataLayer = globalThis.dataLayer || []
+      function gtag() {
+        globalThis.dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', '<%= process.env.GTAG_ID %>')
+    </script>
+
     <!--  Open graphs -->
     <meta property="og:title" content="<%= title %>" data-rh="true" />
     <meta

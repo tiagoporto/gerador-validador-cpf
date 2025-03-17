@@ -44,6 +44,8 @@ jobs:
         run: pnpm install --frozen-lockfile --ignore-scripts
 
       - name: Build website
+        env:
+          GTAG_ID: ${{ vars.GTAG_ID }}
         run: pnpm build
 
       - name: Setup Pages

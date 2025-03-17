@@ -27,6 +27,13 @@ export const Header = () => {
         ariaLabel={t('header.projectPageGithub')}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => {
+          if (process.env.NODE_ENV === 'production' && globalThis.gtag) {
+            globalThis.gtag('event', 'cpf', {
+              event_label: 'Open Github Project Page',
+            })
+          }
+        }}
       />
 
       <h1 className={styles.panelTitle}>

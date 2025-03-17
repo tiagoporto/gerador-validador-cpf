@@ -8,10 +8,6 @@ import { App } from './App'
 import pkg from '../../package.json'
 
 const loadOnProd = async () => {
-  const ReactGA = await import(/* webpackChunkName: "react-ga" */ 'react-ga')
-
-  ReactGA.initialize('UA-32351360-4')
-  ReactGA.pageview(globalThis.location.pathname + globalThis.location.search)
   const { registerServiceWorker } = await import(
     /* webpackChunkName: "serviceWorker" */ './service-worker'
   )
