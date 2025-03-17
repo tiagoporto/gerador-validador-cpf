@@ -7,7 +7,6 @@ settings:
 overrides:
   eslint-plugin-markdown>eslint: '>=9'
   react-copy-to-clipboard>react: '>=19'
-  react-ga>react: '>=19'
   react-helmet-async>react: '>=19'
   conventional-changelog-conventionalcommits: '>=8.0.0'
 
@@ -15,6 +14,9 @@ importers:
 
   .:
     dependencies:
+      '@types/ga-gtag':
+        specifier: ^1.2.0
+        version: 1.2.0
       eslint-plugin-jest:
         specifier: ^28.11.0
         version: 28.11.0(@typescript-eslint/eslint-plugin@8.23.0(@typescript-eslint/parser@8.23.0(eslint@9.18.0(jiti@2.4.2))(typescript@5.7.3))(eslint@9.18.0(jiti@2.4.2))(typescript@5.7.3))(eslint@9.18.0(jiti@2.4.2))(jest@29.7.0(@types/node@22.13.1))(typescript@5.7.3)
@@ -42,9 +44,6 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
-      react-ga:
-        specifier: ^3.3.1
-        version: 3.3.1(prop-types@15.8.1)(react@19.0.0)
       react-github-corner:
         specifier: ^2.5.0
         version: 2.5.0(react@19.0.0)
@@ -2520,8 +2519,14 @@ packages:
   '@types/express@4.17.21':
     resolution: {integrity: sha512-ejlPM315qwLpaQlQDTjPdsUFSc6ZsP4AN6AlWnogPjQ7CVi7PYF3YVz+CY3jE2pwYf7E/7HlDAN0rV2GxTG0HQ==}
 
+  '@types/ga-gtag@1.2.0':
+    resolution: {integrity: sha512-F3qYBMo/I62NRhFgL/VCFy48WVUgCC9bKkiyyUi7eVAghLRDouKFQUh3jswCGu7QzyRYujjUlJ0KPa78po1g9g==}
+
   '@types/graceful-fs@4.1.9':
     resolution: {integrity: sha512-olP3sd1qOEe5dXTSaFvQG+02VdRXcdytWLAZsAq1PecU8uqQAhkrnbli7DagjtXKW/Bl7YJbUsa8MPcuc8LHEQ==}
+
+  '@types/gtag.js@0.0.20':
+    resolution: {integrity: sha512-wwAbk3SA2QeU67unN7zPxjEHmPmlXwZXZvQEpbEUQuMCRGgKyE1m6XDuTUA9b6pCGb/GqJmdfMOY5LuDjJSbbg==}
 
   '@types/hast@2.3.10':
     resolution: {integrity: sha512-McWspRw8xx8J9HurkVBfYj0xKoE25tOFlHGdx4MJ5xORQrMGZNqJhVQWaIbm6Oyla5kYOXtDiopzKRJzEOkwJw==}
@@ -7533,12 +7538,6 @@ packages:
   react-fast-compare@3.2.2:
     resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
 
-  react-ga@3.3.1:
-    resolution: {integrity: sha512-4Vc0W5EvXAXUN/wWyxvsAKDLLgtJ3oLmhYYssx+YzphJpejtOst6cbIHCIyF50Fdxuf5DDKqRYny24yJ2y7GFQ==}
-    peerDependencies:
-      prop-types: ^15.6.0
-      react: '>=19'
-
   react-github-corner@2.5.0:
     resolution: {integrity: sha512-ofds9l6n61LJc6ML+jSE6W9ZSQvATcMR9evnHPXua1oDYj289HKODnVqFUB/g2a4ieBjDHw416iHP3MjqnU76Q==}
     engines: {node: '>= 4.0.0'}
@@ -12429,9 +12428,15 @@ snapshots:
       '@types/qs': 6.9.18
       '@types/serve-static': 1.15.7
 
+  '@types/ga-gtag@1.2.0':
+    dependencies:
+      '@types/gtag.js': 0.0.20
+
   '@types/graceful-fs@4.1.9':
     dependencies:
       '@types/node': 22.13.1
+
+  '@types/gtag.js@0.0.20': {}
 
   '@types/hast@2.3.10':
     dependencies:
@@ -18283,11 +18288,6 @@ snapshots:
       scheduler: 0.25.0
 
   react-fast-compare@3.2.2: {}
-
-  react-ga@3.3.1(prop-types@15.8.1)(react@19.0.0):
-    dependencies:
-      prop-types: 15.8.1
-      react: 19.0.0
 
   react-github-corner@2.5.0(react@19.0.0):
     dependencies:

@@ -7,8 +7,11 @@ import { validate as validadeCPF } from 'gerador-validador-cpf'
 import style from './ValidateSection.module.scss'
 
 const enableAnalytics = async () => {
-  const ReactGA = await import('react-ga')
-  ReactGA.ga('send', 'event', 'Validate', 'type', 'Validate CPF')
+  if (globalThis.gtag) {
+    globalThis.gtag('event', 'cpf', {
+      event_label: 'Validate',
+    })
+  }
 }
 
 interface State {

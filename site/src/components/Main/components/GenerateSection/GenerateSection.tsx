@@ -16,20 +16,18 @@ export const GenerateSection = () => {
     toast(t('messages.cpfCopied'))
   }
 
-  const generateNewCPF = (type: string) => () => {
+  const generateNewCPF = () => {
     setCpf(generateCPF())
 
-    if (process.env.NODE_ENV === 'production') {
-      const pushData = async () => {
-        const ReactGA = await import('react-ga')
-        ReactGA.ga('send', 'event', 'Generate', type, 'Generate CPF')
-      }
-
-      pushData()
+    if (process.env.NODE_ENV === 'production' && globalThis.gtag) {
+      globalThis.gtag('event', 'cpf', {
+        event_label: 'Generate',
+      })
     }
   }
+
   useEffect(() => {
-    generateNewCPF('load')()
+    generateNewCPF()
   }, [])
 
   return (
@@ -52,7 +50,7 @@ export const GenerateSection = () => {
 
         <button
           data-testid="generate-cpf-button"
-          onClick={generateNewCPF('click')}
+          onClick={generateNewCPF}
           className={styles.generateButton}
           type="button"
         >

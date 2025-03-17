@@ -108,6 +108,7 @@ export default {
   plugins: [
     new webpack.EnvironmentPlugin({
       CI: false,
+      GTAG_ID: undefined,
     }),
     new CopyPlugin({
       patterns: [

@@ -27,4 +27,8 @@ export default [
       ...pluginJest.configs['flat/recommended'].rules,
     },
   },
+  {
+    files: ['**/*.html'],
+    rules: { 'jsdoc/require-jsdoc': 'off' },
+  },
 ]
