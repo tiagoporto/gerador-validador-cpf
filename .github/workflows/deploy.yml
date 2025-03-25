@@ -46,6 +46,7 @@ jobs:
       - name: Build website
         env:
           GTAG_ID: ${{ vars.GTAG_ID }}
+          ADSENSE: ${{ vars.ADSENSE }}
         run: pnpm build
 
       - name: Setup Pages

@@ -109,6 +109,7 @@ export default {
     new webpack.EnvironmentPlugin({
       CI: false,
       GTAG_ID: false,
+      ADSENSE: false,
     }),
     new CopyPlugin({
       patterns: [

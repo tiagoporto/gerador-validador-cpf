@@ -91,6 +91,7 @@ export default {
     new webpack.EnvironmentPlugin({
       CI: false,
       GTAG_ID: false,
+      ADSENSE: false,
     }),
     new HtmlWebpackPlugin({
       template: './site/public/index.html',
