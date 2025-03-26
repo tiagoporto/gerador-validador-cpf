@@ -1,3 +1,4 @@
+import { Adsense } from '@ctrl/react-adsense'
 import { Trans, useTranslation } from 'react-i18next'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { github } from 'react-syntax-highlighter/dist/esm/styles/hljs'
@@ -79,6 +80,10 @@ const isFormattedCpfValid = validadeCpf('123.456.789-00')`}
             </li>
           ))}
         </ol>
+
+        {typeof process.env.ADSENSE === 'string' && (
+          <Adsense client={process.env.ADSENSE} slot="3100600194" />
+        )}
       </div>
     </div>
   )

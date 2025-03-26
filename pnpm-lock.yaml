@@ -14,6 +14,9 @@ importers:
 
   .:
     dependencies:
+      '@ctrl/react-adsense':
+        specifier: ^1.8.0
+        version: 1.8.0
       '@types/ga-gtag':
         specifier: ^1.2.0
         version: 1.2.0
@@ -1237,6 +1240,9 @@ packages:
     engines: {node: '>=18'}
     peerDependencies:
       postcss: ^8.4
+
+  '@ctrl/react-adsense@1.8.0':
+    resolution: {integrity: sha512-c95s60v8WYlPgdeZV8gn80jTQdeNSCxHaZcZqNirlm24y/vceHafUcp0t8qemGV+tikKtSAl3vCDVA43jk9DAw==}
 
   '@cypress/request@3.0.7':
     resolution: {integrity: sha512-LzxlLEMbBOPYB85uXrDqvD4MgcenjRBLIns3zyhx7vTPj/0u2eQhzXvPiGcaJrV38Q9dbkExWp6cOHPJ+EtFYg==}
@@ -10846,6 +10852,10 @@ snapshots:
     dependencies:
       postcss: 8.5.1
 
+  '@ctrl/react-adsense@1.8.0':
+    dependencies:
+      tslib: 2.8.1
+
   '@cypress/request@3.0.7':
     dependencies:
       aws-sign2: 0.7.0
@@ -12860,7 +12870,7 @@ snapshots:
 
   angular-html-parser@6.0.2:
     dependencies:
-      tslib: 2.7.0
+      tslib: 2.8.1
 
   ansi-colors@4.1.3: {}
 
