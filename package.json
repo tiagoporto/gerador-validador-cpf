@@ -31,6 +31,7 @@
     "test:e2e:dev": "start-server-and-test start http-get://localhost:8080 'cypress open --e2e'"
   },
   "dependencies": {
+    "@ctrl/react-adsense": "^1.8.0",
     "@types/ga-gtag": "^1.2.0",
     "eslint-plugin-jest": "^28.11.0",
     "gerador-validador-cpf": "workspace:*",
