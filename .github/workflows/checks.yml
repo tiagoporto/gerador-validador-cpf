@@ -42,18 +42,23 @@ jobs:
         run: pnpm formatting:check
 
       - name: Typecheck
+        if: success() || failure()
         run: pnpm typecheck
 
       - name: Lint Styles
+        if: success() || failure()
         run: pnpm lint:styles
 
       - name: Lint
+        if: success() || failure()
         run: pnpm lint
 
       - name: Build Site
+        if: success() || failure()
         run: pnpm build
 
       - name: Pack Lib
+        if: success() || failure()
         # pnpm has a bug with pack script https://github.com/pnpm/pnpm/issues/4351
         run: |
           cd packages/gerador-validador-cpf
