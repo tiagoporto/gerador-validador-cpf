@@ -12,7 +12,7 @@ Leer en otros idiomas: [English](https://github.com/tiagoporto/gerador-validador
 
 ## Playground
 
-<https://tiagoporto.github.io/gerador-validador-cpf/>
+<https://tiagoporto.com/gerador-validador-cpf/>
 
 ## Instalación
 
