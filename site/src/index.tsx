@@ -5,7 +5,6 @@ import { createRoot } from 'react-dom/client'
 import { initReactI18next } from 'react-i18next'
 
 import { App } from './App'
-import pkg from '../../package.json'
 
 const loadOnProd = async () => {
   const { registerServiceWorker } = await import(
@@ -26,9 +25,7 @@ i18next
   .init({
     fallbackLng: 'pt',
     backend: {
-      loadPath: process.env.CI
-        ? `${pkg.homepage}/locales/{{lng}}/{{ns}}.json`
-        : '/locales/{{lng}}/{{ns}}.json',
+      loadPath: `${globalThis.location.href}locales/{{lng}}/{{ns}}.json`,
     },
   })
 
