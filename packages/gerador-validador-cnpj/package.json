@@ -1,0 +1,58 @@
+{
+  "name": "gerador-validador-cnpj",
+  "version": "0.0.0-development",
+  "description": "Biblioteca JS para gerar e validar CNPJ (Cadastro Nacional da Pessoa Jurídica) do Brasil.",
+  "homepage": "https://github.com/tiagoporto/gerador-validador-cpf",
+  "keywords": [
+    "cnpj",
+    "gerador",
+    "generator",
+    "generates",
+    "validador",
+    "valida",
+    "validates"
+  ],
+  "author": "Tiago Porto (https://www.tiagoporto.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiagoporto/gerador-validador-cpf.git",
+    "directory": "packages/gerador-validador-cpf"
+  },
+  "funding": "https://github.com/sponsors/tiagoporto",
+  "type": "module",
+  "main": "./src/index.ts",
+  "publishConfig": {
+    "main": "./dist/index.js",
+    "exports": {
+      ".": "./dist/index.js",
+      "./generate": "./dist/generate.js",
+      "./validate": "./dist/validate.js"
+    }
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "/dist",
+    "/README.en.md",
+    "/README.es.md"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "prepack": "pnpm build",
+    "build": "rm -rf dist && rollup --config",
+    "release": "semantic-release",
+    "release:dry-run": "semantic-release --dry-run --verify-conditions false"
+  },
+  "devDependencies": {
+    "@anolilab/semantic-release-pnpm": "^1.1.6",
+    "@jest/globals": "^29.7.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@sebbo2002/semantic-release-jsr": "^2.0.3",
+    "jest-mock-random": "^1.1.1",
+    "rollup": "^4.30.1",
+    "semantic-release": "^24.2.1",
+    "typescript": "^5.7.2"
+  }
+}

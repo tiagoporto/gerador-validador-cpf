@@ -1,0 +1,10 @@
+{
+  "name": "@tiagoporto/gerador-validador-cnpj",
+  "version": "0.0.0",
+  "license": "MIT",
+  "exports": "./src/index.ts",
+  "publish": {
+    "include": ["LICENSE", "package.json", "*.md", "src/**/*.ts"],
+    "exclude": ["src/**/*.test.ts"]
+  }
+}
