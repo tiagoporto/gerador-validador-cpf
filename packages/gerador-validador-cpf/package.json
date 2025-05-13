@@ -34,7 +34,8 @@
   },
   "files": [
     "/dist",
-    "/README.en.md"
+    "/README.en.md",
+    "/README.es.md"
   ],
   "license": "MIT",
   "scripts": {
