@@ -22,8 +22,6 @@ jobs:
       pull-requests: write # to be able to comment on released pull requests
       id-token: write # to enable use of OIDC for npm provenance
       attestations: write
-    env:
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     needs: [checks, unit_tests]
     steps:
       - name: Checkout
@@ -41,9 +39,13 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts
 
+      - name: Configure .npmrc
+        run: echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> .npmrc
+
       - name: Bump version, add tag, and publish github release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
         run: |
           cd packages/gerador-validador-cpf
