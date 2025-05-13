@@ -51,10 +51,12 @@
     "react-toastify": "^11.0.2"
   },
   "devDependencies": {
+    "@anolilab/semantic-release-pnpm": "^1.1.6",
     "@chromatic-com/cypress": "^0.9.1",
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
     "@cypress/webpack-preprocessor": "^6.0.2",
+    "@sebbo2002/semantic-release-jsr": "^2.0.3",
     "@stryker-mutator/core": "^8.7.1",
     "@stryker-mutator/jest-runner": "^8.7.1",
     "@stryker-mutator/typescript-checker": "^8.7.1",
@@ -94,6 +96,8 @@
     "remark-cli": "^12.0.1",
     "sass-embedded": "^1.83.0",
     "sass-loader": "^16.0.4",
+    "semantic-release": "^24.2.1",
+    "semantic-release-monorepo": "^8.0.2",
     "start-server-and-test": "^2.0.9",
     "style-loader": "^4.0.0",
     "stylelint": "^16.12.0",

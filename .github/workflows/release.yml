@@ -47,13 +47,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
-        run: |
-          cd packages/gerador-validador-cpf
-          pnpm release
+        run: pnpm recursive run release --filter packages*
 
       - name: Remove node_modules
-        run: rm -rf packages/gerador-validador-cpf/node_modules/
+        run: |
+          rm -rf packages/gerador-validador-cpf/node_modules/
+          rm -rf packages/gerador-validador-cnpj/node_modules/
 
       - uses: actions/attest-build-provenance@v2
         with:
-          subject-path: '${{ github.workspace }}/packages/gerador-validador-cpf'
+          subject-path: 'packages/gerador-validador-cpf, packages/gerador-validador-cnpj'
