@@ -4,11 +4,11 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=22",
+    "node": ">=23",
     "npm": "uses pnpm",
-    "pnpm": ">=9"
+    "pnpm": ">=10"
   },
-  "packageManager": "pnpm@9.15.2",
+  "packageManager": "pnpm@10.10.0",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky",
@@ -22,9 +22,9 @@
     "lint:styles": "stylelint \"**/*.scss\"",
     "lint": "eslint --max-warnings 0",
     "lint:fix": "pnpm lint --fix",
-    "coverage": "pnpm test -- --coverage",
+    "coverage": "pnpm test --coverage",
     "test": "jest",
-    "test:watch": "pnpm test -- --watch",
+    "test:watch": "pnpm test --watch",
     "test:package": "jest --config jest.config.package.mjs",
     "test:mutation": "stryker run",
     "test:e2e": "ELECTRON_EXTRA_LAUNCH_ARGS=--remote-debugging-port=9222 start-server-and-test start http-get://localhost:8080 'cypress run --e2e'",
