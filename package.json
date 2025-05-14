@@ -8,7 +8,7 @@
     "npm": "uses pnpm",
     "pnpm": ">=10"
   },
-  "packageManager": "pnpm@10.10.0",
+  "packageManager": "pnpm@10.11.0",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky",
