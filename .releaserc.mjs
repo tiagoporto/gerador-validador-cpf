@@ -31,9 +31,9 @@ export default {
         ],
       },
     ],
-    // '@semantic-release/release-notes-generator',
-    // '@sebbo2002/semantic-release-jsr',
+    '@semantic-release/release-notes-generator',
+    '@sebbo2002/semantic-release-jsr',
     '@anolilab/semantic-release-pnpm',
-    // '@semantic-release/github',
+    '@semantic-release/github',
   ],
 }
