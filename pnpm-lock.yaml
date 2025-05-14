@@ -70,8 +70,8 @@ importers:
         version: 11.0.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
       '@anolilab/semantic-release-pnpm':
-        specifier: ^1.1.6
-        version: 1.1.8(@types/node@22.13.1)
+        specifier: ^1.1.11
+        version: 1.1.11(@types/node@22.13.1)(yaml@2.7.0)
       '@chromatic-com/cypress':
         specifier: ^0.9.1
         version: 0.9.1(@swc/core@1.10.7)(@types/react@19.0.7)(esbuild@0.24.2)(prettier@3.4.2)(typescript@5.7.3)(webpack-cli@6.0.1)
@@ -286,12 +286,12 @@ packages:
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
 
-  '@anolilab/rc@1.1.5':
-    resolution: {integrity: sha512-Vay1Yt88B8lWZt5tHkyNziiJ4cVNYAmkRu2gTFdV7z6W/KfuqfY9XyLIUJJ1q4qWMjk8uoTB2K+c24+HclBn4w==}
+  '@anolilab/rc@1.1.7':
+    resolution: {integrity: sha512-+yfKiVsBByHr/t4003Wx2wQG8SWxrDk9HvIvu5OfWWHTNAhzTBc1+CKY+0/jrXaKfbYqrMXda79MgKXx2gNxRA==}
     engines: {node: '>=18.* <=23.*'}
 
-  '@anolilab/semantic-release-pnpm@1.1.8':
-    resolution: {integrity: sha512-JuSMnvAtVve7nExnhUTdNYJsyJ9VGb6omJpOvneOvZWM86+8/I5lmdBU9XD9NMBaKD10IY5SRc27O0O3mW1wRQ==}
+  '@anolilab/semantic-release-pnpm@1.1.11':
+    resolution: {integrity: sha512-OsMr/noX0izjxE4uO2OVorgBR46ZN5iLFSxeXT+MV3lWRtft+UmO6bxxLYyWhWa7Kv4crR/irnNDTQQoIdwP2g==}
     engines: {node: '>=18.* <=23.*'}
 
   '@antfu/install-pkg@1.0.0':
@@ -1542,15 +1542,23 @@ packages:
     resolution: {integrity: sha512-46yL28o2NJ9doViqOy0VDcoTzng7rAb6yPQKU7VDLqkmbCaH4JqK4yk4XqlzNWy9PVC5pG1ZUXPBQv+VqnYs2w==}
     engines: {node: '>=18'}
 
-  '@inquirer/confirm@5.1.3':
-    resolution: {integrity: sha512-fuF9laMmHoOgWapF9h9hv6opA5WvmGFHsTYGCmuFxcghIhEhb3dN0CdQR4BUMqa2H506NCj8cGX4jwMsE4t6dA==}
+  '@inquirer/confirm@5.1.10':
+    resolution: {integrity: sha512-FxbQ9giWxUWKUk2O5XZ6PduVnH2CZ/fmMKMBkH71MHJvWr7WL5AHKevhzF1L5uYWB2P548o1RzVxrNd3dpmk6g==}
     engines: {node: '>=18'}
     peerDependencies:
       '@types/node': '>=18'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
 
-  '@inquirer/core@10.1.4':
-    resolution: {integrity: sha512-5y4/PUJVnRb4bwWY67KLdebWOhOc7xj5IP2J80oWXa64mVag24rwQ1VAdnj7/eDY/odhguW0zQ1Mp1pj6fO/2w==}
+  '@inquirer/core@10.1.11':
+    resolution: {integrity: sha512-BXwI/MCqdtAhzNQlBEFE7CEflhPkl/BqvAuV/aK6lW3DClIfYVDWPP/kXuXHtBWC7/EEbNqd/1BGq2BGBBnuxw==}
     engines: {node: '>=18'}
+    peerDependencies:
+      '@types/node': '>=18'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
 
   '@inquirer/core@9.2.1':
     resolution: {integrity: sha512-F2VBt7W/mwqEU4bL0RnHNZmC/OxzNx9cOYxHqnXX3MP6ruYvZUZAW9imgN9+h/uBT/oP8Gh888J2OZSbjSeWcg==}
@@ -1562,6 +1570,10 @@ packages:
 
   '@inquirer/expand@3.0.1':
     resolution: {integrity: sha512-ToG8d6RIbnVpbdPdiN7BCxZGiHOTomOX94C2FaT5KOHupV40tKEDozp12res6cMIfRKrXLJyexAZhWVHgbALSQ==}
+    engines: {node: '>=18'}
+
+  '@inquirer/figures@1.0.11':
+    resolution: {integrity: sha512-eOg92lvrn/aRUqbxRyvpEWnrvRuTYRifixHkYVpJiygTgVSBIHDqLh0SrMQXkafvULg3ck11V7xvR+zcgvpHFw==}
     engines: {node: '>=18'}
 
   '@inquirer/figures@1.0.9':
@@ -1600,11 +1612,14 @@ packages:
     resolution: {integrity: sha512-XvJRx+2KR3YXyYtPUUy+qd9i7p+GO9Ko6VIIpWlBrpWwXDv8WLFeHTxz35CfQFUiBMLXlGHhGzys7lqit9gWag==}
     engines: {node: '>=18'}
 
-  '@inquirer/type@3.0.2':
-    resolution: {integrity: sha512-ZhQ4TvhwHZF+lGhQ2O/rsjo80XoZR5/5qhOY3t6FJuX5XBg5Be8YzYTvaUGJnc12AUGI2nr4QSUE4PhKSigx7g==}
+  '@inquirer/type@3.0.6':
+    resolution: {integrity: sha512-/mKVCtVpyBu3IDarv0G+59KC4stsD5mDsGpYh+GKs1NZT88Jh52+cuoA1AtLk2Q0r/quNl+1cSUyLRHBFeD0XA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@types/node': '>=18'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -2772,19 +2787,24 @@ packages:
   '@ungap/structured-clone@1.2.1':
     resolution: {integrity: sha512-fEzPV3hSkSMltkw152tJKNARhOupqbH96MZWyRjNaYZOMIzbrTeQDG+MTc6Mr2pgzFQzFxAfmhGDNP5QK++2ZA==}
 
-  '@visulima/fs@2.3.7':
-    resolution: {integrity: sha512-aMR0qjlfh9Le49ZAi0V/xyipqDztHrWLEpeL0YmlHrPG/H2bDExxAkaskOr5NgZzKVA/n6iF36IqlJKcp8pIWA==}
-    engines: {node: '>=18.* <=23.*'}
+  '@visulima/fs@3.1.2':
+    resolution: {integrity: sha512-LZ9GLLxVfuaFzOGb2zp4GOqyT7TcLmnEShayrb1S2n0WuA3Pfig8fx42xaHyPTZ1p4pI3ncDNTmbyg1BIYM9rw==}
+    engines: {node: '>=18.0.0 <=23.x'}
+    os: [darwin, linux, win32]
+    peerDependencies:
+      yaml: ^2.7.0
+    peerDependenciesMeta:
+      yaml:
+        optional: true
+
+  '@visulima/package@3.5.4':
+    resolution: {integrity: sha512-o1XfzHvVmHS7hJ1hUnF3OJtEyXO12KTna1fTCv4ml9tpHS5w9bMoMNpKYaHNR25tduTo0BXGGxuLH+L8Up5lRw==}
+    engines: {node: '>=18.0.0 <=23.x'}
     os: [darwin, linux, win32]
 
-  '@visulima/package@3.4.5':
-    resolution: {integrity: sha512-A1kLtKj8kUuduv6Sf/pCjuWf2DJvzTKlX4cXReZ4bdWKWBjfFKzOes1WBzynXE/WLWtecy49JMswSZyeGH14cQ==}
-    engines: {node: '>=18.* <=23.*'}
-    os: [darwin, linux, win32]
-
-  '@visulima/path@1.3.3':
-    resolution: {integrity: sha512-fZtkhILqLAJXmMAaT5ifodd6MZ7vy77o4/cAeXyhD7vbbyjQXyntNbjEb46TpnbGr/nysc1maNPOXg78DYw7Hw==}
-    engines: {node: '>=18.* <=23.*'}
+  '@visulima/path@1.3.5':
+    resolution: {integrity: sha512-9kK3QgVxuR/XkafDCANEuJjQsoKIXZxh4ejmlCm7cWgnaH9uFTzSwU/8ifMEg4cjYDcBYeRAGDq1zBrC03ZY1w==}
+    engines: {node: '>=18.0.0 <=23.x'}
     os: [darwin, linux, win32]
 
   '@webassemblyjs/ast@1.14.1':
@@ -7737,6 +7757,10 @@ packages:
     resolution: {integrity: sha512-1bpc9IyC+e+CNFRaWyn77tk4xGG4PPUyfakSmA6F6cvUDjrm58dfyJ3II+9yb10EDkHoy1LaPSmHaWLOH3m6HA==}
     engines: {node: '>=14'}
 
+  registry-auth-token@5.1.0:
+    resolution: {integrity: sha512-GdekYuwLXLxMuFTwAPg5UKGLW/UXzQrZvH/Zj791BQif5T05T0RsaLfHc9q3ZOKi7n+BoprPD9mJ0O0k4xzUlw==}
+    engines: {node: '>=14'}
+
   regjsgen@0.8.0:
     resolution: {integrity: sha512-RvwtGe3d7LvWiDQXeQw8p5asZUmfU1G/l6WbUXeHta7Y2PEIvBTwH6E2EfmYUK8pxcxEdEmaomqyp0vZZ7C+3Q==}
 
@@ -8313,6 +8337,11 @@ packages:
 
   semver@7.6.3:
     resolution: {integrity: sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A==}
+    engines: {node: '>=10'}
+    hasBin: true
+
+  semver@7.7.2:
+    resolution: {integrity: sha512-RF0Fw+rO5AMf9MAyaRXI4AV0Ulj5lMHqVxxdSgiVbixSCXoEmmX/jk0CuJw4+3SqroYO9VoUh+HcuJivvtJemA==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -8965,8 +8994,8 @@ packages:
     resolution: {integrity: sha512-q5W7tVM71e2xjHZTlgfTDoPF/SmqKG5hddq9SzR49CH2hayqRKJtQ4mtRlSxKaJlR/+9rEM+mnBHf7I2/BQcpQ==}
     engines: {node: '>=6.10'}
 
-  ts-deepmerge@7.0.2:
-    resolution: {integrity: sha512-akcpDTPuez4xzULo5NwuoKwYRtjQJ9eoNfBACiBMaXwNAx7B1PKfe5wqUFJuW5uKzQ68YjDFwPaWHDG1KnFGsA==}
+  ts-deepmerge@7.0.3:
+    resolution: {integrity: sha512-Du/ZW2RfwV/D4cmA5rXafYjBQVuvu4qGiEEla4EmEHVHgRdx68Gftx7i66jn2bzHPwSVZY36Ae6OuDn9el4ZKA==}
     engines: {node: '>=14.13.1'}
 
   tsconfig-paths@4.2.0:
@@ -9647,27 +9676,30 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.8
       '@jridgewell/trace-mapping': 0.3.25
 
-  '@anolilab/rc@1.1.5':
+  '@anolilab/rc@1.1.7(yaml@2.7.0)':
     dependencies:
-      '@visulima/fs': 2.3.7
-      '@visulima/path': 1.3.3
+      '@visulima/fs': 3.1.2(yaml@2.7.0)
+      '@visulima/path': 1.3.5
       ini: 5.0.0
-      ts-deepmerge: 7.0.2
+      ts-deepmerge: 7.0.3
+    transitivePeerDependencies:
+      - yaml
 
-  '@anolilab/semantic-release-pnpm@1.1.8(@types/node@22.13.1)':
+  '@anolilab/semantic-release-pnpm@1.1.11(@types/node@22.13.1)(yaml@2.7.0)':
     dependencies:
-      '@anolilab/rc': 1.1.5
+      '@anolilab/rc': 1.1.7(yaml@2.7.0)
       '@semantic-release/error': 4.0.0
-      '@visulima/fs': 2.3.7
-      '@visulima/package': 3.4.5(@types/node@22.13.1)
-      '@visulima/path': 1.3.3
+      '@visulima/fs': 3.1.2(yaml@2.7.0)
+      '@visulima/package': 3.5.4(@types/node@22.13.1)(yaml@2.7.0)
+      '@visulima/path': 1.3.5
       execa: 9.5.2
       ini: 5.0.0
       normalize-url: 8.0.1
-      registry-auth-token: 5.0.3
-      semver: 7.6.3
+      registry-auth-token: 5.1.0
+      semver: 7.7.2
     transitivePeerDependencies:
       - '@types/node'
+      - yaml
 
   '@antfu/install-pkg@1.0.0':
     dependencies:
@@ -11162,25 +11194,25 @@ snapshots:
       '@inquirer/core': 9.2.1
       '@inquirer/type': 2.0.0
 
-  '@inquirer/confirm@5.1.3(@types/node@22.13.1)':
+  '@inquirer/confirm@5.1.10(@types/node@22.13.1)':
     dependencies:
-      '@inquirer/core': 10.1.4(@types/node@22.13.1)
-      '@inquirer/type': 3.0.2(@types/node@22.13.1)
+      '@inquirer/core': 10.1.11(@types/node@22.13.1)
+      '@inquirer/type': 3.0.6(@types/node@22.13.1)
+    optionalDependencies:
       '@types/node': 22.13.1
 
-  '@inquirer/core@10.1.4(@types/node@22.13.1)':
+  '@inquirer/core@10.1.11(@types/node@22.13.1)':
     dependencies:
-      '@inquirer/figures': 1.0.9
-      '@inquirer/type': 3.0.2(@types/node@22.13.1)
+      '@inquirer/figures': 1.0.11
+      '@inquirer/type': 3.0.6(@types/node@22.13.1)
       ansi-escapes: 4.3.2
       cli-width: 4.1.0
       mute-stream: 2.0.0
       signal-exit: 4.1.0
-      strip-ansi: 6.0.1
       wrap-ansi: 6.2.0
       yoctocolors-cjs: 2.1.2
-    transitivePeerDependencies:
-      - '@types/node'
+    optionalDependencies:
+      '@types/node': 22.13.1
 
   '@inquirer/core@9.2.1':
     dependencies:
@@ -11208,6 +11240,8 @@ snapshots:
       '@inquirer/core': 9.2.1
       '@inquirer/type': 2.0.0
       yoctocolors-cjs: 2.1.2
+
+  '@inquirer/figures@1.0.11': {}
 
   '@inquirer/figures@1.0.9': {}
 
@@ -11265,8 +11299,8 @@ snapshots:
     dependencies:
       mute-stream: 1.0.0
 
-  '@inquirer/type@3.0.2(@types/node@22.13.1)':
-    dependencies:
+  '@inquirer/type@3.0.6(@types/node@22.13.1)':
+    optionalDependencies:
       '@types/node': 22.13.1
 
   '@isaacs/cliui@8.0.2':
@@ -12767,22 +12801,24 @@ snapshots:
 
   '@ungap/structured-clone@1.2.1': {}
 
-  '@visulima/fs@2.3.7':
+  '@visulima/fs@3.1.2(yaml@2.7.0)':
     dependencies:
-      '@visulima/path': 1.3.3
+      '@visulima/path': 1.3.5
+    optionalDependencies:
       yaml: 2.7.0
 
-  '@visulima/package@3.4.5(@types/node@22.13.1)':
+  '@visulima/package@3.5.4(@types/node@22.13.1)(yaml@2.7.0)':
     dependencies:
       '@antfu/install-pkg': 1.0.0
-      '@inquirer/confirm': 5.1.3(@types/node@22.13.1)
-      '@visulima/fs': 2.3.7
-      '@visulima/path': 1.3.3
+      '@inquirer/confirm': 5.1.10(@types/node@22.13.1)
+      '@visulima/fs': 3.1.2(yaml@2.7.0)
+      '@visulima/path': 1.3.5
       normalize-package-data: 7.0.0
     transitivePeerDependencies:
       - '@types/node'
+      - yaml
 
-  '@visulima/path@1.3.3': {}
+  '@visulima/path@1.3.5': {}
 
   '@webassemblyjs/ast@1.14.1':
     dependencies:
@@ -17410,7 +17446,7 @@ snapshots:
   normalize-package-data@7.0.0:
     dependencies:
       hosted-git-info: 8.0.2
-      semver: 7.6.3
+      semver: 7.7.2
       validate-npm-package-license: 3.0.4
 
   normalize-path@3.0.0: {}
@@ -18588,6 +18624,10 @@ snapshots:
     dependencies:
       '@pnpm/npm-conf': 2.3.1
 
+  registry-auth-token@5.1.0:
+    dependencies:
+      '@pnpm/npm-conf': 2.3.1
+
   regjsgen@0.8.0: {}
 
   regjsparser@0.10.0:
@@ -19635,6 +19675,8 @@ snapshots:
 
   semver@7.6.3: {}
 
+  semver@7.7.2: {}
+
   send@0.19.0:
     dependencies:
       debug: 2.6.9
@@ -20398,7 +20440,7 @@ snapshots:
 
   ts-dedent@2.2.0: {}
 
-  ts-deepmerge@7.0.2: {}
+  ts-deepmerge@7.0.3: {}
 
   tsconfig-paths@4.2.0:
     dependencies:

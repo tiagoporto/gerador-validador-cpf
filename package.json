@@ -51,7 +51,7 @@
     "react-toastify": "^11.0.2"
   },
   "devDependencies": {
-    "@anolilab/semantic-release-pnpm": "^1.1.6",
+    "@anolilab/semantic-release-pnpm": "^1.1.11",
     "@chromatic-com/cypress": "^0.9.1",
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
