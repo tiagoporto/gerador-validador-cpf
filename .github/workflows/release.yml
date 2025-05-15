@@ -56,4 +56,4 @@ jobs:
 
       - uses: actions/attest-build-provenance@v2
         with:
-          subject-path: 'packages/gerador-validador-cpf, packages/gerador-validador-cnpj'
+          subject-path: packages
