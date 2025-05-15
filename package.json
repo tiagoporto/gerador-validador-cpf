@@ -35,8 +35,8 @@
     "@ctrl/react-adsense": "^1.8.0",
     "@types/ga-gtag": "^1.2.0",
     "eslint-plugin-jest": "^28.11.0",
-    "gerador-validador-cpf": "workspace:*",
     "gerador-validador-cnpj": "workspace:*",
+    "gerador-validador-cpf": "workspace:*",
     "i18next": "^24.2.2",
     "i18next-browser-languagedetector": "^8.0.2",
     "i18next-http-backend": "^3.0.2",
@@ -116,6 +116,9 @@
       "react-copy-to-clipboard>react": ">=19",
       "react-helmet-async>react": ">=19",
       "conventional-changelog-conventionalcommits": ">=8.0.0"
-    }
+    },
+    "onlyBuiltDependencies": [
+      "cypress"
+    ]
   }
 }
