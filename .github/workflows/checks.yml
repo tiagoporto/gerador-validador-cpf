@@ -57,9 +57,7 @@ jobs:
         if: success() || failure()
         run: pnpm build
 
-      - name: Pack Lib
+      - name: Pack Libs
         if: success() || failure()
-        # pnpm has a bug with pack script https://github.com/pnpm/pnpm/issues/4351
         run: |
-          cd packages/gerador-validador-cpf
-          pnpm pack
+          pnpm pack --recursive
