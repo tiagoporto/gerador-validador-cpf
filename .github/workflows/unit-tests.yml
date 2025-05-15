@@ -55,8 +55,5 @@ jobs:
       - name: Run Unit Test Against Package
         # pnpm has a bug with pack script https://github.com/pnpm/pnpm/issues/4351
         run: |
-          cd packages/gerador-validador-cpf
-          pnpm pack
-          tar zxvf *.tgz
-          cd ../../
+          pnpm pack-extract
           pnpm test:package

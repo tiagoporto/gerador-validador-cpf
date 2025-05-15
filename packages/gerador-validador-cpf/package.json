@@ -39,6 +39,7 @@
   ],
   "license": "MIT",
   "scripts": {
+    "pack-extract": "pnpm pack && tar zxvf *.tgz",
     "prepack": "pnpm build",
     "build": "rm -rf dist && rollup --config",
     "release": "semantic-release",
