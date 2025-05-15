@@ -32,7 +32,7 @@ deno add jsr:@tiagoporto/gerador-validador-cpf
 
 ### Generate CPF
 
-```javascript
+```js
 import { generate as generateCpf } from 'gerador-validador-cpf'
 // jsr import from "@tiagoporto/gerador-validador-cpf"
 
@@ -45,7 +45,7 @@ console.log(formattedCpf) // 000.000.000-00
 
 ### Validate CPF
 
-```javascript
+```js
 import { validate as validadeCpf } from 'gerador-validador-cpf'
 // jsr import from "@tiagoporto/gerador-validador-cpf"
 
