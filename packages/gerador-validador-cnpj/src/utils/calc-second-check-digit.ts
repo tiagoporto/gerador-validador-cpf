@@ -1,7 +1,9 @@
-export const calcFirstChecker = (firstTwelveDigits: string) => {
-  const importanceArray = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]
+export const calcSecondCheckDigit = (
+  firstTwelveDigitsPlusFirstCheckDigit: string,
+) => {
+  const importanceArray = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]
 
-  const sum = firstTwelveDigits
+  const sum = firstTwelveDigitsPlusFirstCheckDigit
     // eslint-disable-next-line unicorn/prefer-spread
     .split('')
     .map((item, index) => {
@@ -12,7 +14,7 @@ export const calcFirstChecker = (firstTwelveDigits: string) => {
     })
     .reduce((previous, current) => previous + current, 0)
 
-  const lastSumChecker = sum % 11
+  const remainder = sum % 11
 
-  return lastSumChecker < 2 ? 0 : 11 - lastSumChecker
+  return remainder < 2 ? 0 : 11 - remainder
 }

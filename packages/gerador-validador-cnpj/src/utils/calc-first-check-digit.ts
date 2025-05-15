@@ -1,7 +1,7 @@
-export const calcSecondChecker = (cnpjWithChecker1: string) => {
-  const importanceArray = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]
+export const calcFirstCheckDigit = (firstTwelveDigits: string) => {
+  const importanceArray = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]
 
-  const sum = cnpjWithChecker1
+  const sum = firstTwelveDigits
     // eslint-disable-next-line unicorn/prefer-spread
     .split('')
     .map((item, index) => {
@@ -12,6 +12,7 @@ export const calcSecondChecker = (cnpjWithChecker1: string) => {
     })
     .reduce((previous, current) => previous + current, 0)
 
-  const lastSumChecker2 = sum % 11
-  return lastSumChecker2 < 2 ? 0 : 11 - lastSumChecker2
+  const remainder = sum % 11
+
+  return remainder < 2 ? 0 : 11 - remainder
 }

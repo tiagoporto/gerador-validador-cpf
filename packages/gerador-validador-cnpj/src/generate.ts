@@ -1,20 +1,24 @@
 import {
-  calcFirstChecker,
-  calcSecondChecker,
+  calcFirstCheckDigit,
+  calcSecondCheckDigit,
   formatCNPJ,
   generateFirstDigits,
 } from './utils/index.js'
 
 /**
- * Generates a valid CPF (Cadastro de Pessoas Físicas) number.
- * @param [params]         - Options for CPF generation.
- * @param [params.format] - If true, the generated CPF will be formatted with dots and a dash (e.g., 123.456.789-09).
- * @returns                 The generated CPF number, optionally formatted.
+ * Generates a valid CNPJ (Cadastro Nacional da Pessoa Jurídica) number.
+ * @param [params]         - Options for CNPJ generation.
+ * @param [params.format] - If true, the generated CNPJ will be formatted (e.g., 00.000.000/0000-00).
+ * @returns                 The generated CNPJ number, optionally formatted.
  */
 export const generate = (params?: { format: boolean }): string => {
   const firstNineDigits = generateFirstDigits()
-  const firstChecker = calcFirstChecker(firstNineDigits)
-  const secondChecker = calcSecondChecker(firstNineDigits + firstChecker)
-  const generatedCPF = `${firstNineDigits}${firstChecker}${secondChecker}`
-  return params?.format ? formatCNPJ(generatedCPF) : generatedCPF
+
+  const firstCheckDigit = calcFirstCheckDigit(firstNineDigits)
+  const secondCheckDigit = calcSecondCheckDigit(
+    `${firstNineDigits}${firstCheckDigit}`,
+  )
+  const generatedCNPJ = `${firstNineDigits}${firstCheckDigit}${secondCheckDigit}`
+
+  return params?.format ? formatCNPJ(generatedCNPJ) : generatedCNPJ
 }

@@ -1,7 +1,13 @@
-import { calcFirstChecker, calcSecondChecker } from './utils/index.js'
+import {
+  calcFirstCheckDigit,
+  calcSecondCheckDigit,
+  isAlphanumerichHasCNPJLength,
+} from './utils/index.js'
+import { allSameCharacters } from '../../../utils/all-same-characters.js'
+
 /**
- * Validates a given CPF (Cadastro de Pessoas Físicas) number.
- * @param value  - The CPF number as a string
+ * Validates a given CNPJ (Cadastro Nacional da Pessoa Jurídica) number.
+ * @param value  - The CNPJ number as a string
  * @returns      true = valid || false = invalid
  */
 export const validate = (value: string): boolean => {
@@ -10,12 +16,20 @@ export const validate = (value: string): boolean => {
   }
 
   const cleanCNPJ = value.toUpperCase().replaceAll(/[/\s.-]/g, '')
+  if (
+    !isAlphanumerichHasCNPJLength(cleanCNPJ) ||
+    allSameCharacters(cleanCNPJ)
+  ) {
+    return false
+  }
+
   const firstTwelveDigits = cleanCNPJ.slice(0, 12)
-  const checker = cleanCNPJ.slice(12, 14)
-  // if (!hasCPFLength(cleanCNPJ) || allDigitsAreEqual(cleanCNPJ)) {
-  //   return false
-  // }
-  const checker1 = calcFirstChecker(firstTwelveDigits)
-  const checker2 = calcSecondChecker(`${firstTwelveDigits}${checker1}`)
-  return checker === `${checker1}${checker2}`
+  const checkDigits = cleanCNPJ.slice(12, 14)
+
+  const firstCheckDigit = calcFirstCheckDigit(firstTwelveDigits)
+  const secondCheckDigit = calcSecondCheckDigit(
+    `${firstTwelveDigits}${firstCheckDigit}`,
+  )
+
+  return checkDigits === `${firstCheckDigit}${secondCheckDigit}`
 }

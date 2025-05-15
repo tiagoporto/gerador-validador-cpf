@@ -1,3 +1,5 @@
-export const isAlphanumerichAsCNPJLength = (cpf: string) => {
-  return cpf.length === 11
+export const isAlphanumerichHasCNPJLength = (cnpj: string) => {
+  const regex = /^[0-9A-Z]+$/
+
+  return cnpj.length === 14 && regex.test(cnpj)
 }

@@ -1,4 +1,5 @@
-export * from './calc-first-checker.js'
-export * from './calc-second-checker.js'
+export * from './calc-first-check-digit.js'
+export * from './calc-second-check-digit.js'
 export * from './format-cnpj.js'
 export * from './generate-first-digits.js'
+export * from './is-alphanumeric-has-cnpj-length.js'
