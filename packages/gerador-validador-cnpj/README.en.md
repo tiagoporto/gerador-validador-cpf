@@ -4,7 +4,16 @@
 [![Coverage Status](https://img.shields.io/coverallsCoverage/github/tiagoporto/gerador-validador-cpf.svg?logo=coveralls&style=flat-square)](https://coveralls.io/github/tiagoporto/gerador-validador-cpf)
 [![Mutation Score](https://img.shields.io/endpoint?style=flat-square&url=https://badge-api.stryker-mutator.io/github.com/tiagoporto/gerador-validador-cpf/main)](https://dashboard.stryker-mutator.io/reports/github.com/tiagoporto/gerador-validador-cpf/main)
 
-JS lib to generate and validate CNPJ (Cadastro Nacional da Pessoa Jurídica) of Brazil.
+JS lib to generate and validate Alphanumeric CNPJ of Brazil.
+
+> [New alphanumeric CNPJ](https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/programas-e-atividades/cnpj-alfanumerico)
+>
+> The Brazilian Federal Revenue has modified the CNPJ algorithm to include
+> alphanumeric characters due to the imminent the possibility of the current
+> numbers running out.
+> The change takes effect from July 2026.
+>
+> **Current numbers remain valid.**.
 
 ## Docs
 
@@ -32,7 +41,7 @@ deno add jsr:@tiagoporto/gerador-validador-cnpj
 
 ### Generate CNPJ
 
-```javascript
+```js
 import { generate as generateCNPJ } from 'gerador-validador-cnpj'
 // jsr import from "@tiagoporto/gerador-validador-cnpj"
 
@@ -41,16 +50,22 @@ console.log(cnpj) // 00000000000000
 
 const formattedCNPJ = generateCNPJ({ format: true })
 console.log(formattedCNPJ) // 00.000.000/0000-00
+
+// alphanumeric default is false
+const alphanumericCNPJ = generateCNPJ({ alphanumeric: true })
+console.log(alphanumericCNPJ) // W3.U42.DFI/PRD7-00
 ```
 
 ### Validate CNPJ
 
-```javascript
+```js
 import { validate as validadeCNPJ } from 'gerador-validador-cnpj'
 // jsr import from "@tiagoporto/gerador-validador-cnpj"
 
 const isCNPJValid = validadeCNPJ('01234567890000')
+const isCNPJAlphanumericValid = validadeCNPJ('9ZW2JIM2OWTG85')
 const isFormattedCNPJValid = validadeCNPJ('01.234.567/8900-00')
+const isFormattedCNPJAlphanumericValid = validadeCNPJ('8I.S4O.LPO/PRD7-81')
 ```
 
 ## License

@@ -1,10 +1,12 @@
 {
   "name": "gerador-validador-cnpj",
   "version": "0.0.0-development",
-  "description": "Biblioteca JS para gerar e validar CNPJ (Cadastro Nacional da Pessoa Jurídica) do Brasil.",
+  "description": "Biblioteca JS para gerar e validar CNPJ Alfanumérico (Cadastro Nacional da Pessoa Jurídica) do Brasil.",
   "homepage": "https://github.com/tiagoporto/gerador-validador-cpf",
   "keywords": [
     "cnpj",
+    "alfanumérico",
+    "alphanumeric",
     "gerador",
     "generator",
     "generates",

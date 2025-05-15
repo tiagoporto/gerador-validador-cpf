@@ -2,17 +2,24 @@ import {
   calcFirstCheckDigit,
   calcSecondCheckDigit,
   formatCNPJ,
-  generateFirstDigits,
+  generateCharacters,
 } from './utils/index.js'
 
 /**
  * Generates a valid CNPJ (Cadastro Nacional da Pessoa Jurídica) number.
  * @param [params]         - Options for CNPJ generation.
  * @param [params.format] - If true, the generated CNPJ will be formatted (e.g., 00.000.000/0000-00).
+ * @param [params.alphanumeric] - If true, will generated an alphanumeric CNPJ.
  * @returns                 The generated CNPJ number, optionally formatted.
  */
-export const generate = (params?: { format: boolean }): string => {
-  const firstNineDigits = generateFirstDigits()
+export const generate = ({
+  format,
+  alphanumeric = false,
+}: {
+  format?: boolean
+  alphanumeric?: boolean
+} = {}): string => {
+  const firstNineDigits = generateCharacters(alphanumeric)
 
   const firstCheckDigit = calcFirstCheckDigit(firstNineDigits)
   const secondCheckDigit = calcSecondCheckDigit(
@@ -20,5 +27,5 @@ export const generate = (params?: { format: boolean }): string => {
   )
   const generatedCNPJ = `${firstNineDigits}${firstCheckDigit}${secondCheckDigit}`
 
-  return params?.format ? formatCNPJ(generatedCNPJ) : generatedCNPJ
+  return format ? formatCNPJ(generatedCNPJ) : generatedCNPJ
 }
