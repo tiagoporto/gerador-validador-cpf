@@ -49,6 +49,6 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.2",
     "jest-mock-random": "^1.1.1",
-    "rollup": "^4.30.1"
+    "rollup": "^4.40.2"
   }
 }
