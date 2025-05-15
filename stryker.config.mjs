@@ -1,10 +1,7 @@
 // @ts-check
 /** @type {import('@stryker-mutator/api/core').PartialStrykerOptions} */
 export default {
-  mutate: [
-    'packages/gerador-validador-cpf/src/**/*.ts',
-    '!packages/gerador-validador-cpf/src/**/*.test.ts',
-  ],
+  mutate: ['packages/**/src/**/*.ts', '!packages/**/src/**/*.test.ts'],
   reporters: process.env.CI ? ['dashboard'] : ['html'],
   packageManager: 'pnpm',
   coverageAnalysis: 'perTest',
