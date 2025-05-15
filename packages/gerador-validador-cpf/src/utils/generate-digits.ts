@@ -1,6 +1,6 @@
 import { allSameCharacters } from './all-same-characters.js'
 
-export const generateFirstDigits = () => {
+export const generateDigits = () => {
   let digits = ''
 
   do {

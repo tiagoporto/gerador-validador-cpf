@@ -2,7 +2,7 @@ import {
   calcFirstCheckDigit,
   calcSecondCheckDigit,
   formatCPF,
-  generateFirstDigits,
+  generateDigits,
 } from './utils/index.js'
 
 /**
@@ -12,7 +12,7 @@ import {
  * @returns                 The generated CPF number, optionally formatted.
  */
 export const generate = (params?: { format: boolean }): string => {
-  const firstNineDigits = generateFirstDigits()
+  const firstNineDigits = generateDigits()
 
   const firstCheckDigit = calcFirstCheckDigit(firstNineDigits)
   const secondCheckDigit = calcSecondCheckDigit(
