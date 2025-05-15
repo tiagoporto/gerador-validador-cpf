@@ -3,7 +3,7 @@ export default {
   roots: ['<rootDir>'],
   testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)test.[jt]s?(x)'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  collectCoverageFrom: ['packages/gerador-validador-cpf/**/*.{ts,tsx,js,jsx}'],
+  collectCoverageFrom: ['packages/**/*.{ts,tsx,js,jsx}'],
   coverageThreshold: {
     global: {
       statements: 80,
