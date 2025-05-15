@@ -3,7 +3,7 @@ import { mockRandom } from 'jest-mock-random'
 
 import { generate } from './index.js'
 
-describe('generate', () => {
+describe('generate cpf', () => {
   it.each([
     {
       mock: [0.1, 0, 0.9, 0.9, 0, 0.3, 0, 0.8, 0],
@@ -35,7 +35,7 @@ describe('generate', () => {
       expected: '69040723001',
     },
   ])(
-    'should generate a valid non formated CPF $expected',
+    'should generate a valid non formatted CPF $expected',
     ({ mock, expected }) => {
       mockRandom(mock)
       const cpf = generate({ format: false })
@@ -54,7 +54,7 @@ describe('generate', () => {
       mock: [0.7, 0.8, 0.6, 0, 0.6, 0.3, 0.7, 0.7, 0],
       expected: '786.063.770-74',
     },
-  ])('should generate a formated CPF $expected', ({ mock, expected }) => {
+  ])('should generate a formatted CPF $expected', ({ mock, expected }) => {
     mockRandom(mock)
     const cpf = generate({ format: true })
 

@@ -2,7 +2,7 @@ import { describe, expect, it } from '@jest/globals'
 
 import { validate } from './index.js'
 
-describe('validate', () => {
+describe('validate cpf', () => {
   describe('passing string', () => {
     it('should return true to a valid CPF', () => {
       expect(validate('13768663663')).toBeTruthy()
@@ -16,39 +16,41 @@ describe('validate', () => {
       expect(validate('03539780351')).toBeTruthy()
     })
 
-    it('should return false is 11 repeat digits', () => {
-      expect(validate('00000000000')).toBeFalsy()
-      expect(validate('11111111111')).toBeFalsy()
-      expect(validate('22222222222')).toBeFalsy()
-      expect(validate('33333333333')).toBeFalsy()
-      expect(validate('44444444444')).toBeFalsy()
-      expect(validate('55555555555')).toBeFalsy()
-      expect(validate('66666666666')).toBeFalsy()
-      expect(validate('77777777777')).toBeFalsy()
-      expect(validate('88888888888')).toBeFalsy()
-      expect(validate('99999999999')).toBeFalsy()
+    it.each([
+      '00000000000001',
+      '11111111111111',
+      '22222222222222',
+      '33333333333333',
+      '44444444444444',
+      '55555555555555',
+      '66666666666666',
+      '77777777777777',
+      '88888888888888',
+      '99999999999999',
+    ])('should return false if characters repeated equal %i', (value) => {
+      expect(validate(value)).toBeFalsy()
     })
 
     it('should return false to a non valid CPF', () => {
       expect(validate('123456789012')).toBeFalsy()
     })
 
-    it('should return true to a valid formated CPF', () => {
+    it('should return true to a valid formatted CPF', () => {
       expect(validate('137.686.636-63')).toBeTruthy()
       expect(validate('831.173.830-00')).toBeTruthy()
     })
 
-    it('should return false to a non valid formated CPF', () => {
+    it('should return false to a non valid formatted CPF', () => {
       expect(validate('064.875.987-10')).toBeFalsy()
       expect(validate('364.848.987-89')).toBeFalsy()
     })
 
-    it('should return true to a valid non formated CPF', () => {
+    it('should return true to a valid non formatted CPF', () => {
       expect(validate('13768663663')).toBeTruthy()
       expect(validate('83117383000')).toBeTruthy()
     })
 
-    it('should return false to a non valid non formated CPF', () => {
+    it('should return false to a non valid non formatted CPF', () => {
       expect(validate('06487598710')).toBeFalsy()
       expect(validate('36484898789')).toBeFalsy()
     })
@@ -61,7 +63,7 @@ describe('validate', () => {
       expect(validate('137686636631')).toBeFalsy()
     })
 
-    it('should return false to letters and special caracters', () => {
+    it('should return false to letters and special characters', () => {
       expect(validate('abc.def.ghi-jk')).toBeFalsy()
       expect(validate('a064.875.987-10')).toBeFalsy()
       expect(validate('03r5.397.803-51')).toBeFalsy()
@@ -112,6 +114,11 @@ describe('validate', () => {
   describe('passing no values', () => {
     it('should return false to an empty string', () => {
       expect(validate('')).toBeFalsy()
+    })
+
+    it('should return false to a number', () => {
+      // @ts-expect-error: Accepts string
+      expect(validate(23_497_685_000)).toBeFalsy()
     })
 
     it('should return false to true', () => {
