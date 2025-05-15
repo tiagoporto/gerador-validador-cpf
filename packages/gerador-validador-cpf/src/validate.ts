@@ -1,9 +1,9 @@
 import {
+  allSameCharacters,
   calcFirstCheckDigit,
   calcSecondCheckDigit,
   hasCPFLength,
 } from './utils/index.js'
-import { allSameCharacters } from '../../../utils/all-same-characters.js'
 
 /**
  * Validates a given CPF (Cadastro de Pessoas Físicas) number.

@@ -1,4 +1,4 @@
-import { allSameCharacters } from '../../../../utils/all-same-characters.js'
+import { allSameCharacters } from './all-same-characters.js'
 
 export const generateFirstDigits = () => {
   let digits = ''

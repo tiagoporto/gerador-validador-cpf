@@ -1,3 +1,4 @@
+export * from './all-same-characters.js'
 export * from './calc-first-check-digit.js'
 export * from './calc-second-check-digit.js'
 export * from './format-cpf.js'

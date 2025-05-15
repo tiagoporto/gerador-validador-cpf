@@ -1,9 +1,9 @@
 import {
+  allSameCharacters,
   calcFirstCheckDigit,
   calcSecondCheckDigit,
   isAlphanumerichHasCNPJLength,
 } from './utils/index.js'
-import { allSameCharacters } from '../../../utils/all-same-characters.js'
 
 /**
  * Validates a given CNPJ (Cadastro Nacional da Pessoa Jurídica) number.
