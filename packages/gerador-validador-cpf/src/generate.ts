@@ -1,6 +1,6 @@
 import {
-  calcFirstChecker,
-  calcSecondChecker,
+  calcFirstCheckDigit,
+  calcSecondCheckDigit,
   formatCPF,
   generateFirstDigits,
 } from './utils/index.js'
@@ -14,9 +14,11 @@ import {
 export const generate = (params?: { format: boolean }): string => {
   const firstNineDigits = generateFirstDigits()
 
-  const firstChecker = calcFirstChecker(firstNineDigits)
-  const secondChecker = calcSecondChecker(firstNineDigits + firstChecker)
-  const generatedCPF = `${firstNineDigits}${firstChecker}${secondChecker}`
+  const firstCheckDigit = calcFirstCheckDigit(firstNineDigits)
+  const secondCheckDigit = calcSecondCheckDigit(
+    `${firstNineDigits}${firstCheckDigit}`,
+  )
+  const generatedCPF = `${firstNineDigits}${firstCheckDigit}${secondCheckDigit}`
 
   return params?.format ? formatCPF(generatedCPF) : generatedCPF
 }

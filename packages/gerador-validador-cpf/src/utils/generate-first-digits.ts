@@ -1,4 +1,4 @@
-import { allDigitsAreEqual } from './all-digits-are-equal.js'
+import { allSameCharacters } from '../../../../utils/all-same-characters.js'
 
 export const generateFirstDigits = () => {
   let digits = ''
@@ -11,7 +11,7 @@ export const generateFirstDigits = () => {
     for (let i = 0; i < 9; ++i) {
       digits += String(Math.floor(Math.random() * 10))
     }
-  } while (allDigitsAreEqual(digits))
+  } while (allSameCharacters(digits))
 
   return digits
 }

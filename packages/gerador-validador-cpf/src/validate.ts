@@ -1,9 +1,9 @@
 import {
-  allDigitsAreEqual,
-  calcFirstChecker,
-  calcSecondChecker,
+  calcFirstCheckDigit,
+  calcSecondCheckDigit,
   hasCPFLength,
 } from './utils/index.js'
+import { allSameCharacters } from '../../../utils/all-same-characters.js'
 
 /**
  * Validates a given CPF (Cadastro de Pessoas Físicas) number.
@@ -16,15 +16,17 @@ export const validate = (value: string): boolean => {
   }
 
   const cleanCPF = String(value).replaceAll(/[\s.-]/g, '')
-  const firstNineDigits = cleanCPF.slice(0, 9)
-  const checker = cleanCPF.slice(9, 11)
 
-  if (!hasCPFLength(cleanCPF) || allDigitsAreEqual(cleanCPF)) {
+  if (!hasCPFLength(cleanCPF) || allSameCharacters(cleanCPF)) {
     return false
   }
 
-  const checker1 = calcFirstChecker(firstNineDigits)
-  const checker2 = calcSecondChecker(`${firstNineDigits}${checker1}`)
+  const firstNineDigits = cleanCPF.slice(0, 9)
+  const checkDigits = cleanCPF.slice(9, 11)
+  const firstCheckDigit = calcFirstCheckDigit(firstNineDigits)
+  const secondCheckDigit = calcSecondCheckDigit(
+    `${firstNineDigits}${firstCheckDigit}`,
+  )
 
-  return checker === `${checker1}${checker2}`
+  return checkDigits === `${firstCheckDigit}${secondCheckDigit}`
 }
