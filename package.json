@@ -57,7 +57,7 @@
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
     "@cypress/webpack-preprocessor": "^6.0.2",
-    "@sebbo2002/semantic-release-jsr": "^2.0.3",
+    "@sebbo2002/semantic-release-jsr": "^3.0.0",
     "@stryker-mutator/core": "^8.7.1",
     "@stryker-mutator/jest-runner": "^8.7.1",
     "@stryker-mutator/typescript-checker": "^8.7.1",
