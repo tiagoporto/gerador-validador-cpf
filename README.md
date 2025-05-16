@@ -1,17 +1,11 @@
-# Gerador e Validador de CPF ![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg)
+# Gerador e Validador de CPF e CNPJ ![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg)
 
-JS lib to generate and validate CPF (Cadastro de Pessoas Físicas) of Brazil.
+JS lib to generate and validate CPF (Cadastro de Pessoas Físicas) and
+Alphanumeric CNPJ (Cadastro Nacional de Pessoas Jurídicas) of Brazil.
 
-[![NPM Version](https://img.shields.io/npm/v/gerador-validador-cpf?style=for-the-badge&logo=npm&label=gerador-validador-cpf)](https://www.npmjs.com/package/gerador-validador-cpf)
-[![JSR Version](https://img.shields.io/jsr/v/%40tiagoporto/gerador-validador-cpf?style=for-the-badge&logo=jsr&label=@tiagoporto/gerador-validador-cpf)](https://jsr.io/@tiagoporto/gerador-validador-cpf)
+## 🎮 Playground
 
-![npm type definitions](https://img.shields.io/npm/types/gerador-validador-cpf.svg?style=flat-square)
-[![npm bundle size](https://img.shields.io/bundlephobia/min/gerador-validador-cpf?style=flat-square)](https://bundlephobia.com/package/gerador-validador-cpf)
-[![Downloads](https://img.shields.io/npm/dm/gerador-validador-cpf.svg?style=flat-square)](https://www.npmjs.com/package/gerador-validador-cpf)
-
-## 📚 Docs
-
-Read in other languages: [English](packages/gerador-validador-cpf/README.en.md), [Español](packages/gerador-validador-cpf/README.es.md) e [Português(Brasil)](packages/gerador-validador-cpf/README.md)
+<https://tiagoporto.com/gerador-validador-cpf/>
 
 ## ✅ Status
 
@@ -70,48 +64,35 @@ Read in other languages: [English](packages/gerador-validador-cpf/README.en.md),
 ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
 ![GitHub Pages](https://img.shields.io/badge/Github%20Pages-%23222222?style=for-the-badge&logo=githubpages&logoColor=white)
 
-## 🎮 Playground
+## 📦 Packages
 
-<https://tiagoporto.com/gerador-validador-cpf/>
+### gerador-validador-cpf
 
-## 📦 Installation
+[![version](https://img.shields.io/npm/v/gerador-validador-cpf?style=flat-square&label=)](https://www.npmjs.com/package/gerador-validador-cpf)
+![npm type definitions](https://img.shields.io/npm/types/gerador-validador-cpf.svg?style=flat-square)
+[![npm bundle size](https://img.shields.io/bundlephobia/min/gerador-validador-cpf?style=flat-square)](https://bundlephobia.com/package/gerador-validador-cpf)
+[![Downloads](https://img.shields.io/npm/dm/gerador-validador-cpf.svg?style=flat-square)](https://www.npmjs.com/package/gerador-validador-cpf)
 
-Install with npm:
+[![NPM](https://img.shields.io/badge/npm-555?style=flat-square&logo=npm&labelColor=red)](https://www.npmjs.com/package/gerador-validador-cpf)
+[![jsr](https://img.shields.io/badge/jsr-555?style=flat-square&logo=jsr&labelColor=F7DF1E&logoColor=093344)](https://jsr.io/@tiagoporto/gerador-validador-cpf)
 
-```bash
-npm install gerador-validador-cpf
-```
+#### Docs
 
-Install with deno(jsr):
+[English](packages/gerador-validador-cpf/README.en.md), [Español](packages/gerador-validador-cpf/README.es.md) e [Português(Brasil)](packages/gerador-validador-cpf/README.md)
 
-```bash
-deno add jsr:@tiagoporto/gerador-validador-cpf
-```
+### gerador-validador-cnpj
 
-## ➡️ Usage
+[![version](https://img.shields.io/npm/v/gerador-validador-cnpj?style=flat-square&label=)](https://www.npmjs.com/package/gerador-validador-cnpj)
+![npm type definitions](https://img.shields.io/npm/types/gerador-validador-cnpj.svg?style=flat-square)
+[![npm bundle size](https://img.shields.io/bundlephobia/min/gerador-validador-cnpj?style=flat-square)](https://bundlephobia.com/package/gerador-validador-cnpj)
+[![Downloads](https://img.shields.io/npm/dm/gerador-validador-cnpj.svg?style=flat-square)](https://www.npmjs.com/package/gerador-validador-cnpj)
 
-### Generate CPF
+[![NPM](https://img.shields.io/badge/npm-555?style=flat-square&logo=npm&labelColor=red)](https://www.npmjs.com/package/gerador-validador-cnpj)
+[![jsr](https://img.shields.io/badge/jsr-555?style=flat-square&logo=jsr&labelColor=F7DF1E&logoColor=093344)](https://jsr.io/@tiagoporto/gerador-validador-cnpj)
 
-```javascript
-import { generate as generateCpf } from 'gerador-validador-cpf'
-// jsr import from "@tiagoporto/gerador-validador-cpf"
+#### Docs
 
-const cpf = generateCpf()
-console.log(cpf) // 00000000000
-
-const formattedCpf = generateCpf({ format: true })
-console.log(formattedCpf) // 000.000.000-00
-```
-
-### Validate CPF
-
-```javascript
-import { validate as validadeCpf } from 'gerador-validador-cpf'
-// jsr import from "@tiagoporto/gerador-validador-cpf"
-
-const isCpfValid = validadeCpf('12345678900')
-const isFormattedCpfValid = validadeCpf('123.456.789-00')
-```
+[English](packages/gerador-validador-cnpj/README.en.md), [Español](packages/gerador-validador-cnpj/README.es.md) e [Português(Brasil)](packages/gerador-validador-cnpj/README.md)
 
 ## 🛠 Development
 
