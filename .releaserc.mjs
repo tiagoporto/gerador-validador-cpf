@@ -1,6 +1,5 @@
 const config = {
   extends: 'semantic-release-monorepo',
-  tagFormat: `${process.env.npm_package_name}@\${version}`,
   branches: [
     'main',
     {
