@@ -1,4 +1,4 @@
-export default {
+const config = {
   extends: 'semantic-release-monorepo',
   tagFormat: `${process.env.npm_package_name}@\${version}`,
   branches: [
@@ -31,9 +31,20 @@ export default {
         ],
       },
     ],
-    '@semantic-release/release-notes-generator',
-    '@sebbo2002/semantic-release-jsr',
-    '@anolilab/semantic-release-pnpm',
-    '@semantic-release/github',
   ],
 }
+
+if (process.env.BRANCH === 'main') {
+  config.plugins.push('@semantic-release/release-notes-generator')
+}
+
+config.plugins.push(
+  '@sebbo2002/semantic-release-jsr',
+  '@anolilab/semantic-release-pnpm',
+)
+
+if (process.env.BRANCH === 'main') {
+  config.plugins.push('@semantic-release/github')
+}
+
+export default config
