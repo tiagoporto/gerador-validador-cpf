@@ -103,11 +103,11 @@ importers:
         specifier: ^0.2.37
         version: 0.2.38(@swc/core@1.11.24)
       '@tiagoporto/dependabot-config':
-        specifier: ^1.5.1
-        version: 1.5.2
+        specifier: ^2.0.0
+        version: 2.0.0
       '@tiagoporto/editor-config':
-        specifier: ^1.4.0
-        version: 1.4.0
+        specifier: ^2.0.0
+        version: 2.0.0
       '@tiagoporto/eslint-config':
         specifier: ^4.6.1
         version: 4.7.0(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3)
@@ -2486,13 +2486,15 @@ packages:
     resolution: {integrity: sha512-+PmQX0PiAYPMeVYe237LJAYvOMYW1j2rH5YROyS3b4CTVJum34HfRvKvAzozHAQG0TnHNdUfY9nCeUyRAs//cw==}
     engines: {node: '>=14.16'}
 
-  '@tiagoporto/dependabot-config@1.5.2':
-    resolution: {integrity: sha512-NKeEipW+rugEl0libVnR/yQuZonGq7q/O3BFo+mP/ZXuERUSNLVuKbYVyEpxmjYYrSNT6WuKBAtQuO7QmCoqyQ==}
-    engines: {node: '>=18'}
+  '@tiagoporto/dependabot-config@2.0.0':
+    resolution: {integrity: sha512-L5Vf+xZJZ9o8K0zpDHN33RXFJ9t52x241pRQLMsAawr1uF8bBqp4Jou1560/zbqQQzQ2RZHmHrSAUbp5ZOacaA==}
+    engines: {node: '>=22'}
+    hasBin: true
 
-  '@tiagoporto/editor-config@1.4.0':
-    resolution: {integrity: sha512-j2OiGG0t4FXA+zpYRl9bZbpZErCA77PD6QBP9TEsLdrPcUoI/90W5vyrYFVY4ITMO+MCNIHYdmv13urhmUP2PQ==}
-    engines: {node: '>=18'}
+  '@tiagoporto/editor-config@2.0.0':
+    resolution: {integrity: sha512-IM3hCMve5k9DMGO/mnZMKrgO6e2R7zad6Knoh1dVFaRColo96/Nt/RaOHKhBR0VNMV5wuBel04v+fEVBwuYVgA==}
+    engines: {node: '>=22'}
+    hasBin: true
 
   '@tiagoporto/eslint-config@4.7.0':
     resolution: {integrity: sha512-jeabqf7mP3/tG2Jx+dVVACBWKrTIQlckXKneGsEwMr2qAhJ8WmNUzOX/1D3L4Iv2FhhZadDI6W9Iq75Y9yvNag==}
@@ -12696,9 +12698,9 @@ snapshots:
     dependencies:
       defer-to-connect: 2.0.1
 
-  '@tiagoporto/dependabot-config@1.5.2': {}
+  '@tiagoporto/dependabot-config@2.0.0': {}
 
-  '@tiagoporto/editor-config@1.4.0': {}
+  '@tiagoporto/editor-config@2.0.0': {}
 
   '@tiagoporto/eslint-config@4.7.0(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3)':
     dependencies:
