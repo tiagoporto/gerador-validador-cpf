@@ -21,7 +21,7 @@ const config = {
         releaseRules: [
           {
             type: 'docs',
-            release: 'patch',
+            release: 'minor',
           },
           {
             type: 'refactor',
