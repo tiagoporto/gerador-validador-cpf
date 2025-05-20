@@ -28,9 +28,7 @@ export default {
   target: 'browserslist',
   devtool: 'source-map',
   bail: true,
-  entry: {
-    index: ['./site/src/index.tsx'],
-  },
+  entry: './site/src/index.tsx',
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
     extensionAlias: {
@@ -38,7 +36,7 @@ export default {
     },
   },
   output: {
-    publicPath: process.env.CI ? `${pkg.homepage}/` : '/',
+    publicPath: process.env.CI === 'true' ? `${pkg.homepage}` : '/',
     filename: '[name].[contenthash].js',
     chunkFilename: '[name].[id].[contenthash].js',
   },
@@ -125,7 +123,29 @@ export default {
       filename: '[name].[contenthash].css',
     }),
     new HtmlWebpackPlugin({
-      template: './site/public/index.html',
+      base: process.env.CI === 'true' && `${pkg.homepage}`,
+      template: 'site/public/index.html',
+      templateParameters: {
+        name: brResources.app.name,
+        title: brResources.app.title,
+        description: brResources.app.description,
+        lang: 'pt',
+      },
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'cpf/index.html',
+      base: process.env.CI === 'true' && `${pkg.homepage}`,
+      template: 'site/public/index.html',
+      templateParameters: {
+        name: brResources.app.name,
+        title: brResources.app.title,
+        description: brResources.app.description,
+        lang: 'pt',
+      },
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'cnpj/index.html',
+      template: 'site/public/index.html',
       templateParameters: {
         name: brResources.app.name,
         title: brResources.app.title,

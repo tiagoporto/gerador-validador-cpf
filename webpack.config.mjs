@@ -2,6 +2,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import path from 'node:path'
 import webpack from 'webpack'
 
+import pkg from './package.json' with { type: 'json' }
 import brResources from './site/public/locales/pt/translation.json' with { type: 'json' }
 
 const __dirname = import.meta.dirname
@@ -16,9 +17,7 @@ export default {
   mode: 'development',
   target: 'browserslist',
   devtool: 'eval-source-map',
-  entry: {
-    index: './site/src/index.tsx',
-  },
+  entry: './site/src/index.tsx',
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
     extensionAlias: {
@@ -94,7 +93,29 @@ export default {
       ADSENSE: false,
     }),
     new HtmlWebpackPlugin({
-      template: './site/public/index.html',
+      base: process.env.CI === 'true' && `${pkg.homepage}`,
+      template: 'site/public/index.html',
+      templateParameters: {
+        name: brResources.app.name,
+        title: brResources.app.title,
+        description: brResources.app.description,
+        lang: 'pt',
+      },
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'cpf/index.html',
+      base: process.env.CI === 'true' && `${pkg.homepage}`,
+      template: 'site/public/index.html',
+      templateParameters: {
+        name: brResources.app.name,
+        title: brResources.app.title,
+        description: brResources.app.description,
+        lang: 'pt',
+      },
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'cnpj/index.html',
+      template: 'site/public/index.html',
       templateParameters: {
         name: brResources.app.name,
         title: brResources.app.title,

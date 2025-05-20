@@ -1,6 +1,6 @@
 {
   "name": "gerador-validador-cpf-root",
-  "homepage": "/gerador-validador-cpf",
+  "homepage": "https://tiagoporto.com/gerador-validador-cpf/",
   "private": true,
   "type": "module",
   "engines": {
@@ -28,8 +28,8 @@
     "test:watch": "pnpm test --watch",
     "test:package": "jest --config jest.config.package.mjs",
     "test:mutation": "stryker run",
-    "test:e2e": "ELECTRON_EXTRA_LAUNCH_ARGS=--remote-debugging-port=9222 start-server-and-test start http-get://localhost:8080 'cypress run --e2e'",
-    "test:e2e:dev": "start-server-and-test start http-get://localhost:8080 'cypress open --e2e'",
+    "test:e2e": "CI=false ELECTRON_EXTRA_LAUNCH_ARGS=--remote-debugging-port=9222 start-server-and-test start http-get://localhost:8080 'cypress run --e2e'",
+    "test:e2e:dev": "CI=false start-server-and-test start http-get://localhost:8080 'cypress open --e2e'",
     "pack-extract": "pnpm recursive run pack-extract"
   },
   "dependencies": {
