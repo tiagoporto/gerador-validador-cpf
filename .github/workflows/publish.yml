@@ -51,8 +51,7 @@ jobs:
 
       - name: Remove node_modules
         run: |
-          rm -rf packages/gerador-validador-cpf/node_modules/
-          rm -rf packages/gerador-validador-cnpj/node_modules/
+          rm -rf packages/**/node_modules/
 
       - uses: actions/attest-build-provenance@v2
         with:

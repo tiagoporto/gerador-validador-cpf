@@ -6,10 +6,11 @@ on:
     branches: [main]
   pull_request:
     types:
-      - synchronize # PR was updated
       - opened # PR was open
+      - synchronize # PR was updated
       - reopened # PR was closed and is now open again
       - ready_for_review # PR was converted from draft to open
+      - converted_to_draft # PR was converted from open to draft
 
 concurrency:
   group: checks_${{ github.workflow }}_${{ github.event.pull_request.number || github.ref }}
