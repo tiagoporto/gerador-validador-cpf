@@ -10,7 +10,7 @@
   },
   "packageManager": "pnpm@10.11.0",
   "scripts": {
-    "postinstall": "dependabot-config && editor-config",
+    "postinstall": "$CI = true || (dependabot-config && editor-config)",
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky",
     "start": "webpack serve",
