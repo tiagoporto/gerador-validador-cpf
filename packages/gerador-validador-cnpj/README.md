@@ -12,7 +12,7 @@ Biblioteca JS para gerar e validar CNPJ Alfanumérico do Brasil.
 > alfanuméricos devido a eminente possibilidade de esgotamento dos atuais números.
 > A modificação começa a valer a partir de Julho de 2026.
 >
-> **Números atuais continuam válidos**.
+> **Números atuais continuam válidos**. Leia mais em [compatibilidade](#compatibilidade).
 
 ## Docs
 
@@ -62,10 +62,22 @@ import { validate as validadeCNPJ } from 'gerador-validador-cnpj'
 // jsr import from "@tiagoporto/gerador-validador-cnpj"
 
 const isCNPJValid = validadeCNPJ('01234567890000')
-const isCNPJAlphanumericValid = validadeCNPJ('9ZW2JIM2OWTG85')
+const isCNPJAlphanumericValid = validadeCNPJ('9ZW2JIM2OWTG85', {
+  validateAlphanumeric: true
+})
 const isFormattedCNPJValid = validadeCNPJ('01.234.567/8900-00')
-const isFormattedCNPJAlphanumericValid = validadeCNPJ('8I.S4O.LPO/PRD7-81')
+const isFormattedCNPJAlphanumericValid = validadeCNPJ('8I.S4O.LPO/PRD7-81', {
+  validateAlphanumeric: true
+})
 ```
+
+#### Compatibilidade
+
+Para forçar a validação de CNPJs não alfa numéricos até Julho de 2026 e não quebrar
+nenhum sistema, a opção `validateAlphanumeric` estará disponível até Junho de 2026,
+sendo removida em Julho de 2026 assim que entra em vigor os novos CNPjs.
+
+Por default `validateAlphanumeric` é `false`.
 
 ## Licença
 

@@ -9,14 +9,21 @@ import {
 /**
  * Validates a given CNPJ (Cadastro Nacional da Pessoa Jurídica) number.
  * @param value  - The CNPJ number as a string
+ * @param options - options for CNPJ validation
+ * @param options.validateAlphanumeric - If true, will validate an alphanumeric CNPJ
  * @returns      true = valid || false = invalid
  */
-export const validate = (value: string): boolean => {
+export const validate = (
+  value: string,
+  { validateAlphanumeric = false }: { validateAlphanumeric?: boolean } = {},
+): boolean => {
   if (typeof value !== 'string') {
     return false
   }
 
-  const cleanCNPJ = value.toUpperCase().replaceAll(/[/\s.-]/g, '')
+  const regex = validateAlphanumeric ? /[/\s.-]/g : /[/\s.\-A-Z]/g
+
+  const cleanCNPJ = value.toUpperCase().replaceAll(regex, '')
   if (
     !isAlphanumerichHasCNPJLength(cleanCNPJ) ||
     allSameCharacters(cleanCNPJ)

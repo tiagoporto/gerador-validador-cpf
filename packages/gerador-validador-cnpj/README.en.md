@@ -13,7 +13,7 @@ JS lib to generate and validate Alphanumeric CNPJ of Brazil.
 > numbers running out.
 > The change takes effect from July 2026.
 >
-> **Current numbers remain valid.**.
+> **Current numbers remain valid.**. Read more in [compatibility](#compatibility).
 
 ## Docs
 
@@ -63,10 +63,22 @@ import { validate as validadeCNPJ } from 'gerador-validador-cnpj'
 // jsr import from "@tiagoporto/gerador-validador-cnpj"
 
 const isCNPJValid = validadeCNPJ('01234567890000')
-const isCNPJAlphanumericValid = validadeCNPJ('9ZW2JIM2OWTG85')
+const isCNPJAlphanumericValid = validadeCNPJ('9ZW2JIM2OWTG85', {
+  validateAlphanumeric: true
+})
 const isFormattedCNPJValid = validadeCNPJ('01.234.567/8900-00')
-const isFormattedCNPJAlphanumericValid = validadeCNPJ('8I.S4O.LPO/PRD7-81')
+const isFormattedCNPJAlphanumericValid = validadeCNPJ('8I.S4O.LPO/PRD7-81', {
+  validateAlphanumeric: true
+})
 ```
+
+#### Compatibility
+
+In order to force the validation of non-alpha numeric CNPJs until July 2026 and
+don’t break systems, the `validateAlphanumeric` option will be available until
+June 2026, being removed in July 2026 once the new CNPJs come into force.
+
+`validateAlphanumeric` default is `false`.
 
 ## License
 

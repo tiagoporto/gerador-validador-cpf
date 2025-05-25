@@ -9,7 +9,9 @@ describe('validate cnpj', () => {
       expect(validate('85538688000110')).toBeTruthy()
       expect(validate('01512551000105')).toBeTruthy()
       expect(validate('04740842000130')).toBeTruthy()
-      expect(validate('12ABC34501DE35')).toBeTruthy()
+      expect(
+        validate('12ABC34501DE35', { validateAlphanumeric: true }),
+      ).toBeTruthy()
     })
 
     it.each([
@@ -30,19 +32,25 @@ describe('validate cnpj', () => {
 
     it('should return false to a non valid CNPJ', () => {
       expect(validate('12345678901223')).toBeFalsy()
-      expect(validate('12ABC34501DE36')).toBeFalsy()
+      expect(
+        validate('12ABC34501DE36', { validateAlphanumeric: true }),
+      ).toBeFalsy()
     })
 
     it('should return true to a valid formatted CNPJ', () => {
       expect(validate('31.680.509/0001-56')).toBeTruthy()
       expect(validate('88.463.782/0001-46')).toBeTruthy()
-      expect(validate('12.ABC.345/01DE-35')).toBeTruthy()
+      expect(
+        validate('12.ABC.345/01DE-35', { validateAlphanumeric: true }),
+      ).toBeTruthy()
     })
 
     it('should return false to a non valid formatted CNPJ', () => {
       expect(validate('31.680.500/0303-76')).toBeFalsy()
       expect(validate('12.463.562/0001-55')).toBeFalsy()
-      expect(validate('12.ABC.345/01DE-36')).toBeFalsy()
+      expect(
+        validate('12.ABC.345/01DE-36', { validateAlphanumeric: true }),
+      ).toBeFalsy()
     })
 
     it('should return true to a valid non formatted CNPJ', () => {
@@ -57,18 +65,24 @@ describe('validate cnpj', () => {
 
     it('should return false to a value missing characters', () => {
       expect(validate('1376866366')).toBeFalsy()
-      expect(validate('12ABC3450136')).toBeFalsy()
+      expect(
+        validate('12ABC3450136', { validateAlphanumeric: true }),
+      ).toBeFalsy()
     })
 
     it('should return false to a value with more than 11 characters', () => {
       expect(validate('137686636631')).toBeFalsy()
-      expect(validate('12ABC3450136ABCD')).toBeFalsy()
+      expect(
+        validate('12ABC3450136ABCD', { validateAlphanumeric: true }),
+      ).toBeFalsy()
     })
 
     it('should return false when has small case and special characters', () => {
       expect(validate('31.68$.509/00@1-56')).toBeFalsy()
       expect(validate('3168$50900@156')).toBeFalsy()
-      expect(validate('31.a8a.509/0001-56')).toBeFalsy()
+      expect(
+        validate('31.a8a.509/0001-56', { validateAlphanumeric: true }),
+      ).toBeFalsy()
       expect(validate('8*.220.15ˆ/0001-50')).toBeFalsy()
       expect(validate('22.2-7.89?/0001-78')).toBeFalsy()
       expect(validate('9}9!13+30001%8')).toBeFalsy()
