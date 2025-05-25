@@ -1,8 +1,9 @@
 import {
   allSameCharacters,
-  calcFirstCheckDigit,
-  calcSecondCheckDigit,
+  calcCheckDigit,
   hasCPFLength,
+  IMPORTANCE_FIRST_DIGIT,
+  IMPORTANCE_SECOND_DIGIT,
 } from './utils/index.js'
 
 /**
@@ -23,9 +24,13 @@ export const validate = (value: string): boolean => {
 
   const firstNineDigits = cleanCPF.slice(0, 9)
   const checkDigits = cleanCPF.slice(9, 11)
-  const firstCheckDigit = calcFirstCheckDigit(firstNineDigits)
-  const secondCheckDigit = calcSecondCheckDigit(
+  const firstCheckDigit = calcCheckDigit(
+    firstNineDigits,
+    IMPORTANCE_FIRST_DIGIT,
+  )
+  const secondCheckDigit = calcCheckDigit(
     `${firstNineDigits}${firstCheckDigit}`,
+    IMPORTANCE_SECOND_DIGIT,
   )
 
   return checkDigits === `${firstCheckDigit}${secondCheckDigit}`
