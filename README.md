@@ -91,7 +91,7 @@ Alphanumeric CNPJ (Cadastro Nacional de Pessoas Jurídicas) of Brazil.
 [![NPM](https://img.shields.io/badge/npm-555?style=flat-square&logo=npm&labelColor=red)](https://www.npmjs.com/package/gerador-validador-cnpj)
 [![jsr](https://img.shields.io/badge/jsr-555?style=flat-square&logo=jsr&labelColor=F7DF1E&logoColor=093344)](https://jsr.io/@tiagoporto/gerador-validador-cnpj)
 
-#### Docs
+<h4>Docs</h4>
 
 [English](packages/gerador-validador-cnpj/README.en.md), [Español](packages/gerador-validador-cnpj/README.es.md) e [Português(Brasil)](packages/gerador-validador-cnpj/README.md)
 
