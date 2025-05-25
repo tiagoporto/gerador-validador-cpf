@@ -9,6 +9,7 @@ describe('validate cnpj', () => {
       expect(validate('85538688000110')).toBeTruthy()
       expect(validate('01512551000105')).toBeTruthy()
       expect(validate('04740842000130')).toBeTruthy()
+      expect(validate('12ABC34501DE35')).toBeTruthy()
     })
 
     it.each([
@@ -22,22 +23,26 @@ describe('validate cnpj', () => {
       '77777777777777',
       '88888888888888',
       '99999999999999',
+      'AAAAAAAAAAAAAA',
     ])('should return false if characters repeated equal %i', (value) => {
       expect(validate(value)).toBeFalsy()
     })
 
     it('should return false to a non valid CNPJ', () => {
       expect(validate('12345678901223')).toBeFalsy()
+      expect(validate('12ABC34501DE36')).toBeFalsy()
     })
 
     it('should return true to a valid formatted CNPJ', () => {
       expect(validate('31.680.509/0001-56')).toBeTruthy()
       expect(validate('88.463.782/0001-46')).toBeTruthy()
+      expect(validate('12.ABC.345/01DE-35')).toBeTruthy()
     })
 
     it('should return false to a non valid formatted CNPJ', () => {
       expect(validate('31.680.500/0303-76')).toBeFalsy()
       expect(validate('12.463.562/0001-55')).toBeFalsy()
+      expect(validate('12.ABC.345/01DE-36')).toBeFalsy()
     })
 
     it('should return true to a valid non formatted CNPJ', () => {
@@ -52,10 +57,12 @@ describe('validate cnpj', () => {
 
     it('should return false to a value missing characters', () => {
       expect(validate('1376866366')).toBeFalsy()
+      expect(validate('12ABC3450136')).toBeFalsy()
     })
 
     it('should return false to a value with more than 11 characters', () => {
       expect(validate('137686636631')).toBeFalsy()
+      expect(validate('12ABC3450136ABCD')).toBeFalsy()
     })
 
     it('should return false when has small case and special characters', () => {
