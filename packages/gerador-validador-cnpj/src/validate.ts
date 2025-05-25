@@ -1,8 +1,9 @@
 import {
   allSameCharacters,
-  calcFirstCheckDigit,
-  calcSecondCheckDigit,
+  calcCheckDigit,
   isAlphanumerichHasCNPJLength,
+  IMPORTANCE_FIRST_DIGIT,
+  IMPORTANCE_SECOND_DIGIT,
 } from './utils/index.js'
 
 /**
@@ -26,9 +27,13 @@ export const validate = (value: string): boolean => {
   const firstTwelveDigits = cleanCNPJ.slice(0, 12)
   const checkDigits = cleanCNPJ.slice(12, 14)
 
-  const firstCheckDigit = calcFirstCheckDigit(firstTwelveDigits)
-  const secondCheckDigit = calcSecondCheckDigit(
+  const firstCheckDigit = calcCheckDigit(
+    firstTwelveDigits,
+    IMPORTANCE_FIRST_DIGIT,
+  )
+  const secondCheckDigit = calcCheckDigit(
     `${firstTwelveDigits}${firstCheckDigit}`,
+    IMPORTANCE_SECOND_DIGIT,
   )
 
   return checkDigits === `${firstCheckDigit}${secondCheckDigit}`

@@ -1,8 +1,9 @@
 import {
-  calcFirstCheckDigit,
-  calcSecondCheckDigit,
+  calcCheckDigit,
   formatCNPJ,
   generateCharacters,
+  IMPORTANCE_FIRST_DIGIT,
+  IMPORTANCE_SECOND_DIGIT,
 } from './utils/index.js'
 
 /**
@@ -21,9 +22,13 @@ export const generate = ({
 } = {}): string => {
   const firstNineDigits = generateCharacters(alphanumeric)
 
-  const firstCheckDigit = calcFirstCheckDigit(firstNineDigits)
-  const secondCheckDigit = calcSecondCheckDigit(
+  const firstCheckDigit = calcCheckDigit(
+    firstNineDigits,
+    IMPORTANCE_FIRST_DIGIT,
+  )
+  const secondCheckDigit = calcCheckDigit(
     `${firstNineDigits}${firstCheckDigit}`,
+    IMPORTANCE_SECOND_DIGIT,
   )
   const generatedCNPJ = `${firstNineDigits}${firstCheckDigit}${secondCheckDigit}`
 
