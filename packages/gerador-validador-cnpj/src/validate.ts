@@ -1,10 +1,4 @@
-import {
-  allSameCharacters,
-  calcCheckDigit,
-  isAlphanumerichHasCNPJLength,
-  IMPORTANCE_FIRST_DIGIT,
-  IMPORTANCE_SECOND_DIGIT,
-} from './utils/index.js'
+import { calcCheckDigits, isAlphanumericCNPJ } from './utils/index.js'
 
 /**
  * Validates a given CNPJ (Cadastro Nacional da Pessoa Jurídica) number.
@@ -17,31 +11,20 @@ export const validate = (
   value: string,
   { validateAlphanumeric = false }: { validateAlphanumeric?: boolean } = {},
 ): boolean => {
-  if (typeof value !== 'string') {
+  const NOT_ALLOWED_SYMBOLS = /[^A-Z\d./-]/i
+
+  if (typeof value !== 'string' || NOT_ALLOWED_SYMBOLS.test(value)) {
     return false
   }
 
-  const regex = validateAlphanumeric ? /[/\s.-]/g : /[/\s.\-A-Z]/g
+  const replaceRegex = validateAlphanumeric ? /[./-]/g : /[A-Z./-]/g
+  const cleanCNPJ = value.replaceAll(replaceRegex, '')
 
-  const cleanCNPJ = value.toUpperCase().replaceAll(regex, '')
-  if (
-    !isAlphanumerichHasCNPJLength(cleanCNPJ) ||
-    allSameCharacters(cleanCNPJ)
-  ) {
+  if (!isAlphanumericCNPJ(cleanCNPJ) || cleanCNPJ === '00000000000000') {
     return false
   }
 
-  const firstTwelveDigits = cleanCNPJ.slice(0, 12)
-  const checkDigits = cleanCNPJ.slice(12, 14)
+  const checkDigits = cleanCNPJ.slice(12)
 
-  const firstCheckDigit = calcCheckDigit(
-    firstTwelveDigits,
-    IMPORTANCE_FIRST_DIGIT,
-  )
-  const secondCheckDigit = calcCheckDigit(
-    `${firstTwelveDigits}${firstCheckDigit}`,
-    IMPORTANCE_SECOND_DIGIT,
-  )
-
-  return checkDigits === `${firstCheckDigit}${secondCheckDigit}`
+  return checkDigits === calcCheckDigits(cleanCNPJ.slice(0, 12))
 }

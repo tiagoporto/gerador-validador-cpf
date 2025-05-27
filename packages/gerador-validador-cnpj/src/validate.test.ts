@@ -12,28 +12,18 @@ describe('validate cnpj', () => {
       expect(
         validate('12ABC34501DE35', { validateAlphanumeric: true }),
       ).toBeTruthy()
-    })
-
-    it.each([
-      '00000000000000',
-      '11111111111111',
-      '22222222222222',
-      '33333333333333',
-      '44444444444444',
-      '55555555555555',
-      '66666666666666',
-      '77777777777777',
-      '88888888888888',
-      '99999999999999',
-      'AAAAAAAAAAAAAA',
-    ])('should return false if characters repeated equal %i', (value) => {
-      expect(validate(value)).toBeFalsy()
+      expect(
+        validate('12ABC34501DE35', { validateAlphanumeric: true }),
+      ).toBeTruthy()
     })
 
     it('should return false to a non valid CNPJ', () => {
       expect(validate('12345678901223')).toBeFalsy()
       expect(
         validate('12ABC34501DE36', { validateAlphanumeric: true }),
+      ).toBeFalsy()
+      expect(
+        validate('ABCDEFGHIJKL81', { validateAlphanumeric: true }),
       ).toBeFalsy()
     })
 
@@ -43,6 +33,23 @@ describe('validate cnpj', () => {
       expect(
         validate('12.ABC.345/01DE-35', { validateAlphanumeric: true }),
       ).toBeTruthy()
+      expect(
+        validate('90.021.382/0001-22', { validateAlphanumeric: true }),
+      ).toBeTruthy()
+      expect(
+        validate('90.024.778/0001-23', { validateAlphanumeric: true }),
+      ).toBeTruthy()
+    })
+
+    it('should return true to a valid non formatted CNPJ', () => {
+      expect(validate('16668781000127')).toBeTruthy()
+      expect(validate('13377014000170')).toBeTruthy()
+      expect(
+        validate('90025108000121', { validateAlphanumeric: true }),
+      ).toBeTruthy()
+      expect(
+        validate('90025255000100', { validateAlphanumeric: true }),
+      ).toBeTruthy()
     })
 
     it('should return false to a non valid formatted CNPJ', () => {
@@ -51,11 +58,9 @@ describe('validate cnpj', () => {
       expect(
         validate('12.ABC.345/01DE-36', { validateAlphanumeric: true }),
       ).toBeFalsy()
-    })
-
-    it('should return true to a valid non formatted CNPJ', () => {
-      expect(validate('16668781000127')).toBeTruthy()
-      expect(validate('13377014000170')).toBeTruthy()
+      expect(
+        validate('AB.CDE.FGH/IJKL-81', { validateAlphanumeric: true }),
+      ).toBeFalsy()
     })
 
     it('should return false to a non valid non formatted CNPJ', () => {
@@ -65,13 +70,15 @@ describe('validate cnpj', () => {
 
     it('should return false to a value missing characters', () => {
       expect(validate('1376866366')).toBeFalsy()
+      expect(validate('0000000000019')).toBeFalsy()
       expect(
         validate('12ABC3450136', { validateAlphanumeric: true }),
       ).toBeFalsy()
     })
 
-    it('should return false to a value with more than 11 characters', () => {
+    it('should return false to a value with more than 14 characters', () => {
       expect(validate('137686636631')).toBeFalsy()
+      expect(validate('000000000001911')).toBeFalsy()
       expect(
         validate('12ABC3450136ABCD', { validateAlphanumeric: true }),
       ).toBeFalsy()
@@ -86,6 +93,15 @@ describe('validate cnpj', () => {
       expect(validate('8*.220.15ˆ/0001-50')).toBeFalsy()
       expect(validate('22.2-7.89?/0001-78')).toBeFalsy()
       expect(validate('9}9!13+30001%8')).toBeFalsy()
+    })
+
+    it('should return false when has letters in check digits position', () => {
+      expect(
+        validate('0000000000019L', { validateAlphanumeric: true }),
+      ).toBeFalsy()
+      expect(
+        validate('000000000001P1', { validateAlphanumeric: true }),
+      ).toBeFalsy()
     })
 
     it('should return true to a valid CNPJ where first verifier is 0', () => {
@@ -122,6 +138,32 @@ describe('validate cnpj', () => {
       expect(validate('48347359000166')).toBeTruthy()
       expect(validate('11.281.380/0001-04')).toBeTruthy()
       expect(validate('11281380000104')).toBeTruthy()
+    })
+
+    it.each([
+      '00000000000000',
+      '00.000.000/0000-00',
+      '11111111111111',
+      '11.111.111/1111-11',
+      '22222222222222',
+      '22.222.2222/222-22',
+      '33333333333333',
+      '33.333.333/3333.33',
+      '44444444444444',
+      '44.444.444/4444.44',
+      '55555555555555',
+      '55.555.5555/555.55',
+      '66666666666666',
+      '66.666.6666/666.66',
+      '77777777777777',
+      '77.777.777/7777.77',
+      '88.888888888888',
+      '88.888.888/8888.88',
+      '99999999999999',
+      '99.999.999/9999.99',
+      'AAAAAAAAAAAAAA',
+    ])('should return false if characters repeated equal %i', (value) => {
+      expect(validate(value)).toBeFalsy()
     })
   })
 
