@@ -1,6 +1,4 @@
 export * from './all-same-characters.js'
-export * from './calc-check-digit.js'
-export * from './constantes.js'
+export * from './calc-check-digits.js'
 export * from './format-cpf.js'
 export * from './generate-digits.js'
-export * from './has-cpf-length.js'

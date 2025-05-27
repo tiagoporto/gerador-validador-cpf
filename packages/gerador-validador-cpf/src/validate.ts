@@ -1,10 +1,4 @@
-import {
-  allSameCharacters,
-  calcCheckDigit,
-  hasCPFLength,
-  IMPORTANCE_FIRST_DIGIT,
-  IMPORTANCE_SECOND_DIGIT,
-} from './utils/index.js'
+import { allSameCharacters, calcCheckDigits } from './utils/index.js'
 
 /**
  * Validates a given CPF (Cadastro de Pessoas Físicas) number.
@@ -12,26 +6,19 @@ import {
  * @returns      true = valid || false = invalid
  */
 export const validate = (value: string): boolean => {
-  if (typeof value !== 'string') {
+  const NOT_ALLOWED_SYMBOLS = /[^0-9.-]/i
+
+  if (typeof value !== 'string' || NOT_ALLOWED_SYMBOLS.test(value)) {
     return false
   }
 
-  const cleanCPF = String(value).replaceAll(/[\s.-]/g, '')
+  const cleanCPF = value.replaceAll(/[.-]/g, '')
 
-  if (!hasCPFLength(cleanCPF) || allSameCharacters(cleanCPF)) {
+  if (!/^([0-9]){11}$/.test(cleanCPF) || allSameCharacters(cleanCPF)) {
     return false
   }
 
-  const firstNineDigits = cleanCPF.slice(0, 9)
-  const checkDigits = cleanCPF.slice(9, 11)
-  const firstCheckDigit = calcCheckDigit(
-    firstNineDigits,
-    IMPORTANCE_FIRST_DIGIT,
-  )
-  const secondCheckDigit = calcCheckDigit(
-    `${firstNineDigits}${firstCheckDigit}`,
-    IMPORTANCE_SECOND_DIGIT,
-  )
+  const checkDigits = cleanCPF.slice(9)
 
-  return checkDigits === `${firstCheckDigit}${secondCheckDigit}`
+  return checkDigits === calcCheckDigits(cleanCPF.slice(0, 9))
 }

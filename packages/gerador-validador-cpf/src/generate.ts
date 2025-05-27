@@ -1,10 +1,4 @@
-import {
-  calcCheckDigit,
-  formatCPF,
-  generateDigits,
-  IMPORTANCE_FIRST_DIGIT,
-  IMPORTANCE_SECOND_DIGIT,
-} from './utils/index.js'
+import { calcCheckDigits, formatCPF, generateDigits } from './utils/index.js'
 
 /**
  * Generates a valid CPF (Cadastro de Pessoas Físicas) number.
@@ -15,15 +9,7 @@ import {
 export const generate = (params?: { format: boolean }): string => {
   const firstNineDigits = generateDigits()
 
-  const firstCheckDigit = calcCheckDigit(
-    firstNineDigits,
-    IMPORTANCE_FIRST_DIGIT,
-  )
-  const secondCheckDigit = calcCheckDigit(
-    `${firstNineDigits}${firstCheckDigit}`,
-    IMPORTANCE_SECOND_DIGIT,
-  )
-  const generatedCPF = `${firstNineDigits}${firstCheckDigit}${secondCheckDigit}`
+  const generatedCPF = `${firstNineDigits}${calcCheckDigits(firstNineDigits)}`
 
   return params?.format ? formatCPF(generatedCPF) : generatedCPF
 }
