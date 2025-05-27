@@ -8,20 +8,6 @@
     <link rel="author" href="humans.txt" />
     <link rel="manifest" href="site.webmanifest" />
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=<%= process.env.GTAG_ID %>"
-    ></script>
-    <script>
-      globalThis.dataLayer = globalThis.dataLayer || []
-      function gtag() {
-        globalThis.dataLayer.push(arguments)
-      }
-      gtag('js', new Date())
-      gtag('config', '<%= process.env.GTAG_ID %>')
-    </script>
-
     <!--  Open graphs -->
     <meta property="og:title" content="<%= title %>" data-rh="true" />
     <meta
@@ -92,10 +78,31 @@
     <!-- Windows 8.1 + IE11 and above -->
     <meta name="msapplication-config" content="browserconfig.xml" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=PT+Sans:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,500&family=PT+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,500&family=PT+Sans:wght@400;700&display=swap"
+      rel="preload"
+      as="style"
+    />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=<%= process.env.GTAG_ID %>"
+    ></script>
+    <script>
+      globalThis.dataLayer = globalThis.dataLayer || []
+      function gtag() {
+        globalThis.dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', '<%= process.env.GTAG_ID %>')
+    </script>
 
     <script
       async

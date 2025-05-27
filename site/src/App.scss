@@ -23,6 +23,7 @@ body {
   font: normal normal #{v.$base-font-size} / f.em(v.$base-line-height)
     v.$font-family-base;
   font-feature-settings: 'liga', 'kern';
+  font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizelegibility;
