@@ -6,7 +6,7 @@
 
 JS lib para generar y validar CNPJ alfanumérico en Brasil.
 
-> [Nuevo CNPJ alfanumérico](https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/programas-e-atividades/cnpj-alfanumerico)
+> [Nuevo CNPJ alfanumérico](https://tiagoporto.com/pt-br/blog/novo-cnpj-seu-codigo-esta-preparado-para-a-mudanca/)
 >
 > La “Receita Federal” de Brasil modificó el algoritmo del CNPJ para incluir
 > caracteres alfanuméricos debido a la inminente posibilidad de que se agoten los

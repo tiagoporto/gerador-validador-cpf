@@ -6,7 +6,7 @@
 
 JS lib to generate and validate Alphanumeric CNPJ of Brazil.
 
-> [New alphanumeric CNPJ](https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/programas-e-atividades/cnpj-alfanumerico)
+> [New alphanumeric CNPJ](https://tiagoporto.com/en/blog/new-brazilian-cnpj-is-your-code-ready-for-the-change/)
 >
 > The Brazilian Federal Revenue has modified the CNPJ algorithm to include
 > alphanumeric characters due to the imminent the possibility of the current

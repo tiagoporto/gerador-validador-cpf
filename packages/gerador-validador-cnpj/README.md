@@ -6,7 +6,7 @@
 
 Biblioteca JS para gerar e validar CNPJ Alfanumérico do Brasil.
 
-> [Novo CNPJ Alfanumérico](https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/programas-e-atividades/cnpj-alfanumerico)
+> [Novo CNPJ Alfanumérico](https://tiagoporto.com/pt-br/blog/novo-cnpj-seu-codigo-esta-preparado-para-a-mudanca/)
 >
 > A Receita Federal modificou o algoritmo do CNPJ para comportar caracteres
 > alfanuméricos devido a eminente possibilidade de esgotamento dos atuais números.
