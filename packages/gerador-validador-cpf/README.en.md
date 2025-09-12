@@ -55,4 +55,4 @@ const isFormattedCpfValid = validadeCpf('123.456.789-00')
 
 ## License
 
-This project is licensed under the [MIT License](https://github.com/tiagoporto/gerador-validador-cpf/blob/main/LICENSE).
+Gerador Validador CPF © 2015 by Tiago Porto is licensed under [MIT License](https://github.com/tiagoporto/gerador-validador-cpf/blob/main/LICENSE).
