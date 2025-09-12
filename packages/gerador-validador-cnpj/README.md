@@ -71,14 +71,6 @@ const isFormattedCNPJAlphanumericValid = validadeCNPJ('8I.S4O.LPO/PRD7-81', {
 })
 ```
 
-#### Compatibilidade
-
-Para forçar a validação de CNPJs não alfa numéricos até Julho de 2026 e não quebrar
-nenhum sistema, a opção `validateAlphanumeric` estará disponível até Junho de 2026,
-sendo removida em Julho de 2026 assim que entra em vigor os novos CNPjs.
-
-Por default `validateAlphanumeric` é `false`.
-
 ## Licença
 
-Este projeto está licenciado sob a [licença MIT](https://github.com/tiagoporto/gerador-validador-cpf/blob/main/LICENSE).
+Gerador Validador CNPJ © 2025 de Tiago Porto está licenciado sob a [licença MIT](https://github.com/tiagoporto/gerador-validador-cpf/blob/main/LICENSE).
