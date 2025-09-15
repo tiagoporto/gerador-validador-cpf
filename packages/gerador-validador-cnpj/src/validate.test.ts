@@ -11,24 +11,16 @@ describe('validate cnpj', () => {
       expect(validate('85538688000110')).toBeTruthy()
       expect(validate('01512551000105')).toBeTruthy()
       expect(validate('04740842000130')).toBeTruthy()
-      expect(
-        validate('12ABC34501DE35', { validateAlphanumeric: true }),
-      ).toBeTruthy()
-      expect(
-        validate('12ABC34501DE35', { validateAlphanumeric: true }),
-      ).toBeTruthy()
+      expect(validate('12ABC34501DE35')).toBeTruthy()
+      expect(validate('12ABC34501DE35')).toBeTruthy()
     })
 
     it('should return false to a non valid CNPJ', () => {
       expect.hasAssertions()
 
       expect(validate('12345678901223')).toBeFalsy()
-      expect(
-        validate('12ABC34501DE36', { validateAlphanumeric: true }),
-      ).toBeFalsy()
-      expect(
-        validate('ABCDEFGHIJKL81', { validateAlphanumeric: true }),
-      ).toBeFalsy()
+      expect(validate('12ABC34501DE36')).toBeFalsy()
+      expect(validate('ABCDEFGHIJKL81')).toBeFalsy()
     })
 
     it('should return true to a valid formatted CNPJ', () => {
@@ -36,15 +28,9 @@ describe('validate cnpj', () => {
 
       expect(validate('31.680.509/0001-56')).toBeTruthy()
       expect(validate('88.463.782/0001-46')).toBeTruthy()
-      expect(
-        validate('12.ABC.345/01DE-35', { validateAlphanumeric: true }),
-      ).toBeTruthy()
-      expect(
-        validate('90.021.382/0001-22', { validateAlphanumeric: true }),
-      ).toBeTruthy()
-      expect(
-        validate('90.024.778/0001-23', { validateAlphanumeric: true }),
-      ).toBeTruthy()
+      expect(validate('12.ABC.345/01DE-35')).toBeTruthy()
+      expect(validate('90.021.382/0001-22')).toBeTruthy()
+      expect(validate('90.024.778/0001-23')).toBeTruthy()
     })
 
     it('should return true to a valid non formatted CNPJ', () => {
@@ -52,12 +38,8 @@ describe('validate cnpj', () => {
 
       expect(validate('16668781000127')).toBeTruthy()
       expect(validate('13377014000170')).toBeTruthy()
-      expect(
-        validate('90025108000121', { validateAlphanumeric: true }),
-      ).toBeTruthy()
-      expect(
-        validate('90025255000100', { validateAlphanumeric: true }),
-      ).toBeTruthy()
+      expect(validate('90025108000121')).toBeTruthy()
+      expect(validate('90025255000100')).toBeTruthy()
     })
 
     it('should return false to a non valid formatted CNPJ', () => {
@@ -65,12 +47,8 @@ describe('validate cnpj', () => {
 
       expect(validate('31.680.500/0303-76')).toBeFalsy()
       expect(validate('12.463.562/0001-55')).toBeFalsy()
-      expect(
-        validate('12.ABC.345/01DE-36', { validateAlphanumeric: true }),
-      ).toBeFalsy()
-      expect(
-        validate('AB.CDE.FGH/IJKL-81', { validateAlphanumeric: true }),
-      ).toBeFalsy()
+      expect(validate('12.ABC.345/01DE-36')).toBeFalsy()
+      expect(validate('AB.CDE.FGH/IJKL-81')).toBeFalsy()
     })
 
     it('should return false to a non valid non formatted CNPJ', () => {
@@ -85,9 +63,7 @@ describe('validate cnpj', () => {
 
       expect(validate('1376866366')).toBeFalsy()
       expect(validate('0000000000019')).toBeFalsy()
-      expect(
-        validate('12ABC3450136', { validateAlphanumeric: true }),
-      ).toBeFalsy()
+      expect(validate('12ABC3450136')).toBeFalsy()
     })
 
     it('should return false to a value with more than 14 characters', () => {
@@ -95,9 +71,7 @@ describe('validate cnpj', () => {
 
       expect(validate('137686636631')).toBeFalsy()
       expect(validate('000000000001911')).toBeFalsy()
-      expect(
-        validate('12ABC3450136ABCD', { validateAlphanumeric: true }),
-      ).toBeFalsy()
+      expect(validate('12ABC3450136ABCD')).toBeFalsy()
     })
 
     it('should return false when has small case and special characters', () => {
@@ -105,9 +79,7 @@ describe('validate cnpj', () => {
 
       expect(validate('31.68$.509/00@1-56')).toBeFalsy()
       expect(validate('3168$50900@156')).toBeFalsy()
-      expect(
-        validate('31.a8a.509/0001-56', { validateAlphanumeric: true }),
-      ).toBeFalsy()
+      expect(validate('31.a8a.509/0001-56')).toBeFalsy()
       expect(validate('8*.220.15ˆ/0001-50')).toBeFalsy()
       expect(validate('22.2-7.89?/0001-78')).toBeFalsy()
       expect(validate('9}9!13+30001%8')).toBeFalsy()
@@ -116,12 +88,8 @@ describe('validate cnpj', () => {
     it('should return false when has letters in check digits position', () => {
       expect.hasAssertions()
 
-      expect(
-        validate('0000000000019L', { validateAlphanumeric: true }),
-      ).toBeFalsy()
-      expect(
-        validate('000000000001P1', { validateAlphanumeric: true }),
-      ).toBeFalsy()
+      expect(validate('0000000000019L')).toBeFalsy()
+      expect(validate('000000000001P1')).toBeFalsy()
     })
 
     it('should return true to a valid CNPJ where first verifier is 0', () => {
