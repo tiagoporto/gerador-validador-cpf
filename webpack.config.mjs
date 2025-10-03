@@ -102,26 +102,5 @@ export default {
         lang: 'pt',
       },
     }),
-    new HtmlWebpackPlugin({
-      filename: 'cpf/index.html',
-      base: process.env.CI === 'true' && `${pkg.homepage}`,
-      template: 'site/public/index.html',
-      templateParameters: {
-        name: brResources.app.name,
-        title: brResources.app.title,
-        description: brResources.app.description,
-        lang: 'pt',
-      },
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'cnpj/index.html',
-      template: 'site/public/index.html',
-      templateParameters: {
-        name: brResources.app.name,
-        title: brResources.app.title,
-        description: brResources.app.description,
-        lang: 'pt',
-      },
-    }),
   ],
 }
