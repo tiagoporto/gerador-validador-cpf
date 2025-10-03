@@ -39,8 +39,8 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts
 
-      - name: Formatting Check
-        run: pnpm formatting:check
+      - name: Format Check
+        run: pnpm format:check
 
       - name: Typecheck
         if: success() || failure()
