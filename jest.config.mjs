@@ -1,3 +1,5 @@
+import { env } from 'node:process'
+
 /** @type {import('jest').Config} */
 export default {
   roots: ['<rootDir>'],
@@ -13,7 +15,7 @@ export default {
     },
   },
   coveragePathIgnorePatterns: ['dist'],
-  coverageReporters: process.env.CI ? ['lcov'] : ['text', 'html'],
+  coverageReporters: env.CI ? ['lcov'] : ['text', 'html'],
   transform: {
     '^.+\\.(t|j)sx?$': '@swc/jest',
   },
