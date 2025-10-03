@@ -9,7 +9,7 @@ JS lib to generate and validate Alphanumeric CNPJ of Brazil.
 > numbers running out.
 > The change takes effect from July 2026.
 >
-> **Current numbers remain valid.**. Read more in [compatibility](#compatibility).
+> **Current numbers remain valid.**. [Read more](https://github.com/tiagoporto/gerador-validador-cpf/issues/102).
 
 ## Docs
 

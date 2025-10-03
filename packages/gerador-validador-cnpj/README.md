@@ -8,7 +8,7 @@ Biblioteca JS para gerar e validar CNPJ Alfanumérico do Brasil.
 > alfanuméricos devido a eminente possibilidade de esgotamento dos atuais números.
 > A modificação começa a valer a partir de Julho de 2026.
 >
-> **Números atuais continuam válidos**. Leia mais em [compatibilidade](#compatibilidade).
+> **Números atuais continuam válidos**. [Leia mais](https://github.com/tiagoporto/gerador-validador-cpf/issues/102).
 
 ## Docs
 

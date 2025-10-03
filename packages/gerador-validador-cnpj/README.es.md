@@ -8,7 +8,7 @@ JS lib para generar y validar CNPJ alfanumérico en Brasil.
 > caracteres alfanuméricos debido a la inminente posibilidad de que se agoten los
 > números actuales. El cambio entrará en vigor a partir de julio de 2026.
 >
-> **Los números actuales siguen siendo válidos.**. Lea más en [compatibilidad](#compatibilidad).
+> **Los números actuales siguen siendo válidos.**. [Lea más](https://github.com/tiagoporto/gerador-validador-cpf/issues/102).
 
 ## Docs
 

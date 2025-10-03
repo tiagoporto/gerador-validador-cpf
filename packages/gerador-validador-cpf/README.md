@@ -8,7 +8,7 @@ Leia em outros idiomas: [English](https://github.com/tiagoporto/gerador-validado
 
 ## Playground
 
-<https://tiagoporto.com/gerador-validador-cpf/>
+<https://tiagoporto.github.io/gerador-validador-cpf/>
 
 ## Instalação
 

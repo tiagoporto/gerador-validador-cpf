@@ -8,7 +8,7 @@ Read in other languages: English, [Español](https://github.com/tiagoporto/gerad
 
 ## Playground
 
-<https://tiagoporto.com/gerador-validador-cpf/>
+<https://tiagoporto.github.io/gerador-validador-cpf/>
 
 ## Installation
 
