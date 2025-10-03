@@ -106,8 +106,8 @@ importers:
         specifier: ^2.4.0
         version: 2.4.0
       '@tiagoporto/editor-config':
-        specifier: ^2.0.0
-        version: 2.0.0
+        specifier: ^2.1.0
+        version: 2.1.0
       '@tiagoporto/eslint-config':
         specifier: ^4.6.1
         version: 4.10.0(@typescript-eslint/utils@8.45.0(eslint@9.36.0(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@9.36.0(jiti@2.6.1))(jiti@2.6.1)(remark-lint-file-extension@3.0.1)(typescript@5.9.3)
@@ -2665,9 +2665,9 @@ packages:
     engines: {node: '>=20'}
     hasBin: true
 
-  '@tiagoporto/editor-config@2.0.0':
-    resolution: {integrity: sha512-IM3hCMve5k9DMGO/mnZMKrgO6e2R7zad6Knoh1dVFaRColo96/Nt/RaOHKhBR0VNMV5wuBel04v+fEVBwuYVgA==}
-    engines: {node: '>=22'}
+  '@tiagoporto/editor-config@2.1.0':
+    resolution: {integrity: sha512-fEeYPPH/Ti9YgnTb2r8j9aW2Tyx3/FwgesF/g7dLqyGsn3R05PSw9CAC551kdj0/XjAJV6xQ+uSvShchHpWiug==}
+    engines: {node: '>=20'}
     hasBin: true
 
   '@tiagoporto/eslint-config@4.10.0':
@@ -13175,7 +13175,7 @@ snapshots:
 
   '@tiagoporto/dependabot-config@2.4.0': {}
 
-  '@tiagoporto/editor-config@2.0.0': {}
+  '@tiagoporto/editor-config@2.1.0': {}
 
   '@tiagoporto/eslint-config@4.10.0(@typescript-eslint/utils@8.45.0(eslint@9.36.0(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@9.36.0(jiti@2.6.1))(jiti@2.6.1)(remark-lint-file-extension@3.0.1)(typescript@5.9.3)':
     dependencies:
