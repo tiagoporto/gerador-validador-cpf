@@ -68,7 +68,7 @@
     "@tiagoporto/editor-config": "^2.0.0",
     "@tiagoporto/eslint-config": "^4.6.1",
     "@tiagoporto/prettier-config": "^2.0.0",
-    "@tiagoporto/remark-config": "^1.6.1",
+    "@tiagoporto/remark-config": "^1.11.0",
     "@tiagoporto/stylelint-config": "^1.1.1",
     "@types/jest": "^29.2.0",
     "@types/node": "^22.13.1",
