@@ -99,7 +99,6 @@
     "sass-embedded": "^1.83.0",
     "sass-loader": "^16.0.4",
     "semantic-release": "^24.2.3",
-    "semantic-release-monorepo": "github:tiagoporto/semantic-release-monorepo",
     "start-server-and-test": "^2.0.9",
     "style-loader": "^4.0.0",
     "stylelint": "^16.24.0",
