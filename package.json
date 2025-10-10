@@ -72,7 +72,7 @@
     "@tiagoporto/remark-config": "^1.11.0",
     "@tiagoporto/stylelint-config": "^1.2.0",
     "@types/jest": "^29.2.0",
-    "@types/node": "^22.13.1",
+    "@types/node": "^24.7.1",
     "@types/react": "^19.0.2",
     "@types/react-copy-to-clipboard": "^5.0.7",
     "@types/react-dom": "^19.0.2",
