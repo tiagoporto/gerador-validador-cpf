@@ -9,13 +9,11 @@ export const calcCheckDigits = (cpf: string) => {
   }
 
   const remainerFirstCheckDigit = sumFirstCheckDigit % 11
-  const firstCheckDigit =
-    remainerFirstCheckDigit < 2 ? 0 : 11 - remainerFirstCheckDigit
+  const firstCheckDigit = remainerFirstCheckDigit < 2 ? 0 : 11 - remainerFirstCheckDigit
 
   sumSecondCheckDigit += firstCheckDigit * IMPORTANCE_ARRAY[9]
   const remainerSecondCheckDigit = sumSecondCheckDigit % 11
-  const secondCheckDigit =
-    remainerSecondCheckDigit % 11 < 2 ? 0 : 11 - (remainerSecondCheckDigit % 11)
+  const secondCheckDigit = remainerSecondCheckDigit % 11 < 2 ? 0 : 11 - (remainerSecondCheckDigit % 11)
 
   return `${firstCheckDigit}${secondCheckDigit}`
 }

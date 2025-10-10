@@ -11,10 +11,11 @@
         }
       }
     ],
+    "allowJs": true,
     "target": "ES5",
     "module": "ESNext",
     "jsx": "react-jsx",
-    "lib": ["es2021", "dom"],
+    "lib": ["ESNext", "dom"],
     "moduleResolution": "bundler",
     "downlevelIteration": true,
     "noEmit": true,
@@ -22,5 +23,6 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true
-  }
+  },
+  "exclude": ["cypress/downloads/"]
 }

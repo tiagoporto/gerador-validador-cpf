@@ -1,5 +1,9 @@
-.gitignore
 coverage
 dist
 reports
 pnpm-lock.yaml
+cypress/downloads/
+**/*.js
+**/*.jsx
+**/*.ts
+**/*.tsx

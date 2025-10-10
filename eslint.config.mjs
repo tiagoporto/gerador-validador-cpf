@@ -1,34 +1,38 @@
 import tpConfig from '@tiagoporto/eslint-config'
 import pluginCypress from 'eslint-plugin-cypress/flat'
 import pluginJest from 'eslint-plugin-jest'
-import globals from 'globals'
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  {
-    ignores: ['coverage/**', 'reports/**', '**/dist/', 'cypress/downloads/'],
-  },
+  ...tpConfig.configs.reactTypeChecked,
   {
     languageOptions: {
-      globals: { ...globals.browser, ...globals.node },
-      sourceType: 'module',
-      ecmaVersion: 'latest',
+      parserOptions: {
+        project: ['./tsconfig.json'],
+      },
     },
   },
-  ...tpConfig.configs.react,
-  pluginCypress.configs.recommended,
   {
+    name: 'cypress',
+    files: ['**/*.spec.{js,ts}'],
+    plugins: { ...pluginCypress.configs.recommended.plugins },
+    languageOptions: {
+      ...pluginCypress.configs.recommended.languageOptions,
+    },
+    rules: {
+      ...pluginCypress.configs.recommended.rules,
+    },
+  },
+  {
+    name: 'jest',
     files: ['**/*.test.{js,ts}'],
     plugins: { jest: pluginJest },
     languageOptions: {
       globals: pluginJest.environments.globals.globals,
     },
     rules: {
-      ...pluginJest.configs['flat/recommended'].rules,
+      ...pluginJest.configs['flat/all'].rules,
+      'jest/max-expects': 'off',
     },
-  },
-  {
-    files: ['**/*.html'],
-    rules: { 'jsdoc/require-jsdoc': 'off' },
   },
 ]

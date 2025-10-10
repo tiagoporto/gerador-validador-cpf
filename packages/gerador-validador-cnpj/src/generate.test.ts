@@ -18,6 +18,8 @@ describe('generate cnpj', () => {
       expected: '38472677000103',
     },
   ])('should generate a valid CNPJ $expected', ({ mock, expected }) => {
+    expect.assertions(1)
+
     mockRandom(mock)
     const cnpj = generate()
 
@@ -36,6 +38,8 @@ describe('generate cnpj', () => {
   ])(
     'should generate a valid non formatted cnpj $expected',
     ({ mock, expected }) => {
+      expect.assertions(2)
+
       mockRandom(mock)
       const cnpj = generate({ format: false })
 
@@ -54,6 +58,8 @@ describe('generate cnpj', () => {
       expected: '72.044.727/0001-81',
     },
   ])('should generate a formatted cnpj $expected', ({ mock, expected }) => {
+    expect.assertions(2)
+
     mockRandom(mock)
     const cnpj = generate({ format: true })
 

@@ -18,6 +18,8 @@ describe('generate cpf', () => {
       expected: '63615064011',
     },
   ])('should generate a valid CPF $expected', ({ mock, expected }) => {
+    expect.assertions(2)
+
     mockRandom(mock)
     const cpf = generate()
 
@@ -37,6 +39,8 @@ describe('generate cpf', () => {
   ])(
     'should generate a valid non formatted CPF $expected',
     ({ mock, expected }) => {
+      expect.assertions(2)
+
       mockRandom(mock)
       const cpf = generate({ format: false })
 
@@ -55,6 +59,8 @@ describe('generate cpf', () => {
       expected: '786.063.770-74',
     },
   ])('should generate a formatted CPF $expected', ({ mock, expected }) => {
+    expect.assertions(2)
+
     mockRandom(mock)
     const cpf = generate({ format: true })
 
@@ -65,6 +71,8 @@ describe('generate cpf', () => {
   it.each([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])(
     'should regenerate a new cpf if all digits are %i',
     (value) => {
+      expect.assertions(1)
+
       const number = Number(`0.${value}`)
       jest
         .spyOn(Math, 'random')

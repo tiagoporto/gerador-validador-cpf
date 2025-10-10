@@ -1,5 +1,6 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import path from 'node:path'
+import { env } from 'node:process'
 import webpack from 'webpack'
 
 import pkg from './package.json' with { type: 'json' }
@@ -93,7 +94,7 @@ export default {
       ADSENSE: false,
     }),
     new HtmlWebpackPlugin({
-      base: process.env.CI === 'true' && `${pkg.homepage}`,
+      base: env.CI === 'true' && `${pkg.homepage}`,
       template: 'site/public/index.html',
       templateParameters: {
         name: brResources.app.name,

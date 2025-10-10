@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { IMaskInput } from 'react-imask'
 
@@ -6,7 +6,8 @@ import { validate as validadeCPF } from 'gerador-validador-cpf'
 
 import style from './ValidateSection.module.scss'
 
-const enableAnalytics = async () => {
+type Message = 'messages.validCPF' | 'messages.invalidCPF' | 'messages.incomplete'
+const enableAnalytics = () => {
   if (globalThis.gtag) {
     globalThis.gtag('event', 'cpf', {
       event_label: 'Validate',
@@ -14,57 +15,31 @@ const enableAnalytics = async () => {
   }
 }
 
-interface State {
-  tempCpf: string
-  cpf: string
-  isValid: boolean
-  message: string
-}
-
 export const ValidateSection = () => {
   const { t } = useTranslation()
-  const [validation, setValidation] = useState<State>({
-    tempCpf: '',
-    cpf: '',
-    isValid: false,
-    message: '',
-  })
-  const { cpf, isValid, message, tempCpf } = validation
-
-  const updateValidationState = (parameters: Partial<State>) => {
-    setValidation((previousState) => ({
-      ...previousState,
-      ...parameters,
-    }))
-  }
+  const [temporaryCpf, setTemporaryCpf] = useState<string>('')
+  const [message, setMessage] = useState<Message>()
 
   const handleChangeCPF = (cpf: string): void => {
-    updateValidationState({ tempCpf: cpf })
+    setTemporaryCpf(cpf)
   }
 
-  useEffect(() => {
-    if (tempCpf.length === 14) {
-      if (process.env.NODE_ENV === 'production') {
-        void enableAnalytics()
-      }
+  const isValid = useMemo(() => validadeCPF(temporaryCpf), [temporaryCpf])
 
-      const isValid = validadeCPF(tempCpf)
-      const message = isValid ? 'messages.validCPF' : 'messages.invalidCPF'
-
-      updateValidationState({
-        cpf: tempCpf,
-        isValid,
-        message,
-      })
-    } else {
-      const message = tempCpf ? 'messages.incomplete' : ''
-
-      updateValidationState({
-        cpf: '',
-        message,
-      })
+  useMemo(() => {
+    let newMessage: Message | undefined
+    if (process.env.NODE_ENV === 'production') {
+      void enableAnalytics()
     }
-  }, [tempCpf])
+
+    if (temporaryCpf.length === 14) {
+      newMessage = isValid ? 'messages.validCPF' : 'messages.invalidCPF'
+    } else if (temporaryCpf.length > 0) {
+      newMessage = 'messages.incomplete'
+    }
+
+    setMessage(newMessage)
+  }, [isValid, temporaryCpf])
 
   return (
     <div className={style.validateSection}>
@@ -72,24 +47,23 @@ export const ValidateSection = () => {
 
       <IMaskInput
         aria-label={t('validate.insertCPF')}
-        value={tempCpf}
+        value={temporaryCpf}
         data-testid="input-validate-cpf"
         placeholder={t('validate.insertCPF')}
         onAccept={handleChangeCPF}
         className={style.validateSectionInput}
         type="text"
-        mask={'000.000.000-00'}
+        mask="000.000.000-00"
         required
       />
 
       <div
         data-testid="validate-message"
         className={`${style.validateSectionInput} ${style.message} ${
-          isValid && cpf ? style.messageValid : ''
-        } ${!isValid && cpf ? style.messageInvalid : ''}`}
+          message === 'messages.validCPF' ? style.messageValid : ''} ${
+          message === 'messages.invalidCPF' ? style.messageInvalid : ''}`}
       >
-        {/* @ts-expect-error: i18n key */}
-        {t(message) || '...'}
+        {(message && t(message)) ?? '...'}
       </div>
     </div>
   )

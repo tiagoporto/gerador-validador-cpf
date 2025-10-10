@@ -9,16 +9,15 @@ import pkg from '../../package.json' with { type: 'json' }
 
 const loadOnProd = async () => {
   const { registerServiceWorker } = await import(
-    /* webpackChunkName: "serviceWorker" */ './service-worker'
+    /* webpackChunkName: "serviceWorker" */ './service-worker',
   )
   registerServiceWorker()
 }
 
 if (process.env.NODE_ENV === 'production') {
-  loadOnProd()
+  loadOnProd().catch(console.error)
 }
 
-// eslint-disable-next-line import-x/no-named-as-default-member
 i18next
   .use(LanguageDetector)
   .use(backend)
@@ -28,7 +27,7 @@ i18next
     backend: {
       loadPath: `${process.env.CI === 'true' ? `${pkg.homepage}` : '/'}locales/{{lng}}/{{ns}}.json`,
     },
-  })
+  }).catch(console.error)
 
 const rootElement = document.querySelector('#root')
 if (rootElement) {
@@ -38,8 +37,9 @@ if (rootElement) {
   console.error('Failed to find the root element')
 }
 
-/* eslint-disable unicorn/prefer-module */
-if (module.hot) {
-  module.hot.accept()
+// eslint-disable-next-line unicorn/prefer-module
+const hotModule = module.hot
+
+if (hotModule) {
+  hotModule.accept()
 }
-/* eslint-enable unicorn/prefer-module */

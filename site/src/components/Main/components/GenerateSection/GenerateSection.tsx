@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { useTranslation } from 'react-i18next'
 import { IMaskInput } from 'react-imask'
@@ -9,7 +9,7 @@ import { generate as generateCPF } from 'gerador-validador-cpf'
 import styles from './GenerateSection.module.scss'
 
 export const GenerateSection = () => {
-  const [cpf, setCpf] = useState<string>('')
+  const [cpf, setCpf] = useState<string>(() => generateCPF())
   const { t } = useTranslation()
 
   const handleCopy = () => {
@@ -26,10 +26,6 @@ export const GenerateSection = () => {
     }
   }
 
-  useEffect(() => {
-    generateNewCPF()
-  }, [])
-
   return (
     <div className={styles.generateSection}>
       <div>
@@ -43,7 +39,7 @@ export const GenerateSection = () => {
             data-chromatic="ignore"
             className={styles.input}
             type="text"
-            mask={'000.000.000-00'}
+            mask="000.000.000-00"
             readOnly
           />
         </CopyToClipboard>

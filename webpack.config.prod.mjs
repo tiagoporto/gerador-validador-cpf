@@ -3,6 +3,7 @@ import CopyPlugin from 'copy-webpack-plugin'
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { env } from 'node:process'
 import webpack from 'webpack'
 import { GenerateSW } from 'workbox-webpack-plugin'
 
@@ -36,7 +37,7 @@ export default {
     },
   },
   output: {
-    publicPath: process.env.CI === 'true' ? `${pkg.homepage}` : '/',
+    publicPath: env.CI === 'true' ? `${pkg.homepage}` : '/',
     filename: '[name].[contenthash].js',
     chunkFilename: '[name].[id].[contenthash].js',
   },
@@ -123,7 +124,7 @@ export default {
       filename: '[name].[contenthash].css',
     }),
     new HtmlWebpackPlugin({
-      base: process.env.CI === 'true' && `${pkg.homepage}`,
+      base: env.CI === 'true' && `${pkg.homepage}`,
       template: 'site/public/index.html',
       templateParameters: {
         name: brResources.app.name,

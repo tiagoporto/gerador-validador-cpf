@@ -37,7 +37,7 @@ const isFormattedCpfValid = validadeCpf('123.456.789-00')`}
         <p>{t('info.disclaimer')}</p>
 
         <Trans
-          i18nKey={'info.algorithm'}
+          i18nKey="info.algorithm"
           components={[
             <a
               key="link"
@@ -50,7 +50,7 @@ const isFormattedCpfValid = validadeCpf('123.456.789-00')`}
 
         <p>
           <Trans
-            i18nKey={'info.disclaimerValidCPF'}
+            i18nKey="info.disclaimerValidCPF"
             components={[
               <a
                 key="link"
@@ -66,7 +66,7 @@ const isFormattedCpfValid = validadeCpf('123.456.789-00')`}
 
         <blockquote>
           <Trans
-            i18nKey={'info.example'}
+            i18nKey="info.example"
             components={[<strong key="strong" />]}
           />
         </blockquote>
@@ -75,7 +75,7 @@ const isFormattedCpfValid = validadeCpf('123.456.789-00')`}
 
         <ol className={styles.list}>
           {Array.from({ length: 10 }).map((value, index) => (
-            <li key={`item${index}`}>
+            <li key={`item${index + 1}`}>
               {t(`info.stateCode${index + 1}` as 'info.stateCode1')}
             </li>
           ))}

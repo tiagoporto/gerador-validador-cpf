@@ -5,6 +5,8 @@ import { validate } from './index.js'
 describe('validate cpf', () => {
   describe('passing string', () => {
     it('should return true to a valid CPF', () => {
+      expect.hasAssertions()
+
       expect(validate('13768663663')).toBeTruthy()
       expect(validate('83117383000')).toBeTruthy()
       expect(validate('65009596393')).toBeTruthy()
@@ -12,6 +14,8 @@ describe('validate cpf', () => {
     })
 
     it('should return true to a valid CPF starting with 0', () => {
+      expect.assertions(2)
+
       expect(validate('06325112733')).toBeTruthy()
       expect(validate('03539780351')).toBeTruthy()
     })
@@ -28,42 +32,60 @@ describe('validate cpf', () => {
       '88888888888888',
       '99999999999999',
     ])('should return false if characters repeated equal %i', (value) => {
+      expect.assertions(1)
+
       expect(validate(value)).toBeFalsy()
     })
 
     it('should return false to a non valid CPF', () => {
+      expect.assertions(1)
+
       expect(validate('123456789012')).toBeFalsy()
     })
 
     it('should return true to a valid formatted CPF', () => {
+      expect.assertions(2)
+
       expect(validate('137.686.636-63')).toBeTruthy()
       expect(validate('831.173.830-00')).toBeTruthy()
     })
 
     it('should return false to a non valid formatted CPF', () => {
+      expect.assertions(2)
+
       expect(validate('064.875.987-10')).toBeFalsy()
       expect(validate('364.848.987-89')).toBeFalsy()
     })
 
     it('should return true to a valid non formatted CPF', () => {
+      expect.assertions(2)
+
       expect(validate('13768663663')).toBeTruthy()
       expect(validate('83117383000')).toBeTruthy()
     })
 
     it('should return false to a non valid non formatted CPF', () => {
+      expect.assertions(2)
+
       expect(validate('06487598710')).toBeFalsy()
       expect(validate('36484898789')).toBeFalsy()
     })
 
     it('should return false to a value missing digits', () => {
+      expect.assertions(1)
+
       expect(validate('1376866366')).toBeFalsy()
     })
 
     it('should return false to a value with more than 11 digits', () => {
+      expect.assertions(1)
+
       expect(validate('137686636631')).toBeFalsy()
     })
 
     it('should return false to letters and special characters', () => {
+      expect.hasAssertions()
+
       expect(validate('abc.def.ghi-jk')).toBeFalsy()
       expect(validate('a064.875.987-10')).toBeFalsy()
       expect(validate('03r5.397.803-51')).toBeFalsy()
@@ -75,6 +97,8 @@ describe('validate cpf', () => {
     })
 
     it('should return true to a valid CPF where first verifier is 0', () => {
+      expect.hasAssertions()
+
       expect(validate('763.818.422-02')).toBeTruthy()
       expect(validate('76381842202')).toBeTruthy()
       expect(validate('700.730.910-06')).toBeTruthy()
@@ -84,6 +108,8 @@ describe('validate cpf', () => {
     })
 
     it('should return true to a valid CPF where first verifier is higher than 0', () => {
+      expect.hasAssertions()
+
       expect(validate('125.828.106-65')).toBeTruthy()
       expect(validate('12582810665')).toBeTruthy()
       expect(validate('603.806.430-30')).toBeTruthy()
@@ -93,6 +119,8 @@ describe('validate cpf', () => {
     })
 
     it('should return true to a valid CPF where second verifier is 0', () => {
+      expect.hasAssertions()
+
       expect(validate('433.787.588-30')).toBeTruthy()
       expect(validate('43378758830')).toBeTruthy()
       expect(validate('107.481.420-70')).toBeTruthy()
@@ -102,6 +130,8 @@ describe('validate cpf', () => {
     })
 
     it('should return true to a valid CPF where second verifier is higher than 0', () => {
+      expect.hasAssertions()
+
       expect(validate('855.178.021-25')).toBeTruthy()
       expect(validate('85517802125')).toBeTruthy()
       expect(validate('117.227.280-86')).toBeTruthy()
@@ -113,45 +143,63 @@ describe('validate cpf', () => {
 
   describe('passing no values', () => {
     it('should return false to an empty string', () => {
+      expect.assertions(1)
+
       expect(validate('')).toBeFalsy()
     })
 
     it('should return false to a number', () => {
+      expect.assertions(1)
+
       // @ts-expect-error: Accepts string
       expect(validate(23_497_685_000)).toBeFalsy()
     })
 
     it('should return false to true', () => {
+      expect.assertions(1)
+
       // @ts-expect-error: Accepts string
       expect(validate(true)).toBeFalsy()
     })
 
     it('should return false to false', () => {
+      expect.assertions(1)
+
       // @ts-expect-error: Accepts string
       expect(validate(false)).toBeFalsy()
     })
 
     it('should return false to null', () => {
+      expect.assertions(1)
+
       // @ts-expect-error: Accepts string
       expect(validate(null)).toBeFalsy()
     })
 
     it('should return false to undefined', () => {
+      expect.assertions(1)
+
       // @ts-expect-error: Missing parameter
       expect(validate()).toBeFalsy()
     })
 
     it('should return false to NaN', () => {
+      expect.assertions(1)
+
       // @ts-expect-error: Accepts string
       expect(validate(Number.NaN)).toBeFalsy()
     })
 
     it('should return false to an object', () => {
+      expect.assertions(1)
+
       // @ts-expect-error: Accepts string
       expect(validate({})).toBeFalsy()
     })
 
     it('should return false to an array', () => {
+      expect.assertions(1)
+
       // @ts-expect-error: Accepts string
       expect(validate([])).toBeFalsy()
     })

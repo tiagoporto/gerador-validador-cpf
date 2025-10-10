@@ -51,11 +51,11 @@ export const Donate = () => {
 
         <li>
           <CopyToClipboard
-            // eslint-disable-next-line no-secrets/no-secrets
             text="14iqQcwYPLBceRURHuFosGTDXxMmt3cLDp"
             onCopy={handleCopy}
           >
             <button
+              type="button"
               className={`${styles.button} ${styles.buttonBitcoin}`}
               onClick={handleClick('Donate (Bitcoin)')}
               aria-label={t('donate.contributeBitcoin')}

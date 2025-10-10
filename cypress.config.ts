@@ -1,8 +1,8 @@
 import { installPlugin } from '@chromatic-com/cypress'
 import webpackPreprocessor from '@cypress/webpack-preprocessor'
 import { defineConfig } from 'cypress'
+import webpack from 'webpack'
 
-// @ts-expect-error: JS module
 import webpackConfig from './webpack.config.prod.mjs'
 
 export default defineConfig({
@@ -14,7 +14,7 @@ export default defineConfig({
       on(
         'file:preprocessor',
         webpackPreprocessor({
-          webpackOptions: webpackConfig,
+          webpackOptions: webpackConfig as webpack.Configuration,
         }),
       )
     },

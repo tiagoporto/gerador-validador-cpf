@@ -38,7 +38,7 @@ export const Header = () => {
 
       <h1 className={styles.panelTitle}>
         <Trans
-          i18nKey={'header.title'}
+          i18nKey="header.title"
           components={{
             span: <span />,
             abbreviation: <abbr title={t('header.cpf')} />,
