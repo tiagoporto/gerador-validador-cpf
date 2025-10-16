@@ -42,9 +42,11 @@ jobs:
       - name: Run Unit Tests
         run: pnpm coverage
 
-      - name: Coveralls
-        uses: coverallsapp/github-action@648a8eb78e6d50909eff900e4ec85cab4524a45b
+      - name: Upload coverage reports to Codecov
         if: github.event_name != 'workflow_call'
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Run Mutation Tests and Publish to Dashboard
         if: github.event_name != 'workflow_call' && github.event_name != 'pull_request'

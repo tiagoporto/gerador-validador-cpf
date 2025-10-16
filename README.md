@@ -19,7 +19,7 @@ Alphanumeric CNPJ (Cadastro Nacional de Pessoas Jurídicas) of Brazil.
 [![WCAG](https://img.shields.io/badge/wcag-F1FBF5?style=flat-square)](https://www.accessibilitychecker.org/audit/?website=https://tiagoporto.com/gerador-validador-cpf)
 [![Pagespeed](https://img.shields.io/badge/pagespeed-066AFE?style=flat-square)](https://pagespeed.web.dev/analysis/https-tiagoporto-com-gerador-validador-cpf/zhogllvqdq?form_factor=mobile)
 
-[![Coverage Status](https://img.shields.io/coverallsCoverage/github/tiagoporto/gerador-validador-cpf.svg?logo=coveralls&style=flat-square)](https://coveralls.io/github/tiagoporto/gerador-validador-cpf)
+[![Coverage](https://img.shields.io/codecov/c/github/tiagoporto/gerador-validador-cpf/main?style=flat-square)](https://app.codecov.io/gh/tiagoporto/gerador-validador-cpf/tree/main)
 [![Mutation Score](https://img.shields.io/endpoint?style=flat-square&url=https://badge-api.stryker-mutator.io/github.com/tiagoporto/gerador-validador-cpf/main)](https://dashboard.stryker-mutator.io/reports/github.com/tiagoporto/gerador-validador-cpf/main)
 
 ## 🧰 Stack
@@ -62,7 +62,7 @@ Alphanumeric CNPJ (Cadastro Nacional de Pessoas Jurídicas) of Brazil.
 ![Lint Staged](https://img.shields.io/badge/%F0%9F%9A%AB%20Lint%20Staged-%23fef9f9.svg?style=for-the-badge)
 ![Commitlint](https://img.shields.io/badge/Commitlint-%23000.svg?style=for-the-badge&logo=commitlint&logoColor=white)
 
-![Coveralls](https://img.shields.io/badge/coveralls-%233F5767?style=for-the-badge&logo=coveralls)
+![codecov](https://img.shields.io/badge/codecov-%231C1E24?style=for-the-badge&logo=codecov)
 ![Dependabot](https://img.shields.io/badge/dependabot-%23025E8C?style=for-the-badge&logo=dependabot&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
 ![GitHub Pages](https://img.shields.io/badge/Github%20Pages-%23222222?style=for-the-badge&logo=githubpages&logoColor=white)
