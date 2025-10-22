@@ -10,8 +10,8 @@ updates:
     directory: /
     schedule:
       interval: cron
-      # bimonthly on Mondays at 01:00
-      cronjob: 0 1 * FEB,APR,JUN,AUG,OCT,DEC MON
+      # bimonthly on the first Monday of the month at 01:00
+      cronjob: 0 1 1-7 FEB,APR,JUN,AUG,OCT,DEC MON
       # UTC -03:00
       timezone: America/Sao_Paulo
     labels:
