@@ -68,7 +68,7 @@ jobs:
         run: pnpm install --frozen-lockfile --ignore-scripts
 
       - name: Download Cypress test results
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: test-results
           path: ./cypress/downloads
