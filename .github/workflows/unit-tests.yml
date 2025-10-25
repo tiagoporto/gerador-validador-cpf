@@ -40,13 +40,25 @@ jobs:
         run: pnpm install --frozen-lockfile --ignore-scripts
 
       - name: Run Unit Tests
-        run: pnpm coverage
+        run: |
+          pnpm coverage --collectCoverageFrom="packages/gerador-validador-cpf/**/*.{tsx,ts,js,jsx}" --coverageDirectory=packages/gerador-validador-cpf/coverage  &&
+          pnpm coverage --collectCoverageFrom="packages/gerador-validador-cnpj/**/*.{tsx,ts,js,jsx}" --coverageDirectory=packages/gerador-validador-cnpj/coverage
 
-      - name: Upload coverage reports to Codecov
+      - name: Upload CPF coverage reports to Codecov
         if: github.event_name != 'workflow_call'
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./packages/gerador-validador-cpf/coverage/lcov.info
+          flags: cpf
+
+      - name: Upload CNPJ coverage reports to Codecov
+        if: github.event_name != 'workflow_call'
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./packages/gerador-validador-cnpj/coverage/lcov.info
+          flags: cnpj
 
       - name: Run Mutation Tests and Publish to Dashboard
         if: github.event_name != 'workflow_call' && github.event_name != 'pull_request'
