@@ -172,7 +172,7 @@ importers:
         version: 29.7.0(@types/node@24.9.1)
       lint-staged:
         specifier: ^16.2.5
-        version: 16.2.5
+        version: 16.2.6
       mini-css-extract-plugin:
         specifier: ^2.9.2
         version: 2.9.4(webpack@5.102.1)
@@ -198,8 +198,8 @@ importers:
         specifier: ^1.83.0
         version: 1.93.2
       sass-loader:
-        specifier: ^16.0.4
-        version: 16.0.5(sass-embedded@1.93.2)(sass@1.93.2)(webpack@5.102.1)
+        specifier: ^16.0.6
+        version: 16.0.6(sass-embedded@1.93.2)(sass@1.93.2)(webpack@5.102.1)
       semantic-release:
         specifier: ^24.2.3
         version: 24.2.9(typescript@5.9.3)
@@ -244,7 +244,7 @@ importers:
         version: 0.4.4(rollup@4.52.5)
       '@rollup/plugin-typescript':
         specifier: ^12.1.2
-        version: 12.1.4(rollup@4.52.5)(tslib@2.8.1)(typescript@5.9.3)
+        version: 12.3.0(rollup@4.52.5)(tslib@2.8.1)(typescript@5.9.3)
       jest-mock-random:
         specifier: ^1.1.1
         version: 1.1.1
@@ -262,7 +262,7 @@ importers:
         version: 0.4.4(rollup@4.52.5)
       '@rollup/plugin-typescript':
         specifier: ^12.1.2
-        version: 12.1.4(rollup@4.52.5)(tslib@2.8.1)(typescript@5.9.3)
+        version: 12.3.0(rollup@4.52.5)(tslib@2.8.1)(typescript@5.9.3)
       jest-mock-random:
         specifier: ^1.1.1
         version: 1.1.1
@@ -2326,8 +2326,8 @@ packages:
       rollup:
         optional: true
 
-  '@rollup/plugin-typescript@12.1.4':
-    resolution: {integrity: sha512-s5Hx+EtN60LMlDBvl5f04bEiFZmAepk27Q+mr85L/00zPDn1jtzlTV6FWn81MaIwqfWzKxmOJrBWHU6vtQyedQ==}
+  '@rollup/plugin-typescript@12.3.0':
+    resolution: {integrity: sha512-7DP0/p7y3t67+NabT9f8oTBFE6gGkto4SA6Np2oudYmZE/m1dt8RB0SjL1msMxFpLo631qjRCcBlAbq1ml/Big==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^2.14.0||^3.0.0||^4.0.0
@@ -6574,8 +6574,8 @@ packages:
     resolution: {integrity: sha512-wM1+Z03eypVAVUCE7QdSqpVIvelbOakn1M0bPDoA4SGWPx3sNDVUiMo3L6To6WWGClB7VyXnhQ4Sn7gxiJbE6A==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  lint-staged@16.2.5:
-    resolution: {integrity: sha512-o36wH3OX0jRWqDw5dOa8a8x6GXTKaLM+LvhRaucZxez0IxA+KNDUCiyjBfNgsMNmchwSX6urLSL7wShcUqAang==}
+  lint-staged@16.2.6:
+    resolution: {integrity: sha512-s1gphtDbV4bmW1eylXpVMk2u7is7YsrLl8hzrtvC70h4ByhcMLZFY01Fx05ZUDNuv1H8HO4E+e2zgejV1jVwNw==}
     engines: {node: '>=20.17'}
     hasBin: true
 
@@ -8884,8 +8884,8 @@ packages:
     engines: {node: '>=16.0.0'}
     hasBin: true
 
-  sass-loader@16.0.5:
-    resolution: {integrity: sha512-oL+CMBXrj6BZ/zOq4os+UECPL+bWqt6OAC6DWS8Ln8GZRcMDjlJ4JC3FBDuHJdYaFWIdKNIBYmtZtK2MaMkNIw==}
+  sass-loader@16.0.6:
+    resolution: {integrity: sha512-sglGzId5gmlfxNs4gK2U3h7HlVRfx278YK6Ono5lwzuvi1jxig80YiuHkaDBVsYIKFhx8wN7XSCI0M2IDS/3qA==}
     engines: {node: '>= 18.12.0'}
     peerDependencies:
       '@rspack/core': 0.x || 1.x
@@ -13056,7 +13056,7 @@ snapshots:
     optionalDependencies:
       rollup: 4.52.5
 
-  '@rollup/plugin-typescript@12.1.4(rollup@4.52.5)(tslib@2.8.1)(typescript@5.9.3)':
+  '@rollup/plugin-typescript@12.3.0(rollup@4.52.5)(tslib@2.8.1)(typescript@5.9.3)':
     dependencies:
       '@rollup/pluginutils': 5.1.4(rollup@4.52.5)
       resolve: 1.22.10
@@ -18232,7 +18232,7 @@ snapshots:
 
   lines-and-columns@2.0.4: {}
 
-  lint-staged@16.2.5:
+  lint-staged@16.2.6:
     dependencies:
       commander: 14.0.1
       listr2: 9.0.5
@@ -21271,7 +21271,7 @@ snapshots:
       sass-embedded-win32-arm64: 1.93.2
       sass-embedded-win32-x64: 1.93.2
 
-  sass-loader@16.0.5(sass-embedded@1.93.2)(sass@1.93.2)(webpack@5.102.1):
+  sass-loader@16.0.6(sass-embedded@1.93.2)(sass@1.93.2)(webpack@5.102.1):
     dependencies:
       neo-async: 2.6.2
     optionalDependencies:
