@@ -102,8 +102,8 @@ importers:
         specifier: ^0.2.37
         version: 0.2.39(@swc/core@1.13.5)
       '@tiagoporto/dependabot-config':
-        specifier: ^2.4.1
-        version: 2.4.1
+        specifier: ^2.4.2
+        version: 2.4.2
       '@tiagoporto/editor-config':
         specifier: ^2.1.0
         version: 2.1.0
@@ -2816,8 +2816,8 @@ packages:
     resolution: {integrity: sha512-+PmQX0PiAYPMeVYe237LJAYvOMYW1j2rH5YROyS3b4CTVJum34HfRvKvAzozHAQG0TnHNdUfY9nCeUyRAs//cw==}
     engines: {node: '>=14.16'}
 
-  '@tiagoporto/dependabot-config@2.4.1':
-    resolution: {integrity: sha512-F2NgbJM/Ny6Z0TeNfwDDPz9E5Cb1dG6oszPUi9kkf8Jv/Dfh8+suMCXFoNlHgrRy+pJl9YUpyfkL+HfVQIIfkw==}
+  '@tiagoporto/dependabot-config@2.4.2':
+    resolution: {integrity: sha512-bdDWRbtJ6OBS/XouhEzQPQzeiGsCdkLM/dlxxk8JmDifjDptThTC09IFIlj4guLN0g73aGMj3B4KcZWBZiDUlQ==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -13657,7 +13657,7 @@ snapshots:
     dependencies:
       defer-to-connect: 2.0.1
 
-  '@tiagoporto/dependabot-config@2.4.1': {}
+  '@tiagoporto/dependabot-config@2.4.2': {}
 
   '@tiagoporto/editor-config@2.1.0': {}
 
