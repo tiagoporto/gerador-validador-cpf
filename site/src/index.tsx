@@ -37,7 +37,6 @@ if (rootElement) {
   console.error('Failed to find the root element')
 }
 
-// eslint-disable-next-line unicorn/prefer-module
 const hotModule = module.hot
 
 if (hotModule) {
