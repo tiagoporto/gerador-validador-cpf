@@ -1,0 +1,7 @@
+flags:
+  cpf:
+    paths:
+      - packages/gerador-validador-cpf/
+  cnpj:
+    paths:
+      - packages/gerador-validador-cnpj/
