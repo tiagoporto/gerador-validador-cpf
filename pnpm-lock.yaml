@@ -102,7 +102,7 @@ importers:
         specifier: ^0.2.37
         version: 0.2.39(@swc/core@1.14.0)
       '@tiagoporto/dependabot-config':
-        specifier: ^2.4.2
+        specifier: ^2.5.0
         version: 2.5.0
       '@tiagoporto/editor-config':
         specifier: ^2.1.0
