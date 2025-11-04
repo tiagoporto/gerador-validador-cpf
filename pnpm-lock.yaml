@@ -14,8 +14,8 @@ importers:
   .:
     dependencies:
       '@ctrl/react-adsense':
-        specifier: ^1.8.0
-        version: 1.8.0
+        specifier: ^2.1.0
+        version: 2.1.0
       '@types/ga-gtag':
         specifier: ^1.2.0
         version: 1.2.0
@@ -1383,8 +1383,8 @@ packages:
     peerDependencies:
       postcss: ^8.4
 
-  '@ctrl/react-adsense@1.8.0':
-    resolution: {integrity: sha512-c95s60v8WYlPgdeZV8gn80jTQdeNSCxHaZcZqNirlm24y/vceHafUcp0t8qemGV+tikKtSAl3vCDVA43jk9DAw==}
+  '@ctrl/react-adsense@2.1.0':
+    resolution: {integrity: sha512-au+OAi/33hE5RUZ/rUN760O+SfDF0bb1tofMHeeEpudR3RLQFN3MtliwJn6aktlqoZTovQuEW+ZXLo42ED2IAw==}
 
   '@cypress/request@3.0.9':
     resolution: {integrity: sha512-I3l7FdGRXluAS44/0NguwWlO83J18p0vlr2FYHrJkWdNYhgVoiYo61IXPqaOsL+vNxU1ZqMACzItGK3/KKDsdw==}
@@ -11941,7 +11941,7 @@ snapshots:
     dependencies:
       postcss: 8.5.6
 
-  '@ctrl/react-adsense@1.8.0':
+  '@ctrl/react-adsense@2.1.0':
     dependencies:
       tslib: 2.8.1
 
