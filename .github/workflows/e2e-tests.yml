@@ -39,7 +39,7 @@ jobs:
           wait-on: 'http://[::1]:8080'
 
       - name: Upload test results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: test-results
           path: ./cypress/downloads
