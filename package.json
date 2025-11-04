@@ -12,7 +12,6 @@
   "scripts": {
     "postinstall": "$CI = true || (dependabot-config && editor-config)",
     "preinstall": "npx only-allow pnpm",
-    "prepare": "husky",
     "start": "webpack serve",
     "build": "rm -rf dist && webpack --config webpack.config.prod.mjs",
     "checks": "pnpm check-docs && pnpm format:check && pnpm typecheck && pnpm lint:styles && pnpm lint",
@@ -87,9 +86,8 @@
     "eslint": "^9.37.0",
     "eslint-plugin-cypress": "^5.2.0",
     "html-webpack-plugin": "^5.6.3",
-    "husky": "^9.1.7",
     "jest": "^29.7.0",
-    "lint-staged": "^16.2.5",
+    "lefthook": "^2.0.2",
     "mini-css-extract-plugin": "^2.9.2",
     "postcss": "^8.4.49",
     "postcss-loader": "^8.1.1",
@@ -118,7 +116,8 @@
       "conventional-changelog-conventionalcommits": ">=8.0.0"
     },
     "onlyBuiltDependencies": [
-      "cypress"
+      "cypress",
+      "lefthook"
     ]
   }
 }

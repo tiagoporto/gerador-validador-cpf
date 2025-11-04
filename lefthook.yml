@@ -1,0 +1,41 @@
+commit-msg:
+  commands:
+    commitlint:
+      run: pnpm exec commitlint --edit {1}
+
+pre-commit:
+  parallel: true
+  commands:
+    format:
+      glob: '*'
+      run: pnpm exec prettier --write --ignore-unknown {staged_files}
+      stage_fixed: true
+
+    typecheck:
+      glob: '*.{ts,tsx}'
+      # Whole project type check for global errors
+      run: pnpm exec tsc --project tsconfig.json
+
+    doc-lint:
+      glob: '*.{md,markdown,mdx}'
+      run: pnpm exec remark --frail {staged_files}
+
+    markdown-lint:
+      glob: '*.{md,markdown,mdx}'
+      run: pnpm exec eslint --max-warnings 0 --no-warn-ignored {staged_files}
+
+    styles-lint:
+      glob: '*.{css,scss}'
+      run: pnpm exec stylelint {staged_files}
+
+    html-yml-json-lint:
+      glob: '*.{html,yml,yaml,json,jsonc,json5}'
+      run: pnpm exec eslint --max-warnings 0 --no-warn-ignored {staged_files}
+
+    js-ts-eslint:
+      glob: '*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}'
+      run: pnpm exec eslint --max-warnings 0 --no-warn-ignored {staged_files}
+
+    test:
+      glob: '*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}'
+      run: pnpm exec jest --bail --findRelatedTests --passWithNoTests {staged_files}
