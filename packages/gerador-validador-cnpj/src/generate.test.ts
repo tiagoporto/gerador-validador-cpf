@@ -66,4 +66,17 @@ describe('generate cnpj', () => {
     expect(cnpj).toBe(expected)
     expect(cnpj).toBeTruthy()
   })
+
+  it('should not return a cnpj with all digits equal to 0', () => {
+    expect.assertions(1)
+
+    mockRandom([
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // first attempt -> 000000000000
+      0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0, 0.1, 0.2, // retry -> 123456789012
+    ])
+
+    const cnpj = generate()
+
+    expect(cnpj).toBe('12345678901230')
+  })
 })
