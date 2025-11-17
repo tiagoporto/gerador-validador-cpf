@@ -34,6 +34,7 @@
   },
   "files": [
     "/dist",
+    "/README.md",
     "/README.en.md",
     "/README.es.md"
   ],

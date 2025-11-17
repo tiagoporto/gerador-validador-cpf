@@ -18,7 +18,11 @@ export const generate = ({
   format?: boolean
   alphanumeric?: boolean
 } = {}): string => {
-  const firstTwelveDigits = generateCharacters(alphanumeric)
+  let firstTwelveDigits = ''
+
+  do {
+    firstTwelveDigits = generateCharacters(alphanumeric)
+  } while (firstTwelveDigits === '000000000000')
 
   const checkDigits = calcCheckDigits(firstTwelveDigits)
   const generatedCNPJ = `${firstTwelveDigits}${checkDigits}`
