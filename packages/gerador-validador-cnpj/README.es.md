@@ -2,14 +2,6 @@
 
 JS lib para generar y validar CNPJ alfanumérico en Brasil.
 
-> [Nuevo CNPJ alfanumérico](https://tiagoporto.com/pt-br/blog/novo-cnpj-seu-codigo-esta-preparado-para-a-mudanca/)
->
-> La “Receita Federal” de Brasil modificó el algoritmo del CNPJ para incluir
-> caracteres alfanuméricos debido a la inminente posibilidad de que se agoten los
-> números actuales. El cambio entrará en vigor a partir de julio de 2026.
->
-> **Los números actuales siguen siendo válidos.**. [Lea más](https://github.com/tiagoporto/gerador-validador-cpf/issues/102).
-
 ## Docs
 
 Leer en otros idiomas: [English](https://github.com/tiagoporto/gerador-validador-cpf/blob/main/packages/gerador-validador-cnpj/README.en.md), Español y [Português(Brasil)](https://github.com/tiagoporto/gerador-validador-cpf/blob/main/packages/gerador-validador-cnpj/README.md)
@@ -58,13 +50,9 @@ import { validate as validadeCNPJ } from 'gerador-validador-cnpj'
 // jsr import from "@tiagoporto/gerador-validador-cnpj"
 
 const isCNPJValid = validadeCNPJ('01234567890000')
-const isCNPJAlphanumericValid = validadeCNPJ('9ZW2JIM2OWTG85', {
-  validateAlphanumeric: true
-})
+const isCNPJAlphanumericValid = validadeCNPJ('9ZW2JIM2OWTG85')
 const isFormattedCNPJValid = validadeCNPJ('01.234.567/8900-00')
-const isFormattedCNPJAlphanumericValid = validadeCNPJ('8I.S4O.LPO/PRD7-81', {
-  validateAlphanumeric: true
-})
+const isFormattedCNPJAlphanumericValid = validadeCNPJ('8I.S4O.LPO/PRD7-81')
 ```
 
 ## License
