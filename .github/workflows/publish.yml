@@ -1,6 +1,13 @@
 name: Publish Packages
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Dry-run
+        required: false
+        type: boolean
+        default: true
 
 permissions:
   contents: read
@@ -27,7 +34,7 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Install pnpm
-        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda
+        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061
 
       - name: Setup node
         uses: actions/setup-node@v6
@@ -38,16 +45,13 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts
 
-      - name: Configure .npmrc
-        run: echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> .npmrc
-
-      - name: Bump version, add tag, and publish github release
+      - name: Bump versions, add tags, publish packages and create github releases
         env:
           BRANCH: ${{github.ref_name}}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
-        run: pnpm recursive run release
+        run: pnpm exec multi-semantic-release --dry-run=${{ github.event.inputs.dry_run }}
 
       - name: Remove node_modules
         run: |
