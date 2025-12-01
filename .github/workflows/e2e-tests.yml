@@ -30,7 +30,7 @@ jobs:
         uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda
 
       - name: Run E2E tests
-        uses: cypress-io/github-action@b8ba51a856ba5f4c15cf39007636d4ab04f23e3c
+        uses: cypress-io/github-action@7ef72e250a9e564efb4ed4c2433971ada4cc38b4
         env:
           ELECTRON_EXTRA_LAUNCH_ARGS: --remote-debugging-port=9222
         with:
