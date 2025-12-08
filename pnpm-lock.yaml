@@ -69,11 +69,11 @@ importers:
         version: 11.0.5(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
     devDependencies:
       '@anolilab/multi-semantic-release':
-        specifier: ^3.0.0
-        version: 3.0.0(semantic-release@25.0.2(typescript@5.9.3))(typescript@5.9.3)
+        specifier: ^3.2.2
+        version: 3.2.2(semantic-release@25.0.2(typescript@5.9.3))(typescript@5.9.3)
       '@anolilab/semantic-release-pnpm':
-        specifier: ^3.0.0
-        version: 3.0.0(@types/node@24.10.0)(yaml@2.8.1)
+        specifier: ^3.2.0
+        version: 3.2.2(@types/node@24.10.0)(yaml@2.8.1)
       '@chromatic-com/cypress':
         specifier: ^0.11.7
         version: 0.11.7(@swc/core@1.14.0)(@types/react@19.2.2)(esbuild@0.25.12)(prettier@3.6.2)(typescript@5.9.3)(webpack-cli@6.0.1)
@@ -291,20 +291,20 @@ packages:
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
 
-  '@anolilab/multi-semantic-release@3.0.0':
-    resolution: {integrity: sha512-sJ7UjzJ2LNNIYj51rQTa16mqWuuUVBfEOhcMxNvA1gc1FCrfD2rNq0DOwjB9zhEyeFXaBiiXOeIe2N9NJ2KnIg==}
+  '@anolilab/multi-semantic-release@3.2.2':
+    resolution: {integrity: sha512-Lt5f6F9Q82zXRbfmOS7CuLQ+ZsA7Qi4nFYVr0yGPnuisfntNxtQmpF9t0qo1HFKov76a9oYnEpqKif+FGLBEvw==}
     engines: {node: ^22.14.0 || >=24.10.0}
     os: [darwin, linux, win32]
     hasBin: true
     peerDependencies:
       semantic-release: '>=24'
 
-  '@anolilab/rc@3.0.0':
-    resolution: {integrity: sha512-/31OxbQenvwX2qk5vlZU8OKUsvjHLLS/YiwWYznG1CvYVDRLbTWFdsxW5KkLuIPEJ5R4wsO76/q/DJPgjJ7UoA==}
+  '@anolilab/rc@3.2.0':
+    resolution: {integrity: sha512-JlyioHSFKJ0DugoCtPSvZJW2SKLPgaM422DTHlgwKw+Q/Ibk34lBUAZEZVuPsYckvdOu64jXwqNsmaGGQUw2Tg==}
     engines: {node: ^22.14.0 || >=24.10.0}
 
-  '@anolilab/semantic-release-pnpm@3.0.0':
-    resolution: {integrity: sha512-EPXlO/H1ArtNLsQyhD2P+zPU8HBZVl5F5FcsrRV4q9UZMwDRB3M0FwvwNwq+mpw28InKX4THNupMmCVAiJ65qA==}
+  '@anolilab/semantic-release-pnpm@3.2.2':
+    resolution: {integrity: sha512-Rov3lFxfJ8hEt07o6UZ7TsXfs5/hx/D+3o8mH1UIf7h3dLO761PlC3lWz/7GdqMN362o+VBywdlqJbWPN//SPQ==}
     engines: {node: ^22.14.0 || >=24.10.0}
 
   '@antfu/install-pkg@1.1.0':
@@ -5130,6 +5130,10 @@ packages:
 
   execa@9.6.0:
     resolution: {integrity: sha512-jpWzZ1ZhwUmeWRhS7Qv3mhpOhLfwI+uAX4e5fOcXqwMR7EcJ0pj2kV1CVzHVMX/LphnKWD3LObjZCoJ71lKpHw==}
+    engines: {node: ^18.19.0 || >=20.5.0}
+
+  execa@9.6.1:
+    resolution: {integrity: sha512-9Be3ZoN4LmYR90tUoVu2te2BsbzHfhJyfEiAVfz7N5/zv+jduIfLrV2xdQXOHbaD6KgpGdO9PRPM1Y4Q9QkPkA==}
     engines: {node: ^18.19.0 || >=20.5.0}
 
   executable@4.1.1:
@@ -10368,6 +10372,11 @@ packages:
     engines: {node: '>= 14.6'}
     hasBin: true
 
+  yaml@2.8.2:
+    resolution: {integrity: sha512-mplynKqc1C2hTVYxd0PU2xQAc22TI1vShAYGksCCfxbn/dFwnHTNi1bvYsBTkhdUNtGIf5xNOg938rrSSYvS9A==}
+    engines: {node: '>= 14.6'}
+    hasBin: true
+
   yargs-parser@20.2.9:
     resolution: {integrity: sha512-y11nGElTIV+CT3Zv9t7VKl+Q3hTQoT9a1Qzezhhl6Rp21gJ/IVTW7Z3y9EWXhuUBC2Shnf+DX0antecpAwSP8w==}
     engines: {node: '>=10'}
@@ -10457,16 +10466,16 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.8
       '@jridgewell/trace-mapping': 0.3.25
 
-  '@anolilab/multi-semantic-release@3.0.0(semantic-release@25.0.2(typescript@5.9.3))(typescript@5.9.3)':
+  '@anolilab/multi-semantic-release@3.2.2(semantic-release@25.0.2(typescript@5.9.3))(typescript@5.9.3)':
     dependencies:
       '@semrel-extra/topo': 1.14.1
-      '@visulima/fs': 4.1.0(yaml@2.8.1)
+      '@visulima/fs': 4.1.0(yaml@2.8.2)
       '@visulima/path': 2.0.5
       cosmiconfig: 9.0.0(typescript@5.9.3)
       debug: 4.4.3(supports-color@8.1.1)
       detect-indent: 7.0.2
       detect-newline: 4.0.1
-      execa: 9.6.0
+      execa: 9.6.1
       git-log-parser: 1.2.1
       lodash-es: 4.17.21
       resolve-from: 5.0.0
@@ -10474,13 +10483,13 @@ snapshots:
       semver: 7.7.3
       signale: 1.4.0
       stream-buffers: 3.0.3
-      yaml: 2.8.1
+      yaml: 2.8.2
       yargs: 18.0.0
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  '@anolilab/rc@3.0.0(yaml@2.8.1)':
+  '@anolilab/rc@3.2.0(yaml@2.8.1)':
     dependencies:
       '@visulima/fs': 4.1.0(yaml@2.8.1)
       '@visulima/path': 2.0.5
@@ -10489,22 +10498,24 @@ snapshots:
     transitivePeerDependencies:
       - yaml
 
-  '@anolilab/semantic-release-pnpm@3.0.0(@types/node@24.10.0)(yaml@2.8.1)':
+  '@anolilab/semantic-release-pnpm@3.2.2(@types/node@24.10.0)(yaml@2.8.1)':
     dependencies:
       '@actions/core': 1.11.1
-      '@anolilab/rc': 3.0.0(yaml@2.8.1)
+      '@anolilab/rc': 3.2.0(yaml@2.8.1)
       '@semantic-release/error': 4.0.0
       '@visulima/fs': 4.1.0(yaml@2.8.1)
       '@visulima/package': 4.1.7(@types/node@24.10.0)
       '@visulima/path': 2.0.5
+      debug: 4.4.3(supports-color@8.1.1)
       env-ci: 11.2.0
-      execa: 9.6.0
+      execa: 9.6.1
       ini: 6.0.0
       normalize-url: 8.1.0
       registry-auth-token: 5.1.0
       semver: 7.7.3
     transitivePeerDependencies:
       - '@types/node'
+      - supports-color
       - yaml
 
   '@antfu/install-pkg@1.1.0':
@@ -14341,6 +14352,13 @@ snapshots:
     optionalDependencies:
       yaml: 2.8.1
 
+  '@visulima/fs@4.1.0(yaml@2.8.2)':
+    dependencies:
+      '@visulima/path': 2.0.5
+      type-fest: 5.2.0
+    optionalDependencies:
+      yaml: 2.8.2
+
   '@visulima/package@4.1.7(@types/node@24.10.0)':
     dependencies:
       '@antfu/install-pkg': 1.1.0
@@ -16549,6 +16567,21 @@ snapshots:
       yoctocolors: 2.1.1
 
   execa@9.6.0:
+    dependencies:
+      '@sindresorhus/merge-streams': 4.0.0
+      cross-spawn: 7.0.6
+      figures: 6.1.0
+      get-stream: 9.0.1
+      human-signals: 8.0.1
+      is-plain-obj: 4.1.0
+      is-stream: 4.0.1
+      npm-run-path: 6.0.0
+      pretty-ms: 9.3.0
+      signal-exit: 4.1.0
+      strip-final-newline: 4.0.0
+      yoctocolors: 2.1.2
+
+  execa@9.6.1:
     dependencies:
       '@sindresorhus/merge-streams': 4.0.0
       cross-spawn: 7.0.6
@@ -23156,6 +23189,8 @@ snapshots:
   yaml@1.10.2: {}
 
   yaml@2.8.1: {}
+
+  yaml@2.8.2: {}
 
   yargs-parser@20.2.9: {}
 
