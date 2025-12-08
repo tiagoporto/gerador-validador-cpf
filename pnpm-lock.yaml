@@ -70,7 +70,7 @@ importers:
         version: 3.2.2(semantic-release@25.0.2(typescript@5.9.3))(typescript@5.9.3)
       '@anolilab/semantic-release-pnpm':
         specifier: ^3.2.0
-        version: 3.2.2(@types/node@24.10.0)(yaml@2.8.1)
+        version: 3.2.2(@types/node@24.10.0)(yaml@2.8.2)
       '@chromatic-com/cypress':
         specifier: ^0.11.7
         version: 0.11.7(@swc/core@1.14.0)(@types/react@19.2.7)(esbuild@0.25.12)(prettier@3.6.2)(typescript@5.9.3)(webpack-cli@6.0.1)
@@ -10508,21 +10508,21 @@ snapshots:
       - supports-color
       - typescript
 
-  '@anolilab/rc@3.2.0(yaml@2.8.1)':
+  '@anolilab/rc@3.2.0(yaml@2.8.2)':
     dependencies:
-      '@visulima/fs': 4.1.0(yaml@2.8.1)
+      '@visulima/fs': 4.1.0(yaml@2.8.2)
       '@visulima/path': 2.0.5
       ini: 6.0.0
       ts-deepmerge: 7.0.3
     transitivePeerDependencies:
       - yaml
 
-  '@anolilab/semantic-release-pnpm@3.2.2(@types/node@24.10.0)(yaml@2.8.1)':
+  '@anolilab/semantic-release-pnpm@3.2.2(@types/node@24.10.0)(yaml@2.8.2)':
     dependencies:
       '@actions/core': 1.11.1
-      '@anolilab/rc': 3.2.0(yaml@2.8.1)
+      '@anolilab/rc': 3.2.0(yaml@2.8.2)
       '@semantic-release/error': 4.0.0
-      '@visulima/fs': 4.1.0(yaml@2.8.1)
+      '@visulima/fs': 4.1.0(yaml@2.8.2)
       '@visulima/package': 4.1.7(@types/node@24.10.0)
       '@visulima/path': 2.0.5
       debug: 4.4.3(supports-color@8.1.1)
