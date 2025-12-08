@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { IMaskInput } from 'react-imask'
 
@@ -17,29 +17,25 @@ const enableAnalytics = () => {
 
 export const ValidateSection = () => {
   const { t } = useTranslation()
-  const [temporaryCpf, setTemporaryCpf] = useState<string>('')
   const [message, setMessage] = useState<Message>()
 
-  const handleChangeCPF = (cpf: string): void => {
-    setTemporaryCpf(cpf)
-  }
-
-  const isValid = useMemo(() => validadeCPF(temporaryCpf), [temporaryCpf])
-
-  useMemo(() => {
+  const handleChangeCPF = (temporaryCpf: string): void => {
     let newMessage: Message | undefined
-    if (process.env.NODE_ENV === 'production') {
-      void enableAnalytics()
-    }
 
     if (temporaryCpf.length === 14) {
+      const isValid = validadeCPF(temporaryCpf)
+
       newMessage = isValid ? 'messages.validCPF' : 'messages.invalidCPF'
     } else if (temporaryCpf.length > 0) {
       newMessage = 'messages.incomplete'
     }
 
     setMessage(newMessage)
-  }, [isValid, temporaryCpf])
+
+    if (process.env.NODE_ENV === 'production') {
+      enableAnalytics()
+    }
+  }
 
   return (
     <div className={style.validateSection}>
@@ -47,7 +43,6 @@ export const ValidateSection = () => {
 
       <IMaskInput
         aria-label={t('validate.insertCPF')}
-        value={temporaryCpf}
         data-testid="input-validate-cpf"
         placeholder={t('validate.insertCPF')}
         onAccept={handleChangeCPF}
