@@ -70,7 +70,7 @@
     "@stryker-mutator/core": "^9.4.0",
     "@stryker-mutator/jest-runner": "^9.4.0",
     "@stryker-mutator/typescript-checker": "^9.4.0",
-    "@swc/core": "^1.10.4",
+    "@swc/core": "^1.15.3",
     "@swc/jest": "^0.2.37",
     "@tiagoporto/dependabot-config": "^2.5.0",
     "@tiagoporto/editor-config": "^2.1.0",
