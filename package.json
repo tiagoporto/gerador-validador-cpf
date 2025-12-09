@@ -85,7 +85,7 @@
     "@types/react-dom": "^19.2.3",
     "@types/react-syntax-highlighter": "^15.5.13",
     "@types/webpack-env": "^1.18.8",
-    "chromatic": "^11.25.1",
+    "chromatic": "^13.3.4",
     "copy-webpack-plugin": "^13.0.1",
     "css-loader": "^7.1.2",
     "css-minimizer-webpack-plugin": "^7.0.3",
