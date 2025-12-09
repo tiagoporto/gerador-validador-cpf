@@ -1,6 +1,6 @@
 {
   "name": "gerador-validador-cpf-root",
-  "homepage": "https://tiagoporto.github.io/gerador-validador-cpf/",
+  "homepage": "https://tiagoporto.com/gerador-validador-cpf/",
   "private": true,
   "type": "module",
   "devEngines": {
