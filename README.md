@@ -124,7 +124,7 @@ pnpm install
 ### Running dev server
 
 ```bash
-pnpm start
+pnpm dev
 ```
 
 ## 🤝 Contributing

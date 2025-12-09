@@ -19,7 +19,8 @@
   "scripts": {
     "postinstall": "$CI = true || (dependabot-config && editor-config)",
     "preinstall": "npx only-allow pnpm",
-    "start": "webpack serve",
+    "serve": "pnpx server dist/",
+    "dev": "webpack serve",
     "build": "rm -rf dist && webpack --config webpack.config.prod.mjs",
     "checks": "pnpm check-docs && pnpm format:check && pnpm typecheck && pnpm lint:styles && pnpm lint",
     "check-docs": "remark . --frail --ext md,markdown,mdx",
@@ -36,8 +37,8 @@
     "test:watch": "pnpm test --watch",
     "test:package": "jest --config jest.config.package.mjs",
     "test:mutation": "stryker run",
-    "test:e2e": "CI=false ELECTRON_EXTRA_LAUNCH_ARGS=--remote-debugging-port=9222 start-server-and-test start http-get://localhost:8080 'cypress run --e2e'",
-    "test:e2e:dev": "CI=false start-server-and-test \"pnpm start\" http-get://localhost:8080 'cypress open --e2e'",
+    "test:e2e": "CI=false ELECTRON_EXTRA_LAUNCH_ARGS=--remote-debugging-port=9222 start-server-and-test \"pnpm dev\" http-get://localhost:8080 'cypress run --e2e'",
+    "test:e2e:dev": "CI=false start-server-and-test \"pnpm dev\" http-get://localhost:8080 'cypress open --e2e'",
     "pack-extract": "pnpm recursive run pack-extract"
   },
   "dependencies": {
