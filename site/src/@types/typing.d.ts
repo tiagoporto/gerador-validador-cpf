@@ -5,5 +5,5 @@ declare module '*.png' {
 
 declare module '*.module.scss' {
   const classes: Record<string, string>
-  export default classes
+  export = classes
 }

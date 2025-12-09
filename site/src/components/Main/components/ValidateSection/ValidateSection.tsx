@@ -4,7 +4,7 @@ import { IMaskInput } from 'react-imask'
 
 import { validate as validadeCPF } from 'gerador-validador-cpf'
 
-import style from './ValidateSection.module.scss'
+import * as style from './ValidateSection.module.scss'
 
 type Message = 'messages.validCPF' | 'messages.invalidCPF' | 'messages.incomplete'
 const enableAnalytics = () => {

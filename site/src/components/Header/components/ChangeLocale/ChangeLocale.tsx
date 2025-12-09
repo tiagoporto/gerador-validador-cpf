@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next'
 
-import styles from './ChangeLocale.module.scss'
+import * as styles from './ChangeLocale.module.scss'
 
 type AvailableLocales = 'en' | 'pt' | 'es'
 

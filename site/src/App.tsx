@@ -7,7 +7,7 @@ import './App.scss'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { Main } from './components/Main'
-import styles from './Toast.module.scss'
+import * as styles from './Toast.module.scss'
 
 export const App = () => {
   const { t } = useTranslation()

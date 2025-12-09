@@ -1,4 +1,4 @@
-import styles from './Footer.module.scss'
+import * as styles from './Footer.module.scss'
 
 export const Footer = () => {
   const date = new Date()

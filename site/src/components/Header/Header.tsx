@@ -7,7 +7,7 @@ import { toast } from 'react-toastify'
 
 import { ChangeLocale } from './components/ChangeLocale'
 import { Donate } from './components/Donate'
-import styles from './Header.module.scss'
+import * as styles from './Header.module.scss'
 
 export const Header = () => {
   const { t } = useTranslation()

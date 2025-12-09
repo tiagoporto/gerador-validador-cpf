@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 
 import { generate as generateCPF } from 'gerador-validador-cpf'
 
-import styles from './GenerateSection.module.scss'
+import * as styles from './GenerateSection.module.scss'
 
 export const GenerateSection = () => {
   const [cpf, setCpf] = useState<string>(() => generateCPF())

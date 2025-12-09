@@ -3,7 +3,7 @@ import { Trans, useTranslation } from 'react-i18next'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { github } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
-import styles from './InfoSection.module.scss'
+import * as styles from './InfoSection.module.scss'
 
 export const InfoSection = () => {
   const { t } = useTranslation()
