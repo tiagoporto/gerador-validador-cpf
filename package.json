@@ -23,7 +23,7 @@
     "build": "rm -rf dist && webpack --config webpack.config.prod.mjs",
     "checks": "pnpm check-docs && pnpm format:check && pnpm typecheck && pnpm lint:styles && pnpm lint",
     "check-docs": "remark . --frail --ext md,markdown,mdx",
-    "check-update": "pnpm update --interactive --latest",
+    "check-update": "pnpm update --interactive --latest && pnpm recursive run check-update",
     "format:check": "prettier --check --ignore-unknown \"**/*\"",
     "format": "npm run format:check -- --write",
     "typecheck": "tsc --project tsconfig.json",
