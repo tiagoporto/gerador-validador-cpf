@@ -29,6 +29,12 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda
 
+      - name: Setup node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
       - name: Run E2E tests
         uses: cypress-io/github-action@7ef72e250a9e564efb4ed4c2433971ada4cc38b4
         env:
