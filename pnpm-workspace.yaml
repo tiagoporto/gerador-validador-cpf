@@ -8,6 +8,12 @@ overrides:
   react-helmet-async>react: '>=19'
   conventional-changelog-conventionalcommits: '>=8.0.0'
 
-onlyBuiltDependencies:
-  - cypress
-  - lefthook
+allowBuilds:
+  '@swc/core': false
+  core-js-pure: false
+  cypress: true
+  esbuild: false
+  lefthook: true
+  unrs-resolver: false
+
+access: public
