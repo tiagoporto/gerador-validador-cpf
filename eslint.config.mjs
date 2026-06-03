@@ -1,5 +1,5 @@
 import tpConfig from '@tiagoporto/eslint-config'
-import pluginCypress from 'eslint-plugin-cypress/flat'
+import pluginCypress from 'eslint-plugin-cypress'
 import pluginJest from 'eslint-plugin-jest'
 
 /** @type {import('eslint').Linter.Config[]} */
