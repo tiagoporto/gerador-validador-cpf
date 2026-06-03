@@ -41,7 +41,7 @@ jobs:
           ELECTRON_EXTRA_LAUNCH_ARGS: --remote-debugging-port=9222
         with:
           install-command: pnpm install --frozen-lockfile
-          start: pnpm start
+          start: pnpm dev
           wait-on: 'http://[::1]:8080'
 
       - name: Upload test results
