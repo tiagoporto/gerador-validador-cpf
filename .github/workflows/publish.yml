@@ -5,9 +5,14 @@ on:
     inputs:
       dry_run:
         description: Dry-run
-        required: false
+        required: true
         type: boolean
         default: true
+      debug:
+        description: Debug
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -53,7 +58,7 @@ jobs:
           BRANCH: ${{github.ref_name}}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
-        run: pnpm exec multi-semantic-release --dry-run=${{ github.event.inputs.dry_run }}
+        run: pnpm exec multi-semantic-release --dry-run=${{ github.event.inputs.dry_run }} --debug=${{ github.event.inputs.debug }}
 
       - name: Remove node_modules
         run: |
