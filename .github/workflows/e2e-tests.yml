@@ -28,6 +28,9 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v6
+        with:
+          # Force a specific version of pnpm to avoid issues with newer versions
+          version: 10.23.0
 
       - name: Setup node
         uses: actions/setup-node@v6
