@@ -89,4 +89,3 @@ jobs:
         with:
           cypress: true
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          exitZeroOnChanges: false
